@@ -1,2 +1,2 @@
 # Nozomi's dotfiles
-![Brow my mind](https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif)
+![Brow my mind](https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif)
