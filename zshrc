@@ -5,6 +5,9 @@ export ZSH="/Users/nozomi/.oh-my-zsh"
 # Theme
 ZSH_THEME="robbyrussell"
 
+# Syntax highlighting for man pages using
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # Extensions
 plugins=(git last-working-dir)
 source $ZSH/oh-my-zsh.sh
@@ -34,4 +37,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
