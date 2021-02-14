@@ -22,6 +22,7 @@ alias work='cd ~/code/non-b3/workbench'
 alias job='cd ~/code/non-b3/job/homehub'
 alias rest='exec $SHELL -l'
 alias sz='source ~/.zshrc'
+alias ll='exa -laFh --git'
 
 # functions
 mkcd(){
@@ -39,3 +40,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+#Homebrew
+export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"

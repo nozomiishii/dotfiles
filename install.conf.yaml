@@ -9,5 +9,8 @@
     ~/.gitconfig:
 # - create:
 #     - ~/testing
-# - shell:
-#     - [git submodule update --init --recursive, Installing submodules]
+
+- shell:
+    - command: ./setup_homebrew.zsh
+      stdout: true
+      stderr: true
