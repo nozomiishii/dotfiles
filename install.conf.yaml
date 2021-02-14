@@ -7,10 +7,12 @@
 - link:
     ~/.zshrc:
     ~/.gitconfig:
+
 # - create:
 #     - ~/testing
 
 - shell:
-    - command: ./setup_homebrew.zsh
+    - command: ./setup/homebrew.zsh
+      stdin: true
       stdout: true
       stderr: true

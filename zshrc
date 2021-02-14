@@ -9,17 +9,14 @@ ZSH_THEME="robbyrussell"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Extensions
-# Oh my zsh with autosuggestions & syntax-highlighting 
+# Oh my zsh with syntax-highlighting 
 # https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95
-if [ ! -d "$ZSH_CUSTOM"/plugins/zsh-autosuggestions ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-fi
-if [ ! -d "$ZSH_CUSTOM"/plugins/zsh-syntax-highlighting ]; then
+if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
 source $ZSH/oh-my-zsh.sh
-plugins=(git last-working-dir zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git last-working-dir zsh-syntax-highlighting)
 
 # Aliases   
 alias dot='cd ~/Google\ Drive/dotfiles'

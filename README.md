@@ -35,23 +35,14 @@ save
   ssh-add ~/.ssh/id_ed25519
 ```
 
-## Install apps 🚚
+## Tools 🔧
 
-Brew apps
+[mas](https://github.com/mas-cli/mas) - A simple command line interface for the Mac App Store
+
+## UnInstall Homebrew 🍺
 ```shell
-  brew install <app name: String>
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 ```
-
-Appstore apps
-```shell
-  mas install <app id: Int>
-```
-
-update Blewfile
-```shell
-  brew bundle dump
-```
-
 
 ## References 🙌
 ### Tutorials
@@ -63,10 +54,9 @@ update Blewfile
 [dotbot](https://github.com/anishathalye/dotbot) - Dotbot makes installing your dotfiles as easy as git clone $url && cd dotfiles && ./install, even on a freshly installed system!
 
 ### Packages
-
-[bat](https://github.com/sharkdp/bat) - A cat(1) clone with syntax highlighting and Git integration.
-[exa](https://github.com/ogham/exa) - A modern replacement for ls.
-[brooklyn](https://github.com/pedrommcarrasco/Brooklyn) - Screen Saver by Pedro Carrasco 
-[swiftformat-for-xcode](https://github.com/nicklockwood/SwiftFormat) - Reformatting Swift code 
-[rbenv](https://github.com/rbenv/rbenv) - Ruby version management
-
+[bat](https://github.com/sharkdp/bat) - A cat(1) clone with syntax highlighting and Git integration.  
+[exa](https://github.com/ogham/exa) - A modern replacement for ls.  
+[brooklyn](https://github.com/pedrommcarrasco/Brooklyn) - Screen Saver by Pedro Carrasco   
+[swiftformat-for-xcode](https://github.com/nicklockwood/SwiftFormat) - Reformatting Swift code   
+[rbenv](https://github.com/rbenv/rbenv) - Ruby version management  
+[mas](https://github.com/mas-cli/mas) - A simple command line interface for the Mac App Store
