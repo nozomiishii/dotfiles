@@ -9,9 +9,17 @@ ZSH_THEME="robbyrussell"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Extensions
-plugins=(git last-working-dir)
+# Oh my zsh with autosuggestions & syntax-highlighting 
+# https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95
+if [ ! -d "$ZSH_CUSTOM"/plugins/zsh-autosuggestions ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+fi
+if [ ! -d "$ZSH_CUSTOM"/plugins/zsh-syntax-highlighting ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+fi
+
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+plugins=(git last-working-dir zsh-autosuggestions zsh-syntax-highlighting)
 
 # Aliases   
 alias dot='cd ~/Google\ Drive/dotfiles'
@@ -20,9 +28,10 @@ alias noz='cd ~/code/non-b3/nozomiishii/c2021'
 alias nost='cd ~/code/non-b3/nozomiishii/c2021 && code . && yarn dev'
 alias work='cd ~/code/non-b3/workbench'
 alias job='cd ~/code/non-b3/job/homehub'
-alias rest='exec $SHELL -l'
-alias sz='source ~/.zshrc'
+alias quit='exec $SHELL -l'
+alias zz='source ~/.zshrc'
 alias ll='exa -laFh --git'
+alias ls='exa'
 
 # functions
 mkcd(){
@@ -42,4 +51,4 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 #Homebrew
-export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
+export HOMEBREW_CASK_OPTS="--no-quarantine"
