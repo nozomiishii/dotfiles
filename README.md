@@ -7,7 +7,7 @@
 
 2: `xcode-select --install` (Command Line Tools are required for Git and Homebrew)
 
-3: clone project(on Google Drive or dropbox recommended)
+3: Clone project(on Google Drive or dropbox recommended)
 ```shell
   cd ~/Google\ Drive && git clone git@github.com:nozomiishii/dotfiles.git 
 ```
@@ -17,24 +17,34 @@
   ./install
 ```
 
-5: Generate ssh key
+5: Setup App config
+iTerm2
+Preferences > General > Preferences > check "Load preferences from a custom folder or URL"
+⚠️ Do NOT click "save now", before your data restored. Select "Manually" and reload iTerm2 first!!
+
+6: Generate ssh key
 Generate 
 ```ssh
   mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
 ```
-copy ssh key and set up on github
+Copy ssh key and set up on github
 ```ssh
   pbcopy < ~/.ssh/id_ed25519.pub
 ```
-check if it's working
+Check if it's working
 ```ssh
   ssh -T git@github.com
 ```
-save
+Save
 ```ssh
   ssh-add ~/.ssh/id_ed25519
 ```
 
+## Commands 📟
+Clean unused homebrew dependencies
+```shell
+  brew bundle cleanup
+```
 ## Tools 🔧
 
 [mas](https://github.com/mas-cli/mas) - A simple command line interface for the Mac App Store
@@ -49,7 +59,7 @@ save
 [eieio](https://github.com/eieioxyz/dotfiles_macos) 
 
 ### CheatSheet
-[Homebrew - Basics Commands and Cheatsheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
+[Homebrew | Basics Commands and Cheatsheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
 ### Modules
 [dotbot](https://github.com/anishathalye/dotbot) - Dotbot makes installing your dotfiles as easy as git clone $url && cd dotfiles && ./install, even on a freshly installed system!
 
