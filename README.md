@@ -12,15 +12,24 @@
   cd ~/Google\ Drive && git clone git@github.com:nozomiishii/dotfiles.git 
 ```
 
-4: Run
+4: Run  
+⚠️ if you haven't install apps at AppStore on your account, download it first. the mas command is not for a new apps.
 ```shell
   ./install
 ```
 
-5: Setup App config
-iTerm2
-Preferences > General > Preferences > check "Load preferences from a custom folder or URL"
-⚠️ Do NOT click "save now", before your data restored. Select "Manually" and reload iTerm2 first!!
+5: Setup App config  
+- iTerm2  
+Preferences > General > Preferences > check "Load preferences from a custom folder or URL"  
+⚠️ Do NOT click "save now", before your data restored. Select "Manually" and reload iTerm2 first!!  
+
+- VSCode  
+User Icon > Setting sync > Login > Select "Marge"  
+⚠️ Do NOT Select "Replace"  
+
+- DeepL  
+Hotkey: ⌥ + T  
+⚠️ May need to restart your mac  
 
 6: Generate ssh key
 Generate 
