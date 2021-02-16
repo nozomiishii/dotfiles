@@ -83,6 +83,13 @@ Clean unused homebrew dependencies
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 ```
 
+## TroubleShooting
+When permission denied
+```shell
+  chmod +x ./install
+  chmod +x ./dotbot/bin/dotbot
+```
+
 ## References 🙌
 ### Tutorials
 [eieio](https://github.com/eieioxyz/dotfiles_macos) 
@@ -99,3 +106,9 @@ Clean unused homebrew dependencies
 [swiftformat-for-xcode](https://github.com/nicklockwood/SwiftFormat) - Reformatting Swift code   
 [rbenv](https://github.com/rbenv/rbenv) - Ruby version management  
 [mas](https://github.com/mas-cli/mas) - A simple command line interface for the Mac App Store
+
+## Todo for nozomi  
+Alfredが.gitignoreで同じフォルダにあるのがキモい  
+/settings/dotfiles   
+/settings/alfred  　
+みたいにしてdotfilesのフォルダ階層下げたほうがいいかもなあ  
