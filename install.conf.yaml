@@ -25,3 +25,7 @@
     #   stdin: true
     #   stdout: true
     #   stderr: true
+    # - command: ./setup/mac.zsh
+    #   stdin: true
+    #   stdout: true
+    #   stderr: true

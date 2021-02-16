@@ -92,9 +92,13 @@ When permission denied
 
 ## References 🙌
 ### Tutorials
+[Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish/?referralCode=445BE0B541C48FE85276)
+
+### Dotfiles
 [eieio](https://github.com/eieioxyz/dotfiles_macos) 
 
 ### CheatSheet
+[macOS defaults list](https://macos-defaults.com/)  
 [Homebrew | Basics Commands and Cheatsheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
 ### Modules
 [dotbot](https://github.com/anishathalye/dotbot) - Dotbot makes installing your dotfiles as easy as git clone $url && cd dotfiles && ./install, even on a freshly installed system!
