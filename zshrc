@@ -1,6 +1,6 @@
 echo '🧙🏿‍♂️.zshrc loading...'
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/nozomi/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Theme
 ZSH_THEME="robbyrussell"

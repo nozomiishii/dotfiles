@@ -7,29 +7,49 @@
 
 2: `xcode-select --install` (Command Line Tools are required for Git and Homebrew)
 
-3: Clone project(on Google Drive or dropbox recommended)
+3: Go to the dotfiles  
+Install google-backup-and-sync
+```shell
+  brew install google-backup-and-sync --no-quarantine
+```
+```shell
+  cd ~/Google\ Drive/dotfiles
+```
+
+or clone project(Save it on Google Drive or dropbox recommended)
 ```shell
   cd ~/Google\ Drive && git clone git@github.com:nozomiishii/dotfiles.git 
 ```
 
 4: Run  
-⚠️ if you haven't install apps at AppStore on your account, download it first. the mas command is not for a new apps.
+if you haven't install apps at AppStore on your account, download it first. the mas command is not for a new apps.
 ```shell
   ./install
 ```
 
 5: Setup App config  
-- iTerm2  
+🎮iTerm2  
 Preferences > General > Preferences > check "Load preferences from a custom folder or URL"  
 ⚠️ Do NOT click "save now", before your data restored. Select "Manually" and reload iTerm2 first!!  
 
-- VSCode  
+📟VSCode  
 User Icon > Setting sync > Login > Select "Marge"  
 ⚠️ Do NOT Select "Replace"  
 
-- DeepL  
+👩🏻‍🏫DeepL  
 Hotkey: ⌥ + T  
-⚠️ May need to restart your mac  
+(May need to restart your mac)   
+
+🧲Tiles  
+Hotkeys:  
+Fullscreen: ⌥ + ⌘ + F  
+Half Left: ⌥ + ⌘ + ←  
+Half Right: ⌥ + ⌘ + →  
+Half Top: ⌥ + ⌘ + ↑  
+Half Bottom: ⌥ + ⌘ + ↓  
+Previous Display: ⌥ + ⌘ + A   
+Preferences:  
+General > Appearance > uncheck "Show Tiles in the menu bar"(May need check it, when you want uninstall Tiles)  
 
 6: Generate ssh key
 Generate 
@@ -49,7 +69,7 @@ Save
   ssh-add ~/.ssh/id_ed25519
 ```
 
-## Commands 📟
+## Commands 👨🏻‍🏭
 Clean unused homebrew dependencies
 ```shell
   brew bundle cleanup
