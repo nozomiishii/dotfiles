@@ -22,11 +22,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases   
 alias dot='cd ~/Google\ Drive/dotfiles'
-alias dotst='cd ~/Google\ Drive/dotfiles && code .'
-alias noz='cd ~/code/non-b3/nozomiishii/c2021'
-alias nost='cd ~/code/non-b3/nozomiishii/c2021 && code . && yarn dev'
-alias work='cd ~/code/non-b3/workbench'
-alias job='cd ~/code/non-b3/job/homehub'
+alias noz='cd ~/code/nozomiishii/c2021'
+alias work='cd ~/code/workbench'
+alias job='cd ~/code/job/homehub'
 alias quit='exec $SHELL -l'
 alias zz='source ~/.zshrc'
 alias ll='exa -laFh --git'

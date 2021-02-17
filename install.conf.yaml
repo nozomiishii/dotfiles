@@ -13,8 +13,8 @@
     ~/Library/Developer/Xcode/UserData/FontAndColorThemes: ~/Google Drive/dotfiles/link/Xcode/UserData/FontAndColorThemes
     ~/Library/Developer/Xcode/UserData/KeyBindings: ~/Google Drive/dotfiles/link/Xcode/UserData/KeyBindings
 
-# - create:
-#     - ~/testing
+- create:
+    - ~/Code
 
 - shell:
     - command: ./setup/homebrew.zsh
