@@ -69,13 +69,22 @@ Save
   ssh-add ~/.ssh/id_ed25519
 ```
 
+## Customize 👨🏻‍🍳
+How to find the defaults command
+```shell
+  defaults read > before
+  # change the config
+  defaults read > after
+  diff before after
+```
+
 ## Commands 👨🏻‍🏭
 Clean unused homebrew dependencies
 ```shell
   brew bundle cleanup
 ```
-## Tools 🔧
 
+## Tools 🔧
 [mas](https://github.com/mas-cli/mas) - A simple command line interface for the Mac App Store
 
 ## UnInstall Homebrew 🍺
