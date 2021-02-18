@@ -51,6 +51,10 @@ Previous Display: ⌥ + ⌘ + A
 Preferences:  
 General > Appearance > uncheck "Show Tiles in the menu bar"(May need check it, when you want uninstall Tiles)  
 
+🎨ColorSnapper2
+Hotkeys:  
+Pick Color: ⌃ + ⌘ + C
+
 6: Generate ssh key
 Generate 
 ```ssh
