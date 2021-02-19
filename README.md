@@ -123,6 +123,37 @@ When permission denied
 [swiftformat-for-xcode](https://github.com/nicklockwood/SwiftFormat) - Reformatting Swift code   
 [rbenv](https://github.com/rbenv/rbenv) - Ruby version management  
 [mas](https://github.com/mas-cli/mas) - A simple command line interface for the Mac App Store
+hub
+git
+brooklyn
+spotify
+iterm2
+postman
+vlc
+discord
+alfred
+dash
+swiftformat-for-xcode
+google-backup-and-sync
+zoom
+duet
+skype
+kindle
+visual-studio-code
+firefox-developer-edition
+deepl
+figma
+unity-hub
+notion
+tiles
+google
+colorsnapper
+google-japanese-ime
+Slack
+1Password 7 - Password Manager
+Yoink - Improved Drag and Drop
+PopClip
+Xcode
 
 ## Todo for nozomi  
 Alfredが.gitignoreで同じフォルダにあるのがキモい  
