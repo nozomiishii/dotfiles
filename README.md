@@ -1,4 +1,11 @@
 # Nozomi's dotfiles
+```txt
+  📦settings
+    ┣ 📂Alfred
+    ┗ 📂dotfiles
+```
+
+
 ![Brow my mind](https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif)
 
 ## Installation 📦
@@ -31,12 +38,12 @@ Install google-backup-and-sync
   brew install google-backup-and-sync --no-quarantine
 ```
 ```shell
-  cd ~/Google\ Drive/dotfiles
+  cd ~/Google\ Drive/settings/dotfiles
 ```
 
 or clone project(Save it on Google Drive or dropbox recommended)
 ```shell
-  cd ~/Google\ Drive && git clone git@github.com:nozomiishii/dotfiles.git 
+  cd ~/Google\ Drive/settings && git clone git@github.com:nozomiishii/dotfiles.git 
 ```
 
 5: Run  
@@ -45,12 +52,20 @@ if you haven't install apps at AppStore on your account, download it first. the 
   ./install
 ```
 
-## Setup App config  ⚙️
+## Setup App config  ⚙️  
+**🎩Alfred**  
+Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
+
+**🔖Dash**  
+Preferences > General > Syncing > Set Sync Folder... > Select "/Google\ Drive/settings/dotfiles/sync/Dash"  
+Preferences > General > Syncing > Snippets > Snippet library location > Select "/Google\ Drive/settings/dotfiles/sync/Dash"　
+
 **🔑1Password**  
 Preferences > Security > Unlock using > Check "Touch ID"  
+Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)  
 
 **🎮iTerm2**   
-Preferences > General > Preferences > Check "Load preferences from a custom folder or URL"  
+Preferences > General > Preferences > Load preferences from a custom folder or URL > Select "~/Google\ Drive/settings/dotfiles/sync/iTerm2"  
 ⚠️ Do NOT click "save now", before your data restored. Select "Manually" and reload iTerm2 first!!  
 
 **📟VSCode**    
@@ -184,9 +199,3 @@ When permission denied
 [Yoink](https://eternalstorms.at/yoink/mac/) - Improved Drag and Drop.  
 [PopClip](https://pilotmoon.com/popclip/) - Instant text actions on your Mac.  
 [Xcode](https://developer.apple.com/xcode/) - Apple's integrated development environment.  
-
-## Todo for nozomi  
-Alfredが.gitignoreで同じフォルダにあるのがキモい  
-/settings/dotfiles   
-/settings/alfred  　
-みたいにしてdotfilesのフォルダ階層下げたほうがいいかもなあ  

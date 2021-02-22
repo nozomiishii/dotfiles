@@ -21,7 +21,7 @@ plugins=(git last-working-dir zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases   
-alias dot='cd ~/Google\ Drive/dotfiles'
+alias dot='cd ~/Google\ Drive/settings/dotfiles'
 alias noz='cd ~/code/nozomiishii/c2021'
 alias work='cd ~/code/workbench'
 alias job='cd ~/code/job/homehub'

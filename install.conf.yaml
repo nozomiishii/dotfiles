@@ -9,9 +9,9 @@
     ~/.zshrc:
     ~/.gitconfig:
     ~/.vimrc:
-    ~/Library/Developer/Xcode/UserData/CodeSnippets: ~/Google Drive/dotfiles/link/Xcode/UserData/CodeSnippets
-    ~/Library/Developer/Xcode/UserData/FontAndColorThemes: ~/Google Drive/dotfiles/link/Xcode/UserData/FontAndColorThemes
-    ~/Library/Developer/Xcode/UserData/KeyBindings: ~/Google Drive/dotfiles/link/Xcode/UserData/KeyBindings
+    ~/Library/Developer/Xcode/UserData/CodeSnippets: ~/Google Drive/settings/dotfiles/link/Xcode/UserData/CodeSnippets
+    ~/Library/Developer/Xcode/UserData/FontAndColorThemes: ~/Google Drive/settings/dotfiles/link/Xcode/UserData/FontAndColorThemes
+    ~/Library/Developer/Xcode/UserData/KeyBindings: ~/Google Drive/settings/dotfiles/link/Xcode/UserData/KeyBindings
 
 - create:
     - ~/Code
