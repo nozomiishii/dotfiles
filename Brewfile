@@ -12,6 +12,7 @@ brew "rbenv"
 
 cask "brooklyn"
 cask "spotify"
+cask "blender"
 cask "iterm2"
 cask "postman"
 cask "vlc"
@@ -31,11 +32,11 @@ cask "figma"
 cask "unity-hub"
 cask "notion"
 cask "tiles"
+cask "slack"
 cask "google-chrome"
 cask "colorsnapper"
 cask "google-japanese-ime"
 
-mas "Slack", id: 803453959
 mas "1Password 7 - Password Manager", id: 1333542190
 mas "Yoink - Improved Drag and Drop", id: 457622435
 mas "PopClip", id: 445189367
