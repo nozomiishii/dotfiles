@@ -46,8 +46,11 @@ if you haven't install apps at AppStore on your account, download it first. the 
 ```
 
 ## Setup App config  ⚙️
+**🔑1Password**  
+Preferences > Security > Unlock using > Check "Touch ID"  
+
 **🎮iTerm2**   
-Preferences > General > Preferences > check "Load preferences from a custom folder or URL"  
+Preferences > General > Preferences > Check "Load preferences from a custom folder or URL"  
 ⚠️ Do NOT click "save now", before your data restored. Select "Manually" and reload iTerm2 first!!  
 
 **📟VSCode**    
