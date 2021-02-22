@@ -63,6 +63,10 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 
+echo "- 📡 Network \n"
+networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
+
+
 echo "- 👨🏻‍🚀 Restarting... \n"
 killall Dock
 killall Finder
