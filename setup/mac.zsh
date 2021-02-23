@@ -11,7 +11,7 @@ echo "\n💻Starting Mac Setup\n"
 # sudo nvram StartupMute=%01
 # sudo nvram SystemAudioVolume=%80
 
-echo "- 🚢 Dock \n" # killall Dock
+echo "- 🚢 Dock" # killall Dock
 # Set the Dock position
 defaults write com.apple.dock orientation -string right
 # Autohides the Dock. You can toggle the Dock using ⌥ + ⌘ +d.
@@ -28,7 +28,7 @@ defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock largesize -int 56
 
 
-echo "- 🕹 Menu bar \n" # killall SystemUIServer
+echo "- 🕹 Menu bar" # killall SystemUIServer
 # This setting configures the time and date format for the menubar digital clock.
 defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  h:mm a"
 # Autohides the Menu bar.
@@ -37,12 +37,12 @@ defaults write NSGlobalDomain _HIHideMenuBar -bool true
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
 
 
-echo "- 📸 Screenshot \n"
+echo "- 📸 Screenshot"
 # Choose whether to display a thumbnail after taking a screenshot.
 defaults write com.apple.screencapture show-thumbnail -bool false
 
 
-echo "- 🗂 Finder \n" # killall Finder
+echo "- 🗂 Finder" # killall Finder
 # Set Accent color to green
 defaults write NSGlobalDomain AppleAccentColor -int 3
 # Set highlight color to green
@@ -51,26 +51,39 @@ defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.6
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 
-echo "- 🖲 Mission Control \n" # killall Dock
+echo "- 🖲 Mission Control" # killall Dock
 # Choose whether to rearrange Spaces automatically.
 defaults write com.apple.dock mru-spaces -bool false
 
 
-echo "- ⌨️ Keyboard \n"
+echo "- ⌨️ Keyboard"
 # Set key repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
 # Set delay until repeat
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 
-echo "- 📡 Network \n"
+echo "- 📡 Network"
 networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
 
 
-echo "- 👨🏻‍🚀 Restarting... \n"
+echo "- 🗣 Speach"
+# Enable Text to Speech
+defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyFlag -bool true
+# Speak selected text when the key is pressed. Option + Space : 2097
+defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyCombo -int 2097
+# System Voice
+# System Voice > Customize… > English (United Kingdom): siri: on
+defaults write com.apple.speech.voice.prefs VisibleIdentifiers -dict-add 'com.apple.speech.synthesis.voice.custom.siri.martha.premium' 1
+defaults write com.apple.speech.voice.prefs SelectedVoiceCreator -int 1650811243
+defaults write com.apple.speech.voice.prefs SelectedVoiceID -int 2100
+defaults write com.apple.speech.voice.prefs SelectedVoiceName -string "Martha Siri"
+
+
+echo "- 👨🏻‍🚀 Restarting..."
 killall Dock
 killall Finder
 killall SystemUIServer
 
 
-echo "🎉 Completed Mac Setup \n"
+echo "\n🎉 Completed Mac Setup \n"

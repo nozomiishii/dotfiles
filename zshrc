@@ -5,7 +5,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Theme
 ZSH_THEME="robbyrussell"
 
-# Syntax highlighting for man pages using
+# Syntax highlighting for man command
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Extensions
@@ -48,6 +48,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-#Homebrew
-export HOMEBREW_CASK_OPTS="--no-quarantine"
