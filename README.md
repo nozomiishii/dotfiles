@@ -53,30 +53,30 @@ if you haven't install apps at AppStore on your account, download it first. the 
 ```
 
 ## Setup App config  ⚙️  
-**🎩Alfred**  
+**🎩 Alfred**  
 Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
 
-**🔖Dash**  
+**🔖 Dash**  
 Preferences > General > Syncing > Set Sync Folder... > Select "/Google\ Drive/settings/dotfiles/sync/Dash"  
 Preferences > General > Syncing > Snippets > Snippet library location > Select "/Google\ Drive/settings/dotfiles/sync/Dash"　
 
-**🔑1Password**  
+**🔑 1Password**  
 Preferences > Security > Unlock using > Check "Touch ID"  
 Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)  
 
-**🎮iTerm2**   
+**🎮 iTerm2**   
 Preferences > General > Preferences > Load preferences from a custom folder or URL > Select "~/Google\ Drive/settings/dotfiles/sync/iTerm2"  
 ⚠️ Do NOT click "save now", before your data restored. Select "Manually" and reload iTerm2 first!!  
 
-**📟VSCode**    
+**📟 VSCode**    
 User Icon > Setting sync > Login > Select "Marge"  
 ⚠️ Do NOT Select "Replace"  
 
-**👩🏻‍🏫DeepL**  
+**👩🏻‍🏫 DeepL**  
 Hotkey: ⌥ + T  
 (May need to restart your mac)   
 
-**🧲Tiles**    
+**🧲 Tiles**    
 Hotkeys:  
 Fullscreen: ⌥ + ⌘ + F  
 Half Left: ⌥ + ⌘ + ←  
@@ -87,17 +87,21 @@ Previous Display: ⌥ + ⌘ + A
 Preferences:  
 General > Appearance > uncheck "Show Tiles in the menu bar"(May need check it, when you want uninstall Tiles)  
 
-**🎨ColorSnapper2** 
+**🎨 ColorSnapper2**  
 Hotkeys:  
 Pick Color: ⌃ + ⌘ + C  
 
-**🐵 Blender**
+**🐵 Blender**  
 sign in  
 Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" > login!
 Download  
 Get [Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip) 
 Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addon.zip"  
 ⚠️ DO NOT UNZIP
+
+**💻 System Preferences**  
+Energy Saver  
+Energy Saver > Battery > uncheck "Slightly dim the display while on battery power"
 
 
 ## Customize 👨🏻‍🍳
@@ -126,21 +130,59 @@ Clean unused homebrew dependencies
 ```shell
   brew bundle cleanup
 ```
-
-## Tools 🔧
-[mas](https://github.com/mas-cli/mas) - A simple command line interface for the Mac App Store
-
 ## UnInstall Homebrew 🍺
 ```shell
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 ```
 
-## TroubleShooting
+## TroubleShooting 🔫  
 When permission denied
 ```shell
   chmod +x ./install
   chmod +x ./dotbot/bin/dotbot
 ```
+
+## Reinstall macOS🦄    
+1: Sign out your iCloud.  
+System Preferences > Apple ID > iCloud > Turn off "Find My Mac"  
+System Preferences > Apple ID > Overview > Sign Out...  
+
+2: Deactivate license  
+**🎩Alfred**  
+Preferences > Powerpack > View your license key > Deactivate  
+**🎨ColorSnapper2**  
+About ColorSnapper... > Deactivate license  
+
+3: Unpair  
+System Preferences > Bluetooth > Unpair Bluetooth devices  
+
+4: Clean up  
+Delete SSH keys on Github, GitLab  
+
+5: Reinstall
+[Erasing your Mac and reinstalling macOS.- Japanese](https://support.apple.com/ja-jp/HT201065) 
+[Erasing your Mac and reinstalling macOS. - English](https://support.apple.com/en-gb/HT201065)  
+
+- NVRAM Reset  
+`⌥ + ⌘ + P + R`  
+💡 NVRAM is a memory that saves its stored data regardless if the power is on or off.
+
+- Erase your mac and reinstall 
+Shutdown mac  
+Start up from the built-in macOS Recovery system: ⌘ + R  or,    
+Start up from macOS Recovery over the Internet: ⌥ + ⌘ + R  
+💡Difference:
+⌘ + R -> Original OS you using: Mojave => Mojave, Big Sur=> Big Sur  
+⌥ + ⌘ + R -> The latest OS: Mojave => Big Sur, Big Sur=> Big Sur  
+💡Option: Change Language => File > Choose Language  
+Choose your prefer language before reinstall OS. (following setup using this language)  
+
+- Erase  
+[How to erase your Intel-based Mac - Japanese](https://support.apple.com/ja-jp/HT208496)  
+[How to erase your Intel-based Mac - English](https://support.apple.com/en-gb/HT208496)  
+
+- Continue with the initial setup or if you want to quit, press command "⌘ + Q"  
+
 
 ## References 🙌
 ### Tutorials
