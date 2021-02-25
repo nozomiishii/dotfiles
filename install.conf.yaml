@@ -5,27 +5,20 @@
 
 - clean: ['~']
 
-- link:
-    ~/.zshrc:
-    ~/.gitconfig:
-    ~/.vimrc:
-    ~/Library/Developer/Xcode/UserData/CodeSnippets: ~/Google Drive/settings/dotfiles/link/Xcode/UserData/CodeSnippets
-    ~/Library/Developer/Xcode/UserData/FontAndColorThemes: ~/Google Drive/settings/dotfiles/link/Xcode/UserData/FontAndColorThemes
-    ~/Library/Developer/Xcode/UserData/KeyBindings: ~/Google Drive/settings/dotfiles/link/Xcode/UserData/KeyBindings
-
-- create:
-    - ~/Code
-
 - shell:
     - command: ./setup/homebrew.zsh
       stdin: true
       stdout: true
       stderr: true
-    # - command: ./setup/node.zsh
-    #   stdin: true
-    #   stdout: true
-    #   stderr: true
-    # - command: ./setup/mac.zsh
-    #   stdin: true
-    #   stdout: true
-    #   stderr: true
+    - command: ./setup/node.zsh
+      stdin: true
+      stdout: true
+      stderr: true
+
+- link:
+    ~/.zshrc:
+    ~/.gitconfig:
+    ~/.vimrc:
+
+- create:
+    - ~/Code

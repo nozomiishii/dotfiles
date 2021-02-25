@@ -11,6 +11,7 @@ sudo nvram AutoBoot=%01
 sudo nvram StartupMute=%01
 sudo nvram SystemAudioVolume=%80
 
+
 echo "- 🚢 Dock" # killall Dock
 # Set the Dock position
 defaults write com.apple.dock orientation -string right
@@ -85,12 +86,29 @@ killall Dock
 killall Finder
 killall SystemUIServer
 
-
 echo "\n🎉 Completed Mac Setup \n"
 
 
 echo "\n🧝🏻‍♀️ Starting Third-Party Software Setup\n"
-echo "- 🎮iTerm2"
+
+
+echo "- 🍎 Xcode"
+XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
+GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/settings/dotfiles/link/Xcode/UserData"
+xcode_userdata=( "CodeSnippets" "FontAndColorThemes" "KeyBindings" )
+
+for i in "${xcode_userdata[@]}"
+do
+  ln -nfs "$GOOGLE_DRIVE_XCODE_USERDATA/$i" "$XCODE_USERDATA/$i"
+  if [ -L "$XCODE_USERDATA/$i" ]; then
+    echo "Creating Link $XCODE_USERDATA/$i -> $GOOGLE_DRIVE_XCODE_USERDATA/$i"
+  else
+    echo "Error: Creating Links fails"
+  fi
+done
+
+
+echo "- 🎮 iTerm2"
 # iTerm2 Settings
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Google Drive/settings/dotfiles/sync/iTerm2"

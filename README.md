@@ -9,35 +9,36 @@
 ![Brow my mind](https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif)
 
 ## Installation 📦
-1: Sign in your iCloud. (to get apps using mas command)  
+**1: Sign in your iCloud. (to get apps using mas command)**  
 If you want to use a non-private account, Install XCode from Appstore.
 
-2: Launch Spotlight: ⌘ + space, and open terminal  
+**2: Launch Spotlight: ⌘ + space, and open terminal**  
 Comme to this page
 ```shell
   open https://github.com/nozomiishii/dotfiles
 ```
 
-3: Install xcode-select  
+**3: Install xcode-select**  
 ```shell
   xcode-select --install
 ```
 Command Line Tools are required for Git and Homebrew  
 
-4: Clone  
+**4: Clone**  
 ```shell
   cd Desktop && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
 ```
+oh my zsh
 ```shell
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-5: Run
+**5: Run**  
 ```shell
   ./install
 ```
 
-6: Clean up
+**6: Clean up**  
 ```shell
   ..
 ```
@@ -45,17 +46,23 @@ Command Line Tools are required for Git and Homebrew
   rm -rf dotfiles
 ```
 
-7: Sing in and setup 1Password🔑  
+**7: Sing in and setup 1Password🔑**  
 Preferences > Security > Unlock using > Check "Touch ID"  
 Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)  
 
-8: Sign in google-backup-and-sync
-Add Symbolic link
+**8: Sign in google-backup-and-sync**  
+Sign in and go to the directory  
 ```shell
-  cd ~/Google\ Drive/settings/dotfiles && ./install
+  cd ~/Google\ Drive/settings/dotfiles
 ```
 
-9: Setup App config ⚙️  
+**9: Setup Mac config 💻**  
+Run　　
+```shell
+  ./setup/mac.zsh
+```
+
+**10: Setup App config ⚙️**  
 **🎩 Alfred**  
 Open Alfred
 ⌘ + Space > Alfred
@@ -79,13 +86,12 @@ Shortcuts > App Shortcuts > "+" > Application:"Firefox Developer Edition", Menu 
 **Language & Region**  
 Language & Region > + > Add "Japanese"
 
+**Accessibility**
+Accessibility > Speech > System Voice > Update Siri Voice  
+
 **🌏 Chrome**
 Sign in
 Change Chrome to the Default Browser
-
-**🎮 iTerm2**   
-Preferences > General > Preferences > Load preferences from a custom folder or URL > Select "~/Google\ Drive/settings/dotfiles/sync/iTerm2"  
-⚠️ Do NOT click "save now", before your data restored. Select "Manually" and reload iTerm2 first!!  
 
 **📟 VSCode**    
 User Icon > Setting sync > Login > Select "Marge"  
@@ -126,10 +132,10 @@ Screen Saver
 Desktop & Screen Saver > Screen Saver > Select "Brooklyn"  
 (might need go Preferences > Security & Privacy > General > On the bottom side, select "Open Anyway")  
 
-
 **🔖 Dash**  
 Preferences > General > Syncing > Set Sync Folder... > Select "/Google\ Drive/settings/dotfiles/sync/Dash"  
 Preferences > General > Syncing > Snippets > Snippet library location > Select "/Google\ Drive/settings/dotfiles/sync/Dash"　
+
 ## Generate ssh key🔓
 Generate 
 ```ssh
@@ -147,8 +153,6 @@ Save
 ```ssh
   ssh-add ~/.ssh/id_ed25519
 ```
-
-
 
 ## Customize 👨🏻‍🍳
 **How to add app to Brew file**
@@ -169,6 +173,11 @@ Check if it's an app you want to download.
   # change the config
   defaults read > after
   diff before after
+```
+
+**Symbolic link**  
+```shell
+  ln -s <original> <link>
 ```
 
 ## Commands 👨🏻‍🏭
