@@ -1,15 +1,15 @@
 #!/usr/bin/env zsh
 echo "\n💻Starting Mac Setup\n"
+# sudo -v
 
 # NOTE: Boolean | 0 = false, 1 = true
 
-
+echo "- 🔋 nvram"
 # Disable auto-booting
-# sudo nvram AutoBoot=%01
-
+sudo nvram AutoBoot=%01
 # stop startup chime
-# sudo nvram StartupMute=%01
-# sudo nvram SystemAudioVolume=%80
+sudo nvram StartupMute=%01
+sudo nvram SystemAudioVolume=%80
 
 echo "- 🚢 Dock" # killall Dock
 # Set the Dock position
@@ -87,3 +87,13 @@ killall SystemUIServer
 
 
 echo "\n🎉 Completed Mac Setup \n"
+
+
+echo "\n🧝🏻‍♀️ Starting Third-Party Software Setup\n"
+echo "- 🎮iTerm2"
+# iTerm2 Settings
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Google Drive/settings/dotfiles/sync/iTerm2"
+defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
+
+echo "\n🎉 Completed Third-Party Software Setup\n"

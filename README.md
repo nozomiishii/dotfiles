@@ -77,6 +77,9 @@ Shortcuts > App Shortcuts > "+" > Application:"Google Chrome", Menu Title: `Prin
 Shortcuts > App Shortcuts > "+" > Application:"Google Chrome", Menu Title: `Clear Browsing Data...` Keyboard Shortcut: "⌃+⇧+⌘+⌥+D"
 Shortcuts > App Shortcuts > "+" > Application:"Firefox Developer Edition", Menu Title: `Print...` Keyboard Shortcut: "⇧+⌘+⌥+P"
 
+**Language & Region**  
+Language & Region > + > Add "Japanese"
+
 **🌏 Chrome**
 Sign in
 Change Chrome to the Default Browser
