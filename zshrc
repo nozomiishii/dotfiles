@@ -1,24 +1,23 @@
 echo '🧙🏿‍♂️.zshrc loading...'
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 
-# Theme
-ZSH_THEME="robbyrussell"
+# Oh my zsh with syntax-highlighting 
+# https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95
+if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting 
+fi
+
+if [ -d $HOME/.oh-my-zsh ]; then
+  # Path to your oh-my-zsh installation.
+  export ZSH="$HOME/.oh-my-zsh"
+  # Theme
+  ZSH_THEME="robbyrussell"
+
+  plugins=(git last-working-dir zsh-syntax-highlighting)
+  source $ZSH/oh-my-zsh.sh
+fi
 
 # Syntax highlighting for man command
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-# Extensions
-# Oh my zsh with syntax-highlighting 
-# https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95
-#
-# Todo loadingが以下のエラーがでてうまくいかない
-# fatal: could not create leading directories of '/plugins/zsh-syntax-highlighting': Read-only file system
-# if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
-#   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-# fi
-plugins=(git last-working-dir zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
 
 # Aliases   
 alias dot='cd ~/Google\ Drive/settings/dotfiles'

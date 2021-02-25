@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-echo "\n💻Starting Mac Setup\n"
+echo "\n💻 Starting Mac Setup\n"
 # sudo -v
 
 # NOTE: Boolean | 0 = false, 1 = true

@@ -30,7 +30,6 @@ Command Line Tools are required for Git and Homebrew
 ```
 ```shell
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 ```
 
 5: Run
@@ -66,7 +65,7 @@ Turn Off Spotlight Shortcut
 ⌘ + Space > Keyboard > Shortcuts > Spotlight > unCheck "Show Spotlight search"
 General > Alfred Hotkey: ⌘ + Space
 
-**⌨️Keyboard**  
+**⌨️ Keyboard**  
 Keyboard > Modifier Keys... > Control key: "Caps Lock"
 Keyboard > Modifier Keys... > Caps Lock key: "Control"
 Input Sources > Delete "Kotoeri"  
