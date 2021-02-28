@@ -2,8 +2,6 @@
 echo "\n💻 Starting Mac Setup\n"
 # sudo -v
 
-# NOTE: Boolean | 0 = false, 1 = true
-
 echo "- 🔋 nvram"
 # Disable auto-booting
 sudo nvram AutoBoot=%01
@@ -14,7 +12,7 @@ sudo nvram SystemAudioVolume=%80
 
 echo "- 🚢 Dock" # killall Dock
 # Set the Dock position
-defaults write com.apple.dock orientation -string right
+defaults write com.apple.dock orientation -string "right"
 # Autohides the Dock. You can toggle the Dock using ⌥ + ⌘ +d.
 defaults write com.apple.dock autohide -bool true
 # Change the Dock opening delay.
@@ -43,14 +41,24 @@ echo "- 📸 Screenshot"
 defaults write com.apple.screencapture show-thumbnail -bool false
 
 
-echo "- 🗂 Finder" # killall Finder
-# Set Accent color to green
+echo "- 👼 General"
+# Dark Mode
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+# Set the accent color to green
 defaults write NSGlobalDomain AppleAccentColor -int 3
-# Set highlight color to green
+# Set the highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
+
+
+echo "- 🗂 Finder" # killall Finder
 # Show all file extensions in the Finder.
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
+# Set the default finder view style to icon view
+defaults write com.apple.Finder FXPreferredViewStyle -string "icnv"
+# Display the status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+# Display the path bar
+defaults write com.apple.finder ShowPathbar -bool true
 
 echo "- 🖲 Mission Control" # killall Dock
 # Choose whether to rearrange Spaces automatically.
