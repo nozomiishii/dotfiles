@@ -122,4 +122,8 @@ defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Google Drive/settings/dotfiles/sync/iTerm2"
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
+
+echo "- ⌨ Karabiner-Elements"
+ln -nfs "$HOME/Google Drive/settings/dotfiles/sync/Karabiner-Elements/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+
 echo "\n🎉 Completed Third-Party Software Setup\n"

@@ -17,12 +17,13 @@ cask "blender"
 cask "postman"
 cask "vlc"
 cask "swiftformat-for-xcode"
+cask "karabiner-elements"
 cask "alfred"
 cask "dash"
 cask "deepl"
 cask "discord"
 cask "google-backup-and-sync"
-cask "zoom"
+cask "zoom", args: { appdir: '/Applications' }
 cask "skype"
 cask "kindle"
 cask "visual-studio-code"
@@ -36,7 +37,7 @@ cask "slack"
 cask "google-chrome"
 cask "colorsnapper"
 cask "figma"
-cask "google-japanese-ime"
+cask "google-japanese-ime", args: { appdir: '/Applications' }
 
 mas "Yoink - Improved Drag and Drop", id: 457622435
 mas "PopClip", id: 445189367
