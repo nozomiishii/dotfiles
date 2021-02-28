@@ -26,9 +26,9 @@ Command Line Tools are required for Git and Homebrew
 
 **4: Clone**  
 ```shell
-  cd Desktop && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
+  cd ~/Desktop && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
 ```
-oh my zsh
+oh my zsh(you can't insert following command into dotbot, because ohmyzsh will be escaped once the download completed)
 ```shell
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```

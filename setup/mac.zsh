@@ -65,6 +65,11 @@ echo "- 🖲 Mission Control" # killall Dock
 defaults write com.apple.dock mru-spaces -bool false
 
 
+echo "- 👮🏻‍♂️ Security & Privacy"
+# Turn on Firewall
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+
+
 echo "- ⌨️ Keyboard"
 # Set key repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
