@@ -11,3 +11,8 @@ if ! type brew > /dev/null 2>&1; then
 fi
 
 brew bundle --verbose
+
+# Open applications for Setup
+open -a Alfred\ 4
+open -a Backup\ and\ Sync
+open -a 1Password\ 7
