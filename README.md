@@ -37,6 +37,16 @@ oh my zsh(you can't insert following command into dotbot, because ohmyzsh will b
 ```shell
   ./install
 ```
+🔫 When permission denied
+```shell
+  chmod +x ./install
+  chmod +x ./dotbot/bin/dotbot
+  chmod +x ./setup/homebrew.zsh ./setup/node.zsh ./setup/mac.zsh
+```
+one line
+```shell
+  chmod +x ./install ./dotbot/bin/dotbot ./setup/homebrew.zsh ./setup/node.zsh ./setup/mac.zsh
+```
 
 **6: Clean up**  
 ```shell
@@ -188,13 +198,6 @@ Clean unused homebrew dependencies
 ## UnInstall Homebrew 🍺
 ```shell
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
-```
-
-## TroubleShooting 🔫  
-When permission denied
-```shell
-  chmod +x ./install
-  chmod +x ./dotbot/bin/dotbot
 ```
 
 ## Reinstall macOS🦄    
