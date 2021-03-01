@@ -2,12 +2,17 @@
 echo "\n💻 Starting Mac Setup\n"
 # sudo -v
 
-echo "- 🔋 nvram"
+echo "- 🤖 nvram"
 # Disable auto-booting
 sudo nvram AutoBoot=%01
 # stop startup chime
 sudo nvram StartupMute=%01
 sudo nvram SystemAudioVolume=%80
+
+
+echo "- 🔋 Battery"
+# Do not dim brightness on battery source (-b: battery)
+sudo pmset -b lessbright 0
 
 
 echo "- 🚢 Dock" # killall Dock
@@ -30,8 +35,8 @@ defaults write com.apple.dock largesize -int 56
 echo "- 🕹 Menu bar" # killall SystemUIServer
 # This setting configures the time and date format for the menubar digital clock.
 defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  h:mm a"
-# Autohides the Menu bar.
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
+# Time format 12 hour time: AM/PM
+defaults write NSGlobalDomain AppleICUForce12HourTime -bool true
 # Configure the menu bar Items
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
 
@@ -41,24 +46,30 @@ echo "- 📸 Screenshot"
 defaults write com.apple.screencapture show-thumbnail -bool false
 
 
-echo "- 👼 General"
+echo "- 👼 NSGlobalDomain(General)"
 # Dark Mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 # Set the accent color to green
 defaults write NSGlobalDomain AppleAccentColor -int 3
 # Set the highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
+# Autohides the Menu bar.
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+# Show all file extensions in the Finder.
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 
 echo "- 🗂 Finder" # killall Finder
-# Show all file extensions in the Finder.
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Set the default finder view style to icon view
 defaults write com.apple.Finder FXPreferredViewStyle -string "icnv"
 # Display the status bar
 defaults write com.apple.finder ShowStatusBar -bool true
 # Display the path bar
 defaults write com.apple.finder ShowPathbar -bool true
+# Set a default folder when opening Finder: Google Drive
+# Target category ex) PfDo: Documents, PfID: iCloud Drive, PfLo: Others
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER/Google%20Drive/"
 
 echo "- 🖲 Mission Control" # killall Dock
 # Choose whether to rearrange Spaces automatically.
@@ -81,7 +92,7 @@ echo "- 📡 Network"
 networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
 
 
-echo "- 🗣 Speach"
+echo "- 🗣 Speech"
 # Enable Text to Speech
 defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyFlag -bool true
 # Speak selected text when the key is pressed. Option + Space : 2097
@@ -94,10 +105,26 @@ defaults write com.apple.speech.voice.prefs SelectedVoiceID -int 2100
 defaults write com.apple.speech.voice.prefs SelectedVoiceName -string "Martha Siri"
 
 
-echo "- 👨🏻‍🚀 Restarting..."
-killall Dock
-killall Finder
-killall SystemUIServer
+echo "- 🖥 Display"
+# Night shift from 7am to 6:59am
+# CORE_BRIGHTNESS_ENABLE='{
+#   CBBlueReductionStatus =     {
+#     AutoBlueReductionEnabled = 1;
+#     BlueLightReductionDisableScheduleAlertCounter = 3;
+#     BlueLightReductionSchedule =         {
+#       DayStartHour = 6;
+#       DayStartMinute = 59;
+#       NightStartHour = 7;
+#       NightStartMinute = 0;
+#     };
+#     BlueReductionAvailable = 1;
+#     BlueReductionEnabled = 1;
+#     BlueReductionMode = 2;
+#     BlueReductionSunScheduleAllowed = 1;
+#     Version = 1;
+#   };
+# }'
+# sudo defaults write com.apple.CoreBrightness "CBUser-$(dscl . -read ~ GeneratedUID | sed 's/GeneratedUID: //')" "$CORE_BRIGHTNESS_ENABLE"
 
 echo "\n🎉 Completed Mac Setup \n"
 
@@ -122,9 +149,11 @@ done
 
 
 echo "- 🎮 iTerm2"
-# iTerm2 Settings
+# General > Preferences > check "Load preferences from a custom folder or URL"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+# Restore from the backup
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Google Drive/settings/dotfiles/sync/iTerm2"
+# General > Preferences > Save changes: when quits 
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
 
@@ -132,3 +161,10 @@ echo "- ⌨ Karabiner-Elements"
 ln -nfs "$HOME/Google Drive/settings/dotfiles/sync/Karabiner-Elements/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 
 echo "\n🎉 Completed Third-Party Software Setup\n"
+
+
+echo "- 👨🏻‍🚀 Restarting..."
+killall Dock
+killall Finder
+killall SystemUIServer
+sudo reboot

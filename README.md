@@ -79,8 +79,9 @@ Open Alfred
 Setting Sync
 Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
 Turn Off Spotlight Shortcut
-⌘ + Space > Keyboard > Shortcuts > Spotlight > unCheck "Show Spotlight search"
-General > Alfred Hotkey: ⌘ + Space
+System Preferences > Keyboard > Shortcuts > Spotlight > unCheck "Show Spotlight search"
+System Preferences > Keyboard > Shortcuts > Spotlight > unCheck "Show Finder search window"
+Alfred > General > Alfred Hotkey: ⌘ + Space
 
 **⌨️ Keyboard**  
 Keyboard > Modifier Keys... > Control key: "Caps Lock"
