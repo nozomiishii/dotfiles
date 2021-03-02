@@ -46,7 +46,7 @@ echo "- 📸 Screenshot"
 defaults write com.apple.screencapture show-thumbnail -bool false
 
 
-echo "- 👼 NSGlobalDomain(General)"
+echo "- 🐤 NSGlobalDomain(General)"
 # Dark Mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 # Set the accent color to green
@@ -106,25 +106,34 @@ defaults write com.apple.speech.voice.prefs SelectedVoiceName -string "Martha Si
 
 
 echo "- 🖥 Display"
+# System Preference > Displays > Night Shift
 # Night shift from 7am to 6:59am
-# CORE_BRIGHTNESS_ENABLE='{
-#   CBBlueReductionStatus =     {
-#     AutoBlueReductionEnabled = 1;
-#     BlueLightReductionDisableScheduleAlertCounter = 3;
-#     BlueLightReductionSchedule =         {
-#       DayStartHour = 6;
-#       DayStartMinute = 59;
-#       NightStartHour = 7;
-#       NightStartMinute = 0;
-#     };
-#     BlueReductionAvailable = 1;
-#     BlueReductionEnabled = 1;
-#     BlueReductionMode = 2;
-#     BlueReductionSunScheduleAllowed = 1;
-#     Version = 1;
-#   };
-# }'
-# sudo defaults write com.apple.CoreBrightness "CBUser-$(dscl . -read ~ GeneratedUID | sed 's/GeneratedUID: //')" "$CORE_BRIGHTNESS_ENABLE"
+CORE_BRIGHTNESS="/private/var/root/Library/Preferences/com.apple.CoreBrightness.plist"
+CURRENT_USER_UID="CBUser-$(dscl . -read ~ GeneratedUID | sed 's/GeneratedUID: //')"
+
+# Color Temperature: Default warm
+sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueLightReductionCCTTargetRaw 4100" $CORE_BRIGHTNESS
+# Manual: Turn on Until Tomorrow => 4: check, 3: uncheck
+sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionAlgoOverride 4" $CORE_BRIGHTNESS
+# Schedule: Custom
+sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueReductionMode 2" $CORE_BRIGHTNESS
+# From: Hour
+sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionSchedule:NightStartHour 7" $CORE_BRIGHTNESS
+# From: Minutes
+sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionSchedule:NightStartMinute 0" $CORE_BRIGHTNESS
+# To: Hour
+sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionSchedule:DayStartHour 6" $CORE_BRIGHTNESS 
+# To: Minutes
+sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionSchedule:DayStartMinute 59" $CORE_BRIGHTNESS
+
+
+echo "- 👼 Killall..."
+killall Dock
+killall Finder
+killall SystemUIServer
+# cfprefsd helps an app or the system to read or write to preference files.
+sudo killall cfprefsd
+sudo killall corebrightnessd
 
 echo "\n🎉 Completed Mac Setup \n"
 
@@ -163,8 +172,12 @@ ln -nfs "$HOME/Google Drive/settings/dotfiles/sync/Karabiner-Elements/karabiner.
 echo "\n🎉 Completed Third-Party Software Setup\n"
 
 
-echo "- 👨🏻‍🚀 Restarting..."
+echo "- 👼 Killall..."
 killall Dock
 killall Finder
 killall SystemUIServer
+sudo killall cfprefsd
+sudo killall corebrightnessd
+
+echo "- 👨🏻‍🚀 Restarting..."
 sudo reboot

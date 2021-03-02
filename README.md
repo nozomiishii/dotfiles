@@ -94,14 +94,14 @@ Shortcuts > App Shortcuts > "+" > Application:"Google Chrome", Menu Title: `Prin
 Shortcuts > App Shortcuts > "+" > Application:"Google Chrome", Menu Title: `Clear Browsing Data...` Keyboard Shortcut: "⌃+⇧+⌘+⌥+D"
 Shortcuts > App Shortcuts > "+" > Application:"Firefox Developer Edition", Menu Title: `Print...` Keyboard Shortcut: "⇧+⌘+⌥+P"
 
-**Language & Region**  
+**⛩ Language & Region**  
 Language & Region > + > Add "Japanese"
 
-**Accessibility**
+**🦄 Accessibility**  
 Accessibility > Speech > System Voice > Update Siri Voice  
 
-**🌏 Chrome**
-Sign in
+**🌏 Chrome**  
+Sign in  
 Change Chrome to the Default Browser
 
 **📟 VSCode**    
@@ -137,9 +137,11 @@ Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addo
 ⚠️ DO NOT UNZIP
 
 **💻 System Preferences**  
-Energy Saver  
+**Energy Saver**  
 Energy Saver > Battery > uncheck "Slightly dim the display while on battery power"  
-Screen Saver  
+**Desktop Image**  
+Desktop & Screen Saver > Select your favorite image  
+**Screen Saver**  
 Desktop & Screen Saver > Screen Saver > Select "Brooklyn"  
 (might need go Preferences > Security & Privacy > General > On the bottom side, select "Open Anyway")  
 
@@ -201,7 +203,7 @@ Clean unused homebrew dependencies
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 ```
 
-## Reinstall macOS🦄    
+## Reinstall macOS👼    
 1: Sign out your iCloud.  
 System Preferences > Apple ID > iCloud > Turn off "Find My Mac"  
 System Preferences > Apple ID > Overview > Sign Out...  
