@@ -48,31 +48,23 @@ one line
   chmod +x ./install ./dotbot/bin/dotbot ./setup/homebrew.zsh ./setup/node.zsh ./setup/mac.zsh
 ```
 
-**6: Clean up**  
-```shell
-  ..
-```
-```shell
-  rm -rf dotfiles
-```
-
-**7: Sing in and setup 1Password🔑**  
+**6: Sing in and setup 1Password🔑**  
 Preferences > Security > Unlock using > Check "Touch ID"  
 Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)  
 
-**8: Sign in google-backup-and-sync**  
-Sign in and go to the directory  
+**7: Sign in google-backup-and-sync**  
+Sign in, clean up temporary dotfiles, and go to the directory  
 ```shell
-  cd ~/Google\ Drive/settings/dotfiles
+  rm -rf ~/Desktop/dotfiles && cd ~/Google\ Drive/settings/dotfiles
 ```
 
-**9: Setup Mac config 💻**  
+**8: Setup Mac config 💻**  
 Run　　
 ```shell
   ./setup/mac.zsh
 ```
 
-**10: Setup App config ⚙️**  
+**9: Setup App config ⚙️**  
 **🎩 Alfred**  
 Open Alfred
 ⌘ + Space > Alfred
