@@ -86,6 +86,21 @@ echo "- ⌨️ Keyboard"
 defaults write NSGlobalDomain KeyRepeat -int 2
 # Set delay until repeat
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+#  @ = command
+#  ^ = control
+#  ~ = option
+#  $ = shift
+# General Keyboard Shortcut => Paste and Match Style : ⌘ + V
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Paste and Match Style" -string "@v"
+# Chrome Keyboard Shortcut => Browsing Data... : ⌃ + ⇧ + ⌘+ ⌥ + D
+defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Clear Browsing Data..." -string "@~^\$d"
+# Chrome Keyboard Shortcut => Print... : ⇧ + ⌘ + ⌥ + P
+defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Print..." -string "@~\$p"
+# Chrome Keyboard Shortcut => Save Page As... : ⇧ + ⌘ + ⌥ + S
+defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Save Page As..." -string "@~\$s"
+# Firefox Developer Edition Keyboard Shortcut => Save Page As... : ⇧ + ⌘ + ⌥ + P
+defaults write org.mozilla.firefoxdeveloperedition NSUserKeyEquivalents -dict-add "Print..." -string "@~\$p"
+
 
 
 echo "- 📡 Network"
@@ -196,4 +211,4 @@ sudo killall cfprefsd
 sudo killall corebrightnessd
 
 echo "- 👨🏻‍🚀 Restarting..."
-sudo reboot
+# sudo reboot
