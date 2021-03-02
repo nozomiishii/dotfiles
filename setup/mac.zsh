@@ -71,7 +71,7 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER/Google%20Drive/"
 
-echo "- 🖲 Mission Control" # killall Dock
+echo "- 🪧 Mission Control" # killall Dock
 # Choose whether to rearrange Spaces automatically.
 defaults write com.apple.dock mru-spaces -bool false
 
@@ -90,6 +90,16 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 echo "- 📡 Network"
 networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
+
+
+echo "- 🖲 Trackpad"
+# Haptic feedback => 0: Light 1: Medium 2: Firm
+defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
+defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
+# Tracking Speed => 0: Slow 3: Fast
+defaults write NSGlobalDomain com.apple.trackpad.scaling -float 2.5
+# Disable swipe between pages
+defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
 
 
 echo "- 🗣 Speech"
@@ -186,4 +196,4 @@ sudo killall cfprefsd
 sudo killall corebrightnessd
 
 echo "- 👨🏻‍🚀 Restarting..."
-# sudo reboot
+sudo reboot
