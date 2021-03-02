@@ -84,15 +84,8 @@ System Preferences > Keyboard > Shortcuts > Spotlight > unCheck "Show Finder sea
 Alfred > General > Alfred Hotkey: ⌘ + Space
 
 **⌨️ Keyboard**  
-Keyboard > Modifier Keys... > Control key: "Caps Lock"
-Keyboard > Modifier Keys... > Caps Lock key: "Control"
 Input Sources > Delete "Kotoeri"  
 Input Sources > Add "google-japanese-ime"  
-Shortcuts > App Shortcuts > "+" > Menu Title: `Paste and Match Style`, Keyboard Shortcut: "cmd + V"
-Shortcuts > App Shortcuts > "+" > Application:"Google Chrome", Menu Title: `Save Page As...` Keyboard Shortcut: "⇧+⌘+⌥+S"
-Shortcuts > App Shortcuts > "+" > Application:"Google Chrome", Menu Title: `Print...` Keyboard Shortcut: "⇧+⌘+⌥+P"
-Shortcuts > App Shortcuts > "+" > Application:"Google Chrome", Menu Title: `Clear Browsing Data...` Keyboard Shortcut: "⌃+⇧+⌘+⌥+D"
-Shortcuts > App Shortcuts > "+" > Application:"Firefox Developer Edition", Menu Title: `Print...` Keyboard Shortcut: "⇧+⌘+⌥+P"
 
 **⛩ Language & Region**  
 Language & Region > + > Add "Japanese"
@@ -192,6 +185,19 @@ Check if it's an app you want to download.
 ```shell
   ln -s <original> <link>
 ```
+ln -nfs "$HOME/Google Drive/settings/dotfiles/sync/Karabiner-Elements/karabiner.json" "$HOME/.config/karabiner/karabiner.json"  
+
+**Search app plist**  
+```shell
+  ll ~/Library/Preferences/ | grep <app_name>
+```
+ll ~/Library/Preferences/ | grep firefox  
+
+**Read app config**
+```shell
+  defaults read <app_name_plist>
+```
+defaults read org.mozilla.firefoxdeveloperedition  
 
 ## Commands 👨🏻‍🏭
 Clean unused homebrew dependencies
@@ -203,7 +209,7 @@ Clean unused homebrew dependencies
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 ```
 
-## Reinstall macOS👼    
+## Reinstall macOS 👼  
 1: Sign out your iCloud.  
 System Preferences > Apple ID > iCloud > Turn off "Find My Mac"  
 System Preferences > Apple ID > Overview > Sign Out...  
