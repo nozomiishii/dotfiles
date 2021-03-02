@@ -130,8 +130,6 @@ Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addo
 ⚠️ DO NOT UNZIP
 
 **💻 System Preferences**  
-**Energy Saver**  
-Energy Saver > Battery > uncheck "Slightly dim the display while on battery power"  
 **Desktop Image**  
 Desktop & Screen Saver > Select your favorite image  
 **Screen Saver**  
@@ -264,51 +262,6 @@ Choose your prefer language before reinstall OS. (following setup using this lan
 [Homebrew | Basics Commands and Cheatsheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
 ### Modules
 [dotbot](https://github.com/anishathalye/dotbot) - Dotbot makes installing your dotfiles as easy as git clone $url && cd dotfiles && ./install, even on a freshly installed system!
-
-### Packages
-**brew**  
-[bat](https://github.com/sharkdp/bat) - Cat(1) clone with syntax highlighting and Git integration.  
-[exa](https://github.com/ogham/exa) - Modern replacement for ls.   
-[git](https://git-scm.com/) - Distributed revision control system.  
-[hub](https://github.com/github/hub) - Make working with GitHub easier.  
-[mas](https://github.com/mas-cli/mas) - Simple command line interface for the Mac App Store.    
-[rbenv](https://github.com/rbenv/rbenv) - Ruby version management.  
-
-
-**cask**  
-[brooklyn](https://github.com/pedrommcarrasco/Brooklyn) - Screen Saver by Pedro Carrasco.   
-[iterm2](https://www.iterm2.com/) - Terminal emulator as alternative to Apple's Terminal app.   
-[spotify](https://www.spotify.com/) - Music streaming service.    
-[blender](https://www.blender.org/) - Free and open-source 3D creation suite.  
-[postman](https://www.postman.com/) - Collaboration platform for API development.  
-[vlc](https://www.videolan.org/vlc/) - Multimedia player.     
-[swiftformat-for-xcode](https://github.com/nicklockwood/SwiftFormat) - Reformatting Swift code.  
-[alfred](https://www.alfredapp.com/) - Application launcher and productivity software.    
-[dash](https://kapeli.com/dash) - API documentation browser and code snippet manager.  
-[deepl](https://www.deepl.com/) - Trains AIs to understand and translate texts.  
-[discord](https://discord.com/) - Voice and text chat software.   
-[google-backup-and-sync](https://www.google.com/intl/en_ca/drive/download/) - Access and sync your content from any device.  
-[zoom](https://www.zoom.us/) - Video communication and virtual meeting platform.  
-[skype](https://www.skype.com/) - Video chat, voice call and instant messaging application.  
-[kindle](https://www.amazon.com/gp/digital/fiona/kcp-landing-page) - Interface for reading and syncing eBooks.  
-[visual-studio-code](https://code.visualstudio.com/) - Open-source code editor.  
-[firefox-developer-edition](https://www.mozilla.org/firefox/developer/) - Mozilla Firefox Developer Edition.  
-[1Password 7](https://1password.com/) - Password manager that keeps all passwords secure behind one password.  
-[duet](https://www.duetdisplay.com/) - Tool for using an iPad as a second display.  
-[unity-hub](https://unity3d.com/get-unity/download) - Management tool for Unity.  
-[notion](https://www.notion.so/) - App to write, plan, collaborate, and get organized.  
-[tiles](https://www.sempliva.com/tiles/) - Window manager.  
-[Slack](https://slack.com/) - Team communication and collaboration software.  
-[google-chrome](https://www.google.com/chrome/) - Web browser.  
-[colorsnapper](https://colorsnapper.com/) - Color picking application.  
-[figma](https://www.figma.com/) - Collaborative interface design tool.  
-[google-japanese-ime](https://www.google.co.jp/ime/) - Google Japanese Input Method Editor.  
-
-
-**mas**  
-[Yoink](https://eternalstorms.at/yoink/mac/) - Improved Drag and Drop.  
-[PopClip](https://pilotmoon.com/popclip/) - Instant text actions on your Mac.  
-[Xcode](https://developer.apple.com/xcode/) - Apple's integrated development environment.  
 
 ## Todo
 [TodoList](https://www.notion.so/Todos-8ca66180cd044648a0698f1c737c19a0)

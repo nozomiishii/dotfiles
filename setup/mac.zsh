@@ -211,4 +211,4 @@ sudo killall cfprefsd
 sudo killall corebrightnessd
 
 echo "- 👨🏻‍🚀 Restarting..."
-# sudo reboot
+sudo reboot
