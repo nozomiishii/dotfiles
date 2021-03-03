@@ -66,14 +66,9 @@ Run　　
 
 **9: Setup App config ⚙️**  
 **🎩 Alfred**  
-Open Alfred
-⌘ + Space > Alfred
 Setting Sync
 Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
-Turn Off Spotlight Shortcut
-System Preferences > Keyboard > Shortcuts > Spotlight > unCheck "Show Spotlight search"
-System Preferences > Keyboard > Shortcuts > Spotlight > unCheck "Show Finder search window"
-Alfred > General > Alfred Hotkey: ⌘ + Space
+Alfred > General > Alfred Hotkey: ⌘ + Space  
 
 **⌨️ Keyboard**  
 Input Sources > Delete "Kotoeri"  
@@ -116,6 +111,24 @@ Desktop & Screen Saver > Select your favorite image
 **Screen Saver**  
 Desktop & Screen Saver > Screen Saver > Select "Brooklyn"  
 (might need go Preferences > Security & Privacy > General > On the bottom side, select "Open Anyway")  
+**Display(Sidecar)**  
+- Connect to iPad  
+- System Preferences > Display > Arrangement > Change "iPad display on left"  
+**Setup Time machine**  
+Menu bar > Time machine > Backup  
+**Finder**  
+Rearrange the order of the sidebar  
+```txt
+Sidebar
+ ┣ 📂Favourites
+ ┃ ┣ 🌏Google Drive
+ ┃ ┣ 🏠$USER
+ ┃ ┣ 🍎Applications
+ ┃ ┣ 💆🏻‍♂️Downloads
+ ┃ ┗ 📖Desktop
+ ┗ 📂Locations
+```
+
 
 **🔖 Dash**  
 Preferences > General > Syncing > Set Sync Folder... > Select "/Google\ Drive/settings/dotfiles/sync/Dash"  
