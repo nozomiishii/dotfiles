@@ -197,8 +197,25 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Google Dri
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
 
-echo "- ⌨ Karabiner-Elements"
+echo "- ⛓ Karabiner-Elements"
 ln -nfs "$HOME/Google Drive/settings/dotfiles/sync/Karabiner-Elements/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+
+
+echo "- 🧲 Tiles"
+# Don't show the icon in the menu bar
+defaults write com.sempliva.Tiles.plist MenuBarIconEnabled -bool false
+# Active Hotkeys
+# Previous Display: ⌥ + ⌘ + A 
+defaults write com.sempliva.Tiles.plist PreviousDisplay -dict-add "characters" -string "\U00e5"
+defaults write com.sempliva.Tiles.plist PreviousDisplay -dict-add "charactersIgnoringModifiers" -string "a"
+defaults write com.sempliva.Tiles.plist PreviousDisplay -dict-add "keyCode" -int 0
+defaults write com.sempliva.Tiles.plist PreviousDisplay -dict-add "modifierFlags" -int 1572864
+# Inactive Hotkeys
+TILES_INACTIVE_HOTKEYS=("MoveToCenter" "NextThird" "PreviousThird" "FirstTwoThirds" "LastTwoThirds" "NextDisplay" "MoveToLowerLeft" "MoveToLowerRight" "MoveToUpperLeft" "MoveToUpperRight" "UndoLastMove")
+for i in ${TILES_INACTIVE_HOTKEYS[@]}; do
+  defaults write com.sempliva.Tiles.plist $i -dict-add "keyCode" -int 65535
+  defaults write com.sempliva.Tiles.plist $i -dict-add "modifierFlags" -int 0
+done
 
 echo "\n🎉 Completed Third-Party Software Setup\n"
 

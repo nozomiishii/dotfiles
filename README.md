@@ -98,17 +98,6 @@ User Icon > Setting sync > Login > Select "Marge"
 Hotkey: ⌥ + T  
 (May need to restart your mac)   
 
-**🧲 Tiles**    
-Hotkeys:  
-Fullscreen: ⌥ + ⌘ + F  
-Half Left: ⌥ + ⌘ + ←  
-Half Right: ⌥ + ⌘ + →  
-Half Top: ⌥ + ⌘ + ↑  
-Half Bottom: ⌥ + ⌘ + ↓  
-Previous Display: ⌥ + ⌘ + A   
-Preferences:  
-General > Appearance > uncheck "Show Tiles in the menu bar"(May need check it, when you want uninstall Tiles)  
-
 **🎨 ColorSnapper2**  
 Hotkeys:  
 Pick Color: ⌃ + ⌘ + C  
