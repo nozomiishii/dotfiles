@@ -31,6 +31,7 @@ alias ll='exa -laFh --git'
 alias ls='exa'
 alias wifi='networksetup -setairportpower en0 off && networksetup -setairportpower en0 on'
 alias cdpl='cd ~/Library/Preferences'
+alias play="chmod +x ./playground.sh && ./playground.sh"
 
 # Functions
 mkcd(){
