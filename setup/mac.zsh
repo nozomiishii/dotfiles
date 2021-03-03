@@ -175,9 +175,9 @@ echo "\n🧝🏻‍♀️ Starting Third-Party Software Setup\n"
 echo "- 🍎 Xcode"
 XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
 GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/settings/dotfiles/link/Xcode/UserData"
-xcode_userdata=( "CodeSnippets" "FontAndColorThemes" "KeyBindings" )
+XCODE_USERDATA_ITEMS=("CodeSnippets" "FontAndColorThemes" "KeyBindings")
 
-for i in "${xcode_userdata[@]}"
+for i in "${XCODE_USERDATA_ITEMS[@]}"
 do
   ln -nfs "$GOOGLE_DRIVE_XCODE_USERDATA/$i" "$XCODE_USERDATA/$i"
   if [ -L "$XCODE_USERDATA/$i" ]; then
