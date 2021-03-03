@@ -30,6 +30,7 @@ alias zz='source ~/.zshrc'
 alias ll='exa -laFh --git'
 alias ls='exa'
 alias wifi='networksetup -setairportpower en0 off && networksetup -setairportpower en0 on'
+alias cdpl='cd ~/Library/Preferences'
 
 # Functions
 mkcd(){
