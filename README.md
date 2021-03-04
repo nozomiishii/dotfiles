@@ -1,7 +1,8 @@
 # Nozomi's dotfiles
 ```txt
-  📦settings
+  📦Settings
     ┣ 📂Alfred
+    ┣ 📂LaunchpadManager
     ┗ 📂dotfiles
 ```
 
@@ -267,4 +268,4 @@ Choose your prefer language before reinstall OS. (following setup using this lan
 
 ## License
 MIT License  
-Copyright Nozomi Ishii
+© Nozomi Ishii

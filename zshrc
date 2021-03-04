@@ -20,10 +20,10 @@ fi
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Aliases   
-alias dot='cd ~/Google\ Drive/settings/dotfiles'
-alias noz='cd ~/code/nozomiishii/c2021'
-alias work='cd ~/code/workbench'
-alias job='cd ~/code/job/homehub'
+alias dot='cd ~/Google\ Drive/Settings/dotfiles'
+alias noz='cd ~/Google\ Drive/Code/nozomiishii/c2021'
+alias work='cd ~/Google\ Drive/Code/workbench'
+alias job='cd ~/Google\ Drive/Code/job/homehub'
 alias desk='cd ~/Desktop'
 alias quit='exec $SHELL -l'
 alias zz='source ~/.zshrc'
