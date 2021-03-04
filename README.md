@@ -129,6 +129,8 @@ Sidebar
  ┗ 📂Locations
 ```
 
+**🚀 Launchpad Manager**  
+Restore app locations on Launchpad  
 
 **🔖 Dash**  
 Preferences > General > Syncing > Set Sync Folder... > Select "/Google\ Drive/settings/dotfiles/sync/Dash"  
