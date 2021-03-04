@@ -108,13 +108,17 @@ Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addo
 **💻 System Preferences**  
 **Desktop Image**  
 - Desktop & Screen Saver > Select your favorite image  
+
 **Screen Saver**  
 - Desktop & Screen Saver > Screen Saver > Select "Brooklyn" (might need go Preferences > Security & Privacy > General > On the bottom side, select "Open Anyway")  
+
 **Display(Sidecar)**  
 - Connect to iPad  
 - System Preferences > Display > Arrangement > Change "iPad display on left"  
+
 **Setup Time machine**  
 Menu bar > Time machine > Backup  
+
 **Finder**  
 Rearrange the order of the sidebar  
 ```txt
