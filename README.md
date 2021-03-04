@@ -107,10 +107,9 @@ Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addo
 
 **💻 System Preferences**  
 **Desktop Image**  
-Desktop & Screen Saver > Select your favorite image  
+- Desktop & Screen Saver > Select your favorite image  
 **Screen Saver**  
-Desktop & Screen Saver > Screen Saver > Select "Brooklyn"  
-(might need go Preferences > Security & Privacy > General > On the bottom side, select "Open Anyway")  
+- Desktop & Screen Saver > Screen Saver > Select "Brooklyn" (might need go Preferences > Security & Privacy > General > On the bottom side, select "Open Anyway")  
 **Display(Sidecar)**  
 - Connect to iPad  
 - System Preferences > Display > Arrangement > Change "iPad display on left"  
@@ -261,3 +260,7 @@ Choose your prefer language before reinstall OS. (following setup using this lan
 
 ## Todo
 [TodoList](https://www.notion.so/Todos-8ca66180cd044648a0698f1c737c19a0)
+
+## License
+MIT License  
+Copyright Nozomi Ishii
