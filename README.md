@@ -2,6 +2,7 @@
 ```txt
   📦Settings
     ┣ 📂Alfred
+    ┣ 📂Dash
     ┣ 📂LaunchpadManager
     ┗ 📂dotfiles
 ```
@@ -123,10 +124,7 @@ Sidebar
 
 **🚀 Launchpad Manager**  
 Restore app locations on Launchpad  
-
-**🔖 Dash**  
-Preferences > General > Syncing > Set Sync Folder... > Select "/Google\ Drive/settings/dotfiles/sync/Dash"  
-Preferences > General > Syncing > Snippets > Snippet library location > Select "/Google\ Drive/settings/dotfiles/sync/Dash"　
+Launchpad Manager > Register Launchpad Manager > Enter License Key  
 
 ## Generate ssh key🔓
 Generate 

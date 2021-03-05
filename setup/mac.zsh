@@ -176,7 +176,7 @@ echo "\n🧝🏻‍♀️ Starting Third-Party Software Setup\n"
 
 echo "- 🍎 Xcode"
 XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
-GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/settings/dotfiles/link/Xcode/UserData"
+GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/link/Xcode/UserData"
 XCODE_USERDATA_ITEMS=("CodeSnippets" "FontAndColorThemes" "KeyBindings")
 
 for i in "${XCODE_USERDATA_ITEMS[@]}"
@@ -194,13 +194,13 @@ echo "- 🎮 iTerm2"
 # General > Preferences > check "Load preferences from a custom folder or URL"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 # Restore from the backup
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Google Drive/settings/dotfiles/sync/iTerm2"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Google Drive/Settings/dotfiles/sync/iTerm2"
 # General > Preferences > Save changes: when quits 
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
 
 echo "- ⛓ Karabiner-Elements"
-ln -nfs "$HOME/Google Drive/settings/dotfiles/sync/Karabiner-Elements/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+ln -nfs "$HOME/Google Drive/Settings/dotfiles/sync/Karabiner-Elements/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 
 
 echo "- 🧲 Tiles"
@@ -218,6 +218,11 @@ for i in ${TILES_INACTIVE_HOTKEYS[@]}; do
   defaults write com.sempliva.Tiles.plist $i -dict-add "keyCode" -int 65535
   defaults write com.sempliva.Tiles.plist $i -dict-add "modifierFlags" -int 0
 done
+
+
+echo "- 🔖 Dash"
+defaults write com.kapeli.dashdoc syncFolderPath "~/Google Drive/Settings/Dash"
+defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Google Drive/Settings/Dash/Snippets.dash"
 
 echo "\n🎉 Completed Third-Party Software Setup\n"
 
