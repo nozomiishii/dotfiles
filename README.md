@@ -13,19 +13,13 @@
 **1: Sign in your iCloud. (to get apps using mas command)**  
 If you want to use a non-private account, Install XCode from Appstore.
 
-**2: Launch Spotlight: ⌘ + space, and open terminal**  
-Comme to this page
-```shell
-  open https://github.com/nozomiishii/dotfiles
-```
-
-**3: Install xcode-select**  
+**2:Open terminal and install xcode-select**  
 ```shell
   xcode-select --install
 ```
-Command Line Tools are required for Git and Homebrew  
+xcode-select: this Command Line Tools are required for Git and Homebrew  
 
-**4: Clone**  
+**3: Clone**  
 ```shell
   cd ~/Desktop && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
 ```
@@ -34,38 +28,32 @@ oh my zsh(you can't insert following command into dotbot, because ohmyzsh will b
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-**5: Run**  
+**4: Run**  
 ```shell
   ./install
 ```
 🔫 When permission denied
 ```shell
-  chmod +x ./install
-  chmod +x ./dotbot/bin/dotbot
-  chmod +x ./setup/homebrew.zsh ./setup/node.zsh ./setup/mac.zsh
-```
-one line
-```shell
   chmod +x ./install ./dotbot/bin/dotbot ./setup/homebrew.zsh ./setup/node.zsh ./setup/mac.zsh
 ```
 
-**6: Sing in and setup 1Password🔑**  
+**5: Sing in and setup 1Password🔑**  
 Preferences > Security > Unlock using > Check "Touch ID"  
 Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)  
 
-**7: Sign in google-backup-and-sync**  
+**6: Sign in google-backup-and-sync**  
 Sign in, clean up temporary dotfiles, and go to the directory  
 ```shell
   rm -rf ~/Desktop/dotfiles && cd ~/Google\ Drive/settings/dotfiles
 ```
 
-**8: Setup Mac config 💻**  
+**7: Setup Mac config 💻**  
 Run　　
 ```shell
   ./setup/mac.zsh
 ```
 
-**9: Setup App config ⚙️**  
+**8: Setup App config ⚙️**  
 **🎩 Alfred**  
 Setting Sync
 Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
@@ -225,8 +213,7 @@ System Preferences > Bluetooth > Unpair Bluetooth devices
 Delete SSH keys on Github, GitLab  
 
 5: Reinstall  
-[Erasing your Mac and reinstalling macOS.- Japanese](https://support.apple.com/ja-jp/HT201065)  
-[Erasing your Mac and reinstalling macOS. - English](https://support.apple.com/en-gb/HT201065)  
+Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)  
 
 - NVRAM Reset  
 `⌥ + ⌘ + P + R`  
@@ -243,22 +230,21 @@ Start up from macOS Recovery over the Internet: ⌥ + ⌘ + R
 Choose your prefer language before reinstall OS. (following setup using this language)  
 
 - Erase  
-[How to erase your Intel-based Mac - Japanese](https://support.apple.com/ja-jp/HT208496)  
-[How to erase your Intel-based Mac - English](https://support.apple.com/en-gb/HT208496)  
+How to erase your Intel-based Mac - [Japanese](https://support.apple.com/ja-jp/HT208496) | [English](https://support.apple.com/en-gb/HT208496)  
 
 - Continue with the initial setup or if you want to quit, press command "⌘ + Q"  
 
 
 ## References 🙌
 ### Tutorials
-[Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish/?referralCode=445BE0B541C48FE85276)
+[Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish)
 
 ### Dotfiles  
-[Your unofficial guide to dotfiles on GitHub.](https://dotfiles.github.io/inspiration/)  
+[Your unofficial guide to dotfiles on GitHub.](https://dotfiles.github.io/inspiration)  
 [eieio](https://github.com/eieioxyz/dotfiles_macos) 
 
-### CheatSheet
-[macOS defaults list](https://macos-defaults.com/)  
+### CheatSheets
+[macOS defaults list](https://macos-defaults.com)  
 [Homebrew | Basics Commands and Cheatsheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
 ### Modules
 [dotbot](https://github.com/anishathalye/dotbot) - Dotbot makes installing your dotfiles as easy as git clone $url && cd dotfiles && ./install, even on a freshly installed system!
