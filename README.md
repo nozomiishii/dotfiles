@@ -82,6 +82,7 @@ User Icon > Setting sync > Login > Select "Marge"
 **👩🏻‍🏫 DeepL**  
 Hotkey: ⌥ + T  
 (May need to restart your mac)   
+Hotkey isn't working well for some reason, use alfred hotkey instead.  
 
 **🎨 ColorSnapper2**  
 Hotkeys:  
@@ -229,6 +230,7 @@ Choose your prefer language before reinstall OS. (following setup using this lan
 
 - Erase  
 How to erase your Intel-based Mac - [Japanese](https://support.apple.com/ja-jp/HT208496) | [English](https://support.apple.com/en-gb/HT208496)  
+💡You can quit Disk Utility using the command ⌘ + Q  
 
 - Continue with the initial setup or if you want to quit, press command "⌘ + Q"  
 
