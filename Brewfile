@@ -1,3 +1,5 @@
+cask_args appdir: "/Applications"
+
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
@@ -44,7 +46,7 @@ cask "discord"
 # Access and sync your content from any device. https://www.google.com/intl/en_ca/drive/download
 cask "google-backup-and-sync"
 # Video communication and virtual meeting platform. https://www.zoom.us
-cask "zoom", args: { appdir: '/Applications' }
+cask "zoom"
 # Video chat, voice call and instant messaging application. https://www.skype.com
 cask "skype"
 # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
@@ -74,7 +76,7 @@ cask "colorsnapper"
 # Collaborative interface design tool. https://www.figma.com
 cask "figma"
 # Google Japanese Input Method Editor. https://www.google.co.jp/ime
-cask "google-japanese-ime", args: { appdir: '/Applications' }
+cask "google-japanese-ime"
 
 
 # Improved Drag and Drop. https://eternalstorms.at/yoink/mac
