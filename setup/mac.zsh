@@ -21,7 +21,7 @@ defaults write com.apple.dock orientation -string "right"
 # Autohides the Dock. You can toggle the Dock using ⌥ + ⌘ +d.
 defaults write com.apple.dock autohide -bool true
 # Change the Dock opening delay.
-defaults write com.apple.Dock autohide-delay -float 20
+defaults write com.apple.Dock autohide-delay -float 60
 # Wipe all app icons
 defaults write com.apple.dock persistent-apps -array
 # Set the icon size of Dock items in pixels.
