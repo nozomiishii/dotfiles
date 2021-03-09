@@ -1,4 +1,4 @@
-echo '🧙🏿‍♂️.zshrc loading...'
+echo "🧙🏿‍♂️.zshrc loading..."
 
 # Oh my zsh with syntax-highlighting 
 # https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95
@@ -16,36 +16,44 @@ if [ -d $HOME/.oh-my-zsh ]; then
   source $ZSH/oh-my-zsh.sh
 fi
 
+
 # Syntax highlighting for man command
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# Aliases   
-alias dot='cd ~/Google\ Drive/Settings/dotfiles'
-alias noz='cd ~/Google\ Drive/Code/nozomiishii/c2021'
-alias work='cd ~/Google\ Drive/Code/workbench'
-alias job='cd ~/Google\ Drive/Code/job/homehub'
-alias desk='cd ~/Desktop'
-alias quit='exec $SHELL -l'
-alias zz='source ~/.zshrc'
-alias ll='exa -laFh --git'
-alias ls='exa'
-alias wifi='networksetup -setairportpower en0 off && networksetup -setairportpower en0 on'
-alias cdpl='cd ~/Library/Preferences'
+
+# Aliases 
+CODE_DIR="$HOME/Code"
+
+alias dot="cd ~/Google\ Drive/Settings/dotfiles"
+alias desk="cd ~/Desktop"
+alias cdpl="cd ~/Library/Preferences"
+alias noz="cd $CODE_DIR/nozomiishii/c2021"
+alias work="cd $CODE_DIR/workbench"
+alias job="cd $CODE_DIR/job/homehub"
+alias quit="exec $SHELL -l"
+alias zz="source ~/.zshrc"
+alias ll="exa -laFh --git"
+alias ls="exa"
+alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
 alias play="chmod +x ./playground.sh && ./playground.sh"
+
 
 # Functions
 mkcd(){
   mkdir -p "$@" && cd "$_"
 }
 
+
 # Ruby env
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
 
 # Node env
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
