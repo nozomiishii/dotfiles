@@ -21,6 +21,8 @@ brew "rbenv"
 
 # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
 cask "brooklyn"
+# Git client focusing on productivity https://www.gitkraken.com/ 
+cask "gitkraken"
 # Terminal emulator as alternative to Apple's Terminal app. https://www.iterm2.com
 cask "iterm2"
 # Music streaming service. https://www.spotify.com
