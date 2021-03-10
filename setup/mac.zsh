@@ -100,6 +100,10 @@ defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Print..." -stri
 defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Save Page As..." -string "@~\$s"
 # Firefox Developer Edition Keyboard Shortcut => Save Page As... : ⇧ + ⌘ + ⌥ + P
 defaults write org.mozilla.firefoxdeveloperedition NSUserKeyEquivalents -dict-add "Print..." -string "@~\$p"
+# Disable ⌃ + Space for "Select the previous input source"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '<dict><key>enabled</key><false/></dict>'
+# Disable ⌃ + ⌥ + Space for "Select next source in input menu"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 '<dict><key>enabled</key><false/></dict>'
 # Disable ⌘ + Space for "Show Spotlight search"
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '<dict><key>enabled</key><false/></dict>'
 # Disable ⌥ + ⌘ + Space for "Show Finder search window"
@@ -200,7 +204,7 @@ defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -b
 
 
 echo "- ⛓ Karabiner-Elements"
-ln -nfs "$HOME/Google Drive/Settings/dotfiles/sync/Karabiner-Elements/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+ln -nfs "$HOME/Google Drive/Settings/dotfiles/sync/karabiner" "$HOME/.config/karabiner"
 
 
 echo "- 🧲 Tiles"
