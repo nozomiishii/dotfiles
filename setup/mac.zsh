@@ -70,6 +70,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Target category ex) PfDo: Documents, PfID: iCloud Drive, PfLo: Others
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER/Google%20Drive/"
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
 
 echo "- 🪧 Mission Control" # killall Dock
 # Choose whether to rearrange Spaces automatically.
@@ -108,6 +111,7 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 '<dic
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '<dict><key>enabled</key><false/></dict>'
 # Disable ⌥ + ⌘ + Space for "Show Finder search window"
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 '<dict><key>enabled</key><false/></dict>'
+
 
 echo "- 📡 Network"
 networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
