@@ -166,6 +166,11 @@ sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:Bl
 # To: Minutes
 sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionSchedule:DayStartMinute 59" $CORE_BRIGHTNESS
 
+# Sidecar Settings
+defaults write com.apple.sidecar.display doubleTapEnabled -bool true
+defaults write com.apple.sidecar.display showTouchbar -bool false
+defaults write com.apple.sidecar.display sidebarShown -bool false
+
 
 echo "- 👼 Killall..."
 killall Dock
