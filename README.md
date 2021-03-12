@@ -127,6 +127,15 @@ Sidebar
 Restore app locations on Launchpad  
 Launchpad Manager > Register Launchpad Manager > Enter License Key  
 
+**🛎 Notifications**  
+**Calendar, Notion, Slack** 
+Alerts  
+Show in Notification Centre  
+Play sound for notification
+
+**Xcode**    
+Banners  
+
 ## Generate ssh key🔓
 Generate 
 ```ssh
