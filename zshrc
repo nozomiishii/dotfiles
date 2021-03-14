@@ -26,7 +26,7 @@ CODE_DIR="$HOME/Code"
 
 alias dot="cd ~/Google\ Drive/Settings/dotfiles"
 alias desk="cd ~/Desktop"
-alias cdpl="cd ~/Library/Preferences"
+alias plist="cd ~/Library/Preferences"
 alias noz="cd $CODE_DIR/nozomiishii/c2021"
 alias work="cd $CODE_DIR/workbench"
 alias job="cd $CODE_DIR/job/homehub"
