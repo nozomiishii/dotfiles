@@ -5,16 +5,6 @@
 
 - clean: ['~']
 
-- shell:
-    - command: ./setup/homebrew.zsh
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: ./setup/node.zsh
-      stdin: true
-      stdout: true
-      stderr: true
-
 - link:
     ~/.zshrc:
     ~/.gitconfig:
@@ -22,3 +12,13 @@
 
 - create:
     - ~/Code
+
+- shell:
+    - command: ./setup/node.zsh
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: ./setup/mac.zsh
+      stdin: true
+      stdout: true
+      stderr: true

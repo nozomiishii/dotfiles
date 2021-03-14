@@ -48,7 +48,7 @@ Check the permissions
 ```
 
 ```shell
-  ./install
+  ./setup/homebrew.zsh
 ```
 
 🔫 When permission denied
@@ -63,77 +63,9 @@ Preferences > General > Keyboard shortcuts > remove all shortcuts(because it con
 
 **6: Sign in google-backup-and-sync**  
 Sign in, clean up temporary dotfiles, and go to the directory  
-⚠️ Sync only settings files
+⚠️ Sync only **Settings** file
 
-```shell
-  rm -rf ~/Desktop/dotfiles && cd ~/Google\ Drive/settings/dotfiles
-```
-
-**7: Setup Mac config 💻**  
-Run
-
-```shell
-  ./setup/mac.zsh
-```
-
-**8: Setup App config ⚙️**  
-**🎩 Alfred**  
-Setting Sync
-Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
-Alfred > General > Alfred Hotkey: ⌘ + Space
-
-**⌨️ Keyboard**  
-Input Sources > Delete "Kotoeri"  
-Input Sources > Add "google-japanese-ime"
-
-**⛩ Language & Region**  
-Language & Region > + > Add "Japanese"
-
-**🦄 Accessibility**  
-Accessibility > Speech > System Voice > Update Siri Voice
-
-**🌏 Chrome**  
-Sign in  
-Change Chrome to the Default Browser
-
-**📟 VSCode**  
-User Icon > Setting sync > Login > Select "Marge"  
-⚠️ Do NOT Select "Replace"  
-⇧ + ⌘ + P > Open command pallet > Icons: Activate VSCode Icons
-
-**👩🏻‍🏫 DeepL**  
-Hotkey: ⌥ + T  
-(May need to restart your mac)  
-Hotkey isn't working well for some reason, use alfred hotkey instead.
-
-**🎨 ColorSnapper2**  
-Hotkeys:  
-Pick Color: ⌃ + ⌘ + C
-
-**🐵 Blender**  
-sign in  
-Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" > login!
-Download  
-Get [Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
-Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addon.zip"  
-⚠️ DO NOT UNZIP
-
-**💻 System Preferences**  
-**Desktop Image**
-
-- Desktop & Screen Saver > Select your favorite image
-
-**Screen Saver**
-
-- Desktop & Screen Saver > Screen Saver > Select "Brooklyn" (might need go Preferences > Security & Privacy > General > On the bottom side, select "Open Anyway")
-
-**Display(Sidecar)**
-
-- Connect to iPad
-- System Preferences > Display > Arrangement > Change "iPad display on left"
-
-**Setup Time machine**  
-Menu bar > Time machine > Backup
+### While waiting for google-backup-and-sync to complete
 
 **Finder**  
 Rearrange the order of the sidebar
@@ -149,9 +81,87 @@ Sidebar
  ┗ 📂Locations
 ```
 
+**💻 System Preferences**  
+**Desktop Image**
+
+- Desktop & Screen Saver > Select your favorite image
+
+**Screen Saver**
+
+- Desktop & Screen Saver > Screen Saver > Select "Brooklyn" (might need go Preferences > Security & Privacy > General > On the bottom side, select "Open Anyway")
+
+**Login Icon**
+
+- Users & Groups > Current User > Edit Profile photo
+
+**🌏 Chrome**  
+Sign in  
+Change Chrome to the Default Browser  
+Log in 1PasswordX
+
+**⌨️ Keyboard**  
+Input Sources > Delete "Kotoeri"  
+Input Sources > Add "google-japanese-ime"
+
+**📟 VSCode**  
+User Icon > Setting sync > Login > Select "Marge"  
+⚠️ Do NOT Select "Replace"  
+⇧ + ⌘ + P > Open command pallet > Icons: Activate VSCode Icons
+
+**🐵 Blender**  
+sign in  
+Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" > login!
+Download  
+Get [Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
+Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addon.zip"  
+⚠️ DO NOT UNZIP
+
+### When the google-backup-and-sync is complete
+
+💡Start synchronizing all remaining google-backup-and-sync
+
+```shell
+  rm -rf ~/Desktop/dotfiles && cd ~/Google\ Drive/settings/dotfiles
+```
+
+Run
+
+```shell
+  ./install
+```
+
+**⛓ Karabiner-Elements**
+Login
+
+**🎩 Alfred**  
+Activate the license
+Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
+Alfred > General > Alfred Hotkey: ⌘ + Space
+
+**👩🏻‍🏫 DeepL**  
+Hotkey: ⌥ + T  
+(May need to restart your mac)  
+Hotkey isn't working well for some reason, use alfred hotkey instead.
+
+**🎨 ColorSnapper2**  
+Hotkeys:  
+Pick Color: ⌃ + ⌘ + C
+Activate the license
+
+**Display(Sidecar)**
+
+- Connect to iPad
+- System Preferences > Display > Arrangement > Change "iPad display on left"
+
+**Setup Time machine**  
+Menu bar > Time machine > Backup
+
 **🚀 Launchpad Manager**  
 Restore app locations on Launchpad  
 Launchpad Manager > Register Launchpad Manager > Enter License Key
+
+**🐔 Slack**
+Sign in
 
 **🛎 Notifications**  
 **Calendar, Notion, Slack**
@@ -178,14 +188,22 @@ Copy ssh key and set up on github
 
 Check if it's working
 
-```ssh
-  ssh -T git@github.com
-```
-
 Save
 
 ```ssh
   ssh-add ~/.ssh/id_ed25519
+```
+
+Check if it works
+
+```ssh
+  ssh -T git@github.com
+```
+
+This is the expected result:
+
+```txt
+  Hi --------! You've successfully authenticated, but GitHub does not provide shell access
 ```
 
 ## Customize 👨🏻‍🍳

@@ -3,6 +3,9 @@ echo "🧙🏿‍♂️.zshrc loading..."
 # Oh my zsh with syntax-highlighting 
 # https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95
 if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+  # zsh compinit: insecure directories
+  chmod 755 /usr/local/share/zsh/site-functions
+  chmod 755 /usr/local/share/zsh
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting 
 fi
 
