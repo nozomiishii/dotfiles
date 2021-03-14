@@ -240,6 +240,19 @@ echo "- 🔖 Dash"
 defaults write com.kapeli.dashdoc syncFolderPath "~/Google Drive/Settings/Dash"
 defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Google Drive/Settings/Dash/Snippets.dash"
 
+
+# echo "- 💊 PopClip"
+# # Disable PopClip in Notion
+# defaults write com.pilotmoon.popclip BlockedApps -array "notion.id"
+# # Functions
+# defaults write com.pilotmoon.popclip CombinedItemOrder -array "ext-com.pilotmoon.popclip.extension.quotes" copy search openlink cut paste revealfile openmail lookup
+# defaults write com.pilotmoon.popclip NSRequiresAquaSystemAppearance　-bool true
+# defaults write com.pilotmoon.popclip ExtensionAdded -bool true
+# defaults write com.pilotmoon.popclip HasRunBefore -bool true
+# defaults write com.pilotmoon.popclip HasShownWelcome -bool true
+# defaults write com.pilotmoon.popclip PopEnabled -bool true
+# defaults write com.pilotmoon.popclip SpellingSelectedLanguage -string "en"
+
 echo "\n🎉 Completed Third-Party Software Setup\n"
 
 

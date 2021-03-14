@@ -81,9 +81,9 @@ cask "figma"
 cask "google-japanese-ime"
 
 
-# Improved Drag and Drop. https://eternalstorms.at/yoink/mac
-mas "Yoink - Improved Drag and Drop", id: 457622435
-# Instant text actions on your Mac. https://pilotmoon.com/popclip
-mas "PopClip", id: 445189367
-# Apple's integrated development environment. https://developer.apple.com/xcode
+# # Improved Drag and Drop. https://eternalstorms.at/yoink/mac
+# mas "Yoink - Improved Drag and Drop", id: 457622435
+# # Instant text actions on your Mac. https://pilotmoon.com/popclip
+# mas "PopClip", id: 445189367
+# # Apple's integrated development environment. https://developer.apple.com/xcode
 mas "Xcode", id: 497799835
