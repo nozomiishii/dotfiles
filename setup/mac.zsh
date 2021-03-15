@@ -195,9 +195,10 @@ XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
 GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/link/Xcode/UserData"
 XCODE_USERDATA_ITEMS=("CodeSnippets" "FontAndColorThemes" "KeyBindings")
 
-for i in "${XCODE_USERDATA_ITEMS[@]}"
-do
-  ln -nfs "$GOOGLE_DRIVE_XCODE_USERDATA/$i" "$XCODE_USERDATA/$i"
+for i in ${XCODE_USERDATA_ITEMS[@]}; do
+  # Need rm -rf to symbolic-link KeyBindings folder
+  rm -rf "$XCODE_USERDATA/$i"
+  ln -nfsv "$GOOGLE_DRIVE_XCODE_USERDATA/$i" "$XCODE_USERDATA/$i"
   if [ -L "$XCODE_USERDATA/$i" ]; then
     echo "Creating Link $XCODE_USERDATA/$i -> $GOOGLE_DRIVE_XCODE_USERDATA/$i"
   else
