@@ -108,6 +108,9 @@ User Icon > Setting sync > Login > Select "Marge"
 ⚠️ Do NOT Select "Replace"  
 ⇧ + ⌘ + P > Open command pallet > Icons: Activate VSCode Icons
 
+**🍎 Xcode**  
+Add Account
+
 **🐵 Blender**  
 sign in  
 Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" > login!
@@ -176,37 +179,62 @@ Banners
 
 ## Generate ssh key🔓
 
+[Connecting to GitHub with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+
 Generate
 
-```ssh
-  mkdir -p ~/.ssh && ssh-keygen -t ed25519 -o -a 100 -f ~/.ssh/id_ed25519 -C "TYPE_YOUR_EMAIL@HERE.com"
+```shell
+  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  eval "$(ssh-agent -s)"
+```
+
+config
+
+```shell
+  touch ~/.ssh/config
+  open ~/.ssh/config
+```
+
+Setup config
+
+```shell
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+```
+
+Save
+
+```shell
+  ssh-add -K ~/.ssh/id_rsa
 ```
 
 Copy ssh key and set up on github
 
-```ssh
-  pbcopy < ~/.ssh/id_ed25519.pub
-```
-
-Check if it's working
-
-Save
-
-```ssh
-  ssh-add ~/.ssh/id_ed25519
+```shell
+  pbcopy < ~/.ssh/id_rsa.pub
 ```
 
 Check if it works
 
-```ssh
+```shell
   ssh -T git@github.com
 ```
+
+The authenticity of host 'github.com (13.114.40.48)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+
+yes
 
 This is the expected result:
 
 ```txt
   Hi --------! You've successfully authenticated, but GitHub does not provide shell access
 ```
+
+💡 Just ignore Warning: Permanently added the RSA host key for IP address
 
 ## Customize 👨🏻‍🍳
 
