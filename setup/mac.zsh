@@ -239,6 +239,11 @@ for i in ${TILES_INACTIVE_HOTKEYS[@]}; do
 done
 
 
+echo "- 🐵 Blender"
+rm -rf "$HOME/Library/Application Support/Blender"
+ln -nfs "$HOME/Google Drive/Settings/Blender" "$HOME/Library/Application Support/Blender"
+
+
 echo "- 🔖 Dash"
 defaults write com.kapeli.dashdoc syncFolderPath "~/Google Drive/Settings/Dash"
 defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Google Drive/Settings/Dash/Snippets.dash"
