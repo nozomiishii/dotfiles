@@ -57,15 +57,15 @@ Check the permissions
   chmod +x ./install ./dotbot/bin/dotbot ./setup/homebrew.zsh ./setup/node.zsh ./setup/mac.zsh
 ```
 
-**5: Sing in and setup 1Password🔑**  
+**5: Sign in and setup 1Password🔑**  
 Preferences > Security > Unlock using > Check "Touch ID"  
 Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)
 
-**6: Sign in google-backup-and-sync**  
+**6: Sign in google-backup-and-sync☁️**  
 Sign in and Sync
 ⚠️ Sync only **Settings** file
 
-### While waiting for google-backup-and-sync to complete
+## While waiting for google-backup-and-sync to complete ⏳
 
 **Finder**  
 Rearrange the order of the sidebar
@@ -116,7 +116,7 @@ Get [Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-l
 Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addon.zip"  
 ⚠️ DO NOT UNZIP
 
-### When the google-backup-and-sync is complete
+## When the google-backup-and-sync is complete 🎉
 
 clean up temporary dotfiles, and go to the directory
 
@@ -160,7 +160,7 @@ Menu bar > Time machine > Backup
 Restore app locations on Launchpad  
 Launchpad Manager > Register Launchpad Manager > Enter License Key
 
-**🐔 Slack**
+**🐔 Slack**  
 Sign in
 
 **🛎 Notifications**  
@@ -248,6 +248,12 @@ ln -nfs "$HOME/Google Drive/settings/dotfiles/sync/Karabiner-Elements/karabiner.
 ```
 
 ll ~/Library/Preferences/ | grep firefox
+
+**NSGlobalDomain plist**
+
+```shell
+  open ~/Library/Preferences/.GlobalPreferences.plist
+```
 
 **Read app config**
 

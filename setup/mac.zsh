@@ -33,7 +33,7 @@ defaults write com.apple.dock largesize -int 56
 
 
 echo "- 🕹 Menu bar" # killall SystemUIServer
-# This setting configures the time and date format for the menubar digital clock.
+# This setting configures the time and date format for the menubar digital clock
 defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  h:mm a"
 # Time format 12 hour time: AM/PM
 defaults write NSGlobalDomain AppleICUForce12HourTime -bool true
@@ -42,7 +42,7 @@ defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreS
 
 
 echo "- 📸 Screenshot"
-# Choose whether to display a thumbnail after taking a screenshot.
+# Choose whether to display a thumbnail after taking a screenshot
 defaults write com.apple.screencapture show-thumbnail -bool false
 
 
@@ -53,10 +53,12 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 defaults write NSGlobalDomain AppleAccentColor -int 3
 # Set the highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
-# Autohides the Menu bar.
+# Autohides the Menu bar
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
-# Show all file extensions in the Finder.
+# Show all file extensions in the Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# Turn off alert volume
+defaults write NSGlobalDomain com.apple.sound.beep.volume -int 0
 
 
 echo "- 🗂 Finder" # killall Finder
