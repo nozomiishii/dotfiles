@@ -13,6 +13,5 @@ fi
 brew bundle --verbose
 
 # Open applications for Setup
-open -a Alfred\ 4
 open -a Backup\ and\ Sync
 open -a 1Password\ 7

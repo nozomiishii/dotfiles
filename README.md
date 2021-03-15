@@ -135,11 +135,13 @@ Run
   ./install
 ```
 
+### 💡Start synchronizing all remaining google-backup-and-sync
+
 **⛓ Karabiner-Elements**  
 Login
 
 **🎩 Alfred**  
-Activate the license
+Activate the license  
 Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
 Alfred > General > Alfred Hotkey: ⌘ + Space
 
@@ -149,16 +151,16 @@ Hotkey: ⌥ + T
 Hotkey isn't working well for some reason, use alfred hotkey instead.
 
 **🎨 ColorSnapper2**  
+Activate the license  
 Hotkeys:  
-Pick Color: ⌃ + ⌘ + C  
-Activate the license
+Pick Color: ⌃ + ⌘ + C
 
-**Display(Sidecar)**
+**🛻 Display(Sidecar)**
 
 - Connect to iPad
 - System Preferences > Display > Arrangement > Change "iPad display on left"
 
-**Setup Time machine**  
+**⏱ Setup Time machine**  
 Menu bar > Time machine > Backup
 
 **🚀 Launchpad Manager**  
@@ -178,10 +180,18 @@ Alerts
 Show in Notification Centre  
 Play sound for notification
 
-**Xcode**  
+**🍎 Xcode**  
 Banners
 
-**💡Start synchronizing all remaining google-backup-and-sync**
+**😼 hub**  
+Create Personal access token on Github.
+
+```shell
+  hub browse
+```
+
+github.com username: <user_name>  
+github.com password: <personal_access_token>
 
 ## Generate ssh key🔓
 
@@ -232,7 +242,9 @@ The authenticity of host 'github.com (13.114.40.48)' can't be established.
 RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
-yes
+```shell
+  yes
+```
 
 This is the expected result:
 
@@ -240,7 +252,7 @@ This is the expected result:
   Hi --------! You've successfully authenticated, but GitHub does not provide shell access
 ```
 
-💡 Just ignore Warning: Permanently added the RSA host key for IP address
+**💡 Just ignore Warning: Permanently added the RSA host key for IP address**
 
 ## Customize 👨🏻‍🍳
 
