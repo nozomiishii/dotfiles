@@ -168,6 +168,10 @@ Launchpad Manager > Register Launchpad Manager > Enter License Key
 **🐔 Slack**  
 Sign in
 
+**📅 Calendar**  
+Add Accounts  
+Add Calendar on Widgets
+
 **🛎 Notifications**  
 **Calendar, Notion, Slack**  
 Alerts  
