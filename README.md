@@ -13,7 +13,7 @@
 ## Installation 📦
 
 **1: Sign in your iCloud and App Store. (to get apps using mas command)**  
-If you want to use a non-private account, Install XCode from Appstore.
+If you want to use a non-private account, Install XCode from App Store.
 
 **2:Open terminal and install xcode-select**
 
@@ -34,7 +34,7 @@ Come to this page
   cd ~/Desktop && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
 ```
 
-oh my zsh(you can't insert following command into dotbot, because ohmyzsh will be escaped once the download completed)
+oh my zsh(you can't insert following command into dotbot, because oh my zsh will be escaped once the download completed)
 
 ```shell
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -62,7 +62,7 @@ Preferences > Security > Unlock using > Check "Touch ID"
 Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)
 
 **6: Sign in google-backup-and-sync**  
-Sign in, clean up temporary dotfiles, and go to the directory  
+Sign in and Sync
 ⚠️ Sync only **Settings** file
 
 ### While waiting for google-backup-and-sync to complete
@@ -72,7 +72,7 @@ Rearrange the order of the sidebar
 
 ```txt
 Sidebar
- ┣ 📂Favourites
+ ┣ 📂Favorites
  ┃ ┣ 🌏Google Drive
  ┃ ┣ 🏠$USER
  ┃ ┣ 🍎Applications
@@ -118,7 +118,7 @@ Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addo
 
 ### When the google-backup-and-sync is complete
 
-💡Start synchronizing all remaining google-backup-and-sync
+clean up temporary dotfiles, and go to the directory
 
 ```shell
   rm -rf ~/Desktop/dotfiles && cd ~/Google\ Drive/settings/dotfiles
@@ -171,6 +171,8 @@ Play sound for notification
 
 **Xcode**  
 Banners
+
+**💡Start synchronizing all remaining google-backup-and-sync**
 
 ## Generate ssh key🔓
 
@@ -253,7 +255,7 @@ ll ~/Library/Preferences/ | grep firefox
   defaults read <app_name_plist>
 ```
 
-defaults read org.mozilla.firefoxdeveloperedition
+defaults read notion.id
 
 ## Commands 👨🏻‍🏭
 
@@ -324,7 +326,7 @@ Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/j
 ### CheatSheets
 
 [macOS defaults list](https://macos-defaults.com)  
-[Homebrew | Basics Commands and Cheatsheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
+[Homebrew | Basics Commands and Cheat sheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
 
 ### Modules
 
