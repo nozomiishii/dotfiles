@@ -13,7 +13,7 @@
 ## Installation 📦
 
 **1: Sign in your iCloud and App Store. (to get apps using mas command)**  
-If you want to use a non-private account, Install XCode from App Store.
+If you want to use a non-private account, Install Xcode from App Store.
 
 **2:Open terminal and install xcode-select**
 
@@ -109,11 +109,13 @@ User Icon > Setting sync > Login > Select "Marge"
 ⇧ + ⌘ + P > Open command pallet > Icons: Activate VSCode Icons
 
 **🍎 Xcode**  
-Add Account
+Add Account  
+Preferences > Themes > Monokai Pro
+Preferences > Navigation > Command-click on Code: Jumps to definition
 
 **🐵 Blender**  
 sign in  
-Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" > login!
+Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" > login!  
 Download  
 Get [Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
 Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addon.zip"  
@@ -121,7 +123,7 @@ Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addo
 
 ## When the google-backup-and-sync is complete 🎉
 
-clean up temporary dotfiles, and go to the directory
+Clean up temporary dotfiles, and go to the directory
 
 ```shell
   rm -rf ~/Desktop/dotfiles && cd ~/Google\ Drive/settings/dotfiles
@@ -133,7 +135,7 @@ Run
   ./install
 ```
 
-**⛓ Karabiner-Elements**
+**⛓ Karabiner-Elements**  
 Login
 
 **🎩 Alfred**  
@@ -148,7 +150,7 @@ Hotkey isn't working well for some reason, use alfred hotkey instead.
 
 **🎨 ColorSnapper2**  
 Hotkeys:  
-Pick Color: ⌃ + ⌘ + C
+Pick Color: ⌃ + ⌘ + C  
 Activate the license
 
 **Display(Sidecar)**
@@ -167,7 +169,7 @@ Launchpad Manager > Register Launchpad Manager > Enter License Key
 Sign in
 
 **🛎 Notifications**  
-**Calendar, Notion, Slack**
+**Calendar, Notion, Slack**  
 Alerts  
 Show in Notification Centre  
 Play sound for notification
