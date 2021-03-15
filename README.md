@@ -34,7 +34,7 @@ Come to this page
   cd ~/Desktop && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
 ```
 
-oh my zsh(you can't insert following command into dotbot, because oh my zsh will be escaped once the download completed)
+oh my zsh(you can't insert following command into dotbot, because the process will exit by oh my zsh once the download completed)
 
 ```shell
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -94,6 +94,10 @@ Sidebar
 
 - Users & Groups > Current User > Edit Profile photo
 
+**Menu Bar**
+
+- Dock & Menu Bar > Spotlight > uncheck "Show in Menu Bar"
+
 **🌏 Chrome**  
 Sign in  
 Change Chrome to the Default Browser  
@@ -117,7 +121,7 @@ Preferences > Navigation > Command-click on Code: Jumps to definition
 sign in  
 Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" > login!  
 Download  
-Get [Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
+Get [Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)  
 Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addon.zip"  
 ⚠️ DO NOT UNZIP
 

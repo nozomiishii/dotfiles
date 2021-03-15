@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 echo "\n🍺Starting Homebrew Setup\n"
+sudo -v
 # uninstall homebrew
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 

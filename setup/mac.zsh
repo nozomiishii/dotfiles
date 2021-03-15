@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 echo "\n💻 Starting Mac Setup\n"
-# sudo -v
+
 
 echo "- 🤖 nvram"
 # Disable auto-booting
