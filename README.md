@@ -98,6 +98,10 @@ Sidebar
 
 - Dock & Menu Bar > Spotlight > uncheck "Show in Menu Bar"
 
+**Touch Bar**
+
+- Extensions > Touch Bar > Customize
+
 **🌏 Chrome**  
 Sign in  
 Change Chrome to the Default Browser  
