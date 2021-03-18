@@ -100,7 +100,8 @@ Sidebar
 
 **Touch Bar**
 
-- Extensions > Touch Bar > Customize
+- Extensions > Touch Bar > Customize  
+  Volume Slider | Mute | Brightness Slider
 
 **🌏 Chrome**  
 Sign in  
