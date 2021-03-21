@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
+echo "\n🦄 Cloning repositoris...\n"
+
 if [ ! $CODE_DIR ]; then
   CODE_DIR="$HOME/Code"
 fi
