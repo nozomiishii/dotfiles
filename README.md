@@ -47,8 +47,10 @@ Check the permissions
   ls -l
 ```
 
+Install applications and open Backup and Sync and 1Password
+
 ```shell
-  ./setup/homebrew.zsh
+  ./setup/homebrew.zsh && open -a Backup\ and\ Sync && open -a 1Password\ 7
 ```
 
 🔫 When permission denied
