@@ -79,7 +79,6 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "gitlens.currentLine.enabled": false,
   "vsicons.dontShowNewVersionMessage": true,
-  "tabnine.experimentalAutoImports": true,
   // Spell Checker
   "cSpell.userWords": [
     "Behaviour",
