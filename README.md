@@ -327,7 +327,7 @@ defaults read notion.id
 Clean unused homebrew dependencies
 
 ```shell
-  brew bundle cleanup
+  brew bundle cleanup --force
 ```
 
 ## UnInstall Homebrew 🍺

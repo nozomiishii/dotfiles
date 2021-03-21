@@ -70,7 +70,6 @@
   },
   // C#
   "omnisharp.useGlobalMono": "always",
-  "omnisharp.path": "latest",
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },

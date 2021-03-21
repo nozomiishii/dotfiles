@@ -23,6 +23,8 @@ brew "mono"
 
 # .NET is a free, cross-platform, open source developer platform https://dotnet.microsoft.com/
 cask "dotnet-sdk"
+# FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
+cask "appcleaner"
 # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
 cask "brooklyn"
 # Git client focusing on productivity https://www.gitkraken.com/ 
