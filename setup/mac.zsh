@@ -194,7 +194,7 @@ echo "\n🧝🏻‍♀️ Starting Third-Party Software Setup\n"
 
 echo "- 🍎 Xcode"
 XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
-GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/link/Xcode/UserData"
+GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/sync/Xcode/UserData"
 XCODE_USERDATA_ITEMS=("CodeSnippets" "FontAndColorThemes" "KeyBindings")
 
 for i in ${XCODE_USERDATA_ITEMS[@]}; do
