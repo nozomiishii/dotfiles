@@ -18,7 +18,7 @@ brew "mas"
 # Ruby version management. https://github.com/rbenv/rbenv
 brew "rbenv"
 # .NET is a free, cross-platform, open source developer platform https://dotnet.microsoft.com/
-brew "dotnet"
+brew "dotnet-sdk"
 # Cross platform, open source .NET development framework. https://www.mono-project.com/
 brew "mono"
 

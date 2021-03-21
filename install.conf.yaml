@@ -18,6 +18,10 @@
       stdin: true
       stdout: true
       stderr: true
+    - command: ./setup/c#.zsh
+      stdin: true
+      stdout: true
+      stderr: true
     - command: ./setup/code.zsh
       stdin: true
       stdout: true
