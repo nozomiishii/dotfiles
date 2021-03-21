@@ -192,6 +192,22 @@ echo "\n🎉 Completed Mac Setup \n"
 echo "\n🧝🏻‍♀️ Starting Third-Party Software Setup\n"
 
 
+echo "- 🐟 VSCode"
+VSCODE_USERDATA="$HOME/Library/Application Support/Code/User"
+GOOGLE_DRIVE_VSCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/sync/VSCode"
+VSCODE_USERDATA_ITEMS=("keybindings.json" "settings.json" "snippets")
+
+for i in ${VSCODE_USERDATA_ITEMS[@]}; do
+  rm -rf "$VSCODE_USERDATA/$i"
+  ln -nfsv "$GOOGLE_DRIVE_VSCODE_USERDATA/$i" "$VSCODE_USERDATA/$i"
+  if [ -L "$VSCODE_USERDATA/$i" ]; then
+    echo "Creating Link $VSCODE_USERDATA/$i -> $GOOGLE_DRIVE_VSCODE_USERDATA/$i"
+  else
+    echo "Error: Creating Links fails"
+  fi
+done
+
+
 echo "- 🍎 Xcode"
 XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
 GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/sync/Xcode/UserData"

@@ -1,0 +1,17 @@
+{
+  "gif": {
+    "prefix": "/gif",
+    "body": ["![${0:title}](${1:url})"],
+    "description": "gif"
+  },
+  "link": {
+    "prefix": "/link",
+    "body": ["[${0:title}](${1:url})"],
+    "description": "gif"
+  },
+  "code": {
+    "prefix": "/code",
+    "body": ["```${0:code}", "", "```"],
+    "description": "code"
+  }
+}

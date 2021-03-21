@@ -1,0 +1,263 @@
+{
+  //
+  //
+  // test
+  "React Testing Library": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "rtl",
+    "body": [
+      "import React from 'react'",
+      "import { render, screen } from '@testing-library/react';",
+      "import userEvent from '@testing-library/user-event';",
+      "import { ${TM_FILENAME_BASE/(.test)//} } from './${TM_FILENAME_BASE/(.test)//}';",
+      "",
+      "beforeEach(() => render(<${TM_FILENAME_BASE/(.test)//} />));",
+      "",
+      "test('$1', () => {});"
+    ],
+    "description": "React Testing Library"
+  },
+  "data-testid=''": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "testid",
+    "body": ["data-testid='$1'"],
+    "description": "data-testid=''"
+  },
+  "await waitFor(() => {});": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "waitFor",
+    "body": ["await waitFor(() => {$1});"],
+    "description": "await waitFor(() => {});"
+  },
+  //
+  //
+  // utils
+  "export * from './';": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "exx",
+    "body": ["export * from './$1';"],
+    "description": "export * from './';"
+  },
+  "import { $2 } from '$1';": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "imp",
+    "body": ["import { $2 } from '$1';"],
+    "description": "import { $2 } from '$1';"
+  },
+  "import React from 'react';": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "imr",
+    "body": ["import React from 'react';"],
+    "description": "import React from 'react';"
+  },
+  "Import classnames": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "imcl",
+    "body": ["import classNames from 'classnames';"],
+    "description": "Import classnames"
+  },
+  //
+  //
+  // Styles
+  "backgroundColor: 'red'": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "rr",
+    "body": ["backgroundColor: 'red',"],
+    "description": "backgroundColor: 'red'"
+  },
+  "backgroundColor: 'green'": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "gg",
+    "body": ["backgroundColor: 'green',"],
+    "description": "backgroundColor: 'green'"
+  },
+  //
+  //
+  // pretty console
+  "pretty console log": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "lg",
+    "body": ["console.log('############👨🏻‍🚀[$CLIPBOARD]$1', $CLIPBOARD)$2"],
+    "description": "pretty console log"
+  },
+  "pretty console check": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "lg",
+    "body": ["console.log('############🦄 hit!!!')"],
+    "description": "pretty console log"
+  },
+  //
+  //
+  // React
+  "TypeScript React Function Typescript Component": {
+    "scope": "typescriptreact",
+    "prefix": "rtf",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC = () => {",
+      "  return (",
+      "    <div>$TM_FILENAME_BASE</div>",
+      "  );",
+      "}"
+    ],
+    "description": "Typescript React Function Component"
+  },
+  //
+  //
+  // React Native
+  "React Native Typescript Function Component": {
+    "scope": "typescriptreact",
+    "prefix": "rntf",
+    "body": [
+      "import React from 'react';",
+      "import {Text, View} from 'react-native';",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC = () => {",
+      "  return (",
+      "    <View>",
+      "      <Text>$TM_FILENAME_BASE:</Text>",
+      "    </View>",
+      "  );",
+      "}"
+    ],
+    "description": "Typescript React Native Function Component"
+  },
+  //
+  //
+  // JavaScript
+  "React Function Typescript Component": {
+    "prefix": "rf",
+    "scope": "javascript,javascriptreact",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export const $TM_FILENAME_BASE = () => {",
+      "  return (",
+      "    <div>$TM_FILENAME_BASE</div>",
+      "  );",
+      "}"
+    ],
+    "description": "Typescript React Function Component"
+  },
+  //
+  //
+  // Next.js
+  "import Head from 'next/head';": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "imhd",
+    "body": ["import Head from 'next/head';"],
+    "description": "import Head from 'next/head';"
+  },
+  //
+  //
+  // Three.js
+  "new THREE.$0": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "neth",
+    "body": ["new THREE.$0"],
+    "description": "new THREE.$0"
+  },
+  "scene.add($1);": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "snad",
+    "body": ["scene.add($1);"],
+    "description": "scene.add($1);"
+  },
+  "scene.add($CLIPBOARD);": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "scene.add",
+    "body": ["scene.add($CLIPBOARD);"],
+    "description": "scene.add($CLIPBOARD);"
+  },
+  "import * as THREE from 'three';": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "imth",
+    "body": ["import * as THREE from 'three';"],
+    "description": "import * as THREE from 'three';"
+  },
+  "const axesHelper = new THREE.AxesHelper();": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "helper",
+    "body": ["const axesHelper = new THREE.AxesHelper();", "scene.add(axesHelper);"],
+    "description": "const axesHelper = new THREE.AxesHelper();"
+  },
+  //
+  //
+  // dat.gui
+  "import * as dat from 'dat.gui';": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "imdat",
+    "body": ["import * as dat from 'dat.gui';", "", "const gui = new dat.GUI();", ""],
+    "description": "import * as dat from 'dat.gui';"
+  },
+  //
+  //
+  // GSAP
+  "import gsap from 'gsap';": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "imgs",
+    "body": ["import gsap from 'gsap';"],
+    "description": "import gsap from 'gsap';"
+  },
+  //
+  //
+  // p5
+  "p5 typescript": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "p5f",
+    "body": [
+      "import p5 from 'p5';",
+      "",
+      "export const $TM_FILENAME_BASE = (p: p5) => {",
+      "  let angle = 0;",
+      "  p.setup = () => {",
+      "    p.createCanvas(400, 300, p.WEBGL);",
+      "  };",
+      "  p.draw = () => {",
+      "    p.background(220);",
+      "    p.rotateY(angle);",
+      "    p.box(100);",
+      "    angle -= 0.01;",
+      "  };",
+      "};",
+      ""
+    ],
+    "description": "p5 typescript"
+  },
+  "p5 react function": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "p5rf",
+    "body": [
+      "import p5 from 'p5';",
+      "import React from 'react';",
+      "import Sketch from 'react-p5';",
+      "",
+      "interface P {",
+      "  width: number;",
+      "  height: number;",
+      "}",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC<P> = ({ height, width }) => {",
+      "  let angle = 0;",
+      "  const windowResized = (p: p5) => {",
+      "    p.resizeCanvas(width, height);",
+      "  };",
+      "  const setup = (p: p5, canvasParentRef: Element) => {",
+      "    p.createCanvas(width, height, p.WEBGL).parent(canvasParentRef);",
+      "  };",
+      "",
+      "  const draw = (p: p5) => {",
+      "    p.background(220);",
+      "    p.rotateY(angle);",
+      "    p.box(100);",
+      "    angle -= 0.01;",
+      "  };",
+      "",
+      "  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;",
+      "};",
+      ""
+    ],
+    "description": "p5 react function"
+  }
+}

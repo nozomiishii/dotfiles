@@ -1,0 +1,110 @@
+{
+  // General
+  "workbench.colorTheme": "Monokai Pro",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 14,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": true,
+  "emmet.triggerExpansionOnTab": true,
+  "files.insertFinalNewline": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "diffEditor.ignoreTrimWhitespace": false,
+  // Editor
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.accessibilitySupport": "off",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.renderWhitespace": "none",
+  // Explorer
+  "explorer.openEditors.visible": 0,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  // Tailwindcss
+  "stylelint.config": {
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
+        }
+      ],
+      "declaration-block-trailing-semicolon": null,
+      "no-descending-specificity": null
+    }
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "tailwindCSS.emmetCompletions": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  // Styles
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.autoSave": "onFocusChange",
+  // Prettier
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.printWidth": 100,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  // ESlint
+  "eslint.packageManager": "yarn",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "files.associations": {
+    ".lintstagedrc": "json",
+    ".huskyrc": "json",
+    "*.strings": "plist",
+    "*.plist": "plist"
+  },
+  // yaml
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  // C#
+  "omnisharp.useGlobalMono": "always",
+  "omnisharp.path": "latest",
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  // Extenstions
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "gitlens.currentLine.enabled": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  // Spell Checker
+  "cSpell.userWords": [
+    "Behaviour",
+    "Dotfiles",
+    "Karabiner",
+    "Kotoeri",
+    "Monokai",
+    "NVRAM",
+    "Neumorphism",
+    "Nozomi's",
+    "Numpad",
+    "Powerpack",
+    "Unpair",
+    "chmod",
+    "craco",
+    "dotbot",
+    "eieio",
+    "firestore",
+    "ishii",
+    "mkdir",
+    "nozomi",
+    "nozomiishii",
+    "pbcopy",
+    "tailwindcss",
+    "testid",
+    "typesync",
+    "wireframe"
+  ]
+}
