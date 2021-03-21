@@ -22,8 +22,7 @@ brew "dotnet-sdk"
 # Cross platform, open source .NET development framework. https://www.mono-project.com/
 brew "mono"
 
-# AI powered code completions https://kite.com/
-cask "kite"
+
 # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
 cask "brooklyn"
 # Git client focusing on productivity https://www.gitkraken.com/ 
