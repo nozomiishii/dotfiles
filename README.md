@@ -114,7 +114,7 @@ Log in 1PasswordX
 Input Sources > Delete "Kotoeri"  
 Input Sources > Add "google-japanese-ime"
 
-**📟 VSCode**  
+**🐟 VSCode**  
 User Icon > Setting sync > Login > Select "Marge"  
 ⚠️ Do NOT Select "Replace"  
 ⇧ + ⌘ + P > Open command pallet > Icons: Activate VSCode Icons
