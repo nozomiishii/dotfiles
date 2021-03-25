@@ -103,6 +103,8 @@ defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Clear Browsing 
 defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Print..." -string "@~\$p"
 # Chrome Keyboard Shortcut => Save Page As... : ⇧ + ⌘ + ⌥ + S
 defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Save Page As..." -string "@~\$s"
+# Chrome Keyboard Shortcut => Bookmark This Tab... : ⇧ + ⌘ + ⌥ + D
+defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Bookmark This Tab..." -string "@~\$d"
 # Firefox Developer Edition Keyboard Shortcut => Save Page As... : ⇧ + ⌘ + ⌥ + P
 defaults write org.mozilla.firefoxdeveloperedition NSUserKeyEquivalents -dict-add "Print..." -string "@~\$p"
 # Disable ⌃ + Space for "Select the previous input source"
