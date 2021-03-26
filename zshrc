@@ -23,7 +23,6 @@ fi
 # Syntax highlighting for man command
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-
 # Aliases 
 CODE_DIR="$HOME/Code"
 
@@ -33,6 +32,7 @@ alias plist="cd ~/Library/Preferences"
 alias noz="cd $CODE_DIR/nozomiishii/c2021"
 alias work="cd $CODE_DIR/workbench"
 alias job="cd $CODE_DIR/job/voice-utopia"
+alias jobgd="open ~/Google\ Drive/Work"
 alias quit="exec $SHELL -l"
 alias zz="source ~/.zshrc"
 alias ll="exa -laFh --git"
