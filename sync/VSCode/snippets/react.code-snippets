@@ -116,12 +116,26 @@
       "export const $TM_FILENAME_BASE: React.FC = () => {",
       "  return (",
       "    <View>",
-      "      <Text>$TM_FILENAME_BASE:</Text>",
+      "      <Text>$TM_FILENAME_BASE</Text>",
       "    </View>",
       "  );",
       "}"
     ],
     "description": "Typescript React Native Function Component"
+  },
+  //
+  //
+  // Next.js
+  "Next.js Typescript Function Component": {
+    "prefix": "ntf",
+    "body": [
+      "const $TM_FILENAME_BASE: React.FC = () => {",
+      "  return <div>$TM_FILENAME_BASE</div>;",
+      "};",
+      "",
+      "export default $TM_FILENAME_BASE;"
+    ],
+    "description": "Next.js Typescript Function Component"
   },
   //
   //
