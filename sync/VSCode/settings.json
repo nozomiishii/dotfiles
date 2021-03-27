@@ -12,10 +12,10 @@
   "diffEditor.ignoreTrimWhitespace": false,
   // Editor
   "editor.suggestSelection": "first",
+  "editor.renderWhitespace": "trailing",
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.renderWhitespace": "none",
   // Explorer
   "explorer.openEditors.visible": 0,
   "explorer.compactFolders": false,
