@@ -129,11 +129,11 @@
   "Next.js Typescript Function Component": {
     "prefix": "ntf",
     "body": [
-      "const $TM_FILENAME_BASE: React.FC = () => {",
-      "  return <div>$TM_FILENAME_BASE</div>;",
+      "const ${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}: React.FC = () => {",
+      "  return <div>${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/}</div>;",
       "};",
       "",
-      "export default $TM_FILENAME_BASE;"
+      "export default ${TM_FILENAME_BASE/^([a-z])/${1:/upcase}/};"
     ],
     "description": "Next.js Typescript Function Component"
   },
