@@ -30,6 +30,8 @@ defaults write com.apple.dock tilesize -int 48
 defaults write com.apple.dock magnification -bool true
 # Icon size of magnified Dock items
 defaults write com.apple.dock largesize -int 56
+# disable Launchpad
+defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
 
 echo "- 🕹 Menu bar" # killall SystemUIServer
