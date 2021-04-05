@@ -99,6 +99,11 @@ Sidebar
 **Menu Bar**
 
 - Dock & Menu Bar > Spotlight > uncheck "Show in Menu Bar"
+- Dock & Menu Bar > Do Not Disturb > uncheck "Show in Menu Bar"
+- Dock & Menu Bar > Screen Mirroring > uncheck "Show in Menu Bar"
+- Dock & Menu Bar > Display > uncheck "Show in Menu Bar"
+- Dock & Menu Bar > Sound > uncheck "Show in Menu Bar"
+- Dock & Menu Bar > Now Playing > uncheck "Show in Menu Bar"
 
 **Touch Bar**
 

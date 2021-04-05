@@ -56,7 +56,7 @@ defaults write NSGlobalDomain AppleAccentColor -int 3
 # Set the highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
 # Autohides the Menu bar
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
+# defaults write NSGlobalDomain _HIHideMenuBar -bool true
 # Show all file extensions in the Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Turn off alert volume
