@@ -38,7 +38,7 @@ alias ll="exa -laFh --git"
 alias ls="exa"
 alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
 alias play="chmod +x ./playground.sh && ./playground.sh"
-
+alias yul="yarn upgrade --latest"
 
 # Functions
 # Create a directory and move it there
