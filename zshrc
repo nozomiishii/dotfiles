@@ -48,11 +48,7 @@ mkcd(){
 
 # Check the connected localhost
 lh(){
-  PORT=3000
-  if [ $1 ]; then
-    PORT=$1
-  fi
-  echo `ipconfig getifaddr en0`":$PORT"
+  echo `ipconfig getifaddr en0`":${1:-3000}"
 }
 
 
