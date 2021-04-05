@@ -41,8 +41,18 @@ alias play="chmod +x ./playground.sh && ./playground.sh"
 
 
 # Functions
+# Create a directory and move it there
 mkcd(){
   mkdir -p "$@" && cd "$_"
+}
+
+# Check the connected localhost
+lh(){
+  PORT=3000
+  if [ $1 ]; then
+    PORT=$1
+  fi
+  echo `ipconfig getifaddr en0`":$PORT"
 }
 
 
