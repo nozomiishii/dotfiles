@@ -49,7 +49,10 @@ mkcd(){
 
 # Check the connected localhost
 lh(){
-  echo `ipconfig getifaddr en0`":${1:-3000}"
+  echo `ipconfig getifaddr en0`":${1:-3000}" | pbcopy
+  echo "\nYour connected IP address is"
+  echo `ipconfig getifaddr en0`":${1:-3000}" 
+  echo "Copied to clipboard🧙🏿‍♂️\n"
 }
 
 
