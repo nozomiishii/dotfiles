@@ -407,5 +407,6 @@ Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/j
 
 ## License
 
-MIT License  
-© Nozomi Ishii
+MIT License
+
+Copyright © 2021 Nozomi Ishii
