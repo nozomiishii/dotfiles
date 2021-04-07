@@ -401,10 +401,6 @@ Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/j
 
 [dotbot](https://github.com/anishathalye/dotbot) - Dotbot makes installing your dotfiles as easy as git clone $url && cd dotfiles && ./install, even on a freshly installed system!
 
-## Todo
-
-[TodoList](https://www.notion.so/Todos-8ca66180cd044648a0698f1c737c19a0)
-
 ## License
 
 MIT License
