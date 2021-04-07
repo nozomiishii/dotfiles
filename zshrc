@@ -25,13 +25,15 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Aliases 
 CODE_DIR="$HOME/Code"
+GOOGLE_DRIVE_DIR="$HOME/Google\ Drive"
 
-alias dot="cd ~/Google\ Drive/Settings/dotfiles"
+alias drive="cd $GOOGLE_DRIVE_DIR"
+alias dot="cd $GOOGLE_DRIVE_DIR/Settings/dotfiles"
+alias alfred="cd $GOOGLE_DRIVE_DIR/Settings/Alfred"
 alias desk="cd ~/Desktop"
 alias plist="cd ~/Library/Preferences"
 alias noz="cd $CODE_DIR/nozomiishii/c2021"
 alias wrk="cd $CODE_DIR/Work/voice-utopia"
-alias wrkgd="open ~/Google\ Drive/Work"
 alias hbb="hub browse"
 alias quit="exec $SHELL -l"
 alias zz="source ~/.zshrc"
