@@ -168,6 +168,10 @@ Hotkey: ⌥ + T
 (May need to restart your mac)  
 Hotkey isn't working well for some reason, use alfred hotkey instead.
 
+**🦋 Affinity Designer**  
+[Download App](https://store.serif.com/en-gb/account/downloads/)  
+Activate the license
+
 **🎨 ColorSnapper2**  
 Activate the license  
 Hotkeys:  
