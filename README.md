@@ -185,10 +185,6 @@ Pick Color: ⌃ + ⌘ + C
 **⏱ Setup Time machine**  
 Menu bar > Time machine > Backup
 
-**🚀 Launchpad Manager**  
-Restore app locations on Launchpad  
-Launchpad Manager > Register Launchpad Manager > Enter License Key
-
 **🐔 Slack**  
 Sign in
 
@@ -200,20 +196,9 @@ Add Calendar on Widgets
 **Calendar, Notion, Slack**  
 Alerts  
 Show in Notification Centre  
-Play sound for notification
-
-**🍎 Xcode**  
+Play sound for notification  
+**Xcode**  
 Banners
-
-**😼 hub**  
-Create Personal access token on Github.
-
-```shell
-  hub browse
-```
-
-github.com username: <user_name>  
-github.com password: <personal_access_token>
 
 ## Generate ssh key🔓
 
@@ -275,6 +260,16 @@ This is the expected result:
 ```
 
 **💡 Just ignore Warning: Permanently added the RSA host key for IP address**
+
+**😼 hub**  
+Create Personal access token on Github.
+
+```shell
+  hub browse
+```
+
+github.com username: <user_name>  
+github.com password: <personal_access_token>
 
 ## Customize 👨🏻‍🍳
 
