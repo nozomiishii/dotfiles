@@ -163,9 +163,7 @@ Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/set
 Alfred > General > Alfred Hotkey: ⌘ + Space
 
 **👩🏻‍🏫 DeepL**  
-Hotkey: ⌥ + T  
-(May need to restart your mac)  
-Hotkey isn't working well for some reason, use alfred hotkey instead.
+Delete hotkeys
 
 **🦋 Affinity Designer**  
 [Download App](https://store.serif.com/en-gb/account/downloads/)  
