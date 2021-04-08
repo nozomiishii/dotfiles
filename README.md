@@ -390,7 +390,7 @@ Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/j
 ### Dotfiles
 
 [Your unofficial guide to dotfiles on GitHub.](https://dotfiles.github.io/inspiration)  
-[eieio](https://github.com/eieioxyz/dotfiles_macos)
+[Patrick McDonald - EIEIO](https://github.com/eieioxyz/dotfiles_macos)
 
 ### CheatSheets
 
