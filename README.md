@@ -339,6 +339,20 @@ Clean unused homebrew dependencies
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 ```
 
+## Troubleshooting 🔫
+
+**Audio-related**  
+NVRAM Reset  
+Shut down and Restart with  
+`⌥ + ⌘ + P + R`  
+💡 NVRAM is a memory that saves its stored data regardless if the power is on or off.
+
+**Third-party app related**  
+Safe mode  
+Shut down and wait 10 seconds  
+Restart with `⇧`  
+💡Safe Mode temporarily disables any third-party applications and starts your device with default system apps.
+
 ## Reinstall macOS 👼
 
 1: Sign out your iCloud.  
@@ -361,8 +375,7 @@ Delete SSH keys on Github, GitLab
 Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)
 
 - NVRAM Reset  
-  `⌥ + ⌘ + P + R`  
-  💡 NVRAM is a memory that saves its stored data regardless if the power is on or off.
+  `⌥ + ⌘ + P + R`
 
 - Erase your mac and reinstall
   Shutdown mac  
