@@ -327,10 +327,10 @@ defaults read notion.id
 
 ## Commands 👨🏻‍🏭
 
-Clean unused homebrew dependencies
+Clean unused homebrew dependencies, and upgrade them
 
 ```shell
-  brew bundle cleanup --force
+  brew bundle cleanup --force && brew cleanup && brew upgrade
 ```
 
 ## UnInstall Homebrew 🍺

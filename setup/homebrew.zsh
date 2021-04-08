@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 echo "\n🍺 Starting Homebrew Setup\n"
-sudo -v
 # uninstall homebrew
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 
@@ -11,5 +10,6 @@ if ! type brew > /dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
+sudo -v
 brew bundle --verbose
 
