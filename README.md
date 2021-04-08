@@ -132,8 +132,7 @@ Preferences > Navigation > Command-click on Code: Jumps to definition
 **🐵 Blender**  
 sign in  
 Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" > login!  
-Download  
-Get [Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)  
+[Download Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)  
 Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addon.zip"  
 ⚠️ DO NOT UNZIP  
 Setup  
