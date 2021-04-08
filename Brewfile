@@ -64,7 +64,7 @@ cask "visual-studio-code"
 # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
 cask "firefox-developer-edition"
 # Launchpad Manager http://launchpadmanager.com/
-cask "launchpad-manager"
+# cask "launchpad-manager"
 # Password manager that keeps all passwords secure behind one password. https://1password.com
 cask "1Password"
 # Tool for using an iPad as a second display. https://www.duetdisplay.com
