@@ -65,7 +65,7 @@ Preferences > General > Keyboard shortcuts > remove all shortcuts(because it con
 
 **6: Sign in google-backup-and-sync☁️**  
 Sign in and Sync  
-⚠️ Sync only **Settings** file
+⚠️ Sync only **Settings** file (Downloading everything takes too much time.)
 
 ## While waiting for google-backup-and-sync to complete ⏳
 
