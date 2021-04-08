@@ -53,22 +53,14 @@ cask "deepl"
 cask "discord"
 # Access and sync your content from any device. https://www.google.com/intl/en_ca/drive/download
 cask "google-backup-and-sync"
-# Video communication and virtual meeting platform. https://www.zoom.us
-cask "zoom"
-# Video chat, voice call and instant messaging application. https://www.skype.com
-cask "skype"
 # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
 cask "kindle"
 # Open-source code editor. https://code.visualstudio.com
 cask "visual-studio-code"
 # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
 cask "firefox-developer-edition"
-# Launchpad Manager http://launchpadmanager.com/
-# cask "launchpad-manager"
 # Password manager that keeps all passwords secure behind one password. https://1password.com
 cask "1Password"
-# Tool for using an iPad as a second display. https://www.duetdisplay.com
-cask "duet"
 # Management tool for Unity. https://unity3d.com/get-unity/download
 cask "unity-hub"
 # App to write, plan, collaborate, and get organized. https://www.notion.so
@@ -86,5 +78,18 @@ cask "figma"
 # Google Japanese Input Method Editor. https://www.google.co.jp/ime
 cask "google-japanese-ime"
 
-
+# Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
 mas "Xcode", id: 497799835
+
+
+#
+# Archives
+#
+# Video communication and virtual meeting platform. https://www.zoom.us
+# cask "zoom"
+# Video chat, voice call and instant messaging application. https://www.skype.com
+# cask "skype"
+# Launchpad Manager http://launchpadmanager.com/
+# cask "launchpad-manager"
+# Tool for using an iPad as a second display. https://www.duetdisplay.com
+# cask "duet"
