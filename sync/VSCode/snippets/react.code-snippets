@@ -89,7 +89,7 @@
   //
   //
   // React
-  "TypeScript React Function Typescript Component": {
+  "TypeScript React Functional Component": {
     "scope": "typescriptreact",
     "prefix": "rtf",
     "body": [
@@ -101,12 +101,30 @@
       "  );",
       "}"
     ],
-    "description": "Typescript React Function Component"
+    "description": "Typescript React Functional Component"
+  },
+  "TypeScript React Functional Component with Interface": {
+    "scope": "typescriptreact",
+    "prefix": "rtfi",
+    "body": [
+      "import React from 'react'",
+      "",
+      "interface P {",
+      "  $1",
+      "}",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC<P> = ({}) => {",
+      "  return (",
+      "    <div>$TM_FILENAME_BASE</div>",
+      "  );",
+      "}"
+    ],
+    "description": "Typescript React Functional Component with Interface"
   },
   //
   //
   // React Native
-  "React Native Typescript Function Component": {
+  "React Native Typescript Functional Component": {
     "scope": "typescriptreact",
     "prefix": "rntf",
     "body": [
@@ -121,12 +139,12 @@
       "  );",
       "}"
     ],
-    "description": "Typescript React Native Function Component"
+    "description": "Typescript React Native Functional Component"
   },
   //
   //
   // Next.js
-  "Next.js Typescript Function Component": {
+  "Next.js Typescript Functional Component": {
     "prefix": "ntf",
     "body": [
       "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}: React.FC = () => {",
@@ -135,12 +153,12 @@
       "",
       "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};"
     ],
-    "description": "Next.js Typescript Function Component"
+    "description": "Next.js Typescript Functional Component"
   },
   //
   //
   // JavaScript
-  "React Function Typescript Component": {
+  "React Functional Typescript Component": {
     "prefix": "rf",
     "scope": "javascript,javascriptreact",
     "body": [
@@ -152,7 +170,7 @@
       "  );",
       "}"
     ],
-    "description": "Typescript React Function Component"
+    "description": "Typescript React Functional Component"
   },
   //
   //
