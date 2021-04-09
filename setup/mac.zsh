@@ -141,18 +141,6 @@ echo "- 🗣 Speech"
 defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyFlag -bool true
 # Speak selected text when the key is pressed. Option + Space : 2097
 defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyCombo -int 2097
-# System Voice
-# System Voice > Customize… > English (United Kingdom): siri: on
-defaults write com.apple.speech.voice.prefs VisibleIdentifiers -dict-add 'com.apple.speech.synthesis.voice.custom.siri.martha.premium' 1
-defaults write com.apple.speech.voice.prefs SelectedVoiceCreator -int 1650811243
-defaults write com.apple.speech.voice.prefs SelectedVoiceID -int 2100
-defaults write com.apple.speech.voice.prefs SelectedVoiceName -string "Martha Siri"
-# Speeking Rate => (SelectedVoiceCreator: 1650811243, SelectedVoiceID: 2100, SpeekingRate: 240)
-defaults write com.apple.speech.voice.prefs VoiceRateDataArray -array '(
-	1650811243,
-	2100,
-	240
-)' 
 
 
 echo "- 🖥 Display"

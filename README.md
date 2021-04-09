@@ -162,12 +162,16 @@ Activate the license
 Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
 Alfred > General > Alfred Hotkey: ⌘ + Space
 
-**👩🏻‍🏫 DeepL**  
-Delete hotkeys
-
 **🦋 Affinity Designer**  
 [Download App](https://store.serif.com/en-gb/account/downloads/)  
 Activate the license
+
+**👩🏻‍🏫 DeepL**  
+Delete hotkeys
+
+**🗣 Speech**  
+System Preferences > Accessibility > Spoken Content > Select and Download "Siri Female(United Kingdom)"  
+System Preferences > Accessibility > Spoken Content > Adjust Speaking Rate
 
 **🎨 ColorSnapper2**  
 Activate the license  
