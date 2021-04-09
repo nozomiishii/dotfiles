@@ -327,7 +327,7 @@ ll ~/Library/Preferences/ | grep firefox
 
 defaults read notion.id
 
-## Commands 👨🏻‍🏭
+## Maintenance 👨🏻‍🏭
 
 Clean unused homebrew dependencies, and upgrade them
 
