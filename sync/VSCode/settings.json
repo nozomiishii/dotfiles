@@ -79,6 +79,13 @@
   "gitlens.currentLine.enabled": false,
   "vsicons.dontShowNewVersionMessage": true,
   "tabnine.experimentalAutoImports": true,
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "name": {
+        "underline": " #FFD866"
+      }
+    }
+  },
   // Spell Checker
   "cSpell.userWords": [
     "Behaviour",
