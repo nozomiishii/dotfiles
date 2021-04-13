@@ -58,10 +58,11 @@
     "source.fixAll.stylelint": true
   },
   "files.associations": {
+    "install": "shellscript",
     ".lintstagedrc": "json",
-    ".huskyrc": "json",
     "*.strings": "plist",
-    "*.plist": "plist"
+    "*.plist": "plist",
+    "vimrc": "viml"
   },
   // yaml
   "[yaml]": {
