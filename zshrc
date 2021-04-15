@@ -1,6 +1,6 @@
 echo "🧙🏿‍♂️.zshrc loading..."
 
-# Oh my zsh with syntax-highlighting 
+# syntax-highlighting 
 # https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95
 if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
   # zsh compinit: insecure directories
@@ -9,13 +9,21 @@ if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting 
 fi
 
+# zsh-completions
+# https://github.com/zsh-users/zsh-completions
+if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-completions ]; then
+  git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+fi
+
+
 if [ -d $HOME/.oh-my-zsh ]; then
   # Path to your oh-my-zsh installation.
   export ZSH="$HOME/.oh-my-zsh"
   # Theme
   ZSH_THEME="robbyrussell"
 
-  plugins=(git last-working-dir zsh-syntax-highlighting)
+  plugins=(git last-working-dir zsh-syntax-highlighting zsh-completions)
+  autoload -U compinit && compinit
   source $ZSH/oh-my-zsh.sh
 fi
 
