@@ -21,6 +21,9 @@ brew "rbenv"
 brew "mono"
 
 
+
+# App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
+cask "docker"
 # .NET is a free, cross-platform, open source developer platform https://dotnet.microsoft.com/
 cask "dotnet-sdk"
 # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
