@@ -84,15 +84,3 @@ cask "google-japanese-ime"
 # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
 mas "Xcode", id: 497799835
 
-
-#
-# Archives
-#
-# Video communication and virtual meeting platform. https://www.zoom.us
-# cask "zoom"
-# Video chat, voice call and instant messaging application. https://www.skype.com
-# cask "skype"
-# Launchpad Manager http://launchpadmanager.com/
-# cask "launchpad-manager"
-# Tool for using an iPad as a second display. https://www.duetdisplay.com
-# cask "duet"
