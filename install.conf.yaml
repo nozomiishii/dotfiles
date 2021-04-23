@@ -14,6 +14,10 @@
     - ~/Code
 
 - shell:
+    - command: ./setup/docker.zsh
+      stdin: true
+      stdout: true
+      stderr: true
     - command: ./setup/node.zsh
       stdin: true
       stdout: true
