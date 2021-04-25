@@ -62,6 +62,8 @@ cask "google-backup-and-sync"
 cask "kindle"
 # Open-source code editor. https://code.visualstudio.com
 cask "visual-studio-code"
+# Jetbrains PyCharm Community Edition https://www.jetbrains.com/pycharm/
+cask "pycharm-ce"
 # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
 cask "firefox-developer-edition"
 # Password manager that keeps all passwords secure behind one password. https://1password.com

@@ -193,6 +193,12 @@ Sign in
 Add Accounts  
 Add Calendar on Widgets
 
+**🐍 PyCharm**  
+Font Size  
+Preferences > Editor > General > Font > Size > 14  
+Plugins  
+Monokai Pro Theme
+
 **🛎 Notifications**  
 **Calendar, Notion, Slack**  
 Alerts  
