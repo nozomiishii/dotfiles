@@ -87,6 +87,40 @@
       }
     }
   },
+  "peacock.favoriteColors": [
+    {
+      "name": "Monokai Pro Pink",
+      "value": "#FF6188"
+    },
+    {
+      "name": "Monokai Pro Orange",
+      "value": "#FC9867"
+    },
+    {
+      "name": "Monokai Pro Yellow",
+      "value": "#FFD866"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Monokai Pro Green",
+      "value": "#A9DC76"
+    },
+    {
+      "name": "Monokai Pro Blue",
+      "value": "#78DCE8"
+    },
+    {
+      "name": "Monokai Pro Purple",
+      "value": "#AB9DF2"
+    },
+    {
+      "name": "Monokai Pro Black",
+      "value": "#2D2A2E"
+    }
+  ],
   // Spell Checker
   "cSpell.userWords": [
     "Behaviour",
