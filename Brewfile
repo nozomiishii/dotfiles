@@ -19,6 +19,8 @@ brew "mas"
 brew "rbenv"
 # Cross platform, open source .NET development framework. https://www.mono-project.com/
 brew "mono"
+# Python version management https://github.com/pyenv/pyenv
+brew "pyenv"
 
 
 
