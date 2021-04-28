@@ -23,7 +23,8 @@ brew "mono"
 brew "pyenv"
 
 
-
+# hosted hypervisor for x86 virtualization https://www.virtualbox.org/
+cask "virtualbox"
 # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
 cask "docker"
 # .NET is a free, cross-platform, open source developer platform https://dotnet.microsoft.com/
