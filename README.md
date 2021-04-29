@@ -208,7 +208,8 @@ Play sound for notification
 Banners
 
 **🗳 VirtualBox**  
-Setup
+Setup  
+[Download OS](https://www.osboxes.org/virtualbox-images/)
 
 ## Generate ssh key🔓
 
