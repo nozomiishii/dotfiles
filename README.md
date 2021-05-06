@@ -212,6 +212,8 @@ Play sound for notification
 Banners
 
 **🗳 VirtualBox**  
+System Preferences > Security and Privacy > General > Allow "System Software from Developer ‘Oracle America, Inc."  
+Restart system  
 Setup  
 [Virtual Box Images](https://www.osboxes.org/virtualbox-images/)  
 [Kali Linux](https://www.kali.org/downloads/)
