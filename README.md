@@ -209,7 +209,8 @@ Banners
 
 **🗳 VirtualBox**  
 Setup  
-[Download OS](https://www.osboxes.org/virtualbox-images/)
+[Virtual Box Images](https://www.osboxes.org/virtualbox-images/)  
+[Kali Linux](https://www.kali.org/downloads/)
 
 ## Generate ssh key🔓
 
