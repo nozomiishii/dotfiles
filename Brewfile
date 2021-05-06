@@ -31,6 +31,8 @@ cask "docker"
 cask "dotnet-sdk"
 # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
 cask "appcleaner"
+# Automated organization https://www.noodlesoft.com/
+cask "hazel"
 # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
 cask "brooklyn"
 # Git client focusing on productivity https://www.gitkraken.com/ 

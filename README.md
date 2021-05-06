@@ -173,6 +173,10 @@ Delete hotkeys
 System Preferences > Accessibility > Spoken Content > Select and Download "Siri Female(United Kingdom)"  
 System Preferences > Accessibility > Spoken Content > Adjust Speaking Rate
 
+**Hazel🧹**
+License... > Activate the License  
+Folder > Rule Sync Settings... > Use existing sync file... > Select "~/Google\ Drive/Settings/Hazel"
+
 **🎨 ColorSnapper2**  
 Activate the license  
 Hotkeys:  
@@ -375,6 +379,8 @@ System Preferences > Apple ID > Overview > Sign Out...
 2: Deactivate license  
 **🎩Alfred**  
 Preferences > Powerpack > View your license key > Deactivate  
+**Hazel🧹**
+License... > Remove...  
 **🎨ColorSnapper2**  
 About ColorSnapper... > Deactivate license
 
