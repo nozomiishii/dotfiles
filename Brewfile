@@ -23,6 +23,8 @@ brew "mono"
 brew "pyenv"
 
 
+# Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
+cask "ngrok"
 # hosted hypervisor for x86 virtualization https://www.virtualbox.org/
 cask "virtualbox"
 # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop

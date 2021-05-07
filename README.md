@@ -218,6 +218,13 @@ Setup
 [Virtual Box Images](https://www.osboxes.org/virtualbox-images/)  
 [Kali Linux](https://www.kali.org/downloads/)
 
+**🕶 ngrok**
+[Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
+
+```shell
+  ngrok authtoken <your_auth_token>
+```
+
 ## Generate ssh key🔓
 
 [Connecting to GitHub with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
