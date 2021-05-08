@@ -256,6 +256,11 @@ echo "- 🔖 Dash"
 defaults write com.kapeli.dashdoc syncFolderPath "~/Google Drive/Settings/Dash"
 defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Google Drive/Settings/Dash/Snippets.dash"
 
+
+echo "- 🧠 JetBrains (PyCharm)"
+rm -rf "$HOME/Library/Application Support/JetBrains"
+ln -nfs "$HOME/Google Drive/Settings/JetBrains" "$HOME/Library/Application Support/JetBrains"
+
 echo "\n🎉 Completed Third-Party Software Setup\n"
 
 
