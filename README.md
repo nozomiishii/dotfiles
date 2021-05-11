@@ -353,7 +353,7 @@ defaults read notion.id
 
 ## Maintenance 👨🏻‍🏭
 
-Clean unused homebrew dependencies, and upgrade them
+Clean unused homebrew dependencies up, and upgrade them
 
 ```shell
   brew bundle cleanup --force && brew cleanup && brew upgrade
