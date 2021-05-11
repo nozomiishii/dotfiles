@@ -25,6 +25,8 @@ brew "pyenv"
 
 # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
 cask "ngrok"
+# MySQL/MariaDB database management platform https://www.sequelpro.com/
+cask "sequel-pro"
 # hosted hypervisor for x86 virtualization https://www.virtualbox.org/
 cask "virtualbox"
 # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
