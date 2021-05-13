@@ -21,6 +21,8 @@ brew "rbenv"
 brew "mono"
 # Python version management https://github.com/pyenv/pyenv
 brew "pyenv"
+# Python interface to Tcl/Tk and using like Turtle modules https://www.python.org/
+brew "python-tk"
 
 
 # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
