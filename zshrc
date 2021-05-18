@@ -35,7 +35,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 CODE_DIR="$HOME/Code"
 GOOGLE_DRIVE_DIR="$HOME/Google\ Drive"
 
-alias cddrive="cd $GOOGLE_DRIVE_DIR"
+alias drive="cd $GOOGLE_DRIVE_DIR"
 alias dot="cd $GOOGLE_DRIVE_DIR/Settings/dotfiles"
 alias alfred="cd $GOOGLE_DRIVE_DIR/Settings/Alfred"
 alias desk="cd ~/Desktop"
