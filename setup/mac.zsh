@@ -61,6 +61,9 @@ defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.6
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Turn off alert volume
 defaults write NSGlobalDomain com.apple.sound.beep.volume -int 0
+# Use keyboard navigation to move focus between controls
+# Press the Tab key to move focus forward and Shift Tab to move focus backward
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 
 
 echo "- 🗂 Finder" # killall Finder
@@ -271,5 +274,3 @@ killall SystemUIServer
 sudo killall cfprefsd
 sudo killall corebrightnessd
 
-echo "- 👨🏻‍🚀 Restarting..."
-sudo reboot

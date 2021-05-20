@@ -152,6 +152,12 @@ Run
   ./install
 ```
 
+Restart
+
+```shell
+  sudo reboot
+```
+
 ### 💡Start synchronizing all remaining google-backup-and-sync
 
 **⛓ Karabiner-Elements**  
