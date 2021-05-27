@@ -87,6 +87,7 @@
       }
     }
   },
+  "liveshare.presence": false,
   "peacock.favoriteColors": [
     {
       "name": "Monokai Pro Pink",
