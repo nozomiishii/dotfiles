@@ -152,5 +152,6 @@
     "testid",
     "typesync",
     "wireframe"
-  ]
+  ],
+  "window.openFilesInNewWindow": "default"
 }
