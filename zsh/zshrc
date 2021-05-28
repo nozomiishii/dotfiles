@@ -21,17 +21,18 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+# # snippet
+zinit wait lucid for \
+    OMZL::git.zsh \
+  atload"unalias grv" \
+    OMZP::git
+
 # Plugins
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
     zsh-users/zsh-syntax-highlighting \
   blockf atpull'zinit creinstall -q .' \
     zsh-users/zsh-completions
-
-# snippet
-zinit wait lucid is-snippet for \
-  OMZL::git.zsh \
-  OMZP::git
 
 # powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
