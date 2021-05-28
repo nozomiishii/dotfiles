@@ -1,3 +1,16 @@
-[character]
-success_symbol = "[➜](bold green)" 
+add_newline = false
 
+[character]
+success_symbol = "[➜](bold #A9DC76)"
+error_symbol = "[➜](bold #FF6188)"
+
+[directory]
+style = "bold #66D9EF"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+style = "bold #AB9DF2"
+
+[git_status]
+format = "[$all_status$ahead_behind]($style) "
+style = "bold #FFD866"

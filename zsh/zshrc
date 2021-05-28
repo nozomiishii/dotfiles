@@ -1,5 +1,7 @@
 echo '🧙🏿‍♂️.zshrc loading...'
 
+
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -13,9 +15,7 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-#
 # Plugins
-#
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
     zsh-users/zsh-syntax-highlighting \
@@ -29,60 +29,26 @@ zinit wait lucid is-snippet for \
 ### End of Zinit's installer chunk
 
 
-# Syntax highlighting for man command
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# Aliases 
-CODE_DIR="$HOME/Code"
-GOOGLE_DRIVE_DIR="$HOME/Google\ Drive"
+ZSH_SRC_DIR="$HOME/Google Drive/Settings/dotfiles/zsh"
 
-alias brewi="./setup/homebrew.zsh"
-alias drive="cd $GOOGLE_DRIVE_DIR"
-alias dot="cd $GOOGLE_DRIVE_DIR/Settings/dotfiles"
-alias alfred="cd $GOOGLE_DRIVE_DIR/Settings/Alfred"
-alias vimtut="cd $GOOGLE_DRIVE_DIR/Tutorials/vimclass && open ."
-alias dsk="cd ~/Desktop"
-alias plist="cd ~/Library/Preferences"
-alias cdcode="cd $CODE_DIR"
-alias noz="cd $CODE_DIR/nozomiishii/c2021"
-alias wrk="cd $CODE_DIR/Work"
-alias vu="cd $CODE_DIR/Work/voice-utopia"
-alias vuo="cd $CODE_DIR/Work/voice-utopia-office"
-alias hbb="hub browse"
-alias quit="exec $SHELL -l"
-alias zz="source ~/.zshrc"
-alias ll="exa -laFh --git"
-alias ls="exa"
-alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
-alias play="chmod +x ./playground.sh && ./playground.sh"
-alias yul="yarn upgrade --latest"
+# Aliases
+source "$ZSH_SRC_DIR/alias.zsh"
+
+# Last working dir
+source "$ZSH_SRC_DIR/last-working-dir.zsh"
 
 # Functions
-# Create a directory and move it there
-mkcd(){
-  mkdir -p "$@" && cd "$_"
-}
+source "$ZSH_SRC_DIR/functions.zsh"
 
 
-# Check the connected localhost
-lh(){
-  echo `ipconfig getifaddr en0`":${1:-3000}" | pbcopy
-  echo "\nYour connected IP address is"
-  echo `ipconfig getifaddr en0`":${1:-3000}" 
-  echo "Copied to clipboard🧙🏿‍♂️\n"
-}
 
-
-# Open Localhost
-oplh(){
-  open "http://localhost:${1:-3000}"
-}
-
+# Syntax highlighting for man command
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Ruby env
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-
 
 # Python env
 export PYENV_ROOT="$HOME/.pyenv"
@@ -91,15 +57,14 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
 
-
 # Node env
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 
 
 # # Change Directory 
@@ -108,7 +73,6 @@ setopt autocd
 # Change Directory history
 DIRSTACKSIZE=8
 setopt autopushd
-
 
 # Command history
 HISTFILE=$HOME/.zsh_history
@@ -120,6 +84,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 # Share history between terminals
 setopt share_history
+
 
 
 # Starship prompt
