@@ -6,12 +6,9 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/cask-fonts"
 
-#
-# Brew
-#
 
-# Cross-shell prompt for astronauts https://starship.rs
-brew "starship"
+
+# Brew
 
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
@@ -41,12 +38,11 @@ brew "pyenv"
 brew "python-tk"
 
 
-#
-# Cask
-#
 
-# FiraCode Nerd Font (Fira Code) https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode
-cask "font-fira-code-nerd-font"
+# Cask
+
+# font-meslo-lg-nerd-font https://github.com/ryanoasis/nerd-fonts
+cask "font-meslo-lg-nerd-font"
 
 # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
 cask "ngrok"
@@ -151,9 +147,8 @@ cask "figma"
 cask "google-japanese-ime"
 
 
-#
+
 # mas
-#
 
 # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
 mas "Xcode", id: 497799835

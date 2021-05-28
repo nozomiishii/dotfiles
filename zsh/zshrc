@@ -1,5 +1,11 @@
 echo '🧙🏿‍♂️.zshrc loading...'
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 
 ### Added by Zinit's installer
@@ -26,11 +32,20 @@ zinit wait lucid light-mode for \
 zinit wait lucid is-snippet for \
   OMZL::git.zsh \
   OMZP::git
+
+# powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ### End of Zinit's installer chunk
 
 
 
+# Bundle files
 ZSH_SRC_DIR="$HOME/Google Drive/Settings/dotfiles/zsh"
+
+# Config
+source "$ZSH_SRC_DIR/config.zsh"
 
 # Aliases
 source "$ZSH_SRC_DIR/alias.zsh"
@@ -64,28 +79,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
-
-
-# # Change Directory 
-setopt autocd
-
-# Change Directory history
-DIRSTACKSIZE=8
-setopt autopushd
-
-# Command history
-HISTFILE=$HOME/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
-# Do not save duplicate history
-setopt hist_ignore_all_dups
-# No history when starting command with space
-setopt hist_ignore_space
-# Share history between terminals
-setopt share_history
-
-
-
-# Starship prompt
-eval "$(starship init zsh)"

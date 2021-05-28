@@ -6,13 +6,12 @@
 - clean: ['~']
 
 - link:
-    ~/.config/starship.toml: zsh/starship.toml
+    ~/.p10k.zsh: zsh/.p10k.zsh
     ~/.zshrc: zsh/zshrc
     ~/.gitconfig:
     ~/.vimrc:
 - create:
     - ~/Code
-
 - shell:
     - command: ./setup/docker.zsh
       stdin: true
