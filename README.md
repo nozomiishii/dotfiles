@@ -34,12 +34,6 @@ Come to this page
   cd ~/Desktop && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
 ```
 
-oh my zsh(you can't insert following command into dotbot, because the process will exit by oh my zsh once the download completed)
-
-```shell
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
 **4: Run**  
 Check the permissions
 
@@ -339,9 +333,9 @@ ln -nfs "$HOME/Google Drive/settings/dotfiles/sync/Karabiner-Elements/karabiner.
 
 ```shell
   ll ~/Library/Preferences/ | grep <app_name>
+  # example
+  ll ~/Library/Preferences/ | grep firefox
 ```
-
-ll ~/Library/Preferences/ | grep firefox
 
 **NSGlobalDomain plist**
 
@@ -353,9 +347,33 @@ ll ~/Library/Preferences/ | grep firefox
 
 ```shell
   defaults read <app_name_plist>
+  # example
+  defaults read notion.id
 ```
 
-defaults read notion.id
+**Symbolic link**
+
+```shell
+  ln -nfs <New_linking_file> <Existing_linked_files>
+  # example
+  ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
+```
+
+## Zinit
+
+[Zinit Documentation](https://github.com/zdharma/zinit)
+
+Update plugins
+
+```shell
+  zinit update
+```
+
+Delete unused plugins
+
+```shell
+  zinit delete --clean
+```
 
 ## Maintenance 👨🏻‍🏭
 
@@ -363,6 +381,12 @@ Clean unused homebrew dependencies up, and upgrade them
 
 ```shell
   brew bundle cleanup --force && brew cleanup && brew upgrade
+```
+
+**Check the performance of zsh**
+
+```shell
+  time zsh -i -c exit
 ```
 
 ## UnInstall Homebrew 🍺
