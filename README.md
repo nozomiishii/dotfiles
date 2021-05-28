@@ -321,14 +321,6 @@ Check if it's an app you want to download.
   diff before after
 ```
 
-**Symbolic link**
-
-```shell
-  ln -s <original> <link>
-```
-
-ln -nfs "$HOME/Google Drive/settings/dotfiles/sync/Karabiner-Elements/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
-
 **Search app plist**
 
 ```shell
