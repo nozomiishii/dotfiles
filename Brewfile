@@ -48,7 +48,7 @@ cask "font-meslo-lg-nerd-font"
 cask "ngrok"
 
 # MySQL/MariaDB database management platform https://www.sequelpro.com/
-cask "sequel-pro"
+cask "sequel-pro-nightly"
 
 # hosted hypervisor for x86 virtualization https://www.virtualbox.org/
 cask "virtualbox"
