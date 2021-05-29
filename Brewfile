@@ -37,6 +37,9 @@ brew "pyenv"
 # Python interface to Tcl/Tk and using like Turtle modules https://www.python.org/
 brew "python-tk"
 
+# Node version management https://github.com/tj/n
+brew "n"
+
 
 
 # Cask
