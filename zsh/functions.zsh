@@ -17,3 +17,9 @@ lh(){
 oplh(){
   open "http://localhost:${1:-3000}"
 }
+
+
+# # zsh test
+ztest(){
+  for i in $(seq 1 10); do time zsh -i -c exit; done
+}
