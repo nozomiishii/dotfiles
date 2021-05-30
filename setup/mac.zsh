@@ -189,14 +189,15 @@ echo "\n🧝🏻‍♀️ Starting Third-Party Software Setup\n"
 
 echo "- 🐟 VSCode"
 VSCODE_USERDATA="$HOME/Library/Application Support/Code/User"
-GOOGLE_DRIVE_VSCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/sync/VSCode"
+GOOGLE_DRIVE_VSCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/preferences/VSCode"
 VSCODE_USERDATA_ITEMS=("keybindings.json" "settings.json" "snippets")
 
 for i in ${VSCODE_USERDATA_ITEMS[@]}; do
   rm -rf "$VSCODE_USERDATA/$i"
   ln -nfsv "$GOOGLE_DRIVE_VSCODE_USERDATA/$i" "$VSCODE_USERDATA/$i"
   if [ -L "$VSCODE_USERDATA/$i" ]; then
-    echo "Creating Link $VSCODE_USERDATA/$i -> $GOOGLE_DRIVE_VSCODE_USERDATA/$i"
+    echo "Created Link"
+    ls -l "$VSCODE_USERDATA"
   else
     echo "Error: Creating Links fails"
   fi
@@ -205,7 +206,7 @@ done
 
 echo "- 🍎 Xcode"
 XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
-GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/sync/Xcode/UserData"
+GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/preferences/Xcode/UserData"
 XCODE_USERDATA_ITEMS=("CodeSnippets" "FontAndColorThemes" "KeyBindings")
 
 for i in ${XCODE_USERDATA_ITEMS[@]}; do
@@ -213,7 +214,8 @@ for i in ${XCODE_USERDATA_ITEMS[@]}; do
   rm -rf "$XCODE_USERDATA/$i"
   ln -nfsv "$GOOGLE_DRIVE_XCODE_USERDATA/$i" "$XCODE_USERDATA/$i"
   if [ -L "$XCODE_USERDATA/$i" ]; then
-    echo "Creating Link $XCODE_USERDATA/$i -> $GOOGLE_DRIVE_XCODE_USERDATA/$i"
+    echo "Created Link"
+    ls -l "$XCODE_USERDATA"
   else
     echo "Error: Creating Links fails"
   fi
@@ -224,13 +226,15 @@ echo "- 🎮 iTerm2"
 # General > Preferences > check "Load preferences from a custom folder or URL"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 # Restore from the backup
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Google Drive/Settings/dotfiles/sync/iTerm2"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Google Drive/Settings/dotfiles/preferences/iTerm2"
 # General > Preferences > Save changes: when quits 
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
 
 echo "- ⛓ Karabiner-Elements"
-ln -nfs "$HOME/Google Drive/Settings/dotfiles/sync/karabiner" "$HOME/.config/karabiner"
+ln -nfs "$HOME/Google Drive/Settings/dotfiles/preferences/karabiner" "$HOME/.config/karabiner"
+# check if it works
+ls -l "$HOME/.config" | grep karabiner
 
 
 echo "- 🧲 Tiles"
