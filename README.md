@@ -180,7 +180,7 @@ Folder > Rule Sync Settings... > Use existing sync file... > Select "~/Google\ D
 **🎨 ColorSnapper2**  
 Activate the license  
 Hotkeys:  
-Pick Color: ⌃ + ⌘ + C
+Pick Color: ⌃ + ⌥ + C
 
 **🛻 Display(Sidecar)**
 
