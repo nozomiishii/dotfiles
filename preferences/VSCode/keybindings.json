@@ -97,5 +97,15 @@
     "key": "ctrl+a",
     "command": "editor.action.insertSnippet",
     "args": { "name": "scene.add($CLIPBOARD);" }
+  },
+  {
+    "key": "shift+alt+cmd+j",
+    "command": "liveshare.join",
+    "when": "liveshare:state != 'Joined' && liveshare:state != 'Shared'"
+  },
+  {
+    "key": "alt+cmd+j",
+    "command": "-liveshare.join",
+    "when": "liveshare:state != 'Joined' && liveshare:state != 'Shared'"
   }
 ]
