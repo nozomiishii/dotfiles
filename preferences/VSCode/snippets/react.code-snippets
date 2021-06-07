@@ -155,6 +155,16 @@
     ],
     "description": "Next.js Typescript Functional Component"
   },
+  "Next.js Image": {
+    "prefix": "nimg",
+    "body": [
+      "import Image from 'next/image';",
+      "<div className=\"relative w-16 h-16\">",
+      "  <Image src={} alt=\"\" layout=\"fill\" objectFit=\"cover\" />",
+      "</div>"
+    ],
+    "description": "Next.js Image"
+  },
   //
   //
   // JavaScript
