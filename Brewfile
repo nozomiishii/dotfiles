@@ -44,6 +44,9 @@ brew "n"
 
 # Cask
 
+# Automated testing of webapps for Google Chrome https://sites.google.com/chromium.org/driver/
+cask "chromedriver"
+
 # font-meslo-lg-nerd-font https://github.com/ryanoasis/nerd-fonts
 cask "font-meslo-lg-nerd-font"
 
