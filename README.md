@@ -216,9 +216,11 @@ System Preferences > Security and Privacy > General > Allow "System Software fro
 Restart system  
 Setup  
 [Virtual Box Images](https://www.osboxes.org/virtualbox-images/)  
-[Kali Linux](https://www.kali.org/downloads/)
+[Kali Linux](https://www.kali.org/downloads/)  
+[ubuntu](https://ubuntu.com/download/desktop)  
+Save the images to your prefer directory like Google Drive
 
-**🕶 ngrok**
+**🕶 ngrok**  
 [Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
 
 ```shell
