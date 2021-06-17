@@ -25,7 +25,7 @@ ztest(){
 }
 
 
-# Create TypeCcript Node.js project
-nodets(){
-  git clone git@github.com:nozomiishii/node.ts.git ${1:-node.ts} && cd $_
+# Node TypeScript New - Create TypeCcript Node.js project
+ntn(){
+  git clone git@github.com:nozomiishii/node.ts.git ${1:-new-project} && cd $_
 }
