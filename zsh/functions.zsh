@@ -19,7 +19,13 @@ oplh(){
 }
 
 
-# # zsh test
+# zsh test
 ztest(){
   for i in $(seq 1 10); do time zsh -i -c exit; done
+}
+
+
+# Create TypeCcript Node.js project
+nodets(){
+  git clone git@github.com:nozomiishii/node.ts.git ${1:-node.ts} && cd $_
 }
