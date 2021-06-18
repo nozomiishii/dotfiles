@@ -10,17 +10,23 @@
   "files.insertFinalNewline": true,
   "workbench.startupEditor": "newUntitledFile",
   "diffEditor.ignoreTrimWhitespace": false,
+
   // Editor
   "editor.suggestSelection": "first",
   "editor.renderWhitespace": "trailing",
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
+
+  // Window
+  "window.openFilesInNewWindow": "default",
+
   // Explorer
   "explorer.openEditors.visible": 0,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+
   // Tailwindcss
   "stylelint.config": {
     "rules": {
@@ -41,16 +47,22 @@
   "editor.quickSuggestions": {
     "strings": true
   },
+
   // Styles
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "files.autoSave": "onFocusChange",
+
   // Prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "prettier.printWidth": 100,
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+
   // ESlint
   "eslint.packageManager": "yarn",
   "editor.codeActionsOnSave": {
@@ -64,16 +76,19 @@
     "*.plist": "plist",
     "vimrc": "viml"
   },
+
   // yaml
   "[yaml]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
+
   // C#
   "omnisharp.useGlobalMono": "always",
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
+
   // Extenstions
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "liveServer.settings.donotShowInfoMsg": true,
@@ -122,6 +137,7 @@
       "value": "#2D2A2E"
     }
   ],
+
   // Spell Checker
   "cSpell.userWords": [
     "Behaviour",
@@ -152,6 +168,5 @@
     "testid",
     "typesync",
     "wireframe"
-  ],
-  "window.openFilesInNewWindow": "default"
+  ]
 }
