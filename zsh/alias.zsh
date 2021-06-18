@@ -27,6 +27,7 @@ alias vu="cd $CODE_DIR/Work/voice-utopia"
 alias vuo="cd $CODE_DIR/Work/voice-utopia-office"
 
 alias grmb="git branch --merged|egrep -v '\*|main|dev|stag|prod'|xargs git branch -d && git fetch --prune"
+alias deploy="git push origin prod && git checkout main"
 alias hbb="hub browse"
 alias quit="exec $SHELL -l"
 alias zz="source ~/.zshrc"
