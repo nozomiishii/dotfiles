@@ -53,6 +53,9 @@ cask "font-meslo-lg-nerd-font"
 # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
 cask "ngrok"
 
+# Native GUI tool for relational databases https://tableplus.com/
+cask "tableplus"
+
 # MySQL/MariaDB database management platform https://www.sequelpro.com/
 cask "sequel-pro-nightly"
 
