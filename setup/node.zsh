@@ -15,6 +15,7 @@ fi
 npm i -g typescript
 npm i -g firebase-tools
 npm i -g yarn
+npm i -g vercel
 
 echo "📦 npm installed"
 npm list -g --depth=0
