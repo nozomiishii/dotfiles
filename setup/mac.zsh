@@ -64,6 +64,11 @@ defaults write NSGlobalDomain com.apple.sound.beep.volume -int 0
 # Use keyboard navigation to move focus between controls
 # Press the Tab key to move focus forward and Shift Tab to move focus backward
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
+# Turn off auto correct spelling
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
+# Turn off auto capitalize
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 
 echo "- 🗂 Finder" # killall Finder
