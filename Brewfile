@@ -5,10 +5,14 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/cask-fonts"
+tap "heroku/brew"
 
 
 
 # Brew
+
+# Heroku Command Line Interface https://devcenter.heroku.com/articles/heroku-cli
+brew "heroku"
 
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
