@@ -160,7 +160,7 @@
     "body": [
       "import Image from 'next/image';",
       "<div className=\"relative w-16 h-16\">",
-      "  <Image src={} alt=\"\" layout=\"fill\" objectFit=\"cover\" />",
+      "  <Image src={} alt=\"\" layout=\"fill\" objectFit=\"contain\" />",
       "</div>"
     ],
     "description": "Next.js Image"
