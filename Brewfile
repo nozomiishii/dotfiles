@@ -60,9 +60,6 @@ cask "ngrok"
 # Native GUI tool for relational databases https://tableplus.com/
 cask "tableplus"
 
-# MySQL/MariaDB database management platform https://www.sequelpro.com/
-cask "sequel-pro-nightly"
-
 # Oracle VirtualBox Extension Pack https://www.virtualbox.org/
 cask "virtualbox-extension-pack"
 
