@@ -15,6 +15,9 @@ tap "heroku/brew"
 brew "heroku"
 brew "heroku-node"
 
+# Object-relational database system https://www.postgresql.org/
+brew "postgresql"
+
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
 
