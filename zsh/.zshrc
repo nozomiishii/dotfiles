@@ -57,6 +57,10 @@ source "$ZSH_SRC_DIR/last-working-dir.zsh"
 # Functions
 source "$ZSH_SRC_DIR/functions.zsh"
 
+if [[ -f $ZSH_SRC_DIR/tokens.zsh ]]; then
+  source "$ZSH_SRC_DIR/tokens.zsh"
+fi
+
 
 
 # Syntax highlighting for man command

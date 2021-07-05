@@ -288,8 +288,17 @@ This is the expected result:
 
 **💡 Just ignore Warning: Permanently added the RSA host key for IP address**
 
-**😼 hub**  
-Create Personal access token on Github.
+**🍺Homebrew setting**  
+[Create Personal access token on Github](https://github.com/settings/tokens/new?scopes=gist,public_repo,workflow&description=Homebrew)
+
+Create token.zsh file on dotfiles
+
+```shell
+  cd ~/Google\ Drive/Settings/dotfiles && touch zsh/tokens.zsh
+  echo 'export HOMEBREW_GITHUB_API_TOKEN=<your_token_here>' >> zsh/tokens.zsh
+```
+
+**😼 hub**
 
 ```shell
   hub browse

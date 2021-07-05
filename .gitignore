@@ -1,2 +1,4 @@
 Brewfile.lock.json
 .DS_Store
+
+**/tokens.zsh
