@@ -6,10 +6,15 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/cask-fonts"
 tap "heroku/brew"
+tap "stripe/stripe-cli"
 
 
 
 # Brew
+
+
+# Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
+brew "stripe"
 
 # Heroku Command Line Interface https://devcenter.heroku.com/articles/heroku-cli
 brew "heroku"
