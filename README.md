@@ -286,6 +286,23 @@ This is the expected result:
   Hi --------! You've successfully authenticated, but GitHub does not provide shell access
 ```
 
+⚠️ If the following caution came out, you need to create Personal access token
+
+```shell
+  Username for 'https://github.com': nozomiishii
+  Password for 'https://nozomiishii@github.com':
+  remote: Invalid username or password.
+  fatal: Authentication failed for
+```
+
+[Get a Personal access token](https://github.com/settings/tokens)  
+and paste it on password like below
+
+```shell
+  Username for 'https://github.com': nozomiishii
+  Password for 'https://nozomiishii@github.com': <personal_access_token>
+```
+
 **💡 Just ignore Warning: Permanently added the RSA host key for IP address**
 
 **🍺Homebrew setting**  
