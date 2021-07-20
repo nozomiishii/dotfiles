@@ -56,6 +56,8 @@
   "prettier.printWidth": 100,
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
+
+  // Prisma
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
