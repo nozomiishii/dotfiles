@@ -62,6 +62,9 @@ if [[ -f $ZSH_SRC_DIR/tokens.zsh ]]; then
 fi
 
 
+# grep setting
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;32'
 
 # Syntax highlighting for man command
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
