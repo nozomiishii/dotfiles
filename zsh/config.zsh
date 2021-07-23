@@ -9,9 +9,15 @@ setopt autopushd
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
+
 # Do not save duplicate history
 setopt hist_ignore_all_dups
+
 # No history when starting command with space
 setopt hist_ignore_space
+
 # Share history between terminals
 setopt share_history
+
+# Start array index from 0
+setopt ksharrays
