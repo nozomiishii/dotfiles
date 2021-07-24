@@ -19,5 +19,3 @@ setopt hist_ignore_space
 # Share history between terminals
 setopt share_history
 
-# Start array index from 0
-setopt ksharrays
