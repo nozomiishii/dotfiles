@@ -24,6 +24,7 @@ alias jj="cd $CODE_DIR"
 alias noz="cd $CODE_DIR/nozomiishii/c2021"
 alias wrk="cd $CODE_DIR/Work"
 alias vu="cd $CODE_DIR/Work/voice-utopia"
+alias vuapi="cd $CODE_DIR/Work/voice-utopia-api"
 alias vuo="cd $CODE_DIR/Work/voice-utopia-office"
 
 alias grmb="git branch --merged|egrep -v '\*|main|dev|stag|prod'|xargs git branch -d && git fetch --prune"
