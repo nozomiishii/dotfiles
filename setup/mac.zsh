@@ -197,10 +197,10 @@ VSCODE_USERDATA="$HOME/Library/Application Support/Code/User"
 GOOGLE_DRIVE_VSCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/preferences/VSCode"
 VSCODE_USERDATA_ITEMS=("keybindings.json" "settings.json" "snippets")
 
-for i in ${VSCODE_USERDATA_ITEMS[@]}; do
-  rm -rf "$VSCODE_USERDATA/$i"
-  ln -nfsv "$GOOGLE_DRIVE_VSCODE_USERDATA/$i" "$VSCODE_USERDATA/$i"
-  if [ -L "$VSCODE_USERDATA/$i" ]; then
+for item in ${VSCODE_USERDATA_ITEMS[@]}; do
+  rm -rf "$VSCODE_USERDATA/$item"
+  ln -nfsv "$GOOGLE_DRIVE_VSCODE_USERDATA/$item" "$VSCODE_USERDATA/$item"
+  if [ -L "$VSCODE_USERDATA/$item" ]; then
     echo "Created Link"
     ls -l "$VSCODE_USERDATA"
   else
@@ -214,11 +214,11 @@ XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
 GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/preferences/Xcode/UserData"
 XCODE_USERDATA_ITEMS=("CodeSnippets" "FontAndColorThemes" "KeyBindings")
 
-for i in ${XCODE_USERDATA_ITEMS[@]}; do
+for item in ${XCODE_USERDATA_ITEMS[@]}; do
   # Need rm -rf to symbolic-link KeyBindings folder
-  rm -rf "$XCODE_USERDATA/$i"
-  ln -nfsv "$GOOGLE_DRIVE_XCODE_USERDATA/$i" "$XCODE_USERDATA/$i"
-  if [ -L "$XCODE_USERDATA/$i" ]; then
+  rm -rf "$XCODE_USERDATA/$item"
+  ln -nfsv "$GOOGLE_DRIVE_XCODE_USERDATA/$item" "$XCODE_USERDATA/$item"
+  if [ -L "$XCODE_USERDATA/$item" ]; then
     echo "Created Link"
     ls -l "$XCODE_USERDATA"
   else
@@ -253,9 +253,9 @@ defaults write com.sempliva.Tiles.plist PreviousDisplay -dict-add "keyCode" -int
 defaults write com.sempliva.Tiles.plist PreviousDisplay -dict-add "modifierFlags" -int 1572864
 # Inactive Hotkeys
 TILES_INACTIVE_HOTKEYS=("MoveToCenter" "NextThird" "PreviousThird" "FirstTwoThirds" "LastTwoThirds" "NextDisplay" "MoveToLowerLeft" "MoveToLowerRight" "MoveToUpperLeft" "MoveToUpperRight" "UndoLastMove")
-for i in ${TILES_INACTIVE_HOTKEYS[@]}; do
-  defaults write com.sempliva.Tiles.plist $i -dict-add "keyCode" -int 65535
-  defaults write com.sempliva.Tiles.plist $i -dict-add "modifierFlags" -int 0
+for item in ${TILES_INACTIVE_HOTKEYS[@]}; do
+  defaults write com.sempliva.Tiles.plist $item -dict-add "keyCode" -int 65535
+  defaults write com.sempliva.Tiles.plist $item -dict-add "modifierFlags" -int 0
 done
 
 
