@@ -123,6 +123,9 @@ cask "dash"
 # Trains AIs to understand and translate texts. https://www.deepl.com
 cask "deepl"
 
+# Video communication and virtual meeting platform https://www.zoom.us/
+cask "zoom"
+
 # Voice and text chat software. https://discord.com
 cask "discord"
 
