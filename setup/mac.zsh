@@ -211,20 +211,20 @@ done
 
 echo "- 🍎 Xcode"
 XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
-GOOGLE_DRIVE_XCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/preferences/Xcode/UserData"
-XCODE_USERDATA_ITEMS=("CodeSnippets" "FontAndColorThemes" "KeyBindings")
+CUSTOMIZED_XCODE_USERDATA="$HOME/Settings/dotfiles/preferences/Xcode/UserData"
 
+XCODE_USERDATA_ITEMS=("CodeSnippets" "FontAndColorThemes" "KeyBindings")
 for item in ${XCODE_USERDATA_ITEMS[@]}; do
   # Need rm -rf to symbolic-link KeyBindings folder
   rm -rf "$XCODE_USERDATA/$item"
-  ln -nfsv "$GOOGLE_DRIVE_XCODE_USERDATA/$item" "$XCODE_USERDATA/$item"
+  ln -nfsv "$CUSTOMIZED_XCODE_USERDATA/$item" "$XCODE_USERDATA/$item"
   if [ -L "$XCODE_USERDATA/$item" ]; then
-    echo "Created Link"
-    ls -l "$XCODE_USERDATA"
+    echo "Created Link: $XCODE_USERDATA/$item"
   else
     echo "Error: Creating Links fails"
   fi
 done
+ls -l "$XCODE_USERDATA"
 
 
 echo "- 🎮 iTerm2"
