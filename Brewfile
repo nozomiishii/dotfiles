@@ -57,6 +57,9 @@ brew "n"
 
 # Cask
 
+# Client for the Google Drive storage service https://www.google.com/drive/
+cask "google-drive"
+
 # Automated testing of webapps for Google Chrome https://sites.google.com/chromium.org/driver/
 cask "chromedriver"
 
@@ -128,9 +131,6 @@ cask "zoom"
 
 # Voice and text chat software. https://discord.com
 cask "discord"
-
-# Access and sync your content from any device. https://www.google.com/intl/en_ca/drive/download
-cask "google-backup-and-sync"
 
 # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
 cask "kindle"

@@ -61,7 +61,7 @@ Preferences > General > Keyboard shortcuts > remove all shortcuts(because it con
 Sign in and Sync  
 ⚠️ Sync only **Settings** file (Downloading everything takes too much time.)
 
-## While waiting for google-backup-and-sync to complete ⏳
+## While waiting for google-drive to complete ⏳
 
 **Finder**  
 Rearrange the order of the sidebar
@@ -132,7 +132,7 @@ Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addo
 Setup  
 Edit > Preferences > Input > Keyboard > Emulate Numpad
 
-## When the google-backup-and-sync is complete 🎉
+## When the google-drive is complete 🎉
 
 Clean up temporary dotfiles, and go to the directory
 
@@ -152,7 +152,7 @@ Restart
   sudo reboot
 ```
 
-### 💡Start synchronizing all remaining google-backup-and-sync
+### 💡Start synchronizing all remaining google-drive
 
 **⛓ Karabiner-Elements**  
 Login
