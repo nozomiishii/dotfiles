@@ -227,6 +227,16 @@ done
 ls -l "$XCODE_USERDATA"
 
 
+echo "- 🧠 JetBrains (PyCharm)"
+PYCHARM_USERDATA="$HOME/Library/Application Support/JetBrains"
+CUSTOMIZED_PYCHARM_USERDATA="$HOME/Settings/dotfiles/preferences/JetBrains"
+
+rm -rf "$PYCHARM_USERDATA"
+ln -nfsv "$CUSTOMIZED_PYCHARM_USERDATA" "$PYCHARM_USERDATA"
+ls -l "$PYCHARM_USERDATA"
+
+
+
 echo "- 🎮 iTerm2"
 # General > Preferences > check "Load preferences from a custom folder or URL"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
@@ -270,12 +280,7 @@ defaults write com.kapeli.dashdoc syncFolderPath "~/Settings/Dash"
 defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Settings/Dash/Snippets.dash"
 
 
-echo "- 🧠 JetBrains (PyCharm)"
-rm -rf "$HOME/Library/Application Support/JetBrains"
-ln -nfs "$HOME/Settings/JetBrains" "$HOME/Library/Application Support/JetBrains"
-
 echo "\n🎉 Completed Third-Party Software Setup\n"
-
 
 echo "- 👼 Killall..."
 killall Dock
