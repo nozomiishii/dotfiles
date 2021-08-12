@@ -201,12 +201,12 @@ for item in ${VSCODE_USERDATA_ITEMS[@]}; do
   rm -rf "$VSCODE_USERDATA/$item"
   ln -nfsv "$CUSTOMIZED_VSCODE_USERDATA/$item" "$VSCODE_USERDATA/$item"
   if [ -L "$VSCODE_USERDATA/$item" ]; then
-    echo "Created Link"
-    ls -l "$VSCODE_USERDATA"
+    echo "Created Link: $VSCODE_USERDATA/$item"
   else
     echo "Error: Creating Links fails"
   fi
 done
+ls -l "$VSCODE_USERDATA"
 
 
 echo "- 🍎 Xcode"
