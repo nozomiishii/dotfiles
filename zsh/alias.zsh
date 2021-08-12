@@ -15,8 +15,7 @@ alias yul="yarn upgrade --latest"
 
 # Change Directory
 alias drive="cd $GOOGLE_DRIVE_DIR"
-alias dot="cd $HOME/Settings/dotfiles"
-alias alfred="cd $HOME/Settings/Alfred"
+alias dot="cd $HOME/dotfiles"
 alias vimtut="cd $HOME/Tutorials/vimclass && open ."
 alias dsk="cd ~/Desktop"
 alias plist="cd ~/Library/Preferences"

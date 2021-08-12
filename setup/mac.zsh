@@ -190,11 +190,11 @@ echo "\n🎉 Completed Mac Setup \n"
 
 
 echo "\n🧝🏻‍♀️ Starting Third-Party Software Setup\n"
-
+APP_PREFERENCES="$HOME/dotfiles/apps"
 
 echo "- 🐟 VSCode"
 VSCODE_USERDATA="$HOME/Library/Application Support/Code/User"
-CUSTOMIZED_VSCODE_USERDATA="$HOME/Settings/dotfiles/preferences/VSCode"
+CUSTOMIZED_VSCODE_USERDATA="$APP_PREFERENCES/VSCode"
 
 VSCODE_USERDATA_ITEMS=("keybindings.json" "settings.json" "snippets")
 for item in ${VSCODE_USERDATA_ITEMS[@]}; do
@@ -211,7 +211,7 @@ ls -l "$VSCODE_USERDATA"
 
 echo "- 🍎 Xcode"
 XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
-CUSTOMIZED_XCODE_USERDATA="$HOME/Settings/dotfiles/preferences/Xcode/UserData"
+CUSTOMIZED_XCODE_USERDATA="$APP_PREFERENCES/Xcode/UserData"
 
 XCODE_USERDATA_ITEMS=("CodeSnippets" "FontAndColorThemes" "KeyBindings")
 for item in ${XCODE_USERDATA_ITEMS[@]}; do
@@ -229,7 +229,7 @@ ls -l "$XCODE_USERDATA"
 
 echo "- 🧠 JetBrains (PyCharm)"
 PYCHARM_USERDATA="$HOME/Library/Application Support/JetBrains"
-CUSTOMIZED_PYCHARM_USERDATA="$HOME/Settings/dotfiles/preferences/JetBrains"
+CUSTOMIZED_PYCHARM_USERDATA="$APP_PREFERENCES/JetBrains"
 
 rm -rf "$PYCHARM_USERDATA"
 ln -nfsv "$CUSTOMIZED_PYCHARM_USERDATA" "$PYCHARM_USERDATA"
@@ -241,14 +241,14 @@ echo "- 🎮 iTerm2"
 # General > Preferences > check "Load preferences from a custom folder or URL"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 # Restore from the backup
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/Settings/dotfiles/preferences/iTerm2"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$APP_PREFERENCES/iTerm2"
 # General > Preferences > Save changes: when quits 
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
 
 echo "- ⛓ Karabiner-Elements"
 rm -rf "$HOME/.config/karabiner"
-ln -nfsv "$HOME/Settings/dotfiles/preferences/karabiner" "$HOME/.config/karabiner"
+ln -nfsv "$APP_PREFERENCES/karabiner" "$HOME/.config/karabiner"
 # check if it works
 ls -l "$HOME/.config" | grep karabiner
 
@@ -272,7 +272,7 @@ done
 
 echo "- 🐵 Blender"
 BLENDER_USERDATA="$HOME/Library/Application Support/Blender"
-CUSTOMIZED_BLENDER_USERDATA="$HOME/Settings/dotfiles/preferences/Blender"
+CUSTOMIZED_BLENDER_USERDATA="$APP_PREFERENCES/Blender"
 
 rm -rf "$BLENDER_USERDATA"
 ln -nfsv "$CUSTOMIZED_BLENDER_USERDATA" "$BLENDER_USERDATA"
@@ -281,8 +281,8 @@ ls -l "$BLENDER_USERDATA"
 
 
 echo "- 🔖 Dash"
-defaults write com.kapeli.dashdoc syncFolderPath "$HOME/Settings/dotfiles/preferences/Dash"
-defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Settings/dotfiles/preferences/Dash/Snippets.dash"
+defaults write com.kapeli.dashdoc syncFolderPath "$APP_PREFERENCES/Dash"
+defaults write com.kapeli.dashdoc snippetSQLPath "$APP_PREFERENCES/Dash/Snippets.dash"
 
 
 echo "\n🎉 Completed Third-Party Software Setup\n"
