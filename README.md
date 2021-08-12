@@ -175,7 +175,7 @@ System Preferences > Accessibility > Spoken Content > Adjust Speaking Rate
 
 **Hazel🧹**
 License... > Activate the License  
-Folder > Rule Sync Settings... > Use existing sync file... > Select "~/Google\ Drive/Settings/Hazel"
+Folder > Rule Sync Settings... > Use existing sync file... > Select "~/Settings/dotfiles/preferences/Hazel"
 
 **🎨 ColorSnapper2**  
 Activate the license  
