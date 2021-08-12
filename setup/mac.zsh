@@ -237,7 +237,8 @@ defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -b
 
 
 echo "- ⛓ Karabiner-Elements"
-ln -nfs "$HOME/Google Drive/Settings/dotfiles/preferences/karabiner" "$HOME/.config/karabiner"
+rm -rf "$HOME/.config/karabiner"
+ln -nfsv "$HOME/Settings/dotfiles/preferences/karabiner" "$HOME/.config/karabiner"
 # check if it works
 ls -l "$HOME/.config" | grep karabiner
 
