@@ -281,8 +281,8 @@ ls -l "$BLENDER_USERDATA"
 
 
 echo "- 🔖 Dash"
-defaults write com.kapeli.dashdoc syncFolderPath "~/Settings/Dash"
-defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Settings/Dash/Snippets.dash"
+defaults write com.kapeli.dashdoc syncFolderPath "$HOME/Settings/dotfiles/preferences/Dash"
+defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Settings/dotfiles/preferences/Dash/Snippets.dash"
 
 
 echo "\n🎉 Completed Third-Party Software Setup\n"
