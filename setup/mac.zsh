@@ -272,7 +272,7 @@ defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Settings/Dash/Snippets.d
 
 echo "- 🧠 JetBrains (PyCharm)"
 rm -rf "$HOME/Library/Application Support/JetBrains"
-ln -nfs "$HOME/Google Drive/Settings/JetBrains" "$HOME/Library/Application Support/JetBrains"
+ln -nfs "$HOME/Settings/JetBrains" "$HOME/Library/Application Support/JetBrains"
 
 echo "\n🎉 Completed Third-Party Software Setup\n"
 
