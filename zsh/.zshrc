@@ -9,7 +9,7 @@ fi
 
 
 # Bundle files
-ZSH_SRC_DIR="$HOME/Google Drive/Settings/dotfiles/zsh"
+ZSH_SRC_DIR="$HOME/Settings/dotfiles/zsh"
 
 # zinit
 source "$ZSH_SRC_DIR/zinit.zsh"
