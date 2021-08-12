@@ -10,6 +10,7 @@
   "files.insertFinalNewline": true,
   "workbench.startupEditor": "newUntitledFile",
   "diffEditor.ignoreTrimWhitespace": false,
+  "security.workspace.trust.untrustedFiles": "open",
 
   // Editor
   "editor.suggestSelection": "first",
