@@ -262,7 +262,7 @@ done
 
 echo "- 🐵 Blender"
 rm -rf "$HOME/Library/Application Support/Blender"
-ln -nfs "$HOME/Google Drive/Settings/Blender" "$HOME/Library/Application Support/Blender"
+ln -nfs "$HOME/Settings/Blender" "$HOME/Library/Application Support/Blender"
 
 
 echo "- 🔖 Dash"
