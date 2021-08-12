@@ -1,0 +1,117 @@
+<project version="4">
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nato_phonetic_alphabet.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/main.py" />
+    </changedPaths>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="NATO-alphabet-start" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NATO-alphabet-start" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="ToolWindowManager">
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2242814" />
+      <window_info id="Structure" order="1" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Commit" order="3" />
+      <window_info id="Pull Requests" order="4" />
+      <window_info id="Learn" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32998818" />
+      <window_info anchor="bottom" id="TODO" order="3" />
+      <window_info anchor="bottom" id="Problems View" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Python Packages" order="6" />
+      <window_info anchor="bottom" id="Python Console" order="6" />
+      <window_info anchor="bottom" id="Services" order="6" show_stripe_button="false" />
+    </layout>
+    <recentWindows>
+      <value>Run</value>
+      <value>Project</value>
+    </recentWindows>
+  </component>
+  <component name="Trusted.Project.Settings" hasCheckedIfOldProject="true" />
+  <component name="WindowStateProjectService">
+    <state x="287" y="212" width="844" height="500" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621915879337">
+      <screen x="0" y="25" width="1382" height="875" />
+    </state>
+    <state x="287" y="212" width="844" height="500" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1382.875/-1366.25.1366.999@0.25.1382.875" timestamp="1621915879337" />
+    <state width="1301" height="251" key="GridCell.Tab.0.bottom" timestamp="1621916770569">
+      <screen x="0" y="25" width="1382" height="875" />
+    </state>
+    <state width="1301" height="251" key="GridCell.Tab.0.bottom/0.25.1382.875/-1366.25.1366.999@0.25.1382.875" timestamp="1621916770569" />
+    <state width="1301" height="251" key="GridCell.Tab.0.center" timestamp="1621916770568">
+      <screen x="0" y="25" width="1382" height="875" />
+    </state>
+    <state width="1301" height="251" key="GridCell.Tab.0.center/0.25.1382.875/-1366.25.1366.999@0.25.1382.875" timestamp="1621916770568" />
+    <state width="1301" height="251" key="GridCell.Tab.0.left" timestamp="1621916770568">
+      <screen x="0" y="25" width="1382" height="875" />
+    </state>
+    <state width="1301" height="251" key="GridCell.Tab.0.left/0.25.1382.875/-1366.25.1366.999@0.25.1382.875" timestamp="1621916770568" />
+    <state width="1301" height="251" key="GridCell.Tab.0.right" timestamp="1621916770569">
+      <screen x="0" y="25" width="1382" height="875" />
+    </state>
+    <state width="1301" height="251" key="GridCell.Tab.0.right/0.25.1382.875/-1366.25.1366.999@0.25.1382.875" timestamp="1621916770569" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/nato_phonetic_alphabet.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<code_scheme name="Default" version="173">
+  <CsvCodeStyleSettings>
+    <option name="TRIM_LEADING_WHITE_SPACES" value="true" />
+    <option name="TRIM_TRAILING_WHITE_SPACES" value="true" />
+    <option name="TABULARIZE" value="false" />
+    <option name="WHITE_SPACES_OUTSIDE_QUOTES" value="false" />
+  </CsvCodeStyleSettings>
+</code_scheme>

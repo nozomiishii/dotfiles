@@ -1,0 +1,159 @@
+<project version="4">
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/weather_data.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
+              <column index="0" width="100" />
+              <column index="1" width="100" />
+              <column index="2" width="100" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Squirrel_Data.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="114" selection-start-line="2" selection-start-column="110" selection-end-line="2" selection-end-column="114" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/weather_data.csv" />
+      <option value="$PROJECT_DIR$/Squirrel_Data.csv" />
+      <option value="$PROJECT_DIR$/main.py" />
+    </changedPaths>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="csv" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csv" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="ToolWindowManager">
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Commit" order="3" />
+      <window_info id="Pull Requests" order="4" />
+      <window_info id="Learn" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32998818" />
+      <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="bottom" id="Problems View" order="5" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Python Packages" order="9" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32998818" />
+      <window_info anchor="bottom" id="Services" order="11" show_stripe_button="false" />
+    </layout>
+    <recentWindows>
+      <value>Python Console</value>
+      <value>Run</value>
+      <value>Project</value>
+    </recentWindows>
+  </component>
+  <component name="Trusted.Project.Settings" hasCheckedIfOldProject="true" trusted="YES" />
+  <component name="WindowStateProjectService">
+    <state x="250" y="289" key="#Notifications" timestamp="1621785646436">
+      <screen x="0" y="25" width="1371" height="875" />
+    </state>
+    <state x="250" y="289" key="#Notifications/0.25.1371.875/-1366.25.1366.999@0.25.1371.875" timestamp="1621785646436" />
+    <state width="1165" height="251" key="GridCell.Tab.0.bottom" timestamp="1621827058535">
+      <screen x="0" y="25" width="1373" height="875" />
+    </state>
+    <state width="1165" height="251" key="GridCell.Tab.0.bottom/0.25.1371.875/-1366.25.1366.999@0.25.1371.875" timestamp="1621821629368" />
+    <state width="1165" height="251" key="GridCell.Tab.0.bottom/0.25.1373.875/-1366.25.1366.999@0.25.1373.875" timestamp="1621827058535" />
+    <state width="1165" height="251" key="GridCell.Tab.0.center" timestamp="1621827058534">
+      <screen x="0" y="25" width="1373" height="875" />
+    </state>
+    <state width="1165" height="251" key="GridCell.Tab.0.center/0.25.1371.875/-1366.25.1366.999@0.25.1371.875" timestamp="1621821629367" />
+    <state width="1165" height="251" key="GridCell.Tab.0.center/0.25.1373.875/-1366.25.1366.999@0.25.1373.875" timestamp="1621827058534" />
+    <state width="1165" height="251" key="GridCell.Tab.0.left" timestamp="1621827058532">
+      <screen x="0" y="25" width="1373" height="875" />
+    </state>
+    <state width="1165" height="251" key="GridCell.Tab.0.left/0.25.1371.875/-1366.25.1366.999@0.25.1371.875" timestamp="1621821629366" />
+    <state width="1165" height="251" key="GridCell.Tab.0.left/0.25.1373.875/-1366.25.1366.999@0.25.1373.875" timestamp="1621827058532" />
+    <state width="1165" height="251" key="GridCell.Tab.0.right" timestamp="1621827058534">
+      <screen x="0" y="25" width="1373" height="875" />
+    </state>
+    <state width="1165" height="251" key="GridCell.Tab.0.right/0.25.1371.875/-1366.25.1366.999@0.25.1371.875" timestamp="1621821629367" />
+    <state width="1165" height="251" key="GridCell.Tab.0.right/0.25.1373.875/-1366.25.1366.999@0.25.1373.875" timestamp="1621827058534" />
+    <state x="87" y="94" width="1258" height="728" key="SettingsEditor" timestamp="1621785757533">
+      <screen x="0" y="25" width="1371" height="875" />
+    </state>
+    <state x="87" y="94" width="1258" height="728" key="SettingsEditor/0.25.1371.875/-1366.25.1366.999@0.25.1371.875" timestamp="1621785757533" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Squirrel_Data.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="114" selection-start-line="2" selection-start-column="110" selection-end-line="2" selection-end-column="114" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weather_data.csv">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
+          <column index="0" width="100" />
+          <column index="1" width="100" />
+          <column index="2" width="100" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

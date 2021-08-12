@@ -1,0 +1,354 @@
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="email" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="7" selection-start-line="7" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="mock:///">
+          <provider selected="true" editor-type-id="BackendDiffFileEditorProvider" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="389">
+                <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tomoko.hiraoji</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Untitled spreadsheet - tsukune-campfire - backerlist_388652_202106161835-1.csv" />
+      <option value="$PROJECT_DIR$/quotes.txt" />
+      <option value="$PROJECT_DIR$/birthdays.csv" />
+      <option value="$PROJECT_DIR$/content.txt" />
+      <option value="$PROJECT_DIR$/supporters.csv" />
+      <option value="$PROJECT_DIR$/.env" />
+      <option value="$PROJECT_DIR$/csv_manager.py" />
+      <option value="$PROJECT_DIR$/input/supporters.csv" />
+      <option value="$PROJECT_DIR$/output/supporters.csv" />
+      <option value="$PROJECT_DIR$/main.py" />
+      <option value="$PROJECT_DIR$/.gitignore" />
+      <option value="$PROJECT_DIR$/README.md" />
+      <option value="$PROJECT_DIR$/LICENSE" />
+    </changedPaths>
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="auto-email-sender" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auto-email-sender" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="auto-email-sender" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auto-email-sender" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="auto-email-sender" type="b2602c69:ProjectViewProjectNode" />
+              <item name="auto-email-sender" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="TerminalArrangementManager">
+    <option name="myTabStates">
+      <TerminalTabState tabName="Local" commandHistoryFileName="email-history" />
+    </option>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79312503" visible="true" weight="0.26145834" />
+      <window_info id="Structure" order="1" sideWeight="0.206875" side_tool="true" visible="true" weight="0.26145834" />
+      <window_info id="Favorites" order="2" sideWeight="0.49939758" side_tool="true" weight="0.13229167" />
+      <window_info id="Commit" order="3" sideWeight="0.67402947" weight="0.42491317" />
+      <window_info id="Pull Requests" order="4" />
+      <window_info id="Learn" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.5436836" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.03388889" />
+      <window_info anchor="bottom" id="TODO" order="4" weight="0.036009446" />
+      <window_info anchor="bottom" id="Problems View" order="5" weight="0.48819363" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.3996458" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.03388889" />
+      <window_info anchor="bottom" id="Python Packages" order="9" weight="0.6841794" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Services" order="11" show_stripe_button="false" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13229167" />
+      <window_info id="Structure" order="1" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Commit" order="3" />
+      <window_info id="Pull Requests" order="4" />
+      <window_info id="Learn" order="5" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.5436836" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.8561111" />
+      <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="bottom" id="Problems View" order="5" weight="0.32998818" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.3996458" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Python Packages" order="9" weight="0.32998818" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Services" order="11" show_stripe_button="false" />
+    </layout-to-restore>
+    <recentWindows>
+      <value>Project</value>
+      <value>Commit</value>
+      <value>Run</value>
+      <value>Structure</value>
+      <value>Python Packages</value>
+      <value>TODO</value>
+      <value>Problems View</value>
+      <value>Favorites</value>
+      <value>Terminal</value>
+      <value>Debug</value>
+      <value>Event Log</value>
+    </recentWindows>
+  </component>
+  <component name="Trusted.Project.Settings" hasCheckedIfOldProject="true" trusted="YES" />
+  <component name="WindowStateProjectService">
+    <state x="256" y="212" width="844" height="530" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622569920492">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="256" y="212" width="844" height="530" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1622569920492" />
+    <state x="364" y="224" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1624450406658">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="364" y="224" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/-1366.0.1366.1024@0.0.1440.900" timestamp="1624450406658" />
+    <state x="364" y="243" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1624289903082" />
+    <state x="363" y="213" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1624446827072">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="363" y="193" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900/-1366.0.1366.1024@0.0.1440.900" timestamp="1624341658252" />
+    <state x="363" y="213" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1624446827072" />
+    <state width="598" height="296" key="DebuggerActiveHint" timestamp="1622393452166">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state width="598" height="296" key="DebuggerActiveHint/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1622393452166" />
+    <state width="1419" height="2" key="GridCell.Tab.0.bottom" timestamp="1624450499903">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="2" key="GridCell.Tab.0.bottom/0.0.1440.900/-1366.0.1366.1024@0.0.1440.900" timestamp="1624450499903" />
+    <state width="1419" height="259" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1624196187891" />
+    <state width="1419" height="2" key="GridCell.Tab.0.bottom/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1624447795344" />
+    <state width="1142" height="429" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1624205953360" />
+    <state width="1419" height="2" key="GridCell.Tab.0.center" timestamp="1624450499902">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="2" key="GridCell.Tab.0.center/0.0.1440.900/-1366.0.1366.1024@0.0.1440.900" timestamp="1624450499902" />
+    <state width="1419" height="259" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1624196187890" />
+    <state width="1419" height="2" key="GridCell.Tab.0.center/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1624447795343" />
+    <state width="1142" height="429" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1624205953359" />
+    <state width="1419" height="2" key="GridCell.Tab.0.left" timestamp="1624450499901">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="2" key="GridCell.Tab.0.left/0.0.1440.900/-1366.0.1366.1024@0.0.1440.900" timestamp="1624450499901" />
+    <state width="1419" height="259" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1624196187889" />
+    <state width="1419" height="2" key="GridCell.Tab.0.left/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1624447795342" />
+    <state width="1142" height="429" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1624205953359" />
+    <state width="1419" height="2" key="GridCell.Tab.0.right" timestamp="1624450499902">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="2" key="GridCell.Tab.0.right/0.0.1440.900/-1366.0.1366.1024@0.0.1440.900" timestamp="1624450499902" />
+    <state width="1419" height="259" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1624196187890" />
+    <state width="1419" height="2" key="GridCell.Tab.0.right/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1624447795344" />
+    <state width="1142" height="429" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1624205953360" />
+    <state width="1301" height="310" key="GridCell.Tab.1.bottom" timestamp="1622435251719">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state width="1301" height="310" key="GridCell.Tab.1.bottom/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1622435251719" />
+    <state width="1301" height="310" key="GridCell.Tab.1.center" timestamp="1622435251719">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state width="1301" height="310" key="GridCell.Tab.1.center/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1622435251719" />
+    <state width="1301" height="310" key="GridCell.Tab.1.left" timestamp="1622435251718">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state width="1301" height="310" key="GridCell.Tab.1.left/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1622435251718" />
+    <state width="1301" height="310" key="GridCell.Tab.1.right" timestamp="1622435251719">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state width="1301" height="310" key="GridCell.Tab.1.right/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1622435251719" />
+    <state x="7" y="112" width="1433" height="728" key="SettingsEditor" timestamp="1624448443529">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="7" y="89" key="SettingsEditor/0.0.1440.900/-1366.0.1366.1024@0.0.1440.900" timestamp="1624445392808" />
+    <state x="7" y="112" width="1433" height="728" key="SettingsEditor/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1624448443529" />
+    <state x="369" y="192" key="search.everywhere.popup" timestamp="1624446361058">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="369" y="192" key="search.everywhere.popup/0.0.1440.900/-1366.0.1366.1024@0.0.1440.900" timestamp="1624446361058" />
+    <state x="369" y="212" key="search.everywhere.popup/0.25.1440.875/-1366.25.1366.999@0.25.1440.875" timestamp="1624337186126" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///usr/local/Cellar/python@3.9/3.9.5/Frameworks/Python.framework/Versions/3.9/lib/python3.9/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="821" lean-forward="true" selection-start-line="821" selection-end-line="821" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Untitled spreadsheet - tsukune-campfire - backerlist_388652_202106161835-1.csv" />
+    <entry file="file://$PROJECT_DIR$/letter_templates/letter_2.txt" />
+    <entry file="file://$PROJECT_DIR$/letter_templates/letter_1.txt" />
+    <entry file="file://$PROJECT_DIR$/letter_templates/letter_3.txt" />
+    <entry file="file://$PROJECT_DIR$/content.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="10" column="4" lean-forward="true" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/supporters.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/supporters.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csv_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="7" selection-start-line="7" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="389">
+            <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

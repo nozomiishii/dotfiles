@@ -1,0 +1,34 @@
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <component name="PropertiesComponent">
+        <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CSV/TSV/PSV" />
+      </component>
+      <component name="SaveActionSettings">
+        <option name="actions">
+          <set>
+            <option value="activate" />
+            <option value="activateOnShortcut" />
+            <option value="reformat" />
+            <option value="rearrange" />
+          </set>
+        </option>
+      </component>
+      <component name="masterDetails">
+        <states>
+          <state key="ScopeChooserConfigurable.UI">
+            <settings>
+              <splitter-proportions>
+                <option name="proportions">
+                  <list>
+                    <option value="0.2" />
+                  </list>
+                </option>
+              </splitter-proportions>
+            </settings>
+          </state>
+        </states>
+      </component>
+    </defaultProject>
+  </component>
+</application>

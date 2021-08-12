@@ -1,0 +1,57 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/Code/api">
+          <value>
+            <RecentProjectMetaInfo frameTitle="api" projectWorkspaceId="1tNVbLvLeuHwXKWEuljnTmIe1Ec">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="PC-211.7142.13" />
+              <option name="buildTimestamp" value="1618994103918" />
+              <frame x="16" y="25" width="1322" height="875" />
+              <option name="productionCode" value="PC" />
+              <option name="projectOpenTimestamp" value="1622609606226" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Code/automation">
+          <value>
+            <RecentProjectMetaInfo frameTitle="automation – tsukune-campfire - backerlist_388652_202106161835-1.csv" projectWorkspaceId="1tsfaaEER0LESS3aFLrkxVYZS1Z">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="PC-211.7142.13" />
+              <option name="buildTimestamp" value="1618994107236" />
+              <frame x="0" y="0" width="1440" height="900" fullScreen="true" />
+              <option name="productionCode" value="PC" />
+              <option name="projectOpenTimestamp" value="1624128855106" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Code/csv-manager">
+          <value>
+            <RecentProjectMetaInfo frameTitle="csv-manager – main.py" projectWorkspaceId="1uHutvKNm5cd4qaJgGPZpFIlRen">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="PC-211.7142.13" />
+              <option name="buildTimestamp" value="1618994127478" />
+              <frame x="65" y="25" width="1238" height="875" />
+              <option name="productionCode" value="PC" />
+              <option name="projectOpenTimestamp" value="1624335053451" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Code/auto-email-sender">
+          <value>
+            <RecentProjectMetaInfo frameTitle="auto-email-sender – LICENSE" projectWorkspaceId="1tGMCEtETwZWtc9G38UL7bCgIhs">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="PC-211.7142.13" />
+              <option name="buildTimestamp" value="1618994121658" />
+              <frame x="0" y="0" width="1440" height="900" fullScreen="true" />
+              <option name="productionCode" value="PC" />
+              <option name="projectOpenTimestamp" value="1624448270655" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="$USER_HOME$/Code" />
+  </component>
+</application>
