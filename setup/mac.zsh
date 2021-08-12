@@ -194,12 +194,12 @@ echo "\n🧝🏻‍♀️ Starting Third-Party Software Setup\n"
 
 echo "- 🐟 VSCode"
 VSCODE_USERDATA="$HOME/Library/Application Support/Code/User"
-GOOGLE_DRIVE_VSCODE_USERDATA="$HOME/Google Drive/Settings/dotfiles/preferences/VSCode"
-VSCODE_USERDATA_ITEMS=("keybindings.json" "settings.json" "snippets")
+CUSTOMIZED_VSCODE_USERDATA="$HOME/Settings/dotfiles/preferences/VSCode"
 
+VSCODE_USERDATA_ITEMS=("keybindings.json" "settings.json" "snippets")
 for item in ${VSCODE_USERDATA_ITEMS[@]}; do
   rm -rf "$VSCODE_USERDATA/$item"
-  ln -nfsv "$GOOGLE_DRIVE_VSCODE_USERDATA/$item" "$VSCODE_USERDATA/$item"
+  ln -nfsv "$CUSTOMIZED_VSCODE_USERDATA/$item" "$VSCODE_USERDATA/$item"
   if [ -L "$VSCODE_USERDATA/$item" ]; then
     echo "Created Link"
     ls -l "$VSCODE_USERDATA"
