@@ -266,8 +266,8 @@ ln -nfs "$HOME/Settings/Blender" "$HOME/Library/Application Support/Blender"
 
 
 echo "- 🔖 Dash"
-defaults write com.kapeli.dashdoc syncFolderPath "~/Google Drive/Settings/Dash"
-defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Google Drive/Settings/Dash/Snippets.dash"
+defaults write com.kapeli.dashdoc syncFolderPath "~/Settings/Dash"
+defaults write com.kapeli.dashdoc snippetSQLPath "$HOME/Settings/Dash/Snippets.dash"
 
 
 echo "- 🧠 JetBrains (PyCharm)"
