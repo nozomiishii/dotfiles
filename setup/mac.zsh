@@ -271,8 +271,13 @@ done
 
 
 echo "- 🐵 Blender"
-rm -rf "$HOME/Library/Application Support/Blender"
-ln -nfs "$HOME/Settings/Blender" "$HOME/Library/Application Support/Blender"
+BLENDER_USERDATA="$HOME/Library/Application Support/Blender"
+CUSTOMIZED_BLENDER_USERDATA="$HOME/Settings/dotfiles/preferences/Blender"
+
+rm -rf "$BLENDER_USERDATA"
+ln -nfsv "$CUSTOMIZED_BLENDER_USERDATA" "$BLENDER_USERDATA"
+ls -l "$BLENDER_USERDATA"
+
 
 
 echo "- 🔖 Dash"
