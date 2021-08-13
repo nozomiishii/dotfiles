@@ -13,6 +13,10 @@
 - create:
     - ~/Code
 - shell:
+    - command: ./setup/homebrew.zsh
+      stdin: true
+      stdout: true
+      stderr: true
     - command: ./setup/docker.zsh
       stdin: true
       stdout: true

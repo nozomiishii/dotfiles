@@ -1,13 +1,5 @@
 # Nozomi's dotfiles
 
-```txt
-  📦Settings
-    ┣ 📂Alfred
-    ┣ 📂Dash
-    ┣ 📂LaunchpadManager
-    ┗ 📂dotfiles
-```
-
 ![Brow my mind](https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif)
 
 ## Installation 📦
@@ -31,37 +23,35 @@ Come to this page
 ```
 
 ```shell
-  cd ~/Desktop && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
+  cd ~ && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
 ```
 
 **4: Run**  
 Check the permissions
 
 ```shell
-  ls -l
+  ls -l ./install ./dotbot/bin/dotbot ./setup
 ```
 
-Install applications and open Backup and Sync and 1Password
+🔫 When permission is not set
 
 ```shell
-  ./setup/homebrew.zsh && open -a Backup\ and\ Sync && open -a 1Password\ 7
+  chmod 744 ./install ./dotbot/bin/dotbot ./setup/*
 ```
 
-🔫 When permission denied
+Install dotfiles
 
 ```shell
-  chmod +x ./install ./dotbot/bin/dotbot ./setup/homebrew.zsh ./setup/node.zsh ./setup/mac.zsh
+  ./install
 ```
 
-**5: Sign in and setup 1Password🔑**  
-Preferences > Security > Unlock using > Check "Touch ID"  
-Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)
+Restart
 
-**6: Sign in google-backup-and-sync☁️**  
-Sign in and Sync  
-⚠️ Sync only **Settings** file (Downloading everything takes too much time.)
+```shell
+  sudo reboot
+```
 
-## While waiting for google-drive to complete ⏳
+## Advanced settings for apps👨🏻‍🚀
 
 **Finder**  
 Rearrange the order of the sidebar
@@ -70,12 +60,28 @@ Rearrange the order of the sidebar
 Sidebar
  ┣ 📂Favorites
  ┃ ┣ 🌏Google Drive
+ ┃ ┣ 🗃dotfiles
  ┃ ┣ 🏠$USER
  ┃ ┣ 🍎Applications
  ┃ ┣ 💆🏻‍♂️Downloads
  ┃ ┗ 📖Desktop
  ┗ 📂Locations
 ```
+
+**🔑 1Password**  
+Preferences > Security > Unlock using > Check "Touch ID"  
+Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)
+
+**☁️ google-drive**  
+Sign in and Sync
+
+**⛓ Karabiner-Elements**  
+Login
+
+**🎩 Alfred**  
+Activate the license  
+Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
+Alfred > General > Alfred Hotkey: ⌘ + Space
 
 **💻 System Preferences**  
 **Desktop Image**
@@ -132,36 +138,6 @@ Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addo
 Setup  
 Edit > Preferences > Input > Keyboard > Emulate Numpad
 
-## When the google-drive is complete 🎉
-
-Clean up temporary dotfiles, and go to the directory
-
-```shell
-  rm -rf ~/Desktop/dotfiles && cd ~/Google\ Drive/settings/dotfiles
-```
-
-Run
-
-```shell
-  ./install
-```
-
-Restart
-
-```shell
-  sudo reboot
-```
-
-### 💡Start synchronizing all remaining google-drive
-
-**⛓ Karabiner-Elements**  
-Login
-
-**🎩 Alfred**  
-Activate the license  
-Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
-Alfred > General > Alfred Hotkey: ⌘ + Space
-
 **🦋 Affinity Designer**  
 [Download App](https://store.serif.com/en-gb/account/downloads/)  
 Activate the license
@@ -173,7 +149,7 @@ Delete hotkeys
 System Preferences > Accessibility > Spoken Content > Select and Download "Siri Female(United Kingdom)"  
 System Preferences > Accessibility > Spoken Content > Adjust Speaking Rate
 
-**Hazel🧹**
+**🧹 Hazel**  
 License... > Activate the License  
 Folder > Rule Sync Settings... > Use existing sync file... > Select "~/Settings/dotfiles/preferences/Hazel"
 
@@ -305,7 +281,7 @@ and paste it on password like below
 
 **💡 Just ignore Warning: Permanently added the RSA host key for IP address**
 
-**🍺Homebrew setting**  
+**🍺 Homebrew setting**  
 [Create Personal access token on Github](https://github.com/settings/tokens/new?scopes=gist,public_repo,workflow&description=Homebrew)
 
 Create token.zsh file on dotfiles
@@ -379,7 +355,7 @@ Check if it's an app you want to download.
   ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
 ```
 
-## Zinit
+## Zinit 🧙🏿‍♂️
 
 [Zinit Documentation](https://github.com/zdharma/zinit)
 
@@ -436,11 +412,11 @@ System Preferences > Apple ID > iCloud > Turn off "Find My Mac"
 System Preferences > Apple ID > Overview > Sign Out...
 
 2: Deactivate license  
-**🎩Alfred**  
+**🎩 Alfred**  
 Preferences > Powerpack > View your license key > Deactivate  
-**Hazel🧹**
+**🧹 Hazel**
 License... > Remove...  
-**🎨ColorSnapper2**  
+**🎨 ColorSnapper2**  
 About ColorSnapper... > Deactivate license
 
 3: Unpair  
