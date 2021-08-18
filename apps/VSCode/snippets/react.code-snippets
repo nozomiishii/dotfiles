@@ -56,6 +56,12 @@
     "body": ["import classNames from 'classnames';"],
     "description": "Import classnames"
   },
+  "uuid": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "uuid",
+    "body": ["import { v4 as uuidv4 } from 'uuid';", "uuidv4()"],
+    "description": "uuid"
+  },
   //
   //
   // Styles
@@ -190,6 +196,19 @@
     "prefix": "imhd",
     "body": ["import Head from 'next/head';"],
     "description": "import Head from 'next/head';"
+  },
+  //
+  //
+  // Prisma
+  "PrismaClient": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "pc",
+    "body": [
+      "import { PrismaClient } from '@prisma/client';",
+      "",
+      "const prisma = new PrismaClient();"
+    ],
+    "description": "PrismaClient"
   },
   //
   //
