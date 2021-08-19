@@ -1,6 +1,6 @@
 {
   "alfredsnippet" : {
-    "snippet" : "{{base_url}}",
+    "snippet" : "{{URL}}",
     "uid" : "0C9C2B22-6FE4-4C2B-BA9D-AA234C3AEE14",
     "name" : "url",
     "keyword" : "url"
