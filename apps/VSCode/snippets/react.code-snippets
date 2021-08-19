@@ -151,6 +151,7 @@
   //
   // Next.js
   "Next.js Typescript Functional Component": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "ntf",
     "body": [
       "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}: React.FC = () => {",
@@ -162,6 +163,7 @@
     "description": "Next.js Typescript Functional Component"
   },
   "Next.js Image": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "nimg",
     "body": [
       "import Image from 'next/image';",
@@ -170,6 +172,32 @@
       "</div>"
     ],
     "description": "Next.js Image"
+  },
+  "Next.js API": {
+    "scope": "typescript",
+    "prefix": "napi",
+    "body": [
+      "import { PrismaClient } from '@prisma/client';",
+      "import { NextApiRequest, NextApiResponse } from 'next';",
+      "",
+      "const prisma = new PrismaClient();",
+      "",
+      "const ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/} = async (req: NextApiRequest, res: NextApiResponse) => {",
+      "  if (req.method !== 'POST') {",
+      "    res.setHeader('Allow', 'POST');",
+      "    res.status(405).send('Method Not Allowed');",
+      "  }",
+      "",
+      "  try {",
+      "  } catch (error) {",
+      "    console.warn(error);",
+      "    res.status(500).send('something went wrong');",
+      "  }",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/};"
+    ],
+    "description": "api"
   },
   //
   //
