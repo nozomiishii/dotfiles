@@ -418,6 +418,8 @@ Preferences > Powerpack > View your license key > Deactivate
 License... > Remove...  
 **🎨 ColorSnapper2**  
 About ColorSnapper... > Deactivate license
+**🐘 TablePlus**  
+TablePlus > Register license...
 
 3: Unpair  
 System Preferences > Bluetooth > Unpair Bluetooth devices
