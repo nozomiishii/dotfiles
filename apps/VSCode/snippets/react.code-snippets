@@ -238,6 +238,23 @@
     ],
     "description": "PrismaClient"
   },
+  "prisma.$transaction": {
+    "prefix": "ptra",
+    "scope": "typescript,typescriptreact",
+    "body": [
+      "const [$1, $2] = await prisma.$transaction([",
+      "  prisma.$1.create({",
+      "    data: {",
+      "    },",
+      "  }),",
+      "  prisma.$2.create({",
+      "    data: {",
+      "    },",
+      "  }),",
+      "]);"
+    ],
+    "description": "prisma.$transaction"
+  },
   //
   //
   // Three.js
