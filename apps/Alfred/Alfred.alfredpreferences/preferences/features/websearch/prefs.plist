@@ -520,6 +520,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>DCD26C38-60D6-4CF6-951F-5363FB58FDF5</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>vercel</string>
+			<key>text</key>
+			<string>Open Vercel - VoiceUtopia</string>
+			<key>url</key>
+			<string>https://vercel.com/voiceutopia/voice-utopia</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>DE067D16-D343-47DE-814C-1096B694092E</key>
 		<dict>
 			<key>enabled</key>
@@ -530,19 +543,6 @@ Google Cloud Console</string>
 			<string>Open YouTube</string>
 			<key>url</key>
 			<string>https://www.youtube.com/?gl=GB</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
-		<key>E00667C5-73F2-4C43-9D45-3DA66CDCBC00</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>adobe</string>
-			<key>text</key>
-			<string>Adobe Photoshop Express</string>
-			<key>url</key>
-			<string>https://photoshop.adobe.com/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
