@@ -30,6 +30,14 @@ if [[ -f $ZSH_SRC_DIR/tokens.zsh ]]; then
   source "$ZSH_SRC_DIR/tokens.zsh"
 fi
 
+# GCP
+GC_SDK="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
+if [[ -f "$GC_SDK/path.zsh.inc" ]]; then
+  source "$GC_SDK/path.zsh.inc"
+fi
+if [[ -f "$GC_SDK/completion.zsh.inc" ]]; then    
+  source "$GC_SDK/completion.zsh.inc"
+fi
 
 # grep setting
 export GREP_OPTIONS='--color=always'

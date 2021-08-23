@@ -12,7 +12,6 @@ tap "stripe/stripe-cli"
 
 # Brew
 
-
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
 brew "stripe"
 
@@ -56,6 +55,10 @@ brew "n"
 
 
 # Cask
+
+
+# Google Cloud SDK https://cloud.google.com/sdk/
+cask "google-cloud-sdk"
 
 # Client for the Google Drive storage service https://www.google.com/drive/
 cask "google-drive"
