@@ -56,6 +56,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>0BD9199E-F429-4830-9E90-D231988BF79D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>rakuten</string>
+			<key>text</key>
+			<string>Open Rakuten</string>
+			<key>url</key>
+			<string>https://www.rakuten.co.jp/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>0C1B5E0A-318B-4920-B718-397B828656D5</key>
 		<dict>
 			<key>enabled</key>
