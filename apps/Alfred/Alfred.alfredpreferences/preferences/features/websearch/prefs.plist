@@ -659,7 +659,7 @@ Google Cloud Console</string>
 			<key>text</key>
 			<string>Open Google Cloud Platform - VoiceUtopia</string>
 			<key>url</key>
-			<string>https://console.cloud.google.com/projectselector2/home/dashboard?authuser=2</string>
+			<string>https://console.cloud.google.com/home/dashboard?authuser=2&amp;project=voice-utopia-dev&amp;folder=&amp;organizationId=</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
