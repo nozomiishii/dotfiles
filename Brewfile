@@ -25,6 +25,9 @@ brew "postgresql"
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
 
+# Play, record, convert, and stream audio and video https://ffmpeg.org/
+brew "ffmpeg"
+
 # Modern replacement for ls. https://github.com/ogham/exa
 brew "exa"
 
