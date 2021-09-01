@@ -203,6 +203,9 @@ Save the images to your prefer directory like Google Drive
   ngrok authtoken <your_auth_token>
 ```
 
+**📞 Cisco Packet Tracer**
+[Download](https://www.netacad.com/portal/resources/packet-tracer)
+
 ## Generate ssh key🔓
 
 [Connecting to GitHub with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
