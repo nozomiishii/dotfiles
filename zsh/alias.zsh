@@ -38,7 +38,9 @@ alias ls="exa"
 alias grmb="git branch --merged|egrep -v '\*|main|dev|stag|prod'|xargs git branch -d && git fetch --prune"
 alias deploy="git push origin prod && git checkout main"
 alias hbb="hub browse"
-alias devtoprod="git checkout stag && git pull origin main && git push origin stag && git checkout prod && git pull origin stag && git push origin prod && git checkout main"
+alias devprod="git checkout stag && git pull origin main && git push --force-with-lease origin stag && git checkout prod && git pull origin stag && git push --force-with-lease origin prod && git checkout main"
+alias devstag="git checkout stag && git pull origin main && git push --force-with-lease origin stag"
+alias stagprod="git checkout prod && git pull origin stag && git push --force-with-lease origin prod && git checkout main"
 
 
 # npm
