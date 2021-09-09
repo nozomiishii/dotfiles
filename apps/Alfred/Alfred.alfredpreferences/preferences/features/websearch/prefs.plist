@@ -336,6 +336,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>6C36AD93-3FC7-449F-9777-B3FE5FEB3B73</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>query</string>
+			<key>text</key>
+			<string>Open React Query</string>
+			<key>url</key>
+			<string>https://react-query-v2.tanstack.com/docs/overview</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>6DDCD47B-802D-455B-B0DB-D5556E3035E5</key>
 		<dict>
 			<key>enabled</key>
