@@ -75,6 +75,9 @@ cask "font-meslo-lg-nerd-font"
 # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
 cask "ngrok"
 
+# Graphical network analyzer and capture tool https://www.wireshark.org
+cask "wireshark"
+
 # Native GUI tool for relational databases https://tableplus.com/
 cask "tableplus"
 
