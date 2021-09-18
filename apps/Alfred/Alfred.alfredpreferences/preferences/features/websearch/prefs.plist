@@ -362,6 +362,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>70F4A299-A12A-4FB0-B9E5-3A00446E0FBE</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>socket</string>
+			<key>text</key>
+			<string>Open Socket.io</string>
+			<key>url</key>
+			<string>https://socket.io/docs/v4/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>729E540D-B266-40E3-B5D9-F4869D9AAA5D</key>
 		<dict>
 			<key>enabled</key>
