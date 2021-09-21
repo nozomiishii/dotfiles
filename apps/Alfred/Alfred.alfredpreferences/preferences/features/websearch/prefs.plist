@@ -663,6 +663,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>F596E5EB-7DB0-49FA-B8F9-D14DFE0018EA</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>pusher</string>
+			<key>text</key>
+			<string>Open Pusher Documentation</string>
+			<key>url</key>
+			<string>https://pusher.com/docs/channels/getting_started/javascript/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>F5D63A5A-9960-4117-8D30-5AA1A0500E42</key>
 		<dict>
 			<key>enabled</key>
