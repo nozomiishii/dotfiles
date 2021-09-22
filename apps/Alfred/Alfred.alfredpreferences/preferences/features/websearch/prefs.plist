@@ -479,6 +479,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>A6BB2E67-69F5-4CC6-9EC5-2C0D777D94F7</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>pusher console</string>
+			<key>text</key>
+			<string>Open Pusher - VoiceUtopia</string>
+			<key>url</key>
+			<string>https://dashboard.pusher.com/apps/1270189/stats</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>AE6C5DAF-3F45-4D95-9967-8117C712A875</key>
 		<dict>
 			<key>enabled</key>
@@ -668,7 +681,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>pusher</string>
+			<string>pusher docs</string>
 			<key>text</key>
 			<string>Open Pusher Documentation</string>
 			<key>url</key>
