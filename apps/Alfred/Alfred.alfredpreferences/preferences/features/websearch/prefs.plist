@@ -362,6 +362,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>6F8DFBD1-C9AD-4944-9765-77220DF5768E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>greensock</string>
+			<key>text</key>
+			<string>Open GreenSock</string>
+			<key>url</key>
+			<string>https://greensock.com/profile/105427-nozomi-ishii/content/?do=dashboard</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>70F4A299-A12A-4FB0-B9E5-3A00446E0FBE</key>
 		<dict>
 			<key>enabled</key>
@@ -463,6 +476,19 @@ Translate '{query}' into Japanese</string>
 			<string>Open AWS Management Console</string>
 			<key>url</key>
 			<string>https://console.aws.amazon.com</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>A3DE72B5-C7A9-4D1B-B222-82A762A3722F</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>greensock</string>
+			<key>text</key>
+			<string>Open GreenSock - VoiceUtopia</string>
+			<key>url</key>
+			<string>https://greensock.com/profile/105378-voiceutopia/content/?do=dashboard</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
