@@ -50,3 +50,12 @@ alias yul="yarn upgrade --latest"
 
 # network
 alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
+
+
+# Docker 
+alias dcls="docker container ls"
+alias dcr="docker container run"
+alias dcs="docker container start -a"
+alias dcex="docker container exec -it"
+alias dsp="docker system prune"
+alias dcp="docker-compose"
