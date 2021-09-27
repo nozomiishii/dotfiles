@@ -84,6 +84,9 @@
   },
   "redhat.telemetry.enabled": true,
 
+  // Docker
+  "docker.enableDockerComposeLanguageService": true,
+
   // C#
   "omnisharp.useGlobalMono": "always",
   "[csharp]": {
