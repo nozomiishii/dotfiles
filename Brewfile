@@ -25,6 +25,9 @@ brew "postgresql"
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
 
+# Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
+brew "jq"
+
 # Play, record, convert, and stream audio and video https://ffmpeg.org/
 brew "ffmpeg"
 
