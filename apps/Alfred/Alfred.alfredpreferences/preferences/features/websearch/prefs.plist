@@ -134,6 +134,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>23EFA166-611F-4DC4-868B-7B5C68C61565</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>docker docs</string>
+			<key>text</key>
+			<string>Open Docker Documantation</string>
+			<key>url</key>
+			<string>https://docs.docker.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>2499CF4F-3306-45BF-ABCD-A2F08D637FD7</key>
 		<dict>
 			<key>enabled</key>
@@ -294,6 +307,19 @@ Translate '{query}' into Japanese
 Translate '{query}' into Japanese</string>
 			<key>url</key>
 			<string>https://translate.google.com/#view=home&amp;op=translate&amp;sl=en&amp;tl=ja&amp;text={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>63F352A9-D21C-4FA0-AEFF-9634FCC3CE3E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>docker hub</string>
+			<key>text</key>
+			<string>Open Docker hub</string>
+			<key>url</key>
+			<string>https://hub.docker.com/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
