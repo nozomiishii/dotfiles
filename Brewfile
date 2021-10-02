@@ -58,6 +58,8 @@ brew "python-tk"
 # Node version management https://github.com/tj/n
 brew "n"
 
+# Run a Kubernetes cluster locally https://minikube.sigs.k8s.io/
+brew "minikube"
 
 
 # Cask
