@@ -315,7 +315,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>docker hub</string>
+			<string>dh</string>
 			<key>text</key>
 			<string>Open Docker hub</string>
 			<key>url</key>
