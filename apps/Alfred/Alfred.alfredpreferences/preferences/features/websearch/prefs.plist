@@ -544,6 +544,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>A7A3547F-2239-4360-8E98-D3D5CE01CC62</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>kuber</string>
+			<key>text</key>
+			<string>Open kubernetes Documentation</string>
+			<key>url</key>
+			<string>https://kubernetes.io/search/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>AE6C5DAF-3F45-4D95-9967-8117C712A875</key>
 		<dict>
 			<key>enabled</key>
