@@ -22,6 +22,9 @@ brew "heroku-node"
 # Object-relational database system https://www.postgresql.org/
 brew "postgresql"
 
+# Executes a program periodically, showing output fullscreen https://gitlab.com/procps-ng/procps
+brew "watch"
+
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
 
