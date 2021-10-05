@@ -11,11 +11,23 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# # snippet
+# snippet
 zinit wait lucid for \
     OMZL::git.zsh \
   atload"unalias grv" \
     OMZP::git
+
+# kubectl completions
+# https://giters.com/zdharma/zinit/issues/478?amp=1
+zinit light-mode lucid wait has"kubectl" for \
+  id-as"kubectl_completion" \
+  as"completion" \
+  atclone"kubectl completion zsh > _kubectl" \
+  atpull"%atclone" \
+  run-atpull \
+    zdharma/null
+zpcompinit
+alias k=kubectl
 
 # Plugins
 zinit wait lucid light-mode for \

@@ -35,7 +35,7 @@ GC_SDK="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
 if [[ -f "$GC_SDK/path.zsh.inc" ]]; then
   source "$GC_SDK/path.zsh.inc"
 fi
-if [[ -f "$GC_SDK/completion.zsh.inc" ]]; then    
+if [[ -f "$GC_SDK/completion.zsh.inc" ]]; then
   source "$GC_SDK/completion.zsh.inc"
 fi
 
