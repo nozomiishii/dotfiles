@@ -64,6 +64,9 @@ brew "n"
 # Run a Kubernetes cluster locally https://minikube.sigs.k8s.io/
 brew "minikube"
 
+# Kubernetes package manager https://helm.sh/
+brew "helm"
+
 
 # Cask
 
