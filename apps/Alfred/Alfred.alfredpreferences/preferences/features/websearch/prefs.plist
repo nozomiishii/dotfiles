@@ -575,7 +575,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>gcp</string>
+			<string>gc</string>
 			<key>text</key>
 			<string>Open Google Cloud Platform
 Google Cloud Console
@@ -811,7 +811,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>gcp</string>
+			<string>gc</string>
 			<key>text</key>
 			<string>Open Google Cloud Platform - VoiceUtopia</string>
 			<key>url</key>
