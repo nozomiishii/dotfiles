@@ -650,6 +650,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>CE717735-6899-4120-A244-7AF8C83320DB</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>travis</string>
+			<key>text</key>
+			<string>Open Travis CI</string>
+			<key>url</key>
+			<string>https://app.travis-ci.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>CECA0AB2-4FCA-44FA-931C-258BC45D0CD8</key>
 		<dict>
 			<key>enabled</key>
