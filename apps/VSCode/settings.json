@@ -18,6 +18,7 @@
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.guides.bracketPairs": true,
 
   // Explorer
   "explorer.openEditors.visible": 0,
