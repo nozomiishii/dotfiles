@@ -676,6 +676,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>CECA37BB-366A-49A7-9258-9FF973DFBDBA</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>jest</string>
+			<key>text</key>
+			<string>Open Jest Documentation</string>
+			<key>url</key>
+			<string>https://jestjs.io/docs/getting-started</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>D97C17AF-30FB-46C9-96ED-E0067AD7204F</key>
 		<dict>
 			<key>enabled</key>
