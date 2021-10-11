@@ -479,6 +479,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>86AB93BD-5435-4201-89B1-74667238FAEB</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>testing library</string>
+			<key>text</key>
+			<string>Open Testing Library</string>
+			<key>url</key>
+			<string>https://testing-library.com/docs/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>964E430A-A8C4-4D8D-8FD0-FC43402FE30A</key>
 		<dict>
 			<key>enabled</key>
