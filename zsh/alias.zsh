@@ -22,9 +22,12 @@ alias plist="cd ~/Library/Preferences"
 alias jj="cd $CODE_DIR"
 alias noz="cd $CODE_DIR/nozomiishii/c2021"
 alias wrk="cd $CODE_DIR/Work"
-alias vu="cd $CODE_DIR/Work/voice-utopia"
-alias vuapi="cd $CODE_DIR/Work/voice-utopia-api"
-alias vuo="cd $CODE_DIR/Work/voice-utopia-office"
+
+# VoiceUtopia
+alias vua="cd $CODE_DIR/Work/VoiceUtopia"
+alias vu="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia"
+alias vuapi="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-api"
+alias vuo="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-office"
 
 
 # shell
