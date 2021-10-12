@@ -492,6 +492,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>80D6831C-5039-4603-BAF0-4E1C92D0F3A4</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>openapi generator</string>
+			<key>text</key>
+			<string>Open OpenAPI Generator</string>
+			<key>url</key>
+			<string>https://openapi-generator.tech/docs/installation</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>8426BB8E-1DD1-438C-97EB-C1699D8D0420</key>
 		<dict>
 			<key>enabled</key>
