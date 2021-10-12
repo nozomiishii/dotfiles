@@ -557,6 +557,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>A6309CC0-76C6-42C2-BB98-7CD6C0B754DD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>openapi</string>
+			<key>text</key>
+			<string>Open OpenAPI Specification</string>
+			<key>url</key>
+			<string>https://github.com/OAI/OpenAPI-Specification</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>A6BB2E67-69F5-4CC6-9EC5-2C0D777D94F7</key>
 		<dict>
 			<key>enabled</key>
