@@ -251,6 +251,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>5064E15C-19E5-4A0A-A470-CA3FB9CBDFF7</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>swagger editor</string>
+			<key>text</key>
+			<string>Open Swagger Editor</string>
+			<key>url</key>
+			<string>https://editor.swagger.io/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>53929F1C-AE64-433C-AB06-2DA04AC870D6</key>
 		<dict>
 			<key>enabled</key>
