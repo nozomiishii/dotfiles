@@ -466,6 +466,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>75D05A09-8C40-4503-BF9D-4CAB6EC0979C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>yaml</string>
+			<key>text</key>
+			<string>Open quickref.me - YAML cheatsheet</string>
+			<key>url</key>
+			<string>https://quickref.me/yaml</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>7BB1A7D9-0E6C-4031-BC54-71A9ED67F72A</key>
 		<dict>
 			<key>enabled</key>
