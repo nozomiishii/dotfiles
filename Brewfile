@@ -67,6 +67,9 @@ brew "minikube"
 # Kubernetes package manager https://helm.sh/
 brew "helm"
 
+# Generate clients, server & docs from an OpenAPI spec https://openapi-generator.tech/
+brew "openapi-generator"
+
 
 # Cask
 
