@@ -151,7 +151,7 @@
 			<key>JavaScript_Offline</key>
 			<dict>
 				<key>date</key>
-				<date>2021-06-18T04:57:04Z</date>
+				<date>2021-10-13T19:51:08Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -170,7 +170,7 @@
 			<key>JavaScript_Online</key>
 			<dict>
 				<key>date</key>
-				<date>2021-06-18T04:42:57Z</date>
+				<date>2021-10-13T19:17:55Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -189,7 +189,7 @@
 			<key>React_Offline</key>
 			<dict>
 				<key>date</key>
-				<date>2021-06-18T04:45:08Z</date>
+				<date>2021-10-13T19:24:38Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -208,7 +208,7 @@
 			<key>React_Online</key>
 			<dict>
 				<key>date</key>
-				<date>2021-06-18T04:41:47Z</date>
+				<date>2021-10-13T19:17:53Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -227,7 +227,7 @@
 			<key>TypeScript_Offline</key>
 			<dict>
 				<key>date</key>
-				<date>2021-06-18T04:43:57Z</date>
+				<date>2021-10-13T19:23:19Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -245,7 +245,7 @@
 			<key>TypeScript_Online</key>
 			<dict>
 				<key>date</key>
-				<date>2021-06-18T04:41:43Z</date>
+				<date>2021-10-13T19:16:56Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>

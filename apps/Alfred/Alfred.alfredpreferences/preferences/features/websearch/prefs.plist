@@ -4,6 +4,19 @@
 <dict>
 	<key>customSites</key>
 	<dict>
+		<key>02B37EF1-C1A9-48E5-B7AF-0D6FEB5C015F</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>stoplight prism</string>
+			<key>text</key>
+			<string>Open stoplightio/prism</string>
+			<key>url</key>
+			<string>https://stoplight.io/open-source/prism/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>042978AE-72BE-4F57-9627-084C7BFC150C</key>
 		<dict>
 			<key>enabled</key>
@@ -118,19 +131,6 @@
 			<string>Open Threejs Journey</string>
 			<key>url</key>
 			<string>https://threejs-journey.xyz/lessons</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
-		<key>1AF64BF0-2F77-43A8-B56C-5EA0D86612D2</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>bk</string>
-			<key>text</key>
-			<string>Search bitkey Project for '{query}'</string>
-			<key>url</key>
-			<string>https://gitlab.com/bitkey/{query}</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
