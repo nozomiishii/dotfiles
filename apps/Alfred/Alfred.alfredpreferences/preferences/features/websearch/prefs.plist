@@ -173,6 +173,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>27665C6D-43E6-4776-A445-B365610CB46E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>msw</string>
+			<key>text</key>
+			<string>Open Mock Service Worker</string>
+			<key>url</key>
+			<string>https://mswjs.io/docs/getting-started/install</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>2990A56A-A20E-4E29-B140-191689FCAEC3</key>
 		<dict>
 			<key>enabled</key>
