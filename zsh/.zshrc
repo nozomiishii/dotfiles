@@ -1,4 +1,5 @@
-echo '🧙🏿‍♂️.zshrc loading...'
+# unicode of 🧙🏿‍♂️ => \U0001f9d9\U0001F3FF\u200d\U0002642
+echo '🧙🏿‍♂️ ...zshrc loading...'
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
