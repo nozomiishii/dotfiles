@@ -14,7 +14,7 @@
   "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
   "editor.renderWhitespace": "trailing",
-  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.acceptSuggestionOnEnter": "off",
   "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.guides.bracketPairs": true,
