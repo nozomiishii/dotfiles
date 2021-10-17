@@ -274,7 +274,7 @@
 	<key>actuallyDarkWebView</key>
 	<true/>
 	<key>annotationsAreShown</key>
-	<false/>
+	<true/>
 	<key>docsets</key>
 	<dict>
 		<key>keywords</key>
