@@ -2,23 +2,49 @@
   // General
   "workbench.colorTheme": "Monokai Pro",
   "workbench.iconTheme": "vscode-icons",
-  "editor.fontSize": 14,
-  "terminal.integrated.fontSize": 14,
-  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "newUntitledFile",
   "breadcrumbs.enabled": true,
   "emmet.triggerExpansionOnTab": true,
   "files.insertFinalNewline": true,
-  "workbench.startupEditor": "newUntitledFile",
   "diffEditor.ignoreTrimWhitespace": false,
   "security.workspace.trust.untrustedFiles": "open",
 
   // Editor
+  "editor.fontSize": 14,
+  "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
   "editor.renderWhitespace": "trailing",
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.guides.bracketPairs": true,
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'MesloLGM Nerd Font'",
+
+  // Terminal
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "'MesloLGM Nerd Font', Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
+  "workbench.colorCustomizations": {
+    "terminal.background": "#19181A",
+    "terminal.foreground": "#C7C7C7",
+    "terminalCursor.background": "#C7C7C7",
+    "terminalCursor.foreground": "#C7C7C7",
+    "terminal.ansiBlack": "#19181A",
+    "terminal.ansiBlue": "#6871FF",
+    "terminal.ansiBrightBlack": "#776977",
+    "terminal.ansiBrightBlue": "#6871FF",
+    "terminal.ansiBrightCyan": "#00C5C7",
+    "terminal.ansiBrightGreen": "#00C201",
+    "terminal.ansiBrightMagenta": "#AF9AF8",
+    "terminal.ansiBrightRed": "#FF6D67",
+    "terminal.ansiBrightWhite": "#F7F3F7",
+    "terminal.ansiBrightYellow": "#D7AF00",
+    "terminal.ansiCyan": "#00C5C7",
+    "terminal.ansiGreen": "#00C201",
+    "terminal.ansiMagenta": "#AF9AF8",
+    "terminal.ansiRed": "#FF6D67",
+    "terminal.ansiWhite": "#C7C7C7",
+    "terminal.ansiYellow": "#D7AF00"
+  },
 
   // Explorer
   "explorer.openEditors.visible": 0,
