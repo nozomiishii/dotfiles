@@ -212,6 +212,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3FC60018-E30E-47FF-8633-21D95CDC75D9</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>stackoverflow</string>
+			<key>text</key>
+			<string>Open Stack Overflow</string>
+			<key>url</key>
+			<string>https://stackoverflow.com/search</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>40A1157E-C1C2-48BD-8722-C4D30C8EA8FD</key>
 		<dict>
 			<key>enabled</key>
