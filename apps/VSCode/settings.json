@@ -24,6 +24,7 @@
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "'MesloLGM Nerd Font', Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "workbench.colorCustomizations": {
+    "panel.background": "#19181A",
     "terminal.background": "#19181A",
     "terminal.foreground": "#C7C7C7",
     "terminalCursor.background": "#C7C7C7",
