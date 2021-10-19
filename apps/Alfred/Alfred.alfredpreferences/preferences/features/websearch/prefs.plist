@@ -212,6 +212,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>323CF4C4-D9B9-4D01-892D-1CC05CF7A5AF</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>luxon</string>
+			<key>text</key>
+			<string>Open Luxon</string>
+			<key>url</key>
+			<string>https://moment.github.io/luxon/#/?id=luxon-2x</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3FC60018-E30E-47FF-8633-21D95CDC75D9</key>
 		<dict>
 			<key>enabled</key>
