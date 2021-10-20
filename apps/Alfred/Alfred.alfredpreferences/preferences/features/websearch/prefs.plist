@@ -923,6 +923,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>F6F12DE0-07A8-478D-9020-D6AB47B1549B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>firebase</string>
+			<key>text</key>
+			<string>Open Firebase</string>
+			<key>url</key>
+			<string>https://console.firebase.google.com</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>F70E7AD3-2269-4FCC-962A-A778CA0B9EA9</key>
 		<dict>
 			<key>enabled</key>
