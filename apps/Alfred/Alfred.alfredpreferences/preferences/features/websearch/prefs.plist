@@ -715,6 +715,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>C30A9BD9-B9AF-4F19-91A8-6059F0330BB5</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>react</string>
+			<key>text</key>
+			<string>Open React Documentation</string>
+			<key>url</key>
+			<string>https://reactjs.org/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>C47EFC48-FE1D-4C32-9134-446D3D3EE754</key>
 		<dict>
 			<key>enabled</key>
