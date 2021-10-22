@@ -570,6 +570,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>86920152-7A1E-45C1-9520-0B60356979B3</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ghcli</string>
+			<key>text</key>
+			<string>Open Github CLI</string>
+			<key>url</key>
+			<string>https://cli.github.com/manual/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>86AB93BD-5435-4201-89B1-74667238FAEB</key>
 		<dict>
 			<key>enabled</key>
