@@ -518,6 +518,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>7614ABE5-AF4E-4C1E-979F-4BEE4DC5E3F6</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>flutter</string>
+			<key>text</key>
+			<string>Open Flutter Documentation</string>
+			<key>url</key>
+			<string>https://flutter.dev/docs</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>7BB1A7D9-0E6C-4031-BC54-71A9ED67F72A</key>
 		<dict>
 			<key>enabled</key>
