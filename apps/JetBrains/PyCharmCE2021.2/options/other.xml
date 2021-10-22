@@ -131,7 +131,10 @@
     <property name="InstalledPluginsSearchHistory" value="monokai&#10;monoka&#10;monok&#10;mono&#10;mo" />
     <property name="KEYMAP" value="run&#10;save&#10;format&#10;complete&#10;forma" />
     <property name="MarketplacePluginsSearchHistory" value="monokai&#10;env&#10;denv&#10;dotenv&#10;dote" />
+    <property name="NextRunPlatformUpdateBuild" value="PC-212.5457.59/2021.2.3" />
+    <property name="NextRunPlatformUpdateVersion" value="2021.2.3" />
     <property name="NonModalCommitCustomization.IsApplied" value="true" />
+    <property name="PluginConfigurable.selectionTab" value="1" />
     <property name="PyCharm.InitialConfiguration" value="true" />
     <property name="PyCharm.InitialConfiguration.V2" value="true" />
     <property name="PyCharm.InitialConfiguration.V3" value="true" />

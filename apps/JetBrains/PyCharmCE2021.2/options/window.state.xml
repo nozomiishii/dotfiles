@@ -27,29 +27,10 @@
     </layout>
   </component>
   <component name="WindowStateApplicationService">
-    <state x="418" y="157" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1622572964004">
+    <state x="719" y="462" width="1317" height="875" key="WELCOME_SCREEN" timestamp="1634924616924">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="398" y="157" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.25.1371.875/-1366.25.1366.999" timestamp="1621786382361" />
-    <state x="418" y="157" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.25.1440.875/-1366.25.1366.999" timestamp="1622572964004" />
-    <state x="18" y="25" width="1295" height="728" key="SettingsEditor" timestamp="1622572946037">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state x="0" y="25" width="1369" height="728" key="SettingsEditor/0.25.1371.875/-1366.25.1366.999" timestamp="1621786367349" />
-    <state x="108" y="25" key="SettingsEditor/0.25.1384.875/-1366.25.1366.999" timestamp="1621144315543" />
-    <state x="18" y="25" width="1295" height="728" key="SettingsEditor/0.25.1440.875/-1366.25.1366.999" timestamp="1622572946037" />
-    <state x="719" y="462" width="1317" height="875" key="WELCOME_SCREEN" timestamp="1628770362470">
-      <screen x="0" y="25" width="1440" height="875" />
-    </state>
-    <state x="547" y="462" width="1095" height="875" key="WELCOME_SCREEN/0.25.1371.875" timestamp="1621779898908" />
-    <state x="685" y="462" width="1232" height="875" key="WELCOME_SCREEN/0.25.1371.875/-1366.25.1366.999" timestamp="1621786414078" />
-    <state x="686" y="462" width="1373" height="875" key="WELCOME_SCREEN/0.25.1373.875/-1366.25.1366.999" timestamp="1621827060777" />
-    <state x="688" y="462" width="1377" height="875" key="WELCOME_SCREEN/0.25.1378.875/-1366.25.1366.999" timestamp="1621614743222" />
-    <state x="689" y="462" width="1379" height="875" key="WELCOME_SCREEN/0.25.1380.875" timestamp="1621099424855" />
-    <state x="690" y="462" width="1381" height="875" key="WELCOME_SCREEN/0.25.1380.875/-1366.25.1366.999" timestamp="1621907471909" />
-    <state x="690" y="462" width="1381" height="875" key="WELCOME_SCREEN/0.25.1382.875/-1366.25.1366.999" timestamp="1621916773617" />
-    <state x="693" y="462" width="1386" height="875" key="WELCOME_SCREEN/0.25.1384.875/-1366.25.1366.999" timestamp="1622001288709" />
     <state x="719" y="462" width="1317" height="875" key="WELCOME_SCREEN/0.25.1440.875" timestamp="1628770362470" />
-    <state x="719" y="462" width="1317" height="875" key="WELCOME_SCREEN/0.25.1440.875/-1366.25.1366.999" timestamp="1624450506828" />
+    <state x="719" y="462" width="1317" height="875" key="WELCOME_SCREEN/0.25.1440.875/-1366.25.1366.999" timestamp="1634924616924" />
   </component>
 </application>
