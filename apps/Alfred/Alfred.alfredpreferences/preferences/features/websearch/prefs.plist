@@ -806,6 +806,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>D584698B-432C-4B32-A4FF-32EF067EBE60</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>seo</string>
+			<key>text</key>
+			<string>Open Google SEO Documentation</string>
+			<key>url</key>
+			<string>https://developers.google.com/search/docs</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>D97C17AF-30FB-46C9-96ED-E0067AD7204F</key>
 		<dict>
 			<key>enabled</key>
