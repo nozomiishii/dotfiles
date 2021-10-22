@@ -40,8 +40,8 @@ brew "exa"
 # Distributed revision control system. https://git-scm.com
 brew "git"
 
-# Make working with GitHub easier. https://github.com/github/hub
-brew "hub"
+# GitHub command-line tool. https://github.com/cli/cli
+brew "gh"
 
 # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
 brew "mas"
