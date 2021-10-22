@@ -83,6 +83,12 @@ cask "google-drive"
 # Automated testing of webapps for Google Chrome https://sites.google.com/chromium.org/driver/
 cask "chromedriver"
 
+# UI toolkit for building applications for mobile, web and desktop https://flutter.dev/
+cask "flutter"
+
+# Tools for building Android applications https://developer.android.com/studio
+cask "android-studio"
+
 # font-meslo-lg-nerd-font https://github.com/ryanoasis/nerd-fonts
 cask "font-meslo-lg-nerd-font"
 
