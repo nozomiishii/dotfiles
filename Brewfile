@@ -12,6 +12,12 @@ tap "stripe/stripe-cli"
 
 # Brew
 
+# Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
+brew "neovim"
+
+# Terminal multiplexer https://tmux.github.io/
+brew "tmux"
+
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
 brew "stripe"
 
