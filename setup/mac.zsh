@@ -7,7 +7,7 @@ if [[ ! -e "$HOME/.config/nvim" ]]; then
   mkdir -p $HOME/.config/nvim
 fi
 ln -nfsv "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
-
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 
 echo "- 🤖 nvram"

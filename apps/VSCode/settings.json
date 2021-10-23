@@ -9,6 +9,10 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "security.workspace.trust.untrustedFiles": "open",
 
+  // NeoVim
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
+
   // Editor
   "editor.fontSize": 14,
   "editor.minimap.enabled": false,
