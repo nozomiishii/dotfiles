@@ -227,13 +227,23 @@ done
 ls -l "$XCODE_USERDATA"
 
 
-echo "- 🧠 JetBrains (PyCharm)"
-PYCHARM_USERDATA="$HOME/Library/Application Support/JetBrains"
-CUSTOMIZED_PYCHARM_USERDATA="$APP_PREFERENCES/JetBrains"
+PYCHARM_VERSION="CE2021.2"
+echo "- 🐍 PyCharm$PYCHARM_VERSION"
+PYCHARM_USERDATA="$HOME/Library/Application Support/JetBrains/PyCharm$PYCHARM_VERSION"
+CUSTOMIZED_PYCHARM_USERDATA="$APP_PREFERENCES/PyCharm"
 
-rm -rf "$PYCHARM_USERDATA"
-ln -nfsv "$CUSTOMIZED_PYCHARM_USERDATA" "$PYCHARM_USERDATA"
+PYCHARM_ITEMS=("codestyles" "keymaps" "options" "plugins")
+for item in ${PYCHARM_ITEMS[@]}; do
+  rm -rf "$PYCHARM_USERDATA/$item"
+  ln -nfsv "$CUSTOMIZED_PYCHARM_USERDATA/$item" "$PYCHARM_USERDATA/$item"
+  if [ -L "$PYCHARM_USERDATA/$item" ]; then
+    echo "Created Link: $PYCHARM_USERDATA/$item"
+  else
+    echo "Error: Creating Links fails"
+  fi
+done
 ls -l "$PYCHARM_USERDATA"
+
 
 
 ANDROID_STUDIO_VERSION="2020.3"

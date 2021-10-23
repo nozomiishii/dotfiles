@@ -3,9 +3,9 @@ Brewfile.lock.json
 
 **/tokens.zsh
 
-# Android Studio
-apps/AndroidStudio/options/actionSummary.xml
-apps/AndroidStudio/options/other.xml
-apps/AndroidStudio/options/window.state.xml
-apps/AndroidStudio/options/features.usage.statistics.xml
-apps/AndroidStudio/options/jdk.table.xml
+# Android Studio / Pycharm
+apps/**/options/actionSummary.xml
+apps/**/options/other.xml
+apps/**/options/window.state.xml
+apps/**/options/features.usage.statistics.xml
+apps/**/options/jdk.table.xml
