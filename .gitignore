@@ -2,10 +2,3 @@ Brewfile.lock.json
 .DS_Store
 
 **/tokens.zsh
-
-# Android Studio / Pycharm
-apps/**/options/actionSummary.xml
-apps/**/options/other.xml
-apps/**/options/window.state.xml
-apps/**/options/features.usage.statistics.xml
-apps/**/options/jdk.table.xml

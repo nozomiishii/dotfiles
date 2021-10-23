@@ -252,16 +252,8 @@ echo "- 🐸 Android Studio $ANDROID_STUDIO_VERSION"
 ANDROID_STUDIO_USERDATA="$HOME/Library/Application Support/Google/AndroidStudio$ANDROID_STUDIO_VERSION"
 CUSTOMIZED_ANDROID_STUDIO_USERDATA="$APP_PREFERENCES/AndroidStudio"
 
-ANDROID_STUDIO_ITEMS=("options" "plugins")
-for item in ${ANDROID_STUDIO_ITEMS[@]}; do
-  rm -rf "$ANDROID_STUDIO_USERDATA/$item"
-  ln -nfsv "$CUSTOMIZED_ANDROID_STUDIO_USERDATA/$item" "$ANDROID_STUDIO_USERDATA/$item"
-  if [ -L "$ANDROID_STUDIO_USERDATA/$item" ]; then
-    echo "Created Link: $ANDROID_STUDIO_USERDATA/$item"
-  else
-    echo "Error: Creating Links fails"
-  fi
-done
+rm -rf "$ANDROID_STUDIO_USERDATA"
+ln -nfsv "$CUSTOMIZED_ANDROID_STUDIO_USERDATA" "$ANDROID_STUDIO_USERDATA"
 ls -l "$ANDROID_STUDIO_USERDATA"
 
 

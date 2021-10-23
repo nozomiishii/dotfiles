@@ -146,6 +146,14 @@
             </plugin>
           </value>
         </entry>
+        <entry key="*.dart">
+          <value>
+            <plugin>
+              <option name="myPluginId" value="Dart" />
+              <option name="myPluginName" value="Dart" />
+            </plugin>
+          </value>
+        </entry>
         <entry key="*.dcx">
           <value>
             <plugin>
@@ -1213,6 +1221,15 @@
             <plugin>
               <option name="myPluginId" value="com.jetbrains.sh" />
               <option name="myPluginName" value="Shell Script" />
+              <option name="myBundled" value="true" />
+            </plugin>
+          </value>
+        </entry>
+        <entry key=".analysis_options">
+          <value>
+            <plugin>
+              <option name="myPluginId" value="org.jetbrains.plugins.yaml" />
+              <option name="myPluginName" value="YAML" />
               <option name="myBundled" value="true" />
             </plugin>
           </value>
