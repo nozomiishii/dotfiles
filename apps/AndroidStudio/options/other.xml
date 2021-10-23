@@ -6,6 +6,7 @@
     <property name="InstalledPluginsSearchHistory" value="monokai" />
     <property name="MarketplacePluginsSearchHistory" value="flut&#10;fl&#10;f&#10;ｆｌ&#10;ｆ" />
     <property name="NonModalCommitCustomization.IsApplied" value="true" />
+    <property name="PluginConfigurable.selectionTab" value="1" />
     <property name="UITheme.relaunch" value="true" />
     <property name="ask.about.ctrl.y.shortcut.v2" value="true" />
     <property name="fileTypeChangedCounter" value="2" />

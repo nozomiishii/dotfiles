@@ -70,6 +70,9 @@ brew "helm"
 # Generate clients, server & docs from an OpenAPI spec https://openapi-generator.tech/
 brew "openapi-generator"
 
+# Dependency manager for Cocoa projects https://cocoapods.org/
+brew "cocoapods"
+
 
 # Cask
 
