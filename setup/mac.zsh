@@ -2,6 +2,14 @@
 echo "\n💻 Starting Mac Setup\n"
 
 
+echo '- 👾 NeoVim'
+if [[ ! -e "$HOME/.config/nvim" ]]; then
+  mkdir -p $HOME/.config/nvim
+fi
+ln -nfsv "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+
+
+
 echo "- 🤖 nvram"
 # Disable auto-booting
 sudo nvram AutoBoot=%01

@@ -4,6 +4,10 @@
 CODE_DIR="$HOME/Code"
 GOOGLE_DRIVE_DIR="$HOME/Google\ Drive"
 
+# NeoVim
+alias vi="nvim"
+alias vim="nvim"
+alias view="nvim -R"
 
 # Maintenance
 alias brewi="./setup/homebrew.zsh"
