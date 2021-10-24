@@ -5,6 +5,8 @@ call plug#begin()
   Plug 'phanviet/vim-monokai-pro'
   " https://github.com/preservim/nerdtree
   Plug 'preservim/nerdtree'
+  " https://github.com/junegunn/fzf
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 " Monokai Pro

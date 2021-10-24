@@ -18,6 +18,9 @@ brew "neovim"
 # Terminal multiplexer https://tmux.github.io/
 brew "tmux"
 
+# Command-line fuzzy finder written in Go https://github.com/junegunn/fzf
+brew "fzf"
+
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
 brew "stripe"
 
