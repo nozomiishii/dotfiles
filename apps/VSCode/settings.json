@@ -106,7 +106,9 @@
     ".lintstagedrc": "json",
     "*.strings": "plist",
     "*.plist": "plist",
-    "vimrc": "viml"
+    "vimrc": "viml",
+    ".skhdrc": "shellscript",
+    ".yabairc": "shellscript"
   },
 
   // yaml

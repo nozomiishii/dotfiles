@@ -5,8 +5,10 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/cask-fonts"
+tap "homebrew/servics"
 tap "heroku/brew"
 tap "stripe/stripe-cli"
+tap "koekeishiya/formulae"
 
 
 
@@ -20,6 +22,12 @@ brew "tmux"
 
 # Command-line fuzzy finder written in Go https://github.com/junegunn/fzf
 brew "fzf"
+
+# A tiling window manager for macOS based on binary space partitioning. https://github.com/koekeishiya/yabai
+brew "yabai"
+
+# Simple hotkey-daemon for macOS. https://github.com/koekeishiya/skhd
+brew "skhd"
 
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
 brew "stripe"
@@ -195,7 +203,7 @@ cask "unity-hub"
 cask "notion"
 
 # Window manager. https://www.sempliva.com/tiles
-cask "tiles"
+# cask "tiles"
 
 # Team communication and collaboration software. https://slack.com
 cask "slack"
