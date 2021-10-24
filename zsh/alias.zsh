@@ -8,6 +8,8 @@ GOOGLE_DRIVE_DIR="$HOME/Google\ Drive"
 alias vi="nvim"
 alias vim="nvim"
 alias view="nvim -R"
+alias vimconfig="vim $HOME/dotfiles/nvim/init.vim"
+
 
 # Maintenance
 alias brewi="./setup/homebrew.zsh"
@@ -26,6 +28,7 @@ alias plist="cd ~/Library/Preferences"
 alias jj="cd $CODE_DIR"
 alias noz="cd $CODE_DIR/nozomiishii/c2021"
 alias wrk="cd $CODE_DIR/Work"
+
 
 # VoiceUtopia
 alias vua="cd $CODE_DIR/Work/VoiceUtopia"
