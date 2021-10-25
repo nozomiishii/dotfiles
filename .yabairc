@@ -21,3 +21,12 @@ yabai -m rule --add app="^Dictionary$"         manage=off
 yabai -m rule --add app="^Disk Utility$"       manage=off
 yabai -m rule --add app="^Simulator$"          manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Finder$"             manage=off
+yabai -m rule --add app="^DeepL$"              manage=off
+yabai -m rule --add app="^Hazel$"              manage=off
+yabai -m rule --add app="^ColorSnapper2$"      manage=off
+yabai -m rule --add app="^GitKraken$"          manage=off
+yabai -m rule --add app="^VirtualBox$"         manage=off
+
+
+
