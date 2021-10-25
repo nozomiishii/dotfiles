@@ -9,6 +9,8 @@ call plug#begin()
   Plug 'preservim/nerdtree'
   " https://github.com/junegunn/fzf
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  " https://github.com/neoclide/coc.nvim
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Monokai Pro
