@@ -1,2 +1,10 @@
 # How to restart
 # brew services restart skhd
+
+# focus window
+alt + shift - f : yabai -m window --focus stack.prev
+alt + shift - d : yabai -m window --focus stack.next
+
+# send window to monitor
+alt + shift - g  : yabai -m window --display 1 && yabai -m space --stack 1
+alt + shift - s  : yabai -m window --display 2 && yabai -m space --stack 2
