@@ -148,7 +148,7 @@ echo "- 🖲 Trackpad"
 defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
 # Tracking Speed => 0: Slow 3: Fast
-defaults write NSGlobalDomain com.apple.trackpad.scaling -float 2.5
+defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3
 # Disable swipe between pages
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
 # Disable Look up & detectors
