@@ -2,3 +2,6 @@ Brewfile.lock.json
 .DS_Store
 
 **/tokens.zsh
+
+# Karabiner
+apps/karabiner/automatic_backups

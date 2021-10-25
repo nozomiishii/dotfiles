@@ -12,15 +12,6 @@
 	<false/>
 	<key>fastAppendSeparator</key>
 	<integer>1</integer>
-	<key>hotkey</key>
-	<dict>
-		<key>key</key>
-		<integer>-1</integer>
-		<key>mod</key>
-		<integer>1048576</integer>
-		<key>string</key>
-		<string>double tap</string>
-	</dict>
 	<key>snippetsAtTop</key>
 	<false/>
 	<key>snippetsWhenSearching</key>
