@@ -202,9 +202,6 @@ cask "unity-hub"
 # App to write, plan, collaborate, and get organized. https://www.notion.so
 cask "notion"
 
-# Window manager. https://www.sempliva.com/tiles
-# cask "tiles"
-
 # Team communication and collaboration software. https://slack.com
 cask "slack"
 
