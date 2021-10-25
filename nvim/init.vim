@@ -1,4 +1,6 @@
 set shell=/bin/zsh
+set encoding=utf-8
+
 
 call plug#begin()
   " https://github.com/phanviet/vim-monokai-pro
