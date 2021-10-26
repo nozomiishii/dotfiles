@@ -793,6 +793,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>CB537AC3-AD58-484D-B5C6-86A97D719C5A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>openapidocs</string>
+			<key>text</key>
+			<string>OpenAPI Specification Documentation</string>
+			<key>url</key>
+			<string>https://swagger.io/specification/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>CE717735-6899-4120-A244-7AF8C83320DB</key>
 		<dict>
 			<key>enabled</key>
