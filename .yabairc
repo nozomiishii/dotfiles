@@ -27,6 +27,5 @@ yabai -m rule --add app="^Hazel$"              manage=off
 yabai -m rule --add app="^ColorSnapper2$"      manage=off
 yabai -m rule --add app="^GitKraken$"          manage=off
 yabai -m rule --add app="^VirtualBox$"         manage=off
-
-
-
+yabai -m rule --add app="^1Password 7$"        manage=off
+yabai -m rule --add app="^AppCleaner$"         manage=off
