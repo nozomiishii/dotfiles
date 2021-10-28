@@ -22,10 +22,11 @@ let g:lightline = {'colorscheme': 'monokai_pro'}
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 
-set nu
+set number
 set tabstop=2 shiftwidth=2 expandtab
 set textwidth=100
 set autoindent
+set incsearch
 set hlsearch
 set clipboard=unnamed
 
