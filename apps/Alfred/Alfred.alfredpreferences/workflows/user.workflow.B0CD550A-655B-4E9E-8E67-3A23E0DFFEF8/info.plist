@@ -557,11 +557,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>38</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>524288</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>J</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -655,9 +655,57 @@
 				<key>hotkey</key>
 				<integer>38</integer>
 				<key>hotmod</key>
-				<integer>655360</integer>
+				<integer>524288</integer>
 				<key>hotstring</key>
 				<string>J</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>E787F214-E58C-4001-AD8F-D0F8A97AC009</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/DeepL.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>D862F52D-7B0B-47EA-A484-A0D9A2A0F2BB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -814,37 +862,6 @@
 				<key>hotkey</key>
 				<integer>49</integer>
 				<key>hotmod</key>
-				<integer>262144</integer>
-				<key>hotstring</key>
-				<string>Space</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>E787F214-E58C-4001-AD8F-D0F8A97AC009</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>49</integer>
-				<key>hotmod</key>
 				<integer>1572864</integer>
 				<key>hotstring</key>
 				<string>Space</string>
@@ -861,23 +878,6 @@
 			<string>4E80E264-5B72-4F8B-816F-B946AFB7D8EB</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/DeepL.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>D862F52D-7B0B-47EA-A484-A0D9A2A0F2BB</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1352,14 +1352,14 @@ end alfred_script</string>
 		<key>27408918-9FC1-4FCD-96DA-4E3AE0CC30A7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>195</integer>
+			<integer>1495</integer>
 			<key>ypos</key>
 			<integer>330</integer>
 		</dict>
 		<key>31EED105-A92A-4A51-AD49-E3ADACDFD3B3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<integer>1370</integer>
 			<key>ypos</key>
 			<integer>330</integer>
 		</dict>
@@ -1499,7 +1499,7 @@ end alfred_script</string>
 		<key>AF78794E-2458-43F5-A747-76A05A2E5363</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<integer>1370</integer>
 			<key>ypos</key>
 			<integer>225</integer>
 		</dict>
@@ -1548,9 +1548,9 @@ end alfred_script</string>
 		<key>D862F52D-7B0B-47EA-A484-A0D9A2A0F2BB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>195</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>230</integer>
 		</dict>
 		<key>DDE7F65F-CD2B-4CA7-818C-ECDF86D27FD0</key>
 		<dict>
@@ -1562,9 +1562,9 @@ end alfred_script</string>
 		<key>E787F214-E58C-4001-AD8F-D0F8A97AC009</key>
 		<dict>
 			<key>xpos</key>
-			<integer>335</integer>
+			<integer>70</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>230</integer>
 		</dict>
 		<key>E7C0B6A3-F738-4492-A455-096A93784148</key>
 		<dict>
@@ -1576,7 +1576,7 @@ end alfred_script</string>
 		<key>EA71DE37-45E6-4D66-89A1-3A35B9CF4A1C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>195</integer>
+			<integer>1495</integer>
 			<key>ypos</key>
 			<integer>225</integer>
 		</dict>

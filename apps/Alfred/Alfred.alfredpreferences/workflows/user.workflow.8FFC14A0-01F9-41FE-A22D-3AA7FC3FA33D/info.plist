@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>6E6E462D-65D4-4E0D-8F09-2D70D348B39E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>41DBF31B-FC1F-4B41-BC96-4E223B105F1E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B566B177-3324-44FE-B0B2-ADF4B97F2D64</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open Incognito window on current space</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CC41C83F-6789-4EAC-9A43-3CFE55217D24</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Open Canary window on current space</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Caio Gondim</string>
+	<key>description</key>
+	<string>Opens a new Chrome window on the current space</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Chrome Window</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+tell application "Google Chrome"	make new window	tell application "System Events" to set frontmost of process "Google Chrome" to true
+	activateend tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>41DBF31B-FC1F-4B41-BC96-4E223B105F1E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+tell application "Google Chrome"	make new window with properties {mode:"incognito"}	tell application "System Events" to set frontmost of process "Google Chrome" to true
+	activateend tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>B566B177-3324-44FE-B0B2-ADF4B97F2D64</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>gg</string>
+				<key>subtext</key>
+				<string>Open Chrome window on current space</string>
+				<key>text</key>
+				<string>Open Chrome Window</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E6E462D-65D4-4E0D-8F09-2D70D348B39E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+tell application "Google Chrome Canary"	make new window	tell application "System Events" to set frontmost of process "Google Chrome Canary" to true
+	activateend tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CC41C83F-6789-4EAC-9A43-3CFE55217D24</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>41DBF31B-FC1F-4B41-BC96-4E223B105F1E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>6E6E462D-65D4-4E0D-8F09-2D70D348B39E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>B566B177-3324-44FE-B0B2-ADF4B97F2D64</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>CC41C83F-6789-4EAC-9A43-3CFE55217D24</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>320</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://github.com/caiogondim</string>
+</dict>
+</plist>

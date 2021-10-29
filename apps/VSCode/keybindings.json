@@ -8,7 +8,7 @@
     "command": "-workbench.action.closeEditorsInGroup"
   },
   {
-    "key": "shift+space",
+    "key": "ctrl+space",
     "command": "editor.action.triggerSuggest",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
   },
