@@ -11,6 +11,15 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   " https://github.com/neoclide/coc.nvim
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " list
+  " https://github.com/neoclide/coc.nvim/wiki/Language-servers#supported-features
+  " https://github.com/neoclide/coc-tabnine
+
+  " Install with the vim command line
+  " :CocInstall coc-tabnine coc-tsserver coc-json coc-sh 
+
+  " You should create coc-settings.json like below if you have time
+  " https://qiita.com/coil_msp123/items/29de76b035dd28af77a9
 call plug#end()
 
 " Monokai Pro
