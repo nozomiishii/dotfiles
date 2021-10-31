@@ -178,6 +178,9 @@ cask "deepl"
 # Video communication and virtual meeting platform https://www.zoom.us/
 cask "zoom"
 
+# Virtual Audio Driver https://existential.audio/blackhole/
+cask "blackhole-2ch"
+
 # Voice and text chat software. https://discord.com
 cask "discord"
 
