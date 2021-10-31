@@ -13,3 +13,6 @@ pyenv versions
 
 echo "🐍 python version"
 python -V
+
+echo "🐍 Install dependencies"
+pip3 install pynvim

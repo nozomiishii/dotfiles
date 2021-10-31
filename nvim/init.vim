@@ -11,15 +11,6 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   " https://github.com/neoclide/coc.nvim
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " list
-  " https://github.com/neoclide/coc.nvim/wiki/Language-servers#supported-features
-  " https://github.com/neoclide/coc-tabnine
-
-  " Install with the vim command line
-  " :CocInstall coc-tabnine coc-tsserver coc-json coc-sh 
-
-  " You should create coc-settings.json like below if you have time
-  " https://qiita.com/coil_msp123/items/29de76b035dd28af77a9
 call plug#end()
 
 " Monokai Pro
@@ -39,4 +30,41 @@ set incsearch
 set hlsearch
 set clipboard=unnamed
 
+" coc config
+let g:coc_global_extensions = [
+  \ 'coc-sh',
+  \ 'coc-tabnine',
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
 
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+
+" Auto Completion
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"

@@ -7,6 +7,7 @@ if [[ ! -e "$HOME/.config/nvim" ]]; then
   mkdir -p $HOME/.config/nvim
 fi
 ln -nfsv "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+ln -nfsv "$HOME/dotfiles/nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
 # Turn key repear on
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # Install vim-plug
