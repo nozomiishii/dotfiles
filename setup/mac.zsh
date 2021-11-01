@@ -15,6 +15,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 
+echo "- 🐢 tmux"
+ln -nfsv "$HOME/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
+
+
 echo "- 🤖 nvram"
 # Disable auto-booting
 sudo nvram AutoBoot=%01

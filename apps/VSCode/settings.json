@@ -108,7 +108,8 @@
     "*.plist": "plist",
     "vimrc": "viml",
     ".skhdrc": "shellscript",
-    ".yabairc": "shellscript"
+    ".yabairc": "shellscript",
+    ".tmux.conf": "shellscript"
   },
 
   // yaml
