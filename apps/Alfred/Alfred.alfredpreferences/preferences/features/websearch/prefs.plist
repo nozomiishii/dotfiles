@@ -458,7 +458,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>greensock</string>
+			<string>gsap</string>
 			<key>text</key>
 			<string>Open GreenSock</string>
 			<key>url</key>
@@ -666,7 +666,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>greensock</string>
+			<string>gsap</string>
 			<key>text</key>
 			<string>Open GreenSock - VoiceUtopia</string>
 			<key>url</key>
