@@ -107,5 +107,15 @@
     "key": "alt+cmd+j",
     "command": "-liveshare.join",
     "when": "liveshare:state != 'Joined' && liveshare:state != 'Shared'"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   }
 ]
