@@ -33,9 +33,9 @@ alias wrk="cd $CODE_DIR/Work"
 # VoiceUtopia
 alias vua="cd $CODE_DIR/Work/VoiceUtopia"
 alias vu="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia"
-alias vuapi="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-api"
+alias vuap="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-api"
 alias vuo="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-office"
-
+alias vuop="cd $CODE_DIR/Work/VoiceUtopia/openapi"
 
 # shell
 alias quit="exec $SHELL -l"
