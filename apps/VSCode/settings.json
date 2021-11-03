@@ -1,7 +1,6 @@
 {
   // General
   "workbench.colorTheme": "Monokai Pro",
-  "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "newUntitledFile",
   "breadcrumbs.enabled": true,
   "emmet.triggerExpansionOnTab": true,
@@ -12,6 +11,17 @@
   // NeoVim
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
+
+  // vscode-icons
+  "workbench.iconTheme": "vscode-icons",
+  "vsicons.associations.files": [
+    {
+      "icon": "docker",
+      "extensions": ["docker-compose.dev.yml", "docker-compose.dev.yaml"],
+      "filename": true,
+      "format": "svg"
+    }
+  ],
 
   // Editor
   "editor.fontSize": 14,
@@ -132,7 +142,6 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "liveServer.settings.donotShowInfoMsg": true,
   "gitlens.currentLine.enabled": false,
-  "vsicons.dontShowNewVersionMessage": true,
   "tabnine.experimentalAutoImports": true,
   "highlight-matching-tag.styles": {
     "opening": {
