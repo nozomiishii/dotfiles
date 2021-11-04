@@ -583,6 +583,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>85E4EBA1-1D67-410F-A30F-D7E2663901EB</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>sentry</string>
+			<key>text</key>
+			<string>Open Sentry - VoiceUtopia</string>
+			<key>url</key>
+			<string>https://sentry.io/organizations/voiceutopiainc/issues/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>86920152-7A1E-45C1-9520-0B60356979B3</key>
 		<dict>
 			<key>enabled</key>
