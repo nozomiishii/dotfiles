@@ -70,3 +70,7 @@ alias dcex="docker container exec -it"
 alias dsp="docker system prune"
 alias dcp="docker-compose"
 alias nn="docker container run -it --rm -p 6000:6000 -w /app -v $(pwd):/app node bash"
+
+
+# yabai & skhd
+alias rsyb="brew services restart yabai && brew services restart skhd"
