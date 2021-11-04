@@ -4,9 +4,9 @@
 # ctrl | shift | alt | cmd
 
 # focus window
-ctrl + shift - f : yabai -m window --focus stack.prev
-ctrl + shift - d : yabai -m window --focus stack.next
+shift + alt - f : yabai -m window --focus stack.prev
+shift + alt - d : yabai -m window --focus stack.next
 
 # send window to monitor
-ctrl + shift - g  : yabai -m window --display 1 && yabai -m space --stack 1
-ctrl + shift - s  : yabai -m window --display 2 && yabai -m space --stack 2
+shift + alt - g  : yabai -m window --display 1 && yabai -m space --stack 1
+shift + alt - s  : yabai -m window --display 2 && yabai -m space --stack 2
