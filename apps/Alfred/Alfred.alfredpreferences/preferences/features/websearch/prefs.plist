@@ -355,6 +355,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>61933760-A822-462F-A557-06DFEDE26AC3</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>sentrydoc</string>
+			<key>text</key>
+			<string>Open Sentry Documentation</string>
+			<key>url</key>
+			<string>https://docs.sentry.io/product/sentry-basics/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>63CF81D1-4D8C-41B6-A42D-89F58C55D723</key>
 		<dict>
 			<key>enabled</key>
