@@ -780,6 +780,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>B5F7722E-62EF-40E1-A36D-56DFB73BC376</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>supertest</string>
+			<key>text</key>
+			<string>Open Supertest</string>
+			<key>url</key>
+			<string>https://www.npmjs.com/package/supertest</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>BA8D1706-4AA8-4F23-82D6-E3E9BF468E65</key>
 		<dict>
 			<key>enabled</key>
