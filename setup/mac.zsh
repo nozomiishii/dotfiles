@@ -195,6 +195,14 @@ defaults write com.apple.sidecar.display showTouchbar -bool false
 defaults write com.apple.sidecar.display sidebarShown -bool false
 
 
+echo "Automator 🤖"
+# Automator
+if [[ -e "$HOME/Library/Services" ]]; then
+  rm -rf "$HOME/Library/Services"
+fi
+ln -nfsv "$HOME/dotfiles/apps/Automator/Services" "$HOME/Library/Services"
+
+
 echo "- 👼 Killall..."
 killall Dock
 killall Finder
