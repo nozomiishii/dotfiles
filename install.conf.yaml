@@ -9,7 +9,6 @@
     ~/.p10k.zsh: zsh/.p10k.zsh
     ~/.zshrc: zsh/.zshrc
     ~/.gitconfig: .gitconfig
-    ~/.vimrc: .vimrc
 - create:
     - ~/Code
 - shell:
