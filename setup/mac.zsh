@@ -196,11 +196,8 @@ defaults write com.apple.sidecar.display sidebarShown -bool false
 
 
 echo "Automator 🤖"
-# Automator
-if [[ -e "$HOME/Library/Services" ]]; then
-  rm -rf "$HOME/Library/Services"
-fi
-ln -nfsv "$HOME/dotfiles/apps/Automator/Services" "$HOME/Library/Services"
+# !! You need to symbolic link to each shortcut. !!
+ln -nfsv "$HOME/dotfiles/apps/Automator/Services/Open with Visual Studio Code.workflow" "$HOME/Library/Services"
 
 
 echo "- 👼 Killall..."
