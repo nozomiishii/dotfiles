@@ -1040,6 +1040,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>F52303A1-5ACF-441B-AC81-E3042903F3FA</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>webflow</string>
+			<key>text</key>
+			<string>Open Webflow</string>
+			<key>url</key>
+			<string>https://webflow.com/dashboard</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>F596E5EB-7DB0-49FA-B8F9-D14DFE0018EA</key>
 		<dict>
 			<key>enabled</key>
