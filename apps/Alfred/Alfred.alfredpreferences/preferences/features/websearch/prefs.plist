@@ -648,6 +648,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>8AC1A216-E2A0-41DC-B508-B56A8460256B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>storybook</string>
+			<key>text</key>
+			<string>Open Storybook Documentation</string>
+			<key>url</key>
+			<string>https://storybook.js.org/docs/react/get-started/introduction</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>964E430A-A8C4-4D8D-8FD0-FC43402FE30A</key>
 		<dict>
 			<key>enabled</key>
