@@ -8,5 +8,8 @@ shift + alt - f : yabai -m window --focus stack.prev
 shift + alt - d : yabai -m window --focus stack.next
 
 # send window to monitor
-shift + alt - g  : yabai -m window --display 1 && yabai -m space --stack 1
-shift + alt - s  : yabai -m window --display 2 && yabai -m space --stack 2
+shift + alt - g : yabai -m window --display 1 && yabai -m space --stack 1
+shift + alt - s : yabai -m window --display 2 && yabai -m space --stack 2
+
+# fullscreen
+shift + alt - a : yabai -m window --grid 1:1:0:0:1:1
