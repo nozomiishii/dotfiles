@@ -492,6 +492,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>70EDBF2E-5BC7-415E-AAF4-B813F3EED623</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>dribbble</string>
+			<key>text</key>
+			<string>Open Dribbble</string>
+			<key>url</key>
+			<string>https://dribbble.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>70F4A299-A12A-4FB0-B9E5-3A00446E0FBE</key>
 		<dict>
 			<key>enabled</key>
