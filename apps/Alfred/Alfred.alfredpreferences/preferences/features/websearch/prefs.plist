@@ -832,6 +832,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>B89768FC-B973-4D0A-A6BF-212220271656</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>lapa</string>
+			<key>text</key>
+			<string>Open lapa.ninja</string>
+			<key>url</key>
+			<string>https://www.lapa.ninja/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>BA8D1706-4AA8-4F23-82D6-E3E9BF468E65</key>
 		<dict>
 			<key>enabled</key>
