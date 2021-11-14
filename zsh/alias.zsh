@@ -26,7 +26,7 @@ alias vimtut="cd $HOME/Tutorials/vimclass && open ."
 alias dsk="cd ~/Desktop"
 alias plist="cd ~/Library/Preferences"
 alias Code="cd $CODE_DIR"
-alias noz="cd $CODE_DIR/nozomiishii"
+alias noz="cd $CODE_DIR/nozomiishii/dev"
 alias wrk="cd $CODE_DIR/Work"
 
 
