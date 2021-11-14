@@ -27,6 +27,7 @@ alias dsk="cd ~/Desktop"
 alias plist="cd ~/Library/Preferences"
 alias Code="cd $CODE_DIR"
 alias noz="cd $CODE_DIR/nozomiishii/dev"
+alias dev="cd $CODE_DIR/nozomiishii/dev"
 alias wrk="cd $CODE_DIR/Work"
 
 
