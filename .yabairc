@@ -34,3 +34,4 @@ yabai -m rule --add app="^Mail$"               manage=off
 yabai -m rule --add app="^Android Studio$"     manage=off
 yabai -m rule --add app="^Alfred"              manage=off
 yabai -m rule --add app="^Notion$"             manage=off
+yabai -m rule --add app="^Figma$"              manage=off
