@@ -1027,6 +1027,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>E238AC2F-93EA-4496-899A-319E51C0EC9C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>landbook</string>
+			<key>text</key>
+			<string>Opan Land-book</string>
+			<key>url</key>
+			<string>https://land-book.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>E763BCE9-06B3-42A3-BCDE-1DD47E27ACF7</key>
 		<dict>
 			<key>enabled</key>
