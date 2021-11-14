@@ -1053,6 +1053,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>EBD6DFC9-DC3B-4E33-AE31-65520DE4F570</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>pinterest</string>
+			<key>text</key>
+			<string>Open Pinterest</string>
+			<key>url</key>
+			<string>https://www.pinterest.co.uk/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>F1085C8F-FC6F-46C9-9AB2-840DB827AB6D</key>
 		<dict>
 			<key>enabled</key>
