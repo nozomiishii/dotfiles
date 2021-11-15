@@ -29,6 +29,10 @@ zinit light-mode lucid wait has"kubectl" for \
 zpcompinit
 alias k=kubectl
 
+# yarn completions
+zinit ice atload"zpcdreplay" atclone'./zplug.zsh'
+zinit light g-plane/zsh-yarn-autocompletions
+
 # Plugins
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
