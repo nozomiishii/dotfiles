@@ -225,6 +225,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3E6AC62F-1E13-4B2C-B0CC-A8E0F0992EBF</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ghdocs</string>
+			<key>text</key>
+			<string>Open Github Documentation</string>
+			<key>url</key>
+			<string>https://docs.github.com</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3FC60018-E30E-47FF-8633-21D95CDC75D9</key>
 		<dict>
 			<key>enabled</key>
