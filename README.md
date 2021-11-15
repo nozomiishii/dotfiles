@@ -80,7 +80,7 @@ Login
 
 **🎩 Alfred**  
 Activate the license  
-Preferences > Advanced > Set preferences folder... > Select "~/Google\ Drive/settings/Alfred"  
+Preferences > Advanced > Set preferences folder... > Select "~/dotfiles/apps/Alfred"  
 Alfred > General > Alfred Hotkey: ⌘ + Space
 
 **💻 System Preferences**  
