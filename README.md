@@ -143,7 +143,7 @@ Edit > Preferences > Input > Keyboard > Emulate Numpad
 Activate the license
 
 **👩🏻‍🏫 DeepL**  
-Delete hotkeys
+Shortcut 2x ⌘C
 
 **🗣 Speech**  
 System Preferences > Accessibility > Spoken Content > Select and Download "Siri Female(United Kingdom)"  
