@@ -203,7 +203,7 @@ Save the images to your prefer directory like Google Drive
   ngrok authtoken <your_auth_token>
 ```
 
-**📞 Cisco Packet Tracer**
+**📞 Cisco Packet Tracer**  
 [Download](https://www.netacad.com/portal/resources/packet-tracer)
 
 ## Generate ssh key🔓
