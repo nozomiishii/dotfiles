@@ -196,6 +196,10 @@ defaults write com.apple.sidecar.display doubleTapEnabled -bool true
 defaults write com.apple.sidecar.display showTouchbar -bool false
 defaults write com.apple.sidecar.display sidebarShown -bool false
 
+# Delete Hot Corners
+defaults delete com.apple.dock wvous-br-corner
+defaults delete com.apple.dock wvous-br-modifier
+
 
 echo "Automator 🤖"
 # !! You need to symbolic link to each shortcut. !!
