@@ -280,14 +280,11 @@ Create token.zsh file on dotfiles
   echo 'export HOMEBREW_GITHUB_API_TOKEN=<your_token_here>' >> zsh/tokens.zsh
 ```
 
-**😼 hub**
+**😼 gh**
 
 ```shell
-  hub browse
+  gh auth login
 ```
-
-github.com username: <user_name>  
-github.com password: <personal_access_token>
 
 ## Customize 👨🏻‍🍳
 
