@@ -322,7 +322,7 @@ System Preferences > Apple ID > Overview > Sign Out...
 2: Deactivate license  
 **🎩 Alfred**  
 Preferences > Powerpack > View your license key > Deactivate  
-**🧹 Hazel**
+**🧹 Hazel**  
 License... > Remove...  
 **🎨 ColorSnapper2**  
 About ColorSnapper... > Deactivate license
