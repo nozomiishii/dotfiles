@@ -5,9 +5,9 @@
 ## Installation 📦
 
 **1: Sign in your iCloud and App Store. (to get apps using mas command)**  
-If you want to use a non-private account, Install Xcode from App Store.
+If you can't use your personal apple ID on your company computer, install xcode manually from the App Store.
 
-**2:Open terminal and install xcode-select**
+**2: Open terminal and install xcode-select**
 
 ```shell
   xcode-select --install
@@ -19,7 +19,7 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 Come to this page
 
 ```shell
-  open https://github.com/nozomiishii/dotfiles
+  open https://nozomiishii.dev/dotfiles
 ```
 
 ```shell
