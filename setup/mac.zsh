@@ -60,6 +60,21 @@ defaults write NSGlobalDomain AppleICUForce12HourTime -bool true
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
 
 
+echo "- 🪁 Control Center"
+# Hide Spotlight
+defaults write ~/Library/Preferences/ByHost/com.apple.Spotlight MenuItemHidden -bool false
+# Hide Do Not Disturb
+defaults write com.apple.controlcenter "NSStatusItem Visible DoNotDisturb" -bool false
+# Hide Screen Mirroring
+defaults write com.apple.controlcenter "NSStatusItem Visible ScreenMirroring" -bool false
+# Hide Display
+defaults write com.apple.controlcenter "NSStatusItem Visible Display" -bool false
+# Hide Sound
+defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool false
+# Hide Now Playing
+defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool false
+
+
 echo "- 📸 Screenshot"
 # Choose whether to display a thumbnail after taking a screenshot
 defaults write com.apple.screencapture show-thumbnail -bool false

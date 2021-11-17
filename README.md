@@ -96,20 +96,6 @@ Alfred > General > Alfred Hotkey: ⌘ + Space
 
 - Users & Groups > Current User > Edit Profile photo
 
-**Menu Bar**
-
-- Dock & Menu Bar > Spotlight > uncheck "Show in Menu Bar"
-- Dock & Menu Bar > Do Not Disturb > uncheck "Show in Menu Bar"
-- Dock & Menu Bar > Screen Mirroring > uncheck "Show in Menu Bar"
-- Dock & Menu Bar > Display > uncheck "Show in Menu Bar"
-- Dock & Menu Bar > Sound > uncheck "Show in Menu Bar"
-- Dock & Menu Bar > Now Playing > uncheck "Show in Menu Bar"
-
-**Touch Bar**
-
-- Extensions > Touch Bar > Customize  
-  Volume Slider | Mute | Brightness Slider
-
 **🌏 Chrome**  
 Sign in  
 Change Chrome to the Default Browser  
