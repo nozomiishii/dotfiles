@@ -1105,6 +1105,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>EB8BE61A-17AB-4F26-BE95-BE10C456BBFD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>nestjsdocs</string>
+			<key>text</key>
+			<string>Open NestJS Documentation</string>
+			<key>url</key>
+			<string>https://docs.nestjs.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>EBD6DFC9-DC3B-4E33-AE31-65520DE4F570</key>
 		<dict>
 			<key>enabled</key>
