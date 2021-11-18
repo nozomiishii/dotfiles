@@ -368,6 +368,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>58E0CFB8-50EA-4478-B5C6-30C073D6658B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>express</string>
+			<key>text</key>
+			<string>Open Express Documentation</string>
+			<key>url</key>
+			<string>https://expressjs.com/en/starter/installing.html</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>5AC536FB-84FA-4627-A759-F52C029EFEDC</key>
 		<dict>
 			<key>enabled</key>
