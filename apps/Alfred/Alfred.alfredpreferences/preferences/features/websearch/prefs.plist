@@ -858,6 +858,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>B44AF932-D16C-401A-91C9-06B9620C3A66</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>terraform</string>
+			<key>text</key>
+			<string>Terraform Documentation</string>
+			<key>url</key>
+			<string>https://learn.hashicorp.com/terraform?utm_source=terraform_io&amp;utm_content=terraform_io_hero</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>B5F7722E-62EF-40E1-A36D-56DFB73BC376</key>
 		<dict>
 			<key>enabled</key>
