@@ -73,5 +73,9 @@ alias dcp="docker-compose"
 alias nn="docker container run -it --rm -p 6000:6000 -w /app -v $(pwd):/app node bash"
 
 
+# tfenv https://github.com/tfutils/tfenv/issues/83
+alias tfenv='GREP_OPTIONS="--color=never" tfenv'
+
+
 # yabai & skhd
 alias rsyb="brew services restart yabai && brew services restart skhd"

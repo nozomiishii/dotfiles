@@ -20,6 +20,10 @@
       stdin: true
       stdout: true
       stderr: true
+    - command: ./setup/terraform.zsh
+      stdin: true
+      stdout: true
+      stderr: true
     - command: ./setup/node.zsh
       stdin: true
       stdout: true
