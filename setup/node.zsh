@@ -12,10 +12,11 @@ else
   echo "📦 n installed"
 fi
 
+npm i -g yarn
 npm i -g typescript
 npm i -g firebase-tools
-npm i -g yarn
 npm i -g vercel
+npm i -g @nestjs/cli
 
 echo "📦 npm installed"
 npm list -g --depth=0
