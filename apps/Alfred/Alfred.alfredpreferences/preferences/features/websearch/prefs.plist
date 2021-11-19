@@ -215,7 +215,7 @@
 		<key>323CF4C4-D9B9-4D01-892D-1CC05CF7A5AF</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>luxon</string>
 			<key>text</key>
@@ -479,6 +479,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>66E7883D-6876-4F4D-A5A1-C39B836EF6EF</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>lh</string>
+			<key>text</key>
+			<string>Open localhost:3000</string>
+			<key>url</key>
+			<string>http://localhost:3000/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>67A42AE0-C5FE-4592-88A9-C053FE058E3B</key>
 		<dict>
 			<key>enabled</key>
@@ -593,6 +606,19 @@ Translate '{query}' into Japanese</string>
 			<string>Open React Typescript Cheatsheets</string>
 			<key>url</key>
 			<string>https://react-typescript-cheatsheet.netlify.app/docs/basic/setup/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>74481E8A-0431-4D20-B3EF-4A03F568B726</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>lh</string>
+			<key>text</key>
+			<string>Open localhost:{query}</string>
+			<key>url</key>
+			<string>http://localhost:{query}/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
@@ -1115,6 +1141,19 @@ Google Cloud Console</string>
 			<string>Open hootsuite</string>
 			<key>url</key>
 			<string>https://hootsuite.com/dashboard#/planner</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>E809F45E-BC75-4ABA-84BF-0ABAA50EE4E5</key>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>keyword</key>
+			<string>lh</string>
+			<key>text</key>
+			<string>Open localhost:{query}</string>
+			<key>url</key>
+			<string>http://localhost:{query}/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
