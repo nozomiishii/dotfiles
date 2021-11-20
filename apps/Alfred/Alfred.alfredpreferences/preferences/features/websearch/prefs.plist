@@ -466,6 +466,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>644006E1-E1FE-4057-A5B4-829CF952D4EC</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>typeorm</string>
+			<key>text</key>
+			<string>Open TypeORM</string>
+			<key>url</key>
+			<string>https://typeorm.io/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>64AFBB95-285D-440E-8894-7DECD80B2558</key>
 		<dict>
 			<key>enabled</key>
