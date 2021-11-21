@@ -149,6 +149,37 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>5</integer>
+				<key>hotmod</key>
+				<integer>524288</integer>
+				<key>hotstring</key>
+				<string>G</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>038AB693-2242-496C-8FF2-EEBCE8D9A828</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
 
@@ -165,37 +196,6 @@ end alfred_script</string>
 			<string>3421389A-8216-43CF-A807-65A296182698</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>5</integer>
-				<key>hotmod</key>
-				<integer>655360</integer>
-				<key>hotstring</key>
-				<string>G</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>038AB693-2242-496C-8FF2-EEBCE8D9A828</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>

@@ -1070,6 +1070,56 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://mail.google.com</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>17C358F0-8978-4F3F-AAB4-CAB68EAFD5BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>14</integer>
+				<key>hotmod</key>
+				<integer>524288</integer>
+				<key>hotstring</key>
+				<string>E</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>3B185832-821B-4199-A2A8-2142E0887C4D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1123,56 +1173,6 @@ end alfred_script</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://mail.google.com</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>17C358F0-8978-4F3F-AAB4-CAB68EAFD5BD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>5</integer>
-				<key>hotmod</key>
-				<integer>524288</integer>
-				<key>hotstring</key>
-				<string>G</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>3B185832-821B-4199-A2A8-2142E0887C4D</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
 				<string>https://mail.google.com/mail/u/1</string>
 				<key>utf8</key>
 				<true/>
@@ -1196,11 +1196,11 @@ end alfred_script</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>5</integer>
+				<integer>14</integer>
 				<key>hotmod</key>
-				<integer>1572864</integer>
+				<integer>655360</integer>
 				<key>hotstring</key>
-				<string>G</string>
+				<string>E</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1368,9 +1368,9 @@ end alfred_script</string>
 		<key>3270991B-E89D-4C01-9EAD-A626D6035C24</key>
 		<dict>
 			<key>xpos</key>
-			<integer>335</integer>
+			<integer>590</integer>
 			<key>ypos</key>
-			<integer>1035</integer>
+			<integer>1050</integer>
 		</dict>
 		<key>3B185832-821B-4199-A2A8-2142E0887C4D</key>
 		<dict>
@@ -1382,7 +1382,7 @@ end alfred_script</string>
 		<key>415F51BD-C2F7-4F43-922B-48235F198078</key>
 		<dict>
 			<key>xpos</key>
-			<integer>715</integer>
+			<integer>960</integer>
 			<key>ypos</key>
 			<integer>1395</integer>
 		</dict>
@@ -1396,9 +1396,9 @@ end alfred_script</string>
 		<key>44A7B3EA-5CDB-4DC8-8A27-D9990A0AB896</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>715</integer>
 			<key>ypos</key>
-			<integer>1035</integer>
+			<integer>1050</integer>
 		</dict>
 		<key>4E746779-3018-4B55-BE63-1A31CD027655</key>
 		<dict>
@@ -1445,9 +1445,9 @@ end alfred_script</string>
 		<key>6534E46A-AF78-4DC1-908C-C98907FAF263</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<integer>835</integer>
 			<key>ypos</key>
-			<integer>1155</integer>
+			<integer>1170</integer>
 		</dict>
 		<key>671E5D5A-FECF-4AE7-967B-0112AF7FAD9A</key>
 		<dict>
@@ -1459,7 +1459,7 @@ end alfred_script</string>
 		<key>68331F4B-FF5D-402F-B99E-4261DE442056</key>
 		<dict>
 			<key>xpos</key>
-			<integer>590</integer>
+			<integer>835</integer>
 			<key>ypos</key>
 			<integer>1395</integer>
 		</dict>
@@ -1473,9 +1473,9 @@ end alfred_script</string>
 		<key>8834E29F-2560-4262-A3B6-372A0767D737</key>
 		<dict>
 			<key>xpos</key>
-			<integer>195</integer>
+			<integer>960</integer>
 			<key>ypos</key>
-			<integer>1155</integer>
+			<integer>1170</integer>
 		</dict>
 		<key>949EEE27-1147-4CD5-9D65-E24AF92E234C</key>
 		<dict>
