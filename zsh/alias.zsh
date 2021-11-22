@@ -26,18 +26,18 @@ alias vimtut="cd $HOME/Tutorials/vimclass && open ."
 alias dsk="cd ~/Desktop"
 alias plist="cd ~/Library/Preferences"
 alias Code="cd $CODE_DIR"
-alias noz="cd $CODE_DIR/nozomiishii/dev"
-alias dev="cd $CODE_DIR/nozomiishii/dev"
-alias cv="cd $CODE_DIR/nozomiishii/cv"
+alias noz="cd $CODE_DIR/nozomiishii/dev && code ."
+alias dev="cd $CODE_DIR/nozomiishii/dev && code ."
+alias cv="cd $CODE_DIR/nozomiishii/cv && code ."
 alias wrk="cd $CODE_DIR/Work"
 
 
 # VoiceUtopia
-alias vua="cd $CODE_DIR/Work/VoiceUtopia"
-alias vu="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia"
-alias vuap="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-api"
-alias vuo="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-office"
-alias vuop="cd $CODE_DIR/Work/VoiceUtopia/openapi"
+alias vua="cd $CODE_DIR/Work/VoiceUtopia && code ."
+alias vu="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia && code ."
+alias vuap="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-api && code ."
+alias vuo="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-office && code ."
+alias vuop="cd $CODE_DIR/Work/VoiceUtopia/openapi && code ."
 
 # shell
 alias quit="exec $SHELL -l"
