@@ -21,11 +21,24 @@
 				<false/>
 			</dict>
 		</array>
+		<key>07401336-7EF1-46A5-A600-B4D1FB3FC6D9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FD84C5F7-89A3-4C54-BCA7-0454150D6704</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>12E7D8B6-F5ED-4067-BDC8-68FEBF2F5CDD</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>F7D5B63E-EF3D-40EE-B4A5-448EC666EE69</string>
+				<string>07401336-7EF1-46A5-A600-B4D1FB3FC6D9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -531,50 +544,41 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Google Calendar.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://calendar.google.com/</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>F7D5B63E-EF3D-40EE-B4A5-448EC666EE69</string>
+			<string>FD84C5F7-89A3-4C54-BCA7-0454150D6704</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+tell application "Google Chrome"	make new window	tell application "System Events" to set frontmost of process "Google Chrome" to true
+	activateend tell
+
+end alfred_script</string>
+				<key>cachescript</key>
 				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
-			<string>AF78794E-2458-43F5-A747-76A05A2E5363</string>
+			<string>07401336-7EF1-46A5-A600-B4D1FB3FC6D9</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -627,23 +631,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/System/Volumes/Data/Applications/Google Chrome.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>EA71DE37-45E6-4D66-89A1-3A35B9CF4A1C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -686,6 +673,54 @@
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
 			<string>D862F52D-7B0B-47EA-A484-A0D9A2A0F2BB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>AF78794E-2458-43F5-A747-76A05A2E5363</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/System/Volumes/Data/Applications/Google Chrome.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>EA71DE37-45E6-4D66-89A1-3A35B9CF4A1C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1323,6 +1358,13 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>225</integer>
 		</dict>
+		<key>07401336-7EF1-46A5-A600-B4D1FB3FC6D9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1245</integer>
+			<key>ypos</key>
+			<integer>225</integer>
+		</dict>
 		<key>12E7D8B6-F5ED-4067-BDC8-68FEBF2F5CDD</key>
 		<dict>
 			<key>xpos</key>
@@ -1354,16 +1396,16 @@ end alfred_script</string>
 		<key>27408918-9FC1-4FCD-96DA-4E3AE0CC30A7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1495</integer>
+			<integer>1855</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>345</integer>
 		</dict>
 		<key>31EED105-A92A-4A51-AD49-E3ADACDFD3B3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1370</integer>
+			<integer>1730</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>345</integer>
 		</dict>
 		<key>3270991B-E89D-4C01-9EAD-A626D6035C24</key>
 		<dict>
@@ -1501,9 +1543,9 @@ end alfred_script</string>
 		<key>AF78794E-2458-43F5-A747-76A05A2E5363</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1370</integer>
+			<integer>1730</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>240</integer>
 		</dict>
 		<key>AFCD41E6-BB88-4EE6-9DD6-A2AE7C08E507</key>
 		<dict>
@@ -1578,9 +1620,9 @@ end alfred_script</string>
 		<key>EA71DE37-45E6-4D66-89A1-3A35B9CF4A1C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1495</integer>
+			<integer>1855</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>240</integer>
 		</dict>
 		<key>ECF7216F-A063-4D3F-9E2E-69EB3737B8C3</key>
 		<dict>
@@ -1603,10 +1645,10 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>755</integer>
 		</dict>
-		<key>F7D5B63E-EF3D-40EE-B4A5-448EC666EE69</key>
+		<key>FD84C5F7-89A3-4C54-BCA7-0454150D6704</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1245</integer>
+			<integer>1370</integer>
 			<key>ypos</key>
 			<integer>225</integer>
 		</dict>
