@@ -42,6 +42,9 @@ brew "postgresql"
 # Executes a program periodically, showing output fullscreen https://gitlab.com/procps-ng/procps
 brew "watch"
 
+# Display directories as trees http://mama.indstate.edu/users/ice/tree/
+brew 'tree'
+
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
 
