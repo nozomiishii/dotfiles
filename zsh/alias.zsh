@@ -78,5 +78,9 @@ alias nn="docker container run -it --rm -p 6000:6000 -w /app -v $(pwd):/app node
 alias tfenv='GREP_OPTIONS="--color=never" tfenv'
 
 
+# terraform
+alias tf="terraform"
+
+
 # yabai & skhd
 alias rsyb="brew services restart yabai && brew services restart skhd"
