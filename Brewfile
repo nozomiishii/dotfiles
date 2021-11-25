@@ -96,6 +96,9 @@ brew "openapi-generator"
 # Dependency manager for Cocoa projects https://cocoapods.org/
 brew "cocoapods"
 
+# Official Amazon AWS command-line interface https://aws.amazon.com/cli/
+brew "awscli"
+
 
 # Cask
 
