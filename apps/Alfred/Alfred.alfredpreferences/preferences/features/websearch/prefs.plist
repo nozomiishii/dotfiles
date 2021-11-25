@@ -303,6 +303,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>502F06A4-25D5-49F4-9823-015521309CFD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gc</string>
+			<key>text</key>
+			<string>Open Google Cloud - VoiceUtopia {query}</string>
+			<key>url</key>
+			<string>https://console.cloud.google.com/home/dashboard?authuser=3&amp;project=voice-utopia-{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>5064E15C-19E5-4A0A-A470-CA3FB9CBDFF7</key>
 		<dict>
 			<key>enabled</key>
@@ -889,7 +902,7 @@ Translate '{query}' into Japanese</string>
 			<key>keyword</key>
 			<string>gc</string>
 			<key>text</key>
-			<string>Open Google Cloud Platform
+			<string>Open Google Cloud
 Google Cloud Console
 Google Cloud Console</string>
 			<key>url</key>
@@ -1307,7 +1320,7 @@ Google Cloud Console</string>
 			<key>keyword</key>
 			<string>gc</string>
 			<key>text</key>
-			<string>Open Google Cloud Platform - VoiceUtopia</string>
+			<string>Open Google Cloud - VoiceUtopia</string>
 			<key>url</key>
 			<string>https://console.cloud.google.com/home/dashboard?authuser=3&amp;project=voice-utopia-prod</string>
 			<key>utf8</key>
