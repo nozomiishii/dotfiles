@@ -570,6 +570,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>6F64A0BF-7EA0-4609-9551-BA338DA418CE</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>coinmarketcap</string>
+			<key>text</key>
+			<string>Open CoinMarketCap</string>
+			<key>url</key>
+			<string>https://coinmarketcap.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>6F8DFBD1-C9AD-4944-9765-77220DF5768E</key>
 		<dict>
 			<key>enabled</key>
