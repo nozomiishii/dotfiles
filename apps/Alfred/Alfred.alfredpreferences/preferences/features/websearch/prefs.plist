@@ -1300,6 +1300,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>F6BBF078-D103-45BC-9BB4-A7929F831E0E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>binance</string>
+			<key>text</key>
+			<string>Open Binance</string>
+			<key>url</key>
+			<string>https://www.binance.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>F6F12DE0-07A8-478D-9020-D6AB47B1549B</key>
 		<dict>
 			<key>enabled</key>
