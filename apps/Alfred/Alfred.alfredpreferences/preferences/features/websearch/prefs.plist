@@ -147,6 +147,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>222F3026-03B3-4C1B-AFA3-044D5EE3B224</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>sandbox</string>
+			<key>text</key>
+			<string>Open The Sandbox</string>
+			<key>url</key>
+			<string>https://www.sandbox.game/jp/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>23EFA166-611F-4DC4-868B-7B5C68C61565</key>
 		<dict>
 			<key>enabled</key>
