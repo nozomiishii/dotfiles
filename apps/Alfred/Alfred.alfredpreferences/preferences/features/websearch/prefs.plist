@@ -791,6 +791,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>86029BBE-1A2D-4140-A010-68FE426EADF2</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>bitflyer</string>
+			<key>text</key>
+			<string>Open  bitFlyer</string>
+			<key>url</key>
+			<string>https://bitflyer.com/ja-jp/ex/Home</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>86920152-7A1E-45C1-9520-0B60356979B3</key>
 		<dict>
 			<key>enabled</key>
