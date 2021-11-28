@@ -43,6 +43,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>09DEBBC0-5425-4E42-9FCD-98DF7BFF4011</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>bitbank</string>
+			<key>text</key>
+			<string>Open bitbank</string>
+			<key>url</key>
+			<string>https://app.bitbank.cc/account/message</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>0AAFD4D1-5F1C-4126-A38E-B4CEB0DD6F0B</key>
 		<dict>
 			<key>enabled</key>
