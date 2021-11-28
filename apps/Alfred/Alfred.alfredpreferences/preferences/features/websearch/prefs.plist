@@ -368,6 +368,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>525638BE-D215-4A9D-90FD-8FED9A748658</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>sbi</string>
+			<key>text</key>
+			<string>Open Sumishin SBI net bank</string>
+			<key>url</key>
+			<string>https://www.netbk.co.jp/contents/pages/wpl010002/i010002CT/DI01000200?CallerScreen=1</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>53929F1C-AE64-433C-AB06-2DA04AC870D6</key>
 		<dict>
 			<key>enabled</key>
