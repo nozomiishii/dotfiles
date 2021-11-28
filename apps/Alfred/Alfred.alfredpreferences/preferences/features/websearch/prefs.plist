@@ -212,6 +212,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>2969AD5B-5EEC-4A4E-BF94-4AF074FA1B9E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gmocoin</string>
+			<key>text</key>
+			<string>Open GMO Coin</string>
+			<key>url</key>
+			<string>https://coin.z.com/jp/member/home</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>2990A56A-A20E-4E29-B140-191689FCAEC3</key>
 		<dict>
 			<key>enabled</key>
