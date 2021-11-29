@@ -125,6 +125,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>51C12F63-49E3-4FD6-8B74-53679DBB21B5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB4C8C1D-BE93-49F9-B811-476955BD62B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5FAD7643-3600-4835-A868-BBBB680A7F42</key>
 		<array>
 			<dict>
@@ -1492,6 +1505,44 @@ end alfred_script</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Volumes/GoogleDrive/My Drive/Assets/bland-logos</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>CB4C8C1D-BE93-49F9-B811-476955BD62B8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>logos</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Open logos folder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>51C12F63-49E3-4FD6-8B74-53679DBB21B5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -1623,6 +1674,13 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>115</integer>
 		</dict>
+		<key>51C12F63-49E3-4FD6-8B74-53679DBB21B5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>340</integer>
+			<key>ypos</key>
+			<integer>1545</integer>
+		</dict>
 		<key>56FF68BE-DE32-4C66-97E6-AC18BE85D242</key>
 		<dict>
 			<key>xpos</key>
@@ -1748,6 +1806,13 @@ end alfred_script</string>
 			<integer>70</integer>
 			<key>ypos</key>
 			<integer>860</integer>
+		</dict>
+		<key>CB4C8C1D-BE93-49F9-B811-476955BD62B8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>470</integer>
+			<key>ypos</key>
+			<integer>1545</integer>
 		</dict>
 		<key>D2386AB4-6857-434E-87BF-3740F48C9008</key>
 		<dict>
