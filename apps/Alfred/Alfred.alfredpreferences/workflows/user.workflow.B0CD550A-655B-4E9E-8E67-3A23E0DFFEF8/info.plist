@@ -333,6 +333,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>F3C1C24E-3BF7-45FC-824D-60269D9A6EEA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>205BF10B-2535-4165-837C-2E966E46AD2D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>nozomi ishii</string>
@@ -1186,7 +1199,7 @@ end alfred_script</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>Open Work directory</string>
+				<string>Open Work folder</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -1441,6 +1454,44 @@ end alfred_script</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>id</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Open ID folder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F3C1C24E-3BF7-45FC-824D-60269D9A6EEA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Volumes/GoogleDrive/My Drive/Id</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>205BF10B-2535-4165-837C-2E966E46AD2D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -1480,6 +1531,13 @@ end alfred_script</string>
 			<integer>460</integer>
 			<key>ypos</key>
 			<integer>1155</integer>
+		</dict>
+		<key>205BF10B-2535-4165-837C-2E966E46AD2D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>190</integer>
+			<key>ypos</key>
+			<integer>1545</integer>
 		</dict>
 		<key>235D415F-FBAC-43ED-BC94-0FE05F34897D</key>
 		<dict>
@@ -1760,6 +1818,13 @@ end alfred_script</string>
 			<integer>70</integer>
 			<key>ypos</key>
 			<integer>755</integer>
+		</dict>
+		<key>F3C1C24E-3BF7-45FC-824D-60269D9A6EEA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>60</integer>
+			<key>ypos</key>
+			<integer>1545</integer>
 		</dict>
 		<key>FD84C5F7-89A3-4C54-BCA7-0454150D6704</key>
 		<dict>
