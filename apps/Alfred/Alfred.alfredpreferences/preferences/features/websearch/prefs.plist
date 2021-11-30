@@ -895,6 +895,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>9FBC5BD6-BF24-4538-93FB-FABC48A16F19</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>raydium</string>
+			<key>text</key>
+			<string>Open Raydium</string>
+			<key>url</key>
+			<string>https://raydium.io/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>A23197DD-6838-43B7-B4A0-9DDC558F862E</key>
 		<dict>
 			<key>enabled</key>
@@ -1050,6 +1063,19 @@ Google Cloud Console</string>
 			<string>Open Vercel</string>
 			<key>url</key>
 			<string>https://vercel.com/dashboard</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>BAB3570C-2AC1-4785-A57D-C77EA82AF4D1</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>pancakeswap</string>
+			<key>text</key>
+			<string>Open PancakeSwap</string>
+			<key>url</key>
+			<string>https://pancakeswap.finance/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
