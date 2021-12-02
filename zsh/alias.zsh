@@ -38,6 +38,8 @@ alias vu="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia && code ."
 alias vuap="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-api && code ."
 alias vuo="cd $CODE_DIR/Work/VoiceUtopia/voice-utopia-office && code ."
 alias vuop="cd $CODE_DIR/Work/VoiceUtopia/openapi && code ."
+alias vutf="cd $CODE_DIR/Work/VoiceUtopia/terraform && code ."
+
 
 # shell
 alias quit="exec $SHELL -l"
