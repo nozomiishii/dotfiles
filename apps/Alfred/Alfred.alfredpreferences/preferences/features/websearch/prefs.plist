@@ -1105,6 +1105,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>C6575E51-2FE1-4A09-B018-E59BEAA9D06C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>sbivctrade</string>
+			<key>text</key>
+			<string>Open SBI VC Trade</string>
+			<key>url</key>
+			<string>https://sbivc.jp/#/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>C708CB69-4AFF-419F-BD18-EF1064D38EF3</key>
 		<dict>
 			<key>enabled</key>
