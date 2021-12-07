@@ -476,5 +476,13 @@
       ""
     ],
     "description": "p5 react function"
+  },
+  "Logger": {
+    "prefix": "lgr",
+    "scope": "typescript",
+    "body": [
+      "private readonly logger = new Logger(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.name);"
+    ],
+    "description": "Logger"
   }
 }
