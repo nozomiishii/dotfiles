@@ -251,6 +251,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>2A7E8C2F-54EC-457B-9D93-DADBBB806517</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>classvalidator</string>
+			<key>text</key>
+			<string>Open class-validator</string>
+			<key>url</key>
+			<string>https://github.com/typestack/class-validator</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>323CF4C4-D9B9-4D01-892D-1CC05CF7A5AF</key>
 		<dict>
 			<key>enabled</key>
