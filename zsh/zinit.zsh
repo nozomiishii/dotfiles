@@ -40,6 +40,9 @@ zinit wait lucid light-mode for \
   blockf atpull'zinit creinstall -q .' \
     zsh-users/zsh-completions
 
+# asdf
+zinit light asdf-vm/asdf
+
 # powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
