@@ -264,6 +264,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>2B815ACB-D075-43DA-9A61-4FDA7D7D181C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>freee</string>
+			<key>text</key>
+			<string>Open freee</string>
+			<key>url</key>
+			<string>https://secure.freee.co.jp/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>323CF4C4-D9B9-4D01-892D-1CC05CF7A5AF</key>
 		<dict>
 			<key>enabled</key>
