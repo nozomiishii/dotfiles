@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 echo "\n💻 Starting Mac Setup\n"
-
+set -e
 
 echo '- 👾 NeoVim'
 if [[ ! -e "$HOME/.config/nvim" ]]; then
@@ -186,25 +186,10 @@ defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKe
 
 
 echo "- 🖥 Display"
-# System Preference > Displays > Night Shift
-# Night shift from 7am to 6:59am
-CORE_BRIGHTNESS="/private/var/root/Library/Preferences/com.apple.CoreBrightness.plist"
-CURRENT_USER_UID="CBUser-$(dscl . -read ~ GeneratedUID | sed 's/GeneratedUID: //')"
-
-# Color Temperature: Default warm
-sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueLightReductionCCTTargetRaw 4100" $CORE_BRIGHTNESS
-# Manual: Turn on Until Tomorrow => 4: check, 3: uncheck
-sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionAlgoOverride 4" $CORE_BRIGHTNESS
-# Schedule: Custom
-sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueReductionMode 2" $CORE_BRIGHTNESS
-# From: Hour
-sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionSchedule:NightStartHour 7" $CORE_BRIGHTNESS
-# From: Minutes
-sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionSchedule:NightStartMinute 0" $CORE_BRIGHTNESS
-# To: Hour
-sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionSchedule:DayStartHour 6" $CORE_BRIGHTNESS 
-# To: Minutes
-sudo /usr/libexec/PlistBuddy -c "Set :$CURRENT_USER_UID:CBBlueReductionStatus:BlueLightReductionSchedule:DayStartMinute 59" $CORE_BRIGHTNESS
+# Nightshift https://github.com/smudge/nightlight
+nightlight on
+nightlight schedule 7:00 6:59
+echo "Nightshift $(nightlight schedule)"
 
 # Sidecar Settings
 defaults write com.apple.sidecar.display doubleTapEnabled -bool true
@@ -212,8 +197,8 @@ defaults write com.apple.sidecar.display showTouchbar -bool false
 defaults write com.apple.sidecar.display sidebarShown -bool false
 
 # Delete Hot Corners
-defaults delete com.apple.dock wvous-br-corner
-defaults delete com.apple.dock wvous-br-modifier
+defaults write com.apple.dock wvous-br-corner -int 1
+defaults write com.apple.dock wvous-br-modifier -int 1048576
 
 
 echo "Automator 🤖"
@@ -347,27 +332,3 @@ sudo killall cfprefsd
 sudo killall corebrightnessd
 
 
-echo "\n🔓 Generate ssh key\n"
-ssh-keygen -t rsa -b 4096 -C "nozomiishii.jp@gmail.com"
-eval "$(ssh-agent -s)"
-
-touch ~/.ssh/config
-cat > ~/.ssh/config << EOF
-Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
-EOF
-
-ssh-add -K ~/.ssh/id_rsa
-pbcopy < ~/.ssh/id_rsa.pub
-echo '
-🔑 The generated ssh key has been copied to the clipboard.
-
-Set up your ssh key on github
-https://github.com/settings/keys
-
-
-Check if it works
-"ssh -T git@github.com"
-'

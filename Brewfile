@@ -9,10 +9,14 @@ tap "homebrew/services"
 tap "heroku/brew"
 tap "stripe/stripe-cli"
 tap "koekeishiya/formulae"
+tap "smudge/smudge"
 
 
 
 # Brew
+
+# A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
+brew "nightlight"
 
 # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
 brew "neovim"
