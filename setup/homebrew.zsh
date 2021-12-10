@@ -33,5 +33,5 @@ elif [ "${arch_name}" = "arm64" ]; then
 fi
 
 export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
-brew bundle --verbose
+brew bundle --verbose --file "$HOME/dotfiles/Brewfile"
 
