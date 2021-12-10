@@ -16,27 +16,27 @@
       stdin: true
       stdout: true
       stderr: true
-    - command: ./setup/docker.zsh
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: ./setup/terraform.zsh
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: ./setup/node.zsh
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: ./setup/c#.zsh
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: ./setup/code.zsh
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: ./setup/mac.zsh
-      stdin: true
-      stdout: true
-      stderr: true
+    # - command: ./setup/docker.zsh
+    #   stdin: true
+    #   stdout: true
+    #   stderr: true
+    # - command: ./setup/terraform.zsh
+    #   stdin: true
+    #   stdout: true
+    #   stderr: true
+    # - command: ./setup/node.zsh
+    #   stdin: true
+    #   stdout: true
+    #   stderr: true
+    # - command: ./setup/c#.zsh
+    #   stdin: true
+    #   stdout: true
+    #   stderr: true
+    # - command: ./setup/code.zsh
+    #   stdin: true
+    #   stdout: true
+    #   stderr: true
+    # - command: ./setup/mac.zsh
+    #   stdin: true
+    #   stdout: true
+    #   stderr: true
