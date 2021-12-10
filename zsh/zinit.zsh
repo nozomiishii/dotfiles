@@ -1,14 +1,14 @@
 ### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [[ ! -d "$(dirname $ZINIT_HOME)" ]]; then
   print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-  ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
   mkdir -p "$(dirname $ZINIT_HOME)"
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME" && \
     print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
     print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -19,16 +19,7 @@ zinit wait lucid for \
   atload"unalias grv" \
     OMZP::git
 
-# kubectl completions
-# https://giters.com/zdharma/zinit/issues/478?amp=1
-zinit light-mode lucid wait has"kubectl" for \
-  id-as"kubectl_completion" \
-  as"completion" \
-  atclone"kubectl completion zsh > _kubectl" \
-  atpull"%atclone" \
-  run-atpull \
-    zdharma/null
-zpcompinit
+zinit snippet OMZP::kubectl
 alias k=kubectl
 
 # yarn completions
