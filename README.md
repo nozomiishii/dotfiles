@@ -2,6 +2,20 @@
 
 ![Brow my mind](https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif)
 
+## New Macbook
+
+Full Name: Nozomi Ishii
+Account name: nozomiishii
+
+Skip sign in Apple ID until go to home screen
+
+Sign in Apple ID
+
+**💻 System Preferences**  
+**Desktop Image**
+
+- Desktop & Screen Saver > Select your favorite image
+
 ## Installation 📦
 
 **1: Sign in your iCloud and App Store. (to get apps using mas command)**  
@@ -82,11 +96,6 @@ Login
 Activate the license  
 Preferences > Advanced > Set preferences folder... > Select "~/dotfiles/apps/Alfred"  
 Alfred > General > Alfred Hotkey: ⌘ + Space
-
-**💻 System Preferences**  
-**Desktop Image**
-
-- Desktop & Screen Saver > Select your favorite image
 
 **Screen Saver**
 
