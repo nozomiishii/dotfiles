@@ -10,13 +10,15 @@ else
   n lts
   node -v 
   echo "📦 n installed"
+
+  npm i -g yarn
+  npm i -g typescript
+  npm i -g firebase-tools
+  npm i -g vercel
+  npm i -g @nestjs/cli
+
+  echo "📦 npm installed"
+  npm list -g --depth=0
 fi
 
-npm i -g yarn
-npm i -g typescript
-npm i -g firebase-tools
-npm i -g vercel
-npm i -g @nestjs/cli
 
-echo "📦 npm installed"
-npm list -g --depth=0

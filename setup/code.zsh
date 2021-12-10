@@ -1,8 +1,12 @@
 #!/usr/bin/env zsh
 echo "\n🦄 Cloning repositoris...\n"
 
-if [ ! $CODE_DIR ]; then
-  CODE_DIR="$HOME/Code"
+CODE_DIR="$HOME/Code"
+if [ ! -d $CODE_DIR ]; then
+  mkdir -p $CODE_DIR
 fi
 
-git clone https://github.com/nozomiishii/dev $CODE_DIR/nozomiishii/dev
+if [ ! -d $CODE_DIR/nozomiishii/dev ]; then
+  git clone https://github.com/nozomiishii/dev $CODE_DIR/nozomiishii/dev
+fi
+
