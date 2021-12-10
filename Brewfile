@@ -124,17 +124,8 @@ cask "font-meslo-lg-nerd-font"
 # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
 cask "ngrok"
 
-# Graphical network analyzer and capture tool https://www.wireshark.org
-cask "wireshark"
-
 # Native GUI tool for relational databases https://tableplus.com/
 cask "tableplus"
-
-# Oracle VirtualBox Extension Pack https://www.virtualbox.org/
-cask "virtualbox-extension-pack"
-
-# hosted hypervisor for x86 virtualization https://www.virtualbox.org/
-cask "virtualbox"
 
 # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
 cask "docker"
@@ -228,6 +219,16 @@ cask "figma"
 
 # Google Japanese Input Method Editor. https://www.google.co.jp/ime
 cask "google-japanese-ime"
+
+# NOT WORKING ON M1 MAC
+# Graphical network analyzer and capture tool https://www.wireshark.org
+cask "wireshark" if system '[ "$(uname -m)" = "x86_64" ]'
+
+# Oracle VirtualBox Extension Pack https://www.virtualbox.org/
+cask "virtualbox-extension-pack" if system '[ "$(uname -m)" = "x86_64" ]'
+
+# hosted hypervisor for x86 virtualization https://www.virtualbox.org/
+cask "virtualbox" if system '[ "$(uname -m)" = "x86_64" ]'
 
 
 
