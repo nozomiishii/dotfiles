@@ -290,6 +290,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3A2432C2-A75E-4E81-8AAB-BD2FC1817F35</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>asdf</string>
+			<key>text</key>
+			<string>Open asdf</string>
+			<key>url</key>
+			<string>https://asdf-vm.com/guide/getting-started.html#_1-install-dependencies</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3E6AC62F-1E13-4B2C-B0CC-A8E0F0992EBF</key>
 		<dict>
 			<key>enabled</key>
