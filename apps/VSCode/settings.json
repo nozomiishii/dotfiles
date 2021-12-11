@@ -32,7 +32,8 @@
   "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.guides.bracketPairs": true,
-  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'MesloLGM Nerd Font'",
+  "editor.fontFamily": "Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
+  "editor.unicodeHighlight.invisibleCharacters": false,
 
   // Terminal
   "terminal.integrated.fontSize": 14,
