@@ -1,5 +1,35 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 set -e
+
+
+ROOT_PATH="$HOME/dotfiles"
+MODULES_PATH="$ROOT_PATH/modules"
+
+for i in "$@"; do
+  case "$i" in
+    -a|--asdf)
+      SETUP_ASDF=1
+      shift ;;
+    -b|--homebrew)
+      SETUP_HOMEBREW=1
+      shift ;;
+    -m|--macos)
+      SETUP_MACOS=1
+      shift ;;
+    -l|--symlink)
+      LINK_MODULES=1
+      shift ;;
+    -u=*|--unlink=*)
+      UNLINK_MODULES="${i#*=}"
+      shift ;;
+    -s|--sshkey)
+      GENERATE_SSHKEY=1
+      shift ;;
+    *)
+      echo 'hi'
+      exit ;;
+  esac
+done
 
 
 # Ask for the administrator password upfront
@@ -8,14 +38,35 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+if [ $LINK_MODULES ]; then
+  echo "🗂 Symbolic link"
+  stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
+fi
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -n "$UNLINK_MODULES" ]; then
+  echo '👋 Unlinking Symbolic links...'
+  stow -vD -d "$MODULES_PATH" -t ~ "$UNLINK_MODULES"
+  exit
+fi
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+if [ $SETUP_ASDF ]; then
+  echo "🌏 asdf Setup"
+  source "$ROOT_PATH/src/asdf.zsh"
+fi
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+if [ $LINK_MODULES ]; then
+  echo "🗂 Symbolic link"
+  stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
+fi
+
+
+if [ $SETUP_MACOS ]; then
+  echo  "💻 MacOS Setup"
+  source "$ROOT_PATH/src/macos.zsh"
+fi
+
+if [ $GENERATE_SSHKEY ]; then
+  echo  "🔐 Generate ssh key"
+  source "$ROOT_PATH/src/sshkey.zsh"
+fi
+

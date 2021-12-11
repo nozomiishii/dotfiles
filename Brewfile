@@ -163,9 +163,6 @@ cask "karabiner-elements"
 # Application launcher and productivity software. https://www.alfredapp.com
 cask "alfred"
 
-# API documentation browser and code snippet manager. https://kapeli.com/dash
-cask "dash"
-
 # Trains AIs to understand and translate texts. https://www.deepl.com
 cask "deepl"
 
