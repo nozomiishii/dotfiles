@@ -135,7 +135,8 @@
     "vimrc": "viml",
     ".skhdrc": "shellscript",
     ".yabairc": "shellscript",
-    ".tmux.conf": "shellscript"
+    ".tmux.conf": "shellscript",
+    ".tool-versions": "properties"
   },
 
   // yaml
