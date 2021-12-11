@@ -20,6 +20,9 @@ brew "stow"
 # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
 brew "nightlight"
 
+# Next-generation plugin manager for zsh https://github.com/zplug/zplug/
+brew "zplug"
+
 # Extendable version manager with support for Ruby, Node.js, Erlang & more https://asdf-vm.com/
 brew "asdf"
 

@@ -60,9 +60,9 @@ if [ $SETUP_ASDF ]; then
   source "$ROOT_PATH/src/asdf.zsh"
 fi
 
-if [ $LINK_MODULES ]; then
-  echo "🗂 Symbolic link"
-  stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
+if [ $SETUP_HOMEBREW ]; then
+  echo "🍺 Homebrew Setup"
+  source "$ROOT_PATH/src/homebrew.zsh"
 fi
 
 
