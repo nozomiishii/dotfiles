@@ -5,6 +5,13 @@ set -e
 ROOT_PATH="$HOME/dotfiles"
 MODULES_PATH="$ROOT_PATH/modules"
 
+if [ ! $@ ]; then
+  echo "⚠️ Options must be provided"
+  echo "./install [options]"
+  echo "See https://github.com/nozomiishii/dotfiles/blob/main/install"
+  exit
+fi
+
 for i in "$@"; do
   case "$i" in
     -a|--asdf)
@@ -26,7 +33,6 @@ for i in "$@"; do
       GENERATE_SSHKEY=1
       shift ;;
     *)
-      echo 'hi'
       exit ;;
   esac
 done
@@ -44,7 +50,7 @@ if [ $LINK_MODULES ]; then
 fi
 
 if [ -n "$UNLINK_MODULES" ]; then
-  echo '👋 Unlinking Symbolic links...'
+  echo "👋 Unlinking Symbolic links..."
   stow -vD -d "$MODULES_PATH" -t ~ "$UNLINK_MODULES"
   exit
 fi
@@ -61,12 +67,12 @@ fi
 
 
 if [ $SETUP_MACOS ]; then
-  echo  "💻 MacOS Setup"
+  echo "💻 MacOS Setup"
   source "$ROOT_PATH/src/macos.zsh"
 fi
 
 if [ $GENERATE_SSHKEY ]; then
-  echo  "🔐 Generate ssh key"
+  echo "🔐 Generate ssh key"
   source "$ROOT_PATH/src/sshkey.zsh"
 fi
 
