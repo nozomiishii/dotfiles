@@ -299,7 +299,7 @@ Clean unused homebrew dependencies up, and upgrade them
 **Check the performance of zsh**
 
 ```shell
-  time zsh -i -c exit
+  for i in {1..10}; do time zsh -i -c exit; done
 ```
 
 ## UnInstall Homebrew 🍺
