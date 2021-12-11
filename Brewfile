@@ -14,9 +14,14 @@ tap "smudge/smudge"
 
 
 # Brew
+# Organize software neatly under a single directory tree
+brew "stow"
 
 # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
 brew "nightlight"
+
+# Extendable version manager with support for Ruby, Node.js, Erlang & more https://asdf-vm.com/
+brew "asdf"
 
 # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
 brew "neovim"
@@ -70,23 +75,8 @@ brew "gh"
 # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
 brew "mas"
 
-# Ruby version management. https://github.com/rbenv/rbenv
-brew "rbenv"
-
 # Cross platform, open source .NET development framework. https://www.mono-project.com/
 brew "mono"
-
-# Python version management https://github.com/pyenv/pyenv
-brew "pyenv"
-
-# Python interface to Tcl/Tk and using like Turtle modules https://www.python.org/
-brew "python-tk"
-
-# Node version management https://github.com/tj/n
-brew "n"
-
-# Terraform version manager inspired by rbenv https://github.com/tfutils/tfenv
-brew "tfenv"
 
 # Run a Kubernetes cluster locally https://minikube.sigs.k8s.io/
 brew "minikube"
