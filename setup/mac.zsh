@@ -62,7 +62,7 @@ defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreS
 
 echo "- 🪁 Control Center"
 # Hide Spotlight
-defaults write ~/Library/Preferences/ByHost/com.apple.Spotlight MenuItemHidden -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible Item-0" -bool false
 # Hide Do Not Disturb
 defaults write com.apple.controlcenter "NSStatusItem Visible DoNotDisturb" -bool false
 # Hide Screen Mirroring
