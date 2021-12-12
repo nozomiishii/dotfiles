@@ -38,10 +38,12 @@ for i in "$@"; do
 done
 
 
-# Ask for the administrator password upfront
-sudo -v
-# Temporarily increasing sudo's timeout until the process has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+pre_sudo(){
+  # Ask for the administrator password upfront
+  sudo -v
+  # Temporarily increasing sudo's timeout until the process has finished
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+}
 
 
 if [ $LINK_MODULES ]; then
@@ -49,27 +51,33 @@ if [ $LINK_MODULES ]; then
   stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
 fi
 
+
 if [ -n "$UNLINK_MODULES" ]; then
   echo "👋 Unlinking Symbolic links..."
   stow -vD -d "$MODULES_PATH" -t ~ "$UNLINK_MODULES"
   exit
 fi
 
+
 if [ $SETUP_ASDF ]; then
   echo "🌏 asdf Setup"
   source "$ROOT_PATH/src/asdf.zsh"
 fi
 
+
 if [ $SETUP_HOMEBREW ]; then
   echo "🍺 Homebrew Setup"
+  pre_sudo
   source "$ROOT_PATH/src/homebrew.zsh"
 fi
 
 
 if [ $SETUP_MACOS ]; then
   echo "💻 MacOS Setup"
+  pre_sudo
   source "$ROOT_PATH/src/macos.zsh"
 fi
+
 
 if [ $GENERATE_SSHKEY ]; then
   echo "🔐 Generate ssh key"
