@@ -42,7 +42,9 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # yarn
-export PATH=$PATH:$(yarn global bin)
+if ! type yarn > /dev/null 2>&1; then
+  export PATH=$PATH:$(yarn global bin)
+fi
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

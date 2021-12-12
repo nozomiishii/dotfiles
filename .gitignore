@@ -1,6 +1,8 @@
 .DS_Store
 
-**/tokens.zsh
+# yarn
+node_modules/
+modules/yarn/.config/yarn/global/node_modules/
 
 # Karabiner
 apps/karabiner/automatic_backups
