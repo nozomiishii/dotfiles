@@ -20,6 +20,9 @@ for i in "$@"; do
     -b|--homebrew)
       SETUP_HOMEBREW=1
       shift ;;
+    -c|--code)
+      SETUP_REPOSITORIS=1
+      shift ;;
     -e|--environment)
       SETUP_ENVIRONMENT=1
       shift ;;
@@ -74,10 +77,18 @@ if [ -n "$UNLINK_MODULES" ]; then
 fi
 
 
-# Unlink
+# Code
 # Dependencis | Homebrew
 if [ $SETUP_ENVIRONMENT ]; then
-  echo "🌝 asdf Setup"
+  echo "🦄 Clone Repositoris"
+  source "$ROOT_PATH/src/code.zsh"
+fi
+
+
+# Environment
+# Dependencis | Homebrew
+if [ $SETUP_ENVIRONMENT ]; then
+  echo "🌝 Environment Setup(asdf)"
   source "$ROOT_PATH/src/env.zsh"
 fi
 

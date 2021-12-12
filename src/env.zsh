@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-echo "🌝 Creating dev environments with asdf... \n"
+echo "🌝 Starting Environment Setup(asdf)... \n"
 set -e
 
 if [ ! -f ~/.tool-versions ]; then
