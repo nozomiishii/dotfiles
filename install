@@ -15,7 +15,7 @@ fi
 for i in "$@"; do
   case "$i" in
     -a|--apps)
-      SETUP_APP=1
+      SETUP_APPS=1
       shift ;;
     -b|--homebrew)
       SETUP_HOMEBREW=1

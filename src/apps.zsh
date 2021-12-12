@@ -42,7 +42,7 @@ stow -vd "$APPS_PATH" -t "$HOME/Library/Developer/Xcode/UserData" Xcode
 # stow -vd "$APPS_PATH" -t "$HOME/Library/Application Support/Blender" Blender
 
 
-echo "Automator 🤖"
+echo "- 🤖Automator"
 if [ ! -f "$HOME/Desktop" ]; then
   cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
 fi
