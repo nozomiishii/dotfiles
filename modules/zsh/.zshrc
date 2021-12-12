@@ -42,7 +42,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # yarn
-if ! type yarn > /dev/null 2>&1; then
+if type yarn > /dev/null 2>&1; then
   export PATH=$PATH:$(yarn global bin)
 fi
 
