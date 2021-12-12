@@ -77,10 +77,10 @@ if [ -n "$UNLINK_MODULES" ]; then
 fi
 
 
-# App
+# Apps
 # Dependencis | Homebrew
 if [ $SETUP_APPS ]; then
-  echo "🧝🏻‍♀️ App Setup"
+  echo "🧝🏻‍♀️ Apps Setup"
   source "$ROOT_PATH/src/apps.zsh"
 fi
 
