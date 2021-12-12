@@ -6,16 +6,17 @@
 
 Turn On and Follow the guide
 
-Full Name: Nozomi Ishii  
-Account name: nozomiishii
+- Full Name: Nozomi Ishii
+- Account name: nozomiishii
 
 **⚠️ Skip the AppleID signup until the home screen. it takes time. ⚠️**
 
 **🍎 Sign in your iCloud and App Store. (to get apps using mas command)**  
 If you can't use your personal apple ID on your company computer, install xcode manually from the App Store.
 
-**Open Terminal with Spotlight**  
-⌘ + shift
+**Open Terminal with Spotlight**
+
+- ⌘ + shift
 
 **Install xcode-select**
 
@@ -79,23 +80,24 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   sudo reboot
 ```
 
-**⛓ Karabiner-Elements**  
-Login
+**⛓ Karabiner-Elements**
 
-**🔑 1Password**  
-Preferences > Security > Unlock using >  
-Check "Touch ID"
+- Login
 
-Preferences > General > Menu bar >
-Uncheck "Show 1Password in the menu bar"
+**🔑 1Password**
 
-Preferences > General > Keyboard shortcuts >
-remove all shortcuts(because it conflicts with xcode)
+- Preferences > Security > Unlock using >  
+  Check "Touch ID"
+- Preferences > General > Menu bar >
+  Uncheck "Show 1Password in the menu bar"
+- Preferences > General > Keyboard shortcuts >
+  remove all shortcuts(because it conflicts with xcode)
 
-**🌏 Chrome**  
-Sign in  
-Change Chrome to the Default Browser  
-Log in 1PasswordX
+**🌏 Chrome**
+
+- Sign in
+- Change Chrome to the Default Browser
+- Log in 1PasswordX
 
 **😼 gh**
 
@@ -103,23 +105,29 @@ Log in 1PasswordX
   gh auth login
 ```
 
-**🎩 Alfred**  
-Activate the license  
-Preferences > Advanced > Set preferences folder... > Select "~/dotfiles/apps/Alfred"  
-Alfred > General > Alfred Hotkey: ⌘ + Space
+**🎩 Alfred**
 
-**🐟 VSCode**  
-User Icon > Setting sync > Login > Select "Marge"  
-⚠️ Do NOT Select "Replace"
+- Activate the license
+- Preferences > Advanced > Set preferences folder... >
+  Select "~/dotfiles/apps/Alfred"
+- Alfred > General >
+  Alfred Hotkey: ⌘ + Space
 
-⇧ + ⌘ + P > Open command pallet >
-Icons: Activate VSCode Icons
+**🐟 VSCode**
 
-**☁️ google-drive**  
-Sign in and Sync
+- User Icon > Setting sync > Login >
+  Select "Marge"  
+  ⚠️ Do NOT Select "Replace"
+- ⇧ + ⌘ + P > Open command pallet >
+  Icons: Activate VSCode Icons
 
-**🗂 Finder**  
-Rearrange the order of the sidebar
+**☁️ google-drive**
+
+- Sign in and Sync
+
+**🗂 Finder**
+
+- Rearrange the order of the sidebar
 
 ```txt
 Sidebar
@@ -133,114 +141,126 @@ Sidebar
  ┗ 📂Locations
 ```
 
-**⌨️ Keyboard**  
-Input Sources > Delete "Kotoeri"  
-Input Sources > Add "google-japanese-ime"
+**⌨️ Keyboard**
 
-**🗣 Speech**  
-System Preferences > Accessibility > Spoken Content >
-Select and Download "Siri Female(United Kingdom)"
+- Input Sources > Delete "Kotoeri"
+- Input Sources > Add "google-japanese-ime"
 
-System Preferences > Accessibility > Spoken Content >
-Adjust Speaking Rate
+**🗣 Speech**
 
-**🧹 Hazel**  
-License... > Activate the License
+- System Preferences > Accessibility > Spoken Content >
+  Select and Download "Siri Female(United Kingdom)"
+- System Preferences > Accessibility > Spoken Content >
+  Adjust Speaking Rate
 
-Folder > Rule Sync Settings... > Use existing sync file... >
-Select "~/Settings/dotfiles/preferences/Hazel"
+**🧹 Hazel**
 
-**🎨 ColorSnapper2**  
-Activate the license  
-Hotkeys:  
-Pick Color: ⌃ + ⌥ + C
+- License... > Activate the License
+- Folder > Rule Sync Settings... > Use existing sync file... >
+  Select "~/Settings/dotfiles/preferences/Hazel"
 
-**🐔 Slack**  
-Sign in
+**🎨 ColorSnapper2**
 
-**🐍 PyCharm**  
-Font Size  
-Preferences > Editor > General > Font > Size > 14  
-Plugins  
-Monokai Pro Theme
+- Activate the license
+- Hotkeys:  
+  Pick Color: ⌃ + ⌥ + C
+
+**🐔 Slack**
+
+- Sign in
+
+**🐍 PyCharm**
+
+- Preferences > Editor > General > Font > Size >
+  Font Size: 14
+- Plugins  
+  Monokai Pro Theme
 
 **🐸 Android Studio**
 
-Preferences > Editor > General > Font > Size >
-Font Size: 14
+- Preferences > Editor > General > Font > Size >
+  Font Size: 14
+- Plugins  
+  Monokai Pro Theme
 
-Plugins  
-Monokai Pro Theme
+**🍎 Xcode**
 
-**🍎 Xcode**  
-Add Account
+- Add Account
+- Preferences > Themes >
+  Monokai Pro
+- Preferences > Navigation >
+  Command-click on Code: Jumps to definition
 
-Preferences > Themes >
-Monokai Pro
+**🐵 Blender**
 
-Preferences > Navigation >
-Command-click on Code: Jumps to definition
+- sign in
+- Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" >
+  login!
+- [Download Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
+- Edit > Preferences > Add-ons > install >
+  install Add-on "blender_cloud-X.XX.addon.zip"  
+   ⚠️ DO NOT UNZIP
+- Edit > Preferences > Input > Keyboard >
+  Emulate Numpad
 
-**🐵 Blender**  
-sign in  
-Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" > login!  
-[Download Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)  
-Edit > Preferences > Add-ons > install > install Add-on "blender_cloud-X.XX.addon.zip"  
-⚠️ DO NOT UNZIP  
-Setup  
-Edit > Preferences > Input > Keyboard > Emulate Numpad
+**🦋 Affinity Designer**
 
-**🦋 Affinity Designer**  
-[Download App](https://store.serif.com/en-gb/account/downloads/)  
-Activate the license
+- [Download App](https://store.serif.com/en-gb/account/downloads/)
+- Activate the license
 
-**📞 Cisco Packet Tracer**  
-[Download](https://www.netacad.com/portal/resources/packet-tracer)
+**📞 Cisco Packet Tracer**
 
-**🕶 ngrok**  
-[Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
+- [Download](https://www.netacad.com/portal/resources/packet-tracer)
+
+**🕶 ngrok**
+
+- [Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
 
 ```shell
   ngrok authtoken <your_auth_token>
 ```
 
-**🛎 Notifications**  
-**Calendar, Notion, Slack**  
-Alerts  
-Show in Notification Centre  
-Play sound for notification  
-**Xcode**  
-Banners
+**🛎 Notifications**
 
-**📅 Calendar**  
-Add Accounts  
-Add Calendar on Widgets
+- Calendar, Notion, Slack  
+  Alerts  
+  Show in Notification Centre  
+  Play sound for notification
+- Xcode
+  Banners
 
-**⏱ Setup Time machine**  
-Menu bar > Time machine > Backup
+**📅 Calendar**
+
+- Add Accounts
+- Add Calendar on Widgets
+
+**⏱ Setup Time machine**
+
+- Menu bar > Time machine >
+  Backup
 
 **🔏 FileVault**
-Security & Privacy > FileVault
+
+- Security & Privacy > FileVault
 
 **🛻 Display(Sidecar)**
 
 - Connect to iPad
 - System Preferences > Display > Arrangement > Change "iPad display on left"
 
-**💻 System Preferences**  
-**Login Icon**
+**💻 System Preferences**
 
-- Users & Groups > Current User >
+- Login Icon
+  Users & Groups > Current User >
   Edit Profile photo
 
-**Desktop Image**
-
-- Desktop & Screen Saver >
+- Desktop Image
+  Desktop & Screen Saver >
   Select your favorite image
 
-**Screen Saver**
-
-- Desktop & Screen Saver > Screen Saver > Select "Brooklyn" (might need go Preferences > Security & Privacy > General >
+- Screen Saver
+  Desktop & Screen Saver > Screen Saver >
+  Select "Brooklyn" (might need go Preferences > Security & Privacy > General >
   On the bottom side, select "Open Anyway")
 
 ## Customize 👨🏻‍🍳
@@ -380,14 +400,14 @@ Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/j
 
 ### Tutorials
 
-[Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish)
+[Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish)  
 [dotfiles + GitHub を使って開発環境をコマンド１発で構築する方法](https://www.youtube.com/watch?v=QZr33TQnIRk&t=9s)
 
 ### Dotfiles
 
 [Patrick McDonald - EIEIO](https://github.com/eieioxyz/dotfiles_macos)  
 [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)  
-[Your unofficial guide to dotfiles on GitHub.](https://dotfiles.github.io/inspiration)
+[Your unofficial guide to dotfiles on GitHub.](https://dotfiles.github.io/inspiration)  
 [JunichiSugiura/dotfiles](https://github.com/JunichiSugiura/dotfiles)
 
 ### CheatSheets
