@@ -26,6 +26,12 @@ brew "zplug"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more https://asdf-vm.com/
 brew "asdf"
 
+# asdf nodejs dependencies | GNU Pretty Good Privacy (PGP) package https://gnupg.org/
+brew "gpg"
+
+# asdf nodejs dependencies | GNU awk utility https://www.gnu.org/software/gawk/
+brew "gawk"
+
 # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
 brew "neovim"
 
