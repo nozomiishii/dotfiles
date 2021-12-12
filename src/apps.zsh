@@ -23,7 +23,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 PLUG_PATH=~/.local/share/nvim/site/autoload/plug.vim
 if [ ! -f "$PLUG_PATH" ]; then
   echo '👾: Setup vim-plug'
-  sh -c "curl -fLo $plug_path --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  sh -c "curl -fLo $PLUG_PATH --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   echo 'Install Neovim Plugins'
   pip3 install -U neovim
   nvim +PlugInstall +qall
