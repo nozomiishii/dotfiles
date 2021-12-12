@@ -1,4 +1,5 @@
-echo "🔐 Generating ssh key..."
+echo "🔐 Generating ssh key... \n"
+
 
 echo "email: "
 read EMAIL
@@ -35,3 +36,6 @@ The authenticity of host 'github.com (13.114.40.48)' can't be established. RSA k
 
 `yes`
 "
+
+
+echo "\n🎉 Completed Generating ssh key \n"

@@ -11,3 +11,7 @@ fi
 if [ ! -d $CODE_DIR/nozomiishii/dev ]; then
   git clone https://github.com/nozomiishii/dev $CODE_DIR/nozomiishii/dev
 fi
+
+
+echo "\n🎉 Completed Cloning Repositoris \n"
+

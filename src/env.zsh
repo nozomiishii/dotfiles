@@ -2,6 +2,7 @@
 echo "🌝 Starting Environment Setup(asdf)... \n"
 set -e
 
+
 if [ ! -f ~/.tool-versions ]; then
   echo '⚠️ ~/.tool-versions is not exist'
   echo 'Run "./install -l" first'
@@ -40,3 +41,4 @@ if [ ! -d ~/.config/yarn/global/node_modules ] ; then
 fi
 
 
+echo "\n🎉 Completed Environment Setup(asdf) \n"

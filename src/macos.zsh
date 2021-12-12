@@ -200,4 +200,5 @@ killall SystemUIServer
 sudo killall cfprefsd
 sudo killall corebrightnessd
 
+
 echo "\n🎉 Completed Mac Setup \n"
