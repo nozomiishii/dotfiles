@@ -20,6 +20,9 @@ for i in "$@"; do
     -b|--homebrew)
       SETUP_HOMEBREW=1
       shift ;;
+    -e|--environment)
+      SETUP_ENVIRONMENT=1
+      shift ;;
     -m|--macos)
       SETUP_MACOS=1
       shift ;;
@@ -46,25 +49,7 @@ pre_sudo(){
 }
 
 
-if [ $LINK_MODULES ]; then
-  echo "🗂 Symbolic link"
-  stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
-fi
-
-
-if [ -n "$UNLINK_MODULES" ]; then
-  echo "👋 Unlinking Symbolic links..."
-  stow -vD -d "$MODULES_PATH" -t ~ "$UNLINK_MODULES"
-  exit
-fi
-
-
-if [ $SETUP_ASDF ]; then
-  echo "🌝 asdf Setup"
-  source "$ROOT_PATH/src/asdf.zsh"
-fi
-
-
+# Homebrew
 if [ $SETUP_HOMEBREW ]; then
   echo "🍺 Homebrew Setup"
   pre_sudo
@@ -72,6 +57,33 @@ if [ $SETUP_HOMEBREW ]; then
 fi
 
 
+# Link
+# Dependencis | Homebrew
+if [ $LINK_MODULES ]; then
+  echo "🗂 Symbolic link"
+  stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
+fi
+
+
+# Unlink
+# Dependencis | Homebrew
+if [ -n "$UNLINK_MODULES" ]; then
+  echo "👋 Unlinking Symbolic links..."
+  stow -vD -d "$MODULES_PATH" -t ~ "$UNLINK_MODULES"
+  exit
+fi
+
+
+# Unlink
+# Dependencis | Homebrew
+if [ $SETUP_ENVIRONMENT ]; then
+  echo "🌝 asdf Setup"
+  source "$ROOT_PATH/src/env.zsh"
+fi
+
+
+# MacOS
+# Dependencis | Homebrew
 if [ $SETUP_MACOS ]; then
   echo "💻 MacOS Setup"
   pre_sudo
@@ -79,6 +91,8 @@ if [ $SETUP_MACOS ]; then
 fi
 
 
+# SSHkey
+# Dependencis | Homebrew
 if [ $GENERATE_SSHKEY ]; then
   echo "🔐 Generate ssh key"
   source "$ROOT_PATH/src/sshkey.zsh"
