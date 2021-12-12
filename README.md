@@ -2,26 +2,22 @@
 
 ![Brow my mind](https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif)
 
-## New Macbook
+## 📦 New Macbook? Awesome!!
 
-Full Name: Nozomi Ishii
+Turn On and Follow the guide
+
+Full Name: Nozomi Ishii  
 Account name: nozomiishii
 
-Skip sign in Apple ID until go to home screen
+**⚠️ Skip the AppleID signup until the home screen. it takes time. ⚠️**
 
-Sign in Apple ID
-
-**💻 System Preferences**  
-**Desktop Image**
-
-- Desktop & Screen Saver > Select your favorite image
-
-## Installation 📦
-
-**1: Sign in your iCloud and App Store. (to get apps using mas command)**  
+**🍎 Sign in your iCloud and App Store. (to get apps using mas command)**  
 If you can't use your personal apple ID on your company computer, install xcode manually from the App Store.
 
-**2: Open terminal and install xcode-select**
+**Open Terminal with Spotlight**  
+⌘ + shift
+
+**Install xcode-select**
 
 ```shell
   xcode-select --install
@@ -29,45 +25,100 @@ If you can't use your personal apple ID on your company computer, install xcode 
 
 xcode-select: this Command Line Tools are required for Git and Homebrew
 
-**3: Clone**  
-Come to this page
+**Come to this page**
 
 ```shell
   open https://nozomiishii.dev/dotfiles
 ```
 
-```shell
-  cd ~ && git clone https://github.com/nozomiishii/dotfiles.git && cd dotfiles
-```
-
-**4: Run**  
-Check the permissions
+**Clone**
 
 ```shell
-  ls -l ./install ./dotbot/bin/dotbot ./setup
+  cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
 ```
 
-🔫 When permission is not set
+## Install approx. 1.5h (Go grab some eat🍕)
+
+**Brew Install**
 
 ```shell
-  chmod 744 ./install ./dotbot/bin/dotbot ./setup/*
+  ./dotfiles/install -b
 ```
 
-Install dotfiles
+**🔫 When permission is not set**
 
 ```shell
-  ./install
+  ls -l ./install
 ```
 
-Restart
+```shell
+  chmod +x ./install
+```
+
+**💻 MacOS Setup & Restart**
+
+```shell
+  ./dotfiles/install -m
+```
+
+**🧝🏻‍♀️ Apps Setup**
+
+```shell
+  ./dotfiles/install -a
+```
+
+**🌝 Environment Setup(asdf)**
+
+```shell
+  ./dotfiles/install -e
+```
+
+**🛋 Restart**
 
 ```shell
   sudo reboot
 ```
 
-## Advanced settings for apps👨🏻‍🚀
+**⛓ Karabiner-Elements**  
+Login
 
-**Finder**  
+**🔑 1Password**  
+Preferences > Security > Unlock using >  
+Check "Touch ID"
+
+Preferences > General > Menu bar >
+Uncheck "Show 1Password in the menu bar"
+
+Preferences > General > Keyboard shortcuts >
+remove all shortcuts(because it conflicts with xcode)
+
+**🌏 Chrome**  
+Sign in  
+Change Chrome to the Default Browser  
+Log in 1PasswordX
+
+**😼 gh**
+
+```shell
+  gh auth login
+```
+
+**🎩 Alfred**  
+Activate the license  
+Preferences > Advanced > Set preferences folder... > Select "~/dotfiles/apps/Alfred"  
+Alfred > General > Alfred Hotkey: ⌘ + Space
+
+**🐟 VSCode**  
+User Icon > Setting sync > Login > Select "Marge"  
+⚠️ Do NOT Select "Replace"
+
+⇧ + ⌘ + P > Open command pallet >
+Icons: Activate VSCode Icons
+
+**☁️ google-drive**  
+Sign in and Sync
+
+**🗂 Finder**  
 Rearrange the order of the sidebar
 
 ```txt
@@ -82,47 +133,53 @@ Sidebar
  ┗ 📂Locations
 ```
 
-**🔑 1Password**  
-Preferences > Security > Unlock using > Check "Touch ID"  
-Preferences > General > Keyboard shortcuts > remove all shortcuts(because it conflicts with xcode)
-
-**☁️ google-drive**  
-Sign in and Sync
-
-**⛓ Karabiner-Elements**  
-Login
-
-**🎩 Alfred**  
-Activate the license  
-Preferences > Advanced > Set preferences folder... > Select "~/dotfiles/apps/Alfred"  
-Alfred > General > Alfred Hotkey: ⌘ + Space
-
-**Screen Saver**
-
-- Desktop & Screen Saver > Screen Saver > Select "Brooklyn" (might need go Preferences > Security & Privacy > General > On the bottom side, select "Open Anyway")
-
-**Login Icon**
-
-- Users & Groups > Current User > Edit Profile photo
-
-**🌏 Chrome**  
-Sign in  
-Change Chrome to the Default Browser  
-Log in 1PasswordX
-
 **⌨️ Keyboard**  
 Input Sources > Delete "Kotoeri"  
 Input Sources > Add "google-japanese-ime"
 
-**🐟 VSCode**  
-User Icon > Setting sync > Login > Select "Marge"  
-⚠️ Do NOT Select "Replace"  
-⇧ + ⌘ + P > Open command pallet > Icons: Activate VSCode Icons
+**🗣 Speech**  
+System Preferences > Accessibility > Spoken Content >
+Select and Download "Siri Female(United Kingdom)"
+
+System Preferences > Accessibility > Spoken Content >
+Adjust Speaking Rate
+
+**🧹 Hazel**  
+License... > Activate the License
+
+Folder > Rule Sync Settings... > Use existing sync file... >
+Select "~/Settings/dotfiles/preferences/Hazel"
+
+**🎨 ColorSnapper2**  
+Activate the license  
+Hotkeys:  
+Pick Color: ⌃ + ⌥ + C
+
+**🐔 Slack**  
+Sign in
+
+**🐍 PyCharm**  
+Font Size  
+Preferences > Editor > General > Font > Size > 14  
+Plugins  
+Monokai Pro Theme
+
+**🐸 Android Studio**
+
+Preferences > Editor > General > Font > Size >
+Font Size: 14
+
+Plugins  
+Monokai Pro Theme
 
 **🍎 Xcode**  
-Add Account  
-Preferences > Themes > Monokai Pro
-Preferences > Navigation > Command-click on Code: Jumps to definition
+Add Account
+
+Preferences > Themes >
+Monokai Pro
+
+Preferences > Navigation >
+Command-click on Code: Jumps to definition
 
 **🐵 Blender**  
 sign in  
@@ -137,42 +194,15 @@ Edit > Preferences > Input > Keyboard > Emulate Numpad
 [Download App](https://store.serif.com/en-gb/account/downloads/)  
 Activate the license
 
-**👩🏻‍🏫 DeepL**  
-Shortcut 2x ⌘C
+**📞 Cisco Packet Tracer**  
+[Download](https://www.netacad.com/portal/resources/packet-tracer)
 
-**🗣 Speech**  
-System Preferences > Accessibility > Spoken Content > Select and Download "Siri Female(United Kingdom)"  
-System Preferences > Accessibility > Spoken Content > Adjust Speaking Rate
+**🕶 ngrok**  
+[Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
 
-**🧹 Hazel**  
-License... > Activate the License  
-Folder > Rule Sync Settings... > Use existing sync file... > Select "~/Settings/dotfiles/preferences/Hazel"
-
-**🎨 ColorSnapper2**  
-Activate the license  
-Hotkeys:  
-Pick Color: ⌃ + ⌥ + C
-
-**🛻 Display(Sidecar)**
-
-- Connect to iPad
-- System Preferences > Display > Arrangement > Change "iPad display on left"
-
-**⏱ Setup Time machine**  
-Menu bar > Time machine > Backup
-
-**🐔 Slack**  
-Sign in
-
-**📅 Calendar**  
-Add Accounts  
-Add Calendar on Widgets
-
-**🐍 PyCharm**  
-Font Size  
-Preferences > Editor > General > Font > Size > 14  
-Plugins  
-Monokai Pro Theme
+```shell
+  ngrok authtoken <your_auth_token>
+```
 
 **🛎 Notifications**  
 **Calendar, Notion, Slack**  
@@ -182,40 +212,36 @@ Play sound for notification
 **Xcode**  
 Banners
 
-**🗳 VirtualBox**  
-System Preferences > Security and Privacy > General > Allow "System Software from Developer ‘Oracle America, Inc."  
-Restart system  
-Setup  
-[Virtual Box Images](https://www.osboxes.org/virtualbox-images/)  
-[Kali Linux](https://www.kali.org/downloads/)  
-[ubuntu](https://ubuntu.com/download/desktop)  
-Save the images to your prefer directory like Google Drive
+**📅 Calendar**  
+Add Accounts  
+Add Calendar on Widgets
 
-**🕶 ngrok**  
-[Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
+**⏱ Setup Time machine**  
+Menu bar > Time machine > Backup
 
-```shell
-  ngrok authtoken <your_auth_token>
-```
+**🔏 FileVault**
+Security & Privacy > FileVault
 
-**📞 Cisco Packet Tracer**  
-[Download](https://www.netacad.com/portal/resources/packet-tracer)
+**🛻 Display(Sidecar)**
 
-**🍺 Homebrew setting**  
-[Create Personal access token on Github](https://github.com/settings/tokens/new?scopes=gist,public_repo,workflow&description=Homebrew)
+- Connect to iPad
+- System Preferences > Display > Arrangement > Change "iPad display on left"
 
-Create token.zsh file on dotfiles
+**💻 System Preferences**  
+**Login Icon**
 
-```shell
-  cd ~/Google\ Drive/Settings/dotfiles && touch zsh/tokens.zsh
-  echo 'export HOMEBREW_GITHUB_API_TOKEN=<your_token_here>' >> zsh/tokens.zsh
-```
+- Users & Groups > Current User >
+  Edit Profile photo
 
-**😼 gh**
+**Desktop Image**
 
-```shell
-  gh auth login
-```
+- Desktop & Screen Saver >
+  Select your favorite image
+
+**Screen Saver**
+
+- Desktop & Screen Saver > Screen Saver > Select "Brooklyn" (might need go Preferences > Security & Privacy > General >
+  On the bottom side, select "Open Anyway")
 
 ## Customize 👨🏻‍🍳
 
@@ -272,22 +298,6 @@ Check if it's an app you want to download.
   ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
 ```
 
-## Zinit 🧙🏿‍♂️
-
-[Zinit Documentation](https://github.com/zdharma/zinit)
-
-Update plugins
-
-```shell
-  zinit update
-```
-
-Delete unused plugins
-
-```shell
-  zinit delete --clean
-```
-
 ## Maintenance 👨🏻‍🏭
 
 Clean unused homebrew dependencies up, and upgrade them
@@ -296,16 +306,16 @@ Clean unused homebrew dependencies up, and upgrade them
   brew bundle cleanup --force && brew cleanup && brew upgrade
 ```
 
+Update and delete unused zinit plugins
+
+```shell
+  zinit delete --clean && zinit update
+```
+
 **Check the performance of zsh**
 
 ```shell
-  for i in {1..10}; do time zsh -i -c exit; done
-```
-
-## UnInstall Homebrew 🍺
-
-```shell
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
+  for x in {1..10}; do time zsh -i -c exit;done
 ```
 
 ## Troubleshooting 🔫
@@ -371,21 +381,26 @@ Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/j
 ### Tutorials
 
 [Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish)
+[dotfiles + GitHub を使って開発環境をコマンド１発で構築する方法](https://www.youtube.com/watch?v=QZr33TQnIRk&t=9s)
 
 ### Dotfiles
 
 [Patrick McDonald - EIEIO](https://github.com/eieioxyz/dotfiles_macos)  
 [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)  
 [Your unofficial guide to dotfiles on GitHub.](https://dotfiles.github.io/inspiration)
+[JunichiSugiura/dotfiles](https://github.com/JunichiSugiura/dotfiles)
 
 ### CheatSheets
 
 [macOS defaults list](https://macos-defaults.com)  
 [Homebrew | Basics Commands and Cheat sheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
 
-### Modules
+### Dotfiles managed with
 
-[dotbot](https://github.com/anishathalye/dotbot) - Dotbot makes installing your dotfiles as easy as git clone $url && cd dotfiles && ./install, even on a freshly installed system!
+- [GNU stow](https://www.gnu.org/software/stow/)
+- [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
+- [asdf](https://asdf-vm.com/#/)
+- [zinit](https://github.com/zdharma-continuum/zinit)
 
 ## License
 
