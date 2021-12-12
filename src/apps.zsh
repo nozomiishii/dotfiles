@@ -1,9 +1,18 @@
 #!/usr/bin/env zsh
-echo "🧝🏻‍♀️ Starting App Setup... \n"
+echo "🧝🏻‍♀️ Starting Apps Setup... \n"
 set -e
 
 
-APP_PREFERENCES="$HOME/dotfiles/apps"
+APPS_PATH="$HOME/dotfiles/apps"
+
+
+echo "- 🎮 iTerm2"
+# General > Preferences > check "Load preferences from a custom folder or URL"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+# Restore from the backup
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$APP_PREFERENCES/iTerm2"
+# General > Preferences > Save changes: when quits 
+defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
 
 echo '- 👾 NeoVim'
@@ -22,23 +31,12 @@ fi
 
 
 echo "- 🐟 VSCode"
-VSCODE_USERDATA="$HOME/Library/Application Support/Code/User"
-CUSTOMIZED_VSCODE_USERDATA="$APP_PREFERENCES/VSCode"
-
-VSCODE_USERDATA_ITEMS=("keybindings.json" "settings.json" "snippets")
-for item in ${VSCODE_USERDATA_ITEMS[@]}; do
-  rm -rf "$VSCODE_USERDATA/$item"
-  ln -nfsv "$CUSTOMIZED_VSCODE_USERDATA/$item" "$VSCODE_USERDATA/$item"
-  if [ -L "$VSCODE_USERDATA/$item" ]; then
-    echo "Created Link: $VSCODE_USERDATA/$item"
-  else
-    echo "Error: Creating Links fails"
-  fi
-done
-ls -l "$VSCODE_USERDATA"
+stow -vd "$APPS_PATH" -t "$HOME/Library/Application Support/Code/User" VSCode
 
 
 echo "- 🍎 Xcode"
+stow -vd "$APPS_PATH" -t "$HOME/Library/Developer/Xcode/UserData" Xcode
+
 XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
 CUSTOMIZED_XCODE_USERDATA="$APP_PREFERENCES/Xcode/UserData"
 
@@ -79,18 +77,8 @@ ln -nfsv "$CUSTOMIZED_ANDROID_STUDIO_USERDATA" "$ANDROID_STUDIO_USERDATA"
 ls -l "$ANDROID_STUDIO_USERDATA"
 
 
-echo "- 🎮 iTerm2"
-# General > Preferences > check "Load preferences from a custom folder or URL"
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-# Restore from the backup
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$APP_PREFERENCES/iTerm2"
-# General > Preferences > Save changes: when quits 
-defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
 
-echo "- 🤡 yabai"
-brew services start skhd
-brew services start yabai
 
 
 echo "- 🐵 Blender"
@@ -106,5 +94,11 @@ echo "Automator 🤖"
 if [ ! -f "$HOME/Desktop" ]; then
   cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
 fi
+
+
+echo "- 🤡 yabai"
+brew services start skhd
+brew services start yabai
+
 
 echo "\n🎉 Completed App Setup \n"

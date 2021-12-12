@@ -14,7 +14,7 @@ fi
 
 for i in "$@"; do
   case "$i" in
-    -a|--app)
+    -a|--apps)
       SETUP_APP=1
       shift ;;
     -b|--homebrew)
@@ -79,7 +79,7 @@ fi
 
 # App
 # Dependencis | Homebrew
-if [ $SETUP_APP ]; then
+if [ $SETUP_APPS ]; then
   echo "🧝🏻‍♀️ App Setup"
   source "$ROOT_PATH/src/apps.zsh"
 fi
