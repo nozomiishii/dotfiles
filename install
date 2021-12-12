@@ -29,7 +29,7 @@ for i in "$@"; do
     -u=*|--unlink=*)
       UNLINK_MODULES="${i#*=}"
       shift ;;
-    -s|--sshkey)
+    -k|--sshkey)
       GENERATE_SSHKEY=1
       shift ;;
     *)
