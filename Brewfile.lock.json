@@ -5,16 +5,16 @@
         "revision": "44a1e064d0cf9c3ef8d1820be7988f762f222cf5"
       },
       "homebrew/cask": {
-        "revision": "219a83dd15d5c62297c5ce233530da12f296ee92"
+        "revision": "2cb2f004e9b8abd6a674ce6211152c41d155b2b0"
       },
       "homebrew/cask-versions": {
-        "revision": "5565954360d12fc6c3c30927340639d6d3e5541a"
+        "revision": "5db632d42bcb535aec4dca27d828179f60f585ed"
       },
       "homebrew/core": {
-        "revision": "89e9041925890b9e48253b5945c6459b4ba8fd59"
+        "revision": "e160df1adbf486ef1226d91f87d8665fa3e5c448"
       },
       "homebrew/cask-fonts": {
-        "revision": "a4eee8c045db8c701a7aec1904ba5d2b12ab6a07"
+        "revision": "f39d84adeac236e9f48fed0aefd02e51626b6f5f"
       },
       "homebrew/services": {
         "revision": "5060c727f067790b55e93a044e4f48909c8363e9"
@@ -865,6 +865,35 @@
             }
           }
         }
+      },
+      "mono": {
+        "version": "6.12.0.122",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "monterey": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/mono/blobs/sha256:4a4560ef7bd6dc638600e6fae876c3e27b3443698719a1dae45fe49fc1987f78",
+              "sha256": "4a4560ef7bd6dc638600e6fae876c3e27b3443698719a1dae45fe49fc1987f78"
+            },
+            "big_sur": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/mono/blobs/sha256:fdd17b0e0eb154047fa8091b52763f1f0df0fc921c216f6633d4d59f7cd62af5",
+              "sha256": "fdd17b0e0eb154047fa8091b52763f1f0df0fc921c216f6633d4d59f7cd62af5"
+            },
+            "catalina": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/mono/blobs/sha256:428998efcf415948ca793b166d7ed6e242814205238e77111419de828fd33cfe",
+              "sha256": "428998efcf415948ca793b166d7ed6e242814205238e77111419de828fd33cfe"
+            },
+            "mojave": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/mono/blobs/sha256:d25b6982b6bd7af6b001e5f7b53ff0dad68937ce11ba0dce9d1529e2b0608b85",
+              "sha256": "d25b6982b6bd7af6b001e5f7b53ff0dad68937ce11ba0dce9d1529e2b0608b85"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -941,7 +970,7 @@
         }
       },
       "docker": {
-        "version": "4.3.0,71786",
+        "version": "4.3.1,72247",
         "options": {
           "full_name": "docker",
           "args": {
@@ -950,7 +979,7 @@
         }
       },
       "dotnet-sdk": {
-        "version": "6.0.100,ed60d37e-7842-4fc2-8250-2bd66073d79e,725d486e04d27e45d2b41c687dc35f49",
+        "version": "6.0.100,14a45451-4cc9-48e1-af69-0aff75891d09,ff6e83986a2a9a535015fb3104a90a1b",
         "options": {
           "full_name": "dotnet-sdk",
           "args": {
@@ -1004,7 +1033,7 @@
         }
       },
       "spotify": {
-        "version": "1.1.73.517,gbef50fdb,19",
+        "version": "1.1.74.631,0b24d9ad,16",
         "options": {
           "full_name": "spotify",
           "args": {
@@ -1166,7 +1195,7 @@
         }
       },
       "notion": {
-        "version": "2.0.18",
+        "version": "2.0.19",
         "options": {
           "full_name": "notion",
           "args": {
@@ -1218,6 +1247,33 @@
             "appdir": "/Applications"
           }
         }
+      },
+      "wireshark": {
+        "version": "3.6.0",
+        "options": {
+          "full_name": "wireshark",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "virtualbox-extension-pack": {
+        "version": "6.1.30",
+        "options": {
+          "full_name": "virtualbox-extension-pack",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "virtualbox": {
+        "version": "6.1.30,148432",
+        "options": {
+          "full_name": "virtualbox",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
       }
     },
     "mas": {
@@ -1231,8 +1287,8 @@
     "macos": {
       "monterey": {
         "HOMEBREW_VERSION": "3.3.7",
-        "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "89e9041925890b9e48253b5945c6459b4ba8fd59",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "e160df1adbf486ef1226d91f87d8665fa3e5c448",
         "CLT": "13.1.0.0.1.1633545042",
         "Xcode": "13.1",
         "macOS": "12.0.1"
