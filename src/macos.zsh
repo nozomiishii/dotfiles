@@ -187,11 +187,6 @@ defaults write com.apple.dock wvous-br-corner -int 1
 defaults write com.apple.dock wvous-br-modifier -int 1048576
 
 
-echo "Automator 🤖"
-# !! You need to symbolic link to each shortcut. !!
-ln -nfsv "$HOME/dotfiles/apps/Automator/Services/Open with Visual Studio Code.workflow" "$HOME/Library/Services"
-
-
 echo "- 👼 Killall..."
 killall Dock
 killall Finder

@@ -20,14 +20,6 @@ if [ ! -f "$PLUG_PATH" ]; then
   nvim +PlugInstall +qall
 fi
 
-# Install vim-plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-# Install plugins
-pip3 install --upgrade pynvim
-vim +PlugInstall +qall > /dev/null
-
 
 echo "- 🐟 VSCode"
 VSCODE_USERDATA="$HOME/Library/Application Support/Code/User"
@@ -110,12 +102,9 @@ ln -nfsv "$CUSTOMIZED_BLENDER_USERDATA" "$BLENDER_USERDATA"
 ls -l "$BLENDER_USERDATA"
 
 
-echo "- 👼 Killall..."
-killall Dock
-killall Finder
-killall SystemUIServer
-sudo killall cfprefsd
-sudo killall corebrightnessd
-
+echo "Automator 🤖"
+if [ ! -f "$HOME/Desktop" ]; then
+  cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
+fi
 
 echo "\n🎉 Completed App Setup \n"
