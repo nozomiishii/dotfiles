@@ -1,11 +1,12 @@
 .DS_Store
 
 # nvim
-modules/nvim/.config/nvim/plugged/
+modules/nvim/.config/nvim/plugged
 
 # yarn
-node_modules/
-modules/yarn/.config/yarn/global/node_modules/
+node_modules
+yarn.lock
+modules/yarn/.config/yarn/global/node_modules
 
 # Karabiner
 apps/karabiner/automatic_backups

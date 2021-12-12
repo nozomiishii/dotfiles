@@ -43,7 +43,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # yarn
 if type yarn > /dev/null 2>&1; then
-  export PATH=$PATH:$(yarn global bin)
+  export PATH="$(yarn global bin):$PATH"
 fi
 
 # Add Visual Studio Code (code)
