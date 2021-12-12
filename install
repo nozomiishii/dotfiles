@@ -60,7 +60,7 @@ fi
 
 
 if [ $SETUP_ASDF ]; then
-  echo "🌏 asdf Setup"
+  echo "🌝 asdf Setup"
   source "$ROOT_PATH/src/asdf.zsh"
 fi
 
