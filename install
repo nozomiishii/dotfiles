@@ -14,8 +14,8 @@ fi
 
 for i in "$@"; do
   case "$i" in
-    -a|--asdf)
-      SETUP_ASDF=1
+    -a|--app)
+      SETUP_APP=1
       shift ;;
     -b|--homebrew)
       SETUP_HOMEBREW=1
@@ -74,6 +74,14 @@ if [ -n "$UNLINK_MODULES" ]; then
   echo "👋 Unlinking Symbolic links..."
   stow -vD -d "$MODULES_PATH" -t ~ "$UNLINK_MODULES"
   exit
+fi
+
+
+# App
+# Dependencis | Homebrew
+if [ $SETUP_APP ]; then
+  echo "🧝🏻‍♀️ App Setup"
+  source "$ROOT_PATH/src/apps.zsh"
 fi
 
 
