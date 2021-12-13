@@ -339,42 +339,55 @@ Update and delete unused zinit plugins
 
 ## Troubleshooting 🔫
 
-**Audio-related**  
-NVRAM Reset  
-Shut down and Restart with  
-`⌥ + ⌘ + P + R`  
-💡 NVRAM is a memory that saves its stored data regardless if the power is on or off.
+- **Audio-related**  
+  NVRAM Reset  
+  Shut down and Restart with  
+  `⌥ + ⌘ + P + R`  
+  💡 NVRAM is a memory that saves its stored data regardless if the power is on or off.
 
-**Third-party app related**  
-Safe mode  
-Shut down and wait 10 seconds  
-Restart with `⇧`  
-💡Safe Mode temporarily disables any third-party applications and starts your device with default system apps.
+- **Third-party app related**  
+  Safe mode  
+  Shut down and wait 10 seconds  
+  Restart with `⇧`  
+  💡Safe Mode temporarily disables any third-party applications and starts your device with default system apps.
 
 ## Reinstall macOS 👼
 
-1: Sign out your iCloud.  
-System Preferences > Apple ID > iCloud > Turn off "Find My Mac"  
-System Preferences > Apple ID > Overview > Sign Out...
+1: Sign out your iCloud.
 
-2: Deactivate license  
-**🎩 Alfred**  
-Preferences > Powerpack > View your license key > Deactivate  
-**🧹 Hazel**  
-License... > Remove...  
-**🎨 ColorSnapper2**  
-About ColorSnapper... > Deactivate license
-**🐘 TablePlus**  
-TablePlus > Register license...
+- System Preferences > Apple ID > iCloud >
+  Turn off "Find My Mac"
+- System Preferences > Apple ID > Overview >
+  Sign Out...
 
-3: Unpair  
-System Preferences > Bluetooth > Unpair Bluetooth devices
+2: Deactivate license
 
-4: Clean up  
-Delete SSH keys on Github, GitLab
+- **🎩 Alfred**
+  Preferences > Powerpack > View your license key >
+  Deactivate
 
-5: Reinstall  
-Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)
+- **🧹 Hazel**
+  License... > Remove...
+
+- **🎨 ColorSnapper2**
+  About ColorSnapper... >
+  Deactivate license
+
+- **🐘 TablePlus**
+  TablePlus > Register license...
+
+3: Unpair
+
+- System Preferences > Bluetooth >
+  Unpair Bluetooth devices
+
+4: Clean up
+
+- Delete SSH keys on Github, GitLab
+
+5: Reinstall
+
+- Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)
 
 - NVRAM Reset  
   `⌥ + ⌘ + P + R`

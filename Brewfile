@@ -12,8 +12,9 @@ tap "koekeishiya/formulae"
 tap "smudge/smudge"
 
 
-
+# 
 # Brew
+# 
 # Organize software neatly under a single directory tree
 brew "stow"
 
@@ -103,9 +104,9 @@ brew "cocoapods"
 brew "awscli"
 
 
+# 
 # Cask
-
-
+# 
 # Google Cloud SDK https://cloud.google.com/sdk/
 cask "google-cloud-sdk"
 
@@ -231,9 +232,9 @@ cask "virtualbox-extension-pack" if system '[ "$(uname -m)" = "x86_64" ]'
 cask "virtualbox" if system '[ "$(uname -m)" = "x86_64" ]'
 
 
-
+# 
 # mas
-
+# 
 # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
 mas "Xcode", id: 497799835
 
