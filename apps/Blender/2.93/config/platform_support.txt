@@ -1,3 +1,0 @@
-{Intel Inc./Intel(R) Iris(TM) Plus Graphics 650/4.1 INTEL-16.1.12}=SUPPORTED
-{Intel Inc./Intel(R) Iris(TM) Plus Graphics 650/4.1 INTEL-16.4.5}=SUPPORTED
-{Intel Inc./Intel(R) Iris(TM) Plus Graphics 650/4.1 INTEL-18.2.10}=SUPPORTED

@@ -22,6 +22,7 @@ OPTIONS:
     -a,   --apps          🧝🏻‍♀️ Apps Setup
     -b,   --homebrew      🍺 Homebrew Setup
     -c,   --code          🦄 Clone Repositoris
+    -d,   --drive         🌎 Sync with google drive
     -e,   --environment   🌝 Environment Setup(asdf)
     -h,   --help          💡 Print this usage
     -k,   --sshkey        🔐 Generate ssh key
@@ -45,6 +46,9 @@ for i in "$@"; do
       shift ;;
     -c|--code)
       SETUP_REPOSITORIS=1
+      shift ;;
+    -d|--drive )
+      SYNC_WITH_DRIVE=1
       shift ;;
     -e|--environment)
       SETUP_ENVIRONMENT=1
@@ -144,3 +148,10 @@ if [ $GENERATE_SSHKEY ]; then
   source "$ROOT_PATH/src/sshkey.zsh"
 fi
 
+
+# Drive
+# Dependencis | Homebrew, Mirror Google Drive files
+if [ $SYNC_WITH_DRIVE ]; then
+  echo "🌎 Sync with google drive"
+  source "$ROOT_PATH/src/drive.zsh"
+fi
