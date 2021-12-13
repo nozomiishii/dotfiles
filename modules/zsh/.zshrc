@@ -2,24 +2,23 @@
 echo '🧙🏿 ...zshrc loading...'
 
 # Package manager
-source "$HOME/zinit.zsh"
-# source "$HOME/zplug.zsh"
-# source "$HOME/oh-my-zsh.zsh"
+source "$HOME/.zsh//zinit.zsh"
+# source "$HOME/.zsh/zplug.zsh"
 
 # Powerlevel10k
-source "$HOME/.p10k.zsh"
+source "$HOME/.zsh/p10k.zsh"
 
 # Config
-source "$HOME/config.zsh"
+source "$HOME/.zsh/config.zsh"
 
 # Aliases
-source "$HOME/alias.zsh"
+source "$HOME/.zsh/alias.zsh"
 
 # Last working dir
-source "$HOME/last-working-dir.zsh"
+source "$HOME/.zsh/last-working-dir.zsh"
 
 # Functions
-source "$HOME/functions.zsh"
+source "$HOME/.zsh/functions.zsh"
 
 
 # GCP

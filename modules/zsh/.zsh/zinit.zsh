@@ -26,8 +26,8 @@ zinit light zdharma-continuum/history-search-multi-word
 zinit light Aloxaf/fzf-tab
 
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
