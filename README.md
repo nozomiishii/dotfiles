@@ -16,7 +16,7 @@ If you can't use your personal apple ID on your company computer, install xcode 
 
 **Open Terminal with Spotlight**
 
-- ⌘ + shift
+- shift + ⌘
 
 **Install xcode-select**
 
@@ -49,11 +49,11 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 **🔫 When permission is not set**
 
 ```shell
-  ls -l ./install
+  ls -l ./dotfiles/install
 ```
 
 ```shell
-  chmod +x ./install
+  chmod +x ./dotfiles/install
 ```
 
 **💻 MacOS Setup & Restart**
@@ -88,9 +88,9 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 
 - Preferences > Security > Unlock using >  
   Check "Touch ID"
-- Preferences > General > Menu bar >
+- Preferences > General > Menu bar >  
   Uncheck "Show 1Password in the menu bar"
-- Preferences > General > Keyboard shortcuts >
+- Preferences > General > Keyboard shortcuts >  
   remove all shortcuts(because it conflicts with xcode)
 
 **🌏 Chrome**
@@ -108,17 +108,17 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 **🎩 Alfred**
 
 - Activate the license
-- Preferences > Advanced > Set preferences folder... >
+- Preferences > Advanced > Set preferences folder... >  
   Select "~/dotfiles/apps/Alfred"
-- Alfred > General >
+- Alfred > General >  
   Alfred Hotkey: ⌘ + Space
 
 **🐟 VSCode**
 
-- User Icon > Setting sync > Login >
+- User Icon > Setting sync > Login >  
   Select "Marge"  
   ⚠️ Do NOT Select "Replace"
-- ⇧ + ⌘ + P > Open command pallet >
+- ⇧ + ⌘ + P > Open command pallet >  
   Icons: Activate VSCode Icons
 
 **☁️ google-drive**
@@ -148,15 +148,15 @@ Sidebar
 
 **🗣 Speech**
 
-- System Preferences > Accessibility > Spoken Content >
+- System Preferences > Accessibility > Spoken Content >  
   Select and Download "Siri Female(United Kingdom)"
-- System Preferences > Accessibility > Spoken Content >
+- System Preferences > Accessibility > Spoken Content >  
   Adjust Speaking Rate
 
 **🧹 Hazel**
 
 - License... > Activate the License
-- Folder > Rule Sync Settings... > Use existing sync file... >
+- Folder > Rule Sync Settings... > Use existing sync file... >  
   Select "~/Settings/dotfiles/preferences/Hazel"
 
 **🎨 ColorSnapper2**
@@ -171,14 +171,14 @@ Sidebar
 
 **🐍 PyCharm**
 
-- Preferences > Editor > General > Font > Size >
+- Preferences > Editor > General > Font > Size >  
   Font Size: 14
 - Plugins  
   Monokai Pro Theme
 
 **🐸 Android Studio**
 
-- Preferences > Editor > General > Font > Size >
+- Preferences > Editor > General > Font > Size >  
   Font Size: 14
 - Plugins  
   Monokai Pro Theme
@@ -186,27 +186,27 @@ Sidebar
 **🍎 Xcode**
 
 - Add Account
-- Preferences > Themes >
+- Preferences > Themes >  
   Monokai Pro
-- Preferences > Navigation >
+- Preferences > Navigation >  
   Command-click on Code: Jumps to definition
 
 **🐵 Blender**
 
 - sign in
-- Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" >
+- Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" >  
   login!
 - [Download Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
-- Edit > Preferences > Add-ons > install >
+- Edit > Preferences > Add-ons > install >  
   install Add-on "blender_cloud-X.XX.addon.zip"  
    ⚠️ DO NOT UNZIP
-- Edit > Preferences > Input > Keyboard >
+- Edit > Preferences > Input > Keyboard >  
   Emulate Numpad
 
 **🦋 Affinity Designer**
 
-- [Download App](https://store.serif.com/en-gb/account/downloads/)
-- Activate the license
+- [Download App](https://store.serif.com/en-gb/account/downloads/)  
+  Activate the license
 
 **📞 Cisco Packet Tracer**
 
@@ -222,11 +222,11 @@ Sidebar
 
 **🛎 Notifications**
 
-- Calendar, Notion, Slack  
-  Alerts  
+- **Calendar, Notion, Slack**  
+  Alert style: Alerts  
   Show in Notification Centre  
   Play sound for notification
-- Xcode
+- **Xcode**  
   Banners
 
 **📅 Calendar**
@@ -246,21 +246,20 @@ Sidebar
 **🛻 Display(Sidecar)**
 
 - Connect to iPad
-- System Preferences > Display > Arrangement > Change "iPad display on left"
+- System Preferences > Display > Arrangement >  
+  Change "iPad display on left"
 
 **💻 System Preferences**
 
 - Login Icon
-  Users & Groups > Current User >
+  Users & Groups > Current User >  
   Edit Profile photo
-
 - Desktop Image
-  Desktop & Screen Saver >
+  Desktop & Screen Saver >  
   Select your favorite image
-
 - Screen Saver
-  Desktop & Screen Saver > Screen Saver >
-  Select "Brooklyn" (might need go Preferences > Security & Privacy > General >
+  Desktop & Screen Saver > Screen Saver >  
+  Select "Brooklyn" (might need go Preferences > Security & Privacy > General >  
   On the bottom side, select "Open Anyway")
 
 ## Customize 👨🏻‍🍳
