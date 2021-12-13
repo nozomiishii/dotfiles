@@ -1,3 +1,11 @@
+# [zinit](https://github.com/zdharma-continuum/zinit)
+# Update and delete unused zinit plugins
+
+# ```shell
+#   zinit delete --clean && zinit update
+# ```
+
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 if [ ! -d $ZINIT_HOME ]; then

@@ -325,12 +325,6 @@ Clean unused homebrew dependencies up, and upgrade them
   brew bundle cleanup --force && brew cleanup && brew upgrade
 ```
 
-Update and delete unused zinit plugins
-
-```shell
-  zinit delete --clean && zinit update
-```
-
 **Check the performance of zsh**
 
 ```shell
@@ -432,7 +426,7 @@ Update and delete unused zinit plugins
 - [GNU stow](https://www.gnu.org/software/stow/)
 - [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
 - [asdf](https://asdf-vm.com/#/)
-- [zinit](https://github.com/zdharma-continuum/zinit)
+- [antigen](https://github.com/zsh-users/antigen)
 
 ## License
 
