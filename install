@@ -19,15 +19,15 @@ USAGE:
 
 
 OPTIONS:
-    -a, --apps          🧝🏻‍♀️ Apps Setup
-    -b, --homebrew      🍺 Homebrew Setup
-    -c, --code          🦄 Clone Repositoris
-    -e, --environment   🌝 Environment Setup(asdf)
-    -h, --help          💡 Print this usage
-    -k, --sshkey        🔐 Generate ssh key
-    -l, --symlink       🗂 Symbolic link
-    -m, --macos         💻 MacOS Setup
-    -u=*, --unlink=*    👋 Unlinking Symbolic links...
+    -a,   --apps          🧝🏻‍♀️ Apps Setup
+    -b,   --homebrew      🍺 Homebrew Setup
+    -c,   --code          🦄 Clone Repositoris
+    -e,   --environment   🌝 Environment Setup(asdf)
+    -h,   --help          💡 Print this usage
+    -k,   --sshkey        🔐 Generate ssh key
+    -l,   --symlink       🗂 Symbolic link
+    -m,   --macos         💻 MacOS Setup
+    -u=*, --unlink=*      👋 Unlinking Symbolic links...
 
 
 
