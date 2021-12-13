@@ -68,6 +68,9 @@ brew 'tree'
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
 
+# Programmatically correct mistyped console commands https://github.com/nvbn/thefuck
+brew "thefuck"
+
 # Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
 brew "jq"
 
