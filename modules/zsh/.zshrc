@@ -1,12 +1,15 @@
 # unicode of 🧙🏿‍♂️ => \U0001f9d9\U0001F3FF\u200d\U0002642
 echo '🧙🏿 ...zshrc loading...'
 
-# Package manager
-source "$HOME/.zsh//zinit.zsh"
-# source "$HOME/.zsh/zplug.zsh"
-
 # Powerlevel10k
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 source "$HOME/.zsh/p10k.zsh"
+
+
+# Package manager
+# source "$HOME/.zsh/zinit.zsh"
+source "$HOME/.zsh/zplug.zsh"
+
 
 # Config
 source "$HOME/.zsh/config.zsh"

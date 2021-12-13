@@ -10,6 +10,7 @@ tap "heroku/brew"
 tap "stripe/stripe-cli"
 tap "koekeishiya/formulae"
 tap "smudge/smudge"
+tap "romkatv/powerlevel10k"
 
 
 # 
@@ -21,8 +22,8 @@ brew "stow"
 # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
 brew "nightlight"
 
-# Next-generation plugin manager for zsh https://github.com/zplug/zplug/
-brew "zplug"
+# A Zsh Theme https://github.com/romkatv/powerlevel10k
+brew "powerlevel10k"
 
 # Extendable version manager with support for Ruby, Node.js, Erlang & more https://asdf-vm.com/
 brew "asdf"

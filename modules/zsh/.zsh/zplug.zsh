@@ -4,8 +4,7 @@ if [ ! -f ~/.zplug/init.zsh ]; then
 fi
 source ~/.zplug/init.zsh
 
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-zplug "romkatv/powerlevel10k", as:theme, depth:1
+
 zplug "plugins/git", from:oh-my-zsh, lazy:true
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions", lazy:true
