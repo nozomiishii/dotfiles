@@ -5,12 +5,35 @@ set -e
 ROOT_PATH="$HOME/dotfiles"
 MODULES_PATH="$ROOT_PATH/modules"
 
-if [ ! $@ ]; then
-  echo "⚠️ Options must be provided"
-  echo "./install [options]"
-  echo "See https://github.com/nozomiishii/dotfiles/blob/main/install"
-  exit
-fi
+
+function usage {
+cat <<EOF
+
+
+NAME
+    ./install - Install Nozomi's favourite mac setups.
+
+
+USAGE:
+    ./install [OPTIONS]
+
+
+OPTIONS:
+    -a, --apps          🧝🏻‍♀️ Apps Setup
+    -b, --homebrew      🍺 Homebrew Setup
+    -c, --code          🦄 Clone Repositoris
+    -e, --environment   🌝 Environment Setup(asdf)
+    -h, --help          💡 Print this usage
+    -k, --sshkey        🔐 Generate ssh key
+    -l, --symlink       🗂 Symbolic link
+    -m, --macos         💻 MacOS Setup
+    -u=*, --unlink=*    👋 Unlinking Symbolic links...
+
+
+
+EOF
+}
+
 
 for i in "$@"; do
   case "$i" in
@@ -26,20 +49,24 @@ for i in "$@"; do
     -e|--environment)
       SETUP_ENVIRONMENT=1
       shift ;;
-    -m|--macos)
-      SETUP_MACOS=1
-      shift ;;
-    -l|--symlink)
-      LINK_MODULES=1
-      shift ;;
-    -u=*|--unlink=*)
-      UNLINK_MODULES="${i#*=}"
+    -h|--help)
+      usage
       shift ;;
     -k|--sshkey)
       GENERATE_SSHKEY=1
       shift ;;
+    -l|--symlink)
+      LINK_MODULES=1
+      shift ;;
+    -m|--macos)
+      SETUP_MACOS=1
+      shift ;;
+    -u=*|--unlink=*)
+      UNLINK_MODULES="${i#*=}"
+      shift ;;
     *)
-      exit ;;
+      usage
+      shift ;;
   esac
 done
 
