@@ -3,6 +3,9 @@
 # nvim
 modules/nvim/.config/nvim/plugged
 
+# antigen
+modules/zsh/.zsh/antigen.zsh.zwc
+
 # yarn
 node_modules
 yarn.lock

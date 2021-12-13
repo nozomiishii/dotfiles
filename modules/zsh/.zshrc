@@ -5,11 +5,10 @@ echo '🧙🏿 ...zshrc loading...'
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 source "$HOME/.zsh/p10k.zsh"
 
-
-# Package manager
+# Package managers
+source "$HOME/.zsh/antigen.zsh"
 # source "$HOME/.zsh/zinit.zsh"
-source "$HOME/.zsh/zplug.zsh"
-
+# source "$HOME/.zsh/zplug.zsh"
 
 # Config
 source "$HOME/.zsh/config.zsh"
@@ -24,14 +23,11 @@ source "$HOME/.zsh/last-working-dir.zsh"
 source "$HOME/.zsh/functions.zsh"
 
 
-# GCP
-GC_SDK="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
-if [[ -f "$GC_SDK/path.zsh.inc" ]]; then
-  source "$GC_SDK/path.zsh.inc"
-fi
-if [[ -f "$GC_SDK/completion.zsh.inc" ]]; then
-  source "$GC_SDK/completion.zsh.inc"
-fi
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# yarn
+if type yarn > /dev/null 2>&1; then export PATH="$(yarn global bin):$PATH"; fi
 
 # grep setting
 export GREP_OPTIONS='--color=always'
@@ -39,14 +35,6 @@ export GREP_COLOR='1;32'
 
 # Syntax highlighting for man command
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-# asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# yarn
-if type yarn > /dev/null 2>&1; then
-  export PATH="$(yarn global bin):$PATH"
-fi
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
