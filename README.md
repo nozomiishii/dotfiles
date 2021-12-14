@@ -120,6 +120,7 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   ⚠️ Do NOT Select "Replace"
 - ⇧ + ⌘ + P > Open command pallet >  
   Icons: Activate VSCode Icons
+- Add MonokaiPro License
 
 **☁️ google-drive**
 
