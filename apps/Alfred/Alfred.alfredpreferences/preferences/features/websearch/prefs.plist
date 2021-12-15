@@ -381,6 +381,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>50053F83-C7B6-4B53-AC83-2EBE63C46DAD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>egghead</string>
+			<key>text</key>
+			<string>Open egghead.io</string>
+			<key>url</key>
+			<string>https://egghead.io/bookmarks</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>502F06A4-25D5-49F4-9823-015521309CFD</key>
 		<dict>
 			<key>enabled</key>
