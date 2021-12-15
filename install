@@ -6,7 +6,7 @@ ROOT_PATH="$HOME/dotfiles"
 MODULES_PATH="$ROOT_PATH/modules"
 
 
-function usage {
+usage(){
 cat <<EOF
 
 
@@ -36,45 +36,6 @@ EOF
 }
 
 
-for i in "$@"; do
-  case "$i" in
-    -a|--apps)
-      SETUP_APPS=1
-      shift ;;
-    -b|--homebrew)
-      SETUP_HOMEBREW=1
-      shift ;;
-    -c|--code)
-      SETUP_REPOSITORIS=1
-      shift ;;
-    -d|--drive )
-      SYNC_WITH_DRIVE=1
-      shift ;;
-    -e|--environment)
-      SETUP_ENVIRONMENT=1
-      shift ;;
-    -h|--help)
-      usage
-      shift ;;
-    -k|--sshkey)
-      GENERATE_SSHKEY=1
-      shift ;;
-    -l|--symlink)
-      LINK_MODULES=1
-      shift ;;
-    -m|--macos)
-      SETUP_MACOS=1
-      shift ;;
-    -u=*|--unlink=*)
-      UNLINK_MODULES="${i#*=}"
-      shift ;;
-    *)
-      usage
-      shift ;;
-  esac
-done
-
-
 pre_sudo(){
   # Ask for the administrator password upfront
   sudo -v
@@ -84,74 +45,121 @@ pre_sudo(){
 
 
 # Homebrew
-if [ $SETUP_HOMEBREW ]; then
+setup_homebrew(){
   echo "🍺 Homebrew Setup"
   pre_sudo
   source "$ROOT_PATH/src/homebrew.zsh"
-fi
-
-
-# Link
-# Dependencis | Homebrew
-if [ $LINK_MODULES ]; then
-  echo "🗂 Symbolic link"
-  stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
-fi
-
-
-# Unlink
-# Dependencis | Homebrew
-if [ -n "$UNLINK_MODULES" ]; then
-  echo "👋 Unlinking Symbolic links..."
-  stow -vD -d "$MODULES_PATH" -t ~ "$UNLINK_MODULES"
-  exit
-fi
-
-
-# Apps
-# Dependencis | Homebrew
-if [ $SETUP_APPS ]; then
-  echo "🧝🏻‍♀️ Apps Setup"
-  source "$ROOT_PATH/src/apps.zsh"
-fi
-
-
-# Code
-# Dependencis | Homebrew
-if [ $SETUP_REPOSITORIS ]; then
-  echo "🦄 Clone Repositoris"
-  source "$ROOT_PATH/src/code.zsh"
-fi
-
-
-# Environment
-# Dependencis | Homebrew
-if [ $SETUP_ENVIRONMENT ]; then
-  echo "🌝 Environment Setup(asdf)"
-  source "$ROOT_PATH/src/env.zsh"
-fi
+}
 
 
 # MacOS
 # Dependencis | Homebrew
-if [ $SETUP_MACOS ]; then
+setup_macos(){
   echo "💻 MacOS Setup"
   pre_sudo
   source "$ROOT_PATH/src/macos.zsh"
-fi
+}
+
+
+# Apps
+# Dependencis | Homebrew | Link
+setup_apps(){
+  echo "🧝🏻‍♀️ Apps Setup"
+  source "$ROOT_PATH/src/apps.zsh"
+}
+
+
+# Environment
+# Dependencis | Homebrew
+setup_environment(){
+  echo "🌝 Environment Setup(asdf)"
+  source "$ROOT_PATH/src/env.zsh"
+}
+
+
+# Link
+# Dependencis | Homebrew
+link_modules(){
+  echo "🗂 Symbolic link"
+  stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
+}
+
+
+# Unlink
+# Dependencis | Homebrew
+unlink_modules(){
+  echo "👋 Unlinking Symbolic links..."
+  stow -vD -d "$MODULES_PATH" -t ~ "$MODULES"
+  exit
+}
+
+
+# Code
+# Dependencis | Homebrew
+setup_repositoris(){
+  echo "🦄 Clone Repositoris"
+  source "$ROOT_PATH/src/code.zsh"
+}
 
 
 # SSHkey
 # Dependencis | Homebrew
-if [ $GENERATE_SSHKEY ]; then
+generate_sshkey(){
   echo "🔐 Generate ssh key"
   source "$ROOT_PATH/src/sshkey.zsh"
-fi
+}
 
 
 # Drive
 # Dependencis | Homebrew, Mirror Google Drive files
-if [ $SYNC_WITH_DRIVE ]; then
+sync_with_drive(){
   echo "🌎 Sync with google drive"
   source "$ROOT_PATH/src/drive.zsh"
+}
+
+
+
+if [ ! $@ ]; then
+  echo "👨🏻‍🚀: Installing the best Mac setup!!"
+  pre_sudo
+  setup_homebrew
+  setup_macos
 fi
+for i in "$@"; do
+  case "$i" in
+    -a|--apps)
+      setup_apps
+      shift ;;
+    -b|--homebrew)
+      setup_homebrew
+      shift ;;
+    -c|--code)
+      setup_repositoris
+      shift ;;
+    -d|--drive )
+      sync_with_drive
+      shift ;;
+    -e|--environment)
+      setup_environment
+      shift ;;
+    -h|--help)
+      usage
+      shift ;;
+    -k|--sshkey)
+      generate_sshkey
+      shift ;;
+    -l|--symlink)
+      link_modules
+      shift ;;
+    -m|--macos)
+      setup_macos
+      shift ;;
+    -u=*|--unlink=*)
+      MODULES="${i#*=}"
+      unlink_modules
+      shift ;;
+    *)
+      usage
+      shift ;;
+  esac
+done
