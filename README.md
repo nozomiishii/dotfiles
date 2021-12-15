@@ -18,6 +18,14 @@ If you can't use your personal apple ID on your company computer, install xcode 
 
 - shift + ⌘
 
+## Run
+
+```shell
+   cd ~ && git clone https://github.com/nozomiishii/dotfiles.git && ./dotfiles/install
+```
+
+## Install Manually
+
 **Install xcode-select**
 
 ```shell
@@ -56,10 +64,16 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   chmod +x ./dotfiles/install
 ```
 
-**💻 MacOS Setup & Restart**
+**💻 MacOS Setup**
 
 ```shell
   ./dotfiles/install -m
+```
+
+**🗂 Symbolic link**
+
+```shell
+  ./dotfiles/install -l
 ```
 
 **🧝🏻‍♀️ Apps Setup**
@@ -74,11 +88,7 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   ./dotfiles/install -e
 ```
 
-**🛋 Restart**
-
-```shell
-  sudo reboot
-```
+## App preferences
 
 **⛓ Karabiner-Elements**
 
@@ -122,43 +132,11 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   Icons: Activate VSCode Icons
 - Add MonokaiPro License
 
-**☁️ google-drive**
-
-- Sign in and Sync
-
-**🗂 Finder**
-
-- Rearrange the order of the sidebar
-
-```txt
-Sidebar
- ┣ 📂Favorites
- ┃ ┣ 🌏Google Drive
- ┃ ┣ 🗃dotfiles
- ┃ ┣ 🏠$USER
- ┃ ┣ 🍎Applications
- ┃ ┣ 💆🏻‍♂️Downloads
- ┃ ┗ 📖Desktop
- ┗ 📂Locations
-```
-
-**⌨️ Keyboard**
-
-- Input Sources > Delete "Kotoeri"
-- Input Sources > Add "google-japanese-ime"
-
-**🗣 Speech**
-
-- System Preferences > Accessibility > Spoken Content >  
-  Select and Download "Siri Female(United Kingdom)"
-- System Preferences > Accessibility > Spoken Content >  
-  Adjust Speaking Rate
-
 **🧹 Hazel**
 
 - License... > Activate the License
 - Folder > Rule Sync Settings... > Use existing sync file... >  
-  Select "~/Settings/dotfiles/preferences/Hazel"
+  Select "~/dotfiles/apps/Hazel"
 
 **🎨 ColorSnapper2**
 
@@ -192,27 +170,6 @@ Sidebar
 - Preferences > Navigation >  
   Command-click on Code: Jumps to definition
 
-**🐵 Blender**
-
-- sign in
-- Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" >  
-  login!
-- [Download Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
-- Edit > Preferences > Add-ons > install >  
-  install Add-on "blender_cloud-X.XX.addon.zip"  
-   ⚠️ DO NOT UNZIP
-- Edit > Preferences > Input > Keyboard >  
-  Emulate Numpad
-
-**🦋 Affinity Designer**
-
-- [Download App](https://store.serif.com/en-gb/account/downloads/)  
-  Activate the license
-
-**📞 Cisco Packet Tracer**
-
-- [Download](https://www.netacad.com/portal/resources/packet-tracer)
-
 **🕶 ngrok**
 
 - [Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
@@ -220,6 +177,34 @@ Sidebar
 ```shell
   ngrok authtoken <your_auth_token>
 ```
+
+**🗂 Finder**
+
+- Rearrange the order of the sidebar
+
+```txt
+Sidebar
+ ┣ 📂Favorites
+ ┃ ┣ 🌏Google Drive
+ ┃ ┣ 🗃dotfiles
+ ┃ ┣ 🏠$USER
+ ┃ ┣ 🍎Applications
+ ┃ ┣ 💆🏻‍♂️Downloads
+ ┃ ┗ 📖Desktop
+ ┗ 📂Locations
+```
+
+**⌨️ Keyboard**
+
+- Input Sources > Delete "Kotoeri"
+- Input Sources > Add "google-japanese-ime"
+
+**🗣 Speech**
+
+- System Preferences > Accessibility > Spoken Content >  
+  Select and Download "Siri Female(United Kingdom)"
+- System Preferences > Accessibility > Spoken Content >  
+  Adjust Speaking Rate
 
 **🛎 Notifications**
 
@@ -252,16 +237,47 @@ Sidebar
 
 **💻 System Preferences**
 
-- Login Icon
+- **Login Icon**  
   Users & Groups > Current User >  
   Edit Profile photo
-- Desktop Image
+- **Desktop Image**  
   Desktop & Screen Saver >  
   Select your favorite image
-- Screen Saver
+- **Screen Saver**  
   Desktop & Screen Saver > Screen Saver >  
   Select "Brooklyn" (might need go Preferences > Security & Privacy > General >  
   On the bottom side, select "Open Anyway")
+
+**☁️ google-drive**
+
+- Sign in and Sync
+
+**🐵 Blender**
+
+- sign in
+- Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" >  
+  login!
+- [Download Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
+- Edit > Preferences > Add-ons > install >  
+  install Add-on "blender_cloud-X.XX.addon.zip"  
+   ⚠️ DO NOT UNZIP
+- Edit > Preferences > Input > Keyboard >  
+  Emulate Numpad
+
+**🦋 Affinity Designer**
+
+- [Download App](https://store.serif.com/en-gb/account/downloads/)  
+  Activate the license
+
+**📞 Cisco Packet Tracer**
+
+- [Download](https://www.netacad.com/portal/resources/packet-tracer)
+
+**🛋 Restart**
+
+```shell
+  sudo reboot
+```
 
 ## Customize 👨🏻‍🍳
 

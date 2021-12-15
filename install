@@ -60,23 +60,6 @@ setup_macos(){
   source "$ROOT_PATH/src/macos.zsh"
 }
 
-
-# Apps
-# Dependencis | Homebrew | Link
-setup_apps(){
-  echo "🧝🏻‍♀️ Apps Setup"
-  source "$ROOT_PATH/src/apps.zsh"
-}
-
-
-# Environment
-# Dependencis | Homebrew
-setup_environment(){
-  echo "🌝 Environment Setup(asdf)"
-  source "$ROOT_PATH/src/env.zsh"
-}
-
-
 # Link
 # Dependencis | Homebrew
 link_modules(){
@@ -92,6 +75,23 @@ unlink_modules(){
   stow -vD -d "$MODULES_PATH" -t ~ "$MODULES"
   exit
 }
+
+
+# Apps
+# Dependencis | Homebrew | Link
+setup_apps(){
+  echo "🧝🏻‍♀️ Apps Setup"
+  source "$ROOT_PATH/src/apps.zsh"
+}
+
+
+# Environment
+# Dependencis | Homebrew | Link
+setup_environment(){
+  echo "🌝 Environment Setup(asdf)"
+  source "$ROOT_PATH/src/env.zsh"
+}
+
 
 
 # Code
@@ -121,9 +121,33 @@ sync_with_drive(){
 
 if [ ! $@ ]; then
   echo "👨🏻‍🚀: Installing the best Mac setup!!"
+  #  xcode-select コマンドの分岐を入れる
   pre_sudo
+
+  cd $HOME
+  if [ ! -d $HOME/dotfiles  ]; then
+    echo "👨🏻‍🚀: Clone nozomiishii/dotfiles..."
+    git clone https://github.com/nozomiishii/dotfiles.git
+  fi 
+
+  chmod +x ./dotfiles/install
   setup_homebrew
   setup_macos
+  setup_apps
+  setup_environment
+
+  open -b com.apple.systempreferences
+  open "/Applications/Slack.app.app"
+  open "/Applications/ColorSnapper2.app"
+  open "/Applications/Hazel.app"
+  open "/Applications/Visual Studio Code.app"
+  open "/Applications/Alfred 4.app"
+  open "/Applications/Google Chrome.app"
+  open "/Applications/1Password 7.app"
+  open "/Applications/Karabiner-Elements.app"
+
+  echo "👨🏻‍🚀: Don't forget to reboot your Mac after setting up the app!"
+  echo '"sudo reboot"'
 fi
 for i in "$@"; do
   case "$i" in
