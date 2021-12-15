@@ -18,10 +18,10 @@ If you can't use your personal apple ID on your company computer, install xcode 
 
 - shift + ⌘
 
-## Run
+## Run and wait approx. 1.5h (Go grab some eat🍕)
 
 ```shell
-   cd ~ && git clone https://github.com/nozomiishii/dotfiles.git && ./dotfiles/install
+  curl -o - https://nozomiishii.dev/dotfiles/install | zsh
 ```
 
 ## Install Manually
@@ -45,8 +45,6 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 ```shell
   cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
 ```
-
-## Install approx. 1.5h (Go grab some eat🍕)
 
 **Brew Install**
 
@@ -143,6 +141,11 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 - Activate the license
 - Hotkeys:  
   Pick Color: ⌃ + ⌥ + C
+
+**🐘 TablePlus**
+
+- TablePlus
+  > Register license...
 
 **🐔 Slack**
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# curl -o - https://raw.githubusercontent.com/nozomiishii/dotfiles/main/install | zsh
 set -e
 
 
@@ -131,13 +132,15 @@ if [ ! $@ ]; then
   fi 
 
   chmod +x ./dotfiles/install
+  chmod +x ./src/*
   setup_homebrew
   setup_macos
   setup_apps
   setup_environment
 
   open -b com.apple.systempreferences
-  open "/Applications/Slack.app.app"
+  open "/Applications/Slack.app"
+  open "/Applications/TablePlus.app"
   open "/Applications/ColorSnapper2.app"
   open "/Applications/Hazel.app"
   open "/Applications/Visual Studio Code.app"
@@ -145,6 +148,7 @@ if [ ! $@ ]; then
   open "/Applications/Google Chrome.app"
   open "/Applications/1Password 7.app"
   open "/Applications/Karabiner-Elements.app"
+  open https://github.com/nozomiishii/dotfiles
 
   echo "👨🏻‍🚀: Don't forget to reboot your Mac after setting up the app!"
   echo '"sudo reboot"'
