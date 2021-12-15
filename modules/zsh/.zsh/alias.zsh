@@ -43,7 +43,7 @@ alias vutf="cd $CODE_DIR/Work/VoiceUtopia/terraform && code ."
 
 # shell
 alias quit="exec $SHELL -l"
-alias zz="source ~/.zshrc"
+alias zz="exec $SHELL"
 alias ll="exa -laFh --git"
 alias ls="exa"
 
