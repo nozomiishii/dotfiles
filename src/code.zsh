@@ -8,9 +8,18 @@ if [ ! -d $CODE_DIR ]; then
   mkdir -p $CODE_DIR
 fi
 
-if [ ! -d $CODE_DIR/nozomiishii/dev ]; then
-  git clone https://github.com/nozomiishii/dev $CODE_DIR/nozomiishii/dev
-fi
+repos=(
+  nozomiishii/dev
+  nozomiishii/cv
+)
+
+for repo in $repos ; do
+  if [ ! -d $CODE_DIR/$repo ]; then
+    echo "🦄: $repo"
+    git clone https://github.com/$repo $CODE_DIR/$repo
+  fi
+done
+
 
 
 echo "\n🎉 Completed Cloning Repositoris \n"

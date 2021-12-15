@@ -118,7 +118,7 @@ fi
 
 # Code
 # Dependencis | Homebrew
-if [ $SETUP_ENVIRONMENT ]; then
+if [ $SETUP_REPOSITORIS ]; then
   echo "🦄 Clone Repositoris"
   source "$ROOT_PATH/src/code.zsh"
 fi
