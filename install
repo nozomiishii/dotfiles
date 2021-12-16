@@ -122,13 +122,13 @@ sync_with_drive(){
 
 
 if [ ! $@ ]; then
-  echo "👨🏻‍🚀: Installing the best Mac setup!!"
+  echo "👨🏻‍🚀 Installing the best Mac setup!!"
   #  xcode-select コマンドの分岐を入れる
   pre_sudo
 
   cd $HOME
   if [ ! -d $HOME/dotfiles  ]; then
-    echo "👨🏻‍🚀: Clone nozomiishii/dotfiles..."
+    echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
     git clone https://github.com/nozomiishii/dotfiles.git
   fi 
 
@@ -151,7 +151,7 @@ if [ ! $@ ]; then
   open "/Applications/Karabiner-Elements.app"
   open https://github.com/nozomiishii/dotfiles
 
-  echo "👨🏻‍🚀: Don't forget to reboot your Mac after setting up the app!"
+  echo "👨🏻‍🚀 Don't forget to reboot your Mac after setting up the app!"
   echo '"sudo reboot"'
 fi
 for i in "$@"; do

@@ -5,8 +5,8 @@ set -e
 
 GDRIVE_PATH="$HOME/My Drive"
 if [ ! -d "$GDRIVE_PATH" ]; then
-  echo "🥲: $GDRIVE_PATH not found"
-  echo "💡: Sign in to Google Drive"
+  echo "🥲 $GDRIVE_PATH not found"
+  echo "💡 Sign in to Google Drive"
   exit
 fi
 
