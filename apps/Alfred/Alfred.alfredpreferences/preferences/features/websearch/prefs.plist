@@ -908,6 +908,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>8E3A9447-1228-4E53-968F-177187F5A01A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>nx</string>
+			<key>text</key>
+			<string>Open Nx</string>
+			<key>url</key>
+			<string>https://nx.dev/l/n/getting-started/intro</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>964E430A-A8C4-4D8D-8FD0-FC43402FE30A</key>
 		<dict>
 			<key>enabled</key>
