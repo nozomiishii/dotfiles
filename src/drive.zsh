@@ -1,4 +1,4 @@
-
+#!/usr/bin/env zsh
 echo "🌎 Starting syncing with google drive... \n"
 set -e
 

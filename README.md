@@ -21,8 +21,10 @@ If you can't use your personal apple ID on your company computer, install xcode 
 ## Run and wait approx. 1.5h (Go grab some eat🍕)
 
 ```shell
-  zsh -c "$(curl -fsSL https://nozomiishii.dev/dotfiles/install)"
+  curl -L https://nozomiishii.dev/dotfiles/install | zsh
 ```
+
+-L (--location): Enable redirection.
 
 ## Install Manually
 

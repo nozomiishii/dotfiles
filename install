@@ -1,5 +1,12 @@
 #!/usr/bin/env zsh
+# 
 # zsh -c "$(curl -fsSL https://nozomiishii.dev/dotfiles/install)"
+# -c: Take the first argument as a command to execute
+# -f (--fail): Quit silently when a server error occurs.
+# -s (--silent): Silent mode. Don't show progress meter or error messages. Makes Curl mute.
+# -S (--show-error): Show error message if it fails.
+# -L (--location): Enable redirection.
+# 
 # curl -o - https://raw.githubusercontent.com/nozomiishii/dotfiles/main/install | zsh
 set -e
 
@@ -122,7 +129,7 @@ sync_with_drive(){
 
 
 if [ ! $@ ]; then
-  echo "👨🏻‍🚀 Installing the best Mac setup!!"
+  echo "\n 👨🏻‍🚀 Installing the best Mac setup for you!! \n"
   #  xcode-select コマンドの分岐を入れる
   pre_sudo
 
@@ -139,6 +146,7 @@ if [ ! $@ ]; then
   setup_apps
   setup_environment
 
+  echo "👨🏻‍🚀 Open the apps that needs to be configured"
   open -b com.apple.systempreferences
   open "/Applications/Slack.app"
   open "/Applications/TablePlus.app"
@@ -151,8 +159,11 @@ if [ ! $@ ]; then
   open "/Applications/Karabiner-Elements.app"
   open https://github.com/nozomiishii/dotfiles
 
-  echo "👨🏻‍🚀 Don't forget to reboot your Mac after setting up the app!"
-  echo '"sudo reboot"'
+
+  echo "\n🎉 Completed the Setups \n"
+
+  echo "👨🏻‍🚀 Don't forget to reboot your Mac after setting up the app! \n"
+  echo '"sudo reboot" \n\n'
 fi
 for i in "$@"; do
   case "$i" in
