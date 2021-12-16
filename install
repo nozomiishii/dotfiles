@@ -133,7 +133,7 @@ if [ ! $@ ]; then
   fi 
 
   chmod +x $HOME/dotfiles/install
-  chmod +x $HOME/src/*
+  chmod +x $HOME/dotfiles/src/*
   setup_homebrew
   setup_macos
   setup_apps
