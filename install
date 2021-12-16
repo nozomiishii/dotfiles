@@ -132,8 +132,8 @@ if [ ! $@ ]; then
     git clone https://github.com/nozomiishii/dotfiles.git
   fi 
 
-  chmod +x ./dotfiles/install
-  chmod +x ./src/*
+  chmod +x $HOME/dotfiles/install
+  chmod +x $HOME/src/*
   setup_homebrew
   setup_macos
   setup_apps
