@@ -11,7 +11,7 @@ Turn On and Follow the guide
 
 **⚠️ Skip the AppleID signup until the home screen. it takes time. ⚠️**
 
-**🍎 Sign in your iCloud and App Store. (to get apps using mas command)**  
+**🍎 Sign in your iCloud and App Store, when you get to the home screen. (to get apps using mas command)**  
 If you can't use your personal apple ID on your company computer, install xcode manually from the App Store.
 
 **Open Terminal with Spotlight**
