@@ -64,25 +64,25 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   chmod +x ./dotfiles/install
 ```
 
-**💻 MacOS Setup**
+**💻 MacOS setup**
 
 ```shell
   ./dotfiles/install -m
 ```
 
-**🗂 Symbolic link**
+**🗂 Symbolic Link**
 
 ```shell
   ./dotfiles/install -l
 ```
 
-**🧝🏻‍♀️ Apps Setup**
+**🧝🏻‍♀️ Apps setup**
 
 ```shell
   ./dotfiles/install -a
 ```
 
-**🌝 Environment Setup(asdf)**
+**🌝 Environment setup(asdf)**
 
 ```shell
   ./dotfiles/install -e

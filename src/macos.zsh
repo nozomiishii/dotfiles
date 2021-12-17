@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-echo "💻 Starting MacOS Setup... \n"
+echo "💻 Starting MacOS setup... \n"
 set -e
 
 
@@ -196,4 +196,4 @@ sudo killall cfprefsd
 sudo killall corebrightnessd
 
 
-echo "\n🎉 Completed Mac Setup \n"
+echo "\n🎉 Completed Mac setup \n"

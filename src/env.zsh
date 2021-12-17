@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-echo "🌝 Starting Environment Setup(asdf)... \n"
+echo "🌝 Starting Environment setup(asdf)... \n"
 set -e
 
 
@@ -42,4 +42,4 @@ if [ ! -d ~/.config/yarn/global/node_modules ] ; then
 fi
 
 
-echo "\n🎉 Completed Environment Setup(asdf) \n"
+echo "\n🎉 Completed Environment setup(asdf) \n"

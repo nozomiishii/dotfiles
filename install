@@ -28,15 +28,15 @@ USAGE:
 
 
 OPTIONS:
-    -a,   --apps          🧝🏻‍♀️ Apps Setup
-    -b,   --homebrew      🍺 Homebrew Setup
-    -c,   --code          🦄 Clone Repositoris
+    -a,   --apps          🧝🏻‍♀️ Apps setup
+    -b,   --homebrew      🍺 Homebrew setup
+    -c,   --code          🦄 Clone repositoris
     -d,   --drive         🌎 Sync with google drive
-    -e,   --environment   🌝 Environment Setup(asdf)
+    -e,   --environment   🌝 Environment setup(asdf)
     -h,   --help          💡 Print this usage
     -k,   --sshkey        🔐 Generate ssh key
     -l,   --symlink       🗂 Symbolic link
-    -m,   --macos         💻 MacOS Setup
+    -m,   --macos         💻 MacOS setup
     -u=*, --unlink=*      👋 Unlinking Symbolic links...
 
 
@@ -55,7 +55,7 @@ pre_sudo(){
 
 # Homebrew
 setup_homebrew(){
-  echo "🍺 Homebrew Setup"
+  echo "🍺 Homebrew setup"
   pre_sudo
   source "$ROOT_PATH/src/homebrew.zsh"
 }
@@ -64,7 +64,7 @@ setup_homebrew(){
 # MacOS
 # Dependencis | Homebrew
 setup_macos(){
-  echo "💻 MacOS Setup"
+  echo "💻 MacOS setup"
   pre_sudo
   source "$ROOT_PATH/src/macos.zsh"
 }
@@ -80,7 +80,7 @@ link_modules(){
 # Unlink
 # Dependencis | Homebrew
 unlink_modules(){
-  echo "👋 Unlinking Symbolic links..."
+  echo "👋 Unlinking symbolic links..."
   stow -vD -d "$MODULES_PATH" -t ~ "$MODULES"
   exit
 }
@@ -89,7 +89,7 @@ unlink_modules(){
 # Apps
 # Dependencis | Homebrew | Link
 setup_apps(){
-  echo "🧝🏻‍♀️ Apps Setup"
+  echo "🧝🏻‍♀️ Apps setup"
   source "$ROOT_PATH/src/apps.zsh"
 }
 
@@ -97,7 +97,7 @@ setup_apps(){
 # Environment
 # Dependencis | Homebrew | Link
 setup_environment(){
-  echo "🌝 Environment Setup(asdf)"
+  echo "🌝 Environment setup(asdf)"
   source "$ROOT_PATH/src/env.zsh"
 }
 
@@ -106,7 +106,7 @@ setup_environment(){
 # Code
 # Dependencis | Homebrew
 setup_repositoris(){
-  echo "🦄 Clone Repositoris"
+  echo "🦄 Clone repositoris"
   source "$ROOT_PATH/src/code.zsh"
 }
 
@@ -160,7 +160,7 @@ if [ ! $@ ]; then
   open https://github.com/nozomiishii/dotfiles
 
 
-  echo "\n🎉 Completed the Setups \n"
+  echo "\n🎉 Completed the setups \n"
 
   echo "👨🏻‍🚀 Don't forget to reboot your Mac after setting up the app! \n"
   echo '"sudo reboot" \n\n'

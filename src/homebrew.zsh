@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-echo "🍺 Starting Homebrew Setup... \n"
+echo "🍺 Starting Homebrew setup... \n"
 
 
 arch_name="$(uname -m)"
@@ -27,4 +27,4 @@ export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
 brew bundle --verbose --file "$HOME/dotfiles/Brewfile"
 
 
-echo "\n🎉 Completed Homebrew Setup \n"
+echo "\n🎉 Completed Homebrew setup \n"

@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-echo "🧝🏻‍♀️ Starting Apps Setup... \n"
+echo "🧝🏻‍♀️ Starting Apps setup... \n"
 set -e
 
 
@@ -49,4 +49,4 @@ brew services start skhd
 brew services start yabai
 
 
-echo "\n🎉 Completed App Setup \n"
+echo "\n🎉 Completed App setup \n"

@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-echo "🦄 Starting Cloning Repositoris... \n"
+echo "🦄 Starting Cloning repositoris... \n"
 set -e
 
 
@@ -24,5 +24,5 @@ done
 
 
 
-echo "\n🎉 Completed Cloning Repositoris \n"
+echo "\n🎉 Completed Cloning repositoris \n"
 
