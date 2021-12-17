@@ -147,7 +147,7 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 **🐘 TablePlus**
 
 - TablePlus
-  > Register license...
+  Register license...
 
 **🐔 Slack**
 
@@ -199,26 +199,59 @@ Sidebar
  ┗ 📂Locations
 ```
 
-**⌨️ Keyboard**
+**💻 System Preferences**
 
-- Input Sources > Delete "Kotoeri"
-- Input Sources > Add "google-japanese-ime"
+- **🌃 Desktop & Screen Saver**
 
-**🗣 Speech**
+  - **Desktop**  
+    Select your favorite image
+  - **Screen Saver**  
+    Select "Brooklyn" (might need go Preferences > Security & Privacy > General >  
+    On the bottom side, select "Open Anyway")
 
-- System Preferences > Accessibility > Spoken Content >  
-  Select and Download "Siri Female(United Kingdom)"
-- System Preferences > Accessibility > Spoken Content >  
-  Adjust Speaking Rate
+- **🌐 Language & Region**
 
-**🛎 Notifications**
+  - Add Japanese
 
-- **Calendar, Notion, Slack**  
-  Alert style: Alerts  
-  Show in Notification Centre  
-  Play sound for notification
-- **Xcode**  
-  Banners
+- **🛎 Notifications & Focus**
+
+  - **Calendar, Notion, Slack**  
+    Alert style: Alerts  
+    Show in Notification Centre  
+    Play sound for notification
+  - **Xcode**  
+    Banners
+
+- **👤 Users & Groups**
+
+  - **Current User**  
+    Edit Profile photo
+
+- **🧚🏻‍♀️ Accessibility**
+
+  - **Spoken Content**  
+    Select and Download "Siri Female(United Kingdom)"  
+    Adjust Speaking Rate
+
+- **👮🏻 Security & Privacy**
+
+  - **FileVault**  
+    Click the lock to make changes > Turn on
+
+- **⌨️ Keyboard**
+
+  - **Input Sources**
+    Delete "Kotoeri"  
+    Add "google-japanese-ime"
+
+- **🖥 Displays**
+
+  - **Arrangement**  
+    Change "iPad display on left"
+
+**☁️ google-drive**
+
+- Sign in and Sync
 
 **📅 Calendar**
 
@@ -229,33 +262,6 @@ Sidebar
 
 - Menu bar > Time machine >
   Backup
-
-**🔏 FileVault**
-
-- Security & Privacy > FileVault
-
-**🛻 Display(Sidecar)**
-
-- Connect to iPad
-- System Preferences > Display > Arrangement >  
-  Change "iPad display on left"
-
-**💻 System Preferences**
-
-- **Login Icon**  
-  Users & Groups > Current User >  
-  Edit Profile photo
-- **Desktop Image**  
-  Desktop & Screen Saver >  
-  Select your favorite image
-- **Screen Saver**  
-  Desktop & Screen Saver > Screen Saver >  
-  Select "Brooklyn" (might need go Preferences > Security & Privacy > General >  
-  On the bottom side, select "Open Anyway")
-
-**☁️ google-drive**
-
-- Sign in and Sync
 
 **🐵 Blender**
 
