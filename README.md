@@ -146,7 +146,7 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 
 **🐘 TablePlus**
 
-- TablePlus
+- TablePlus >  
   Register license...
 
 **🐔 Slack**
@@ -236,11 +236,12 @@ Sidebar
 - **👮🏻 Security & Privacy**
 
   - **FileVault**  
-    Click the lock to make changes > Turn on
+    Click the lock to make changes >  
+    Turn on
 
 - **⌨️ Keyboard**
 
-  - **Input Sources**
+  - **Input Sources**  
     Delete "Kotoeri"  
     Add "google-japanese-ime"
 
@@ -260,7 +261,7 @@ Sidebar
 
 **⏱ Setup Time machine**
 
-- Menu bar > Time machine >
+- Menu bar > Time machine >  
   Backup
 
 **🐵 Blender**
@@ -377,22 +378,22 @@ Clean unused homebrew dependencies up, and upgrade them
 
 1: Sign out your iCloud.
 
-- System Preferences > Apple ID > iCloud >
+- System Preferences > Apple ID > iCloud >  
   Turn off "Find My Mac"
-- System Preferences > Apple ID > Overview >
+- System Preferences > Apple ID > Overview >  
   Sign Out...
 
 2: Deactivate license
 
 - **🎩 Alfred**
-  Preferences > Powerpack > View your license key >
+  Preferences > Powerpack > View your license key >  
   Deactivate
 
 - **🧹 Hazel**
   License... > Remove...
 
 - **🎨 ColorSnapper2**
-  About ColorSnapper... >
+  About ColorSnapper... >  
   Deactivate license
 
 - **🐘 TablePlus**
@@ -400,7 +401,7 @@ Clean unused homebrew dependencies up, and upgrade them
 
 3: Unpair
 
-- System Preferences > Bluetooth >
+- System Preferences > Bluetooth >  
   Unpair Bluetooth devices
 
 4: Clean up
