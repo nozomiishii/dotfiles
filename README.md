@@ -190,7 +190,7 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 ```txt
 Sidebar
  ┣ 📂Favorites
- ┃ ┣ 🌏Google Drive
+ ┃ ┣ 🌏Google Drive(My Drive)
  ┃ ┣ 🗃dotfiles
  ┃ ┣ 🏠$USER
  ┃ ┣ 🍎Applications
