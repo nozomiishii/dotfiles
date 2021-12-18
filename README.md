@@ -16,7 +16,7 @@ If you can't use your personal apple ID on your company computer, install xcode 
 
 **Open Terminal with Spotlight**
 
-- shift + ⌘
+- ⌘ + space
 
 ## Run and wait approx. 1.5h (Go grab some eat🍕)
 
