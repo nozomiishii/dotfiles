@@ -196,4 +196,4 @@ sudo killall cfprefsd
 sudo killall corebrightnessd
 
 
-echo "\n🎉 Completed Mac setup \n"
+echo "🎉 The MacOS setup is complete \n\n"

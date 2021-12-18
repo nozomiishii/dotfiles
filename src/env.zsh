@@ -42,4 +42,4 @@ if [ ! -d ~/.config/yarn/global/node_modules ] ; then
 fi
 
 
-echo "\n🎉 Completed Environment setup(asdf) \n"
+echo "🎉 The Environment setup(asdf) is complete \n\n"

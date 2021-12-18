@@ -27,4 +27,4 @@ export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
 brew bundle --verbose --file "$HOME/dotfiles/Brewfile"
 
 
-echo "\n🎉 Completed Homebrew setup \n"
+echo "🎉 The Homebrew setup is complete \n\n"

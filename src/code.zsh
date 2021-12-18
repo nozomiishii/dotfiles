@@ -24,5 +24,5 @@ done
 
 
 
-echo "\n🎉 Completed Cloning repositoris \n"
+echo "🎉 Cloning repositoris is complete \n\n"
 

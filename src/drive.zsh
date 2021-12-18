@@ -16,4 +16,4 @@ ln -nfs "$GDRIVE_PATH/Blender" "$HOME/Library/Application Support/Blender"
 ll "$HOME/Library/Application Support/Blender"
 
 
-echo "\n🎉 Completed syncing with google drive \n"
+echo "🎉 Syncing with google drive is complete \n\n"

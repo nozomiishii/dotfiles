@@ -38,4 +38,4 @@ The authenticity of host 'github.com (13.114.40.48)' can't be established. RSA k
 "
 
 
-echo "\n🎉 Completed Generating ssh key \n"
+echo "🎉 Generating ssh key is Complete \n\n"

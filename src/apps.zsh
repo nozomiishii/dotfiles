@@ -49,4 +49,4 @@ brew services start skhd
 brew services start yabai
 
 
-echo "\n🎉 Completed App setup \n"
+echo "🎉 The App setup is complete \n\n"

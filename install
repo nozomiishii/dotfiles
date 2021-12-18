@@ -160,10 +160,9 @@ if [ ! $@ ]; then
   open https://github.com/nozomiishii/dotfiles
 
 
-  echo "\n🎉 Completed the setups \n"
-
   echo "👨🏻‍🚀 Don't forget to reboot your Mac after setting up the app! \n"
-  echo '"sudo reboot" \n\n'
+  echo '"sudo reboot" \n'
+  echo "🎉 The dotfiles installation is complete \n\n"
 fi
 for i in "$@"; do
   case "$i" in
