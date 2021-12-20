@@ -413,28 +413,11 @@ Clean unused homebrew dependencies up, and upgrade them
 
 - Delete SSH keys on Github, GitLab
 
-5: Reinstall
+5: Erase All Content
 
-- Erasing your Mac and reinstalling macOS - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)
-
-- NVRAM Reset  
-  `⌥ + ⌘ + P + R`
-
-- Erase your mac and reinstall  
-  Shutdown mac  
-  Start up from the built-in macOS Recovery system: ⌘ + R or,  
-  Start up from macOS Recovery over the Internet: ⌥ + ⌘ + R  
-  💡Difference:  
-  ⌘ + R -> Original OS you using: Mojave => Mojave, Big Sur=> Big Sur  
-  ⌥ + ⌘ + R -> The latest OS: Mojave => Big Sur, Big Sur=> Big Sur  
-  💡Option: Change Language => File > Choose Language  
-  Choose your prefer language before reinstall OS. (following setup using this language)
-
-- Erase  
-  How to erase your Intel-based Mac - [Japanese](https://support.apple.com/ja-jp/HT208496) | [English](https://support.apple.com/en-gb/HT208496)  
-  💡You can quit Disk Utility using the command ⌘ + Q
-
-- Continue with the initial setup or if you want to quit, press command "⌘ + Q"
+- Erase All Content - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)
+- From the Apple menu  in the corner of your screen, choose System Preferences
+- From the System Preferences menu in the menu bar, choose Erase All Content and Settings
 
 ## References 🙌
 
