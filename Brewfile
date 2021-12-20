@@ -16,8 +16,11 @@ tap "romkatv/powerlevel10k"
 # 
 # Brew
 # 
-# Organize software neatly under a single directory tree
+# Organize software neatly under a single directory tree https://www.gnu.org/software/stow/
 brew "stow"
+
+# GNU grep, egrep and fgrep https://www.gnu.org/software/grep/
+brew "grep"
 
 # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
 brew "nightlight"
