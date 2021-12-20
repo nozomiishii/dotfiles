@@ -38,7 +38,7 @@ done
 if [ ! -d ~/.config/yarn/global/node_modules ] ; then
   echo '- 🚚 Setup Yarn global'
   yarn global add
-  source ~/.zshrc
+  exec $SHELL
 fi
 
 
