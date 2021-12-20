@@ -934,6 +934,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>92866109-99DF-43A3-AD7B-C03EB6E70A6D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>graphql</string>
+			<key>text</key>
+			<string>Open GraphQL</string>
+			<key>url</key>
+			<string>https://graphql.org/learn/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>964E430A-A8C4-4D8D-8FD0-FC43402FE30A</key>
 		<dict>
 			<key>enabled</key>
