@@ -385,18 +385,18 @@ Clean unused homebrew dependencies up, and upgrade them
 
 2: Deactivate license
 
-- **🎩 Alfred**
+- **🎩 Alfred**  
   Preferences > Powerpack > View your license key >  
   Deactivate
 
-- **🧹 Hazel**
+- **🧹 Hazel**  
   License... > Remove...
 
-- **🎨 ColorSnapper2**
+- **🎨 ColorSnapper2**  
   About ColorSnapper... >  
   Deactivate license
 
-- **🐘 TablePlus**
+- **🐘 TablePlus**  
   TablePlus > Register license...
 
 3: Unpair
@@ -415,11 +415,11 @@ Clean unused homebrew dependencies up, and upgrade them
 - NVRAM Reset  
   `⌥ + ⌘ + P + R`
 
-- Erase your mac and reinstall
+- Erase your mac and reinstall  
   Shutdown mac  
   Start up from the built-in macOS Recovery system: ⌘ + R or,  
   Start up from macOS Recovery over the Internet: ⌥ + ⌘ + R  
-  💡Difference:
+  💡Difference:  
   ⌘ + R -> Original OS you using: Mojave => Mojave, Big Sur=> Big Sur  
   ⌥ + ⌘ + R -> The latest OS: Mojave => Big Sur, Big Sur=> Big Sur  
   💡Option: Change Language => File > Choose Language  
