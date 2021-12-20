@@ -153,36 +153,6 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 
 - Sign in
 
-**🐍 PyCharm**
-
-- Preferences > Editor > General > Font > Size >  
-  Font Size: 14
-- Plugins  
-  Monokai Pro Theme
-
-**🐸 Android Studio**
-
-- Preferences > Editor > General > Font > Size >  
-  Font Size: 14
-- Plugins  
-  Monokai Pro Theme
-
-**🍎 Xcode**
-
-- Add Account
-- Preferences > Themes >  
-  Monokai Pro
-- Preferences > Navigation >  
-  Command-click on Code: Jumps to definition
-
-**🕶 ngrok**
-
-- [Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
-
-```shell
-  ngrok authtoken <your_auth_token>
-```
-
 **🗂 Finder**
 
 - Rearrange the order of the sidebar
@@ -264,9 +234,14 @@ Sidebar
 - Menu bar > Time machine >  
   Backup
 
+**🤖 Unity Hub**
+
+- Sign in
+- Download lts
+
 **🐵 Blender**
 
-- sign in
+- Sign in
 - Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" >  
   login!
 - [Download Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
@@ -276,6 +251,28 @@ Sidebar
 - Edit > Preferences > Input > Keyboard >  
   Emulate Numpad
 
+**🐍 PyCharm**
+
+- Preferences > Editor > General > Font > Size >  
+  Font Size: 14
+- Plugins  
+  Monokai Pro Theme
+
+**🐸 Android Studio**
+
+- Preferences > Editor > General > Font > Size >  
+  Font Size: 14
+- Plugins  
+  Monokai Pro Theme
+
+**🍎 Xcode**
+
+- Add Account
+- Preferences > Themes >  
+  Monokai Pro
+- Preferences > Navigation >  
+  Command-click on Code: Jumps to definition
+
 **🦋 Affinity Designer**
 
 - [Download App](https://store.serif.com/en-gb/account/downloads/)  
@@ -284,6 +281,14 @@ Sidebar
 **📞 Cisco Packet Tracer**
 
 - [Download](https://www.netacad.com/portal/resources/packet-tracer)
+
+**🕶 ngrok**
+
+- [Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
+
+```shell
+  ngrok authtoken <your_auth_token>
+```
 
 **🛋 Restart**
 
