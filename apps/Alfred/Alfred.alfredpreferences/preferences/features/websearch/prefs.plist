@@ -69,6 +69,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>0AB204CB-D0CC-45FE-928D-7176C9FBE982</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>gamedev</string>
+			<key>text</key>
+			<string>Open GameDev.tv Community</string>
+			<key>url</key>
+			<string>https://community.gamedev.tv/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>0B738265-C7CB-4366-A220-48075254B6A8</key>
 		<dict>
 			<key>enabled</key>
