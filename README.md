@@ -11,14 +11,36 @@ Turn On and Follow the guide
 
 **⚠️ Skip the AppleID signup until the home screen. it takes time. ⚠️**
 
-**🍎 Sign in your iCloud and App Store, when you get to the home screen. (to get apps using mas command)**  
+**Open Apple ID with Spotlight**
+
+```txt
+  ⌘ + space Apple ID
+```
+
+**Sign in your iCloud and App Store, when you get to the home screen. (to get apps using mas command)**  
 If you can't use your personal apple ID on your company computer, install xcode manually from the App Store.
+
+**🍎 Apple ID**
+
+- Edit your profile photo
+
+- **☁️ iCloud**
+
+  - Photos
+  - iCloud Drive
+  - Find My Mac
+
+**🍏 App Store**
+
+- Login
+
+## Run and wait approx. 1.5h (Go grab some eat🍕)
 
 **Open Terminal with Spotlight**
 
-- ⌘ + space
-
-## Run and wait approx. 1.5h (Go grab some eat🍕)
+```txt
+  ⌘ + space Terminal
+```
 
 ```shell
   curl -L https://nozomiishii.dev/dotfiles/install | zsh
