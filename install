@@ -129,15 +129,19 @@ sync_with_drive(){
 
 
 if [ ! $@ ]; then
-  echo "\n 👨🏻‍🚀 Installing the best Mac setup for you!! \n"
-  #  xcode-select コマンドの分岐を入れる
+  echo "\n 👨🏻‍🚀 Install the best Mac setup for you!! \n"
   pre_sudo
 
+  if [ ! -d /Applications/Xcode.app ]; then
+    echo "👨🏻‍🚀 Install xcode-select..."
+    xcode-select --install
+  fi
+
   cd $HOME
-  if [ ! -d $HOME/dotfiles  ]; then
+  if [ ! -d $HOME/dotfiles ]; then
     echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
     git clone https://github.com/nozomiishii/dotfiles.git
-  fi 
+  fi
 
   chmod +x $HOME/dotfiles/install
   chmod +x $HOME/dotfiles/src/*
