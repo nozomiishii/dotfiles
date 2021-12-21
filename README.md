@@ -109,10 +109,24 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 - Change Chrome to the Default Browser
 - Log in 1PasswordX
 
-**😼 gh**
+**😼 Generate SSHkey and Login gh**
+
+```shell
+  ./dotfiles/install -k
+```
 
 ```shell
   gh auth login
+```
+
+```shell
+  gh auth status
+```
+
+**🦄 Clone repositories**
+
+```shell
+  ./dotfiles/install -c
 ```
 
 **🎩 Alfred**

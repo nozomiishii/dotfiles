@@ -1,15 +1,25 @@
 echo "🔐 Generating ssh key... \n"
 
 
-echo "email: "
-read EMAIL
+if [ -f ~/.ssh/id_rsa.pub ]; then
+  echo "🔐 Already generated ssh key. Copied to the clipboard. \n"
+  pbcopy < ~/.ssh/id_rsa.pub
+  cat ~/.ssh/id_rsa.pub
+  exit
+fi
 
-echo "[🔫 Troubleshooting]
-Enter passphrase (empty for no passphrase): <Must type Your Password>
-"
-ssh-keygen -t rsa -b 4096 -C $EMAIL
-eval "$(ssh-agent -s)"
+echo "\n[💡Hint]"
+echo "Generating public/private rsa key pair."
+echo "Enter file in which to save the key (/Users/ts/.ssh/id_rsa): 💡 Press enter"
+echo "Enter passphrase (empty for no passphrase): <💡 Type Your Password>"
+echo "Enter same passphrase again: <💡 Type Your Password> \n"
 
+
+# Generate
+ssh-keygen -t rsa -b 4096 -C "nozomiishii.jp@gmail.com"
+
+
+# Config
 touch ~/.ssh/config
 cat > ~/.ssh/config << EOF
 Host *
@@ -17,25 +27,27 @@ Host *
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa
 EOF
+chmod 600 ~/.ssh/config
 
-ssh-add -K ~/.ssh/id_rsa
+
+# Register
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+echo "\n🔐 Key List $(ssh-add -l) \n"
+
+
+cat ~/.ssh/id_rsa.pub
 pbcopy < ~/.ssh/id_rsa.pub
-echo "
-🔑 The generated ssh key has been copied to the clipboard.
 
-Set up your ssh key on github
-https://github.com/settings/keys
-
-
-Check if it works
-
-'ssh -T git@github.com'
-
-[🔫 Troubleshooting]
-The authenticity of host 'github.com (13.114.40.48)' can't be established. RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8. Are you sure you want to continue connecting (yes/no/[fingerprint])?
-
-`yes`
-"
+echo "\n🔐 The generated ssh key has been copied to the clipboard."
+echo "Set up your ssh key on github"
+echo "https://github.com/settings/keys \n"
+echo "Check if it works"
+echo "'ssh -T git@github.com'"
+echo "\n[💡 Hint]"
+echo "The authenticity of host 'github.com (13.114.40.48)' can't be established. RSA key fingerprint is"
+echo "SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8. Are you sure you want to continue connecting (yes/no/[fingerprint])?"
+echo "💡 yes \n"
 
 
 echo "🎉 Generating ssh key is Complete \n\n"
