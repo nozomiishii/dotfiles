@@ -201,7 +201,7 @@
     webpack "5.64.1"
     webpack-node-externals "3.0.0"
 
-"@nestjs/schematics@^8.0.3":
+"@nestjs/schematics@^8.0.3", "@nestjs/schematics@^8.0.5":
   version "8.0.5"
   resolved "https://registry.yarnpkg.com/@nestjs/schematics/-/schematics-8.0.5.tgz#7154be7d85a135ea75bb275db042c2a663677a48"
   integrity sha512-nK1hWQeLNbdhsiJDX/XJXLqq7nC6/xxC8CN+seFTQmly+H3gG2xaFnl6JPHURumuQaYJX8JEpC8m0+4tz+wvOg==
