@@ -13,8 +13,8 @@ if [ "${arch_name}" = "x86_64" ]; then
 # For M1 mac
 elif [ "${arch_name}" = "arm64" ]; then
   if ! type brew > /dev/null 2>&1; then
-    echo 'Install Rosetta 2'
-    sudo softwareupdate --install-rosetta
+    echo '🍺Install Rosetta 2'
+    sudo softwareupdate --install-rosetta --agree-to-license
 
     echo "🍺brew doesn't exist, continuing with install"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"

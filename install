@@ -127,30 +127,18 @@ sync_with_drive(){
 }
 
 
-agree_license(){
-osascript <<EOD
-  tell application "System Events"
-      tell process "Install Command Line Developer Tools"
-          keystroke return
-          click button "Agree" of window "License Agreement"
-      end tell
-  end tell
-EOD
-}
-
-
 if [ ! $@ ]; then
-  echo "\n 👨🏻‍🚀 Install the best Mac setup for you!! \n"
-  pre_sudo
+  echo "\n👨🏻‍🚀 Install the best Mac setup for you!! \n"
 
-  if [ ! -d /Applications/Xcode.app/Contents/Developer ]; then
-    # https://gist.github.com/brysgo/9007731
-    echo "👨🏻‍🚀 Install xcode-select..."
-    sudo xcode-select --install &> /dev/null
-    sleep 1
-    agree_license
+  if [[ ! -d /Applications/Xcode.app/Contents/Developer && ! -d /Library/Developer/CommandLineTools ]]; then
+    echo "👨🏻‍🚀 Ooops! you need to install xcode-select"
+    echo "\n xcode-select --install \n\n"
+    xcode-select --install
+    exit
   fi
 
+
+  pre_sudo
   cd $HOME
   if [ ! -d $HOME/dotfiles ]; then
     echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
@@ -182,6 +170,7 @@ if [ ! $@ ]; then
   echo '"sudo reboot" \n'
   echo "🎉 The dotfiles installation is complete \n\n"
 fi
+
 for i in "$@"; do
   case "$i" in
     -a|--apps)
