@@ -51,41 +51,41 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 **Brew Install**
 
 ```shell
-  ./dotfiles/install -b
+  ~/dotfiles/install -b
 ```
 
 **🔫 When permission is not set**
 
 ```shell
-  ls -l ./dotfiles/install
+  ls -l ~/dotfiles/install
 ```
 
 ```shell
-  chmod +x ./dotfiles/install
+  chmod +x ~/dotfiles/install
 ```
 
 **💻 MacOS setup**
 
 ```shell
-  ./dotfiles/install -m
+  ~/dotfiles/install -m
 ```
 
 **🗂 Symbolic Link**
 
 ```shell
-  ./dotfiles/install -l
+  ~/dotfiles/install -l
 ```
 
 **🧝🏻‍♀️ Apps setup**
 
 ```shell
-  ./dotfiles/install -a
+  ~/dotfiles/install -a
 ```
 
 **🌝 Environment setup(asdf)**
 
 ```shell
-  ./dotfiles/install -e
+  ~/dotfiles/install -e
 ```
 
 ## App preferences
@@ -112,7 +112,7 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 **😼 Generate SSHkey and Login gh**
 
 ```shell
-  ./dotfiles/install -k
+  ~/dotfiles/install -k
 ```
 
 ```shell
@@ -126,7 +126,7 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 **🦄 Clone repositories**
 
 ```shell
-  ./dotfiles/install -c
+  ~/dotfiles/install -c
 ```
 
 **🎩 Alfred**
