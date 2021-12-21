@@ -30,7 +30,7 @@ USAGE:
 OPTIONS:
     -a,   --apps          🧝🏻‍♀️ Apps setup
     -b,   --homebrew      🍺 Homebrew setup
-    -c,   --code          🦄 Clone repositoris
+    -c,   --code          🦄 Clone repositories
     -d,   --drive         🌎 Sync with google drive
     -e,   --environment   🌝 Environment setup(asdf)
     -h,   --help          💡 Print this usage
@@ -106,7 +106,7 @@ setup_environment(){
 # Code
 # Dependencis | Homebrew
 setup_repositoris(){
-  echo "🦄 Clone repositoris"
+  echo "🦄 Clone repositories"
   source "$ROOT_PATH/src/code.zsh"
 }
 

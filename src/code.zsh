@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-echo "🦄 Starting Cloning repositoris... \n"
+echo "🦄 Starting Cloning repositories... \n"
 set -e
 
 
@@ -13,16 +13,17 @@ fi
 repos=(
   nozomiishii/dev
   nozomiishii/cv
+  nozomiishii/nozomiishii
 )
 
 for repo in $repos ; do
   if [ ! -d $CODE_DIR/$repo ]; then
     echo "🦄 $repo"
-    git clone https://github.com/$repo $CODE_DIR/$repo
+    git clone git@github.com:$repo.git $CODE_DIR/$repo
   fi
 done
 
 
 
-echo "🎉 Cloning repositoris is complete \n\n"
+echo "🎉 Cloning repositories is complete \n\n"
 
