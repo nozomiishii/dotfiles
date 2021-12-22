@@ -132,8 +132,9 @@ if [ ! $@ ]; then
 
   if [[ ! -d /Applications/Xcode.app/Contents/Developer && ! -d /Library/Developer/CommandLineTools ]]; then
     echo "👨🏻‍🚀 Ooops! you need to install xcode-select"
-    echo "\n xcode-select --install \n\n"
+    echo "\n xcode-select --install \n"
     xcode-select --install
+    echo "\n👨🏻‍🚀 The installation pop-up will appear\n\n"
     exit
   fi
 
