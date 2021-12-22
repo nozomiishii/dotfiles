@@ -28,16 +28,17 @@ USAGE:
 
 
 OPTIONS:
-    -a,   --apps          🧝🏻‍♀️ Apps setup
-    -b,   --homebrew      🍺 Homebrew setup
-    -c,   --code          🦄 Clone repositories
-    -d,   --drive         🌎 Sync with google drive
-    -e,   --environment   🌝 Environment setup(asdf)
-    -h,   --help          💡 Print this usage
-    -k,   --sshkey        🔐 Generate ssh key
-    -l,   --symlink       🗂 Symbolic link
-    -m,   --macos         💻 MacOS setup
-    -u=*, --unlink=*      👋 Unlinking Symbolic links...
+    -a,    --apps          🧝🏻‍♀️ Apps setup
+    -b,    --homebrew      🍺 Homebrew setup
+    -c,    --code          🦄 Clone repositories
+    -d,    --drive         🌎 Sync with google drive
+    -e,    --environment   🌝 Environment setup(asdf)
+    -h,    --help          💡 Print this usage
+    -k,    --sshkey        🔐 Generate ssh key
+    -l,    --symlink       🗂 Symbolic link
+    -m,    --macos         💻 MacOS setup
+    -ul=*, --unlink=*      👋 Unlinking Symbolic links
+    -up,   --upgrade       🚀 Upgrading dotfiles
 
 
 
@@ -50,6 +51,15 @@ pre_sudo(){
   sudo -v
   # Temporarily increasing sudo's timeout until the process has finished
   while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+}
+
+
+upgrade(){
+  echo "🚀 Upgrading dotfiles"
+  cd $ROOT_PATH
+  git pull origin main
+  echo "\n🚀 Dotfiles upgrade is complete \n\n"
+  cd -
 }
 
 
@@ -80,7 +90,7 @@ link_modules(){
 # Unlink
 # Dependencis | Homebrew
 unlink_modules(){
-  echo "👋 Unlinking symbolic links..."
+  echo "👋 Unlinking symbolic links"
   stow -vD -d "$MODULES_PATH" -t ~ "$MODULES"
   exit
 }
@@ -100,7 +110,6 @@ setup_environment(){
   echo "🌝 Environment setup(asdf)"
   source "$ROOT_PATH/src/env.zsh"
 }
-
 
 
 # Code
@@ -144,6 +153,8 @@ if [ ! $@ ]; then
   if [ ! -d $HOME/dotfiles ]; then
     echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
     git clone https://github.com/nozomiishii/dotfiles.git
+  else
+    upgrade
   fi
 
   chmod +x $HOME/dotfiles/install
@@ -201,9 +212,12 @@ for i in "$@"; do
     -m|--macos)
       setup_macos
       shift ;;
-    -u=*|--unlink=*)
+    -ul=*|--unlink=*)
       MODULES="${i#*=}"
       unlink_modules
+      shift ;;
+    -up|--upgrade)
+      upgrade
       shift ;;
     *)
       usage
