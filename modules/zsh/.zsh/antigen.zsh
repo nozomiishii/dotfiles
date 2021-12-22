@@ -1,9 +1,9 @@
 # https://github.com/zsh-users/antigen
-
 ANTIGEN_PATH="$HOME/.antigen"
+
 if [ ! -d "$ANTIGEN_PATH" ]; then
   echo "Install antigen"
-  mkdir sa"$ANTIGEN_PATH"
+  mkdir -p "$ANTIGEN_PATH"
   curl -L git.io/antigen > "$ANTIGEN_PATH/antigen.zsh"
 fi
 

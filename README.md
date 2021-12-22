@@ -9,7 +9,7 @@ Turn On and Follow the guide
 - Full Name: Nozomi Ishii
 - Account name: nozomiishii
 
-**⚠️ Skip the AppleID signup until the home screen. it takes time. ⚠️**
+**⚠️ Skip the AppleID sign in until the home screen. it takes time. ⚠️**
 
 **Open Apple ID with Spotlight**
 
