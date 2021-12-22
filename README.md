@@ -417,37 +417,37 @@ Clean unused homebrew dependencies up, and upgrade them
 
 ## Reinstall macOS 👼
 
-1: Sign out your iCloud.
+1: Unpair
+
+- System Preferences > Bluetooth >  
+  Unpair Bluetooth devices
+
+2: Clean up
+
+- Delete SSH keys on Github, GitLab
+
+3: Sign out your iCloud.
 
 - System Preferences > Apple ID > iCloud >  
   Turn off "Find My Mac"
 - System Preferences > Apple ID > Overview >  
   Sign Out...
 
-2: Deactivate license
+4: Deactivate license
 
-- **🎩 Alfred**  
-  Preferences > Powerpack > View your license key >  
-  Deactivate
-
-- **🧹 Hazel**  
-  License... > Remove...
+- **🐘 TablePlus**  
+  TablePlus > Register license...
 
 - **🎨 ColorSnapper2**  
   About ColorSnapper... >  
   Deactivate license
 
-- **🐘 TablePlus**  
-  TablePlus > Register license...
+- **🧹 Hazel**  
+  License... > Remove...
 
-3: Unpair
-
-- System Preferences > Bluetooth >  
-  Unpair Bluetooth devices
-
-4: Clean up
-
-- Delete SSH keys on Github, GitLab
+- **🎩 Alfred**  
+  Preferences > Powerpack > View your license key >  
+  Deactivate
 
 5: Erase All Content
 
