@@ -35,6 +35,7 @@ stow -vd "$APPS_PATH" -t "$HOME/Library/Application Support/Code/User" VSCode
 
 
 echo "- 🍎 Xcode"
+rm -r $HOME/Library/Developer/Xcode/UserData/KeyBindings
 stow -vd "$APPS_PATH" -t "$HOME/Library/Developer/Xcode/UserData" Xcode
 
 
