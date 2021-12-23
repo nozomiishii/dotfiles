@@ -20,13 +20,6 @@ ssh-keygen -t rsa -b 4096 -C "nozomiishii.jp@gmail.com"
 
 
 # Config
-touch ~/.ssh/config
-cat > ~/.ssh/config << EOF
-Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
-EOF
 chmod 600 ~/.ssh/config
 
 
