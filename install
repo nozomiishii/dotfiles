@@ -158,8 +158,12 @@ if [ ! $@ ]; then
     upgrade
   fi
 
+  # Prevent your mac from sleeping automatically when the display is off
+  sudo pmset -c sleep 0
+  
   chmod +x $HOME/dotfiles/install
   chmod +x $HOME/dotfiles/src/*
+
   setup_homebrew
   setup_macos
   link_modules
