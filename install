@@ -161,8 +161,9 @@ if [ ! $@ ]; then
   chmod +x $HOME/dotfiles/src/*
   setup_homebrew
   setup_macos
-  setup_apps
+  link_modules
   setup_environment
+  setup_apps
 
   echo "👨🏻‍🚀 Open the apps that needs to be configured"
   open -b com.apple.systempreferences
