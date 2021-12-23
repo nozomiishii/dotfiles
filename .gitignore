@@ -13,3 +13,10 @@ modules/yarn/.config/yarn/global/node_modules
 
 # Karabiner
 apps/karabiner/automatic_backups
+
+# ssh
+modules/ssh/.ssh/*
+!modules/ssh/.ssh/config
+
+# Brewfile
+Brewfile.lock.json
