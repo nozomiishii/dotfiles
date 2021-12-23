@@ -32,6 +32,10 @@ If you can't use your personal apple ID on your company computer, install xcode 
 
 **🍏 App Store**
 
+```txt
+  ⌘ + space App Store
+```
+
 - Login
 
 ## Run and wait approx. 1.5h (Go grab some eat🍕)
