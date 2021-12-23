@@ -15,6 +15,37 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$APPS_PATH/iTerm
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
 
+echo "- 🤖 Automator"
+if [ ! -f "$HOME/Desktop" ]; then
+  cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
+fi
+
+
+echo "- 🤡 yabai"
+brew services start skhd
+brew services start yabai
+
+
+
+echo "- 🐟 VSCode"
+VSCODE_PATH="$HOME/Library/Application Support/Code/User"
+if [ ! -d $VSCODE_PATH ]; then
+  open "/Applications/Visual Studio Code.app"
+fi
+stow -vd "$APPS_PATH" -t $VSCODE_PATH VSCode
+
+
+echo "- 🍎 Xcode"
+XCODE_PATH="$HOME/Library/Developer/Xcode/UserData"
+if [ ! -d $XCODE_PATH ]; then
+  sudo xcodebuild -runFirstLaunch
+  open "/Applications/XCode.app"
+fi
+rm -r $HOME/Library/Developer/Xcode/UserData/KeyBindings
+stow -vd "$APPS_PATH" -t $XCODE_PATH Xcode
+
+
+# XCode required to install vim plug
 echo '- 👾 NeoVim'
 # Turn key repear on
 defaults write -g ApplePressAndHoldEnabled -bool false
@@ -28,26 +59,6 @@ if [ ! -f "$PLUG_PATH" ]; then
   pip3 install -U neovim
   nvim +PlugInstall +qall
 fi
-
-
-echo "- 🐟 VSCode"
-stow -vd "$APPS_PATH" -t "$HOME/Library/Application Support/Code/User" VSCode
-
-
-echo "- 🍎 Xcode"
-rm -r $HOME/Library/Developer/Xcode/UserData/KeyBindings
-stow -vd "$APPS_PATH" -t "$HOME/Library/Developer/Xcode/UserData" Xcode
-
-
-echo "- 🤖 Automator"
-if [ ! -f "$HOME/Desktop" ]; then
-  cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
-fi
-
-
-echo "- 🤡 yabai"
-brew services start skhd
-brew services start yabai
 
 
 echo "🎉 The App setup is complete \n\n"
