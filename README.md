@@ -29,6 +29,7 @@ If you can't use your personal apple ID on your company computer, install xcode 
   - Photos
   - iCloud Drive
   - Find My Mac
+  - Stocks
 
 **🍏 App Store**
 
