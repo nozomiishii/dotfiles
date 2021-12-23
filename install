@@ -153,6 +153,7 @@ if [ ! $@ ]; then
   if [ ! -d $HOME/dotfiles ]; then
     echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
     git clone https://github.com/nozomiishii/dotfiles.git
+    git remote set-url origin git@github.com:nozomiishii/dotfiles.git
   else
     upgrade
   fi
