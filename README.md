@@ -189,6 +189,12 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 
 - Sign in
 
+**🔮 DeepL**
+
+- Sign in
+- Set hotkey to  
+  ⇧ + Space
+
 **🗂 Finder**
 
 - Rearrange the order of the sidebar
@@ -332,7 +338,7 @@ Sidebar
   sudo reboot
 ```
 
-## Customize 👨🏻‍🍳
+## 👨🏻‍🍳 Customize
 
 **How to add app to Brew file**
 
@@ -387,7 +393,7 @@ Check if it's an app you want to download.
   ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
 ```
 
-## Maintenance 👨🏻‍🏭
+## 👨🏻‍🏭 Maintenance
 
 Clean unused homebrew dependencies up, and upgrade them
 
@@ -401,7 +407,7 @@ Clean unused homebrew dependencies up, and upgrade them
   for x in {1..10}; do time zsh -i -c exit;done
 ```
 
-## Troubleshooting 🔫
+## 🔫 Troubleshooting
 
 - **Audio-related**  
   NVRAM Reset  
@@ -415,7 +421,7 @@ Clean unused homebrew dependencies up, and upgrade them
   Restart with `⇧`  
   💡Safe Mode temporarily disables any third-party applications and starts your device with default system apps.
 
-## Reinstall macOS 👼
+## 👼 Reinstall macOS
 
 1: Unpair
 
@@ -455,7 +461,7 @@ Clean unused homebrew dependencies up, and upgrade them
 - From the Apple menu  in the corner of your screen, choose System Preferences
 - From the System Preferences menu in the menu bar, choose Erase All Content and Settings
 
-## References 🙌
+## 🙌 References
 
 ### Tutorials
 
