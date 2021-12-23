@@ -178,6 +178,7 @@ if [ ! $@ ]; then
   open "/Applications/TablePlus.app"
   open "/Applications/ColorSnapper2.app"
   open "/Applications/Hazel.app"
+  open "/Applications/DeepL.app"
   open "/Applications/Alfred 4.app"
   open "/Applications/Google Chrome.app"
   open "/Applications/1Password 7.app"
