@@ -39,9 +39,9 @@ echo "\n🔐 Key List $(ssh-add -l) \n"
 cat ~/.ssh/id_rsa.pub
 pbcopy < ~/.ssh/id_rsa.pub
 
-echo "\n🔐 The generated ssh key has been copied to the clipboard."
+echo "\n🔐 The generated ssh key has been copied to the clipboard. \n\n"
 echo "Set up your ssh key on github"
-echo "https://github.com/settings/keys \n"
+echo "https://github.com/settings/keys \n\n"
 echo "Check if it works"
 echo "'ssh -T git@github.com'"
 echo "\n[💡 Hint]"
