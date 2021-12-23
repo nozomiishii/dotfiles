@@ -21,12 +21,6 @@ if [ ! -f "$HOME/Desktop" ]; then
 fi
 
 
-echo "- 🤡 yabai"
-brew services start skhd
-brew services start yabai
-
-
-
 echo "- 🐟 VSCode"
 VSCODE_PATH="$HOME/Library/Application Support/Code/User"
 if [ ! -d $VSCODE_PATH ]; then
@@ -41,7 +35,9 @@ if [ ! -d $XCODE_PATH ]; then
   sudo xcodebuild -runFirstLaunch
   open "/Applications/XCode.app"
 fi
-rm -r $HOME/Library/Developer/Xcode/UserData/KeyBindings
+if [ -d $HOME/Library/Developer/Xcode/UserData/KeyBindings ]; then
+  rm -r $HOME/Library/Developer/Xcode/UserData/KeyBindings
+fi
 stow -vd "$APPS_PATH" -t $XCODE_PATH Xcode
 
 
@@ -59,6 +55,13 @@ if [ ! -f "$PLUG_PATH" ]; then
   pip3 install -U neovim
   nvim +PlugInstall +qall
 fi
+
+
+# You will get a Bootstrap failed error, so run it last.
+echo "- 🤡 yabai"
+brew services start skhd
+brew services start yabai
+
 
 
 echo "🎉 The App setup is complete \n\n"
