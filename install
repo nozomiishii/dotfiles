@@ -156,8 +156,6 @@ if [ ! $@ ]; then
     cd $HOME/dotfiles
     git remote set-url origin git@github.com:nozomiishii/dotfiles.git
     cd $HOME
-  else
-    upgrade
   fi
 
   # Prevent your mac from sleeping automatically when the display is off
