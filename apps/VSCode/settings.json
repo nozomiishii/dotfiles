@@ -137,7 +137,8 @@
     ".skhdrc": "shellscript",
     ".yabairc": "shellscript",
     ".tmux.conf": "shellscript",
-    ".tool-versions": "properties"
+    ".tool-versions": "properties",
+    "config": "properties"
   },
 
   // yaml
