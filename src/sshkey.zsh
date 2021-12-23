@@ -44,3 +44,13 @@ echo "💡 yes \n"
 
 
 echo "🎉 Generating ssh key is Complete \n\n"
+
+
+echo "😼 Continue with the gh settings"
+echo "[💡 Hint]"
+echo "? What account do you want to log into? 💡 GitHub.com"
+echo "? What is your preferred protocol for Git operations? 💡 SSH"
+echo "? Upload your SSH public key to your GitHub account? 💡 $HOME/.ssh/id_rsa.pub"
+echo "? How would you like to authenticate GitHub CLI? 💡 Login with a web browser \n"
+
+gh auth login
