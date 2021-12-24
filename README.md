@@ -156,6 +156,22 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   ~/dotfiles/install -c
 ```
 
+**🗂 Finder**
+
+- Rearrange the order of the sidebar
+
+```txt
+Finder Sidebar
+ ┣ 📂Favorites
+ ┃ ┣ 🌏Google Drive(My Drive)
+ ┃ ┣ 🗃dotfiles
+ ┃ ┣ 🏠$USER
+ ┃ ┣ 🍎Applications
+ ┃ ┣ 💆🏻‍♂️Downloads
+ ┃ ┗ 📖Desktop
+ ┗ 📂Locations
+```
+
 **🎩 Alfred**
 
 - Activate the license
@@ -199,22 +215,6 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 - Sign in
 - Set hotkey to  
   ⇧ + Space
-
-**🗂 Finder**
-
-- Rearrange the order of the sidebar
-
-```txt
-Sidebar
- ┣ 📂Favorites
- ┃ ┣ 🌏Google Drive(My Drive)
- ┃ ┣ 🗃dotfiles
- ┃ ┣ 🏠$USER
- ┃ ┣ 🍎Applications
- ┃ ┣ 💆🏻‍♂️Downloads
- ┃ ┗ 📖Desktop
- ┗ 📂Locations
-```
 
 **💻 System Preferences**
 
