@@ -22,6 +22,9 @@ source "$HOME/.zsh/last-working-dir.zsh"
 # Functions
 source "$HOME/.zsh/functions.zsh"
 
+# thefuck
+eval $(thefuck --alias)
+
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
