@@ -1196,6 +1196,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>BCCD1B5E-71CB-4845-8010-7C3139DDA403</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>rakutensec</string>
+			<key>text</key>
+			<string>Open Rakuten Securities</string>
+			<key>url</key>
+			<string>https://www.rakuten-sec.co.jp/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>C30A9BD9-B9AF-4F19-91A8-6059F0330BB5</key>
 		<dict>
 			<key>enabled</key>
