@@ -12,6 +12,9 @@ sudo nvram SystemAudioVolume=%80
 
 
 echo "- 🔋 Battery"
+# pmset – manipulate power management settings
+# The settings are saved in /Library/Preferences/com.apple.PowerManagement.plist 
+
 # Do not dim brightness on battery source (-b: battery)
 sudo pmset -b lessbright 0
 # Prevent your mac from sleeping automatically when the display is off
