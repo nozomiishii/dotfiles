@@ -19,6 +19,8 @@ echo "- 🔋 Battery"
 sudo pmset -b lessbright 0
 # Prevent your mac from sleeping automatically when the display is off
 sudo pmset -c sleep 0
+# Turn display off after: 15 mins
+sudo pmset -c displaysleep 15
 
 
 echo "- 🚢 Dock" # killall Dock
