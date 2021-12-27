@@ -1,6 +1,18 @@
 # Nozomi's dotfiles
 
+- [📦 New Macbook? Awesome!!](#new-macbook?)
+  - [install](#install)
+  - [Install Manually](#install-manually)
+  - [App preferences](#app-preferences)
+- [👨🏻‍🍳 Customize](#customize)
+- [👨🏻‍🏭 Maintenance](#maintenance)
+- [🔫 Troubleshooting](#troubleshooting)
+- [👼 Reinstall macOS](#reinstall-macos)
+- [🙌 References](#references)
+
 ![Brow my mind](https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif)
+
+<a id="new-macbook?"></a>
 
 ## 📦 New Macbook? Awesome!!
 
@@ -39,7 +51,9 @@ If you can't use your personal apple ID on your company computer, install xcode 
 
 - Login
 
-## Run and wait approx. 1.5h (Go grab some eat🍕)
+<a id="install"></a>
+
+## Install and wait approx. 1.5h (Go grab some eat🍕)
 
 **Open Terminal with Spotlight**
 
@@ -52,6 +66,8 @@ If you can't use your personal apple ID on your company computer, install xcode 
 ```
 
 -L (--location): Enable redirection.
+
+<a id="install-manually"></a>
 
 ## Install Manually
 
@@ -114,6 +130,8 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 ```shell
   ~/dotfiles/install -e
 ```
+
+<a id="app-preferences"></a>
 
 ## App preferences
 
@@ -343,6 +361,8 @@ Finder Sidebar
   sudo reboot
 ```
 
+<a id="customize"></a>
+
 ## 👨🏻‍🍳 Customize
 
 **How to add app to Brew file**
@@ -398,6 +418,8 @@ Check if it's an app you want to download.
   ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
 ```
 
+<a id="maintenance"></a>
+
 ## 👨🏻‍🏭 Maintenance
 
 Clean unused homebrew dependencies up, and upgrade them
@@ -412,6 +434,8 @@ Clean unused homebrew dependencies up, and upgrade them
   for x in {1..10}; do time zsh -i -c exit;done
 ```
 
+<a id="troubleshooting"></a>
+
 ## 🔫 Troubleshooting
 
 - **Audio-related**  
@@ -425,6 +449,8 @@ Clean unused homebrew dependencies up, and upgrade them
   Shut down and wait 10 seconds  
   Restart with `⇧`  
   💡Safe Mode temporarily disables any third-party applications and starts your device with default system apps.
+
+<a id="reinstall-macos"></a>
 
 ## 👼 Reinstall macOS
 
@@ -465,6 +491,8 @@ Clean unused homebrew dependencies up, and upgrade them
 - Erase All Content - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)
 - From the Apple menu  in the corner of your screen, choose System Preferences
 - From the System Preferences menu in the menu bar, choose Erase All Content and Settings
+
+<a id="references"></a>
 
 ## 🙌 References
 
