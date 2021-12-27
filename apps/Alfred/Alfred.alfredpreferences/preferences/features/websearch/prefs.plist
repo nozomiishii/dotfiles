@@ -1222,19 +1222,6 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
-		<key>C47EFC48-FE1D-4C32-9134-446D3D3EE754</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>sema</string>
-			<key>text</key>
-			<string>Open sematext</string>
-			<key>url</key>
-			<string>https://apps.sematext.com/ui/logs/44833/vercelErrors</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
 		<key>C6575E51-2FE1-4A09-B018-E59BEAA9D06C</key>
 		<dict>
 			<key>enabled</key>
