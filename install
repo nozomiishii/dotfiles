@@ -158,8 +158,11 @@ if [ ! $@ ]; then
     cd $HOME
   fi
 
+  # Turn display off after: Never
+  sudo pmset -c displaysleep 0
   # Prevent your mac from sleeping automatically when the display is off
   sudo pmset -c sleep 0
+
   
   chmod +x $HOME/dotfiles/install
   chmod +x $HOME/dotfiles/src/*
@@ -185,10 +188,17 @@ if [ ! $@ ]; then
 
   setup_apps
 
+  # Turn display off after: 15 mins
+  sudo pmset -c displaysleep 15
 
-  echo "👨🏻‍🚀 Don't forget to reboot your Mac after setting up the app! \n"
-  echo '"sudo reboot" \n'
   echo "🎉 The dotfiles installation is complete \n\n"
+
+
+  echo "👨🏻‍🚀 Restart the mac after 10 seconds! \n"
+  for i in {10..0}; do echo $i; sleep 1; done
+  echo "👨🏻‍🚀 Restart! \n"
+  sleep 2
+  sudo reboot
 fi
 
 for i in "$@"; do
