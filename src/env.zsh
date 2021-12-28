@@ -37,8 +37,8 @@ done
 
 if [ ! -d ~/.config/yarn/global/node_modules ] ; then
   echo '- 🚚 Setup Yarn global'
+  export PATH="$(yarn global bin):$PATH"
   yarn global add
-  source ~/.zshrc
 fi
 
 
