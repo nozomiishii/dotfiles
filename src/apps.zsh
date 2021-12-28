@@ -55,7 +55,7 @@ if [ ! -f "$PLUG_PATH" ]; then
   sh -c "curl -fLo $PLUG_PATH --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   echo 'Install Neovim Plugins'
   pip3 install -U neovim
-  nvim +PlugInstall +qall
+  nvim --headless +PlugInstall +qall
 fi
 
 
