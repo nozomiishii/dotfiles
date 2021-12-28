@@ -59,11 +59,4 @@ if [ ! -f "$PLUG_PATH" ]; then
 fi
 
 
-# You will get a Bootstrap failed error, so run it last.
-echo "- 🤡 yabai"
-brew services start skhd
-brew services start yabai
-
-
-
 echo "🎉 The App setup is complete \n\n"
