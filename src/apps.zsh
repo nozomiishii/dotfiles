@@ -25,6 +25,7 @@ echo "- 🐟 VSCode"
 VSCODE_PATH="$HOME/Library/Application Support/Code/User"
 if [ ! -d $VSCODE_PATH ]; then
   open "/Applications/Visual Studio Code.app"
+  sleep 5
 fi
 stow -vd "$APPS_PATH" -t $VSCODE_PATH VSCode
 
@@ -34,6 +35,7 @@ XCODE_PATH="$HOME/Library/Developer/Xcode/UserData"
 if [ ! -d $XCODE_PATH ]; then
   sudo xcodebuild -runFirstLaunch
   open "/Applications/XCode.app"
+  sleep 5
 fi
 if [ -d $HOME/Library/Developer/Xcode/UserData/KeyBindings ]; then
   rm -r $HOME/Library/Developer/Xcode/UserData/KeyBindings
