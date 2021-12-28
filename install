@@ -105,7 +105,7 @@ setup_apps(){
 
 
 # Environment
-# Dependencis | Homebrew | Link
+# Dependencis | Homebrew | Link | Apps (agree to the Xcode license)
 setup_environment(){
   echo "🌝 Environment setup(asdf)"
   source "$ROOT_PATH/src/env.zsh"
@@ -167,10 +167,10 @@ if [ ! $@ ]; then
   chmod +x $HOME/dotfiles/install
   chmod +x $HOME/dotfiles/src/*
 
+
   setup_homebrew
   setup_macos
   link_modules
-  setup_environment
 
 
   echo "👨🏻‍🚀 Open the apps that needs to be configured"
@@ -187,12 +187,14 @@ if [ ! $@ ]; then
   open /users
   open https://github.com/nozomiishii/dotfiles
 
-  setup_apps
 
-  # Turn display off after: 15 mins
-  sudo pmset -c displaysleep 15
+  setup_apps
+  setup_environment
+
 
   echo "🎉 The dotfiles installation is complete \n\n"
+  # Turn display off after: 15 mins
+  sudo pmset -c displaysleep 15
 
 
   echo "👨🏻‍🚀 Restart the mac after 10 seconds! \n"
