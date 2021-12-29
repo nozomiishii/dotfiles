@@ -147,9 +147,11 @@ if [ ! $@ ]; then
     exit
   fi
 
-
   pre_sudo
   cd $HOME
+  if [ -d /Applications/Xcode.app ]; then
+    sudo xcodebuild -license accept
+  fi
   if [ ! -d $HOME/dotfiles ]; then
     echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
     git clone https://github.com/nozomiishii/dotfiles.git
