@@ -33,6 +33,7 @@ stow -vd "$APPS_PATH" -t $VSCODE_PATH VSCode
 echo "- 🍎 Xcode"
 XCODE_PATH="$HOME/Library/Developer/Xcode/UserData"
 if [ ! -d $XCODE_PATH ]; then
+  sudo xcodebuild -license accept 
   sudo xcodebuild -runFirstLaunch
   mkdir -p $XCODE_PATH
   open "/Applications/XCode.app"
