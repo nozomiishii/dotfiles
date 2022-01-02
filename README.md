@@ -211,8 +211,20 @@ Finder Sidebar
 **🎨 ColorSnapper2**
 
 - Activate the license
-- Hotkeys:  
-  Pick Color: ⌃ + ⌥ + C
+- General
+  - Hotkeys:  
+    Pick Color: ⌃ + ⌥ + C
+  - Clipboard Format >
+    Check "Choose from Colors & Formats after picking"
+- Appearance
+  - Magnification >
+    15x
+- Code Style
+
+  - Hex >
+    check "Uppercase"
+  - CSS Hex >
+    check "Uppercase"
 
 **🐘 TablePlus**
 
