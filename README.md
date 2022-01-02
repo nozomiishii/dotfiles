@@ -148,32 +148,6 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 - Preferences > General > Keyboard shortcuts >  
   remove all shortcuts(because it conflicts with xcode)
 
-**🌏 Chrome**
-
-- Sign in
-- Change Chrome to the Default Browser
-- Log in 1PasswordX
-
-**😼 Generate SSHkey and Login gh**
-
-```shell
-  ~/dotfiles/install -k
-```
-
-```shell
-  gh auth login
-```
-
-```shell
-  gh auth status
-```
-
-**🦄 Clone repositories**
-
-```shell
-  ~/dotfiles/install -c
-```
-
 **🗂 Finder**
 
 - Rearrange the order of the sidebar
@@ -198,6 +172,12 @@ Finder Sidebar
 - Alfred > General >  
   Alfred Hotkey: ⌘ + Space
 
+**🌏 Chrome**
+
+- Sign in
+- Change Chrome to the Default Browser
+- Log in 1PasswordX
+
 **🐟 VSCode**
 
 - User Icon > Setting sync > Login >  
@@ -206,6 +186,26 @@ Finder Sidebar
 - ⇧ + ⌘ + P > Open command pallet >  
   Icons: Activate VSCode Icons
 - Add MonokaiPro License
+
+**😼 Generate SSHkey and Login gh**
+
+```shell
+  ~/dotfiles/install -k
+```
+
+```shell
+  gh auth login
+```
+
+```shell
+  gh auth status
+```
+
+**🦄 Clone repositories**
+
+```shell
+  ~/dotfiles/install -c
+```
 
 **🧹 Hazel**
 
