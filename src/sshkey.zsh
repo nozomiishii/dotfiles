@@ -29,12 +29,18 @@ ssh-add ~/.ssh/id_rsa
 echo "\n🔐 Key List $(ssh-add -l) \n"
 
 
-cat ~/.ssh/id_rsa.pub
-pbcopy < ~/.ssh/id_rsa.pub
+echo "😼 Continue with the gh settings"
+echo "[💡 Hint]"
+echo "? What account do you want to log into? 💡 GitHub.com"
+echo "? What is your preferred protocol for Git operations? 💡 SSH"
+echo "? Upload your SSH public key to your GitHub account? 💡 $HOME/.ssh/id_rsa.pub"
+echo "? How would you like to authenticate GitHub CLI? 💡 Login with a web browser \n"
 
-echo "\n🔐 The generated ssh key has been copied to the clipboard. \n\n"
-echo "Set up your ssh key on github"
-echo "https://github.com/settings/keys \n\n"
+
+gh auth login
+gh auth status
+
+
 echo "Check if it works"
 echo "'ssh -T git@github.com'"
 echo "\n[💡 Hint]"
@@ -44,13 +50,3 @@ echo "💡 yes \n"
 
 
 echo "🎉 Generating ssh key is Complete \n\n"
-
-
-echo "😼 Continue with the gh settings"
-echo "[💡 Hint]"
-echo "? What account do you want to log into? 💡 GitHub.com"
-echo "? What is your preferred protocol for Git operations? 💡 SSH"
-echo "? Upload your SSH public key to your GitHub account? 💡 $HOME/.ssh/id_rsa.pub"
-echo "? How would you like to authenticate GitHub CLI? 💡 Login with a web browser \n"
-
-gh auth login

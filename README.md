@@ -193,14 +193,6 @@ Finder Sidebar
   ~/dotfiles/install -k
 ```
 
-```shell
-  gh auth login
-```
-
-```shell
-  gh auth status
-```
-
 **🦄 Clone repositories**
 
 ```shell
