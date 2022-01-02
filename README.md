@@ -297,11 +297,6 @@ Finder Sidebar
 - Add Accounts
 - Add Calendar on Widgets
 
-**⏱ Setup Time machine**
-
-- Menu bar > Time machine >  
-  Backup
-
 **🤖 Unity Hub**
 
 - Sign in
@@ -357,6 +352,11 @@ Finder Sidebar
 ```shell
   ngrok authtoken <your_auth_token>
 ```
+
+**⏱ Setup Time machine**
+
+- Menu bar > Time machine >  
+  Backup
 
 **🛋 Restart**
 
