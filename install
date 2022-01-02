@@ -201,11 +201,8 @@ if [ ! $@ ]; then
   brew services start --all
 
 
-  echo "👨🏻‍🚀 Restart the mac after 10 seconds! \n"
-  for i in {10..0}; do echo $i; sleep 1; done
-  echo "👨🏻‍🚀 Restart! \n"
-  sleep 2
-  sudo reboot
+  echo "👨🏻‍🚀 Restart the mac \n"
+  echo "'sudo reboot' \n\n\n"
 fi
 
 for i in "$@"; do
