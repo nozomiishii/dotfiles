@@ -159,7 +159,6 @@ Finder Sidebar
  ┃ ┣ 🗃dotfiles
  ┃ ┣ 🏠$USER
  ┃ ┣ 🍎Applications
- ┃ ┣ 💆🏻‍♂️Downloads
  ┃ ┗ 📖Desktop
  ┗ 📂Locations
 ```
@@ -177,6 +176,10 @@ Finder Sidebar
 - Sign in
 - Change Chrome to the Default Browser
 - Log in 1PasswordX
+
+**☁️ google-drive**
+
+- Sign in and Sync
 
 **🐟 VSCode**
 
@@ -276,10 +279,6 @@ Finder Sidebar
 
   - **Arrangement**  
     Change "iPad display on left"
-
-**☁️ google-drive**
-
-- Sign in and Sync
 
 **📅 Calendar**
 
