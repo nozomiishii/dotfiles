@@ -177,13 +177,9 @@ if [ ! $@ ]; then
 
   echo "👨🏻‍🚀 Open the apps that needs to be configured"
   open -b com.apple.systempreferences
-  open "/Applications/Slack.app"
-  open "/Applications/TablePlus.app"
-  open "/Applications/ColorSnapper2.app"
-  open "/Applications/Hazel.app"
-  open "/Applications/DeepL.app"
-  open "/Applications/Alfred 4.app"
+  open "/Applications/Google Drive.app"
   open "/Applications/Google Chrome.app"
+  open "/Applications/Alfred 4.app"
   open "/Applications/1Password 7.app"
   open "/Applications/Karabiner-Elements.app"
   open /users
