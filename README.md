@@ -353,6 +353,10 @@ Finder Sidebar
   ngrok authtoken <your_auth_token>
 ```
 
+```shell
+  ngrok http 3000
+```
+
 **⏱ Setup Time machine**
 
 - Menu bar > Time machine >  
