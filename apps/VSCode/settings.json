@@ -34,6 +34,7 @@
   "editor.guides.bracketPairs": true,
   "editor.fontFamily": "Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.linkedEditing": true,
 
   // Terminal
   "terminal.integrated.fontSize": 14,
