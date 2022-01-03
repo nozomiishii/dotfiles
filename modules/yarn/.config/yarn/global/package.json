@@ -2,6 +2,7 @@
   "dependencies": {
     "@nestjs/cli": "^8.1.5",
     "@nestjs/schematics": "^8.0.5",
+    "create-next-app": "^12.0.7",
     "firebase-tools": "^9.23.1",
     "nx": "^13.3.6",
     "typescript": "^4.5.3",

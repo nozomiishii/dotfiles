@@ -1617,6 +1617,11 @@ crc32-stream@^4.0.2:
     crc-32 "^1.2.0"
     readable-stream "^3.4.0"
 
+create-next-app@^12.0.7:
+  version "12.0.7"
+  resolved "https://registry.yarnpkg.com/create-next-app/-/create-next-app-12.0.7.tgz#79cf12a1247dd28edd7931076f46780a7fd2be47"
+  integrity sha512-TVYs5h9LzPrNVrIXBJT1YEhP0qRJj9otq3e+SpUoqIas+CWxJeAVfLb95I4SlVxdTyjQwS03hIPvh2ZKceu5DA==
+
 cross-env@^5.1.3:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.1.tgz#b2c76c1ca7add66dc874d11798466094f551b34d"
