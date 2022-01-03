@@ -113,11 +113,11 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>fbc</string>
+			<string>firebase</string>
 			<key>text</key>
-			<string>Open Firebase Console</string>
+			<string>Open Firebase - VoiceUtopia</string>
 			<key>url</key>
-			<string>https://console.firebase.google.com/</string>
+			<string>https://console.firebase.google.com/u/2/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
