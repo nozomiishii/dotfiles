@@ -531,4 +531,4 @@ Clean unused homebrew dependencies up, and upgrade them
 
 MIT License
 
-Copyright © 2021 Nozomi Ishii
+© 2021 Nozomi Ishii
