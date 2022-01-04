@@ -1222,6 +1222,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>C38C7DF9-3321-4EEB-AD46-99D1DE4EC1BD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>firebasedoc</string>
+			<key>text</key>
+			<string>Open Firebase Documentation</string>
+			<key>url</key>
+			<string>https://firebase.google.com/docs/guides</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>C6575E51-2FE1-4A09-B018-E59BEAA9D06C</key>
 		<dict>
 			<key>enabled</key>
