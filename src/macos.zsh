@@ -102,7 +102,7 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Set a default folder when opening Finder: Google Drive
 # Target category ex) PfDo: Documents, PfID: iCloud Drive, PfLo: Others
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
-defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER/Google%20Drive/"
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER"
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
