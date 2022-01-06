@@ -394,6 +394,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>4EB04DFB-C6DA-4E2C-B1F1-DA37A4453F3A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>iherb</string>
+			<key>text</key>
+			<string>Open iHerb</string>
+			<key>url</key>
+			<string>https://jp.iherb.com</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>50053F83-C7B6-4B53-AC83-2EBE63C46DAD</key>
 		<dict>
 			<key>enabled</key>
