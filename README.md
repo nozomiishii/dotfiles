@@ -53,7 +53,7 @@ If you can't use your personal apple ID on your company computer, install xcode 
 
 <a id="install"></a>
 
-## Install. Wait about 3 hours (Go grab some eat or take a nap 🍕😪)
+## Install. Wait about 3 hours (Go grab some food and take a nap 🍕😪)
 
 **Open Terminal with Spotlight**
 
