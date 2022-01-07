@@ -1638,6 +1638,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>FF0E405B-5020-41B9-A7AD-AD66852469B9</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hasura</string>
+			<key>text</key>
+			<string>Open Harura</string>
+			<key>url</key>
+			<string>https://hasura.io</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>onlyShowEnabledInPrefs</key>
 	<true/>
