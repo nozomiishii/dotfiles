@@ -1116,6 +1116,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>A6CDD3BD-351F-45AF-B747-6BDD2A7F55A0</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>supabase</string>
+			<key>text</key>
+			<string>Open Supabase</string>
+			<key>url</key>
+			<string>https://supabase.com</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>A7A3547F-2239-4360-8E98-D3D5CE01CC62</key>
 		<dict>
 			<key>enabled</key>
