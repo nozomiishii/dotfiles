@@ -342,6 +342,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3FF39D26-17AC-4383-8FF1-6999AC493BDD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>reactnative</string>
+			<key>text</key>
+			<string>Open React Native Documentation</string>
+			<key>url</key>
+			<string>https://reactnative.dev/docs/getting-started</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>40A1157E-C1C2-48BD-8722-C4D30C8EA8FD</key>
 		<dict>
 			<key>enabled</key>
