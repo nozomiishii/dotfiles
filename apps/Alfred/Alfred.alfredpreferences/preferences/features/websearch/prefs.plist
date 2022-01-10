@@ -108,19 +108,6 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
-		<key>0C1B5E0A-318B-4920-B718-397B828656D5</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>firebase</string>
-			<key>text</key>
-			<string>Open Firebase - VoiceUtopia</string>
-			<key>url</key>
-			<string>https://console.firebase.google.com/u/2/</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
 		<key>0C606527-21DB-496A-AA13-19C7ABBAF43A</key>
 		<dict>
 			<key>enabled</key>
@@ -430,19 +417,6 @@
 			<string>Open egghead.io</string>
 			<key>url</key>
 			<string>https://egghead.io/bookmarks</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
-		<key>502F06A4-25D5-49F4-9823-015521309CFD</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>gc</string>
-			<key>text</key>
-			<string>Open Google Cloud - VoiceUtopia {query}</string>
-			<key>url</key>
-			<string>https://console.cloud.google.com/home/dashboard?authuser=5&amp;project=voice-utopia-{query}</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
@@ -934,19 +908,6 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
-		<key>85E4EBA1-1D67-410F-A30F-D7E2663901EB</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>sentry</string>
-			<key>text</key>
-			<string>Open Sentry - VoiceUtopia</string>
-			<key>url</key>
-			<string>https://sentry.io/organizations/voiceutopiainc/issues/</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
 		<key>86029BBE-1A2D-4140-A010-68FE426EADF2</key>
 		<dict>
 			<key>enabled</key>
@@ -1090,19 +1051,6 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
-		<key>A3DE72B5-C7A9-4D1B-B222-82A762A3722F</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>gsap</string>
-			<key>text</key>
-			<string>Open GreenSock - VoiceUtopia</string>
-			<key>url</key>
-			<string>https://greensock.com/profile/105378-voiceutopia/content/?do=dashboard</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
 		<key>A4992869-0218-4BF3-9BE7-71DB7B1C068E</key>
 		<dict>
 			<key>enabled</key>
@@ -1126,19 +1074,6 @@ Translate '{query}' into Japanese</string>
 			<string>Open OpenAPI Specification</string>
 			<key>url</key>
 			<string>https://github.com/OAI/OpenAPI-Specification</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
-		<key>A6BB2E67-69F5-4CC6-9EC5-2C0D777D94F7</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>pusher console</string>
-			<key>text</key>
-			<string>Open Pusher - VoiceUtopia</string>
-			<key>url</key>
-			<string>https://dashboard.pusher.com/apps/1270189/stats</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
@@ -1417,19 +1352,6 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
-		<key>DCD26C38-60D6-4CF6-951F-5363FB58FDF5</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>vercel</string>
-			<key>text</key>
-			<string>Open Vercel - VoiceUtopia</string>
-			<key>url</key>
-			<string>https://vercel.com/voiceutopia/voice-utopia</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
 		<key>DE067D16-D343-47DE-814C-1096B694092E</key>
 		<dict>
 			<key>enabled</key>
@@ -1635,19 +1557,6 @@ Google Cloud Console</string>
 			<string>Open Faker.js</string>
 			<key>url</key>
 			<string>https://github.com/marak/Faker.js/</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
-		<key>FB4470DA-D9D9-44CE-8809-E4C6C641F0F7</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>gc</string>
-			<key>text</key>
-			<string>Open Google Cloud - VoiceUtopia</string>
-			<key>url</key>
-			<string>https://console.cloud.google.com/home/dashboard?authuser=5&amp;project=voice-utopia-prod</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
