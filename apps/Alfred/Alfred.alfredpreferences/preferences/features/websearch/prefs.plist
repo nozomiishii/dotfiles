@@ -648,6 +648,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>6566262F-EA2E-4C88-8489-6B5B567708E2</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cloudsign</string>
+			<key>text</key>
+			<string>Open Cloudsign</string>
+			<key>url</key>
+			<string>https://www.cloudsign.jp/dashboard</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>66E7883D-6876-4F4D-A5A1-C39B836EF6EF</key>
 		<dict>
 			<key>enabled</key>
