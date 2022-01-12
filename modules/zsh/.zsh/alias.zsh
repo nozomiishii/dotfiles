@@ -33,15 +33,6 @@ alias cv="cd $CODE_DIR/nozomiishii/cv && code ."
 alias wrk="cd $CODE_DIR/Work"
 
 
-# VoiceUtopia
-alias vua="cd $CODE_DIR/VoiceUtopia && code ."
-alias vu="cd $CODE_DIR/VoiceUtopia/voiceutopia && code ."
-alias vuap="cd $CODE_DIR/VoiceUtopia/voice-utopia-api && code ."
-alias vuo="cd $CODE_DIR/VoiceUtopia/voice-utopia-office && code ."
-alias vuop="cd $CODE_DIR/VoiceUtopia/openapi && code ."
-alias vutf="cd $CODE_DIR/VoiceUtopia/terraform && code ."
-
-
 # shell
 alias quit="exec $SHELL -l"
 alias zz="exec $SHELL"
