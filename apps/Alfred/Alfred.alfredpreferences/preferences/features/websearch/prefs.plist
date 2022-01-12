@@ -147,6 +147,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>152EFF95-AD49-4182-81A0-DCA4C02790E3</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>facebook</string>
+			<key>text</key>
+			<string>Open Facebook</string>
+			<key>url</key>
+			<string>https://www.facebook.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>2182F1D7-BA33-4DDA-B5EA-553BF24C67B3</key>
 		<dict>
 			<key>enabled</key>
@@ -1281,7 +1294,7 @@ Google Cloud Console</string>
 			<key>keyword</key>
 			<string>openapidocs</string>
 			<key>text</key>
-			<string>OpenAPI Specification Documentation</string>
+			<string>Open OpenAPI Specification Documentation</string>
 			<key>url</key>
 			<string>https://swagger.io/specification/</string>
 			<key>utf8</key>
