@@ -90,6 +90,9 @@
     "strings": true
   },
 
+  // Docker
+  "docker.enableDockerComposeLanguageService": true,
+
   // Terraform
   "terraform-ls.experimentalFeatures": {
     "validateOnSave": true
@@ -108,6 +111,13 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "files.autoSave": "onFocusChange",
+
+  // C#
+  "omnisharp.useGlobalMono": "always",
+  "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current",
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
 
   // Prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -149,65 +159,15 @@
   },
   "redhat.telemetry.enabled": true,
 
-  // Docker
-  "docker.enableDockerComposeLanguageService": true,
-
-  // C#
-  "omnisharp.useGlobalMono": "always",
-  "[csharp]": {
-    "editor.defaultFormatter": "ms-dotnettools.csharp"
-  },
-
   // Extenstions
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "liveServer.settings.donotShowInfoMsg": true,
   "gitlens.currentLine.enabled": false,
   "tabnine.experimentalAutoImports": true,
-  "highlight-matching-tag.styles": {
-    "opening": {
-      "name": {
-        "underline": " #FFD866"
-      }
-    }
-  },
   "gitlens.advanced.messages": {
     "suppressImproperWorkspaceCasingWarning": true
   },
   "liveshare.presence": false,
-  "peacock.favoriteColors": [
-    {
-      "name": "Monokai Pro Pink",
-      "value": "#FF6188"
-    },
-    {
-      "name": "Monokai Pro Orange",
-      "value": "#FC9867"
-    },
-    {
-      "name": "Monokai Pro Yellow",
-      "value": "#FFD866"
-    },
-    {
-      "name": "Mandalorian Blue",
-      "value": "#1857a4"
-    },
-    {
-      "name": "Monokai Pro Green",
-      "value": "#A9DC76"
-    },
-    {
-      "name": "Monokai Pro Blue",
-      "value": "#78DCE8"
-    },
-    {
-      "name": "Monokai Pro Purple",
-      "value": "#AB9DF2"
-    },
-    {
-      "name": "Monokai Pro Black",
-      "value": "#2D2A2E"
-    }
-  ],
 
   // Spell Checker
   "cSpell.userWords": [

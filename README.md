@@ -302,6 +302,10 @@ Finder Sidebar
 - Sign in
 - Download lts
 
+**🦖C#**
+[Unity setup for M1 Mac](https://gurutaka-log.com/unity-vscode-mac-setup)  
+[Download Mono](https://www.mono-project.com/download/stable/#download-mac)
+
 **🐵 Blender**
 
 - Sign in

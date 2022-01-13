@@ -92,6 +92,10 @@ brew "gh"
 # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
 brew "mas"
 
+
+# mono is currently not working for M1 Mac
+# https://gurutaka-log.com/unity-vscode-mac-setup
+# 
 # Cross platform, open source .NET development framework. https://www.mono-project.com/
 brew "mono"
 

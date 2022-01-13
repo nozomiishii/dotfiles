@@ -1,7 +1,7 @@
 {
   "FormattingOptions": {
     "enableEditorConfigSupport": false,
-    "organizeImports": false,
+    "organizeImports": true,
     "NewLine": "\n",
     "UseTabs": false,
     "TabSize": 4,
