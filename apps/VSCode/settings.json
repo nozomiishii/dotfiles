@@ -169,6 +169,12 @@
   },
   "liveshare.presence": false,
 
+  // Solidity
+  "solidity.compileUsingRemoteVersion": "latest",
+  "[solidity]": {
+    "editor.defaultFormatter": "JuanBlanco.solidity"
+  },
+
   // Spell Checker
   "cSpell.userWords": [
     "Behaviour",
