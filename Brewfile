@@ -52,6 +52,9 @@ brew "yabai"
 # Simple hotkey-daemon for macOS. https://github.com/koekeishiya/skhd
 brew "skhd"
 
+# Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
+brew "ethereum"
+
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
 brew "stripe"
 
@@ -91,7 +94,6 @@ brew "gh"
 
 # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
 brew "mas"
-
 
 # mono is currently not working for M1 Mac
 # https://gurutaka-log.com/unity-vscode-mac-setup
