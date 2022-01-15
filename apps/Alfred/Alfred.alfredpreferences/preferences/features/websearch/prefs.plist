@@ -316,6 +316,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3BA3A4C2-8191-42F1-8327-F5CFE104291A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ethereum</string>
+			<key>text</key>
+			<string>Open Ethereum.org</string>
+			<key>url</key>
+			<string>https://ethereum.org/ja/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3E6AC62F-1E13-4B2C-B0CC-A8E0F0992EBF</key>
 		<dict>
 			<key>enabled</key>
