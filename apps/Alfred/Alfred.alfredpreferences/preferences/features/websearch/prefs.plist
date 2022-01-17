@@ -1482,6 +1482,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>EDBE93DC-CEE1-4B4B-927D-ABCBEC49816F</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>remix</string>
+			<key>text</key>
+			<string>Open Remix Ethereum</string>
+			<key>url</key>
+			<string>https://remix.ethereum.org/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>F1085C8F-FC6F-46C9-9AB2-840DB827AB6D</key>
 		<dict>
 			<key>enabled</key>
