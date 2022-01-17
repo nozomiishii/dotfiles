@@ -171,6 +171,9 @@ cask "flutter"
 # font-meslo-lg-nerd-font https://github.com/ryanoasis/nerd-fonts
 cask "font-meslo-lg-nerd-font"
 
+# Personal blockchain for Ethereum development https://truffleframework.com/ganache/
+cask "ganache"
+
 # Git client focusing on productivity https://www.gitkraken.com/ 
 cask "gitkraken"
 
