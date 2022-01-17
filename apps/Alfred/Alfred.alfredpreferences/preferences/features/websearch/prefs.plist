@@ -739,6 +739,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>6DF35DDC-212A-426C-B69A-7F6EE51C1DB8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>uniswap</string>
+			<key>text</key>
+			<string>Open Uniswap</string>
+			<key>url</key>
+			<string>https://app.uniswap.org/#/swap</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>6F64A0BF-7EA0-4609-9551-BA338DA418CE</key>
 		<dict>
 			<key>enabled</key>
