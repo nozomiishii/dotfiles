@@ -1051,6 +1051,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>980CB0FB-BABE-495C-9FE1-D32ACE2821A2</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>solidity</string>
+			<key>text</key>
+			<string>Open Solidity Documentation</string>
+			<key>url</key>
+			<string>https://docs.soliditylang.org/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>9A16A8E6-24D1-4722-A6DB-FE92CD8F797D</key>
 		<dict>
 			<key>enabled</key>
