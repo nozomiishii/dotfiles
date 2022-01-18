@@ -1183,6 +1183,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>B3ACA164-A492-4848-A267-852DF89EA31B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>opensea</string>
+			<key>text</key>
+			<string>Open OpenSea</string>
+			<key>url</key>
+			<string>https://opensea.io/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>B44AF932-D16C-401A-91C9-06B9620C3A66</key>
 		<dict>
 			<key>enabled</key>
