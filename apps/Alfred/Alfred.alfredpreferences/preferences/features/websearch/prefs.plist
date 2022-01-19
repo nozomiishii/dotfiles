@@ -550,6 +550,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>5BB39E7B-3262-426F-9CBA-2E87DEC8D0D6</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>truffle</string>
+			<key>text</key>
+			<string>Open Truffle Documentation</string>
+			<key>url</key>
+			<string>https://trufflesuite.com/docs/index.html</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>5ED27893-CDB4-43E6-9F0B-B0C735ADF637</key>
 		<dict>
 			<key>enabled</key>
