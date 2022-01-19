@@ -40,6 +40,9 @@ brew "ffmpeg"
 # Command-line fuzzy finder written in Go https://github.com/junegunn/fzf
 brew "fzf"
 
+# Command-line JSON processing tool https://github.com/antonmedv/fx
+brew "fx"
+
 # asdf nodejs dependencies | GNU awk utility https://www.gnu.org/software/gawk/
 brew "gawk"
 
