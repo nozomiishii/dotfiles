@@ -162,6 +162,10 @@ cask "docker"
 # .NET is a free, cross-platform, open source developer platform https://dotnet.microsoft.com/
 cask "dotnet-sdk"
 
+# There is some compatibility issue between fig and powerlevel10k 🥲
+# Reimagine your terminal https://fig.io/
+# cask "fig"
+
 # Collaborative interface design tool. https://www.figma.com
 cask "figma"
 
