@@ -208,6 +208,9 @@ cask "karabiner-elements"
 # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
 cask "kindle"
 
+# Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
+cask "ledger-live"
+
 # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
 cask "ngrok"
 
