@@ -303,6 +303,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>35990DCC-8357-4174-8F3A-E3D165649724</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>rakuten</string>
+			<key>text</key>
+			<string>Open Rakuten Card</string>
+			<key>url</key>
+			<string>https://www.rakuten-card.co.jp/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3A2432C2-A75E-4E81-8AAB-BD2FC1817F35</key>
 		<dict>
 			<key>enabled</key>
