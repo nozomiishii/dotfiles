@@ -9,7 +9,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>stoplight prism</string>
+			<string>stoplightprism</string>
 			<key>text</key>
 			<string>Open stoplightio/prism</string>
 			<key>url</key>
@@ -35,7 +35,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>prisma doc</string>
+			<string>prisma</string>
 			<key>text</key>
 			<string>Open Prisma documantation</string>
 			<key>url</key>
@@ -139,7 +139,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>threejs journey</string>
+			<string>threejsjourney</string>
 			<key>text</key>
 			<string>Open Threejs Journey</string>
 			<key>url</key>
@@ -191,7 +191,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>docker docs</string>
+			<string>dockerdocs</string>
 			<key>text</key>
 			<string>Open Docker Documantation</string>
 			<key>url</key>
@@ -204,7 +204,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>date fns</string>
+			<string>datefns</string>
 			<key>text</key>
 			<string>Open date-fns</string>
 			<key>url</key>
@@ -217,7 +217,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>circle ci</string>
+			<string>circleci</string>
 			<key>text</key>
 			<string>Open Circle CI</string>
 			<key>url</key>
@@ -386,7 +386,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>react hook form</string>
+			<string>reacthookform</string>
 			<key>text</key>
 			<string>Open React Hook Form</string>
 			<key>url</key>
@@ -425,7 +425,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>stripe doc</string>
+			<string>stripe</string>
 			<key>text</key>
 			<string>Open Stripe Documentation</string>
 			<key>url</key>
@@ -464,7 +464,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>swagger editor</string>
+			<string>swaggereditor</string>
 			<key>text</key>
 			<string>Open Swagger Editor</string>
 			<key>url</key>
@@ -490,7 +490,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>agora console</string>
+			<string>agora</string>
 			<key>text</key>
 			<string>Open Agora Console</string>
 			<key>url</key>
@@ -757,7 +757,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>agora doc</string>
+			<string>agora</string>
 			<key>text</key>
 			<string>Open Agora Documentation</string>
 			<key>url</key>
@@ -848,7 +848,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>react typescript cheatsheets</string>
+			<string>reacttypescriptcheatsheets</string>
 			<key>text</key>
 			<string>Open React Typescript Cheatsheets</string>
 			<key>url</key>
@@ -939,7 +939,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>openapi generator</string>
+			<string>openapi</string>
 			<key>text</key>
 			<string>Open OpenAPI Generator</string>
 			<key>url</key>
@@ -1004,7 +1004,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>testing library</string>
+			<string>testinglibrary</string>
 			<key>text</key>
 			<string>Open Testing Library</string>
 			<key>url</key>
@@ -1095,7 +1095,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>aws management console</string>
+			<string>aws</string>
 			<key>text</key>
 			<string>Open AWS Management Console</string>
 			<key>url</key>
@@ -1121,7 +1121,7 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>openapitypescriptcodegen</string>
+			<string>openapi</string>
 			<key>text</key>
 			<string>Open openapi-typescript-codegen</string>
 			<key>url</key>
@@ -1201,7 +1201,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>stripe api</string>
+			<string>stripe</string>
 			<key>text</key>
 			<string>Open Stripe API</string>
 			<key>url</key>
@@ -1292,7 +1292,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>rakutensec</string>
+			<string>rakuten</string>
 			<key>text</key>
 			<string>Open Rakuten Securities</string>
 			<key>url</key>
@@ -1318,7 +1318,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>firebasedoc</string>
+			<string>firebase</string>
 			<key>text</key>
 			<string>Open Firebase Documentation</string>
 			<key>url</key>
@@ -1370,7 +1370,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>openapidocs</string>
+			<string>openapi</string>
 			<key>text</key>
 			<string>Open OpenAPI Specification Documentation</string>
 			<key>url</key>
@@ -1461,7 +1461,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>tailwind ui</string>
+			<string>tailwindui</string>
 			<key>text</key>
 			<string>Open Tailwind UI</string>
 			<key>url</key>
@@ -1513,7 +1513,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>nestjsdocs</string>
+			<string>nestjs</string>
 			<key>text</key>
 			<string>Open NestJS Documentation</string>
 			<key>url</key>
@@ -1565,7 +1565,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>stripe dashboard</string>
+			<string>stripe</string>
 			<key>text</key>
 			<string>Open Stripe Dashboard</string>
 			<key>url</key>
@@ -1604,7 +1604,7 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>pusher docs</string>
+			<string>pusher</string>
 			<key>text</key>
 			<string>Open Pusher Documentation</string>
 			<key>url</key>
