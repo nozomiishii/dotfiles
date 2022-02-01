@@ -212,6 +212,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>2535A77D-50FC-4FC3-AC3E-47593F687233</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>unity</string>
+			<key>text</key>
+			<string>Open Unity Documentation</string>
+			<key>url</key>
+			<string>https://docs.unity3d.com/Manual/index.html</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>26AC8DE7-C625-4ACD-A842-CDB776A4A1DE</key>
 		<dict>
 			<key>enabled</key>
