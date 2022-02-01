@@ -1038,6 +1038,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>8D9849A6-7C9B-41B3-B3E1-06265D684DB5</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hapitas</string>
+			<key>text</key>
+			<string>Open Hapitas</string>
+			<key>url</key>
+			<string>https://hapitas.jp/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>8E3A9447-1228-4E53-968F-177187F5A01A</key>
 		<dict>
 			<key>enabled</key>
