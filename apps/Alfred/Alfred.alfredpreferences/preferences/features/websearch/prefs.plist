@@ -407,6 +407,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>4158759D-82AB-422D-A6C7-2E1336582A31</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>reacticons</string>
+			<key>text</key>
+			<string>Open React Icons</string>
+			<key>url</key>
+			<string>https://react-icons.github.io/react-icons</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>43E48FE0-EE22-4DFC-AE53-BB051A8E9333</key>
 		<dict>
 			<key>enabled</key>
