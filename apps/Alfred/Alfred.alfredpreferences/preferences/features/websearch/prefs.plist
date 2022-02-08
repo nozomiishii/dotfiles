@@ -342,6 +342,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3A928EC9-A371-42AF-AD8E-37FD54AC4C41</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>metaquest</string>
+			<key>text</key>
+			<string>Open Meta Quest Casting</string>
+			<key>url</key>
+			<string>https://www.oculus.com/casting</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3BA3A4C2-8191-42F1-8327-F5CFE104291A</key>
 		<dict>
 			<key>enabled</key>
