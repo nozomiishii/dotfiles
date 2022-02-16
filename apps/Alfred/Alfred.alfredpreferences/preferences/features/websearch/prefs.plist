@@ -160,6 +160,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>15DAD3B1-49E8-4D4E-92A5-2641998B3114</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>atcoder</string>
+			<key>text</key>
+			<string>Open AtCoder Problems</string>
+			<key>url</key>
+			<string>https://kenkoooo.com/atcoder/#/table/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>2182F1D7-BA33-4DDA-B5EA-553BF24C67B3</key>
 		<dict>
 			<key>enabled</key>
@@ -957,6 +970,19 @@ Translate '{query}' into Japanese</string>
 			<string>Open Apollo</string>
 			<key>url</key>
 			<string>https://www.apollographql.com/docs/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>7A0AEED7-C8DA-4747-88A2-36868A3C8F45</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>atcoder</string>
+			<key>text</key>
+			<string>Open AtCoder</string>
+			<key>url</key>
+			<string>https://atcoder.jp/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
