@@ -934,6 +934,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>75CD628C-66CC-46AC-B593-AEFC4A9D96C8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>smbc</string>
+			<key>text</key>
+			<string>Open SMBC card</string>
+			<key>url</key>
+			<string>https://www.smbc-card.com/memx/mypage/index.html</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>75D05A09-8C40-4503-BF9D-4CAB6EC0979C</key>
 		<dict>
 			<key>enabled</key>
