@@ -173,6 +173,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>1C98BFBD-B458-482D-B762-5586B5CA2618</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>giphy</string>
+			<key>text</key>
+			<string>Open Giphy</string>
+			<key>url</key>
+			<string>https://giphy.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>2182F1D7-BA33-4DDA-B5EA-553BF24C67B3</key>
 		<dict>
 			<key>enabled</key>
