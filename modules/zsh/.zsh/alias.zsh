@@ -30,6 +30,7 @@ alias doto="cd $HOME/dotfiles && code ."
 alias noz="cd $CODE_DIR/nozomiishii"
 alias dev="cd $CODE_DIR/nozomiishii/dev && code ."
 alias cv="cd $CODE_DIR/nozomiishii/cv && code ."
+alias bots="cd $CODE_DIR/nozomiishii/bots && code ."
 alias wrk="cd $CODE_DIR/Work"
 
 

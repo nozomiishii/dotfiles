@@ -14,6 +14,7 @@ repos=(
   nozomiishii/dev
   nozomiishii/cv
   nozomiishii/nozomiishii
+  nozomiishii/bots
 )
 
 for repo in $repos ; do
