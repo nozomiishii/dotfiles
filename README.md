@@ -207,6 +207,8 @@ Finder Sidebar
 - License... > Activate the License
 - Folder > Rule Sync Settings... > Use existing sync file... >  
   Select "~/dotfiles/apps/Hazel"
+- Preferences... > Trash >  
+  Check "Delete files sitting in the Trash for more than 1 Day"
 
 **🎨 ColorSnapper2**
 
