@@ -589,6 +589,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>58382D10-A64A-43F5-9D54-619EE50C82D8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>typescript</string>
+			<key>text</key>
+			<string>Open TypeScript Documentation</string>
+			<key>url</key>
+			<string>https://www.typescriptlang.org/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>5845A97E-6DD7-47A5-BDCD-1B9AAB9DFA39</key>
 		<dict>
 			<key>enabled</key>
