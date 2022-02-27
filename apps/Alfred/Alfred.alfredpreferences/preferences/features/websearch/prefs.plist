@@ -1129,6 +1129,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>8CBAD0CD-3F1F-4E06-BC2D-8AE1E49E15AC</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>javascript</string>
+			<key>text</key>
+			<string>Open JavaScript Documentation</string>
+			<key>url</key>
+			<string>https://developer.mozilla.org/en-US/docs/Web/JavaScript</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>8D9849A6-7C9B-41B3-B3E1-06265D684DB5</key>
 		<dict>
 			<key>enabled</key>
