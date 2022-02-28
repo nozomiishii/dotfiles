@@ -693,6 +693,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>635E7704-C573-4340-BE11-B5A0E6E9B8F8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>yahoo</string>
+			<key>text</key>
+			<string>Open Yahoo Mail</string>
+			<key>url</key>
+			<string>https://mail.yahoo.co.jp/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>63CF81D1-4D8C-41B6-A42D-89F58C55D723</key>
 		<dict>
 			<key>enabled</key>
