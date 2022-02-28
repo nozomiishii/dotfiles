@@ -28,6 +28,9 @@ brew "bat"
 # Dependency manager for Cocoa projects https://cocoapods.org/
 brew "cocoapods"
 
+# asdf golang dependencies | GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
+brew "coreutils"
+
 # Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
 brew "ethereum"
 
