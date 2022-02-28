@@ -8,9 +8,20 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "security.workspace.trust.untrustedFiles": "open",
 
-  // NeoVim
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
+  // Editor
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.fontSize": 14,
+  "editor.minimap.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.renderWhitespace": "trailing",
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.accessibilitySupport": "off",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.guides.bracketPairs": true,
+  "editor.fontFamily": "Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.linkedEditing": true,
 
   // vscode-icons
   "workbench.iconTheme": "vscode-icons",
@@ -23,18 +34,9 @@
     }
   ],
 
-  // Editor
-  "editor.fontSize": 14,
-  "editor.minimap.enabled": false,
-  "editor.suggestSelection": "first",
-  "editor.renderWhitespace": "trailing",
-  "editor.acceptSuggestionOnEnter": "smart",
-  "editor.accessibilitySupport": "off",
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.guides.bracketPairs": true,
-  "editor.fontFamily": "Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
-  "editor.unicodeHighlight.invisibleCharacters": false,
-  "editor.linkedEditing": true,
+  // NeoVim
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
 
   // Terminal
   "terminal.integrated.fontSize": 14,
@@ -69,6 +71,47 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
 
+  // File associations
+  "files.associations": {
+    "install": "shellscript",
+    ".lintstagedrc": "json",
+    "*.strings": "plist",
+    "*.plist": "plist",
+    "vimrc": "viml",
+    ".skhdrc": "shellscript",
+    ".yabairc": "shellscript",
+    ".tmux.conf": "shellscript",
+    ".tool-versions": "properties",
+    "config": "properties"
+  },
+
+  // Extenstions
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "gitlens.currentLine.enabled": false,
+  "tabnine.experimentalAutoImports": true,
+  "gitlens.advanced.messages": {
+    "suppressImproperWorkspaceCasingWarning": true
+  },
+  "liveshare.presence": false,
+
+  // Docker
+  "docker.enableDockerComposeLanguageService": true,
+
+  // Terraform
+  "terraform-ls.experimentalFeatures": {
+    "validateOnSave": true
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+
+  // Prisma
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+
   // Tailwindcss
   "stylelint.config": {
     "rules": {
@@ -90,28 +133,6 @@
     "strings": true
   },
 
-  // Docker
-  "docker.enableDockerComposeLanguageService": true,
-
-  // Terraform
-  "terraform-ls.experimentalFeatures": {
-    "validateOnSave": true
-  },
-  "[terraform]": {
-    "editor.defaultFormatter": "hashicorp.terraform",
-    "editor.formatOnSave": true
-  },
-
-  // Prisma
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  },
-
-  // Styles
-  "editor.tabSize": 2,
-  "editor.wordWrap": "on",
-  "files.autoSave": "onFocusChange",
-
   // C#
   "omnisharp.useGlobalMono": "always",
   "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current",
@@ -125,6 +146,7 @@
   },
 
   // Prettier
+  "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "prettier.printWidth": 100,
@@ -143,36 +165,12 @@
     "**/node_modules": true
   },
 
-  // File associations
-  "files.associations": {
-    "install": "shellscript",
-    ".lintstagedrc": "json",
-    "*.strings": "plist",
-    "*.plist": "plist",
-    "vimrc": "viml",
-    ".skhdrc": "shellscript",
-    ".yabairc": "shellscript",
-    ".tmux.conf": "shellscript",
-    ".tool-versions": "properties",
-    "config": "properties"
-  },
-
   // yaml
   "[yaml]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   "redhat.telemetry.enabled": true,
-
-  // Extenstions
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "gitlens.currentLine.enabled": false,
-  "tabnine.experimentalAutoImports": true,
-  "gitlens.advanced.messages": {
-    "suppressImproperWorkspaceCasingWarning": true
-  },
-  "liveshare.presence": false,
 
   // Solidity
   "solidity.compileUsingRemoteVersion": "latest",
