@@ -119,6 +119,11 @@
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
 
+  // Golang
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+
   // Prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
