@@ -249,6 +249,12 @@ Finder Sidebar
 - Set hotkey to  
   ⇧ + Space
 
+**🤡 yabai**
+
+```shell
+  brew services restart yabai && brew services restart skhd
+```
+
 **💻 System Preferences**
 
 - **🌃 Desktop & Screen Saver**
