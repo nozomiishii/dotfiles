@@ -182,6 +182,8 @@ Finder Sidebar
 - Sign in
 - Change Chrome to the Default Browser
 - Log in 1PasswordX
+- (Optional)
+  - [Gmail notification](https://support.google.com/mail/answer/1075549?hl=ja&co=GENIE.Platform%3DDesktop)
 
 **☁️ google-drive**
 
