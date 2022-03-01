@@ -61,6 +61,12 @@ If you can't use your personal apple ID on your company computer, install xcode 
   ⌘ + space Terminal
 ```
 
+Change shell to zsh
+
+```shell
+  chsh -s /bin/zsh
+```
+
 ```shell
   curl -L https://nozomiishii.dev/dotfiles/install | zsh
 ```
