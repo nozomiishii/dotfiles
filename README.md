@@ -274,7 +274,7 @@ Finder Sidebar
 - **🧚🏻‍♀️ Accessibility**
 
   - **Spoken Content**  
-    Select and Download "Siri Female(United Kingdom)"  
+    Select and Download "Siri Voice 1(United Kingdom)"  
     Adjust Speaking Rate
 
 - **👮🏻 Security & Privacy**
@@ -304,7 +304,7 @@ Finder Sidebar
 - Sign in
 - Download lts
 
-**🦖C#**
+**🦖C#**  
 [Unity setup for M1 Mac](https://gurutaka-log.com/unity-vscode-mac-setup)  
 [Download Mono](https://www.mono-project.com/download/stable/#download-mac)
 
