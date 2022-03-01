@@ -37,6 +37,7 @@ OPTIONS:
     -k,    --sshkey        🔐 Generate ssh key
     -l,    --symlink       🗂 Symbolic link
     -m,    --macos         💻 MacOS setup
+    -r,    --reinstall     ♻️ Reinstall this dotfiles repository
     -ul=*, --unlink=*      👋 Unlinking Symbolic links
     -up,   --upgrade       🚀 Upgrading dotfiles
 
@@ -62,6 +63,25 @@ upgrade(){
   cd -
 }
 
+
+clone_repo(){
+  echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
+  git clone https://github.com/nozomiishii/dotfiles.git
+  cd $HOME/dotfiles
+  git remote set-url origin git@github.com:nozomiishii/dotfiles.git
+  cd $HOME
+}
+
+
+reinstall(){
+  cd $HOME
+  echo "♻️ Reinstall this dotfiles repository"
+
+  rm -rf $HOME/dotfiles
+  clone_repo
+
+  exec $SHELL
+}
 
 # Homebrew
 setup_homebrew(){
@@ -153,11 +173,7 @@ if [ ! $@ ]; then
     sudo xcodebuild -license accept
   fi
   if [ ! -d $HOME/dotfiles ]; then
-    echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
-    git clone https://github.com/nozomiishii/dotfiles.git
-    cd $HOME/dotfiles
-    git remote set-url origin git@github.com:nozomiishii/dotfiles.git
-    cd $HOME
+    clone_repo
   fi
 
   # Turn display off after: Never
@@ -229,6 +245,9 @@ for i in "$@"; do
       shift ;;
     -m|--macos)
       setup_macos
+      shift ;;
+    -r|--reinstall)
+      reinstall
       shift ;;
     -ul=*|--unlink=*)
       MODULES="${i#*=}"
