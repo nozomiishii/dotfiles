@@ -265,5 +265,5 @@ cask "wireshark" if system '[ "$(uname -m)" = "x86_64" ]'
 # mas
 # 
 # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835
 
