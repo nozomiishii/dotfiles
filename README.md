@@ -369,6 +369,9 @@ Finder Sidebar
   ngrok http 3000
 ```
 
+**🚙 duet**  
+[Download](https://www.duetdisplay.com/)
+
 **⏱ Setup Time machine**
 
 - Menu bar > Time machine >  
