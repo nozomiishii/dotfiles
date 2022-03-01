@@ -20,3 +20,6 @@ modules/ssh/.ssh/*
 
 # Brewfile
 Brewfile.lock.json
+
+# Alfred
+apps/Alfred/Alfred.alfredpreferences/preferences/local
