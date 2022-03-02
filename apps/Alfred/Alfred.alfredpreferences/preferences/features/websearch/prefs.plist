@@ -1025,6 +1025,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>795EC2D7-02B0-450E-A841-0707E19AB077</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>turborepo</string>
+			<key>text</key>
+			<string>Open Turborepo Documentation</string>
+			<key>url</key>
+			<string>https://turborepo.org/docs</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>7A0AEED7-C8DA-4747-88A2-36868A3C8F45</key>
 		<dict>
 			<key>enabled</key>
