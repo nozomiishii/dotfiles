@@ -1846,6 +1846,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>F9B3D19E-3B75-4031-88C8-8A679696F71B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hygen</string>
+			<key>text</key>
+			<string>Open Hygen Documentation</string>
+			<key>url</key>
+			<string>https://www.hygen.io/docs/quick-start</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>FE58A59C-8DB6-4F95-85E1-DA3112251FA4</key>
 		<dict>
 			<key>enabled</key>
