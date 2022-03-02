@@ -189,7 +189,12 @@ Finder Sidebar
 - Change Chrome to the Default Browser
 - Log in 1PasswordX
 - (Optional)
+
   - [Gmail notification](https://support.google.com/mail/answer/1075549?hl=ja&co=GENIE.Platform%3DDesktop)
+
+  - Extensions
+    - [1Password](https://chrome.google.com/webstore/detail/1password-%E2%80%93-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
+    - [Adblock for YouTube](https://chrome.google.com/webstore/detail/adblock-for-youtube/cmedhionkhpnakcndndgjdbohmhepckk)
 
 **☁️ google-drive**
 
