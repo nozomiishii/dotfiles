@@ -174,8 +174,14 @@ Finder Sidebar
 - Activate the license
 - Preferences > Advanced > Set preferences folder... >  
   Select "~/dotfiles/apps/Alfred"
-- Alfred > General >  
+- Preferences > General >  
   Alfred Hotkey: ⌘ + Space
+- Preferences > Features > Snippets >
+  Check "Automatically expand snippets by keyword"
+- Preferences > Appearance > Options >
+  How he looks: Hide menu bar icon
+- Preferences > Advanced >  
+  Force Keyboard: ABC
 
 **🌏 Chrome**
 
