@@ -7,6 +7,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "jondot/tap"
 tap "koekeishiya/formulae"
 tap "romkatv/powerlevel10k"
 tap "smudge/smudge"
@@ -70,6 +71,9 @@ brew "heroku-node"
 
 # Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
 brew "jq"
+
+# The scalable code generator that saves you time. https://www.hygen.io/
+brew "hygen"
 
 # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
 brew "neovim"
