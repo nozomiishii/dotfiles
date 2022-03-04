@@ -277,6 +277,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>29003355-6BD6-4317-B7EC-5030717B3DA8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>swr</string>
+			<key>text</key>
+			<string>Open SWR Documentation</string>
+			<key>url</key>
+			<string>https://swr.vercel.app/docs/getting-started</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>2969AD5B-5EEC-4A4E-BF94-4AF074FA1B9E</key>
 		<dict>
 			<key>enabled</key>
