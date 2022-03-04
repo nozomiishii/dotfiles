@@ -1,13 +1,16 @@
 {
   "recommendations": [
+    "bierner.markdown-mermaid",
     "bradlc.vscode-tailwindcss",
     "christian-kohler.path-intellisense",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
+    "juanblanco.solidity",
     "golang.go",
     "heybourn.headwind",
     "humao.rest-client",
+    "monokai.theme-monokai-pro-vscode",
     "prisma.prisma",
     "streetsidesoftware.code-spell-checker",
     "stylelint.vscode-stylelint"
