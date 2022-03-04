@@ -82,9 +82,10 @@
     ".yabairc": "shellscript",
     ".tmux.conf": "shellscript",
     ".tool-versions": "properties",
-    "config": "properties"
+    "config": "properties",
+    "*.ejs": "html",
+    "*.ejs.t": "html"
   },
-
   // Extenstions
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "liveServer.settings.donotShowInfoMsg": true,
