@@ -1469,6 +1469,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>C1ED7A0E-8C78-4286-984D-CFA5B3A2FAD8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>mermaid</string>
+			<key>text</key>
+			<string>Open Mermaid</string>
+			<key>url</key>
+			<string>https://mermaid-js.github.io/mermaid/#/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>C30A9BD9-B9AF-4F19-91A8-6059F0330BB5</key>
 		<dict>
 			<key>enabled</key>
