@@ -200,6 +200,7 @@ Finder Sidebar
 - (Optional)
 
   - [Gmail notification](https://support.google.com/mail/answer/1075549?hl=ja&co=GENIE.Platform%3DDesktop)
+  - [Show working hours on your calendar](https://support.google.com/a/users/answer/9308669)
 
   - Extensions
     - [1Password](https://chrome.google.com/webstore/detail/1password-%E2%80%93-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
