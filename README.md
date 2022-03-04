@@ -172,14 +172,23 @@ Finder Sidebar
 **🎩 Alfred**
 
 - Activate the license
+
 - Preferences > Advanced > Set preferences folder... >  
   Select "~/dotfiles/apps/Alfred"
+
 - Preferences > General >  
   Alfred Hotkey: ⌘ + Space
-- Preferences > Features > Snippets >
+
+- Preferences > Features > Clipboard History > History > Clipboard History >  
+  Check "Keep Plain Text"  
+  Select "7 Days"
+
+- Preferences > Features > Snippets >  
   Check "Automatically expand snippets by keyword"
-- Preferences > Appearance > Options >
-  How he looks: Hide menu bar icon
+
+- Preferences > Appearance > Options > How he looks >  
+  Hide menu bar icon
+
 - Preferences > Advanced >  
   Force Keyboard: ABC
 
