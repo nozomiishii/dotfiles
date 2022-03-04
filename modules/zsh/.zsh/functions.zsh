@@ -29,3 +29,9 @@ ztest(){
 ntn(){
   git clone git@github.com:nozomiishii/node.ts.git ${1:-new-project} && cd $_
 }
+
+# Restart Duet
+rsdt() {
+  pgrep -f duet | xargs kill $1
+  open "/Applications/duet.app"
+}
