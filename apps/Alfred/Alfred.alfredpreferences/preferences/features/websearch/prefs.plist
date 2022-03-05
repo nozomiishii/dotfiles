@@ -121,6 +121,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>0C887AF9-301C-416F-9148-AD36EBB822B0</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>plopjs</string>
+			<key>text</key>
+			<string>Open Plopjs Documentation</string>
+			<key>url</key>
+			<string>https://plopjs.com/documentation/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>0C93C6E2-D30E-494C-A89F-82A3329BE4A0</key>
 		<dict>
 			<key>enabled</key>
