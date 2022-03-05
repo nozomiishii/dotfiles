@@ -342,6 +342,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>30F36DBC-1569-4D25-8E54-A7997305AF23</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>yeoman</string>
+			<key>text</key>
+			<string>Open Yeoman</string>
+			<key>url</key>
+			<string>https://yeoman.io/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>323CF4C4-D9B9-4D01-892D-1CC05CF7A5AF</key>
 		<dict>
 			<key>enabled</key>
