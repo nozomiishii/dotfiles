@@ -1142,6 +1142,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>84A9A652-E47A-42BD-BF19-ED216C3B4B08</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ihatetomatoes</string>
+			<key>text</key>
+			<string>Open ihatetomatoes</string>
+			<key>url</key>
+			<string>https://ihatetomatoes.net/account/courses/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>86029BBE-1A2D-4140-A010-68FE426EADF2</key>
 		<dict>
 			<key>enabled</key>
