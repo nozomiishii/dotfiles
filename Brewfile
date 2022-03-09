@@ -207,6 +207,9 @@ cask "google-drive"
 # Google Japanese Input Method Editor. https://www.google.co.jp/ime
 cask "google-japanese-ime"
 
+# Screenshot and screen recording tool https://gyazo.com/
+cask "gyazo"
+
 # Automated organization https://www.noodlesoft.com/
 cask "hazel"
 
