@@ -28,11 +28,6 @@
     "when": "suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "alt+,",
-    "command": "extension.htmlTagWrap",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "alt+w",
     "command": "-extension.htmlTagWrap",
     "when": "editorTextFocus"
@@ -117,5 +112,9 @@
     "key": "r",
     "command": "-renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+,",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
   }
 ]
