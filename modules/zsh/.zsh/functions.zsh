@@ -35,3 +35,8 @@ rsdt() {
   pgrep -f duet | xargs kill $1
   open "/Applications/duet.app"
 }
+
+# Kill Port
+killp() {
+  kill -9 $(lsof -ti:$1) && echo "killed Port $1"
+}
