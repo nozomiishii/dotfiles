@@ -179,6 +179,11 @@
     "editor.defaultFormatter": "JuanBlanco.solidity"
   },
 
+  // fig
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+
   // Spell Checker
   "cSpell.userWords": [
     "Behaviour",

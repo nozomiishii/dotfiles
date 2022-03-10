@@ -18,10 +18,9 @@ antigen bundle command-not-found
 antigen bundle docker
 antigen bundle lilithium-hydride/history-search-multi-word
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-completions
-antigen bundle buonomo/yarn-completion
-antigen bundle Aloxaf/fzf-tab
-antigen bundle b4b4r07/enhancd
+# antigen bundle zsh-users/zsh-completions
+# antigen bundle Aloxaf/fzf-tabxxxxxxx
+# antigen bundle b4b4r07/enhancd
 
 autoload -Uz compinit
 compinit

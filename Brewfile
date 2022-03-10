@@ -175,7 +175,7 @@ cask "dotnet-sdk"
 
 # There is some compatibility issue between fig and powerlevel10k 🥲
 # Reimagine your terminal https://fig.io/
-# cask "fig"
+cask "fig"
 
 # Collaborative interface design tool. https://www.figma.com
 cask "figma"
