@@ -1508,6 +1508,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>BCDA2109-FFF5-4026-B2D6-B18105663E6A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>rust</string>
+			<key>text</key>
+			<string>Open Rust</string>
+			<key>url</key>
+			<string>https://www.rust-lang.org/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>C1ED7A0E-8C78-4286-984D-CFA5B3A2FAD8</key>
 		<dict>
 			<key>enabled</key>
