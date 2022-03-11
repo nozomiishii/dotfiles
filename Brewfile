@@ -170,10 +170,8 @@ cask "docker"
 cask "dotnet-sdk"
 
 # Tool for using an iPad as a second display https://www.duetdisplay.com/
-# Error: SHA256 mismatch
-# cask "duet"
+cask "duet"
 
-# There is some compatibility issue between fig and powerlevel10k 🥲
 # Reimagine your terminal https://fig.io/
 cask "fig"
 
