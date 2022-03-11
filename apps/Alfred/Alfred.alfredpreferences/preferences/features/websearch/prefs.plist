@@ -498,6 +498,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>43A1E930-B740-47FE-831B-0012AEAB95D7</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>fig</string>
+			<key>text</key>
+			<string>Open Fig.ico</string>
+			<key>url</key>
+			<string>https://fig.io/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>43E48FE0-EE22-4DFC-AE53-BB051A8E9333</key>
 		<dict>
 			<key>enabled</key>
