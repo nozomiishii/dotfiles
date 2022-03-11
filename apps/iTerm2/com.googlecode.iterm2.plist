@@ -8,6 +8,8 @@
 	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>1CFD4BBE-941F-410B-AAD1-114CE87E8CE9</string>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HideMenuBarInFullscreen</key>
