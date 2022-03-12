@@ -11,27 +11,28 @@ yabai -m config window_placement              second_child
 
 # general space settings
 # yabai -m config layout                        stack
+space_indices_on_ipad_display="$(
+  yabai -m query --displays \
+    | jq -e 'map(select(.uuid == "872FEEC8-F38A-4AF9-A2FA-5D361431CE2B")) | .[0].spaces[]'
+)"
+for index in "$space_indices_on_ipad_display"
+do
+    yabai -m config --space "$index" layout stack
+done
+
 
 # Debug
 yabai -m config debug_output on
 
 # Rules
-yabai -m rule --add app="^Calendar$"           manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^DeepL$"              manage=off
+yabai -m rule --add app="^1Password 7$"        manage=off
+yabai -m rule --add app="^Alfred$"             manage=off
+yabai -m rule --add app="^AppCleaner$"         manage=off
 yabai -m rule --add app="^Dictionary$"         manage=off
 yabai -m rule --add app="^Disk Utility$"       manage=off
 yabai -m rule --add app="^Simulator$"          manage=off
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^Finder$"             manage=off
-yabai -m rule --add app="^DeepL$"              manage=off
-yabai -m rule --add app="^Hazel$"              manage=off
 yabai -m rule --add app="^ColorSnapper2$"      manage=off
-yabai -m rule --add app="^GitKraken$"          manage=off
-yabai -m rule --add app="^VirtualBox$"         manage=off
-yabai -m rule --add app="^1Password 7$"        manage=off
-yabai -m rule --add app="^AppCleaner$"         manage=off
+yabai -m rule --add app="^Finder$"             manage=off
 yabai -m rule --add app="^Preview$"            manage=off
-yabai -m rule --add app="^Mail$"               manage=off
-yabai -m rule --add app="^Android Studio$"     manage=off
-yabai -m rule --add app="^Alfred"              manage=off
-yabai -m rule --add app="^Notion$"             manage=off
-yabai -m rule --add app="^Figma$"              manage=off
