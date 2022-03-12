@@ -22,7 +22,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # antigen bundle Aloxaf/fzf-tabxxxxxxx
 # antigen bundle b4b4r07/enhancd
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
 antigen apply
