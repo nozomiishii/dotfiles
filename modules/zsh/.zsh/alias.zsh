@@ -18,13 +18,15 @@ alias zclean="zinit self-update && zinit update && zinit delete --clean"
 alias dotclean="brewclean && zclean"
 alias play="chmod +x ./playground.sh && ./playground.sh"
 
+# Open VScode
+alias jj="code ."
 
 # Change Directory
 alias drive="cd $GOOGLE_DRIVE_DIR"
 alias vimtut="cd $HOME/Tutorials/vimclass && open ."
 alias dsk="cd ~/Desktop"
 alias plist="cd ~/Library/Preferences"
-alias Code="cd $CODE_DIR"
+alias ff="cd $CODE_DIR"
 alias dot="cd $HOME/dotfiles"
 alias doto="cd $HOME/dotfiles && code ."
 alias noz="cd $CODE_DIR/nozomiishii"
