@@ -6,6 +6,8 @@
 	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>AutoHideTmuxClientSession</key>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>1CFD4BBE-941F-410B-AAD1-114CE87E8CE9</string>
 	<key>EnableAPIServer</key>
@@ -711,6 +713,8 @@
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<true/>
+	<key>OpenTmuxWindowsIn</key>
+	<integer>1</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PointerActions</key>
