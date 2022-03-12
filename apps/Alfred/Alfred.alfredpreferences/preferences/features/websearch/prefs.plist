@@ -4,6 +4,19 @@
 <dict>
 	<key>customSites</key>
 	<dict>
+		<key>013DDBF5-CF71-4D0F-847F-621034F013DE</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>eslint</string>
+			<key>text</key>
+			<string>open ESLint Rules</string>
+			<key>url</key>
+			<string>https://eslint.org/docs/rules/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>02B37EF1-C1A9-48E5-B7AF-0D6FEB5C015F</key>
 		<dict>
 			<key>enabled</key>
