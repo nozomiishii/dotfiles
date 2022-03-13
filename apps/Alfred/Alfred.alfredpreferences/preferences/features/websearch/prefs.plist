@@ -368,6 +368,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>2EB57058-24B9-4234-BA39-6AF85CC0BFE9</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>rust</string>
+			<key>text</key>
+			<string>Open Rust Documentation</string>
+			<key>url</key>
+			<string>https://doc.rust-lang.org/stable/book/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>30F36DBC-1569-4D25-8E54-A7997305AF23</key>
 		<dict>
 			<key>enabled</key>
