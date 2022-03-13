@@ -459,6 +459,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3D98C605-AC26-486C-9325-CD1B43F8C102</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>replit</string>
+			<key>text</key>
+			<string>Open Replit</string>
+			<key>url</key>
+			<string>https://replit.com/repls</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3E6AC62F-1E13-4B2C-B0CC-A8E0F0992EBF</key>
 		<dict>
 			<key>enabled</key>
