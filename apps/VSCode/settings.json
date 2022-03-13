@@ -148,6 +148,7 @@
   "[rust]": {
     "editor.defaultFormatter": "matklad.rust-analyzer"
   },
+  "rust-analyzer.checkOnSave.command": "clippy",
 
   // Prettier
   "files.autoSave": "onFocusChange",
