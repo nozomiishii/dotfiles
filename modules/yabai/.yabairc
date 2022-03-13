@@ -13,7 +13,7 @@ yabai -m config window_placement              second_child
 # yabai -m config layout                        stack
 space_indices_on_ipad_display="$(
   yabai -m query --displays \
-    | jq -e 'map(select(.uuid == "872FEEC8-F38A-4AF9-A2FA-5D361431CE2B")) | .[0].spaces[]'
+    | jq -e 'map(select(.id != 1)) | .[0].spaces[]'
 )"
 for index in "$space_indices_on_ipad_display"
 do
