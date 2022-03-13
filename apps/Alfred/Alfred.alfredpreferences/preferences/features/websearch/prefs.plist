@@ -1155,6 +1155,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>7FD68784-74BB-4D0C-8882-DDF21189F04F</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>playcode</string>
+			<key>text</key>
+			<string>Open Playcode</string>
+			<key>url</key>
+			<string>https://playcode.io/new/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>80D6831C-5039-4603-BAF0-4E1C92D0F3A4</key>
 		<dict>
 			<key>enabled</key>
