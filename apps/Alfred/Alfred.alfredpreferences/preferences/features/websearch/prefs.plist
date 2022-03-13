@@ -550,6 +550,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>4632E40D-8A19-4B42-B441-DE344A0274AD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>rust</string>
+			<key>text</key>
+			<string>Open Rust Cheat Sheet</string>
+			<key>url</key>
+			<string>https://docs.google.com/document/d/1kQidzAlbqapu-WZTuw4Djik0uTqMZYyiMXTM9F21Dz4/edit</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>46643227-A157-4E69-B44B-41584A512870</key>
 		<dict>
 			<key>enabled</key>
