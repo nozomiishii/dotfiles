@@ -102,6 +102,9 @@ brew "postgresql"
 # A Zsh Theme https://github.com/romkatv/powerlevel10k
 brew "powerlevel10k"
 
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
+
 # Simple hotkey-daemon for macOS. https://github.com/koekeishiya/skhd
 brew "skhd"
 

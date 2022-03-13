@@ -1,18 +1,28 @@
 {
   "recommendations": [
+    // General
     "bierner.markdown-mermaid",
-    "bradlc.vscode-tailwindcss",
     "christian-kohler.path-intellisense",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
-    "juanblanco.solidity",
-    "golang.go",
     "humao.rest-client",
     "monokai.theme-monokai-pro-vscode",
-    "prisma.prisma",
     "streetsidesoftware.code-spell-checker",
-    "stylelint.vscode-stylelint"
+    "usernamehw.errorlens",
+    // TypeScript
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "stylelint.vscode-stylelint",
+    // Solidity
+    "juanblanco.solidity",
+    // Go
+    "golang.go",
+    // Rust
+    "bungcip.better-toml",
+    "matklad.rust-analyzer",
+    "prisma.prisma",
+    "vadimcn.vscode-lldb",
+    "serayuzgur.crates"
   ],
   "unwantedRecommendations": []
 }

@@ -91,10 +91,8 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "gitlens.currentLine.enabled": false,
   "tabnine.experimentalAutoImports": true,
-  "gitlens.advanced.messages": {
-    "suppressImproperWorkspaceCasingWarning": true
-  },
   "liveshare.presence": false,
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
 
   // Docker
   "docker.enableDockerComposeLanguageService": true,
@@ -144,6 +142,11 @@
   // Golang
   "[go]": {
     "editor.defaultFormatter": "golang.go"
+  },
+
+  // Rust
+  "[rust]": {
+    "editor.defaultFormatter": "matklad.rust-analyzer"
   },
 
   // Prettier

@@ -1,6 +1,7 @@
-python 3.9.1
-ruby 3.0.1
 golang 1.17.7
 nodejs 16.14.0
-yarn 1.22.10
+python 3.9.1
+ruby 3.0.1
+rust 1.59.0
 terraform 1.0.11
+yarn 1.22.10
