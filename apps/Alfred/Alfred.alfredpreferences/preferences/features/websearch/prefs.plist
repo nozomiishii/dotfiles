@@ -641,6 +641,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>5115BA2E-23FA-41C4-81A1-92B12005C128</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>mdn</string>
+			<key>text</key>
+			<string>Open MDN - JP</string>
+			<key>url</key>
+			<string>https://developer.mozilla.org/ja/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>525638BE-D215-4A9D-90FD-8FED9A748658</key>
 		<dict>
 			<key>enabled</key>
@@ -1329,11 +1342,11 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>javascript</string>
+			<string>mdn</string>
 			<key>text</key>
-			<string>Open JavaScript Documentation</string>
+			<string>Open MDN</string>
 			<key>url</key>
-			<string>https://developer.mozilla.org/en-US/docs/Web/JavaScript</string>
+			<string>https://developer.mozilla.org/en-US/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
