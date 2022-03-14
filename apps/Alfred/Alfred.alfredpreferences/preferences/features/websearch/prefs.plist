@@ -869,6 +869,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>6558D1A3-3484-48CC-8D47-AB181C56BBE1</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>headless ui</string>
+			<key>text</key>
+			<string>Open Headless UI</string>
+			<key>url</key>
+			<string>https://headlessui.dev/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>6566262F-EA2E-4C88-8489-6B5B567708E2</key>
 		<dict>
 			<key>enabled</key>
@@ -2052,6 +2065,19 @@ Open CSS Tailwind Converter</string>
 			<string>Open Hygen Documentation</string>
 			<key>url</key>
 			<string>https://www.hygen.io/docs/quick-start</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>FAC2F8A9-0D70-45F3-B916-1121860E4859</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>regex</string>
+			<key>text</key>
+			<string>Open Regex Crossword</string>
+			<key>url</key>
+			<string>https://regexcrossword.com/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
