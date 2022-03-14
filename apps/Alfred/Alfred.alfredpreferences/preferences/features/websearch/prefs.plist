@@ -1025,6 +1025,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>726DDCF0-AD43-460F-BC38-46DAB36B9917</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>go</string>
+			<key>text</key>
+			<string>Open Go</string>
+			<key>url</key>
+			<string>https://go.dev/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>729E540D-B266-40E3-B5D9-F4869D9AAA5D</key>
 		<dict>
 			<key>enabled</key>
