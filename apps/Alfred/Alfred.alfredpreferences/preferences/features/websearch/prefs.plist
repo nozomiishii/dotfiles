@@ -711,7 +711,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>typescript</string>
+			<string>ts</string>
 			<key>text</key>
 			<string>Open TypeScript Documentation</string>
 			<key>url</key>
