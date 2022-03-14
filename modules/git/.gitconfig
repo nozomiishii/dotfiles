@@ -10,3 +10,4 @@
 	defaultBranch = main
 [core]
 	editor = nvim
+	ignorecase = false
