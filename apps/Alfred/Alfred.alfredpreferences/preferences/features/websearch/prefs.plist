@@ -1201,7 +1201,7 @@ Translate '{query}' into Japanese</string>
 			<key>keyword</key>
 			<string>tail</string>
 			<key>text</key>
-			<string>Open tailwindcss</string>
+			<string>Open TailwindCSS</string>
 			<key>url</key>
 			<string>https://tailwindcss.com/docs</string>
 			<key>utf8</key>
@@ -1814,7 +1814,7 @@ Google Cloud Console</string>
 			<key>keyword</key>
 			<string>tailwind</string>
 			<key>text</key>
-			<string>Open CSS Tailwind Converter
+			<string>Open CSS To Tailwind Converter
 Open CSS Tailwind Converter</string>
 			<key>url</key>
 			<string>https://tailwind-converter.netlify.app/</string>
