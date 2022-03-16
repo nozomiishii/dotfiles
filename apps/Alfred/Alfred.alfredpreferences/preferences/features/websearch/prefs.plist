@@ -1677,6 +1677,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>C364D475-2501-4559-812E-1E391EE71924</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>flowbite</string>
+			<key>text</key>
+			<string>Open Flowbite</string>
+			<key>url</key>
+			<string>https://flowbite.com/docs/getting-started/introduction/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>C38C7DF9-3321-4EEB-AD46-99D1DE4EC1BD</key>
 		<dict>
 			<key>enabled</key>
