@@ -117,6 +117,9 @@ brew "stripe"
 # Programmatically correct mistyped console commands https://github.com/nvbn/thefuck
 brew "thefuck"
 
+# Text interface for Git repositories https://jonas.github.io/tig/
+brew 'tig'
+
 # Terminal multiplexer https://tmux.github.io/
 brew "tmux"
 
@@ -190,11 +193,14 @@ cask "flutter"
 # font-meslo-lg-nerd-font https://github.com/ryanoasis/nerd-fonts
 cask "font-meslo-lg-nerd-font"
 
+# GIT client　https://fork.dev/
+cask "fork"
+
 # Personal blockchain for Ethereum development https://truffleframework.com/ganache/
 cask "ganache"
 
 # Git client focusing on productivity https://www.gitkraken.com/ 
-cask "gitkraken"
+# cask "gitkraken"
 
 # Web browser. https://www.google.com/chrome
 cask "google-chrome"
@@ -240,9 +246,6 @@ cask "pycharm-ce"
 
 # Team communication and collaboration software. https://slack.com
 cask "slack"
-
-# Graphical client for Git version control https://www.sourcetreeapp.com/
-cask "sourcetree"
 
 # Music streaming service. https://www.spotify.com
 cask "spotify"
