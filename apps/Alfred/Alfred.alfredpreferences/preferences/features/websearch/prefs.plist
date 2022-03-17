@@ -737,7 +737,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>recipe</string>
+			<string>vscode</string>
 			<key>text</key>
 			<string>Open microsoft/vscode-recipes</string>
 			<key>url</key>
@@ -900,9 +900,9 @@ Translate '{query}' into Japanese</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>headless ui</string>
+			<string>ui</string>
 			<key>text</key>
-			<string>Open Headless UI</string>
+			<string>Open UI - Headless UI</string>
 			<key>url</key>
 			<string>https://headlessui.dev/</string>
 			<key>utf8</key>
@@ -1695,9 +1695,9 @@ Google Cloud Console</string>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>flowbite</string>
+			<string>ui</string>
 			<key>text</key>
-			<string>Open Flowbite</string>
+			<string>Open UI - Flowbite</string>
 			<key>url</key>
 			<string>https://flowbite.com/docs/getting-started/introduction/</string>
 			<key>utf8</key>
