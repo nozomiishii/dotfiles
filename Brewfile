@@ -241,6 +241,9 @@ cask "pycharm-ce"
 # Team communication and collaboration software. https://slack.com
 cask "slack"
 
+# Graphical client for Git version control https://www.sourcetreeapp.com/
+cask "sourcetree"
+
 # Music streaming service. https://www.spotify.com
 cask "spotify"
 
