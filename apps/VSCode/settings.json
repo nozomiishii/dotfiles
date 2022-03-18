@@ -73,7 +73,7 @@
     "editorGhostText.foreground": "#FFD64C"
   },
   // Git Copilot
-  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.enabled": false,
 
   // Explorer
   "explorer.openEditors.visible": 0,
