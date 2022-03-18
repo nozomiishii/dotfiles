@@ -62,8 +62,18 @@
     "terminal.ansiMagenta": "#AF9AF8",
     "terminal.ansiRed": "#FF6D67",
     "terminal.ansiWhite": "#C7C7C7",
-    "terminal.ansiYellow": "#D7AF00"
+    "terminal.ansiYellow": "#D7AF00",
+
+    // Git Copilot colors
+    // "editorGhostText.border": "#403E41",
+    // "editorGhostText.background": "#403E41",
+    // "editorGhostText.foreground": "#C1C0C0"
+    "editorGhostText.border": "#727072",
+    "editorGhostText.background": "#727072",
+    "editorGhostText.foreground": "#FFD64C"
   },
+  // Git Copilot
+  "editor.inlineSuggest.enabled": true,
 
   // Explorer
   "explorer.openEditors.visible": 0,
