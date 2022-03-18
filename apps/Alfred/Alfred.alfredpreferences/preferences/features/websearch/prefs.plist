@@ -1168,6 +1168,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>76455EB3-66CE-4CF8-A9F2-784625D7626C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>git</string>
+			<key>text</key>
+			<string>Open Git Conventional Commits</string>
+			<key>url</key>
+			<string>https://www.conventionalcommits.org/en/v1.0.0/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>795BE58B-D4F9-4D7F-A631-BB9601BFCE1F</key>
 		<dict>
 			<key>enabled</key>
