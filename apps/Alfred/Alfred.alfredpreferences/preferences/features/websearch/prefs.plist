@@ -2094,6 +2094,19 @@ Open CSS Tailwind Converter</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>F8B11DD7-4E4F-4AA3-B50B-982835208C2A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>react admin</string>
+			<key>text</key>
+			<string>Open React Admin</string>
+			<key>url</key>
+			<string>https://marmelab.com/react-admin/Readme.html</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>F9B3D19E-3B75-4031-88C8-8A679696F71B</key>
 		<dict>
 			<key>enabled</key>
