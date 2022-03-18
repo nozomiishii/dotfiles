@@ -273,9 +273,9 @@
 			<key>HotKey Modifier Flags</key>
 			<integer>0</integer>
 			<key>HotKey Window Animates</key>
-			<true/>
-			<key>HotKey Window AutoHides</key>
 			<false/>
+			<key>HotKey Window AutoHides</key>
+			<true/>
 			<key>HotKey Window Dock Click Action</key>
 			<integer>1</integer>
 			<key>HotKey Window Floats</key>

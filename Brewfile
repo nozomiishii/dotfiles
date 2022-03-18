@@ -32,6 +32,9 @@ brew "cocoapods"
 # asdf golang dependencies | GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
 brew "coreutils"
 
+# Utility for managing cargo dependencies from the command-line https://killercup.github.io/cargo-edit/
+brew "cargo-edit"
+
 # Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
 brew "ethereum"
 
