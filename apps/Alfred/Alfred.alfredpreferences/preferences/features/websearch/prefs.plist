@@ -973,6 +973,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>6B3FEA38-897A-4C4C-B863-BBE0D1CEC8BC</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>devto</string>
+			<key>text</key>
+			<string>Open Dev.to</string>
+			<key>url</key>
+			<string>https://dev.to/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>6C36AD93-3FC7-449F-9777-B3FE5FEB3B73</key>
 		<dict>
 			<key>enabled</key>
