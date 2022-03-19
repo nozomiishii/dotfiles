@@ -869,6 +869,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>6411A3C0-5112-4CEB-8667-EA7F421BF3D9</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cv</string>
+			<key>text</key>
+			<string>Open CV</string>
+			<key>url</key>
+			<string>https://github.com/nozomiishii/cv</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>644006E1-E1FE-4057-A5B4-829CF952D4EC</key>
 		<dict>
 			<key>enabled</key>
