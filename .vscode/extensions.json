@@ -8,9 +8,12 @@
     "monokai.theme-monokai-pro-vscode",
     "streetsidesoftware.code-spell-checker",
     "usernamehw.errorlens",
+    // Nx
+    "nrwl.angular-console",
     // TypeScript
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
+    "firsttris.vscode-jest-runner",
     "bradlc.vscode-tailwindcss",
     "stylelint.vscode-stylelint",
     // Solidity
