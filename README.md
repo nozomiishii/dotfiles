@@ -30,7 +30,7 @@ Turn On and Follow the guide
 ```
 
 **Sign in your iCloud and App Store, when you get to the home screen. (to get apps using mas command)**  
-If you can't use your personal apple ID on your company computer, install xcode manually from the App Store.
+💡 If you can't use your personal apple ID on your company computer, install xcode manually from the App Store.
 
 **🍎 Apple ID**
 
