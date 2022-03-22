@@ -1246,6 +1246,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>7AAE7C59-88A1-4022-8685-48905E2800C5</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cheat</string>
+			<key>text</key>
+			<string>Open Cheats sheet - Oh My Zsh Git</string>
+			<key>url</key>
+			<string>https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>7BB1A7D9-0E6C-4031-BC54-71A9ED67F72A</key>
 		<dict>
 			<key>enabled</key>
