@@ -65,6 +65,7 @@ Change shell to zsh
 
 ```shell
   chsh -s /bin/zsh
+  echo $SHELL
 ```
 
 ```shell
