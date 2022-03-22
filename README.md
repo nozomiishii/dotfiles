@@ -1,7 +1,7 @@
 # Nozomi's dotfiles
 
 - [📦 New Macbook? Awesome!!](#new-macbook?)
-  - [install](#install)
+  - [Install](#install)
   - [Install Manually](#install-manually)
   - [App preferences](#app-preferences)
 - [👨🏻‍🍳 Customize](#customize)
@@ -138,7 +138,11 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   ~/dotfiles/install -e
 ```
 
-Restart your Mac
+**🛋 Restart**
+
+```shell
+  sudo reboot
+```
 
 <a id="app-preferences"></a>
 
@@ -351,9 +355,10 @@ Finder Sidebar
 - Sign in
 - Download lts
 
-**🦖C#**  
-[Unity setup for M1 Mac](https://gurutaka-log.com/unity-vscode-mac-setup)  
-[Download Mono](https://www.mono-project.com/download/stable/#download-mac)
+**🦖C#**
+
+- [Unity setup for M1 Mac](https://gurutaka-log.com/unity-vscode-mac-setup)
+- [Download Mono](https://www.mono-project.com/download/stable/#download-mac)
 
 **🐵 Blender**
 
