@@ -138,6 +138,8 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   ~/dotfiles/install -e
 ```
 
+Restart your Mac
+
 <a id="app-preferences"></a>
 
 ## App preferences
