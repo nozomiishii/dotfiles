@@ -212,6 +212,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>1BF55CF5-80C2-4DC1-BCEE-69931FC70292</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>mdx</string>
+			<key>text</key>
+			<string>Open MDX</string>
+			<key>url</key>
+			<string>https://mdxjs.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>1C98BFBD-B458-482D-B762-5586B5CA2618</key>
 		<dict>
 			<key>enabled</key>
