@@ -215,6 +215,10 @@ Finder Sidebar
     - [Gossip Site Blocker](https://chrome.google.com/webstore/detail/gossip-site-blocker/mjojhcmecfehllhcjcbhkkpohadogplk)
     - [GoFullPage](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl)
 
+**🗿 fig**
+
+- Setup
+
 **☁️ google-drive**
 
 - Sign in and Sync
