@@ -189,9 +189,6 @@ Finder Sidebar
 - Preferences > Features > Snippets >  
   Check "Automatically expand snippets by keyword"
 
-- Preferences > Appearance > Options > How he looks >  
-  Hide menu bar icon
-
 - Preferences > Advanced >  
   Force Keyboard: ABC
 
@@ -249,6 +246,8 @@ Finder Sidebar
 - License... > Activate the License
 - Folder > Rule Sync Settings... > Use existing sync file... >  
   Select "~/dotfiles/apps/Hazel"
+- Preferences... > General >  
+  Uncheck "Show Hazel in the menu bar"
 - Preferences... > Trash >  
   Check "Delete files sitting in the Trash for more than 1 Day"
 
