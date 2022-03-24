@@ -256,6 +256,8 @@
 			<string>1CFD4BBE-941F-410B-AAD1-114CE87E8CE9</string>
 			<key>Has Hotkey</key>
 			<true/>
+			<key>Hide After Opening</key>
+			<true/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
@@ -279,7 +281,7 @@
 			<key>HotKey Window Dock Click Action</key>
 			<integer>1</integer>
 			<key>HotKey Window Floats</key>
-			<false/>
+			<true/>
 			<key>HotKey Window Reopens On Activation</key>
 			<false/>
 			<key>Idle Code</key>
@@ -590,6 +592,8 @@
 			<true/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
+			<key>Prevent Opening in a Tab</key>
+			<true/>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -693,6 +697,8 @@
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Custom Window Title</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -702,7 +708,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>1</integer>
+			<integer>15</integer>
 			<key>Working Directory</key>
 			<string>/Users/nozomiishii</string>
 		</dict>
