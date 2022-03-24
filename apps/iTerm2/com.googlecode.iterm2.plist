@@ -257,7 +257,7 @@
 			<key>Has Hotkey</key>
 			<true/>
 			<key>Hide After Opening</key>
-			<true/>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
@@ -275,7 +275,7 @@
 			<key>HotKey Modifier Flags</key>
 			<integer>0</integer>
 			<key>HotKey Window Animates</key>
-			<false/>
+			<true/>
 			<key>HotKey Window AutoHides</key>
 			<true/>
 			<key>HotKey Window Dock Click Action</key>
@@ -593,7 +593,7 @@
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prevent Opening in a Tab</key>
-			<true/>
+			<false/>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -708,7 +708,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>15</integer>
+			<integer>1</integer>
 			<key>Working Directory</key>
 			<string>/Users/nozomiishii</string>
 		</dict>
