@@ -40,7 +40,7 @@
 
   // Terminal
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.fontFamily": "'MesloLGM Nerd Font', Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
+  "terminal.integrated.fontFamily": "'MesloLGS Nerd Font Mono', Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "workbench.colorCustomizations": {
     "panel.background": "#121112",
     "terminal.background": "#121112",
