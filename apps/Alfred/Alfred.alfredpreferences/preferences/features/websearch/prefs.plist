@@ -433,6 +433,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>33B82AA8-5221-44F1-B36B-F5F9199A33F4</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>egghead</string>
+			<key>text</key>
+			<string>Open egghead.io - Recently Added</string>
+			<key>url</key>
+			<string>https://egghead.io/q?sortBy=created</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>35990DCC-8357-4174-8F3A-E3D165649724</key>
 		<dict>
 			<key>enabled</key>
