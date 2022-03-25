@@ -99,6 +99,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3AE5D24D-BBC9-4B63-9A4D-FCB4A5F28B58</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>38A57314-C884-4B0B-AD4D-9FF2408F5A92</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3B185832-821B-4199-A2A8-2142E0887C4D</key>
 		<array>
 			<dict>
@@ -1543,6 +1556,44 @@ end alfred_script</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Volumes/GoogleDrive/My Drive/Assets/bland-logos</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>38A57314-C884-4B0B-AD4D-9FF2408F5A92</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>app</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Open Applications folder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3AE5D24D-BBC9-4B63-9A4D-FCB4A5F28B58</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -1624,6 +1675,20 @@ end alfred_script</string>
 			<integer>590</integer>
 			<key>ypos</key>
 			<integer>1050</integer>
+		</dict>
+		<key>38A57314-C884-4B0B-AD4D-9FF2408F5A92</key>
+		<dict>
+			<key>xpos</key>
+			<integer>750</integer>
+			<key>ypos</key>
+			<integer>1550</integer>
+		</dict>
+		<key>3AE5D24D-BBC9-4B63-9A4D-FCB4A5F28B58</key>
+		<dict>
+			<key>xpos</key>
+			<integer>620</integer>
+			<key>ypos</key>
+			<integer>1550</integer>
 		</dict>
 		<key>3B185832-821B-4199-A2A8-2142E0887C4D</key>
 		<dict>
