@@ -245,9 +245,17 @@ Finder Sidebar
   ~/dotfiles/install -c
 ```
 
+**🤵🏻‍♂️ Keyboard Maestro**
+
+- Register Keyboard Maestro... >  
+  Activate the License
+- Preferences... > Sync Marcos >  
+  Select "~/dotfiles/apps/KeyboardMaestro"
+
 **🧹 Hazel**
 
-- License... > Activate the License
+- License... >  
+  Activate the License
 - Folder > Rule Sync Settings... > Use existing sync file... >  
   Select "~/dotfiles/apps/Hazel"
 - Preferences... > General >  
