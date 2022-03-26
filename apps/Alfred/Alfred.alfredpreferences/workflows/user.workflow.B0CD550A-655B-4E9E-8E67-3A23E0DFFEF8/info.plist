@@ -34,6 +34,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>0A459DB4-A4DE-4479-AB71-3C0AEA047AAB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>671E5D5A-FECF-4AE7-967B-0112AF7FAD9A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>12E7D8B6-F5ED-4067-BDC8-68FEBF2F5CDD</key>
 		<array>
 			<dict>
@@ -482,6 +495,57 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Figma.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>4E746779-3018-4B55-BE63-1A31CD027655</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/System/Volumes/Data/Applications/Visual Studio Code.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>E7C0B6A3-F738-4492-A455-096A93784148</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Slack.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>5E62341D-E154-4997-8FA3-C347D6671285</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -522,6 +586,37 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
+				<integer>40</integer>
+				<key>hotmod</key>
+				<integer>524288</integer>
+				<key>hotstring</key>
+				<string>K</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>0020C62F-2DDD-454D-88A3-AB35426ACA23</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
 				<integer>37</integer>
 				<key>hotmod</key>
 				<integer>524288</integer>
@@ -540,23 +635,6 @@
 			<string>7BD50759-8F95-40CB-9B36-F131213AD13E</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/System/Volumes/Data/Applications/Visual Studio Code.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>E7C0B6A3-F738-4492-A455-096A93784148</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -592,17 +670,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Figma.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://calendar.google.com/</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>4E746779-3018-4B55-BE63-1A31CD027655</string>
+			<string>FD84C5F7-89A3-4C54-BCA7-0454150D6704</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -625,73 +705,6 @@ end alfred_script</string>
 			<string>07401336-7EF1-46A5-A600-B4D1FB3FC6D9</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://calendar.google.com/</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>FD84C5F7-89A3-4C54-BCA7-0454150D6704</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Slack.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>5E62341D-E154-4997-8FA3-C347D6671285</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>40</integer>
-				<key>hotmod</key>
-				<integer>524288</integer>
-				<key>hotstring</key>
-				<string>K</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>0020C62F-2DDD-454D-88A3-AB35426ACA23</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -744,37 +757,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>AF78794E-2458-43F5-A747-76A05A2E5363</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>paths</key>
 				<array>
 					<string>/System/Volumes/Data/Applications/Google Chrome.app</string>
@@ -816,7 +798,7 @@ end alfred_script</string>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>31EED105-A92A-4A51-AD49-E3ADACDFD3B3</string>
+			<string>AF78794E-2458-43F5-A747-76A05A2E5363</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -840,6 +822,52 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>31EED105-A92A-4A51-AD49-E3ADACDFD3B3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>command</key>
+				<integer>1</integer>
+				<key>confirm</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.systemcommand</string>
+			<key>uid</key>
+			<string>A30798B3-B9EC-4073-8494-523374066E20</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>paths</key>
 				<array>
 					<string>/Applications/Spotify.app</string>
@@ -857,15 +885,31 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>command</key>
-				<integer>1</integer>
-				<key>confirm</key>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
 				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>44</integer>
+				<key>hotmod</key>
+				<integer>524288</integer>
+				<key>hotstring</key>
+				<string>/</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.systemcommand</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>A30798B3-B9EC-4073-8494-523374066E20</string>
+			<string>235D415F-FBAC-43ED-BC94-0FE05F34897D</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -897,37 +941,6 @@ end alfred_script</string>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>AFCD41E6-BB88-4EE6-9DD6-A2AE7C08E507</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>44</integer>
-				<key>hotmod</key>
-				<integer>524288</integer>
-				<key>hotstring</key>
-				<string>/</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>2</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>235D415F-FBAC-43ED-BC94-0FE05F34897D</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -982,38 +995,33 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/iTerm.app</string>
-				</array>
-				<key>toggle</key>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
 				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>47</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>.</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>671E5D5A-FECF-4AE7-967B-0112AF7FAD9A</string>
+			<string>0A459DB4-A4DE-4479-AB71-3C0AEA047AAB</string>
 			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-
-tell application "System Preferences"	reveal anchor "displaysDisplayTab" of pane id "com.apple.preference.displays"	activate		tell application "System Events"		tell application process "System Preferences"			repeat until exists of pop up button "Add Display" of window "Displays"				delay 0.1			end repeat						click pop up button "Add Display" of window "Displays"			click menu item "Nozomi’s iPad" of menu of pop up button "Add Display" of window "Displays"		end tell	end tell	quitend tell
-
-end alfred_script</string>
-				<key>cachescript</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>DDE7F65F-CD2B-4CA7-818C-ECDF86D27FD0</string>
-			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1033,6 +1041,23 @@ end alfred_script</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>BA443501-A78F-420C-9FD7-1474F84563A2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/iTerm.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>671E5D5A-FECF-4AE7-967B-0112AF7FAD9A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1070,21 +1095,19 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>sc</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Toggle Sidecar</string>
-				<key>withspace</key>
-				<false/>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+
+tell application "System Preferences"	reveal anchor "displaysDisplayTab" of pane id "com.apple.preference.displays"	activate		tell application "System Events"		tell application process "System Preferences"			repeat until exists of pop up button "Add Display" of window "Displays"				delay 0.1			end repeat						click pop up button "Add Display" of window "Displays"			click menu item "Nozomi’s iPad" of menu of pop up button "Add Display" of window "Displays"		end tell	end tell	quitend tell
+
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
-			<string>C8D422AE-FF7B-4989-91AB-451956B84BB1</string>
+			<string>DDE7F65F-CD2B-4CA7-818C-ECDF86D27FD0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1118,6 +1141,27 @@ end alfred_script</string>
 			<string>ED6D1900-23F5-42D6-BC0C-B6FFF916C044</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>sc</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Toggle Sidecar</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C8D422AE-FF7B-4989-91AB-451956B84BB1</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1337,25 +1381,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://mail.google.com/mail/u/1</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>D2386AB4-6857-434E-87BF-3740F48C9008</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1387,6 +1412,25 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://mail.google.com/mail/u/1</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>D2386AB4-6857-434E-87BF-3740F48C9008</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1396,11 +1440,11 @@ end alfred_script</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>11</integer>
+				<integer>7</integer>
 				<key>hotmod</key>
 				<integer>524288</integer>
 				<key>hotstring</key>
-				<string>B</string>
+				<string>X</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1411,7 +1455,7 @@ end alfred_script</string>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>68331F4B-FF5D-402F-B99E-4261DE442056</string>
+			<string>5FAD7643-3600-4835-A868-BBBB680A7F42</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -1461,11 +1505,11 @@ end alfred_script</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>7</integer>
+				<integer>11</integer>
 				<key>hotmod</key>
 				<integer>524288</integer>
 				<key>hotstring</key>
-				<string>X</string>
+				<string>B</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1476,28 +1520,24 @@ end alfred_script</string>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>5FAD7643-3600-4835-A868-BBBB680A7F42</string>
+			<string>68331F4B-FF5D-402F-B99E-4261DE442056</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>id</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Open ID folder</string>
-				<key>withspace</key>
+				<key>paths</key>
+				<array>
+					<string>/Volumes/GoogleDrive/My Drive/Assets/bland-logos</string>
+				</array>
+				<key>toggle</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>F3C1C24E-3BF7-45FC-824D-60269D9A6EEA</string>
+			<string>CB4C8C1D-BE93-49F9-B811-476955BD62B8</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1521,17 +1561,21 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Volumes/GoogleDrive/My Drive/Assets/bland-logos</string>
-				</array>
-				<key>toggle</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>id</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Open ID folder</string>
+				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>CB4C8C1D-BE93-49F9-B811-476955BD62B8</string>
+			<string>F3C1C24E-3BF7-45FC-824D-60269D9A6EEA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1612,6 +1656,13 @@ end alfred_script</string>
 			<integer>1245</integer>
 			<key>ypos</key>
 			<integer>225</integer>
+		</dict>
+		<key>0A459DB4-A4DE-4479-AB71-3C0AEA047AAB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>335</integer>
+			<key>ypos</key>
+			<integer>645</integer>
 		</dict>
 		<key>12E7D8B6-F5ED-4067-BDC8-68FEBF2F5CDD</key>
 		<dict>
