@@ -1610,6 +1610,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>AB0727A9-649D-452E-A9FF-2E4DF22EBF87</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>react</string>
+			<key>text</key>
+			<string>Open React Router</string>
+			<key>url</key>
+			<string>https://reactrouter.com/docs/en/v6</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>AE6C5DAF-3F45-4D95-9967-8117C712A875</key>
 		<dict>
 			<key>enabled</key>
