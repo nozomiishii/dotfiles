@@ -22,7 +22,7 @@
   "editor.fontFamily": "Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.linkedEditing": true,
-  "editor.emptySelectionClipboard": false,
+  // "editor.emptySelectionClipboard": false,
 
   // vscode-icons
   "workbench.iconTheme": "vscode-icons",

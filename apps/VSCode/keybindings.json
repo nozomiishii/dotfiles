@@ -116,10 +116,10 @@
   {
     "key": "ctrl+,",
     "command": "editor.emmet.action.wrapWithAbbreviation"
-  },
-  {
-    "key": "cmd+x",
-    "command": "editor.action.deleteLines",
-    "when": "editorTextFocus && !editorReadonly"
   }
+  // {
+  //   "key": "cmd+x",
+  //   "command": "editor.action.deleteLines",
+  //   "when": "editorTextFocus && !editorReadonly"
+  // }
 ]
