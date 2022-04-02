@@ -524,6 +524,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3ED91B4F-E16E-4B3E-A9E6-8D18BBD4CA8E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>crates</string>
+			<key>text</key>
+			<string>Open crates.io</string>
+			<key>url</key>
+			<string>https://crates.io/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3FC60018-E30E-47FF-8633-21D95CDC75D9</key>
 		<dict>
 			<key>enabled</key>
