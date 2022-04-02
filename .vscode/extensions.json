@@ -25,7 +25,9 @@
     "matklad.rust-analyzer",
     "prisma.prisma",
     "vadimcn.vscode-lldb",
-    "serayuzgur.crates"
+    "serayuzgur.crates",
+    // AppleScript
+    "idleberg.applescript"
   ],
   "unwantedRecommendations": []
 }
