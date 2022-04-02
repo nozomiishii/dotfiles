@@ -1454,6 +1454,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>8D73C99B-2CD8-4D39-8739-58BCB4E19F7F</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ts</string>
+			<key>text</key>
+			<string>Open TypeScript ESLint</string>
+			<key>url</key>
+			<string>https://typescript-eslint.io/docs/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>8D9849A6-7C9B-41B3-B3E1-06265D684DB5</key>
 		<dict>
 			<key>enabled</key>
