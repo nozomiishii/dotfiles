@@ -13,5 +13,10 @@
     "prefix": "/code",
     "body": ["```${0:code}", "", "```"],
     "description": "code"
+  },
+  "zsh": {
+    "prefix": "/zsh",
+    "body": ["```zsh", "", "```"],
+    "description": "zsh"
   }
 }
