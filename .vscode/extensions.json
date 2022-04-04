@@ -27,7 +27,10 @@
     "vadimcn.vscode-lldb",
     "serayuzgur.crates",
     // AppleScript
-    "idleberg.applescript"
+    "idleberg.applescript",
+    // mdx
+    "silvenon.mdx",
+    "xyc.vscode-mdx-preview"
   ],
   "unwantedRecommendations": []
 }
