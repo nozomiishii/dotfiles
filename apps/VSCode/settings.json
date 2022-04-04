@@ -3,7 +3,6 @@
   "workbench.colorTheme": "Monokai Pro",
   "workbench.startupEditor": "newUntitledFile",
   "breadcrumbs.enabled": true,
-  "emmet.triggerExpansionOnTab": true,
   "files.insertFinalNewline": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -22,7 +21,13 @@
   "editor.fontFamily": "Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.linkedEditing": true,
-  // "editor.emptySelectionClipboard": false,
+
+  // Emmet
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
 
   // vscode-icons
   "workbench.iconTheme": "vscode-icons",
@@ -97,6 +102,7 @@
     "*.ejs": "html",
     "*.ejs.t": "html"
   },
+
   // Extenstions
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "liveServer.settings.donotShowInfoMsg": true,
