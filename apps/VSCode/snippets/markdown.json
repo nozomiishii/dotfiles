@@ -18,5 +18,10 @@
     "prefix": "/zsh",
     "body": ["```zsh", "  ${0}", "```"],
     "description": "zsh"
+  },
+  "diff": {
+    "prefix": "/diff",
+    "body": ["```diff", "  ${0}", "```"],
+    "description": "diff"
   }
 }
