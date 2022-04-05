@@ -16,7 +16,7 @@
   },
   "zsh": {
     "prefix": "/zsh",
-    "body": ["```zsh", "", "```"],
+    "body": ["```zsh", "  ${0}", "```"],
     "description": "zsh"
   }
 }
