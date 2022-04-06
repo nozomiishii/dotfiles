@@ -157,6 +157,9 @@ cask "blackhole-2ch"
 # Free and open-source 3D creation suite. https://www.blender.org
 cask "blender"
 
+# Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
+cask "bleunlock"
+
 # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
 cask "brooklyn"
 

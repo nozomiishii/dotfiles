@@ -302,6 +302,15 @@ Finder Sidebar
   brew services restart yabai && brew services restart skhd
 ```
 
+**🫐 BLEUnlock**
+
+- Device: Select your device
+- Unlock RSSI: -50dBm
+- Lock RSSI: -60dBm
+- Check 'Pause "Now Playing" while Locked'
+- Check 'Use Screensaver to Lock'
+- Check 'Launch at Login'
+
 **💻 System Preferences**
 
 - **🌃 Desktop & Screen Saver**
