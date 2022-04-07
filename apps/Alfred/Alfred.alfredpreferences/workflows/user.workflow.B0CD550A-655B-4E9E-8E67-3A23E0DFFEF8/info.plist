@@ -1605,7 +1605,7 @@ end alfred_script</string>
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Volumes/GoogleDrive/My Drive/Assets/bland-logos</string>
+					<string>/Applications</string>
 				</array>
 				<key>toggle</key>
 				<false/>
