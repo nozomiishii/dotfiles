@@ -30,7 +30,9 @@
     "idleberg.applescript",
     // mdx
     "silvenon.mdx",
-    "xyc.vscode-mdx-preview"
+    "xyc.vscode-mdx-preview",
+    // Motoko
+    "dfinity-foundation.vscode-motoko"
   ],
   "unwantedRecommendations": []
 }
