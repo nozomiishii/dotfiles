@@ -232,6 +232,9 @@ cask "iterm2"
 # Keyboard customizer. https://pqrs.org/osx/karabiner
 cask "karabiner-elements"
 
+# Automation software https://www.keyboardmaestro.com/main/
+cask "keyboard-maestro"
+
 # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
 cask "kindle"
 
