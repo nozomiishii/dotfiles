@@ -1872,6 +1872,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>C9691C46-B4FA-45AE-A84C-BA1B5C649B7C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ic</string>
+			<key>text</key>
+			<string>Open Internet Computer Documentation</string>
+			<key>url</key>
+			<string>https://smartcontracts.org/docs/quickstart/quickstart-intro.html</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>CB537AC3-AD58-484D-B5C6-86A97D719C5A</key>
 		<dict>
 			<key>enabled</key>
