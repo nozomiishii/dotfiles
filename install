@@ -127,6 +127,12 @@ setup_apps(){
 # Environment
 # Dependencis | Homebrew | Link | Apps (agree to the Xcode license)
 setup_environment(){
+  if ! type dfx > /dev/null 2>&1; then
+    echo "🌝 Environment setup(dfx)"
+    pre_sudo
+    DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
+  fi
+
   echo "🌝 Environment setup(asdf)"
   source "$ROOT_PATH/src/env.zsh"
 }
