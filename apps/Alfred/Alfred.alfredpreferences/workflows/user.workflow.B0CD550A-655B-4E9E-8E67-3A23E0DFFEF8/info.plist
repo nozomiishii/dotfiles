@@ -1064,37 +1064,6 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>50</integer>
-				<key>hotmod</key>
-				<integer>524288</integer>
-				<key>hotstring</key>
-				<string>`</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>F224BA77-8688-4D52-B909-61CF33C9D757</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1125,10 +1094,7 @@ tell application "System Preferences"
 					end repeat
 
 					tell menu item deviceName of menu 1
-						set isChecked to value of attribute "AXMenuItemMarkChar" is "✓"
-						if not isChecked then
-							click
-					  end if
+						click
 					end tell
 				end tell
 			end tell
@@ -1148,6 +1114,37 @@ end tell</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>E2F3CD80-C000-47A5-9846-385BA212B1FB</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>50</integer>
+				<key>hotmod</key>
+				<integer>524288</integer>
+				<key>hotstring</key>
+				<string>`</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F224BA77-8688-4D52-B909-61CF33C9D757</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -2006,16 +2003,16 @@ end alfred_script</string>
 		<key>DDE7F65F-CD2B-4CA7-818C-ECDF86D27FD0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>275</integer>
+			<integer>255</integer>
 			<key>ypos</key>
-			<integer>875</integer>
+			<integer>865</integer>
 		</dict>
 		<key>E2F3CD80-C000-47A5-9846-385BA212B1FB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>330</integer>
+			<integer>255</integer>
 			<key>ypos</key>
-			<integer>760</integer>
+			<integer>755</integer>
 		</dict>
 		<key>E6457866-CA21-4181-8BF4-A7917F26DDA9</key>
 		<dict>
