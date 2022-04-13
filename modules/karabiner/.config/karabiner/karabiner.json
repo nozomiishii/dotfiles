@@ -81,19 +81,32 @@
             ]
           },
           {
-            "description": "⌘ + ⌃ を押したときに、英数・かなキーを送信する。（左⌘ : 英数, 右⌘ : かな）",
+            "description": "left ⌘ で英数、 ⌃ + right ⌘ かなキーへ変更",
             "manipulators": [
               {
                 "from": {
                   "key_code": "left_command",
                   "modifiers": {
-                    "mandatory": ["left_control"],
                     "optional": ["any"]
                   }
                 },
+                "parameters": {
+                  "basic.to_if_held_down_threshold_milliseconds": 100
+                },
                 "to": [
                   {
+                    "key_code": "left_command",
+                    "lazy": true
+                  }
+                ],
+                "to_if_alone": [
+                  {
                     "key_code": "japanese_eisuu"
+                  }
+                ],
+                "to_if_held_down": [
+                  {
+                    "key_code": "left_command"
                   }
                 ],
                 "type": "basic"
