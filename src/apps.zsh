@@ -62,6 +62,8 @@ else
     echo '👾: Setup vim-plug'
     sh -c "curl -fLo $PLUG_PATH --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     echo 'Install Neovim Plugins'
+    python2 -m pip install --user --upgrade pynvim
+    python3 -m pip install --user --upgrade pynvim
     pip3 install -U pip
     pip3 install -U neovim
     nvim --headless +PlugInstall +qall
