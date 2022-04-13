@@ -19,7 +19,7 @@ alias dotclean="brewclean && zclean"
 alias play="chmod +x ./playground.sh && ./playground.sh"
 
 # Open VScode
-alias jj="code ."
+alias fj="code ."
 
 # Change Directory
 alias drive="cd $GOOGLE_DRIVE_DIR"
