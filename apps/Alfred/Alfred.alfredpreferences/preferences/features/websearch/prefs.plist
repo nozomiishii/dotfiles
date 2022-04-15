@@ -1093,7 +1093,7 @@ Translate '{query}' into Japanese</string>
 		<key>6F8DFBD1-C9AD-4944-9765-77220DF5768E</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>gsap</string>
 			<key>text</key>
@@ -1934,6 +1934,19 @@ Google Cloud Console</string>
 			<string>Open Jest Documentation</string>
 			<key>url</key>
 			<string>https://jestjs.io/docs/getting-started</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>D321303A-6858-4E28-B5AC-9BE0DAA58D00</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>udemy</string>
+			<key>text</key>
+			<string>Udemy - Tomo san</string>
+			<key>url</key>
+			<string>https://rsg-ltdjp.udemy.com/organization/home/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
