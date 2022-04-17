@@ -122,6 +122,8 @@ echo "- ⌨️ Keyboard"
 defaults write NSGlobalDomain KeyRepeat -int 2
 # Set delay until repeat
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# Fn key usage
+defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 # Set automatically switch to a document's input source ON
 # defaults write com.apple.HIToolbox AppleGlobalTextInputProperties -dict TextInputGlobalPropertyPerContextInput -int 1
 #  @ = command
