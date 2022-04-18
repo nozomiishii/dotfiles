@@ -299,7 +299,7 @@ Finder Sidebar
 
 - Sign in
 - Set hotkey to  
-  ⇧ + Space
+  ⇧ + ⌘ + Space
 
 **🤡 yabai**
 
