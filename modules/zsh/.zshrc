@@ -29,7 +29,7 @@ eval $(thefuck --alias)
 
 
 # asdf
-if [ -f /opt/homebrew/opt/asdf/libexec/asdf.sh ]; then . /opt/homebrew/opt/asdf/libexec/asdf.sh; fi
+if [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then . $(brew --prefix asdf)/libexec/asdf.sh; fi
 if [ -f ~/.asdf/plugins/java/set-java-home.zsh ]; then . ~/.asdf/plugins/java/set-java-home.zsh; fi
 
 # yarn

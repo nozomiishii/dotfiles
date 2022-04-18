@@ -37,7 +37,7 @@ done
 
 if [ ! -d ~/.config/yarn/global/node_modules ] ; then
   echo '- 🚚 Setup Yarn global'
-  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+  . $(brew --prefix asdf)/libexec/asdf.sh
   export PATH="$(yarn global bin):$PATH"
   yarn global add
 fi
