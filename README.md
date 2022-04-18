@@ -252,6 +252,11 @@ Finder Sidebar
 - Preferences... > Sync Marcos >  
   Select "~/dotfiles/apps/KeyboardMaestro"
 
+**🤌🏻 BetterTouchTool**
+
+- Import License >  
+  Activate the License
+
 **🧹 Hazel**
 
 - License... >  

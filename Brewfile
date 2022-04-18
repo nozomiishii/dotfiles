@@ -151,6 +151,9 @@ cask "android-studio"
 # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
 cask "appcleaner"
 
+# Tool to customize input devices and automate computer systems https://folivora.ai/
+cask "bettertouchtool"
+
 # Virtual Audio Driver https://existential.audio/blackhole/
 cask "blackhole-2ch"
 

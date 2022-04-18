@@ -11,6 +11,10 @@ if [ ! -d "$GDRIVE_PATH" ]; then
 fi
 
 
+echo "- ☁️ iCloud"
+ln -nfs "$GDRIVE_PATH/License" "$HOME/Library/Mobile Documents/com~apple~CloudDocs/License"
+ll "$HOME/Library/Mobile Documents/com~apple~CloudDocs/License"
+
 echo "- 🐵 Blender"
 ln -nfs "$GDRIVE_PATH/Blender" "$HOME/Library/Application Support/Blender"
 ll "$HOME/Library/Application Support/Blender"
