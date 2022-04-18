@@ -480,7 +480,7 @@
 				<key>hotkey</key>
 				<integer>40</integer>
 				<key>hotmod</key>
-				<integer>524288</integer>
+				<integer>8388608</integer>
 				<key>hotstring</key>
 				<string>K</string>
 				<key>leftcursor</key>
@@ -511,7 +511,7 @@
 				<key>hotkey</key>
 				<integer>37</integer>
 				<key>hotmod</key>
-				<integer>524288</integer>
+				<integer>8388608</integer>
 				<key>hotstring</key>
 				<string>L</string>
 				<key>leftcursor</key>
@@ -540,11 +540,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>41</integer>
+				<integer>38</integer>
 				<key>hotmod</key>
-				<integer>524288</integer>
+				<integer>8388608</integer>
 				<key>hotstring</key>
-				<string>;</string>
+				<string>J</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -613,8 +613,11 @@
 				<key>applescript</key>
 				<string>on alfred_script(q)
 
-tell application "Google Chrome"	make new window	tell application "System Events" to set frontmost of process "Google Chrome" to true
-	activateend tell
+tell application "Google Chrome"
+	make new window
+	tell application "System Events" to set frontmost of process "Google Chrome" to true
+	activate
+end tell
 
 end alfred_script</string>
 				<key>cachescript</key>
@@ -822,7 +825,7 @@ end alfred_script</string>
 				<key>hotkey</key>
 				<integer>46</integer>
 				<key>hotmod</key>
-				<integer>524288</integer>
+				<integer>8388608</integer>
 				<key>hotstring</key>
 				<string>M</string>
 				<key>leftcursor</key>
@@ -1101,7 +1104,22 @@ end tell</string>
 				<key>applescript</key>
 				<string>on alfred_script(q)
 
-tell application "System Preferences"	reveal anchor "displaysDisplayTab" of pane id "com.apple.preference.displays"	activate		tell application "System Events"		tell application process "System Preferences"			repeat until exists of pop up button "Add Display" of window "Displays"				delay 0.1			end repeat						click pop up button "Add Display" of window "Displays"			click menu item "Nozomi’s iPad" of menu of pop up button "Add Display" of window "Displays"		end tell	end tell	quitend tell
+tell application "System Preferences"
+	reveal anchor "displaysDisplayTab" of pane id "com.apple.preference.displays"
+	activate
+	
+	tell application "System Events"
+		tell application process "System Preferences"
+			repeat until exists of pop up button "Add Display" of window "Displays"
+				delay 0.1
+			end repeat
+			
+			click pop up button "Add Display" of window "Displays"
+			click menu item "Nozomi’s iPad" of menu of pop up button "Add Display" of window "Displays"
+		end tell
+	end tell
+	quit
+end tell
 
 end alfred_script</string>
 				<key>cachescript</key>
