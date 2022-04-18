@@ -117,6 +117,10 @@
 
   // Docker
   "docker.enableDockerComposeLanguageService": true,
+  "vs-kubernetes": {
+    "vscode-kubernetes.minikube-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+    "vscode-kubernetes.kubectl-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/kubectl/kubectl"
+  },
 
   // Terraform
   "terraform-ls.experimentalFeatures": {
