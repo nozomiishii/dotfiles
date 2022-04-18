@@ -70,4 +70,11 @@ else
   fi
 fi
 
+
+echo "- 🗂 Set Default Apps for documents"
+duti -s com.microsoft.VSCode yaml all
+duti -s com.microsoft.VSCode css all
+
+
+
 echo "🎉 The App setup is complete \n\n"

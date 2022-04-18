@@ -35,6 +35,9 @@ brew "coreutils"
 # Utility for managing cargo dependencies from the command-line https://killercup.github.io/cargo-edit/
 brew "cargo-edit"
 
+# Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
+brew "duti"
+
 # Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
 brew "ethereum"
 
