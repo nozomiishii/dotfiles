@@ -111,6 +111,10 @@
   "liveshare.presence": false,
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
 
+  // Git
+  "git.enabled": true,
+  "git.path": "/opt/homebrew/bin/git",
+
   // Docker
   "docker.enableDockerComposeLanguageService": true,
 
