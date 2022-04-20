@@ -196,6 +196,16 @@
     "**/node_modules": true
   },
 
+  // Markdown
+  "[markdown]": {
+    "editor.defaultFormatter": "vscode.markdown-language-features",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": true
+    }
+  },
+
   // yaml
   "[yaml]": {
     "editor.insertSpaces": true,
