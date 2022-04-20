@@ -105,6 +105,7 @@
 
   // Extenstions
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "vsicons.dontShowNewVersionMessage": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "gitlens.currentLine.enabled": false,
   "tabnine.experimentalAutoImports": true,
