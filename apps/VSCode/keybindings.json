@@ -116,6 +116,10 @@
   {
     "key": "ctrl+,",
     "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "alt+cmd+j",
+    "command": "workbench.action.togglePanel"
   }
   // {
   //   "key": "cmd+x",
