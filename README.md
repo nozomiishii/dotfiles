@@ -14,25 +14,28 @@
 
 <a id="new-macbook?"></a>
 
-## 📦 New Macbook? Awesome!!
+## 📦 New Macbook? Awesome
 
 Turn On and Follow the guide
 
 - Full Name: Nozomi Ishii
 - Account name: nozomiishii
 
-**⚠️ Skip the AppleID sign in until the home screen. it takes time. ⚠️**
+⚠️ Skip the AppleID sign in until the home screen. it takes time. ⚠️
 
-**Open Apple ID with Spotlight**
+### Open Apple ID with Spotlight
 
 ```txt
   ⌘ + space Apple ID
 ```
 
-**Sign in your iCloud and App Store, when you get to the home screen. (to get apps using mas command)**  
-💡 If you can't use your personal apple ID on your company computer, install xcode manually from the App Store.
+Sign in your iCloud and App Store, when you get to the home screen.
+(to get apps using mas command)
 
-**🍎 Apple ID**
+💡 If you can't use your personal apple ID on your company computer,
+install xcode manually from the App Store.
+
+### 🍎 Apple ID
 
 - Edit your profile photo
 
@@ -43,7 +46,7 @@ Turn On and Follow the guide
   - Find My Mac
   - Stocks
 
-**🍏 App Store**
+### 🍏 App Store
 
 ```txt
   ⌘ + space App Store
@@ -53,9 +56,11 @@ Turn On and Follow the guide
 
 <a id="install"></a>
 
-## Install. Wait about 3 hours (Go grab some food and take a nap 🍕😪)
+## Install
 
-**Open Terminal with Spotlight**
+Wait about 3 hours(Go grab some food and take a nap 🍕😪)
+
+### Open Terminal with Spotlight
 
 ```txt
   ⌘ + space Terminal
@@ -78,7 +83,7 @@ Change shell to zsh
 
 ## Install Manually
 
-**Install xcode-select**
+### Install xcode-select
 
 ```shell
   xcode-select --install
@@ -86,25 +91,25 @@ Change shell to zsh
 
 xcode-select: this Command Line Tools are required for Git and Homebrew
 
-**Come to this page**
+### Come to this page
 
 ```shell
   open https://nozomiishii.dev/dotfiles
 ```
 
-**Clone**
+### Clone
 
 ```shell
   cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
 ```
 
-**Brew Install**
+### Brew Install
 
 ```shell
   ~/dotfiles/install -b
 ```
 
-**🔫 When permission is not set**
+### 🔫 When permission is not set
 
 ```shell
   ls -l ~/dotfiles/install
@@ -114,31 +119,31 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
   chmod +x ~/dotfiles/install
 ```
 
-**💻 MacOS setup**
+### 💻 MacOS setup
 
 ```shell
   ~/dotfiles/install -m
 ```
 
-**🗂 Symbolic Link**
+### 🗂 Symbolic Link
 
 ```shell
   ~/dotfiles/install -l
 ```
 
-**🧝🏻‍♀️ Apps setup**
+### 🧝🏻‍♀️ Apps setup
 
 ```shell
   ~/dotfiles/install -a
 ```
 
-**🌝 Environment setup(asdf)**
+### 🌝 Environment setup(asdf)
 
 ```shell
   ~/dotfiles/install -e
 ```
 
-**🛋 Restart**
+### 🛋 Restart
 
 ```shell
   sudo reboot
@@ -148,11 +153,11 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 
 ## App preferences
 
-**⛓ Karabiner-Elements**
+### ⛓ Karabiner-Elements
 
 - Login
 
-**🔑 1Password**
+### 🔑 1Password
 
 - Preferences > Security > Unlock using >  
   Check "Touch ID"
@@ -161,7 +166,7 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 - Preferences > General > Keyboard shortcuts >  
   remove all shortcuts(because it conflicts with xcode)
 
-**🗂 Finder**
+### 🗂 Finder
 
 - Rearrange the order of the sidebar
 
@@ -176,7 +181,7 @@ Finder Sidebar
  ┗ 📂Locations
 ```
 
-**🎩 Alfred**
+### 🎩 Alfred
 
 - Activate the license
 
@@ -196,7 +201,7 @@ Finder Sidebar
 - Preferences > Advanced >  
   Force Keyboard: ABC
 
-**🌏 Chrome**
+### 🌏 Chrome
 
 - Sign in
 - Change Chrome to the Default Browser
@@ -216,15 +221,15 @@ Finder Sidebar
     - [Gossip Site Blocker](https://chrome.google.com/webstore/detail/gossip-site-blocker/mjojhcmecfehllhcjcbhkkpohadogplk)
     - [GoFullPage](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl)
 
-**🗿 fig**
+### 🗿 fig
 
 - Setup
 
-**☁️ google-drive**
+### ☁️ google-drive
 
 - Sign in and Sync
 
-**🐟 VSCode**
+### 🐟 VSCode
 
 - User Icon > Setting sync > Login >  
   Select "Marge"  
@@ -233,31 +238,31 @@ Finder Sidebar
   Icons: Activate VSCode Icons
 - Add MonokaiPro License
 
-**😼 Generate SSHkey and Login gh**
+### 😼 Generate SSHkey and Login gh
 
 ```shell
   ~/dotfiles/install -k
 ```
 
-**🦄 Clone repositories**
+### 🦄 Clone repositories
 
 ```shell
   ~/dotfiles/install -c
 ```
 
-**🤵🏻‍♂️ Keyboard Maestro**
+### 🤵🏻‍♂️ Keyboard Maestro
 
 - Register Keyboard Maestro... >  
   Activate the License
 - Preferences... > Sync Marcos >  
   Select "~/dotfiles/apps/KeyboardMaestro"
 
-**🤌🏻 BetterTouchTool**
+### 🤌🏻 BetterTouchTool
 
 - Import License >  
   Activate the License
 
-**🧹 Hazel**
+### 🧹 Hazel
 
 - License... >  
   Activate the License
@@ -268,7 +273,7 @@ Finder Sidebar
 - Preferences... > Trash >  
   Check "Delete files sitting in the Trash for more than 1 Day"
 
-**🎨 ColorSnapper2**
+### 🎨 ColorSnapper2
 
 - Activate the license
 - General
@@ -286,28 +291,28 @@ Finder Sidebar
   - CSS Hex >
     check "Uppercase"
 
-**🐘 TablePlus**
+### 🐘 TablePlus
 
 - TablePlus >  
   Register license...
 
-**🐔 Slack**
+### 🐔 Slack
 
 - Sign in
 
-**🔮 DeepL**
+### 🔮 DeepL
 
 - Sign in
 - Set hotkey to  
   ⇧ + ⌘ + Space
 
-**🤡 yabai**
+### 🤡 yabai
 
 ```shell
   brew services restart yabai && brew services restart skhd
 ```
 
-**🫐 BLEUnlock**
+### 🫐 BLEUnlock
 
 - Device: Select your device
 - Unlock RSSI: -45dBm
@@ -316,7 +321,7 @@ Finder Sidebar
 - Check 'Use Screensaver to Lock'
 - Check 'Launch at Login'
 
-**💻 System Preferences**
+### 💻 System Preferences
 
 - **🌃 Desktop & Screen Saver**
 
@@ -367,22 +372,22 @@ Finder Sidebar
   - **Arrangement**  
     Change "iPad display on left"
 
-**📅 Calendar**
+### 📅 Calendar
 
 - Add Accounts
 - Add Calendar on Widgets
 
-**🤖 Unity Hub**
+### 🤖 Unity Hub
 
 - Sign in
 - Download lts
 
-**🦖C#**
+### 🦖 C\#
 
 - [Unity setup for M1 Mac](https://gurutaka-log.com/unity-vscode-mac-setup)
 - [Download Mono](https://www.mono-project.com/download/stable/#download-mac)
 
-**🐵 Blender**
+### 🐵 Blender
 
 - Sign in
 - Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" >  
@@ -394,21 +399,21 @@ Finder Sidebar
 - Edit > Preferences > Input > Keyboard >  
   Emulate Numpad
 
-**🐍 PyCharm**
+### 🐍 PyCharm
 
 - Preferences > Editor > General > Font > Size >  
   Font Size: 14
 - Plugins  
   Monokai Pro Theme
 
-**🐸 Android Studio**
+### 🐸 Android Studio
 
 - Preferences > Editor > General > Font > Size >  
   Font Size: 14
 - Plugins  
   Monokai Pro Theme
 
-**🍎 Xcode**
+### 🍎 Xcode
 
 - Add Account
 - Preferences > Themes >  
@@ -416,16 +421,16 @@ Finder Sidebar
 - Preferences > Navigation >  
   Command-click on Code: Jumps to definition
 
-**🦋 Affinity Designer**
+### 🦋 Affinity Designer
 
 - [Download App](https://store.serif.com/en-gb/account/downloads/)  
   Activate the license
 
-**📞 Cisco Packet Tracer**
+### 📞 Cisco Packet Tracer
 
 - [Download](https://www.netacad.com/portal/resources/packet-tracer)
 
-**🕶 ngrok**
+### 🕶 ngrok
 
 - [Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
 
@@ -437,26 +442,20 @@ Finder Sidebar
   ngrok http 3000
 ```
 
-**🚙 duet**
+### 🚙 duet
 
 - [Download](https://www.duetdisplay.com/)
 
-**⏱ Setup Time machine**
+### ⏱ Setup Time machine
 
 - Menu bar > Time machine >  
   Backup
-
-**🛋 Restart**
-
-```shell
-  sudo reboot
-```
 
 <a id="customize"></a>
 
 ## 👨🏻‍🍳 Customize
 
-**How to add app to Brew file**
+### How to add app to Brew file
 
 Search the app
 
@@ -470,7 +469,7 @@ Check if it's an app you want to download.
   brew info <app_name>
 ```
 
-**How to find the defaults command**
+### How to find the defaults command
 
 ```shell
   defaults read > before
@@ -479,7 +478,7 @@ Check if it's an app you want to download.
   diff before after
 ```
 
-**Search app plist**
+### Search app plist
 
 ```shell
   ll ~/Library/Preferences/ | grep <app_name>
@@ -487,13 +486,13 @@ Check if it's an app you want to download.
   ll ~/Library/Preferences/ | grep firefox
 ```
 
-**NSGlobalDomain plist**
+### NSGlobalDomain plist
 
 ```shell
   open ~/Library/Preferences/.GlobalPreferences.plist
 ```
 
-**Read app config**
+### Read app config
 
 ```shell
   defaults read <app_name_plist>
@@ -501,7 +500,7 @@ Check if it's an app you want to download.
   defaults read notion.id
 ```
 
-**Symbolic link**
+### Symbolic link
 
 ```shell
   ln -nfs <New_linking_file> <Existing_linked_files>
@@ -519,7 +518,7 @@ Clean unused homebrew dependencies up, and upgrade them
   brew bundle cleanup --force && brew cleanup && brew upgrade
 ```
 
-**Check the performance of zsh**
+## Check the performance of zsh
 
 ```shell
   for x in {1..10}; do time zsh -i -c exit;done
@@ -615,4 +614,4 @@ Clean unused homebrew dependencies up, and upgrade them
 
 MIT License
 
-© 2021 Nozomi Ishii
+© 2021 - 2022 Nozomi Ishii

@@ -197,7 +197,6 @@
   },
 
   // Markdown
-  "markdown.extension.preview.autoShowPreviewToSide": true,
   "markdown.extension.toc.updateOnSave": false,
   "[markdown]": {
     "editor.defaultFormatter": "vscode.markdown-language-features",
