@@ -573,11 +573,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>40</integer>
+				<integer>37</integer>
 				<key>hotmod</key>
 				<integer>8388608</integer>
 				<key>hotstring</key>
-				<string>K</string>
+				<string>L</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -635,11 +635,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>37</integer>
+				<integer>40</integer>
 				<key>hotmod</key>
 				<integer>8388608</integer>
 				<key>hotstring</key>
-				<string>L</string>
+				<string>K</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1788,7 +1788,7 @@ end alfred_script</string>
 		<key>4E746779-3018-4B55-BE63-1A31CD027655</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1105</integer>
+			<integer>1335</integer>
 			<key>ypos</key>
 			<integer>230</integer>
 		</dict>
@@ -1823,7 +1823,7 @@ end alfred_script</string>
 		<key>5E62341D-E154-4997-8FA3-C347D6671285</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1365</integer>
+			<integer>1085</integer>
 			<key>ypos</key>
 			<integer>230</integer>
 		</dict>
@@ -1865,7 +1865,7 @@ end alfred_script</string>
 		<key>7BD50759-8F95-40CB-9B36-F131213AD13E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1240</integer>
+			<integer>960</integer>
 			<key>ypos</key>
 			<integer>230</integer>
 		</dict>
@@ -1921,7 +1921,7 @@ end alfred_script</string>
 		<key>B6F4C941-5DAF-4290-832A-86E30593A97D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>980</integer>
+			<integer>1210</integer>
 			<key>ypos</key>
 			<integer>230</integer>
 		</dict>
