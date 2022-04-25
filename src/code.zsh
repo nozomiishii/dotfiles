@@ -11,6 +11,7 @@ fi
 
 
 repos=(
+  nozomiishii/.vscode
   nozomiishii/dev
   nozomiishii/cv
   nozomiishii/nozomiishii
