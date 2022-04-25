@@ -1493,6 +1493,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>90E4B649-1D25-4692-9F55-88554DFA4CCB</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ui</string>
+			<key>text</key>
+			<string>Open UI - Material Palettes</string>
+			<key>url</key>
+			<string>https://materialpalettes.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>92866109-99DF-43A3-AD7B-C03EB6E70A6D</key>
 		<dict>
 			<key>enabled</key>
