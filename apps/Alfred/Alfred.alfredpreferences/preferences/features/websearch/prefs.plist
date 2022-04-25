@@ -459,6 +459,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>36482C95-B12D-4CCB-BA2B-B86F2C48229F</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>react table</string>
+			<key>text</key>
+			<string>Open React Table</string>
+			<key>url</key>
+			<string>https://react-table.tanstack.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3A2432C2-A75E-4E81-8AAB-BD2FC1817F35</key>
 		<dict>
 			<key>enabled</key>
