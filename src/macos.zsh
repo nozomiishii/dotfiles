@@ -90,6 +90,8 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
 # Turn off auto capitalize
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+# Turn off auto period substitution
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 
 echo "- 🗂 Finder" # killall Finder
