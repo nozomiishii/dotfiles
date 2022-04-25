@@ -336,13 +336,16 @@ Finder Sidebar
   - Add Japanese
 
 - **🛎 Notifications & Focus**
+  - Notifications
+    - **Calendar, Notion, Slack**  
+      Alert style: Alerts  
+      Show in Notification Centre  
+      Play sound for notification
+    - **Xcode**  
+      Banners
 
-  - **Calendar, Notion, Slack**  
-    Alert style: Alerts  
-    Show in Notification Centre  
-    Play sound for notification
-  - **Xcode**  
-    Banners
+  - Focus
+    - Uncheck "Share Focus Status"
 
 - **👤 Users & Groups**
 
