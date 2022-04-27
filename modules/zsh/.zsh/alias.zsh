@@ -33,6 +33,7 @@ alias dev="cd $CODE_DIR/nozomiishii/dev"
 alias lab="cd $CODE_DIR/nozomiishii/dev/lab"
 alias cv="cd $CODE_DIR/nozomiishii/cv"
 alias bots="cd $CODE_DIR/nozomiishii/bots"
+alias vscode="cd $CODE_DIR/nozomiishii/.vscode"
 alias wrk="cd $CODE_DIR/Work"
 
 
