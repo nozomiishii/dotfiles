@@ -51,6 +51,7 @@ alias ghb="gh browse"
 alias devprod="git checkout stag && git pull origin main && git push --force-with-lease origin stag && git checkout prod && git pull origin stag && git push --force-with-lease origin prod && git checkout main"
 alias devstag="git checkout stag && git pull origin main && git push --force-with-lease origin stag"
 alias stagprod="git checkout prod && git pull origin stag && git push --force-with-lease origin prod && git checkout main"
+alias gsmp="git submodule foreach git pull"
 
 
 # npm
