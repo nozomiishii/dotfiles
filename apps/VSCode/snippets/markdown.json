@@ -14,10 +14,10 @@
     "body": ["```${0:code}", "", "```"],
     "description": "code"
   },
-  "zsh": {
-    "prefix": "/zsh",
-    "body": ["```zsh", "  ${0}", "```"],
-    "description": "zsh"
+  "sh": {
+    "prefix": "/sh",
+    "body": ["```sh", "  ${0}", "```"],
+    "description": "sh"
   },
   "diff": {
     "prefix": "/diff",
