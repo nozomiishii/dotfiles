@@ -2276,6 +2276,19 @@ Open CSS Tailwind Converter</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>F89FCD78-0AE8-48C8-905A-12B216404161</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ui</string>
+			<key>text</key>
+			<string>Open UI - Tailwind UI kit</string>
+			<key>url</key>
+			<string>https://tailwinduikit.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>F8B11DD7-4E4F-4AA3-B50B-982835208C2A</key>
 		<dict>
 			<key>enabled</key>
