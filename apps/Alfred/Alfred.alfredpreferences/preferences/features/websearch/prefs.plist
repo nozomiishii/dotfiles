@@ -173,6 +173,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>0D83BF48-FCBB-449C-9DE7-D2CB9392C82D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ui</string>
+			<key>text</key>
+			<string>Open UI - daisyUI</string>
+			<key>url</key>
+			<string>https://daisyui.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>0D9F6F83-7A20-4C19-834C-42FC1E6F89C6</key>
 		<dict>
 			<key>enabled</key>
