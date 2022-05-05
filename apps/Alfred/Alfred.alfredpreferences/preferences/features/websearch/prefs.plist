@@ -511,6 +511,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3AC5EC0E-B361-48F0-8A34-64E16CA51D87</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>yarn</string>
+			<key>text</key>
+			<string>Open Yarn</string>
+			<key>url</key>
+			<string>https://yarnpkg.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>3BA3A4C2-8191-42F1-8327-F5CFE104291A</key>
 		<dict>
 			<key>enabled</key>
