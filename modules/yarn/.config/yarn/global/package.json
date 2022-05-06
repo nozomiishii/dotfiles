@@ -2,7 +2,7 @@
   "dependencies": {
     "@nestjs/cli": "^8.2.3",
     "@nestjs/schematics": "^8.0.8",
-    "create-next-app": "^12.1.0",
+    "create-next-app": "^12.1.6",
     "firebase-tools": "^10.4.0",
     "nx": "^13.9.3",
     "truffle": "^5.5.5",
