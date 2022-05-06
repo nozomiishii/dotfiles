@@ -18,6 +18,7 @@
   "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": false,
   "editor.fontFamily": "Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.linkedEditing": true,
