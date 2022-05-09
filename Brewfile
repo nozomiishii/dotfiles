@@ -244,6 +244,9 @@ cask "keyboard-maestro"
 # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
 cask "kindle"
 
+# Preview and audit Kindle eBooks https://www.amazon.com/Kindle-Previewer/b?ie=UTF8&node=21381691011
+cask "kindle-previewer"
+
 # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
 cask "ledger-live"
 
