@@ -220,6 +220,7 @@ Finder Sidebar
     - [Video Speed Controller](https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk)
     - [Gossip Site Blocker](https://chrome.google.com/webstore/detail/gossip-site-blocker/mjojhcmecfehllhcjcbhkkpohadogplk)
     - [GoFullPage](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl)
+    - [Amazing Searcher](https://chrome.google.com/webstore/detail/amazing-searcher/poheekmlppakdboaalpmhfpbmnefeokj)
 
 ### 🗿 fig
 
