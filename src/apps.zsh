@@ -73,6 +73,7 @@ fi
 
 echo "- 🗂 Set Default Apps for documents"
 duti -s com.microsoft.VSCode yaml all
+duti -s com.microsoft.VSCode json all
 duti -s com.microsoft.VSCode css all
 
 
