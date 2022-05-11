@@ -199,6 +199,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>1076384E-2027-4AAD-AABE-0825D401A3E9</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>tiny</string>
+			<key>text</key>
+			<string>Open Tiny MCE Documentation</string>
+			<key>url</key>
+			<string>https://www.tiny.cloud/docs/quick-start/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>152EFF95-AD49-4182-81A0-DCA4C02790E3</key>
 		<dict>
 			<key>enabled</key>
