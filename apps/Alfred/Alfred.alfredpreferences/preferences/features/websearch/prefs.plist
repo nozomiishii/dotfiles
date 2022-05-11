@@ -2002,6 +2002,19 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>CF09C7F0-C9BD-4499-B78C-D5C049C40C1A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>codemirror</string>
+			<key>text</key>
+			<string>Open CodeMirror</string>
+			<key>url</key>
+			<string>https://uiwjs.github.io/react-codemirror/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>D321303A-6858-4E28-B5AC-9BE0DAA58D00</key>
 		<dict>
 			<key>enabled</key>
