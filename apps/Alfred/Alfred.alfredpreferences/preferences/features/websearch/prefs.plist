@@ -212,6 +212,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>14CAF6CC-C8D6-4BB8-814B-15C28A5C82C8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>codesandbox</string>
+			<key>text</key>
+			<string>Open CodeSandbox</string>
+			<key>url</key>
+			<string>https://codesandbox.io/search</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>152EFF95-AD49-4182-81A0-DCA4C02790E3</key>
 		<dict>
 			<key>enabled</key>
