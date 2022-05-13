@@ -719,6 +719,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>4D78FDC2-845D-45D9-9F60-1387CDFD9C99</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ui</string>
+			<key>text</key>
+			<string>Open UI - tailwindcomponents</string>
+			<key>url</key>
+			<string>https://tailwindcomponents.com/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>4EB04DFB-C6DA-4E2C-B1F1-DA37A4453F3A</key>
 		<dict>
 			<key>enabled</key>
