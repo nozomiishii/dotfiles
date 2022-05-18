@@ -108,6 +108,9 @@ brew "postgresql"
 # A Zsh Theme https://github.com/romkatv/powerlevel10k
 brew "powerlevel10k"
 
+# Persistent key-value database, with built-in net interface https://redis.io/
+brew "redis"
+
 # Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
 
