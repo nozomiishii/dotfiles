@@ -1688,6 +1688,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>A4D91141-E196-4B8A-AC67-34FE36B98D86</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>recoil</string>
+			<key>text</key>
+			<string>Open Recoil Documentation</string>
+			<key>url</key>
+			<string>https://recoiljs.org/docs/introduction/getting-started</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>A6309CC0-76C6-42C2-BB98-7CD6C0B754DD</key>
 		<dict>
 			<key>enabled</key>
