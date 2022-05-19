@@ -30,13 +30,22 @@ ntn(){
   git clone git@github.com:nozomiishii/node.ts.git ${1:-new-project} && cd $_
 }
 
+
 # Restart Duet
-rsdt() {
+rsdt(){
   pgrep -f duet | xargs kill $1
   open "/Applications/duet.app"
 }
 
+
 # Kill Port
-killp() {
+killp(){
   kill -9 $(lsof -ti:$1) && echo "killed Port $1"
+}
+
+
+# Git checkout remote branch
+gcr(){
+  git fetch origin $1
+  git checkout $1
 }
