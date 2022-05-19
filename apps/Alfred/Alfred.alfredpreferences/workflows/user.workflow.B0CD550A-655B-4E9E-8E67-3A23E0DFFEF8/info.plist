@@ -60,6 +60,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2497FA59-CF0B-48A6-81AE-8D4071F8C03F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B26D7204-6CC9-4A8D-B14A-39203AF15838</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>31EED105-A92A-4A51-AD49-E3ADACDFD3B3</key>
 		<array>
 			<dict>
@@ -1559,23 +1572,6 @@ end alfred_script</string>
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Volumes/GoogleDrive/My Drive/Assets/bland-logos</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>CB4C8C1D-BE93-49F9-B811-476955BD62B8</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
 					<string>/Volumes/GoogleDrive/My Drive/Id</string>
 				</array>
 				<key>toggle</key>
@@ -1615,18 +1611,35 @@ end alfred_script</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>logos</string>
+				<string>drive</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>Open logos folder</string>
+				<string>Open My Drive folder</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>51C12F63-49E3-4FD6-8B74-53679DBB21B5</string>
+			<string>2497FA59-CF0B-48A6-81AE-8D4071F8C03F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Volumes/GoogleDrive/My Drive</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>B26D7204-6CC9-4A8D-B14A-39203AF15838</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1665,6 +1678,44 @@ end alfred_script</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>3AE5D24D-BBC9-4B63-9A4D-FCB4A5F28B58</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Volumes/GoogleDrive/My Drive/Assets/bland-logos</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>CB4C8C1D-BE93-49F9-B811-476955BD62B8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>logos</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Open logos folder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>51C12F63-49E3-4FD6-8B74-53679DBB21B5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1722,6 +1773,13 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>1045</integer>
 		</dict>
+		<key>2497FA59-CF0B-48A6-81AE-8D4071F8C03F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>60</integer>
+			<key>ypos</key>
+			<integer>1800</integer>
+		</dict>
 		<key>27408918-9FC1-4FCD-96DA-4E3AE0CC30A7</key>
 		<dict>
 			<key>xpos</key>
@@ -1746,16 +1804,16 @@ end alfred_script</string>
 		<key>38A57314-C884-4B0B-AD4D-9FF2408F5A92</key>
 		<dict>
 			<key>xpos</key>
-			<integer>750</integer>
+			<integer>190</integer>
 			<key>ypos</key>
-			<integer>1675</integer>
+			<integer>1920</integer>
 		</dict>
 		<key>3AE5D24D-BBC9-4B63-9A4D-FCB4A5F28B58</key>
 		<dict>
 			<key>xpos</key>
-			<integer>620</integer>
+			<integer>60</integer>
 			<key>ypos</key>
-			<integer>1675</integer>
+			<integer>1920</integer>
 		</dict>
 		<key>3B185832-821B-4199-A2A8-2142E0887C4D</key>
 		<dict>
@@ -1809,9 +1867,9 @@ end alfred_script</string>
 		<key>51C12F63-49E3-4FD6-8B74-53679DBB21B5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>60</integer>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<integer>2040</integer>
 		</dict>
 		<key>56FF68BE-DE32-4C66-97E6-AC18BE85D242</key>
 		<dict>
@@ -1918,6 +1976,13 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>440</integer>
 		</dict>
+		<key>B26D7204-6CC9-4A8D-B14A-39203AF15838</key>
+		<dict>
+			<key>xpos</key>
+			<integer>190</integer>
+			<key>ypos</key>
+			<integer>1800</integer>
+		</dict>
 		<key>B6F4C941-5DAF-4290-832A-86E30593A97D</key>
 		<dict>
 			<key>xpos</key>
@@ -1949,9 +2014,9 @@ end alfred_script</string>
 		<key>CB4C8C1D-BE93-49F9-B811-476955BD62B8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>470</integer>
+			<integer>190</integer>
 			<key>ypos</key>
-			<integer>1670</integer>
+			<integer>2040</integer>
 		</dict>
 		<key>CD9A9E77-6EBD-47D3-B7D5-4E4216B7490E</key>
 		<dict>
