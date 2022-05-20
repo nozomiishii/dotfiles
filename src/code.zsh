@@ -16,6 +16,7 @@ repos=(
   nozomiishii/cv
   nozomiishii/nozomiishii
   nozomiishii/bots
+  endorphin-bot/endorphin-bot
 )
 
 for repo in $repos ; do
