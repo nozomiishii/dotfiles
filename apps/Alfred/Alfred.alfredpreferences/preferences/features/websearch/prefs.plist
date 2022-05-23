@@ -797,6 +797,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>52EB7FC0-6486-4136-BDEE-FFEF12C4DEC2</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>lorem</string>
+			<key>text</key>
+			<string>Open Lorem.space</string>
+			<key>url</key>
+			<string>https://lorem.space</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>53929F1C-AE64-433C-AB06-2DA04AC870D6</key>
 		<dict>
 			<key>enabled</key>
