@@ -47,6 +47,8 @@ defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  h:mm a"
 defaults write NSGlobalDomain AppleICUForce12HourTime -bool true
 # Configure the menu bar Items
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
+# Not Share Do Not Disturb status across devicess
+defaults write com.apple.donotdisturbd disableCloudSync -bool true
 
 
 echo "- 🪁 Control Center"
