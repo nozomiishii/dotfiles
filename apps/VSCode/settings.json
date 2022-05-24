@@ -173,7 +173,7 @@
 
   // Rust
   "[rust]": {
-    "editor.defaultFormatter": "matklad.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "rust-analyzer.checkOnSave.command": "clippy",
 
