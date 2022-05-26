@@ -27,4 +27,4 @@ lwd() {
 [[ -n "$ZSH_LAST_WORKING_DIRECTORY" ]] && return
 [[ "$PWD" != "$HOME" ]] && return
 
-lwd 2>/dev/null && ZSH_LAST_WORKING_DIRECTORY=1 || true
+lwd 2> /dev/null && ZSH_LAST_WORKING_DIRECTORY=1 || true

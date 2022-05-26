@@ -1,0 +1,21 @@
+{
+  "name": "dotfiles",
+  "main": "install",
+  "author": "Nozomi Ishii",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nozomiishii/dotfiles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nozomiishii/dotfiles/issues"
+  },
+  "homepage": "https://github.com/nozomiishii/dotfiles#readme",
+  "scripts": {
+    "format": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.zsh'"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "prettier-plugin-sh": "^0.11.0"
+  }
+}

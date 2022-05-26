@@ -2,7 +2,6 @@
 echo "🌝 Starting Environment setup(asdf)... \n"
 set -e
 
-
 if [ ! -f ~/.tool-versions ]; then
   echo '⚠️ ~/.tool-versions is not exist'
   echo 'Run "./install -l" first'
@@ -15,7 +14,7 @@ for plugin in $(awk '{print $1}' ~/.tool-versions); do
   fi
 done
 
-is_runtime_versions_changed () {
+is_runtime_versions_changed() {
   plugin="$1"
   specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
   installed=$(asdf list "$plugin" 2>&1)
@@ -35,12 +34,11 @@ for plugin in $(asdf plugin list); do
   fi
 done
 
-if [ ! -d ~/.config/yarn/global/node_modules ] ; then
+if [ ! -d ~/.config/yarn/global/node_modules ]; then
   echo '- 🚚 Setup Yarn global'
   . $(brew --prefix asdf)/libexec/asdf.sh
   export PATH="$(yarn global bin):$PATH"
   yarn global add
 fi
-
 
 echo "🎉 The Environment setup is complete \n\n"

@@ -4,7 +4,6 @@ if [ ! -f ~/.zplug/init.zsh ]; then
 fi
 source ~/.zplug/init.zsh
 
-
 zplug "plugins/git", from:oh-my-zsh, lazy:true
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions", lazy:true
@@ -18,7 +17,8 @@ zplug "docker/cli", use:"/Applications/Docker.app/Contents/Resources/etc/docker.
 if ! zplug check; then
   printf "Install? [y/N]: "
   if read -q; then
-    echo; zplug install
+    echo
+    zplug install
   fi
 fi
 zplug load

@@ -2,13 +2,11 @@
 echo "🦄 Starting Cloning repositories... \n"
 set -e
 
-
 CODE_DIR="$HOME/Code"
 if [ ! -d $CODE_DIR ]; then
   echo "🦄 Creating ./Code ..."
   mkdir -p $CODE_DIR
 fi
-
 
 repos=(
   nozomiishii/.vscode
@@ -19,14 +17,11 @@ repos=(
   endorphin-bot/endorphin-bot
 )
 
-for repo in $repos ; do
+for repo in $repos; do
   if [ ! -d $CODE_DIR/$repo ]; then
     echo "🦄 $repo"
     git clone git@github.com:$repo.git $CODE_DIR/$repo
   fi
 done
 
-
-
 echo "🎉 Cloning repositories is complete \n\n"
-

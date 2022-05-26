@@ -9,7 +9,6 @@ fi
 
 source "$ANTIGEN_PATH/antigen.zsh"
 
-
 antigen use oh-my-zsh
 
 antigen bundle git

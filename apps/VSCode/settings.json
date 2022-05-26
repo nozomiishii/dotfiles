@@ -161,10 +161,27 @@
 
   // Shell
   "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format",
     "editor.codeActionsOnSave": {
       "source.fixAll.shellcheck": true
     }
+  },
+  "shellcheck.ignorePatterns": {
+    // FIXME: Delete below when convert dotfiles/install to bash
+    "install": true,
+    "**/*.xonshrc": true,
+    "**/*.xsh": true,
+    "**/*.zsh": true,
+    "**/*.zshrc": true,
+    "**/zshrc": true,
+    "**/*.zprofile": true,
+    "**/zprofile": true,
+    "**/*.zlogin": true,
+    "**/zlogin": true,
+    "**/*.zlogout": true,
+    "**/zlogout": true,
+    "**/*.zshenv": true,
+    "**/zshenv": true,
+    "**/*.zsh-theme": true
   },
 
   // C#

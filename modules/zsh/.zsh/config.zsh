@@ -1,4 +1,4 @@
-# Change Directory 
+# Change Directory
 setopt autocd
 
 # Change Directory history
@@ -18,4 +18,3 @@ setopt hist_ignore_space
 
 # Share history between terminals
 setopt share_history
-

@@ -2,24 +2,20 @@
 echo "🧝🏻‍♀️ Starting Apps setup... \n"
 set -e
 
-
 APPS_PATH="$HOME/dotfiles/apps"
-
 
 echo "- 🎮 iTerm2"
 # General > Preferences > check "Load preferences from a custom folder or URL"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 # Restore from the backup
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$APPS_PATH/iTerm2"
-# General > Preferences > Save changes: when quits 
+# General > Preferences > Save changes: when quits
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
-
 
 echo "- 🤖 Automator"
 if [ ! -f "$HOME/Desktop" ]; then
   cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
 fi
-
 
 echo "- 🐟 VSCode"
 VSCODE_PATH="$HOME/Library/Application Support/Code/User"
@@ -28,7 +24,6 @@ if [ ! -d $VSCODE_PATH ]; then
   open "/Applications/Visual Studio Code.app"
 fi
 stow -vd "$APPS_PATH" -t $VSCODE_PATH VSCode
-
 
 if [ ! -e "/Applications/Xcode.app" ]; then
   echo "🥲 Xcode not found"
@@ -40,7 +35,7 @@ else
   echo "- 🍎 Xcode"
   XCODE_PATH="$HOME/Library/Developer/Xcode/UserData"
   if [ ! -d $XCODE_PATH ]; then
-    sudo xcodebuild -license accept 
+    sudo xcodebuild -license accept
     sudo xcodebuild -runFirstLaunch
     mkdir -p $XCODE_PATH
     open "/Applications/XCode.app"
@@ -49,7 +44,6 @@ else
     rm -r $HOME/Library/Developer/Xcode/UserData/KeyBindings
   fi
   stow -vd "$APPS_PATH" -t $XCODE_PATH Xcode
-
 
   # XCode required to install vim plug
   echo '- 👾 NeoVim'
@@ -70,12 +64,9 @@ else
   fi
 fi
 
-
 echo "- 🗂 Set Default Apps for documents"
 duti -s com.microsoft.VSCode yaml all
 duti -s com.microsoft.VSCode json all
 duti -s com.microsoft.VSCode css all
-
-
 
 echo "🎉 The App setup is complete \n\n"
