@@ -114,6 +114,9 @@ brew "redis"
 # Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
 
+# Static analysis and lint tool, for (ba)sh scripts https://www.shellcheck.net/
+brew "shellcheck"
+
 # Simple hotkey-daemon for macOS. https://github.com/koekeishiya/skhd
 brew "skhd"
 
