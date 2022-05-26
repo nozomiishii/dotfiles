@@ -289,6 +289,9 @@ cask "visual-studio-code"
 # Multimedia player. https://www.videolan.org/vlc
 cask "vlc"
 
+# Graphical network analyzer and capture tool https://www.wireshark.org
+cask "wireshark"
+
 # Video communication and virtual meeting platform https://www.zoom.us/
 cask "zoom"
 
@@ -298,9 +301,6 @@ cask "virtualbox" if system '[ "$(uname -m)" = "x86_64" ]'
 
 # Oracle VirtualBox Extension Pack https://www.virtualbox.org/
 cask "virtualbox-extension-pack" if system '[ "$(uname -m)" = "x86_64" ]'
-
-# Graphical network analyzer and capture tool https://www.wireshark.org
-cask "wireshark" if system '[ "$(uname -m)" = "x86_64" ]'
 
 
 # 
