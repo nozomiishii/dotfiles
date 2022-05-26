@@ -719,6 +719,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>48720D65-C639-40A0-9779-4187606BA60C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>icp</string>
+			<key>text</key>
+			<string>Open ICP - Network Nervous System</string>
+			<key>url</key>
+			<string>https://nns.ic0.app/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>4D78FDC2-845D-45D9-9F60-1387CDFD9C99</key>
 		<dict>
 			<key>enabled</key>
