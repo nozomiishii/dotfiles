@@ -159,6 +159,11 @@
     "strings": true
   },
 
+  // Shell
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+
   // C#
   "omnisharp.useGlobalMono": "always",
   "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current",
