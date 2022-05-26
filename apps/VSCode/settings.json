@@ -161,7 +161,10 @@
 
   // Shell
   "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.shellcheck": true
+    }
   },
 
   // C#
