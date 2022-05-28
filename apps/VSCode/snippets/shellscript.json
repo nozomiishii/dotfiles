@@ -1,0 +1,7 @@
+{
+  "Shebang": {
+    "prefix": "!",
+    "body": ["#!/bin/bash", "set -Ceu", "", ""],
+    "description": "Shebang"
+  }
+}
