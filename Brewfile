@@ -280,6 +280,9 @@ cask "swiftformat-for-xcode"
 # Native GUI tool for relational databases https://tableplus.com/
 cask "tableplus"
 
+# Messaging app with a focus on speed and security https://macos.telegram.org/
+cask "telegram"
+
 # Management tool for Unity. https://unity3d.com/get-unity/download
 cask "unity-hub"
 
