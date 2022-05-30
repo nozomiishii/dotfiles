@@ -1,22 +1,20 @@
 #!/usr/bin/env zsh
-# 
+#
 # zsh -c "$(curl -fsSL https://nozomiishii.dev/dotfiles/install)"
 # -c: Take the first argument as a command to execute
 # -f (--fail): Quit silently when a server error occurs.
 # -s (--silent): Silent mode. Don't show progress meter or error messages. Makes Curl mute.
 # -S (--show-error): Show error message if it fails.
 # -L (--location): Enable redirection.
-# 
+#
 # curl -o - https://raw.githubusercontent.com/nozomiishii/dotfiles/main/install | zsh
 set -e
-
 
 ROOT_PATH="$HOME/dotfiles"
 MODULES_PATH="$ROOT_PATH/modules"
 
-
-usage(){
-cat <<EOF
+usage() {
+  cat << EOF
 
 
 NAME
@@ -46,16 +44,18 @@ OPTIONS:
 EOF
 }
 
-
-pre_sudo(){
+pre_sudo() {
   # Ask for the administrator password upfront
   sudo -v
   # Temporarily increasing sudo's timeout until the process has finished
-  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+  while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+  done 2> /dev/null &
 }
 
-
-upgrade(){
+upgrade() {
   echo "🚀 Upgrading dotfiles"
   cd $ROOT_PATH
   git pull origin main
@@ -63,8 +63,7 @@ upgrade(){
   cd -
 }
 
-
-clone_repo(){
+clone_repo() {
   echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
   git clone https://github.com/nozomiishii/dotfiles.git
   cd $HOME/dotfiles
@@ -72,8 +71,7 @@ clone_repo(){
   cd $HOME
 }
 
-
-reinstall(){
+reinstall() {
   cd $HOME
   echo "♻️ Reinstall this dotfiles repository"
 
@@ -84,16 +82,15 @@ reinstall(){
 }
 
 # Homebrew
-setup_homebrew(){
+setup_homebrew() {
   echo "🍺 Homebrew setup"
   pre_sudo
   source "$ROOT_PATH/src/homebrew.zsh"
 }
 
-
 # MacOS
 # Dependencis | Homebrew
-setup_macos(){
+setup_macos() {
   echo "💻 MacOS setup"
   pre_sudo
   source "$ROOT_PATH/src/macos.zsh"
@@ -101,32 +98,29 @@ setup_macos(){
 
 # Link
 # Dependencis | Homebrew
-link_modules(){
+link_modules() {
   echo "🗂 Symbolic link"
   stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
 }
 
-
 # Unlink
 # Dependencis | Homebrew
-unlink_modules(){
+unlink_modules() {
   echo "👋 Unlinking symbolic links"
   stow -vD -d "$MODULES_PATH" -t ~ "$MODULES"
   exit
 }
 
-
 # Apps
 # Dependencis | Homebrew | Link
-setup_apps(){
+setup_apps() {
   echo "🧝🏻‍♀️ Apps setup"
   source "$ROOT_PATH/src/apps.zsh"
 }
 
-
 # Environment
 # Dependencis | Homebrew | Link | Apps (agree to the Xcode license)
-setup_environment(){
+setup_environment() {
   if ! type dfx > /dev/null 2>&1; then
     echo "🌝 Environment setup(dfx)"
     pre_sudo
@@ -137,30 +131,26 @@ setup_environment(){
   source "$ROOT_PATH/src/env.zsh"
 }
 
-
 # Code
 # Dependencis | Homebrew
-setup_repositoris(){
+setup_repositoris() {
   echo "🦄 Clone repositories"
   source "$ROOT_PATH/src/code.zsh"
 }
 
-
 # SSHkey
 # Dependencis | Homebrew
-generate_sshkey(){
+generate_sshkey() {
   echo "🔐 Generate ssh key"
   source "$ROOT_PATH/src/sshkey.zsh"
 }
 
-
 # Drive
 # Dependencis | Homebrew, Mirror Google Drive files
-sync_with_drive(){
+sync_with_drive() {
   echo "🌎 Sync with google drive"
   source "$ROOT_PATH/src/drive.zsh"
 }
-
 
 if [ ! $@ ]; then
   echo "\n👨🏻‍🚀 Install the best Mac setup for you!! \n"
@@ -187,15 +177,12 @@ if [ ! $@ ]; then
   # Prevent your mac from sleeping automatically when the display is off
   sudo pmset -c sleep 0
 
-  
   chmod +x $HOME/dotfiles/install
   chmod +x $HOME/dotfiles/src/*
-
 
   setup_homebrew
   setup_macos
   link_modules
-
 
   echo "👨🏻‍🚀 Open the apps that needs to be configured"
   open -b com.apple.systempreferences
@@ -207,10 +194,8 @@ if [ ! $@ ]; then
   open /users
   open https://github.com/nozomiishii/dotfiles
 
-
   setup_apps
   setup_environment
-
 
   echo "🎉 The dotfiles installation is complete \n\n"
   # Turn display off after: 15 mins
@@ -218,52 +203,64 @@ if [ ! $@ ]; then
   # Bootstrap yabai and skhd
   brew services start --all
 
-
   echo "👨🏻‍🚀 Restart the mac \n"
   echo "'sudo reboot' \n\n\n"
 fi
 
 for i in "$@"; do
   case "$i" in
-    -a|--apps)
+    -a | --apps)
       setup_apps
-      shift ;;
-    -b|--homebrew)
+      shift
+      ;;
+    -b | --homebrew)
       setup_homebrew
-      shift ;;
-    -c|--code)
+      shift
+      ;;
+    -c | --code)
       setup_repositoris
-      shift ;;
-    -d|--drive )
+      shift
+      ;;
+    -d | --drive)
       sync_with_drive
-      shift ;;
-    -e|--environment)
+      shift
+      ;;
+    -e | --environment)
       setup_environment
-      shift ;;
-    -h|--help)
+      shift
+      ;;
+    -h | --help)
       usage
-      shift ;;
-    -k|--sshkey)
+      shift
+      ;;
+    -k | --sshkey)
       generate_sshkey
-      shift ;;
-    -l|--symlink)
+      shift
+      ;;
+    -l | --symlink)
       link_modules
-      shift ;;
-    -m|--macos)
+      shift
+      ;;
+    -m | --macos)
       setup_macos
-      shift ;;
-    -r|--reinstall)
+      shift
+      ;;
+    -r | --reinstall)
       reinstall
-      shift ;;
-    -ul=*|--unlink=*)
+      shift
+      ;;
+    -ul=* | --unlink=*)
       MODULES="${i#*=}"
       unlink_modules
-      shift ;;
-    -up|--upgrade)
+      shift
+      ;;
+    -up | --upgrade)
       upgrade
-      shift ;;
+      shift
+      ;;
     *)
       usage
-      shift ;;
+      shift
+      ;;
   esac
 done
