@@ -123,7 +123,9 @@
   "pretty console check": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "lg",
-    "body": ["console.log('############🦄 hit!!!')"],
+    "body": [
+      "console.log('############🦄[$CLIPBOARD]$1', JSON.stringify($CLIPBOARD$2, undefined, 2))"
+    ],
     "description": "pretty console log"
   },
   //
@@ -396,7 +398,10 @@
   "const axesHelper = new THREE.AxesHelper();": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "helper",
-    "body": ["const axesHelper = new THREE.AxesHelper();", "scene.add(axesHelper);"],
+    "body": [
+      "const axesHelper = new THREE.AxesHelper();",
+      "scene.add(axesHelper);"
+    ],
     "description": "const axesHelper = new THREE.AxesHelper();"
   },
   //
@@ -405,7 +410,12 @@
   "import * as dat from 'dat.gui';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imdat",
-    "body": ["import * as dat from 'dat.gui';", "", "const gui = new dat.GUI();", ""],
+    "body": [
+      "import * as dat from 'dat.gui';",
+      "",
+      "const gui = new dat.GUI();",
+      ""
+    ],
     "description": "import * as dat from 'dat.gui';"
   },
   //
