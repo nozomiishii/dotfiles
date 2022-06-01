@@ -89,11 +89,6 @@
     "args": { "name": "pretty console check" }
   },
   {
-    "key": "ctrl+a",
-    "command": "editor.action.insertSnippet",
-    "args": { "name": "scene.add($CLIPBOARD);" }
-  },
-  {
     "key": "shift+alt+cmd+j",
     "command": "liveshare.join",
     "when": "liveshare:state != 'Joined' && liveshare:state != 'Shared'"
@@ -120,7 +115,13 @@
   {
     "key": "alt+cmd+j",
     "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   }
+
   // {
   //   "key": "cmd+x",
   //   "command": "editor.action.deleteLines",
