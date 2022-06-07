@@ -1,0 +1,42 @@
+{
+  "Print to console": {
+    "prefix": "!",
+    "body": [
+      "# ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}",
+      "",
+      "@id = ''",
+      "",
+      "",
+      "GET http://{{host}}/$TM_FILENAME_BASE",
+      "Content-Type: application/json",
+      "###",
+      "",
+      "",
+      "POST http://{{host}}/$TM_FILENAME_BASE",
+      "Content-Type: application/json",
+      "Authorization: Bearer {{token}}",
+      "",
+      "{",
+      "}",
+      "###",
+      "",
+      "",
+      "PATCH http://{{host}}/$TM_FILENAME_BASE/{{id}}",
+      "Content-Type: application/json",
+      "Authorization: Bearer {{token}}",
+      "",
+      "{",
+      "}",
+      "###",
+      "",
+      "",
+      "DELETE http://{{host}}/$TM_FILENAME_BASE/{{id}}",
+      "Content-Type: application/json",
+      "Authorization: Bearer {{token}}",
+      "###",
+      "",
+      ""
+    ],
+    "description": "REST Client: https://marketplace.visualstudio.com/items?itemName=humao.rest-client"
+  }
+}
