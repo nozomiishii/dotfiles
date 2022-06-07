@@ -144,7 +144,14 @@
       "at-rule-no-unknown": [
         true,
         {
-          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
+          "ignoreAtRules": [
+            "tailwind",
+            "apply",
+            "variants",
+            "responsive",
+            "screen",
+            "layer"
+          ]
         }
       ],
       "declaration-block-trailing-semicolon": null,
@@ -212,7 +219,12 @@
 
   // ESlint
   "eslint.enable": true,
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "editor.codeActionsOnSave": {
     "source.addMissingImports": true,
     "source.fixAll.eslint": true,
@@ -223,6 +235,7 @@
   },
 
   // Markdown
+  "markdown-preview-github-styles.colorTheme": "dark",
   "markdown.extension.toc.updateOnSave": false,
   "[markdown]": {
     "editor.defaultFormatter": "vscode.markdown-language-features",
