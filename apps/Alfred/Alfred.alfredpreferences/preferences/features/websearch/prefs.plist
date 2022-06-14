@@ -1532,6 +1532,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>878C2C44-D8B9-4D84-B790-A3B19C84F027</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>eth</string>
+			<key>text</key>
+			<string>Open Etherscan</string>
+			<key>url</key>
+			<string>https://etherscan.io/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>8AC1A216-E2A0-41DC-B508-B56A8460256B</key>
 		<dict>
 			<key>enabled</key>
