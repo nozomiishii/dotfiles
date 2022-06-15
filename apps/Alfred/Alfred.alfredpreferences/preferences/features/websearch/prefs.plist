@@ -628,6 +628,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>408CE777-198A-4B32-821E-2A143870501A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>sbi</string>
+			<key>text</key>
+			<string>Open SBI Miraino Debit Platinum Benefit</string>
+			<key>url</key>
+			<string>https://www.netbk.co.jp/contents/lineup/debitcard/mastercard-platinum-service/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>40A1157E-C1C2-48BD-8722-C4D30C8EA8FD</key>
 		<dict>
 			<key>enabled</key>
