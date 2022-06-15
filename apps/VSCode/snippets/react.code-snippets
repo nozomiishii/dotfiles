@@ -120,6 +120,17 @@
     ],
     "description": "Mock Api Response"
   },
+  "sleep": {
+    "prefix": "sleep",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": [
+      "const seconds = 2;",
+      "await new Promise((resolve) => setTimeout(resolve, seconds * 1000));",
+      "console.log(`Wait ${seconds}s`);",
+      ""
+    ],
+    "description": "sleep"
+  },
   //
   //
   // Styles
@@ -422,10 +433,7 @@
   "const axesHelper = new THREE.AxesHelper();": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "helper",
-    "body": [
-      "const axesHelper = new THREE.AxesHelper();",
-      "scene.add(axesHelper);"
-    ],
+    "body": ["const axesHelper = new THREE.AxesHelper();", "scene.add(axesHelper);"],
     "description": "const axesHelper = new THREE.AxesHelper();"
   },
   //
@@ -434,12 +442,7 @@
   "import * as dat from 'dat.gui';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imdat",
-    "body": [
-      "import * as dat from 'dat.gui';",
-      "",
-      "const gui = new dat.GUI();",
-      ""
-    ],
+    "body": ["import * as dat from 'dat.gui';", "", "const gui = new dat.GUI();", ""],
     "description": "import * as dat from 'dat.gui';"
   },
   //
