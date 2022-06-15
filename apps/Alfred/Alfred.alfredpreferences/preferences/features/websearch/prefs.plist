@@ -1064,6 +1064,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>65253100-E5D7-434D-9D78-70520138AE9C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>zod</string>
+			<key>text</key>
+			<string>Open Zod</string>
+			<key>url</key>
+			<string>https://zod.dev/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>6558D1A3-3484-48CC-8D47-AB181C56BBE1</key>
 		<dict>
 			<key>enabled</key>
