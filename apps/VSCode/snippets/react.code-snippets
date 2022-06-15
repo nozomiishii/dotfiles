@@ -96,6 +96,30 @@
     "body": ["import { v4 as uuidv4 } from 'uuid';", "uuidv4()"],
     "description": "uuid"
   },
+  "Mock Api Response": {
+    "prefix": "mockapi",
+    "scope": "typescript,typescriptreact",
+    "body": [
+      "async function mockApiResponse<T>(",
+      "  response: T,",
+      "  options?: { error?: boolean; timeout?: number },",
+      "): Promise<T> {",
+      "  return new Promise((resolve, reject) => {",
+      "    setTimeout(() => {",
+      "      if (options?.error) {",
+      "        return reject('rejected');",
+      "      }",
+      "      resolve(response);",
+      "    }, options?.timeout ?? 1000);",
+      "  });",
+      "}",
+      "",
+      "const response = await mockApiResponse({ message: '🥸: Hello from fakeApiResponse!' });",
+      "console.log('[response]', response);",
+      ""
+    ],
+    "description": "Mock Api Response"
+  },
   //
   //
   // Styles
