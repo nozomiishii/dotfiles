@@ -68,6 +68,8 @@ alias dcex="docker container exec -it"
 alias dsp="docker system prune"
 alias dcp="docker-compose"
 alias nn="docker container run -it --rm -p 6000:6000 -w /app -v $(pwd):/app node bash"
+alias dcu='docker-compose up'
+alias dcd='docker-compose down'
 
 # tfenv https://github.com/tfutils/tfenv/issues/83
 alias tfenv='GREP_OPTIONS="--color=never" tfenv'
