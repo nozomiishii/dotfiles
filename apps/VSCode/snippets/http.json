@@ -4,7 +4,7 @@
     "body": [
       "# ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}",
       "",
-      "@id = ''",
+      "@id=",
       "",
       "",
       "GET http://{{host}}/$TM_FILENAME_BASE",
