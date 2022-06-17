@@ -1480,6 +1480,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>83BDBDE0-E10C-4082-B498-E2FF5380CE57</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hotels</string>
+			<key>text</key>
+			<string>Open Hotels.com</string>
+			<key>url</key>
+			<string>https://jp.hotels.com/page/mastercard-jp-coupon-two/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>8426BB8E-1DD1-438C-97EB-C1699D8D0420</key>
 		<dict>
 			<key>enabled</key>
