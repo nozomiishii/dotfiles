@@ -65,9 +65,8 @@ alias dcls="docker container ls"
 alias dcr="docker container run"
 alias dcs="docker container start -a"
 alias dcex="docker container exec -it"
-alias dsp="docker system prune"
-alias dcp="docker-compose"
 alias nn="docker container run -it --rm -p 6000:6000 -w /app -v $(pwd):/app node bash"
+alias dsp="docker system prune --all --volumes"
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 
