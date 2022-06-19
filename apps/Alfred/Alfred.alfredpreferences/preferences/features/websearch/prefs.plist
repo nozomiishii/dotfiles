@@ -862,6 +862,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>582F07C3-59EC-4A01-A3D7-CE44FA16C351</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>webpack</string>
+			<key>text</key>
+			<string>Open Webpack</string>
+			<key>url</key>
+			<string>https://webpack.js.org/concepts/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>58300BC2-4998-4D8D-8D40-81988DCEB988</key>
 		<dict>
 			<key>enabled</key>
