@@ -758,6 +758,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>4DD140D2-6CB4-4EF4-A301-3CD153694772</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>booking</string>
+			<key>text</key>
+			<string>Open Booking.com</string>
+			<key>url</key>
+			<string>https://sp.booking.com/index.html?aid=2055368</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>4EB04DFB-C6DA-4E2C-B1F1-DA37A4453F3A</key>
 		<dict>
 			<key>enabled</key>
