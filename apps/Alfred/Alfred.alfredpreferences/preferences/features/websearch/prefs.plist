@@ -2341,6 +2341,19 @@ Open CSS Tailwind Converter</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>EDA24968-18DD-4266-9FA8-C2E6CAEF465B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ts</string>
+			<key>text</key>
+			<string>Open tsconfig</string>
+			<key>url</key>
+			<string>https://www.typescriptlang.org/tsconfig</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>EDBE93DC-CEE1-4B4B-927D-ABCBEC49816F</key>
 		<dict>
 			<key>enabled</key>
