@@ -10,7 +10,9 @@
 - [👼 Reinstall macOS](#reinstall-macos)
 - [🙌 References](#references)
 
-![Brow my mind](https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif)
+<div align="center">
+  <img src="https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif" alt="Brow my mind" />
+</div>
 
 <a id="new-macbook?"></a>
 
