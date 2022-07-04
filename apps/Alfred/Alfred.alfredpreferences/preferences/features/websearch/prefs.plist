@@ -1623,6 +1623,19 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>8B74772F-494E-43D4-B875-CA0632681B3D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>shields</string>
+			<key>text</key>
+			<string>Open Shields.io</string>
+			<key>url</key>
+			<string>https://shields.io/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>8CBAD0CD-3F1F-4E06-BC2D-8AE1E49E15AC</key>
 		<dict>
 			<key>enabled</key>
