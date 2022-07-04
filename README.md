@@ -1,4 +1,4 @@
-# Nozomi's dotfiles
+# dotfiles
 
 <!-- Main Image -->
 <br>
