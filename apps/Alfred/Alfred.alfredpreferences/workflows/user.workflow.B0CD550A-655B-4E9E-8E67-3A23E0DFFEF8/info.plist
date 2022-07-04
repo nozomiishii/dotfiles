@@ -216,6 +216,21 @@
 				<false/>
 			</dict>
 		</array>
+		<key>97671C99-B7EE-40C6-A6BA-4E008BACD222</key>
+		<array/>
+		<key>9D60823A-028E-4211-96F4-10905B3DCEB2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>97671C99-B7EE-40C6-A6BA-4E008BACD222</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>AD78413D-CCEF-45A7-837E-4F50AF44F992</key>
 		<array>
 			<dict>
@@ -1570,6 +1585,21 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string>~/Code/nozomiishii/dev</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>97671C99-B7EE-40C6-A6BA-4E008BACD222</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>paths</key>
 				<array>
 					<string>/Volumes/GoogleDrive/My Drive/Id</string>
@@ -1602,6 +1632,27 @@ end alfred_script</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>F3C1C24E-3BF7-45FC-824D-60269D9A6EEA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>dev</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Open Dev in VScode</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9D60823A-028E-4211-96F4-10905B3DCEB2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1941,12 +1992,26 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>1395</integer>
 		</dict>
+		<key>97671C99-B7EE-40C6-A6BA-4E008BACD222</key>
+		<dict>
+			<key>xpos</key>
+			<integer>475</integer>
+			<key>ypos</key>
+			<integer>1670</integer>
+		</dict>
 		<key>98D7203F-FBD8-4551-970D-10550F4F9948</key>
 		<dict>
 			<key>xpos</key>
 			<integer>195</integer>
 			<key>ypos</key>
 			<integer>440</integer>
+		</dict>
+		<key>9D60823A-028E-4211-96F4-10905B3DCEB2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>335</integer>
+			<key>ypos</key>
+			<integer>1670</integer>
 		</dict>
 		<key>A30798B3-B9EC-4073-8494-523374066E20</key>
 		<dict>
