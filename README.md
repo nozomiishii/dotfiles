@@ -238,6 +238,7 @@ Finder Sidebar
     - [GoFullPage](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl)
     - [Amazing Searcher](https://chrome.google.com/webstore/detail/amazing-searcher/poheekmlppakdboaalpmhfpbmnefeokj)
     - [Open in VS Code (github1s.com)](https://chrome.google.com/webstore/detail/open-in-vs-code-github1sc/neloiopjjeflfnecdlajhopdlojlkhll)
+    - [Mokuren for GitHub](https://chrome.google.com/webstore/detail/mokuren-for-github/nikennffbfoadbajdgnhlngjahofhdef)
 
 ### 🗿 fig
 
