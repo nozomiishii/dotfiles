@@ -292,6 +292,9 @@ cask "visual-studio-code"
 # Multimedia player. https://www.videolan.org/vlc
 cask "vlc"
 
+# Private Messenger https://wickr.com/me/
+cask "wickrme"
+
 # Graphical network analyzer and capture tool https://www.wireshark.org
 cask "wireshark"
 
