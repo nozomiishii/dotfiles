@@ -12,6 +12,7 @@
   },
   "homepage": "https://github.com/nozomiishii/dotfiles#readme",
   "scripts": {
+    "update:submodule": "git submodule foreach git pull",
     "format": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.zsh'"
   },
   "devDependencies": {
