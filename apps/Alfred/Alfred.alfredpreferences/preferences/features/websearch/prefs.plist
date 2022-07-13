@@ -2549,6 +2549,19 @@ Open CSS Tailwind Converter</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>FCAE4084-72EF-41B9-8EC6-D2A4988DAEDE</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>api</string>
+			<key>text</key>
+			<string>Open Microsoft REST API Guidelines</string>
+			<key>url</key>
+			<string>https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>FE58A59C-8DB6-4F95-85E1-DA3112251FA4</key>
 		<dict>
 			<key>enabled</key>
