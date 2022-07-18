@@ -13,7 +13,18 @@
   "homepage": "https://github.com/nozomiishii/dotfiles#readme",
   "scripts": {
     "update:submodule": "git submodule foreach git pull",
-    "format": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.zsh'"
+    "format": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.zsh'",
+    "install": "./install.sh",
+    "install:apps": "./install.sh --apps",
+    "install:brew": "./install.sh --homebrew",
+    "install:code": "./install.sh --code",
+    "install:drive": "./install.sh --drive",
+    "install:environment": "./install.sh --environment",
+    "install:help": "./install.sh --help",
+    "install:sshkey": "./install.sh --sshkey",
+    "install:symlink": "./install.sh --symlink",
+    "install:macos": "./install.sh --macos",
+    "install:reinstall": "./install.sh --reinstall"
   },
   "devDependencies": {
     "prettier": "^2.6.2",
