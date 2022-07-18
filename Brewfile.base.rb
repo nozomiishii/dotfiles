@@ -7,11 +7,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "jondot/tap"
-tap "koekeishiya/formulae"
-tap "romkatv/powerlevel10k"
-tap "smudge/smudge"
-tap "stripe/stripe-cli"
 
 #
 # Brews
@@ -74,32 +69,17 @@ brew "heroku-node"
 # Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
 brew "jq"
 
-# The scalable code generator that saves you time. https://www.hygen.io/
-brew "hygen"
-
 # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
 brew "neovim"
 
 # Run a Kubernetes cluster locally https://minikube.sigs.k8s.io/
 brew "minikube"
 
-# mono is currently not working for M1 Mac
-# https://gurutaka-log.com/unity-vscode-mac-setup
-#
-# Cross platform, open source .NET development framework. https://www.mono-project.com/
-brew "mono"
-
-# A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
-brew "nightlight"
-
 # Generate clients, server & docs from an OpenAPI spec https://openapi-generator.tech/
 brew "openapi-generator"
 
 # Object-relational database system https://www.postgresql.org/
 brew "postgresql"
-
-# A Zsh Theme https://github.com/romkatv/powerlevel10k
-brew "powerlevel10k"
 
 # Persistent key-value database, with built-in net interface https://redis.io/
 brew "redis"
@@ -110,17 +90,12 @@ brew "rust-analyzer"
 # Static analysis and lint tool, for (ba)sh scripts https://www.shellcheck.net/
 brew "shellcheck"
 
-# Simple hotkey-daemon for macOS. https://github.com/koekeishiya/skhd
-brew "skhd"
-
 # Organize software neatly under a single directory tree https://www.gnu.org/software/stow/
 brew "stow"
 
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
+tap "stripe/stripe-cli"
 brew "stripe"
-
-# Programmatically correct mistyped console commands https://github.com/nvbn/thefuck
-brew "thefuck"
 
 # Text interface for Git repositories https://jonas.github.io/tig/
 brew "tig"
@@ -185,14 +160,14 @@ cask "ngrok"
 # App to write, plan, collaborate, and get organized. https://www.notion.so
 cask "notion"
 
+# Control your tools with a few keystrokes https://raycast.app/
+cask "Raycast"
+
 # Team communication and collaboration software. https://slack.com
 cask "slack"
 
 # Music streaming service. https://www.spotify.com
 cask "spotify"
-
-# Reformatting Swift code. https://github.com/nicklockwood/SwiftFormat
-cask "swiftformat-for-xcode"
 
 # Native GUI tool for relational databases https://tableplus.com/
 cask "tableplus"

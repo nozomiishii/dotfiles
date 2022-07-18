@@ -24,6 +24,11 @@ elif [ "${arch_name}" = "arm64" ]; then
 fi
 
 export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
-brew bundle --verbose --file "$HOME/dotfiles/Brewfile"
+
+if "${setup_homebrew_min:-false}"; then
+  brew bundle --verbose --file "$HOME/dotfiles/Brewfile.base.rb"
+else
+  brew bundle --verbose --file "$HOME/dotfiles/Brewfile"
+fi
 
 printf "🎉 The Homebrew setup is complete \n\n"
