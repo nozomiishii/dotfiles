@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-echo "🌝 Starting Environment setup(asdf)... \n"
-set -e
+#!/bin/bash
+set -Ceu
+
+printf "🌝 Starting Environment setup(asdf)... \n"
 
 if [ ! -f ~/.tool-versions ]; then
   echo '⚠️ ~/.tool-versions is not exist'
@@ -36,9 +37,9 @@ done
 
 if [ ! -d ~/.config/yarn/global/node_modules ]; then
   echo '- 🚚 Setup Yarn global'
-  . $(brew --prefix asdf)/libexec/asdf.sh
-  export PATH="$(yarn global bin):$PATH"
+  # . $(brew --prefix asdf)/libexec/asdf.sh
+  # export PATH="$(yarn global bin):$PATH"
   yarn global add
 fi
 
-echo "🎉 The Environment setup is complete \n\n"
+printf "🎉 The Environment setup is complete \n\n"

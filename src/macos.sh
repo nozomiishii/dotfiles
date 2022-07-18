@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-echo "💻 Starting MacOS setup... \n"
-set -e
+#!/bin/bash
+set -Ceu
+
+printf "💻 Starting MacOS setup... \n"
 
 echo "- 🤖 nvram"
 # Disable auto-booting
@@ -190,4 +191,4 @@ killall SystemUIServer
 sudo killall cfprefsd
 sudo killall corebrightnessd
 
-echo "🎉 The MacOS setup is complete \n\n"
+printf "🎉 The MacOS setup is complete \n\n"

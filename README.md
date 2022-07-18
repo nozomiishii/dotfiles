@@ -82,15 +82,15 @@ Wait about 3 hours(Go grab some food and take a nap 🍕😪)
   ⌘ + space Terminal
 ```
 
-Change shell to zsh
+<!-- Change shell to zsh
 
 ```shell
   chsh -s /bin/zsh
   echo $SHELL
-```
+``` -->
 
 ```shell
-  curl -L https://nozomiishii.dev/dotfiles/install | zsh
+  curl -L https://nozomiishii.dev/dotfiles/install | bash
 ```
 
 -L (--location): Enable redirection.

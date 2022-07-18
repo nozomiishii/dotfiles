@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-echo "🧝🏻‍♀️ Starting Apps setup... \n"
-set -e
+#!/bin/bash
+set -Ceu
+
+printf "🧝🏻‍♀️ Starting Apps setup... \n"
 
 APPS_PATH="$HOME/dotfiles/apps"
 
@@ -19,31 +20,31 @@ fi
 
 echo "- 🐟 VSCode"
 VSCODE_PATH="$HOME/Library/Application Support/Code/User"
-if [ ! -d $VSCODE_PATH ]; then
-  mkdir -p $VSCODE_PATH
+if [ ! -d "$VSCODE_PATH" ]; then
+  mkdir -p "$VSCODE_PATH"
   open "/Applications/Visual Studio Code.app"
 fi
-stow -vd "$APPS_PATH" -t $VSCODE_PATH VSCode
+stow -vd "$APPS_PATH" -t "$VSCODE_PATH" VSCode
 
 if [ ! -e "/Applications/Xcode.app" ]; then
   echo "🥲 Xcode not found"
   echo "Xcode and NeoVim settings were skipped."
   echo "You will need to manually run the following command later"
-  echo "\n ~/dotfiles/install -a \n"
+  printf "\n ~/dotfiles/install -a \n"
 
 else
   echo "- 🍎 Xcode"
   XCODE_PATH="$HOME/Library/Developer/Xcode/UserData"
-  if [ ! -d $XCODE_PATH ]; then
+  if [ ! -d "$XCODE_PATH" ]; then
     sudo xcodebuild -license accept
     sudo xcodebuild -runFirstLaunch
-    mkdir -p $XCODE_PATH
+    mkdir -p "$XCODE_PATH"
     open "/Applications/XCode.app"
   fi
-  if [ -d $HOME/Library/Developer/Xcode/UserData/KeyBindings ]; then
-    rm -r $HOME/Library/Developer/Xcode/UserData/KeyBindings
+  if [ -d "$HOME"/Library/Developer/Xcode/UserData/KeyBindings ]; then
+    rm -r "$HOME"/Library/Developer/Xcode/UserData/KeyBindings
   fi
-  stow -vd "$APPS_PATH" -t $XCODE_PATH Xcode
+  stow -vd "$APPS_PATH" -t "$XCODE_PATH" Xcode
 
   # XCode required to install vim plug
   echo '- 👾 NeoVim'
@@ -69,4 +70,4 @@ duti -s com.microsoft.VSCode yaml all
 duti -s com.microsoft.VSCode json all
 duti -s com.microsoft.VSCode css all
 
-echo "🎉 The App setup is complete \n\n"
+printf "🎉 The App setup is complete \n\n"

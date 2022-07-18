@@ -166,8 +166,6 @@
     }
   },
   "shellcheck.ignorePatterns": {
-    // FIXME: Delete below when convert dotfiles/install to bash
-    "install": true,
     "**/*.xonshrc": true,
     "**/*.xsh": true,
     "**/*.zsh": true,

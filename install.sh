@@ -1,4 +1,5 @@
-#!/usr/bin/env zsh
+#!/bin/bash
+set -Ceu
 #
 # zsh -c "$(curl -fsSL https://nozomiishii.dev/dotfiles/install)"
 # -c: Take the first argument as a command to execute
@@ -7,8 +8,7 @@
 # -S (--show-error): Show error message if it fails.
 # -L (--location): Enable redirection.
 #
-# curl -o - https://raw.githubusercontent.com/nozomiishii/dotfiles/main/install | zsh
-set -e
+# curl -o - https://raw.githubusercontent.com/nozomiishii/dotfiles/main/install.sh | bash
 
 ROOT_PATH="$HOME/dotfiles"
 MODULES_PATH="$ROOT_PATH/modules"
@@ -57,25 +57,25 @@ pre_sudo() {
 
 upgrade() {
   echo "🚀 Upgrading dotfiles"
-  cd $ROOT_PATH
+  cd "$ROOT_PATH"
   git pull origin main
-  echo "\n🚀 Dotfiles upgrade is complete \n\n"
+  printf "\n🚀 Dotfiles upgrade is complete \n\n"
   cd -
 }
 
 clone_repo() {
   echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
   git clone https://github.com/nozomiishii/dotfiles.git
-  cd $HOME/dotfiles
+  cd "$HOME"/dotfiles
   git remote set-url origin git@github.com:nozomiishii/dotfiles.git
-  cd $HOME
+  cd "$HOME"
 }
 
 reinstall() {
-  cd $HOME
+  cd "$HOME"
   echo "♻️ Reinstall this dotfiles repository"
 
-  rm -rf $HOME/dotfiles
+  rm -rf "$HOME"/dotfiles
   clone_repo
 
   exec $SHELL
@@ -85,7 +85,7 @@ reinstall() {
 setup_homebrew() {
   echo "🍺 Homebrew setup"
   pre_sudo
-  source "$ROOT_PATH/src/homebrew.zsh"
+  source "$ROOT_PATH/src/homebrew.sh"
 }
 
 # MacOS
@@ -93,14 +93,16 @@ setup_homebrew() {
 setup_macos() {
   echo "💻 MacOS setup"
   pre_sudo
-  source "$ROOT_PATH/src/macos.zsh"
+  source "$ROOT_PATH/src/macos.sh"
 }
 
 # Link
 # Dependencis | Homebrew
 link_modules() {
   echo "🗂 Symbolic link"
-  stow -vd "$MODULES_PATH" -t ~ $(ls $MODULES_PATH)
+
+  # shellcheck disable=SC2046
+  stow -vd "$MODULES_PATH" -t ~ -R $(ls "$MODULES_PATH")
 }
 
 # Unlink
@@ -115,7 +117,7 @@ unlink_modules() {
 # Dependencis | Homebrew | Link
 setup_apps() {
   echo "🧝🏻‍♀️ Apps setup"
-  source "$ROOT_PATH/src/apps.zsh"
+  source "$ROOT_PATH/src/apps.sh"
 }
 
 # Environment
@@ -128,47 +130,47 @@ setup_environment() {
   fi
 
   echo "🌝 Environment setup(asdf)"
-  source "$ROOT_PATH/src/env.zsh"
+  source "$ROOT_PATH/src/env.sh"
 }
 
 # Code
 # Dependencis | Homebrew
 setup_repositoris() {
   echo "🦄 Clone repositories"
-  source "$ROOT_PATH/src/code.zsh"
+  source "$ROOT_PATH/src/code.sh"
 }
 
 # SSHkey
 # Dependencis | Homebrew
 generate_sshkey() {
   echo "🔐 Generate ssh key"
-  source "$ROOT_PATH/src/sshkey.zsh"
+  source "$ROOT_PATH/src/sshkey.sh"
 }
 
 # Drive
 # Dependencis | Homebrew, Mirror Google Drive files
 sync_with_drive() {
   echo "🌎 Sync with google drive"
-  source "$ROOT_PATH/src/drive.zsh"
+  source "$ROOT_PATH/src/drive.sh"
 }
 
-if [ ! $@ ]; then
-  echo "\n👨🏻‍🚀 Install the best Mac setup for you!! \n"
+if [ ! "$@" ]; then
+  printf "\n👨🏻‍🚀 Install the best Mac setup for you!! \n"
 
   if [[ ! -d /Applications/Xcode.app/Contents/Developer && ! -d /Library/Developer/CommandLineTools ]]; then
     echo "👨🏻‍🚀 Ooops! you need to install xcode-select"
-    echo "\n xcode-select --install \n"
+    printf "\n xcode-select --install \n"
     xcode-select --install
-    echo "\n👨🏻‍🚀 The installation pop-up will appear\n\n"
+    printf "\n👨🏻‍🚀 The installation pop-up will appear\n\n"
     exit
   fi
 
   pre_sudo
-  cd $HOME
+  cd "$HOME"
   if [ -d /Applications/Xcode.app ]; then
     sudo xcodebuild -license accept
   fi
-  if [ ! -d $HOME/dotfiles ]; then
+  if [ ! -d "$HOME"/dotfiles ]; then
     clone_repo
   fi
 
@@ -177,8 +179,8 @@ if [ ! $@ ]; then
   # Prevent your mac from sleeping automatically when the display is off
   sudo pmset -c sleep 0
 
-  chmod +x $HOME/dotfiles/install
-  chmod +x $HOME/dotfiles/src/*
+  chmod +x "$HOME"/dotfiles/install.sh
+  chmod +x "$HOME"/dotfiles/src/*
 
   setup_homebrew
   setup_macos
@@ -197,14 +199,14 @@ if [ ! $@ ]; then
   setup_apps
   setup_environment
 
-  echo "🎉 The dotfiles installation is complete \n\n"
+  printf "🎉 The dotfiles installation is complete \n\n"
   # Turn display off after: 15 mins
   sudo pmset -c displaysleep 15
   # Bootstrap yabai and skhd
   brew services start --all
 
-  echo "👨🏻‍🚀 Restart the mac \n"
-  echo "'sudo reboot' \n\n\n"
+  printf "👨🏻‍🚀 Restart the mac \n"
+  printf "'sudo reboot' \n\n\n"
 fi
 
 for i in "$@"; do

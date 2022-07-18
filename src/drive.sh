@@ -1,6 +1,7 @@
-#!/usr/bin/env zsh
-echo "🌎 Starting syncing with google drive... \n"
-set -e
+#!/bin/bash
+set -Ceu
+
+printf "🌎 Starting syncing with google drive... \n"
 
 GDRIVE_PATH="$HOME/My Drive"
 if [ ! -d "$GDRIVE_PATH" ]; then
@@ -17,4 +18,4 @@ echo "- 🐵 Blender"
 ln -nfs "$GDRIVE_PATH/Blender" "$HOME/Library/Application Support/Blender"
 ll "$HOME/Library/Application Support/Blender"
 
-echo "🎉 Syncing with google drive is complete \n\n"
+printf "🎉 Syncing with google drive is complete \n\n"
