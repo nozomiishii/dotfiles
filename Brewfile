@@ -7,11 +7,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "jondot/tap"
-tap "koekeishiya/formulae"
-tap "romkatv/powerlevel10k"
-tap "smudge/smudge"
-tap "stripe/stripe-cli"
 
 #
 # Brew
@@ -78,6 +73,7 @@ brew "heroku-node"
 brew "jq"
 
 # The scalable code generator that saves you time. https://www.hygen.io/
+tap "jondot/tap"
 brew "hygen"
 
 # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
@@ -96,6 +92,7 @@ brew "minikube"
 brew "mono"
 
 # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
+tap "smudge/smudge"
 brew "nightlight"
 
 # Generate clients, server & docs from an OpenAPI spec https://openapi-generator.tech/
@@ -105,6 +102,7 @@ brew "openapi-generator"
 brew "postgresql"
 
 # A Zsh Theme https://github.com/romkatv/powerlevel10k
+tap "romkatv/powerlevel10k"
 brew "powerlevel10k"
 
 # Persistent key-value database, with built-in net interface https://redis.io/
@@ -116,13 +114,11 @@ brew "rust-analyzer"
 # Static analysis and lint tool, for (ba)sh scripts https://www.shellcheck.net/
 brew "shellcheck"
 
-# Simple hotkey-daemon for macOS. https://github.com/koekeishiya/skhd
-brew "skhd"
-
 # Organize software neatly under a single directory tree https://www.gnu.org/software/stow/
 brew "stow"
 
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
+tap "stripe/stripe-cli"
 brew "stripe"
 
 # Programmatically correct mistyped console commands https://github.com/nvbn/thefuck
@@ -141,7 +137,10 @@ brew "tree"
 brew "watch"
 
 # A tiling window manager for macOS based on binary space partitioning. https://github.com/koekeishiya/yabai
+# Simple hotkey-daemon for macOS. https://github.com/koekeishiya/skhd
+tap "koekeishiya/formulae"
 brew "yabai"
+brew "skhd"
 
 #
 # Cask
@@ -265,6 +264,9 @@ cask "postman"
 
 # Jetbrains PyCharm Community Edition https://www.jetbrains.com/pycharm/
 cask "pycharm-ce"
+
+# Control your tools with a few keystrokes https://raycast.app/
+cask "Raycast"
 
 # Team communication and collaboration software. https://slack.com
 cask "slack"
