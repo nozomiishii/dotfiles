@@ -9,6 +9,7 @@ modules/zsh/.zsh/antigen.zsh.zwc
 # yarn
 node_modules
 yarn.lock
+yarn-error.log
 modules/yarn/.config/yarn/global/node_modules
 
 # Karabiner

@@ -32,7 +32,7 @@ if [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then . $(brew --prefix asdf)/li
 if [ -f ~/.asdf/plugins/java/set-java-home.zsh ]; then . ~/.asdf/plugins/java/set-java-home.zsh; fi
 
 # yarn
-if type yarn >/dev/null 2>&1; then export PATH="$(yarn global bin):$PATH"; fi
+if type yarn > /dev/null 2>&1; then export PATH="$(yarn global bin):$PATH"; fi
 
 # grep setting
 export GREP_OPTIONS='--color=always'

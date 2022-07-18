@@ -13,8 +13,8 @@
   "homepage": "https://github.com/nozomiishii/dotfiles#readme",
   "scripts": {
     "update:submodule": "git submodule foreach git pull",
-    "format": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.zsh'",
-    "install": "./install.sh",
+    "format": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.sh' 'Brewfile*'",
+    "install:all": "./install.sh",
     "install:apps": "./install.sh --apps",
     "install:brew": "./install.sh --homebrew",
     "install:code": "./install.sh --code",
@@ -27,6 +27,7 @@
     "install:reinstall": "./install.sh --reinstall"
   },
   "devDependencies": {
+    "@prettier/plugin-ruby": "~3.1.2",
     "prettier": "^2.6.2",
     "prettier-plugin-sh": "^0.11.0"
   }

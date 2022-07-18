@@ -23,7 +23,7 @@
   - [Install Manually](#install-manually)
   - [App preferences](#app-preferences)
 - [👨🏻‍🍳 Customize](#customize)
-- [👨🏻‍🏭 Maintenance](#maintenance)
+- [👨🏻‍🏭 Maintenance & Dev](#maintenance&dev)
 - [🔫 Troubleshooting](#troubleshooting)
 - [👼 Reinstall macOS](#reinstall-macos)
 - [🙌 References](#references)
@@ -525,14 +525,26 @@ Check if it's an app you want to download.
   ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
 ```
 
-<a id="maintenance"></a>
+<a id="maintenance&dev"></a>
 
-## 👨🏻‍🏭 Maintenance
+## 👨🏻‍🏭 Maintenance & Dev
+
+### Maintenance
 
 Clean unused homebrew dependencies up, and upgrade them
 
 ```shell
   brew bundle cleanup --force && brew cleanup && brew upgrade
+```
+
+### Dev
+
+```shell
+  yarn install
+```
+
+```shell
+  gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 ```
 
 ## Check the performance of zsh
