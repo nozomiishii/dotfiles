@@ -314,7 +314,7 @@ cask "virtualbox-extension-pack" if system '[ "$(uname -m)" = "x86_64" ]'
 # 
 if OS.mac?
 # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835
 
 # The cat tells you the CPU usage of Mac by running speed. https://kyome.io/runcat/
 # mas "RunCat", id: 1429033973
