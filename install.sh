@@ -190,7 +190,7 @@ if [ ! "$@" ]; then
   open -b com.apple.systempreferences
   open "/Applications/Google Drive.app"
   open "/Applications/Google Chrome.app"
-  open "/Applications/Alfred 4.app"
+  open "/Applications/Alfred 5.app"
   open "/Applications/1Password 7.app"
   open "/Applications/Karabiner-Elements.app"
   open /users
