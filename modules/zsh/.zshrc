@@ -1,7 +1,7 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # unicode of 🧙🏿‍♂️ => \U0001f9d9\U0001F3FF\u200d\U0002642
-echo '🧙🏿 ...zshrc loading...'
+# echo '🧙🏿 ...zshrc loading...'
 
 # Powerlevel10k
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
