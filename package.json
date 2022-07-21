@@ -17,6 +17,7 @@
     "install:all": "./install.sh",
     "install:apps": "./install.sh --apps",
     "install:brew": "./install.sh --homebrew",
+    "install:brew:min": "./install.sh --homebrew-min",
     "install:code": "./install.sh --code",
     "install:drive": "./install.sh --drive",
     "install:environment": "./install.sh --environment",
