@@ -1,19 +1,20 @@
 {
   "name": "dotfiles",
-  "main": "install",
-  "author": "Nozomi Ishii",
-  "license": "MIT",
+  "homepage": "https://github.com/nozomiishii/dotfiles#readme",
+  "bugs": {
+    "url": "https://github.com/nozomiishii/dotfiles/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nozomiishii/dotfiles.git"
   },
-  "bugs": {
-    "url": "https://github.com/nozomiishii/dotfiles/issues"
-  },
-  "homepage": "https://github.com/nozomiishii/dotfiles#readme",
+  "license": "MIT",
+  "author": "Nozomi Ishii",
+  "main": "install",
   "scripts": {
-    "update:submodule": "git submodule foreach git pull",
-    "format": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.sh' 'Brewfile*'",
+    "format": "yarn format:prettier && yarn format:package-json",
+    "format:package-json": "npx -y sort-package-json",
+    "format:prettier": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.sh' 'Brewfile*'",
     "install:all": "./install.sh",
     "install:apps": "./install.sh --apps",
     "install:brew": "./install.sh --homebrew",
@@ -22,10 +23,11 @@
     "install:drive": "./install.sh --drive",
     "install:environment": "./install.sh --environment",
     "install:help": "./install.sh --help",
+    "install:macos": "./install.sh --macos",
+    "install:reinstall": "./install.sh --reinstall",
     "install:sshkey": "./install.sh --sshkey",
     "install:symlink": "./install.sh --symlink",
-    "install:macos": "./install.sh --macos",
-    "install:reinstall": "./install.sh --reinstall"
+    "update:submodule": "git submodule foreach git pull"
   },
   "devDependencies": {
     "@prettier/plugin-ruby": "~3.1.2",
