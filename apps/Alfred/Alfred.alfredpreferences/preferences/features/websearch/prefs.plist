@@ -964,6 +964,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>5B312C99-FB9D-4872-90C7-16427CF6C602</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hooks</string>
+			<key>text</key>
+			<string>Open usehooks-ts.com</string>
+			<key>url</key>
+			<string>https://usehooks-ts.com/</string>
+		</dict>
 		<key>5BB39E7B-3262-426F-9CBA-2E87DEC8D0D6</key>
 		<dict>
 			<key>enabled</key>
