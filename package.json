@@ -12,8 +12,7 @@
   "author": "Nozomi Ishii",
   "main": "install",
   "scripts": {
-    "format": "yarn format:prettier && yarn format:markdownlint && yarn format:package-json",
-    "format:markdownlint": "markdownlint-cli2-fix '**/*.md' '#node_modules'",
+    "format": "yarn format:prettier && yarn format:package-json",
     "format:package-json": "npx -y sort-package-json",
     "format:prettier": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.sh' 'Brewfile*'",
     "install:all": "./install.sh",
@@ -28,6 +27,10 @@
     "install:reinstall": "./install.sh --reinstall",
     "install:sshkey": "./install.sh --sshkey",
     "install:symlink": "./install.sh --symlink",
+    "lint": "yarn lint:markdownlint",
+    "lint:fix": "yarn lint:markdownlint:fix",
+    "lint:markdownlint": "markdownlint-cli2 '**/*.md' '#node_modules'",
+    "lint:markdownlint:fix": "markdownlint-cli2-fix '**/*.md' '#node_modules'",
     "update:submodule": "git submodule foreach git pull"
   },
   "devDependencies": {
