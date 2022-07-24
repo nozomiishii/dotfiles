@@ -756,6 +756,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>495D362A-6550-4966-BF7A-AAB83EC5AAD3</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>prettier</string>
+			<key>text</key>
+			<string>Open Prettier</string>
+			<key>url</key>
+			<string>https://prettier.io/</string>
+		</dict>
 		<key>4D78FDC2-845D-45D9-9F60-1387CDFD9C99</key>
 		<dict>
 			<key>enabled</key>
