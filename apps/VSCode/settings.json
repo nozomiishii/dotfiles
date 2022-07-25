@@ -210,7 +210,17 @@
 
   // ESlint
   "eslint.enable": true,
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    // "json",
+    // "jsonc",
+    // "json5",
+    "yaml",
+    "toml"
+  ],
   "editor.codeActionsOnSave": {
     "source.addMissingImports": true,
     "source.fixAll.eslint": true,
