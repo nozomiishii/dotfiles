@@ -152,15 +152,13 @@
   "pretty console log": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "lg",
-    "body": ["console.log('############👨🏻‍🚀[$CLIPBOARD]$1', $CLIPBOARD)$2"],
+    "body": ["console.log('[$CLIPBOARD: $TM_FILENAME]', $CLIPBOARD)"],
     "description": "pretty console log"
   },
   "pretty console check": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "lg",
-    "body": [
-      "console.log('############🦄[$CLIPBOARD]$1', JSON.stringify($CLIPBOARD$2, undefined, 2))"
-    ],
+    "body": ["console.log('[$CLIPBOARD: $TM_FILENAME]', JSON.stringify($CLIPBOARD, null, 2))"],
     "description": "pretty console log"
   },
   //
