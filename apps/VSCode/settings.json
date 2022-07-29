@@ -214,12 +214,12 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
+    "typescriptreact"
     // "json",
     // "jsonc",
     // "json5",
-    "yaml",
-    "toml"
+    // "yaml",
+    // "toml"
   ],
   "editor.codeActionsOnSave": {
     "source.addMissingImports": true,
