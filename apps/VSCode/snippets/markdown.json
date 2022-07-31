@@ -23,5 +23,10 @@
     "prefix": "/diff",
     "body": ["```diff", "  ${0}", "```"],
     "description": "diff"
+  },
+  "details": {
+    "prefix": "/details",
+    "body": ["<details>", "<summary>${1:title}</summary>", "${0:body}", "</details>"],
+    "description": "details"
   }
 }
