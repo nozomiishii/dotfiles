@@ -13,6 +13,7 @@
   "main": "install",
   "scripts": {
     "format": "prettier --write 'modules/zsh/**/*.zsh' 'src/**/*.sh' 'Brewfile*' 'packagejson'",
+    "preinstall": "npx -y only-allow yarn",
     "install:all": "./install.sh",
     "install:apps": "./install.sh --apps",
     "install:brew": "./install.sh --homebrew",
