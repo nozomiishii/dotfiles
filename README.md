@@ -645,4 +645,4 @@ for x in {1..10}; do time zsh -i -c exit; done
 
 MIT License
 
-© 2021 - 2022 Nozomi Ishii
+© 2021 Nozomi Ishii

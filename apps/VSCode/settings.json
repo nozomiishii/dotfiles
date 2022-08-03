@@ -104,7 +104,8 @@
     ".tool-versions": "properties",
     "config": "properties",
     "*.ejs": "html",
-    "*.ejs.t": "html"
+    "*.ejs.t": "html",
+    "LICENSE": "plaintext"
   },
 
   // Extenstions
