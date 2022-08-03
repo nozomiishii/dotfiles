@@ -6,6 +6,9 @@
   "files.insertFinalNewline": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "security.workspace.trust.untrustedFiles": "open",
+  "search.exclude": {
+    "**/node_modules": true
+  },
 
   // Editor
   "editor.tabSize": 2,
@@ -144,7 +147,14 @@
       "at-rule-no-unknown": [
         true,
         {
-          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
+          "ignoreAtRules": [
+            "tailwind",
+            "apply",
+            "variants",
+            "responsive",
+            "screen",
+            "layer"
+          ]
         }
       ],
       "declaration-block-trailing-semicolon": null,
@@ -204,9 +214,7 @@
   "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "prettier.printWidth": 100,
-  "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true,
+  "prettier.requireConfig": true,
 
   // ESlint
   "eslint.enable": true,
@@ -221,26 +229,17 @@
     // "yaml",
     // "toml"
   ],
+
+  // Lint
   "editor.codeActionsOnSave": {
     "source.addMissingImports": true,
     "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
-  },
-  "search.exclude": {
-    "**/node_modules": true
+    "source.fixAll.markdownlint": true
   },
 
   // Markdown
   "markdown-preview-github-styles.colorTheme": "dark",
   "markdown.extension.toc.updateOnSave": false,
-  "[markdown]": {
-    "editor.defaultFormatter": "vscode.markdown-language-features",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.markdownlint": true
-    }
-  },
 
   // yaml
   "[yaml]": {
@@ -292,6 +291,5 @@
     "typesync",
     "Unpair",
     "wireframe"
-  ],
-  "gitlens.mode.active": "zen"
+  ]
 }

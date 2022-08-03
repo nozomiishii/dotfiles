@@ -90,7 +90,7 @@ Wait about 3 hours(Go grab some food and take a nap 🍕😪)
 ``` -->
 
 ```shell
-  curl -L https://nozomiishii.dev/dotfiles/install | bash
+curl -L https://nozomiishii.dev/dotfiles/install | bash
 ```
 
 -L (--location): Enable redirection.
@@ -102,7 +102,7 @@ Wait about 3 hours(Go grab some food and take a nap 🍕😪)
 ### Install xcode-select
 
 ```shell
-  xcode-select --install
+xcode-select --install
 ```
 
 xcode-select: this Command Line Tools are required for Git and Homebrew
@@ -110,59 +110,59 @@ xcode-select: this Command Line Tools are required for Git and Homebrew
 ### Come to this page
 
 ```shell
-  open https://nozomiishii.dev/dotfiles
+open https://nozomiishii.dev/dotfiles
 ```
 
 ### Clone
 
 ```shell
-  cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
+cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
 ```
 
 ### Brew Install
 
 ```shell
-  ~/dotfiles/install -b
+~/dotfiles/install -b
 ```
 
 ### 🔫 When permission is not set
 
 ```shell
-  ls -l ~/dotfiles/install
+ls -l ~/dotfiles/install
 ```
 
 ```shell
-  chmod +x ~/dotfiles/install
+chmod +x ~/dotfiles/install
 ```
 
 ### 💻 MacOS setup
 
 ```shell
-  ~/dotfiles/install -m
+~/dotfiles/install -m
 ```
 
 ### 🗂 Symbolic Link
 
 ```shell
-  ~/dotfiles/install -l
+~/dotfiles/install -l
 ```
 
 ### 🧝🏻‍♀️ Apps setup
 
 ```shell
-  ~/dotfiles/install -a
+~/dotfiles/install -a
 ```
 
 ### 🌝 Environment setup(asdf)
 
 ```shell
-  ~/dotfiles/install -e
+~/dotfiles/install -e
 ```
 
 ### 🛋 Restart
 
 ```shell
-  sudo reboot
+sudo reboot
 ```
 
 <a id="app-preferences"></a>
@@ -260,13 +260,13 @@ Finder Sidebar
 ### 😼 Generate SSHkey and Login gh
 
 ```shell
-  ~/dotfiles/install -k
+~/dotfiles/install -k
 ```
 
 ### 🦄 Clone repositories
 
 ```shell
-  ~/dotfiles/install -c
+~/dotfiles/install -c
 ```
 
 ### 🤵🏻‍♂️ Keyboard Maestro
@@ -323,7 +323,7 @@ Finder Sidebar
 ### 🤡 yabai
 
 ```shell
-  brew services restart yabai && brew services restart skhd
+brew services restart yabai && brew services restart skhd
 ```
 
 ### 🫐 BLEUnlock
@@ -350,7 +350,9 @@ Finder Sidebar
   - Add Japanese
 
 - **🛎 Notifications & Focus**
+
   - Notifications
+
     - **Calendar, Notion, Slack**  
       Alert style: Alerts  
       Show in Notification Centre  
@@ -456,7 +458,7 @@ Finder Sidebar
 ```
 
 ```shell
-  ngrok http 3000
+ngrok http 3000
 ```
 
 ### 🚙 duet
@@ -489,10 +491,10 @@ Check if it's an app you want to download.
 ### How to find the defaults command
 
 ```shell
-  defaults read > before
-  # change the config
-  defaults read > after
-  diff before after
+defaults read > before
+# change the config
+defaults read > after
+diff before after
 ```
 
 ### Search app plist
@@ -506,7 +508,7 @@ Check if it's an app you want to download.
 ### NSGlobalDomain plist
 
 ```shell
-  open ~/Library/Preferences/.GlobalPreferences.plist
+open ~/Library/Preferences/.GlobalPreferences.plist
 ```
 
 ### Read app config
@@ -534,23 +536,23 @@ Check if it's an app you want to download.
 Clean unused homebrew dependencies up, and upgrade them
 
 ```shell
-  brew bundle cleanup --force && brew cleanup && brew upgrade
+brew bundle cleanup --force && brew cleanup && brew upgrade
 ```
 
 ### Dev
 
 ```shell
-  yarn install
+yarn install
 ```
 
 ```shell
-  gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
+gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 ```
 
 ## Check the performance of zsh
 
 ```shell
-  for x in {1..10}; do time zsh -i -c exit;done
+for x in {1..10}; do time zsh -i -c exit; done
 ```
 
 <a id="troubleshooting"></a>

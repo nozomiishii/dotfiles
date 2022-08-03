@@ -7,7 +7,7 @@ module.exports = {
   bracketSameLine: false,
   jsxSingleQuote: false,
   printWidth: 100,
-  proseWrap: 'always',
+  proseWrap: 'preserve',
   quoteProps: 'as-needed',
   requirePragma: false,
   semi: true,
@@ -17,4 +17,19 @@ module.exports = {
   useTabs: false,
 
   plugins: [require('prettier-plugin-sh')],
+
+  overrides: [
+    {
+      files: ['*.md'],
+      options: {
+        parser: 'markdown-nocjsp',
+      },
+    },
+    {
+      files: '*.mdx',
+      options: {
+        parser: 'mdx-nocjsp',
+      },
+    },
+  ],
 };

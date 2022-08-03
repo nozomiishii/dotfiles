@@ -1,3 +1,6 @@
-modules/zsh/.zsh/p10k.zsh
-modules/zsh/.zsh/zinit.zsh
 .vscode
+apps
+!apps/VSCode
+
+**/p10k.zsh
+**/zinit.zsh
