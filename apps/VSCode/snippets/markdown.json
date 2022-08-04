@@ -1,17 +1,17 @@
 {
   "gif": {
     "prefix": "/gif",
-    "body": ["![${0:title}](${1:url})"],
+    "body": ["![${0}](${1l})"],
     "description": "gif"
   },
   "link": {
     "prefix": "/link",
-    "body": ["[${0:title}](${1:url})"],
+    "body": ["[${0}](${1})"],
     "description": "gif"
   },
   "code": {
     "prefix": "/code",
-    "body": ["```${0:code}", "", "```"],
+    "body": ["```${0}", "", "```"],
     "description": "code"
   },
   "sh": {
@@ -26,7 +26,7 @@
   },
   "details": {
     "prefix": "/details",
-    "body": ["<details>", "<summary>${1:title}</summary>", "${0:body}", "</details>"],
+    "body": ["<details>", "<summary>${1}</summary>", "${0}", "</details>"],
     "description": "details"
   }
 }
