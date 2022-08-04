@@ -340,6 +340,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>2518CF4D-E2AD-4E08-A4D3-04E5D7B5F50D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>rust</string>
+			<key>text</key>
+			<string>Open Rust for JavaScript Developers</string>
+			<key>url</key>
+			<string>https://app.rust-for-js.dev/</string>
+		</dict>
 		<key>2535A77D-50FC-4FC3-AC3E-47593F687233</key>
 		<dict>
 			<key>enabled</key>
