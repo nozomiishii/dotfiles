@@ -24,9 +24,6 @@ source "$HOME/.zsh/last-working-dir.zsh"
 # Functions
 source "$HOME/.zsh/functions.zsh"
 
-# thefuck
-eval $(thefuck --alias)
-
 # asdf
 if [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then . $(brew --prefix asdf)/libexec/asdf.sh; fi
 if [ -f ~/.asdf/plugins/java/set-java-home.zsh ]; then . ~/.asdf/plugins/java/set-java-home.zsh; fi
