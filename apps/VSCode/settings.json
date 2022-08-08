@@ -14,6 +14,8 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.fontSize": 14,
+  "editor.inlayHints.fontSize": 12,
+  // "editor.inlayHints.padding": true,
   "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
   "editor.renderWhitespace": "trailing",
@@ -78,9 +80,12 @@
     // "editorGhostText.border": "#403E41",
     // "editorGhostText.background": "#403E41",
     // "editorGhostText.foreground": "#C1C0C0"
-    "editorGhostText.border": "#727072",
-    "editorGhostText.background": "#727072",
-    "editorGhostText.foreground": "#FFD64C"
+    // "editorGhostText.border": "#727072",
+    // "editorGhostText.background": "#727072",
+    // "editorGhostText.foreground": "#FFD64C"
+
+    "editorInlayHint.background": "#2D2A2E",
+    "editorInlayHint.foreground": "#727072"
   },
   // Git Copilot
   "editor.inlineSuggest.enabled": false,
@@ -210,6 +215,18 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "rust-analyzer.checkOnSave.command": "clippy",
+
+  // JavaScript
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  // "javascript.inlayHints.variableTypes.enabled": true,
+  // "javascript.inlayHints.parameterTypes.enabled": true,
+  // "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+
+  // TypeScript
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  // "typescript.inlayHints.variableTypes.enabled": true,
+  // "typescript.inlayHints.parameterTypes.enabled": true,
+  // "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
 
   // Prettier
   "files.autoSave": "onFocusChange",
