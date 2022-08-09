@@ -102,6 +102,9 @@ cask "kindle-previewer"
 # Collaboration platform for API development. https://www.postman.com
 cask "postman"
 
+# VPN client focusing on security https://protonvpn.com/
+cask "protonvpn"
+
 # Jetbrains PyCharm Community Edition https://www.jetbrains.com/pycharm/
 cask "pycharm-ce"
 
