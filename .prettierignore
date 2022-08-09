@@ -1,6 +1,4 @@
 .vscode
-apps
-!apps/VSCode
 
 **/p10k.zsh
 **/zinit.zsh
