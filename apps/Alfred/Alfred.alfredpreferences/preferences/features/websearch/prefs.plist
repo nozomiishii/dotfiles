@@ -715,6 +715,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>44F7B614-AD9B-405F-B607-6E85CDBEB01E</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>deepl</string>
+			<key>text</key>
+			<string>Open DeepL account</string>
+			<key>url</key>
+			<string>https://www.deepl.com/account</string>
+		</dict>
 		<key>4632E40D-8A19-4B42-B441-DE344A0274AD</key>
 		<dict>
 			<key>enabled</key>
