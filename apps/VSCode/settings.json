@@ -153,14 +153,7 @@
       "at-rule-no-unknown": [
         true,
         {
-          "ignoreAtRules": [
-            "tailwind",
-            "apply",
-            "variants",
-            "responsive",
-            "screen",
-            "layer"
-          ]
+          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
         }
       ],
       "declaration-block-trailing-semicolon": null,
@@ -309,5 +302,36 @@
     "typesync",
     "Unpair",
     "wireframe"
+  ],
+  "cSpell.languageSettings": [
+    { "languageId": "*", "locale": "en", "dictionaries": ["wordsEn"] },
+    { "languageId": "*", "locale": "en-US", "dictionaries": ["wordsEn"] },
+    { "languageId": "*", "locale": "en-GB", "dictionaries": ["wordsEnGb"] },
+    { "languageId": "*", "dictionaries": ["companies", "softwareTerms", "misc"] },
+    { "languageId": "python", "allowCompoundWords": true, "dictionaries": ["python"] },
+    { "languageId": "go", "allowCompoundWords": true, "dictionaries": ["go"] },
+    { "languageId": "javascript", "dictionaries": ["typescript", "node"] },
+    { "languageId": "javascriptreact", "dictionaries": ["typescript", "node"] },
+    { "languageId": "typescript", "dictionaries": ["typescript", "node"] },
+    { "languageId": "typescriptreact", "dictionaries": ["typescript", "node"] },
+    { "languageId": "html", "dictionaries": ["html", "fonts", "typescript", "css"] },
+    { "languageId": "php", "dictionaries": ["php", "html", "fonts", "css", "typescript"] },
+    { "languageId": "css", "dictionaries": ["fonts", "css"] },
+    { "languageId": "less", "dictionaries": ["fonts", "css"] },
+    { "languageId": "scss", "dictionaries": ["fonts", "css"] },
+    {
+      "languageId": "markdown",
+      "dictionaries": [
+        "companies",
+        "softwareTerms",
+        "misc",
+        "fonts",
+        "css",
+        "html",
+        "typescript",
+        "node",
+        "rust"
+      ]
+    }
   ]
 }
