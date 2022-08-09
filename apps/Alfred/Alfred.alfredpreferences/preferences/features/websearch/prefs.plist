@@ -494,6 +494,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>32C149B8-B65C-47E9-81E0-031819FA08F8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>manning</string>
+			<key>text</key>
+			<string>Open Manning</string>
+			<key>url</key>
+			<string>https://www.manning.com/dashboard</string>
+		</dict>
 		<key>33B82AA8-5221-44F1-B36B-F5F9199A33F4</key>
 		<dict>
 			<key>enabled</key>
