@@ -60,6 +60,9 @@ cask "bleunlock"
 # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
 cask "brooklyn"
 
+# Web browser focusing on privacy https://brave.com/
+cask "brave-browser"
+
 # Automated testing of webapps for Google Chrome https://sites.google.com/chromium.org/driver/
 cask "chromedriver"
 
