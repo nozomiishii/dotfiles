@@ -776,6 +776,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>4822A4EE-7BB6-4F6A-8DE0-AE5DD4F3C1A3</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>spotify</string>
+			<key>text</key>
+			<string>Open Spotify Account</string>
+			<key>url</key>
+			<string>https://www.spotify.com/us/account/overview/</string>
+		</dict>
 		<key>48720D65-C639-40A0-9779-4187606BA60C</key>
 		<dict>
 			<key>enabled</key>
