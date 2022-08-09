@@ -190,19 +190,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>76E511D6-487F-4C7E-B382-D2686E10DDAC</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>23AC207C-636F-41AA-811F-DD17719777B5</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>7BD50759-8F95-40CB-9B36-F131213AD13E</key>
 		<array>
 			<dict>
@@ -1228,54 +1215,6 @@ end alfred_script</string>
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Volumes/GoogleDrive/My Drive/Work</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>23AC207C-636F-41AA-811F-DD17719777B5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>76E511D6-487F-4C7E-B382-D2686E10DDAC</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
 					<string>/Applications/TablePlus.app</string>
 				</array>
 				<key>toggle</key>
@@ -1318,27 +1257,6 @@ end alfred_script</string>
 			<string>3270991B-E89D-4C01-9EAD-A626D6035C24</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>work</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Open Work folder</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>E6457866-CA21-4181-8BF4-A7917F26DDA9</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1608,7 +1526,7 @@ end alfred_script</string>
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Volumes/GoogleDrive/My Drive/Id</string>
+					<string>~/My Drive/Id</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -1688,7 +1606,7 @@ end alfred_script</string>
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Volumes/GoogleDrive/My Drive</string>
+					<string>~/My Drive</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -1743,7 +1661,7 @@ end alfred_script</string>
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Volumes/GoogleDrive/My Drive/Assets/bland-logos</string>
+					<string>~/My Drive/Assets/bland-logos</string>
 				</array>
 				<key>toggle</key>
 				<false/>
@@ -1773,6 +1691,44 @@ end alfred_script</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>51C12F63-49E3-4FD6-8B74-53679DBB21B5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>~/My Drive/Work</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>23AC207C-636F-41AA-811F-DD17719777B5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>work</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Open Work folder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E6457866-CA21-4181-8BF4-A7917F26DDA9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1828,14 +1784,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<real>190</real>
 			<key>ypos</key>
-			<real>1045</real>
+			<real>2090</real>
 		</dict>
 		<key>2497FA59-CF0B-48A6-81AE-8D4071F8C03F</key>
 		<dict>
 			<key>xpos</key>
 			<real>60</real>
 			<key>ypos</key>
-			<real>1800</real>
+			<real>1775</real>
 		</dict>
 		<key>27408918-9FC1-4FCD-96DA-4E3AE0CC30A7</key>
 		<dict>
@@ -1863,14 +1819,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<real>190</real>
 			<key>ypos</key>
-			<real>1920</real>
+			<real>1880</real>
 		</dict>
 		<key>3AE5D24D-BBC9-4B63-9A4D-FCB4A5F28B58</key>
 		<dict>
 			<key>xpos</key>
 			<real>60</real>
 			<key>ypos</key>
-			<real>1920</real>
+			<real>1880</real>
 		</dict>
 		<key>3B185832-821B-4199-A2A8-2142E0887C4D</key>
 		<dict>
@@ -1926,7 +1882,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<real>60</real>
 			<key>ypos</key>
-			<real>2040</real>
+			<real>1985</real>
 		</dict>
 		<key>56FF68BE-DE32-4C66-97E6-AC18BE85D242</key>
 		<dict>
@@ -1969,13 +1925,6 @@ end alfred_script</string>
 			<real>835</real>
 			<key>ypos</key>
 			<real>1395</real>
-		</dict>
-		<key>76E511D6-487F-4C7E-B382-D2686E10DDAC</key>
-		<dict>
-			<key>xpos</key>
-			<real>65</real>
-			<key>ypos</key>
-			<real>1045</real>
 		</dict>
 		<key>7BD50759-8F95-40CB-9B36-F131213AD13E</key>
 		<dict>
@@ -2052,7 +2001,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<real>190</real>
 			<key>ypos</key>
-			<real>1800</real>
+			<real>1775</real>
 		</dict>
 		<key>B6F4C941-5DAF-4290-832A-86E30593A97D</key>
 		<dict>
@@ -2087,7 +2036,7 @@ end alfred_script</string>
 			<key>xpos</key>
 			<real>190</real>
 			<key>ypos</key>
-			<real>2040</real>
+			<real>1985</real>
 		</dict>
 		<key>CD9A9E77-6EBD-47D3-B7D5-4E4216B7490E</key>
 		<dict>
@@ -2127,9 +2076,9 @@ end alfred_script</string>
 		<key>E6457866-CA21-4181-8BF4-A7917F26DDA9</key>
 		<dict>
 			<key>xpos</key>
-			<real>65</real>
+			<real>60</real>
 			<key>ypos</key>
-			<real>1150</real>
+			<real>2090</real>
 		</dict>
 		<key>E787F214-E58C-4001-AD8F-D0F8A97AC009</key>
 		<dict>
