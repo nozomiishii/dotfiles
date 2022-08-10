@@ -129,10 +129,4 @@
     "key": "ctrl+]",
     "command": "workbench.action.navigateForward"
   }
-
-  // {
-  //   "key": "cmd+x",
-  //   "command": "editor.action.deleteLines",
-  //   "when": "editorTextFocus && !editorReadonly"
-  // }
 ]
