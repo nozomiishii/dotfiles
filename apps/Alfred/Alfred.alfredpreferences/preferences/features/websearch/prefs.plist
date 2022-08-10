@@ -2014,6 +2014,17 @@ Google Cloud Console</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>B827B38F-757C-4479-929D-18987FBB1E0D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>opas</string>
+			<key>text</key>
+			<string>Open Opas</string>
+			<key>url</key>
+			<string>https://my.opas.com</string>
+		</dict>
 		<key>B89768FC-B973-4D0A-A6BF-212220271656</key>
 		<dict>
 			<key>enabled</key>
