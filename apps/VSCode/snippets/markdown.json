@@ -16,17 +16,28 @@
   },
   "sh": {
     "prefix": "/sh",
-    "body": ["```sh", "  ${0}", "```"],
+    "body": ["```sh", "${0}", "```"],
     "description": "sh"
   },
   "diff": {
     "prefix": "/diff",
-    "body": ["```diff", "  ${0}", "```"],
+    "body": ["```diff", "${0}", "```"],
     "description": "diff"
   },
   "details": {
     "prefix": "/details",
     "body": ["<details>", "<summary>${1}</summary>", "${0}", "</details>"],
     "description": "details"
+  },
+  "table": {
+    "prefix": "/table",
+    "body": [
+      "|   |   |   |   |   |",
+      "|---|---|---|---|---|",
+      "|   |   |   |   |   |",
+      "|   |   |   |   |   |",
+      "|   |   |   |   |   |"
+    ],
+    "description": "table"
   }
 }
