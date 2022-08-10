@@ -314,6 +314,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>22E3397F-372B-4BEA-A4AE-8393AEC44612</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>quickref</string>
+			<key>text</key>
+			<string>Open QuickRef.ME</string>
+			<key>url</key>
+			<string>https://quickref.me/</string>
+		</dict>
 		<key>23EFA166-611F-4DC4-868B-7B5C68C61565</key>
 		<dict>
 			<key>enabled</key>
