@@ -2596,6 +2596,17 @@ Open CSS Tailwind Converter</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>F7F5428A-41BE-412B-ABC6-D83A6ABD7C7D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>amazon</string>
+			<key>text</key>
+			<string>Open Amazon.co.jp</string>
+			<key>url</key>
+			<string>https://www.amazon.co.jp/</string>
+		</dict>
 		<key>F89FCD78-0AE8-48C8-905A-12B216404161</key>
 		<dict>
 			<key>enabled</key>
