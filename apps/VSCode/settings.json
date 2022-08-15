@@ -258,6 +258,7 @@
   // textlint
   "textlint.languages": [
     "markdown",
+    "mdx",
     "plaintext",
     "html",
     "javascript",
@@ -266,6 +267,7 @@
     "typescriptreact"
   ],
   "textlint.autoFixOnSave": true,
+  "textlint.run": "onType",
 
   // Markdown
   "markdown-preview-github-styles.colorTheme": "dark",
