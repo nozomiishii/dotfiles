@@ -1958,6 +1958,17 @@ Translate '{query}' into Japanese</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>AB72A89F-C22C-4035-9724-01A848E95B94</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>textlint</string>
+			<key>text</key>
+			<string>Open textlint</string>
+			<key>url</key>
+			<string>https://textlint.github.io/</string>
+		</dict>
 		<key>AE6C5DAF-3F45-4D95-9967-8117C712A875</key>
 		<dict>
 			<key>enabled</key>
