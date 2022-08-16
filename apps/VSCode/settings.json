@@ -254,6 +254,9 @@
     "source.fixAll.eslint": true,
     "source.fixAll.markdownlint": true
   },
+  "markdownlint.config": {
+    "extends": "/Users/nozomiishii/dotfiles/.markdownlint.yaml"
+  },
 
   // textlint
   "textlint.languages": [
