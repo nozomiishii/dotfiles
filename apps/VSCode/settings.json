@@ -14,7 +14,8 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.fontSize": 14,
-  "editor.inlayHints.fontSize": 12,
+  "editor.inlayHints.fontSize": 12, // 型情報のヒントの文字サイズ
+  "editor.inlayHints.enabled": "offUnlessPressed", // 型情報のヒントをctrl + optionでtoggle
   // "editor.inlayHints.padding": true,
   "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
@@ -153,14 +154,7 @@
       "at-rule-no-unknown": [
         true,
         {
-          "ignoreAtRules": [
-            "tailwind",
-            "apply",
-            "variants",
-            "responsive",
-            "screen",
-            "layer"
-          ]
+          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
         }
       ],
       "declaration-block-trailing-semicolon": null,
