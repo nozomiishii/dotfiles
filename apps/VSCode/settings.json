@@ -16,6 +16,8 @@
   "editor.fontSize": 14,
   "editor.inlayHints.fontSize": 12, // 型情報のヒントの文字サイズ
   "editor.inlayHints.enabled": "offUnlessPressed", // 型情報のヒントをctrl + optionでtoggle
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterNames.enabled": "all",
   // "editor.inlayHints.padding": true,
   "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
@@ -46,10 +48,6 @@
       "format": "svg"
     }
   ],
-
-  // NeoVim
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
 
   // Terminal
   "terminal.integrated.fontSize": 14,
@@ -114,7 +112,7 @@
     "LICENSE": "plaintext"
   },
 
-  // Extenstions
+  // Extensions
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "vsicons.dontShowNewVersionMessage": true,
   "liveServer.settings.donotShowInfoMsg": true,
@@ -148,7 +146,7 @@
     "editor.defaultFormatter": "Prisma.prisma"
   },
 
-  // Tailwindcss
+  // TailwindCSS
   "stylelint.config": {
     "rules": {
       "at-rule-no-unknown": [
@@ -192,41 +190,16 @@
     "**/*.zsh-theme": true
   },
 
-  // C#
-  "omnisharp.useGlobalMono": "always",
-  "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current",
-  "[csharp]": {
-    "editor.defaultFormatter": "ms-dotnettools.csharp"
-  },
-
-  // Golang
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  },
-
   // Rust
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "rust-analyzer.checkOnSave.command": "clippy",
 
-  // JavaScript
-  "javascript.inlayHints.parameterNames.enabled": "all",
-  // "javascript.inlayHints.variableTypes.enabled": true,
-  // "javascript.inlayHints.parameterTypes.enabled": true,
-  // "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-
-  // TypeScript
-  "typescript.inlayHints.parameterNames.enabled": "all",
-  // "typescript.inlayHints.variableTypes.enabled": true,
-  // "typescript.inlayHints.parameterTypes.enabled": true,
-  // "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-
   // Prettier
   "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "prettier.requireConfig": true,
 
   // ESlint
   "eslint.enable": true,
@@ -265,10 +238,11 @@
   ],
   "textlint.autoFixOnSave": true,
   "textlint.run": "onType",
+  "textlint.nodePath": "/Users/nozomiishii/dotfiles/modules/yarn/.config/yarn/global/node_modules",
+  "textlint.configPath": "",
 
   // Markdown
   "markdown-preview-github-styles.colorTheme": "dark",
-  "markdown.extension.toc.updateOnSave": false,
 
   // yaml
   "[yaml]": {
@@ -277,92 +251,8 @@
   },
   "redhat.telemetry.enabled": true,
 
-  // Solidity
-  "solidity.compileUsingRemoteVersion": "latest",
-  "[solidity]": {
-    "editor.defaultFormatter": "JuanBlanco.solidity"
-  },
-
   // fig
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
-  },
-
-  // Spell Checker
-  "cSpell.userWords": [
-    "Behaviour",
-    "chmod",
-    "craco",
-    "dotbot",
-    "Dotfiles",
-    "eieio",
-    "firestore",
-    "fullscreen",
-    "gsap",
-    "iphone",
-    "ishii",
-    "Karabiner",
-    "Kotoeri",
-    "macbook",
-    "mkdir",
-    "Monokai",
-    "Neumorphism",
-    "nozomi",
-    "Nozomi's",
-    "nozomiishii",
-    "Numpad",
-    "NVRAM",
-    "pbcopy",
-    "Powerpack",
-    "reduxjs",
-    "tailwindcss",
-    "testid",
-    "typesync",
-    "Unpair",
-    "wireframe"
-  ],
-  "cSpell.languageSettings": [
-    { "languageId": "*", "locale": "en", "dictionaries": ["wordsEn"] },
-    { "languageId": "*", "locale": "en-US", "dictionaries": ["wordsEn"] },
-    { "languageId": "*", "locale": "en-GB", "dictionaries": ["wordsEnGb"] },
-    {
-      "languageId": "*",
-      "dictionaries": ["companies", "softwareTerms", "misc"]
-    },
-    {
-      "languageId": "python",
-      "allowCompoundWords": true,
-      "dictionaries": ["python"]
-    },
-    { "languageId": "go", "allowCompoundWords": true, "dictionaries": ["go"] },
-    { "languageId": "javascript", "dictionaries": ["typescript", "node"] },
-    { "languageId": "javascriptreact", "dictionaries": ["typescript", "node"] },
-    { "languageId": "typescript", "dictionaries": ["typescript", "node"] },
-    { "languageId": "typescriptreact", "dictionaries": ["typescript", "node"] },
-    {
-      "languageId": "html",
-      "dictionaries": ["html", "fonts", "typescript", "css"]
-    },
-    {
-      "languageId": "php",
-      "dictionaries": ["php", "html", "fonts", "css", "typescript"]
-    },
-    { "languageId": "css", "dictionaries": ["fonts", "css"] },
-    { "languageId": "less", "dictionaries": ["fonts", "css"] },
-    { "languageId": "scss", "dictionaries": ["fonts", "css"] },
-    {
-      "languageId": "markdown",
-      "dictionaries": [
-        "companies",
-        "softwareTerms",
-        "misc",
-        "fonts",
-        "css",
-        "html",
-        "typescript",
-        "node",
-        "rust"
-      ]
-    }
-  ]
+  }
 }
