@@ -146,27 +146,6 @@
     "editor.defaultFormatter": "Prisma.prisma"
   },
 
-  // TailwindCSS
-  "stylelint.config": {
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
-        }
-      ],
-      "declaration-block-trailing-semicolon": null,
-      "no-descending-specificity": null
-    }
-  },
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
-  "tailwindCSS.emmetCompletions": true,
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-
   // Shell
   "[shellscript]": {
     "editor.codeActionsOnSave": {
@@ -197,6 +176,7 @@
   "rust-analyzer.checkOnSave.command": "clippy",
 
   // Prettier
+  "prettier.configPath": "/Users/nozomiishii/dotfiles/.prettierrc.js",
   "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
