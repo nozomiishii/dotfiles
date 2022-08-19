@@ -254,5 +254,41 @@
   // fig
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
-  }
+  },
+
+  // cSpell
+  "cSpell.showAutocompleteSuggestions": true,
+  "cSpell.customDictionaries": {
+    "global-user-words": {
+      "name": "global-user-words",
+      "path": "/Users/nozomiishii/dotfiles/.cspell/global-user-words.txt",
+      "scope": "user",
+      "addWords": true
+    }
+  },
+  "cSpell.dictionaries": [
+    // built-in辞書(アルファベット昇順)
+    "bash",
+    "companies",
+    "css",
+    "docker",
+    "dotnet",
+    "en_US",
+    "en-gb",
+    "filetypes",
+    "fonts",
+    "fullstack",
+    "html",
+    "html-symbol-entities",
+    "networking-terms",
+    "node",
+    "npm",
+    "public-licenses",
+    "python",
+    "rust",
+    "softwareTerms",
+    "typescript",
+    // カスタム辞書
+    "global-user-words"
+  ]
 }
