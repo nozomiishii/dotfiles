@@ -75,19 +75,19 @@
     "terminal.selectionBackground": "#b5d5ff",
     "terminalCursor.foreground": "#bbbbbb",
 
-    // Git Copilot colors
-    // "editorGhostText.border": "#403E41",
-    // "editorGhostText.background": "#403E41",
-    // "editorGhostText.foreground": "#C1C0C0"
-    // "editorGhostText.border": "#727072",
-    // "editorGhostText.background": "#727072",
-    // "editorGhostText.foreground": "#FFD64C"
-
     "editorInlayHint.background": "#2D2A2E",
     "editorInlayHint.foreground": "#727072"
   },
+
   // Git Copilot
-  "editor.inlineSuggest.enabled": false,
+  // "editor.inlineSuggest.enabled": false,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
 
   // Explorer
   "explorer.openEditors.visible": 0,
