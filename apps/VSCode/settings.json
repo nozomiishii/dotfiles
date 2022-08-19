@@ -79,16 +79,6 @@
     "editorInlayHint.foreground": "#727072"
   },
 
-  // Git Copilot
-  // "editor.inlineSuggest.enabled": false,
-  "editor.inlineSuggest.enabled": true,
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": false,
-    "markdown": true
-  },
-
   // Explorer
   "explorer.openEditors.visible": 0,
   "explorer.compactFolders": false,
