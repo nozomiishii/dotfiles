@@ -646,6 +646,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>3EF409B2-C61E-4F9D-B0A5-BA3E77E16D29</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>cspell</string>
+			<key>text</key>
+			<string>Open CSpell</string>
+			<key>url</key>
+			<string>https://cspell.org/</string>
+		</dict>
 		<key>3FC60018-E30E-47FF-8633-21D95CDC75D9</key>
 		<dict>
 			<key>enabled</key>
