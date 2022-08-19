@@ -239,7 +239,7 @@
   "textlint.autoFixOnSave": true,
   "textlint.run": "onType",
   "textlint.nodePath": "/Users/nozomiishii/dotfiles/modules/yarn/.config/yarn/global/node_modules",
-  "textlint.configPath": "",
+  "textlint.configPath": "/Users/nozomiishii/dotfiles/.textlintrc.yaml",
 
   // Markdown
   "markdown-preview-github-styles.colorTheme": "dark",

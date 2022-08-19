@@ -1,0 +1,61 @@
+plugins:
+  # mdxにもlintを適用できる(@textlint/markdownはBuilt-inサポートされてる)　https://github.com/textlint/textlint/tree/master/packages/@textlint/textlint-plugin-markdown
+  '@textlint/markdown':
+    extensions:
+      - .mdx
+
+rules:
+  # tech単語辞書 https://github.com/sapegin/textlint-rule-terminology
+  terminology: true
+
+  # 同一ファイル内の文章で同義語の表記ゆれがないか https://github.com/textlint-ja/textlint-rule-no-synonyms
+  '@textlint-ja/no-synonyms': true
+
+  # 1文の長さは100文字以下 https://github.com/textlint-rule/textlint-rule-sentence-length
+  sentence-length:
+    max: 100
+
+  # 日付と曜日があってるか https://github.com/textlint-rule/textlint-rule-date-weekday-mismatch
+  date-weekday-mismatch: true
+
+  # footnoteの順番あってるか https://github.com/textlint-rule/textlint-rule-footnote-order
+  footnote-order: true
+
+  # 文末の句点(。)は統一されてるか https://github.com/textlint-ja/textlint-rule-ja-no-mixed-period
+  ja-no-mixed-period:
+    # 句点文字として許可する文字列の配列
+    allowPeriodMarks:
+      - ♂️
+      - ♀️
+      - 🦳
+      - 🦰
+      - 🦲
+      - 🦱
+    # 末尾に絵文字を置くことを許可するか
+    allowEmojiAtEnd: true
+    # 句点で終わって無い場合に`periodMark`を--fix時に追加するかどうか
+    forceAppendPeriod: true
+
+  # 同じ接続詞が連続して出現していないか https://github.com/textlint-ja/textlint-rule-no-doubled-conjunction
+  no-doubled-conjunction: true
+
+  # 半角カナが混ざってないか https://github.com/textlint-ja/textlint-rule-no-hankaku-kana
+  no-hankaku-kana: true
+
+  # 敬体(ですます調)と常体(である調)の混在がないか https://github.com/textlint-ja/textlint-rule-no-mix-dearu-desumasu
+  no-mix-dearu-desumasu: true
+
+  # 全角のアルファベットが混ざってないか https://github.com/textlint-ja/textlint-rule-no-mixed-zenkaku-and-hankaku-alphabe
+  no-mixed-zenkaku-and-hankaku-alphabet: true
+
+  # UTF8-MAC濁点が混ざってないか https://github.com/textlint-ja/textlint-rule-no-nfd
+  no-nfd: true
+
+  # リストの句点は統一されてるか https://github.com/textlint-rule/textlint-rule-period-in-list-item
+  period-in-list-item: true
+
+  # スペースに関するルールのpresets https://github.com/textlint-ja/textlint-rule-preset-ja-spacing
+  preset-ja-spacing: true
+
+  # SI単位系の単位以外の使用を禁止する https://github.com/kn1cht/textlint-rule-use-si-units
+  use-si-units: true
