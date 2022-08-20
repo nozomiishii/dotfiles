@@ -26,9 +26,11 @@ fi
 export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
 
 if "${setup_homebrew_min:-false}"; then
-  brew bundle --verbose --file "$HOME/dotfiles/Brewfile.base.rb"
-else
+  printf "🍺 Homebrew setup(minimum)\n"
   brew bundle --verbose --file "$HOME/dotfiles/Brewfile"
+else
+  printf "🍺 Homebrew setup(MacOS)\n"
+  brew bundle --verbose --file "$HOME/dotfiles/Brewfile.macos.rb"
 fi
 
 printf "🎉 The Homebrew setup is complete \n\n"
