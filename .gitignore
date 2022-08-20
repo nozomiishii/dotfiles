@@ -25,3 +25,6 @@ Brewfile.*
 
 # Alfred
 apps/Alfred/Alfred.alfredpreferences/preferences/local
+
+# nvim
+configs/nvim/.config/nvim/plugged
