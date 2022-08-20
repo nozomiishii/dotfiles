@@ -156,7 +156,8 @@
     "**/zlogout": true,
     "**/*.zshenv": true,
     "**/zshenv": true,
-    "**/*.zsh-theme": true
+    "**/*.zsh-theme": true,
+    "**/.tmux.conf": true
   },
 
   // Rust
