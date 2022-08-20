@@ -16,8 +16,8 @@ modules/yarn/.config/yarn/global/node_modules
 apps/karabiner/automatic_backups
 
 # ssh
-modules/ssh/.ssh/*
-!modules/ssh/.ssh/config
+**/.ssh/*
+!**/.ssh/config
 
 # Brewfile
 Brewfile.*
