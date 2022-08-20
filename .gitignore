@@ -1,30 +1,25 @@
 .DS_Store
 
+# Apps
+# Alfred
+**/Alfred/Alfred.alfredpreferences/preferences/local
+# Karabiner
+**/karabiner/automatic_backups
+
+# Configs
 # nvim
-modules/nvim/.config/nvim/plugged
-
+**/nvim/plugged
 # antigen
-modules/zsh/.zsh/antigen.zsh.zwc
-
+**/antigen.zsh.zwc
 # yarn
 node_modules
 yarn.lock
 yarn-error.log
-modules/yarn/.config/yarn/global/node_modules
-
-# Karabiner
-apps/karabiner/automatic_backups
-
+**/.config/yarn/global/node_modules
 # ssh
 **/.ssh/*
 !**/.ssh/config
 
-# Brewfile
+# Brewfile.lock.json
 Brewfile.*
 !Brewfile.base.rb
-
-# Alfred
-apps/Alfred/Alfred.alfredpreferences/preferences/local
-
-# nvim
-configs/nvim/.config/nvim/plugged
