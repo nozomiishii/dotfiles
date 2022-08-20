@@ -2,7 +2,7 @@
 # https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 
 env:
-  TERM: alacritty
+  TERM: xterm-256color
 
 window:
   dimensions:
@@ -15,7 +15,7 @@ window:
 
   decorations: full
 
-  opacity: 0.8
+  opacity: 0.864
 
   startup_mode: Maximized
 
