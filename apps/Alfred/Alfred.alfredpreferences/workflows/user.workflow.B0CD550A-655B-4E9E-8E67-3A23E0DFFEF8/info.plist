@@ -283,6 +283,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>BA6C4B25-F578-4A87-84BA-34346D4E4C64</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1944F836-E207-483F-B6F4-949E29072AAB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C1ECD363-7439-4CE7-AA35-26674D2B082A</key>
 		<array>
 			<dict>
@@ -1002,6 +1015,23 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Alacritty.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>1944F836-E207-483F-B6F4-949E29072AAB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -1036,6 +1066,37 @@ end alfred_script</string>
 			<string>671E5D5A-FECF-4AE7-967B-0112AF7FAD9A</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>38</integer>
+				<key>hotmod</key>
+				<integer>1048576</integer>
+				<key>hotstring</key>
+				<string>J</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>BA6C4B25-F578-4A87-84BA-34346D4E4C64</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1765,6 +1826,13 @@ end alfred_script</string>
 			<key>ypos</key>
 			<real>1155</real>
 		</dict>
+		<key>1944F836-E207-483F-B6F4-949E29072AAB</key>
+		<dict>
+			<key>xpos</key>
+			<real>1015</real>
+			<key>ypos</key>
+			<real>720</real>
+		</dict>
 		<key>205BF10B-2535-4165-837C-2E966E46AD2D</key>
 		<dict>
 			<key>xpos</key>
@@ -2014,6 +2082,13 @@ end alfred_script</string>
 		<dict>
 			<key>xpos</key>
 			<real>615</real>
+			<key>ypos</key>
+			<real>720</real>
+		</dict>
+		<key>BA6C4B25-F578-4A87-84BA-34346D4E4C64</key>
+		<dict>
+			<key>xpos</key>
+			<real>885</real>
 			<key>ypos</key>
 			<real>720</real>
 		</dict>
