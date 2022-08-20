@@ -112,6 +112,9 @@ brew "watch"
 #
 # Cask
 #
+# GPU-accelerated terminal emulator https://github.com/alacritty/alacritty/
+cask "alacritty"
+
 # Password manager that keeps all passwords secure behind one password. https://1password.com
 cask "1Password"
 
