@@ -113,6 +113,10 @@
     "command": "editor.emmet.action.wrapWithAbbreviation"
   },
   {
+    "key": "alt+cmd+i",
+    "command": "workbench.action.togglePanel"
+  },
+  {
     "key": "alt+cmd+j",
     "command": "workbench.action.togglePanel"
   },
