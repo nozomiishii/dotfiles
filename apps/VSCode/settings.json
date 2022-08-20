@@ -96,7 +96,7 @@
     ".yabairc": "shellscript",
     ".tmux.conf": "shellscript",
     ".tool-versions": "properties",
-    "config": "properties",
+    ".ssh/config": "ssh-config",
     "*.ejs": "html",
     "*.ejs.t": "html",
     "LICENSE": "plaintext"
