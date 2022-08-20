@@ -11,7 +11,7 @@ set -Ceu
 # curl -o - https://raw.githubusercontent.com/nozomiishii/dotfiles/main/install.sh | bash
 
 ROOT_PATH="$HOME/dotfiles"
-MODULES_PATH="$ROOT_PATH/modules"
+CONFIGS_PATH="$ROOT_PATH/configs"
 
 usage() {
   cat << EOF
@@ -103,14 +103,14 @@ link_modules() {
   echo "🗂 Symbolic link"
 
   # shellcheck disable=SC2046
-  stow -vd "$MODULES_PATH" -t ~ -R $(ls "$MODULES_PATH")
+  stow -vd "$CONFIGS_PATH" -t ~ -R $(ls "$CONFIGS_PATH")
 }
 
 # Unlink
 # Dependencis | Homebrew
 unlink_modules() {
   echo "👋 Unlinking symbolic links"
-  stow -vD -d "$MODULES_PATH" -t ~ "$MODULES"
+  stow -vD -d "$CONFIGS_PATH" -t ~ "$MODULES"
   exit
 }
 
