@@ -1,0 +1,90 @@
+# Configuration Example
+# https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+
+env:
+  TERM: alacritty
+
+window:
+  dimensions:
+    columns: 80
+    lines: 25
+
+  padding:
+    x: 4
+    y: 8
+
+  decorations: full
+
+  opacity: 0.8
+
+  startup_mode: Maximized
+
+  title: Alacritty
+
+  dynamic_title: true
+
+  decorations_theme_variant: dark
+
+scrolling:
+  history: 50000
+  multiplier: 3
+
+font:
+  normal:
+    family: 'MesloLGS Nerd Font Mono'
+    style: Regular
+
+  bold:
+    family: 'MesloLGS Nerd Font Mono'
+    style: Bold
+
+  italic:
+    family: 'MesloLGS Nerd Font Mono'
+    style: Italic
+
+  bold_italic:
+    family: 'MesloLGS Nerd Font Mono'
+    style: Bold Italic
+
+  size: 14.0
+
+  offset:
+    x: 0
+    y: 2
+
+draw_bold_text_with_bright_colors: true
+colors:
+  # iTerm2 built-in Dark theme
+  # https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/Builtin%20Dark.yml
+
+  bright:
+    black: '#555555'
+    blue: '#5555ff'
+    cyan: '#55ffff'
+    green: '#55ff55'
+    magenta: '#ff55ff'
+    red: '#ff5555'
+    white: '#ffffff'
+    yellow: '#ffff55'
+
+  cursor:
+    cursor: '#bbbbbb'
+    text: '#ffffff'
+
+  normal:
+    black: '#000000'
+    blue: '#0000bb'
+    cyan: '#00bbbb'
+    green: '#00bb00'
+    magenta: '#bb00bb'
+    red: '#bb0000'
+    white: '#bbbbbb'
+    yellow: '#bbbb00'
+
+  primary:
+    background: '#000000'
+    foreground: '#bbbbbb'
+
+  selection:
+    background: '#b5d5ff'
+    text: '#000000'
