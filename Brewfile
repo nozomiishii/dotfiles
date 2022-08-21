@@ -122,6 +122,9 @@ cask "alacritty"
 # Password manager that keeps all passwords secure behind one password. https://1password.com
 cask "1Password"
 
+# Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
+cask "1password-cli"
+
 # Trains AIs to understand and translate texts. https://www.deepl.com
 cask "deepl"
 
