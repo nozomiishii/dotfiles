@@ -79,6 +79,3 @@ alias tfenv='GREP_OPTIONS="--color=never" tfenv'
 
 # terraform
 alias tf="terraform"
-
-# yabai & skhd
-alias rsyb="brew services restart yabai && brew services restart skhd"
