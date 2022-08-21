@@ -81,6 +81,10 @@ brew "openapi-generator"
 # Object-relational database system https://www.postgresql.org/
 brew "postgresql"
 
+# A Zsh Theme https://github.com/romkatv/powerlevel10k
+tap "romkatv/powerlevel10k"
+brew "powerlevel10k"
+
 # Persistent key-value database, with built-in net interface https://redis.io/
 brew "redis"
 

@@ -13,40 +13,18 @@ brew "hygen"
 # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
 brew "mas"
 
-# mono is currently not working for M1 Mac
-# https://gurutaka-log.com/unity-vscode-mac-setup
-#
-# Cross platform, open source .NET development framework. https://www.mono-project.com/
-# brew "mono"
-
 # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
 tap "smudge/smudge"
 brew "nightlight"
 
-# A Zsh Theme https://github.com/romkatv/powerlevel10k
-tap "romkatv/powerlevel10k"
-brew "powerlevel10k"
-
-# A tiling window manager for macOS based on binary space partitioning. https://github.com/koekeishiya/yabai
-# Simple hotkey-daemon for macOS. https://github.com/koekeishiya/skhd
-tap "koekeishiya/formulae"
-brew "yabai"
-brew "skhd"
-
 #
 # Cask
 #
-# Application launcher and productivity software. https://www.alfredapp.com
-cask "alfred"
-
 # Tools for building Android applications https://developer.android.com/studio
 cask "android-studio"
 
 # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
 cask "appcleaner"
-
-# Tool to customize input devices and automate computer systems https://folivora.ai/
-# cask "bettertouchtool"
 
 # Virtual Audio Driver https://existential.audio/blackhole/
 cask "blackhole-2ch"
@@ -78,14 +56,8 @@ cask "dotnet-sdk"
 # Tool for using an iPad as a second display https://www.duetdisplay.com/
 cask "duet"
 
-# UI toolkit for building applications for mobile, web and desktop https://flutter.dev/
-cask "flutter"
-
 # Automated organization https://www.noodlesoft.com/
 cask "hazel"
-
-# Terminal emulator as alternative to Apple's Terminal app. https://www.iterm2.com
-cask "iterm2"
 
 # Keyboard customizer. https://pqrs.org/osx/karabiner
 cask "karabiner-elements"
