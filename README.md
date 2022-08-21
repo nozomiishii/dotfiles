@@ -600,8 +600,6 @@ for x in {1..10}; do time zsh -i -c exit; done
 
 - [GNU stow](https://www.gnu.org/software/stow/)
 - [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
-- [asdf](https://asdf-vm.com/#/)
-- [antigen](https://github.com/zsh-users/antigen)
 
 ## License
 
