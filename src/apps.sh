@@ -5,14 +5,6 @@ printf "🧝🏻‍♀️ Starting Apps setup... \n"
 
 APPS_PATH="$HOME/dotfiles/apps"
 
-echo "- 🎮 iTerm2"
-# General > Preferences > check "Load preferences from a custom folder or URL"
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-# Restore from the backup
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$APPS_PATH/iTerm2"
-# General > Preferences > Save changes: when quits
-defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
-
 echo "- 🤖 Automator"
 if [ ! -f "$HOME/Desktop" ]; then
   cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"

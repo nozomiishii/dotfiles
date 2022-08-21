@@ -40,6 +40,9 @@ if [ ! -d ~/.config/yarn/global/node_modules ]; then
   # . $(brew --prefix asdf)/libexec/asdf.sh
   # export PATH="$(yarn global bin):$PATH"
   yarn global add
+
+  # to use @prettier/ruby
+  gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 fi
 
 printf "🎉 The Environment setup is complete \n\n"

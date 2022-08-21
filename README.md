@@ -48,8 +48,8 @@ Turn On and Follow the guide
 Sign in your iCloud and App Store, when you get to the home screen.
 (to get apps using mas command)
 
-💡 If you can't use your personal apple ID on your company computer,
-install xcode manually from the App Store.
+💡 Can you not use your personal apple ID on your company computer?
+Install xcode manually from the App Store.
 
 ### 🍎 Apple ID
 
@@ -97,7 +97,8 @@ curl -L https://nozomiishii.dev/dotfiles/install | bash
 
 <a id="install-manually"></a>
 
-## Install Manually
+<details>
+<summary>Install Manually</summary>
 
 ### Install xcode-select
 
@@ -105,7 +106,7 @@ curl -L https://nozomiishii.dev/dotfiles/install | bash
 xcode-select --install
 ```
 
-xcode-select: this Command Line Tools are required for Git and Homebrew
+xcode-select: this command-line Tools are required for Git and Homebrew
 
 ### Come to this page
 
@@ -135,7 +136,7 @@ ls -l ~/dotfiles/install
 chmod +x ~/dotfiles/install
 ```
 
-### 💻 MacOS setup
+### 💻 macOS setup
 
 ```shell
 ~/dotfiles/install -m
@@ -164,6 +165,8 @@ chmod +x ~/dotfiles/install
 ```shell
 sudo reboot
 ```
+
+</details>
 
 <a id="app-preferences"></a>
 
@@ -197,25 +200,10 @@ Finder Sidebar
  ┗ 📂Locations
 ```
 
-### 🎩 Alfred
+### 🚁 Raycast
 
-- Activate the license
-
-- Preferences > Advanced > Set preferences folder... >  
-  Select "~/dotfiles/apps/Alfred"
-
-- Preferences > General >  
-  Alfred Hotkey: ⌘ + Space
-
-- Preferences > Features > Clipboard History > History > Clipboard History >  
-  Check "Keep Plain Text"  
-  Select "7 Days"
-
-- Preferences > Features > Snippets >  
-  Check "Automatically expand snippets by keyword"
-
-- Preferences > Advanced >  
-  Force Keyboard: ABC
+- Sign in
+- Import Settings from "~/dotfiles/apps/Raycast"
 
 ### 🌏 Chrome
 
@@ -299,7 +287,6 @@ Finder Sidebar
   - Magnification >
     15x
 - Code Style
-
   - Hex >
     check "Uppercase"
   - CSS Hex >
@@ -308,7 +295,7 @@ Finder Sidebar
 ### 🐘 TablePlus
 
 - TablePlus >  
-  Register license...
+  Register license
 
 ### 🐔 Slack
 
@@ -319,12 +306,6 @@ Finder Sidebar
 - Sign in
 - Set hotkey to  
   ⇧ + ⌘ + Space
-
-### 🤡 yabai
-
-```shell
-brew services restart yabai && brew services restart skhd
-```
 
 ### 🫐 BLEUnlock
 
@@ -396,20 +377,10 @@ brew services restart yabai && brew services restart skhd
 - Add Accounts
 - Add Calendar on Widgets
 
-### 🤖 Unity Hub
-
-- Sign in
-- Download lts
-
-### 🦖 C\#
-
-- [Unity setup for M1 Mac](https://gurutaka-log.com/unity-vscode-mac-setup)
-- [Download Mono](https://www.mono-project.com/download/stable/#download-mac)
-
 ### 🐵 Blender
 
 - Sign in
-- Edit > Preferences > Add-ons > search "id" to find "System: Blender ID authentication" >  
+- Edit > Preferences > Add-ons > search "ID" to find "System: Blender ID authentication" >  
   login!
 - [Download Blender Cloud add-on](https://cloud.blender.org/r/downloads/blender_cloud-latest-addon.zip)
 - Edit > Preferences > Add-ons > install >  
@@ -417,13 +388,6 @@ brew services restart yabai && brew services restart skhd
    ⚠️ DO NOT UNZIP
 - Edit > Preferences > Input > Keyboard >  
   Emulate Numpad
-
-### 🐍 PyCharm
-
-- Preferences > Editor > General > Font > Size >  
-  Font Size: 14
-- Plugins  
-  Monokai Pro Theme
 
 ### 🐸 Android Studio
 
@@ -474,7 +438,7 @@ ngrok http 3000
 
 ## 👨🏻‍🍳 Customize
 
-### How to add app to Brew file
+### How to add app to Brewfile
 
 Search the app
 
@@ -536,7 +500,7 @@ open ~/Library/Preferences/.GlobalPreferences.plist
 Clean unused homebrew dependencies up, and upgrade them
 
 ```shell
-brew bundle cleanup --force && brew cleanup && brew upgrade
+brew bundle cleanup --verbose --file "$HOME/dotfiles/Brewfile.macos.rb" --force && brew cleanup && brew upgrade
 ```
 
 ### Dev
@@ -544,6 +508,8 @@ brew bundle cleanup --force && brew cleanup && brew upgrade
 ```shell
 yarn install
 ```
+
+To use @prettier/ruby
 
 ```shell
 gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
@@ -563,13 +529,13 @@ for x in {1..10}; do time zsh -i -c exit; done
   NVRAM Reset  
   Shut down and Restart with  
   `⌥ + ⌘ + P + R`  
-  💡 NVRAM is a memory that saves its stored data regardless if the power is on or off.
+  💡 NVRAM is a memory that saves its stored data regardless if the power is on or off
 
 - **Third-party app related**  
   Safe mode  
   Shut down and wait 10 seconds  
   Restart with `⇧`  
-  💡Safe Mode temporarily disables any third-party applications and starts your device with default system apps.
+  💡Safe Mode temporarily disables any third-party applications and starts your device with default system apps
 
 <a id="reinstall-macos"></a>
 
@@ -582,30 +548,26 @@ for x in {1..10}; do time zsh -i -c exit; done
 
 2: Clean up
 
-- Delete SSH keys on Github, GitLab
+- Delete SSH keys on GitHub, GitLab
 
 3: Sign out your iCloud.
 
 - System Preferences > Apple ID > iCloud >  
   Turn off "Find My Mac"
 - System Preferences > Apple ID > Overview >  
-  Sign Out...
+  Sign Out
 
 4: Deactivate license
 
 - **🐘 TablePlus**  
-  TablePlus > Register license...
+  TablePlus > Register license
 
 - **🎨 ColorSnapper2**  
   About ColorSnapper... >  
   Deactivate license
 
 - **🧹 Hazel**  
-  License... > Remove...
-
-- **🎩 Alfred**  
-  Preferences > Powerpack > View your license key >  
-  Deactivate
+  License... > Remove
 
 5: Erase All Content
 
@@ -619,20 +581,20 @@ for x in {1..10}; do time zsh -i -c exit; done
 
 ### Tutorials
 
-[Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish)  
-[dotfiles + GitHub を使って開発環境をコマンド１発で構築する方法](https://www.youtube.com/watch?v=QZr33TQnIRk&t=9s)
+- [Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish)
+- [dotfiles + GitHub を使って開発環境をコマンド１発で構築する方法](https://www.youtube.com/watch?v=QZr33TQnIRk&t=9s)
 
 ### Dotfiles
 
-[Patrick McDonald - EIEIO](https://github.com/eieioxyz/dotfiles_macos)  
-[Mathias Bynens](https://github.com/mathiasbynens/dotfiles)  
-[Your unofficial guide to dotfiles on GitHub.](https://dotfiles.github.io/inspiration)  
-[JunichiSugiura/dotfiles](https://github.com/JunichiSugiura/dotfiles)
+- [Patrick McDonald - EIEIO](https://github.com/eieioxyz/dotfiles_macos)
+- [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
+- [Your unofficial guide to dotfiles on GitHub.](https://dotfiles.github.io/inspiration)
+- [JunichiSugiura/dotfiles](https://github.com/JunichiSugiura/dotfiles)
 
 ### CheatSheets
 
-[macOS defaults list](https://macos-defaults.com)  
-[Homebrew | Basics Commands and Cheat sheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
+- [macOS defaults list](https://macos-defaults.com)
+- [Homebrew | Basics Commands and Cheat sheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
 
 ### Dotfiles managed with
 
