@@ -7,6 +7,10 @@
     "create-next-app": "~12.2.3",
     "firebase-tools": "~10.4.0",
     "nx": "~13.9.3",
+    "prettier": "~2.7.1",
+    "prettier-plugin-md-nocjsp": "~1.4.0",
+    "prettier-plugin-packagejson": "~2.2.18",
+    "prettier-plugin-sh": "~0.12.8",
     "sudachi-synonyms-dictionary": "~11.0.0",
     "textlint": "~12.2.1",
     "textlint-rule-date-weekday-mismatch": "~1.0.6",
@@ -21,7 +25,6 @@
     "textlint-rule-preset-ja-spacing": "~2.2.0",
     "textlint-rule-sentence-length": "~3.0.0",
     "textlint-rule-terminology": "~3.0.3",
-    "textlint-rule-use-si-units": "~1.0.2",
     "truffle": "~5.5.5",
     "typescript": "~4.6.2",
     "vercel": "~24.0.0"

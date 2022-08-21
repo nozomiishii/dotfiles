@@ -167,7 +167,8 @@
   "rust-analyzer.checkOnSave.command": "clippy",
 
   // Prettier
-  "prettier.configPath": "/Users/nozomiishii/dotfiles/.prettierrc.js",
+  // "prettier.configPath": "/Users/nozomiishii/dotfiles/.prettierrc.js",
+  // "prettier.prettierPath": "/Users/nozomiishii/dotfiles/configs/yarn/.config/yarn/global/node_modules/prettier",
   "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
