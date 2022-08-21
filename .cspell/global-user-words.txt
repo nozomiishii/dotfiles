@@ -1,2 +1,5 @@
+alacritty
 dotfiles
+ishii
+nozomi
 raycast
