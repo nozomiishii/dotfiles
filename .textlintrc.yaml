@@ -56,6 +56,3 @@ rules:
 
   # スペースに関するルールのpresets https://github.com/textlint-ja/textlint-rule-preset-ja-spacing
   preset-ja-spacing: true
-
-  # SI単位系の単位以外の使用を禁止する https://github.com/kn1cht/textlint-rule-use-si-units
-  use-si-units: true
