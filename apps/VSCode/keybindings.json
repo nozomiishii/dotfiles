@@ -13,11 +13,6 @@
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+space",
-    "command": "-editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-  },
-  {
     "key": "shift+space",
     "command": "toggleSuggestionDetails",
     "when": "suggestWidgetVisible && textInputFocus"
@@ -41,20 +36,8 @@
     "command": "-workbench.action.closeWindow"
   },
   {
-    "key": "shift+cmd+w",
-    "command": "workbench.action.toggleTabsVisibility"
-  },
-  {
     "key": "ctrl+cmd+w",
     "command": "-workbench.action.toggleTabsVisibility"
-  },
-  {
-    "key": "alt+l",
-    "command": "turboConsoleLog.displayLogMessage"
-  },
-  {
-    "key": "ctrl+alt+l",
-    "command": "-turboConsoleLog.displayLogMessage"
   },
   {
     "key": "ctrl+shift+alt+l",
@@ -67,26 +50,20 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "shift+alt+l",
-    "command": "turboConsoleLog.deleteAllLogMessages"
-  },
-  {
-    "key": "shift+alt+d",
-    "command": "-turboConsoleLog.deleteAllLogMessages"
-  },
-  {
     "key": "cmd+n",
     "command": "explorer.newFile"
   },
   {
     "key": "ctrl+c",
     "command": "editor.action.insertSnippet",
-    "args": { "name": "pretty console log" }
+    "args": { "name": "pretty console log" },
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
   },
   {
     "key": "ctrl+shift+c",
     "command": "editor.action.insertSnippet",
-    "args": { "name": "pretty console check" }
+    "args": { "name": "pretty console check" },
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
   },
   {
     "key": "shift+alt+cmd+j",
@@ -113,14 +90,6 @@
     "command": "editor.emmet.action.wrapWithAbbreviation"
   },
   {
-    "key": "alt+cmd+i",
-    "command": "workbench.action.togglePanel"
-  },
-  {
-    "key": "alt+cmd+j",
-    "command": "workbench.action.togglePanel"
-  },
-  {
     "key": "ctrl+/",
     "command": "editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
@@ -134,13 +103,8 @@
     "command": "workbench.action.navigateForward"
   },
   {
-    "key": "ctrl+shift+space",
-    "command": "editor.action.inlineSuggest.trigger",
-    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
-  },
-  {
-    "key": "alt+\\",
-    "command": "-editor.action.inlineSuggest.trigger",
-    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+    "key": "alt+cmd+j",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   }
 ]
