@@ -209,7 +209,6 @@
     "typescriptreact"
   ],
   "textlint.autoFixOnSave": true,
-  "textlint.run": "onType",
   "textlint.nodePath": "/Users/nozomiishii/dotfiles/configs/yarn/.config/yarn/global/node_modules",
   "textlint.configPath": "/Users/nozomiishii/dotfiles/.textlintrc.yaml",
 
