@@ -14,20 +14,14 @@ tap "homebrew/services"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more https://asdf-vm.com/
 brew "asdf"
 
-# Official Amazon AWS command-line interface https://aws.amazon.com/cli/
-brew "awscli"
-
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
-
-# asdf golang dependencies | GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
-brew "coreutils"
 
 # Utility for managing cargo dependencies from the command-line https://killercup.github.io/cargo-edit/
 brew "cargo-edit"
 
-# Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
-brew "duti"
+# Dependencies asdf golang | GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
+brew "coreutils"
 
 # Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
 brew "ethereum"
@@ -44,7 +38,7 @@ brew "fzf"
 # Command-line JSON processing tool https://github.com/antonmedv/fx
 brew "fx"
 
-# asdf nodejs dependencies | GNU awk utility https://www.gnu.org/software/gawk/
+# Dependencies: asdf nodejs  | GNU awk utility https://www.gnu.org/software/gawk/
 brew "gawk"
 
 # GitHub command-line tool. https://github.com/cli/cli
@@ -53,7 +47,7 @@ brew "gh"
 # Distributed revision control system. https://git-scm.com
 brew "git"
 
-# asdf nodejs dependencies | GNU Pretty Good Privacy (PGP) package https://gnupg.org/
+# Dependencies: asdf nodejs  | GNU Pretty Good Privacy (PGP) package https://gnupg.org/
 brew "gpg"
 
 # GNU grep, egrep and fgrep https://www.gnu.org/software/grep/

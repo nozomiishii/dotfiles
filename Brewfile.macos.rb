@@ -3,8 +3,12 @@ instance_eval(File.read("./Brewfile"))
 #
 # Brew
 #
+
 # Dependency manager for Cocoa projects https://cocoapods.org/
 brew "cocoapods"
+
+# Dependencies app.sh | Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
+brew "duti"
 
 # The scalable code generator that saves you time. https://www.hygen.io/
 tap "jondot/tap"
