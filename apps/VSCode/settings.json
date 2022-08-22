@@ -118,8 +118,8 @@
   // Docker
   "docker.enableDockerComposeLanguageService": true,
   "vs-kubernetes": {
-    "vscode-kubernetes.minikube-path.mac": "${env:HOME}/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
-    "vscode-kubernetes.kubectl-path.mac": "${env:HOME}/.vs-kubernetes/tools/kubectl/kubectl"
+    "vscode-kubernetes.minikube-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+    "vscode-kubernetes.kubectl-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/kubectl/kubectl"
   },
 
   // Terraform
@@ -167,8 +167,8 @@
   "rust-analyzer.checkOnSave.command": "clippy",
 
   // Prettier
-  // "prettier.configPath": "${env:HOME}/dotfiles/.prettierrc.js",
-  // "prettier.prettierPath": "${env:HOME}/dotfiles/configs/yarn/.config/yarn/global/node_modules/prettier",
+  // "prettier.configPath": "/Users/nozomiishii/dotfiles/.prettierrc.js",
+  // "prettier.prettierPath": "/Users/nozomiishii/dotfiles/configs/yarn/.config/yarn/global/node_modules/prettier",
   "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
@@ -194,7 +194,7 @@
     "source.fixAll.markdownlint": true
   },
   "markdownlint.config": {
-    "extends": "${env:HOME}/dotfiles/.markdownlint.yaml"
+    "extends": "/Users/nozomiishii/dotfiles/.markdownlint.yaml"
   },
 
   // textlint
@@ -209,8 +209,8 @@
     "typescriptreact"
   ],
   "textlint.autoFixOnSave": true,
-  "textlint.nodePath": "${env:HOME}/dotfiles/configs/yarn/.config/yarn/global/node_modules",
-  "textlint.configPath": "${env:HOME}/dotfiles/.textlintrc.yaml",
+  "textlint.nodePath": "/Users/nozomiishii/dotfiles/configs/yarn/.config/yarn/global/node_modules",
+  "textlint.configPath": "/Users/nozomiishii/dotfiles/.textlintrc.yaml",
 
   // Markdown
   "markdown-preview-github-styles.colorTheme": "dark",
@@ -232,7 +232,7 @@
   "cSpell.customDictionaries": {
     "global-user-words": {
       "name": "global-user-words",
-      "path": "${env:HOME}/dotfiles/.cspell/global-user-words.txt",
+      "path": "/Users/nozomiishii/dotfiles/.cspell/global-user-words.txt",
       "scope": "user",
       "addWords": true
     }

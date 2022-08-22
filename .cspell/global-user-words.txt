@@ -2,4 +2,6 @@ alacritty
 dotfiles
 ishii
 nozomi
+nozomiishii
 raycast
+textlint
