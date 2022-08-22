@@ -83,3 +83,4 @@ alias tf="terraform"
 # tmux
 alias ttt="tmux split-window -h; tmux split-window -v"
 alias tt="tmux split-window -h"
+alias tclean="~/.tmux/plugins/tpm/bin/clean_plugins"
