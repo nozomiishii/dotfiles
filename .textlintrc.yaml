@@ -25,6 +25,7 @@ rules:
   ja-no-mixed-period:
     # 句点文字として許可する文字列の配列
     allowPeriodMarks:
+      - 】
       - ♂️
       - ♀️
       - 🦳
