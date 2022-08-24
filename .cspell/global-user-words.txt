@@ -1,8 +1,10 @@
 alacritty
+commitlint
 dotfiles
 ishii
 nozomi
 nozomiishii
+probot
 raycast
 textlint
 zellij
