@@ -125,13 +125,11 @@
   },
 
   // Terraform
-  "terraform-ls.experimentalFeatures": {
-    "validateOnSave": true
-  },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
     "editor.formatOnSave": true
   },
+  "terraform.experimentalFeatures.validateOnSave": true,
 
   // Prisma
   "[prisma]": {
