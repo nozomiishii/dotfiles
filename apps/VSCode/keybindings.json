@@ -111,5 +111,25 @@
     "key": "alt+cmd+o",
     "command": "markdown.showPreviewToSide",
     "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+space p",
+    "command": "editor.action.transformToTitlecase"
+  },
+  {
+    "key": "ctrl+space k",
+    "command": "editor.action.transformToKebabcase"
+  },
+  {
+    "key": "ctrl+space l",
+    "command": "editor.action.transformToLowercase"
+  },
+  {
+    "key": "ctrl+space s",
+    "command": "editor.action.transformToSnakecase"
+  },
+  {
+    "key": "ctrl+space u",
+    "command": "editor.action.transformToUppercase"
   }
 ]

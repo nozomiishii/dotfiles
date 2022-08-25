@@ -3,11 +3,14 @@ commitlint
 dotfiles
 gsap
 ishii
+kebabcase
 lefthook
 nozomi
 nozomiishii
 probot
 raycast
+snakecase
 stackdriver
 textlint
+titlecase
 zellij
