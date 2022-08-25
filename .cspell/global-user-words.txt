@@ -1,10 +1,13 @@
 alacritty
 commitlint
 dotfiles
+gsap
 ishii
+lefthook
 nozomi
 nozomiishii
 probot
 raycast
+stackdriver
 textlint
 zellij
