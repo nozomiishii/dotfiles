@@ -239,7 +239,7 @@
     }
   },
   "cSpell.dictionaries": [
-    // built-in辞書(アルファベット昇順)
+    // built-in dictionaries (alphabetical ascending order)
     "bash",
     "companies",
     "css",
@@ -260,7 +260,7 @@
     "rust",
     "softwareTerms",
     "typescript",
-    // カスタム辞書
+    // custom dictionaries
     "global-user-words"
   ]
 }
