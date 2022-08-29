@@ -1,0 +1,30 @@
+# Refer for explanation to following link:
+# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+
+pre-commit:
+  parallel: true
+
+  commands:
+    format:
+      run: npx -y prettier --ignore-unknown --write {staged_files} && git add {staged_files}
+
+    lint-markdown:
+      glob: '*.md'
+      run: npx -y markdownlint-cli2 {staged_files} && git add {staged_files}
+
+commit-msg:
+  commands:
+    commitlint:
+      run: npx commitlint --edit
+
+post-merge:
+  piped: true
+  commands:
+    npm:
+      files: git diff --name-only HEAD main
+      glob: '{package.json,yarn.lock}'
+      run: yarn install
+      tags: frontend
+
+    delete-merged-branches:
+      run: git branch --merged | grep -Ev '\*|master|main|dev|develop|development|stag|staging|prod|production' | xargs git branch -d; git fetch --prune;
