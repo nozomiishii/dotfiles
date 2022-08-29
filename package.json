@@ -1,5 +1,7 @@
 {
   "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "Doting dotfiles",
   "homepage": "https://github.com/nozomiishii/dotfiles#readme",
   "bugs": {
     "url": "https://github.com/nozomiishii/dotfiles/issues"
@@ -10,7 +12,7 @@
   },
   "license": "MIT",
   "author": "Nozomi Ishii",
-  "main": "install",
+  "main": "install.sh",
   "scripts": {
     "format": "prettier --write '**/*' '!.vscode' '!apps' '!**/p10k.zsh' '!**/zinit.zsh' --ignore-unknown --ignore-path .gitignore",
     "preinstall": "npx -y only-allow yarn",
