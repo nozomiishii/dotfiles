@@ -195,7 +195,7 @@
     "source.fixAll.markdownlint": true
   },
   "markdownlint.config": {
-    "extends": "/Users/nozomiishii/dotfiles/.markdownlint.yaml"
+    "extends": "/Users/nozomiishii/dotfiles/.markdownlint-cli2.yaml"
   },
 
   // textlint
