@@ -1,6 +1,7 @@
 [submodule ".vscode"]
-	path = .vscode
-	url = git@github.com:nozomiishii/.vscode.git
-[submodule "/Users/nozomiishii/dotfiles/configs/tmux/.tmux/plugins/tpm"]
-	path = /Users/nozomiishii/dotfiles/configs/tmux/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
+path = .vscode
+url = git@github.com:nozomiishii/.vscode.git
+
+[submodule "configs/tmux/.tmux/plugins/tpm"]
+path = configs/tmux/.tmux/plugins/tpm
+url = git@github.com:tmux-plugins/tpm.git
