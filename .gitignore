@@ -1,3 +1,4 @@
+# System Files
 .DS_Store
 
 # Apps
@@ -13,7 +14,6 @@
 **/antigen.zsh.zwc
 # yarn
 node_modules
-yarn.lock
 yarn-error.log
 **/.config/yarn/global/node_modules
 # ssh
