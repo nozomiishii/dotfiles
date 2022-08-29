@@ -1,4 +1,4 @@
-instance_eval(File.read("./Brewfile"))
+instance_eval(File.read("Brewfiles/Brewfile"))
 
 #
 # Brew

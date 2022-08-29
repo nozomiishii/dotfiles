@@ -73,7 +73,7 @@ brew "minikube"
 brew "openapi-generator"
 
 # Object-relational database system https://www.postgresql.org/
-brew "postgresql"
+brew "postgresql@14"
 
 # A Zsh Theme https://github.com/romkatv/powerlevel10k
 tap "romkatv/powerlevel10k"
