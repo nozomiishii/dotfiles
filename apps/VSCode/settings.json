@@ -168,8 +168,6 @@
   "rust-analyzer.checkOnSave.command": "clippy",
 
   // Prettier
-  // "prettier.configPath": "/Users/nozomiishii/dotfiles/.prettierrc.js",
-  // "prettier.prettierPath": "/Users/nozomiishii/dotfiles/configs/yarn/.config/yarn/global/node_modules/prettier",
   "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
@@ -193,9 +191,6 @@
     "source.addMissingImports": true,
     "source.fixAll.eslint": true,
     "source.fixAll.markdownlint": true
-  },
-  "markdownlint.config": {
-    "extends": "/Users/nozomiishii/dotfiles/.markdownlint-cli2.yaml"
   },
 
   // textlint
@@ -230,14 +225,6 @@
 
   // cSpell
   "cSpell.showAutocompleteSuggestions": true,
-  "cSpell.customDictionaries": {
-    "global-user-words": {
-      "name": "global-user-words",
-      "path": "/Users/nozomiishii/dotfiles/.cspell/global-user-words.txt",
-      "scope": "user",
-      "addWords": true
-    }
-  },
   "cSpell.dictionaries": [
     // built-in dictionaries (alphabetical ascending order)
     "bash",
@@ -259,8 +246,6 @@
     "python",
     "rust",
     "softwareTerms",
-    "typescript",
-    // custom dictionaries
-    "global-user-words"
+    "typescript"
   ]
 }
