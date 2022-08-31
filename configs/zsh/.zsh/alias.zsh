@@ -12,7 +12,7 @@ alias vimconfig="vim $HOME/dotfiles/nvim/init.vim"
 
 # Maintenance
 alias brewi="./setup/homebrew.zsh"
-alias brewclean="brew bundle cleanup --verbose --file "$HOME/dotfiles/Brewfile.macos.rb" --force && brew cleanup && brew upgrade"
+alias brewclean="brew bundle cleanup --verbose --file "$HOME/dotfiles/Brewfiles/macos/Brewfile" --force && brew cleanup && brew upgrade"
 alias zclean="zinit self-update && zinit update && zinit delete --clean"
 alias dotclean="brewclean && zclean"
 alias play="chmod +x ./playground.sh && ./playground.sh"
