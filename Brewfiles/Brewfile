@@ -8,9 +8,10 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 
-#
-# Brews
-#
+#----------------------------------------------------------------
+# Brew
+#----------------------------------------------------------------
+
 # Extendable version manager with support for Ruby, Node.js, Erlang & more https://asdf-vm.com/
 brew "asdf"
 
@@ -107,9 +108,10 @@ brew "tree"
 # Executes a program periodically, showing output fullscreen https://gitlab.com/procps-ng/procps
 brew "watch"
 
-#
+#----------------------------------------------------------------
 # Cask
-#
+#----------------------------------------------------------------
+
 # GPU-accelerated terminal emulator https://github.com/alacritty/alacritty/
 cask "alacritty"
 

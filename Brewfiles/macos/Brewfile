@@ -1,8 +1,8 @@
 instance_eval(File.read("Brewfiles/Brewfile"))
 
-#
+#----------------------------------------------------------------
 # Brew
-#
+#----------------------------------------------------------------
 
 # Dependency manager for Cocoa projects https://cocoapods.org/
 brew "cocoapods"
@@ -21,9 +21,10 @@ brew "mas"
 tap "smudge/smudge"
 brew "nightlight"
 
-#
+#----------------------------------------------------------------
 # Cask
-#
+#----------------------------------------------------------------
+
 # Tools for building Android applications https://developer.android.com/studio
 cask "android-studio"
 
@@ -102,7 +103,23 @@ cask "wireshark"
 # Video communication and virtual meeting platform https://www.zoom.us/
 cask "zoom"
 
+#----------------------------------------------------------------
+# Embedded Rust | Wio Terminal
+#----------------------------------------------------------------
+
+# Menu-driven communications program https://packages.debian.org/sid/minicom
+brew "minicom"
+
+# Low-level access to audio, keyboard, mouse, joystick, and graphics https://www.libsdl.org/
+brew "sdl2"
+
+# Cryptography and SSL/TLS Toolkit https://openssl.org/
+brew "openssl@3"
+
+#----------------------------------------------------------------
 # NOT WORKING ON M1 MAC
+#----------------------------------------------------------------
+
 # hosted hypervisor for x86 virtualization https://www.virtualbox.org/
 cask "virtualbox" if system '[ "$(uname -m)" = "x86_64" ]'
 
