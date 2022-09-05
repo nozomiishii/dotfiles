@@ -13,6 +13,8 @@ pre-commit:
       run: npx -y markdownlint-cli2 {staged_files} && git add {staged_files}
 
 commit-msg:
+  parallel: true
+
   commands:
     commitlint:
       run: npx commitlint --edit
@@ -23,6 +25,7 @@ commit-msg:
 
 post-merge:
   piped: true
+
   commands:
     npm:
       files: git diff --name-only HEAD main
