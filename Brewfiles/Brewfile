@@ -108,6 +108,9 @@ brew "tree"
 # Executes a program periodically, showing output fullscreen https://gitlab.com/procps-ng/procps
 brew "watch"
 
+# Your favorite rust -> wasm workflow tool! https://rustwasm.github.io/wasm-pack/
+brew "wasm-pack"
+
 #----------------------------------------------------------------
 # Cask
 #----------------------------------------------------------------
