@@ -9,7 +9,8 @@ if [ ! -f ~/.tool-versions ]; then
   exit
 fi
 
-for plugin in $(awk '{print $1}' ~/.tool-versions); do
+plugins=$(awk '{print $1}' ~/.tool-versions)
+for plugin in $plugins; do
   if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
     asdf plugin add "$plugin"
   fi
@@ -43,6 +44,11 @@ if [ ! -d ~/.config/yarn/global/node_modules ]; then
 
   # to use @prettier/ruby
   gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
+fi
+
+if type cargo > /dev/null 2>&1; then
+  echo '- 📦 Setup Cargo global'
+  cargo install wasm-pack
 fi
 
 printf "🎉 The Environment setup is complete \n\n"
