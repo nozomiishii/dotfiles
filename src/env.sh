@@ -46,9 +46,9 @@ if [ ! -d ~/.config/yarn/global/node_modules ]; then
   gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 fi
 
-if type cargo > /dev/null 2>&1; then
-  echo '- 📦 Setup Cargo global'
-  cargo install wasm-pack
-fi
+# if type cargo > /dev/null 2>&1; then
+#   echo '- 📦 Setup Cargo global'
+#   cargo install wasm-pack
+# fi
 
 printf "🎉 The Environment setup is complete \n\n"
