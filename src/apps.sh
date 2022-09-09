@@ -58,9 +58,11 @@ else
 fi
 
 echo "- 🗂 Set Default Apps for documents"
+# https://github.com/moretension/duti/
 duti -s com.microsoft.VSCode yaml all
 duti -s com.microsoft.VSCode json all
 duti -s com.microsoft.VSCode css all
 duti -s com.microsoft.VSCode markdown all
+duti -s com.microsoft.VSCode sh all
 
 printf "🎉 The App setup is complete \n\n"
