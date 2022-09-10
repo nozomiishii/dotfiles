@@ -103,23 +103,23 @@
     "when": "!notebookEditorFocused && editorLangId == 'markdown'"
   },
   {
-    "key": "ctrl+shift+space p",
+    "key": "cmd+k p",
     "command": "editor.action.transformToTitlecase"
   },
   {
-    "key": "ctrl+shift+space k",
+    "key": "cmd+k k",
     "command": "editor.action.transformToKebabcase"
   },
   {
-    "key": "ctrl+shift+space l",
+    "key": "cmd+k l",
     "command": "editor.action.transformToLowercase"
   },
   {
-    "key": "ctrl+shift+space s",
+    "key": "cmd+k s",
     "command": "editor.action.transformToSnakecase"
   },
   {
-    "key": "ctrl+shift+space u",
+    "key": "cmd+k u",
     "command": "editor.action.transformToUppercase"
   },
   {
