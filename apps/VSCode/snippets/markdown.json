@@ -14,6 +14,11 @@
     "body": ["```${0}", "", "```"],
     "description": "code"
   },
+  "erDiagram": {
+    "prefix": "/er",
+    "body": ["```mermaid", "erDiagram", "  ${0}", "```"],
+    "description": "erDiagram"
+  },
   "sh": {
     "prefix": "/sh",
     "body": ["```sh", "${0}", "```"],
@@ -39,5 +44,15 @@
       "|   |   |   |   |   |"
     ],
     "description": "table"
+  },
+  "img": {
+    "prefix": "/img",
+    "body": [
+      "<div align=\"center\">",
+      "  <img src=\"${1}\" alt=\"${0}\" width=\"480\" />",
+      "</div>",
+      "<br>"
+    ],
+    "description": "img"
   }
 }
