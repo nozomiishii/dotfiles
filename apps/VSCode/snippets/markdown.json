@@ -24,6 +24,11 @@
     "body": ["```sh", "${0}", "```"],
     "description": "sh"
   },
+  "sql": {
+    "prefix": "/sql",
+    "body": ["```sql", "${0}", "```"],
+    "description": "sql"
+  },
   "diff": {
     "prefix": "/diff",
     "body": ["```diff", "${0}", "```"],
