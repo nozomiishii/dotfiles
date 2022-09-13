@@ -6,11 +6,11 @@ pre-commit:
 
   commands:
     format:
-      run: npx -y prettier --ignore-unknown --write {staged_files} '!.vscode' '!apps' '!**/p10k.zsh' '!**/zinit.zsh' && git add {staged_files}
+      run: npx -y prettier --ignore-unknown --write {staged_files} '!.vscode' '!apps' '!**/p10k.zsh' '!**/zinit.zsh'
 
     lint-markdown:
       glob: '*.md'
-      run: npx -y markdownlint-cli2 {staged_files} && git add {staged_files}
+      run: npx -y markdownlint-cli2 {staged_files}
 
 commit-msg:
   parallel: true
