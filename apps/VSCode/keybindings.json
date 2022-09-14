@@ -1,58 +1,105 @@
 [
-  {
-    "key": "ctrl+cmd+w",
-    "command": "workbench.action.closeEditorsInGroup"
-  },
-  {
-    "key": "cmd+k w",
-    "command": "-workbench.action.closeEditorsInGroup"
-  },
+  // ----------------------------------------------------------------
+  // Trigger Suggest
+  // ----------------------------------------------------------------
   {
     "key": "ctrl+space",
     "command": "editor.action.triggerSuggest",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
   },
   {
-    "key": "shift+space",
-    "command": "toggleSuggestionDetails",
-    "when": "suggestWidgetVisible && textInputFocus"
-  },
-  {
     "key": "ctrl+space",
     "command": "-toggleSuggestionDetails",
     "when": "suggestWidgetVisible && textInputFocus"
   },
-  {
-    "key": "alt+w",
-    "command": "-extension.htmlTagWrap",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+cmd+w",
-    "command": "workbench.action.closeWindow"
-  },
+
+  // ----------------------------------------------------------------
+  // Window
+  // ----------------------------------------------------------------
   {
     "key": "shift+cmd+w",
     "command": "-workbench.action.closeWindow"
   },
+
+  // ----------------------------------------------------------------
+  // Navigation
+  // ----------------------------------------------------------------
   {
-    "key": "ctrl+cmd+w",
-    "command": "-workbench.action.toggleTabsVisibility"
+    "key": "ctrl+[",
+    "command": "workbench.action.navigateBack"
   },
   {
-    "key": "ctrl+shift+alt+l",
-    "command": "bookmarks.expandSelectionToNext",
-    "when": "editorTextFocus"
+    "key": "ctrl+]",
+    "command": "workbench.action.navigateForward"
+  },
+
+  // ----------------------------------------------------------------
+  // Terminal
+  // ----------------------------------------------------------------
+  {
+    "key": "alt+cmd+j",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   },
   {
-    "key": "shift+alt+l",
-    "command": "-bookmarks.expandSelectionToNext",
-    "when": "editorTextFocus"
+    "key": "alt+j",
+    "command": "workbench.action.toggleMaximizedPanel"
   },
   {
-    "key": "cmd+n",
-    "command": "explorer.newFile"
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
+
+  // ----------------------------------------------------------------
+  // Open Markdown preview
+  // ----------------------------------------------------------------
+  {
+    "key": "alt+cmd+o",
+    "command": "markdown.showPreviewToSide",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+
+  // ----------------------------------------------------------------
+  // Change Word Case
+  // ----------------------------------------------------------------
+  {
+    "key": "cmd+k p",
+    "command": "editor.action.transformToTitlecase",
+    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+k k",
+    "command": "editor.action.transformToKebabcase",
+    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+k l",
+    "command": "editor.action.transformToLowercase",
+    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+k s",
+    "command": "editor.action.transformToSnakecase",
+    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+k u",
+    "command": "editor.action.transformToUppercase",
+    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
+  },
+
+  // ----------------------------------------------------------------
+  // Extensions
+  // ----------------------------------------------------------------
+  {
+    "key": "ctrl+,",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+
+  // ----------------------------------------------------------------
+  // User Snippets
+  // ----------------------------------------------------------------
   {
     "key": "ctrl+c",
     "command": "editor.action.insertSnippet",
@@ -64,66 +111,5 @@
     "command": "editor.action.insertSnippet",
     "args": { "name": "pretty console check" },
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+space",
-    "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "r",
-    "command": "-renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "ctrl+,",
-    "command": "editor.emmet.action.wrapWithAbbreviation"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "editor.action.rename",
-    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+[",
-    "command": "workbench.action.navigateBack"
-  },
-  {
-    "key": "ctrl+]",
-    "command": "workbench.action.navigateForward"
-  },
-  {
-    "key": "alt+cmd+j",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "alt+cmd+o",
-    "command": "markdown.showPreviewToSide",
-    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
-  },
-  {
-    "key": "cmd+k p",
-    "command": "editor.action.transformToTitlecase"
-  },
-  {
-    "key": "cmd+k k",
-    "command": "editor.action.transformToKebabcase"
-  },
-  {
-    "key": "cmd+k l",
-    "command": "editor.action.transformToLowercase"
-  },
-  {
-    "key": "cmd+k s",
-    "command": "editor.action.transformToSnakecase"
-  },
-  {
-    "key": "cmd+k u",
-    "command": "editor.action.transformToUppercase"
-  },
-  {
-    "key": "alt+j",
-    "command": "workbench.action.toggleMaximizedPanel"
   }
 ]
