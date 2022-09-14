@@ -1,5 +1,7 @@
 {
+  // ----------------------------------------------------------------
   // General
+  // ----------------------------------------------------------------
   "workbench.colorTheme": "Monokai Pro",
   "workbench.startupEditor": "newUntitledFile",
   "breadcrumbs.enabled": true,
@@ -13,15 +15,16 @@
   "window.newWindowDimensions": "maximized",
   "workbench.panel.opensMaximized": "always",
 
+  // ----------------------------------------------------------------
   // Editor
+  // ----------------------------------------------------------------
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.fontSize": 14,
-  "editor.inlayHints.fontSize": 12, // 型情報のヒントの文字サイズ
-  "editor.inlayHints.enabled": "offUnlessPressed", // 型情報のヒントをctrl + optionでtoggle
+  "editor.inlayHints.fontSize": 12, // Font size for type information hints
+  "editor.inlayHints.enabled": "offUnlessPressed", // toggle type information hints with ctrl + option
   "javascript.inlayHints.parameterNames.enabled": "all",
   "typescript.inlayHints.parameterNames.enabled": "all",
-  // "editor.inlayHints.padding": true,
   "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
   "editor.renderWhitespace": "trailing",
@@ -34,28 +37,21 @@
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.linkedEditing": true,
 
-  // Emmet
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
-  },
+  // ----------------------------------------------------------------
+  // Explorer
+  // ----------------------------------------------------------------
+  "explorer.openEditors.visible": 0,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
 
-  // vscode-icons
-  "workbench.iconTheme": "vscode-icons",
-  "vsicons.associations.files": [
-    {
-      "icon": "docker",
-      "extensions": ["docker-compose.dev.yml", "docker-compose.dev.yaml"],
-      "filename": true,
-      "format": "svg"
-    }
-  ],
-
+  // ----------------------------------------------------------------
   // Terminal
+  // ----------------------------------------------------------------
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "'MesloLGS Nerd Font Mono', Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "workbench.colorCustomizations": {
+    // Color theme for terminal
     "panel.background": "#121112",
     "terminal.foreground": "#bbbbbb",
     "terminal.background": "#121112",
@@ -78,17 +74,21 @@
     "terminal.selectionBackground": "#b5d5ff",
     "terminalCursor.foreground": "#bbbbbb",
 
+    // Color theme for editorInlayHint
     "editorInlayHint.background": "#2D2A2E",
     "editorInlayHint.foreground": "#727072"
   },
 
-  // Explorer
-  "explorer.openEditors.visible": 0,
-  "explorer.compactFolders": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
+  // ----------------------------------------------------------------
+  // fig
+  // ----------------------------------------------------------------
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
 
+  // ----------------------------------------------------------------
   // File associations
+  // ----------------------------------------------------------------
   "files.associations": {
     "install": "shellscript",
     ".lintstagedrc": "json",
@@ -105,40 +105,40 @@
     "LICENSE": "plaintext"
   },
 
-  // Extensions
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "vsicons.dontShowNewVersionMessage": true,
-  "liveServer.settings.donotShowInfoMsg": true,
-  "gitlens.currentLine.enabled": false,
-  "tabnine.experimentalAutoImports": true,
-  "liveshare.presence": false,
-  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)|todo!",
-
+  // ----------------------------------------------------------------
   // Git
+  // ----------------------------------------------------------------
   "git.enabled": true,
   "git.path": "/opt/homebrew/bin/git",
 
+  // ----------------------------------------------------------------
   // Docker
+  // ----------------------------------------------------------------
   "docker.enableDockerComposeLanguageService": true,
   "vs-kubernetes": {
     "vscode-kubernetes.minikube-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
     "vscode-kubernetes.kubectl-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/kubectl/kubectl"
   },
 
+  // ----------------------------------------------------------------
   // Terraform
+  // ----------------------------------------------------------------
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
     "editor.formatOnSave": true
   },
   "terraform.experimentalFeatures.validateOnSave": true,
 
+  // ----------------------------------------------------------------
   // Prisma
+  // ----------------------------------------------------------------
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
 
+  // ----------------------------------------------------------------
   // Shell
+  // ----------------------------------------------------------------
   "[shellscript]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.shellcheck": true
@@ -162,39 +162,39 @@
     "**/.tmux.conf": true
   },
 
+  // ----------------------------------------------------------------
   // Rust
+  // ----------------------------------------------------------------
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "rust-analyzer.checkOnSave.command": "clippy",
 
+  // ----------------------------------------------------------------
   // Prettier
+  // ----------------------------------------------------------------
   "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
 
+  // ----------------------------------------------------------------
   // ESlint
+  // ----------------------------------------------------------------
   "eslint.enable": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-    // "json",
-    // "jsonc",
-    // "json5",
-    // "yaml",
-    // "toml"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
 
+  // ----------------------------------------------------------------
   // Lint
+  // ----------------------------------------------------------------
   "editor.codeActionsOnSave": {
     "source.addMissingImports": true,
     "source.fixAll.eslint": true,
     "source.fixAll.markdownlint": true
   },
 
+  // ----------------------------------------------------------------
   // textlint
+  // ----------------------------------------------------------------
   "textlint.languages": [
     "markdown",
     "mdx",
@@ -209,22 +209,57 @@
   "textlint.nodePath": "/Users/nozomiishii/dotfiles/configs/yarn/.config/yarn/global/node_modules",
   "textlint.configPath": "/Users/nozomiishii/dotfiles/.textlintrc.yaml",
 
+  // ----------------------------------------------------------------
   // Markdown
+  // ----------------------------------------------------------------
   "markdown-preview-github-styles.colorTheme": "dark",
 
+  // ----------------------------------------------------------------
   // yaml
+  // ----------------------------------------------------------------
   "[yaml]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   "redhat.telemetry.enabled": true,
 
-  // fig
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
+  // ----------------------------------------------------------------
+  // Extensions
+  // ----------------------------------------------------------------
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "gitlens.currentLine.enabled": false,
+  "tabnine.experimentalAutoImports": true,
+  "liveshare.presence": false,
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)|todo!",
+
+  // ----------------------------------------------------------------
+  // Emmet
+  // ----------------------------------------------------------------
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
   },
 
+  // ----------------------------------------------------------------
+  // vscode-icons
+  // ----------------------------------------------------------------
+  "workbench.iconTheme": "vscode-icons",
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsicons.associations.files": [
+    {
+      "icon": "docker",
+      "extensions": ["docker-compose.dev.yml", "docker-compose.dev.yaml"],
+      "filename": true,
+      "format": "svg"
+    }
+  ],
+
+  // ----------------------------------------------------------------
   // cSpell
+  // ----------------------------------------------------------------
   "cSpell.showAutocompleteSuggestions": true,
   "cSpell.dictionaries": [
     // built-in dictionaries (alphabetical ascending order)
