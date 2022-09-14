@@ -8,9 +8,9 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 # Brew
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 
 # Extendable version manager with support for Ruby, Node.js, Erlang & more https://asdf-vm.com/
 brew "asdf"
@@ -111,9 +111,9 @@ brew "watch"
 # Your favorite rust -> wasm workflow tool! https://rustwasm.github.io/wasm-pack/
 brew "wasm-pack"
 
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 # Cask
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 
 # GPU-accelerated terminal emulator https://github.com/alacritty/alacritty/
 cask "alacritty"
