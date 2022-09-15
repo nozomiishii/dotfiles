@@ -29,6 +29,11 @@
     "body": ["```sql", "${0}", "```"],
     "description": "sql"
   },
+  "rust": {
+    "prefix": "/rs",
+    "body": ["```rs", "${0}", "```"],
+    "description": "rust"
+  },
   "diff": {
     "prefix": "/diff",
     "body": ["```diff", "${0}", "```"],
