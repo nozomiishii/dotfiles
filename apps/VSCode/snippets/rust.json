@@ -1,0 +1,8 @@
+{
+  // pretty console
+  "pretty console log": {
+    "prefix": "",
+    "body": ["println!(\"[$TM_FILENAME] $CLIPBOARD: {${0}}\", $CLIPBOARD);"],
+    "description": "pretty console log"
+  }
+}
