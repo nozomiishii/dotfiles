@@ -64,7 +64,8 @@
   },
   {
     "key": "ctrl+space x",
-    "command": "workbench.action.terminal.kill"
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
   {
     "key": "ctrl+space \\",
