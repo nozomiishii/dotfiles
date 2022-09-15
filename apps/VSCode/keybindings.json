@@ -50,6 +50,15 @@
     "command": "workbench.action.terminal.clear",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
+  {
+    "key": "ctrl+space x",
+    "command": "workbench.action.terminal.kill"
+  },
+  {
+    "key": "ctrl+space \\",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  },
 
   // ----------------------------------------------------------------
   // Open Markdown preview
