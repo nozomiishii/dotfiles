@@ -32,6 +32,11 @@
     "key": "ctrl+]",
     "command": "workbench.action.navigateForward"
   },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
 
   // ----------------------------------------------------------------
   // Explorer
