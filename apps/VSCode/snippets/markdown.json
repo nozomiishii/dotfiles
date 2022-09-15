@@ -34,6 +34,11 @@
     "body": ["```rs", "${0}", "```"],
     "description": "rust"
   },
+  "typescript": {
+    "prefix": "/ts",
+    "body": ["```ts", "${0}", "```"],
+    "description": "typescript"
+  },
   "diff": {
     "prefix": "/diff",
     "body": ["```diff", "${0}", "```"],
