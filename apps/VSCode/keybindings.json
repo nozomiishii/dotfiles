@@ -17,8 +17,8 @@
   // Window
   // ----------------------------------------------------------------
   {
-    "key": "shift+cmd+w",
-    "command": "-workbench.action.closeWindow"
+    "key": "alt+cmd+w",
+    "command": "workbench.action.closeEditorsInGroup"
   },
 
   // ----------------------------------------------------------------
