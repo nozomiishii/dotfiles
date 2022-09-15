@@ -39,6 +39,11 @@
     "body": ["```ts", "${0}", "```"],
     "description": "typescript"
   },
+  "text": {
+    "prefix": "/txt",
+    "body": ["```txt", "${0}", "```"],
+    "description": "text"
+  },
   "diff": {
     "prefix": "/diff",
     "body": ["```diff", "${0}", "```"],
