@@ -156,9 +156,6 @@ defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
 defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3
 # Disable swipe between pages
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
-# Disable Look up & detectors
-defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool false
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 0
 
 echo "- 🗣 Speech"
 # Enable Text to Speech
