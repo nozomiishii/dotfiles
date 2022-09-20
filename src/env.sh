@@ -51,6 +51,7 @@ if type cargo > /dev/null 2>&1; then
   cargo install cargo-edit
   cargo install cargo-watch
   cargo install cargo-nextest
+  cargo install cargo-modules
   cargo install wasm-pack
 fi
 
