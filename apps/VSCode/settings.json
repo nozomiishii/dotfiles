@@ -51,7 +51,6 @@
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "'MesloLGS Nerd Font Mono', Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "terminal.integrated.copyOnSelection": true,
-  "workbench.panel.defaultLocation": "right",
   "workbench.colorCustomizations": {
     // Color theme for terminal
     "panel.background": "#121112",
