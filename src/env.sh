@@ -37,6 +37,14 @@ for plugin in $(asdf plugin list); do
 done
 
 if [ ! -d ~/.config/yarn/global/node_modules ]; then
+  # corepackでyarnを管理する
+  # https://shikiyura.com/2022/08/install_nodejs_using_asdf/
+  corepack enable
+  corepack enable npm
+  corepack prepare yarn@1.22.19 --activate
+  asdf reshim nodejs
+  yarn -v
+
   echo '- 🚚 Setup Yarn global'
   # . $(brew --prefix asdf)/libexec/asdf.sh
   # export PATH="$(yarn global bin):$PATH"
