@@ -147,5 +147,10 @@
     "command": "editor.action.insertSnippet",
     "args": { "name": "pretty console check" },
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+k j",
+    "command": "code-runner.run",
+    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
   }
 ]
