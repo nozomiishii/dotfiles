@@ -16,23 +16,32 @@
 
 set -Ceu
 
-config_path="$HOME/dotfiles/apps/Raycast"
+TEXT_RED="\033[1;31m"
+CONFIG_PATH="$HOME/dotfiles/apps/Raycast"
 
 printf "🚁 Update Raycast Config\n\n"
 
-backup_files_length=$(find "$config_path" -type f | wc -l)
+backup_files_length=$(find "$CONFIG_PATH" -type f | wc -l)
 
-if [ "$backup_files_length" -ge 2 ]; then
-  ls -lt "$config_path"
-  # shellcheck disable=SC2012
-  old_config_file=$(ls -t "$config_path" | tail -n 1)
-
-  rm "$config_path/$old_config_file"
-  echo "Remove file $old_config_file"
+if [ "$backup_files_length" -eq 0 ]; then
+  echo -e "${TEXT_RED}ERROR: No backup files. Export your Raycast app settings to $CONFIG_PATH"
+  exit 1
 fi
 
-git add "$config_path"
+if [ "$backup_files_length" -eq 1 ]; then
+  echo -e "${TEXT_RED}ERROR: No duplicate backup files. Export your Raycast app settings to $CONFIG_PATH"
+  exit 1
+fi
 
-git commit --no-verify -m "feat: update raycast config"
+ls -lt "$CONFIG_PATH"
+# shellcheck disable=SC2012
+old_config_file=$(ls -t "$CONFIG_PATH" | tail -n 1)
 
-printf "🎉 Update Success"
+rm "$CONFIG_PATH/$old_config_file"
+echo "Remove file $old_config_file"
+
+git add "$CONFIG_PATH"
+
+git commit --no-verify -m "feat: update Raycast config"
+
+printf "\n\n🎉 Update Success 🎉\n"
