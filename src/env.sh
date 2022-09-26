@@ -55,6 +55,10 @@ if [ ! -d ~/.config/yarn/global/node_modules ]; then
 fi
 
 if type cargo > /dev/null 2>&1; then
+  echo '- 🦀 Setup rust-analyzer'
+  rustup component add rust-analyzer
+  rustup toolchain install stable-aarch64-apple-darwin
+
   echo '- 📦 Setup Cargo global'
   cargo install cargo-edit
   cargo install cargo-watch
