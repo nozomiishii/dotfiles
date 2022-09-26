@@ -1,8 +1,15 @@
 {
-  // pretty console
+  // ----------------------------------------------------------------
+  // Pretty Console log
+  // ----------------------------------------------------------------
   "pretty console log": {
-    "prefix": "",
-    "body": ["println!(\"[$TM_FILENAME:$TM_LINE_NUMBER] $CLIPBOARD: {:#?}\", $CLIPBOARD);"],
+    "prefix": "log",
+    "body": ["dbg!($CLIPBOARD);"],
     "description": "pretty console log"
+  },
+  "pretty console check": {
+    "prefix": "log",
+    "body": ["println!(\"[$TM_FILENAME:$TM_LINE_NUMBER] $CLIPBOARD: {:#?}\", $CLIPBOARD);"],
+    "description": "pretty console check"
   }
 }
