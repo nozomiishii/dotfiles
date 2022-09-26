@@ -1,7 +1,7 @@
 {
-  //
-  //
+  // ----------------------------------------------------------------
   // test
+  // ----------------------------------------------------------------
   "React Testing Library": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "rtl",
@@ -63,9 +63,10 @@
     "body": ["await waitFor(() => {$1});"],
     "description": "await waitFor(() => {});"
   },
-  //
-  //
-  // utils
+
+  // ----------------------------------------------------------------
+  // Utils
+  // ----------------------------------------------------------------
   "export * from './';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "exx",
@@ -131,9 +132,18 @@
     ],
     "description": "sleep"
   },
-  //
-  //
+  "Logger": {
+    "prefix": "lgr",
+    "scope": "typescript",
+    "body": [
+      "private readonly logger = new Logger(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.name);"
+    ],
+    "description": "Logger"
+  },
+
+  // ----------------------------------------------------------------
   // Styles
+  // ----------------------------------------------------------------
   "backgroundColor: 'red'": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "rr",
@@ -146,9 +156,10 @@
     "body": ["backgroundColor: 'green',"],
     "description": "backgroundColor: 'green'"
   },
-  //
-  //
+
+  // ----------------------------------------------------------------
   // pretty console
+  // ----------------------------------------------------------------
   "pretty console log": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "lg",
@@ -159,11 +170,12 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "lg",
     "body": ["console.log('[$CLIPBOARD: $TM_FILENAME]', JSON.stringify($CLIPBOARD, null, 2))"],
-    "description": "pretty console log"
+    "description": "pretty console check"
   },
-  //
-  //
+
+  // ----------------------------------------------------------------
   // React
+  // ----------------------------------------------------------------
   "TypeScript React Functional Component": {
     "scope": "typescriptreact",
     "prefix": "rtf",
@@ -196,9 +208,10 @@
     ],
     "description": "Typescript React Functional Component with Interface"
   },
-  //
-  //
+
+  // ----------------------------------------------------------------
   // React Native
+  // ----------------------------------------------------------------
   "React Native Typescript Functional Component": {
     "scope": "typescriptreact",
     "prefix": "rntf",
@@ -216,9 +229,10 @@
     ],
     "description": "Typescript React Native Functional Component"
   },
-  //
-  //
+
+  // ----------------------------------------------------------------
   // Next.js
+  // ----------------------------------------------------------------
   "Next.js Typescript Functional Component": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "ntf",
@@ -340,40 +354,16 @@
     ],
     "description": "api"
   },
-  "": {
-    "prefix": "",
-    "body": [],
-    "description": ""
-  },
-  //
-  //
-  // JavaScript
-  "React Functional Typescript Component": {
-    "prefix": "rf",
-    "scope": "javascript,javascriptreact",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export const $TM_FILENAME_BASE = () => {",
-      "  return (",
-      "    <div>$TM_FILENAME_BASE</div>",
-      "  );",
-      "}"
-    ],
-    "description": "Typescript React Functional Component"
-  },
-  //
-  //
-  // Next.js
   "import Head from 'next/head';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imhd",
     "body": ["import Head from 'next/head';"],
     "description": "import Head from 'next/head';"
   },
-  //
-  //
+
+  // ----------------------------------------------------------------
   // Prisma
+  // ----------------------------------------------------------------
   "PrismaClient": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "pc",
@@ -401,9 +391,10 @@
     ],
     "description": "prisma.$transaction"
   },
-  //
-  //
+
+  // ----------------------------------------------------------------
   // Three.js
+  // ----------------------------------------------------------------
   "new THREE.$0": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "neth",
@@ -434,27 +425,30 @@
     "body": ["const axesHelper = new THREE.AxesHelper();", "scene.add(axesHelper);"],
     "description": "const axesHelper = new THREE.AxesHelper();"
   },
-  //
-  //
+
+  // ----------------------------------------------------------------
   // dat.gui
+  // ----------------------------------------------------------------
   "import * as dat from 'dat.gui';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imdat",
     "body": ["import * as dat from 'dat.gui';", "", "const gui = new dat.GUI();", ""],
     "description": "import * as dat from 'dat.gui';"
   },
-  //
-  //
+
+  // ----------------------------------------------------------------
   // GSAP
+  // ----------------------------------------------------------------
   "import gsap from 'gsap';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imgs",
     "body": ["import gsap from 'gsap';"],
     "description": "import gsap from 'gsap';"
   },
-  //
-  //
+
+  // ----------------------------------------------------------------
   // p5
+  // ----------------------------------------------------------------
   "p5 typescript": {
     "scope": "typescript,typescriptreact",
     "prefix": "p5f",
@@ -511,13 +505,5 @@
       ""
     ],
     "description": "p5 react function"
-  },
-  "Logger": {
-    "prefix": "lgr",
-    "scope": "typescript",
-    "body": [
-      "private readonly logger = new Logger(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.name);"
-    ],
-    "description": "Logger"
   }
 }
