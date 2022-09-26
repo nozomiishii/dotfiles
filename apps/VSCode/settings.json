@@ -103,7 +103,8 @@
     ".ssh/config": "ssh-config",
     "*.ejs": "html",
     "*.ejs.t": "html",
-    "LICENSE": "plaintext"
+    "LICENSE": "plaintext",
+    ".env.sample": "dotenv"
   },
 
   // ----------------------------------------------------------------
