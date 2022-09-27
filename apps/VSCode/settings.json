@@ -196,6 +196,16 @@
   },
 
   // ----------------------------------------------------------------
+  // sqlfluff
+  // ----------------------------------------------------------------
+  "[sql]": {
+    "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
+  },
+  "sqlfluff.dialect": "postgres",
+  "sqlfluff.format.enabled": true,
+  "sqlfluff.linter.run": "onSave",
+  "sqlfluff.suppressNotifications": true,
+  // ----------------------------------------------------------------
   // textlint
   // ----------------------------------------------------------------
   "textlint.languages": [
