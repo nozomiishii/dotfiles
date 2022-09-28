@@ -38,10 +38,15 @@ ls -lt "$CONFIG_PATH"
 old_config_file=$(ls -t "$CONFIG_PATH" | tail -n 1)
 
 rm "$CONFIG_PATH/$old_config_file"
-echo "Remove file $old_config_file"
+echo ""
+echo "Remove the old config file: $old_config_file"
+echo ""
 
 git add "$CONFIG_PATH"
 
 git commit --no-verify -m "feat: update Raycast config"
+
+current_branch=$(git branch --show-current)
+git push origin "$current_branch"
 
 printf "\n\n🎉 Update Success 🎉\n"
