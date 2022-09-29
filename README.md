@@ -218,6 +218,8 @@ Finder Sidebar
 
   - Extensions
     - [1Password](https://chrome.google.com/webstore/detail/1password-%E2%80%93-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
+      - Shortcut
+        - Activate the extension: `⇧⌘X`
     - [Adblock for YouTube](https://chrome.google.com/webstore/detail/adblock-for-youtube/cmedhionkhpnakcndndgjdbohmhepckk)
     - [Fonts Ninja](https://chrome.google.com/webstore/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh)
     - [DeepL](https://chrome.google.com/webstore/detail/deepl-translate-beta-vers/cofdbpoegempjloogbagkncekinflcnj)
@@ -228,6 +230,9 @@ Finder Sidebar
     - [Open in VS Code (github1s.com)](https://chrome.google.com/webstore/detail/open-in-vs-code-github1sc/neloiopjjeflfnecdlajhopdlojlkhll)
     - [Mokuren for GitHub](https://chrome.google.com/webstore/detail/mokuren-for-github/nikennffbfoadbajdgnhlngjahofhdef)
     - [Speechify Text to Speech Voice Reader](https://chrome.google.com/webstore/detail/speechify-text-to-speech/ljflmlehinmoeknoonhibbjpldiijjmm)
+      - Shortcut
+        - Activate the extension: `⌃Q`
+        - Play/Pause: `⌃Space`
 
 ### 🗿 fig
 
