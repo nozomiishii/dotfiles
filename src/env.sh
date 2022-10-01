@@ -65,6 +65,8 @@ if type cargo > /dev/null 2>&1; then
   cargo install cargo-nextest
   cargo install cargo-modules
   cargo install wasm-pack
+  cargo install diesel_cli --no-default-features --features postgres
+  asdf reshim rust
 fi
 
 printf "🎉 The Environment setup is complete \n\n"
