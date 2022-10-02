@@ -3,6 +3,7 @@
   // General
   // ----------------------------------------------------------------
   "workbench.colorTheme": "Monokai Pro",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "newUntitledFile",
   "breadcrumbs.enabled": true,
   "files.insertFinalNewline": true,
@@ -267,12 +268,61 @@
   // ----------------------------------------------------------------
   // vscode-icons
   // ----------------------------------------------------------------
-  "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.associations.files": [
     {
+      "icon": "nest-controller",
+      "extensions": ["controller.ts"],
+      "format": "svg"
+    },
+    {
+      "icon": "nest-gateway",
+      "extensions": ["gateway.ts"],
+      "format": "svg"
+    },
+    {
+      "icon": "nest-module",
+      "extensions": ["module.ts"],
+      "format": "svg"
+    },
+    {
+      "icon": "nest-service",
+      "extensions": ["service.ts"],
+      "format": "svg"
+    },
+    {
+      "icon": "nest-decorator",
+      "extensions": ["decorator.ts"],
+      "format": "svg"
+    },
+    {
+      "icon": "nest-guard",
+      "extensions": ["guard.ts"],
+      "format": "svg"
+    },
+    {
+      "icon": "nest-pipe",
+      "extensions": ["pipe.ts"],
+      "format": "svg"
+    },
+    {
+      "icon": "nest-filter",
+      "extensions": ["filter.ts"],
+      "format": "svg"
+    },
+    {
+      "icon": "nest-middleware",
+      "extensions": ["middleware.ts"],
+      "format": "svg"
+    },
+    {
+      "icon": "nest-resolver",
+      "extensions": ["resolver.ts"],
+      "format": "svg"
+    },
+    {
       "icon": "docker",
-      "extensions": ["docker-compose.dev.yml", "docker-compose.dev.yaml"],
+      "extensions": ["docker-compose.dev.yml"],
       "filename": true,
       "format": "svg"
     }
