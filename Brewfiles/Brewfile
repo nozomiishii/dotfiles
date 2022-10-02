@@ -151,6 +151,9 @@ cask "google-drive"
 # Google Japanese Input Method Editor. https://www.google.co.jp/ime
 cask "google-japanese-ime"
 
+# HTTP and GraphQL Client https://insomnia.rest/
+cask "insomnia"
+
 # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
 cask "ledger-live"
 
