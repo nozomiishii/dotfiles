@@ -300,6 +300,19 @@
               "key_code": "caps_lock"
             }
           ]
+        },
+        {
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": ["command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f13"
+            }
+          ]
         }
       ],
       "virtual_hid_keyboard": {
