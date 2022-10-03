@@ -24,6 +24,9 @@ source "$HOME/.zsh/last-working-dir.zsh"
 # Functions
 source "$HOME/.zsh/functions.zsh"
 
+# direnv
+if type direnv > /dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
+
 # asdf
 if [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then . $(brew --prefix asdf)/libexec/asdf.sh; fi
 

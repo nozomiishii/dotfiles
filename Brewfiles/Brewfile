@@ -21,6 +21,9 @@ brew "bat"
 # Dependencies asdf golang | GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
 brew "coreutils"
 
+# Load/unload environment variables based on $PWD https://direnv.net/
+brew "direnv"
+
 # Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
 brew "ethereum"
 
