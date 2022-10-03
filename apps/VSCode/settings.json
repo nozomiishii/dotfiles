@@ -242,6 +242,7 @@
   // ----------------------------------------------------------------
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "liveServer.settings.donotShowInfoMsg": true,
+  "lldb.suppressUpdateNotifications": true,
   "gitlens.currentLine.enabled": false,
   "tabnine.experimentalAutoImports": true,
   "liveshare.presence": false,
