@@ -64,6 +64,7 @@ if type cargo > /dev/null 2>&1; then
   cargo install cargo-watch
   cargo install cargo-nextest
   cargo install cargo-modules
+  cargo install cargo-make
   cargo install wasm-pack
   cargo install diesel_cli --no-default-features --features postgres
   asdf reshim rust
