@@ -162,7 +162,8 @@
     "**/*.zshenv": true,
     "**/zshenv": true,
     "**/*.zsh-theme": true,
-    "**/.tmux.conf": true
+    "**/.tmux.conf": true,
+    "**/.envrc": true
   },
 
   // ----------------------------------------------------------------
