@@ -152,5 +152,10 @@
     "key": "cmd+k j",
     "command": "code-runner.run",
     "when": "!terminalFocus && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+k n",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   }
 ]
