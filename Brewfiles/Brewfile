@@ -30,6 +30,9 @@ brew "ethereum"
 # Modern replacement for ls. https://github.com/ogham/exa
 brew "exa"
 
+# Simple, fast and user-friendly alternative to find https://github.com/sharkdp/fd
+brew "fd"
+
 # Play, record, convert, and stream audio and video https://ffmpeg.org/
 brew "ffmpeg"
 
