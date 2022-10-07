@@ -57,6 +57,9 @@ brew "gpg"
 # GNU grep, egrep and fgrep https://www.gnu.org/software/grep/
 brew "grep"
 
+# Like cURL, but for gRPC https://github.com/fullstorydev/grpcurl
+brew "grpcurl"
+
 # Kubernetes package manager https://helm.sh/
 brew "helm"
 
