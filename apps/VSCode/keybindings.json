@@ -60,7 +60,17 @@
   },
   {
     "key": "alt+j",
-    "command": "workbench.action.toggleMaximizedPanel"
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminal.active"
+  },
+  {
+    "key": "alt+cmd+i",
+    "command": "workbench.action.terminal.moveToEditor",
+    "when": "terminal.active"
+  },
+  {
+    "key": "alt+i",
+    "command": "workbench.action.terminal.moveToTerminalPanel"
   },
   {
     "key": "cmd+k",
