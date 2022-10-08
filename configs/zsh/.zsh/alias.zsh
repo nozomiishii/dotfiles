@@ -81,6 +81,5 @@ alias tfenv='GREP_OPTIONS="--color=never" tfenv'
 alias tf="terraform"
 
 # tmux
-alias ttt="tmux split-window -h; tmux split-window -v"
-alias tt="tmux split-window -h"
+alias tt=" tmux source-file ~/.tmux.conf && tmux display '🦕: tmux reloaded'"
 alias tclean="~/.tmux/plugins/tpm/bin/clean_plugins"
