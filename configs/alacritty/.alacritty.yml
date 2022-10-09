@@ -101,3 +101,45 @@ colors:
   selection:
     background: '#b5d5ff'
     text: '#000000'
+
+hints:
+  enabled:
+    - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+        [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+      command: open
+      post_processing: true
+      mouse:
+        enabled: true
+        mods: Command
+      binding:
+        key: U
+        mods: Command
+
+key_bindings:
+  # Create a new tmux window `tmux: C-b c`
+  - { key: T, mods: Command, chars: "\x02\x63" }
+  # Kill the current tmux pane (and window if last pane) `tmux: C-b x`
+  - { key: W, mods: Command, chars: "\x02\x78" }
+
+  # Move one pain left
+  - { key: Left, mods: Command, chars: "\x02\x68" }
+  # Move one pain right
+  - { key: Right, mods: Command, chars: "\x02\x6c" }
+  # Move one pain up
+  - { key: Up, mods: Command, chars: "\x02\x6a" }
+  # Move one pain down
+  - { key: Down, mods: Command, chars: "\x02\x6b" }
+
+  # Move one word left
+  - { key: Left, mods: Alt, chars: "\x1bb" }
+  # Move one word right
+  - { key: Right, mods: Alt, chars: "\x1bf" }
+  # Delete word
+  - { key: Back, mods: Alt, chars: "\x1b\x7f" }
+  # Turn on Copy mode
+  # - { key: Space, mods: Control, chars: "\x02\x5b" }
+
+  # Split window vertically　`tmux: C-b %`
+  - { key: Backslash, mods: Command|Shift, chars: "\x02\x22" }
+  # Split window horizontally `tmux: C-b "`
+  - { key: Backslash, mods: Command, chars: "\x02\x25" }
