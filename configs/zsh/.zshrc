@@ -33,6 +33,9 @@ if [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then . $(brew --prefix asdf)/li
 # yarn
 if type yarn > /dev/null 2>&1; then export PATH="$(yarn global bin):$PATH"; fi
 
+# lang
+export LANG="en_US.UTF-8"
+
 # grep setting
 export GREP_OPTIONS='--color=always'
 export GREP_COLOR='1;32'
