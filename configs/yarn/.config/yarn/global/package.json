@@ -4,7 +4,7 @@
     "@nestjs/schematics": "~8.0.8",
     "@textlint-ja/textlint-rule-no-synonyms": "~1.3.0",
     "@textlint-rule/textlint-rule-no-unmatched-pair": "~1.0.8",
-    "create-next-app": "~12.2.3",
+    "create-next-app": "~12.3.1",
     "firebase-tools": "~10.4.0",
     "nx": "~13.9.3",
     "prettier": "~2.7.1",
