@@ -1,6 +1,6 @@
 [
   // ----------------------------------------------------------------
-  // Trigger Suggest
+  // Development
   // ----------------------------------------------------------------
   {
     "key": "ctrl+space",
@@ -12,18 +12,11 @@
     "command": "-toggleSuggestionDetails",
     "when": "suggestWidgetVisible && textInputFocus"
   },
-
-  // ----------------------------------------------------------------
-  // Window
-  // ----------------------------------------------------------------
   {
-    "key": "alt+cmd+w",
-    "command": "workbench.action.closeEditorsInGroup"
+    "key": "cmd+k n",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
-
-  // ----------------------------------------------------------------
-  // Navigation
-  // ----------------------------------------------------------------
   {
     "key": "ctrl+[",
     "command": "workbench.action.navigateBack"
@@ -32,10 +25,13 @@
     "key": "ctrl+]",
     "command": "workbench.action.navigateForward"
   },
+
+  // ----------------------------------------------------------------
+  // Window
+  // ----------------------------------------------------------------
   {
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
+    "key": "alt+cmd+w",
+    "command": "workbench.action.closeEditorsInGroup"
   },
 
   // ----------------------------------------------------------------
@@ -48,6 +44,30 @@
   {
     "key": "cmd+n",
     "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+
+  // ----------------------------------------------------------------
+  // Editor
+  // ----------------------------------------------------------------
+  {
+    "key": "shift+cmd+\\",
+    "command": "workbench.action.splitEditorDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor",
+    "when": "textInputFocus"
   },
 
   // ----------------------------------------------------------------
@@ -78,15 +98,43 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "ctrl+space x",
+    "key": "ctrl+tab",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "cmd+right",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+left",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+w",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
-  {
-    "key": "ctrl+space \\",
-    "command": "workbench.action.terminal.split",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-  },
+  // {
+  //   "key": "cmd+w",
+  //   "command": "workbench.action.terminal.sendSequence",
+  //   "args": {
+  //     "text": "tmux kill-session"
+  //   },
+  //   "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  // },
 
   // ----------------------------------------------------------------
   // Git
@@ -164,8 +212,8 @@
     "when": "!terminalFocus && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "cmd+k n",
-    "command": "editor.action.rename",
-    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    "key": "shift+cmd+j",
+    "command": "workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
   }
 ]
