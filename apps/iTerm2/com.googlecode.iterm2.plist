@@ -398,7 +398,7 @@
 			<key>Guid</key>
 			<string>1CFD4BBE-941F-410B-AAD1-114CE87E8CE9</string>
 			<key>Has Hotkey</key>
-			<true/>
+			<false/>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
@@ -408,15 +408,15 @@
 			<key>HotKey Alternate Shortcuts</key>
 			<array/>
 			<key>HotKey Characters</key>
-			<string>j</string>
+			<string></string>
 			<key>HotKey Characters Ignoring Modifiers</key>
-			<string>j</string>
+			<string></string>
 			<key>HotKey Key Code</key>
-			<integer>38</integer>
+			<integer>0</integer>
 			<key>HotKey Modifier Activation</key>
 			<integer>0</integer>
 			<key>HotKey Modifier Flags</key>
-			<integer>1048576</integer>
+			<integer>0</integer>
 			<key>HotKey Window Animates</key>
 			<true/>
 			<key>HotKey Window AutoHides</key>
@@ -424,7 +424,7 @@
 			<key>HotKey Window Dock Click Action</key>
 			<integer>1</integer>
 			<key>HotKey Window Floats</key>
-			<true/>
+			<false/>
 			<key>HotKey Window Reopens On Activation</key>
 			<true/>
 			<key>Icon</key>
@@ -835,6 +835,8 @@
 	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
+	<key>OpenBookmark</key>
+	<true/>
 	<key>OpenNoWindowsAtStartup</key>
 	<true/>
 	<key>OpenTmuxWindowsIn</key>
@@ -885,7 +887,7 @@
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SmartPlacement</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
