@@ -188,6 +188,25 @@
   "prettier.printWidth": 100,
 
   // ----------------------------------------------------------------
+  // Stylelint | TailwindCSS
+  // ----------------------------------------------------------------
+  "stylelint.config": {
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
+        }
+      ],
+      "declaration-block-trailing-semicolon": null,
+      "no-descending-specificity": null
+    }
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+
+  // ----------------------------------------------------------------
   // ESlint
   // ----------------------------------------------------------------
   "eslint.enable": true,
@@ -212,6 +231,7 @@
   "sqlfluff.format.enabled": true,
   "sqlfluff.linter.run": "onSave",
   "sqlfluff.suppressNotifications": true,
+
   // ----------------------------------------------------------------
   // textlint
   // ----------------------------------------------------------------
