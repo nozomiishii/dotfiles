@@ -270,7 +270,6 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "lldb.suppressUpdateNotifications": true,
   "gitlens.currentLine.enabled": false,
-  "tabnine.experimentalAutoImports": true,
   "liveshare.presence": false,
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)|todo!",
