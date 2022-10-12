@@ -271,6 +271,7 @@
   "lldb.suppressUpdateNotifications": true,
   "gitlens.currentLine.enabled": false,
   "liveshare.presence": false,
+  "tabnine.experimentalAutoImports": true,
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)|todo!",
 
