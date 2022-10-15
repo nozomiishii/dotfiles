@@ -71,6 +71,9 @@ if OS.mac?
   # Automation software https://www.keyboardmaestro.com/main/
   cask "keyboard-maestro"
 
+  # Display key code, unicode value and modifier keys state for any key combination https://manytricks.com/keycodes/
+  cask "key-codes"
+
   # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
   cask "kindle"
 
