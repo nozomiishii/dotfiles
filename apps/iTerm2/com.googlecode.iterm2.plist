@@ -399,6 +399,17 @@
 					<key>Version</key>
 					<integer>1</integer>
 				</dict>
+				<key>0x70-0x100000-0x23</key>
+				<dict>
+					<key>Action</key>
+					<integer>13</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<string></string>
+					<key>Version</key>
+					<integer>1</integer>
+				</dict>
 				<key>0x7c-0x120000-0x2a</key>
 				<dict>
 					<key>Action</key>
@@ -882,6 +893,17 @@
 					<string></string>
 					<key>Text</key>
 					<string>0x02 0x77</string>
+					<key>Version</key>
+					<integer>1</integer>
+				</dict>
+				<key>0x78-0x40000-0x7</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<string>0x02 0x78</string>
 					<key>Version</key>
 					<integer>1</integer>
 				</dict>
