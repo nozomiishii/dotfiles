@@ -110,6 +110,9 @@ if OS.mac?
   # Video communication and virtual meeting platform https://www.zoom.us/
   cask "zoom"
 
+  # Desktop client for the Zulip team chat platform https://zulipchat.com/apps/
+  cask "zulip"
+
   # ----------------------------------------------------------------
   # Embedded Rust | Wio Terminal
   # ----------------------------------------------------------------
