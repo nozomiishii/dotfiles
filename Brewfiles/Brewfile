@@ -183,6 +183,9 @@ cask "ngrok"
 # App to write, plan, collaborate, and get organized. https://www.notion.so
 cask "notion"
 
+# Knowledge base that works on top of a local folder of plain text Markdown files https://obsidian.md/
+cask "obsidian"
+
 # Administration and development platform for PostgreSQL https://www.pgadmin.org/
 cask "pgadmin4"
 
