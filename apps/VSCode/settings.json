@@ -51,6 +51,7 @@
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "'MesloLGS Nerd Font Mono', Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.tabs.title": "${cwdFolder}",
   "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}",
