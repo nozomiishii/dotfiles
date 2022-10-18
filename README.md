@@ -229,6 +229,7 @@ Finder Sidebar
     - [Amazing Searcher](https://chrome.google.com/webstore/detail/amazing-searcher/poheekmlppakdboaalpmhfpbmnefeokj)
     - [github1s Linker](https://chrome.google.com/webstore/detail/github1s-linker/aghoglkmbagjidbhfdcgmonhgdcbjjgf)
     - [Mokuren for GitHub](https://chrome.google.com/webstore/detail/mokuren-for-github/nikennffbfoadbajdgnhlngjahofhdef)
+    - [GraphQL Network Inspector](https://chrome.google.com/webstore/detail/graphql-network-inspector/ndlbedplllcgconngcnfmkadhokfaaln)
     - [Speechify Text to Speech Voice Reader](https://chrome.google.com/webstore/detail/speechify-text-to-speech/ljflmlehinmoeknoonhibbjpldiijjmm)
       - Shortcut
         - Activate the extension: `⌃Q`
