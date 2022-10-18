@@ -291,7 +291,7 @@
 			<key>Background Image Location</key>
 			<string></string>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Blur Radius</key>
@@ -751,7 +751,7 @@
 			<key>Background Image Location</key>
 			<string></string>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Blur Radius</key>
