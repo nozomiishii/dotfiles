@@ -1125,6 +1125,10 @@
 	<false/>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
+	<key>SwitchTabModifier</key>
+	<integer>9</integer>
+	<key>SwitchWindowModifier</key>
+	<integer>9</integer>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>TabsHaveCloseButton</key>
