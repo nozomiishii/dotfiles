@@ -13,7 +13,7 @@
     "when": "suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "cmd+k n",
+    "key": "ctrl+v",
     "command": "editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
