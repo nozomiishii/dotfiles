@@ -162,29 +162,8 @@
   // Change Word Case
   // ----------------------------------------------------------------
   {
-    "key": "cmd+k p",
-    "command": "editor.action.transformToTitlecase",
-    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "cmd+k k",
-    "command": "editor.action.transformToKebabcase",
-    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "cmd+k l",
-    "command": "editor.action.transformToLowercase",
-    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "cmd+k s",
-    "command": "editor.action.transformToSnakecase",
-    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "cmd+k u",
-    "command": "editor.action.transformToUppercase",
-    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
+    "key": "ctrl+s",
+    "command": "extension.changeCase.commands"
   },
 
   // ----------------------------------------------------------------
