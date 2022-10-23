@@ -1,47 +1,67 @@
 {
-  "gif": {
-    "prefix": "/gif",
-    "body": ["![${0}](${1l})"],
-    "description": "gif"
+  "details": {
+    "prefix": "/details",
+    "body": ["<details>", "<summary>${1}</summary>", "${0}", "</details>"],
+    "description": "details"
   },
   "link": {
     "prefix": "/link",
     "body": ["[${0}](${1})"],
-    "description": "gif"
+    "description": "link"
   },
   "code": {
     "prefix": "/code",
     "body": ["```${0}", "", "```"],
     "description": "code"
   },
-  "erDiagram": {
-    "prefix": "/er",
-    "body": ["```mermaid", "erDiagram", "  ${0}", "```"],
-    "description": "erDiagram"
-  },
   "sh": {
     "prefix": "/sh",
-    "body": ["```sh", "${0}", "```"],
+    "body": ["```shell", "${0}", "```"],
     "description": "sh"
+  },
+  "typescript": {
+    "prefix": "/ts",
+    "body": ["```typescript", "${0}", "```"],
+    "description": "typescript"
+  },
+  "tsx": {
+    "prefix": "/tsx",
+    "body": ["```tsx", "${0}", "```"],
+    "description": "tsx"
+  },
+  "rust": {
+    "prefix": "/rs",
+    "body": ["```rust", "${0}", "```"],
+    "description": "rust"
+  },
+  "python": {
+    "prefix": "/py",
+    "body": ["```python", "${0}", "```"],
+    "description": "python"
   },
   "sql": {
     "prefix": "/sql",
     "body": ["```sql", "${0}", "```"],
     "description": "sql"
   },
-  "rust": {
-    "prefix": "/rs",
-    "body": ["```rs", "${0}", "```"],
-    "description": "rust"
+  "yaml": {
+    "prefix": "/yaml",
+    "body": ["```yaml", "${0}", "```"],
+    "description": "yaml"
   },
-  "typescript": {
-    "prefix": "/ts",
-    "body": ["```ts", "${0}", "```"],
-    "description": "typescript"
+  "json": {
+    "prefix": "/json",
+    "body": ["```json", "${0}", "```"],
+    "description": "json"
+  },
+  "css": {
+    "prefix": "/css",
+    "body": ["```css", "${0}", "```"],
+    "description": "css"
   },
   "text": {
     "prefix": "/txt",
-    "body": ["```txt", "${0}", "```"],
+    "body": ["```text", "${0}", "```"],
     "description": "text"
   },
   "diff": {
@@ -49,30 +69,14 @@
     "body": ["```diff", "${0}", "```"],
     "description": "diff"
   },
-  "details": {
-    "prefix": "/details",
-    "body": ["<details>", "<summary>${1}</summary>", "${0}", "</details>"],
-    "description": "details"
+  "mermaid": {
+    "prefix": "/mer",
+    "body": ["```mermaid", "  ${0}", "```"],
+    "description": "mermaid"
   },
-  "table": {
-    "prefix": "/table",
-    "body": [
-      "|   |   |   |   |   |",
-      "|---|---|---|---|---|",
-      "|   |   |   |   |   |",
-      "|   |   |   |   |   |",
-      "|   |   |   |   |   |"
-    ],
-    "description": "table"
-  },
-  "img": {
-    "prefix": "/img",
-    "body": [
-      "<div align=\"center\">",
-      "  <img src=\"${1}\" alt=\"${0}\" width=\"480\" />",
-      "</div>",
-      "<br>"
-    ],
-    "description": "img"
+  "erDiagram": {
+    "prefix": "/er",
+    "body": ["```mermaid", "erDiagram", "  ${0}", "```"],
+    "description": "erDiagram"
   }
 }
