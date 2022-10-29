@@ -253,6 +253,9 @@
   // ----------------------------------------------------------------
   // Markdown
   // ----------------------------------------------------------------
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
   "markdown-preview-github-styles.colorTheme": "dark",
 
   // ----------------------------------------------------------------
