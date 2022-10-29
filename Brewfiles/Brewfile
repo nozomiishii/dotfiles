@@ -36,6 +36,9 @@ brew "fd"
 # Play, record, convert, and stream audio and video https://ffmpeg.org/
 brew "ffmpeg"
 
+# Command-line tools for fly.io services https://fly.io
+brew "flyctl"
+
 # Command-line fuzzy finder written in Go https://github.com/junegunn/fzf
 brew "fzf"
 
