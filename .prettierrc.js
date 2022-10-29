@@ -17,19 +17,4 @@ module.exports = {
   useTabs: false,
 
   plugins: [require('prettier-plugin-sh')],
-
-  overrides: [
-    {
-      files: ['*.md'],
-      options: {
-        parser: 'markdown-nocjsp',
-      },
-    },
-    {
-      files: '*.mdx',
-      options: {
-        parser: 'mdx-nocjsp',
-      },
-    },
-  ],
 };
