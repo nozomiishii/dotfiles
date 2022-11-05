@@ -186,6 +186,7 @@
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
+  "evenBetterToml.schema.links": true,
 
   // ----------------------------------------------------------------
   // Prettier
