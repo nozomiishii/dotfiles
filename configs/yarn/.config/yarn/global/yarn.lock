@@ -3831,10 +3831,10 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-next-app@~12.3.1:
-  version "12.3.1"
-  resolved "https://registry.yarnpkg.com/create-next-app/-/create-next-app-12.3.1.tgz#251c53600d8a7eb0362b2b2a6fcd5529eaca2e82"
-  integrity sha512-dDEO+hs++58j+OdzK9ZZi4P8OPggERiXJ+p0SQhbqHfOgVxb3g/5H++XpCM0zy0nOS+1TCGeWp7+k+DW8GRYkA==
+create-next-app@~13.0.1:
+  version "13.0.1"
+  resolved "https://registry.yarnpkg.com/create-next-app/-/create-next-app-13.0.1.tgz#fc2e6815fa899d863d208dc1df4ef3618ff100e0"
+  integrity sha512-YrB1Dz5zRBAIN/BhvAQ9AXrITLj7jnj1wvuKM48W7vJ/vZC4oUKD3zJFW6wabn7AmybSG+pzzdiKgXQMywct3w==
 
 cross-env@^5.1.3:
   version "5.2.1"
