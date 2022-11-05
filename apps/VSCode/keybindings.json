@@ -162,7 +162,7 @@
   // Change Word Case
   // ----------------------------------------------------------------
   {
-    "key": "ctrl+s",
+    "key": "ctrl+/",
     "command": "extension.changeCase.commands"
   },
 
