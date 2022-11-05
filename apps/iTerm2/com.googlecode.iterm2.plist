@@ -31,6 +31,17 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x64-0x100000-0x2</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
+			<key>Label</key>
+			<string></string>
+			<key>Text</key>
+			<string></string>
+			<key>Version</key>
+			<integer>1</integer>
+		</dict>
 		<key>0x6a-0x180000-0x26</key>
 		<dict>
 			<key>Action</key>
