@@ -140,6 +140,11 @@
     ],
     "description": "Logger"
   },
+  "comment block": {
+    "prefix": "cmmb",
+    "body": ["/**", " * $1", " */"],
+    "description": "comment block"
+  },
 
   // ----------------------------------------------------------------
   // Styles
