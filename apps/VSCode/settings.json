@@ -14,6 +14,9 @@
   },
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "maximized",
+  "editor.unicodeHighlight.allowedLocales": {
+    "ja": true
+  },
 
   // ----------------------------------------------------------------
   // Editor
