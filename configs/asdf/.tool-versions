@@ -1,6 +1,6 @@
 golang 1.19.2
 nodejs 16.17.0 16.14.2
-python 3.9.11 2.7.18
+python 3.11.0 2.7.18
 ruby 3.0.1
-rust 1.64.0
+rust 1.65.0
 terraform 1.0.11
