@@ -192,6 +192,18 @@
   "evenBetterToml.schema.links": true,
 
   // ----------------------------------------------------------------
+  // Python
+  // ----------------------------------------------------------------
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "119"],
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "python.linting.flake8Args": ["--max-line-length", "119"],
+
+  // ----------------------------------------------------------------
   // Prettier
   // ----------------------------------------------------------------
   "files.autoSave": "onFocusChange",
@@ -397,5 +409,6 @@
     "rust",
     "softwareTerms",
     "typescript"
-  ]
+  ],
+  "go.toolsManagement.autoUpdate": true
 }
