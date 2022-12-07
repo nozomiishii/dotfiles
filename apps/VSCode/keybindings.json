@@ -13,7 +13,12 @@
     "when": "suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "ctrl+v",
+    "key": "ctrl+n",
+    "command": "-cursorDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+n",
     "command": "editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
