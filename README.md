@@ -253,6 +253,10 @@ Finder Sidebar
 
 ### 😼 Generate SSHkey and Login gh
 
+- ⚠️ You may not have to do ~/dotfiles/install -k by setting the following over 1password
+
+[Use 1Password to securely authenticate GitHub](https://developer.1password.com/docs/cli/shell-plugins/github/)
+
 ```shell
 ~/dotfiles/install -k
 ```
