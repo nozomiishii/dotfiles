@@ -227,7 +227,6 @@ Finder Sidebar
     - [Gossip Site Blocker](https://chrome.google.com/webstore/detail/gossip-site-blocker/mjojhcmecfehllhcjcbhkkpohadogplk)
     - [GoFullPage](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl)
     - [Amazing Searcher](https://chrome.google.com/webstore/detail/amazing-searcher/poheekmlppakdboaalpmhfpbmnefeokj)
-    - [github1s Linker](https://chrome.google.com/webstore/detail/github1s-linker/aghoglkmbagjidbhfdcgmonhgdcbjjgf)
     - [GraphQL Network Inspector](https://chrome.google.com/webstore/detail/graphql-network-inspector/ndlbedplllcgconngcnfmkadhokfaaln)
     - [Speechify Text to Speech Voice Reader](https://chrome.google.com/webstore/detail/speechify-text-to-speech/ljflmlehinmoeknoonhibbjpldiijjmm)
       - Shortcut
