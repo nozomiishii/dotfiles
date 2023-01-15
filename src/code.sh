@@ -14,8 +14,8 @@ repos=(
   nozomiishii/dev
   nozomiishii/cv
   nozomiishii/nozomiishii
-  nozomiishii/bots
-  endorphin-bot/endorphin-bot
+  nozomiishii/configs
+  nozomiishii/archives
 )
 
 for repo in "${repos[@]}"; do
