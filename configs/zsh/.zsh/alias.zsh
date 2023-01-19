@@ -22,23 +22,17 @@ alias fj="code ."
 
 # Change Directory
 alias drive="cd $GOOGLE_DRIVE_DIR"
-alias vimtut="cd $HOME/Tutorials/vimclass && open ."
 alias dsk="cd ~/Desktop"
 alias plist="cd ~/Library/Preferences"
-alias ff="cd $CODE_DIR"
+alias wrk="cd $CODE_DIR/Work"
+
 alias dot="cd $HOME/dotfiles"
 alias noz="cd $CODE_DIR/nozomiishii"
 alias dev="cd $CODE_DIR/nozomiishii/dev"
-alias lab="cd $CODE_DIR/nozomiishii/dev/lab"
-alias pg:rs="cd $CODE_DIR/nozomiishii/dev/docs/languages/rust/playground"
 alias docs="cd $CODE_DIR/nozomiishii/dev/docs"
-alias docs:rs="cd $CODE_DIR/nozomiishii/dev/docs/languages/rust"
 alias arc="cd $CODE_DIR/nozomiishii/archives"
 alias cv="cd $CODE_DIR/nozomiishii/cv"
-alias bots="cd $CODE_DIR/nozomiishii/bots"
 alias vscode="cd $CODE_DIR/nozomiishii/.vscode"
-alias edp="cd $CODE_DIR/endorphin-bot/endorphin-bot"
-alias wrk="cd $CODE_DIR/Work"
 
 # shell
 alias quit="exec $SHELL -l"
