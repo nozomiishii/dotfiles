@@ -1,7 +1,7 @@
 {
   "name": "dotfiles",
   "version": "1.0.0",
-  "description": "Doting dotfiles",
+  "description": "Doting Dotfiles",
   "homepage": "https://github.com/nozomiishii/dotfiles#readme",
   "bugs": {
     "url": "https://github.com/nozomiishii/dotfiles/issues"
@@ -15,7 +15,8 @@
   "main": "install.sh",
   "scripts": {
     "commit": "cz",
-    "format": "prettier --write '**/*' '!.vscode' '!apps' '!**/p10k.zsh' '!**/zinit.zsh' --ignore-unknown --ignore-path .gitignore",
+    "format": "yarn prettier --check",
+    "format:fix": "yarn prettier --write",
     "preinstall": "npx -y only-allow yarn",
     "install:all": "./install.sh",
     "install:apps": "./install.sh --apps",
@@ -34,6 +35,7 @@
     "lint:markdownlint": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lint:markdownlint:fix": "markdownlint-cli2-fix '**/*.md' '#node_modules'",
     "prepare": "lefthook install",
+    "prettier": "prettier . '!**/*.md' '!.vscode' '!apps' '!**/p10k.zsh' '!**/zinit.zsh' --ignore-unknown --ignore-path .gitignore",
     "update:submodule": "git submodule foreach git pull"
   },
   "devDependencies": {
@@ -41,12 +43,10 @@
     "@commitlint/config-conventional": "~17.1.0",
     "@commitlint/cz-commitlint": "~17.1.2",
     "@evilmartians/lefthook": "~1.1.1",
+    "@nozomiishii/prettier-config": "~0.1.7",
     "@prettier/plugin-ruby": "~3.1.2",
     "commitizen": "~4.2.5",
-    "markdownlint-cli2": "~0.4.0",
-    "prettier": "^2.6.2",
-    "prettier-plugin-packagejson": "~2.2.18",
-    "prettier-plugin-sh": "^0.11.0"
+    "markdownlint-cli2": "~0.4.0"
   },
   "packageManager": "yarn@1.22.19",
   "engines": {
