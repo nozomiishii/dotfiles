@@ -192,6 +192,10 @@ defaults write com.apple.sidecar.display sidebarShown -bool false
 defaults write com.apple.dock wvous-br-corner -int 1
 defaults write com.apple.dock wvous-br-modifier -int 1048576
 
+echo '- 📱 Simulator'
+# Simulator lifetime 'When Simulator starts boot the most recently used simulator': off
+defaults read com.apple.iphonesimulator StartLastDeviceOnLaunch -int 0
+
 echo "- 👼 Killall..."
 killall Dock
 killall Finder
