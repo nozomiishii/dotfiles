@@ -101,7 +101,7 @@ alias tf="terraform"
 # ----------------------------------------------------------------
 # tmux
 # ----------------------------------------------------------------
-alias tt=" tmux source-file ~/.tmux.conf && tmux display '🦕: tmux reloaded'"
+alias tt="tmux source-file ~/.tmux.conf && tmux display '🦕: tmux reloaded'"
 alias tclean="~/.tmux/plugins/tpm/bin/clean_plugins"
 
 # ----------------------------------------------------------------
