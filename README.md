@@ -18,6 +18,14 @@
 </div>
 <br>
 
+## Gist
+
+Busy? Just run command below;)
+
+```shell
+curl -L https://nozomiishii.dev/dotfiles/install | bash
+```
+
 - [📦 New Macbook? Awesome!!](#new-macbook?)
   - [Install](#install)
   - [Install Manually](#install-manually)
