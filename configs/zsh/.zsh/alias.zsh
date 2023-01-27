@@ -103,3 +103,8 @@ alias tf="terraform"
 # ----------------------------------------------------------------
 alias tt=" tmux source-file ~/.tmux.conf && tmux display '🦕: tmux reloaded'"
 alias tclean="~/.tmux/plugins/tpm/bin/clean_plugins"
+
+# ----------------------------------------------------------------
+# Tools
+# ----------------------------------------------------------------
+alias nozo:p='yarn add -D @nozomiishii/prettier-config && echo "module.exports = { ...require('@nozomiishii/prettier-config') };" > .prettierrc.js'
