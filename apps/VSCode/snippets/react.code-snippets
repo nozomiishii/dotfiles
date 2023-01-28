@@ -1,5 +1,39 @@
 {
   // ----------------------------------------------------------------
+  // Storybook
+  // ----------------------------------------------------------------
+  "Storybook": {
+    "prefix": "!storybook",
+    "scope": "typescriptreact",
+    "body": [
+      "import { ComponentStoryObj, ComponentMeta } from '@storybook/react';",
+      "import { within } from '@storybook/testing-library';",
+      "import Component from './${TM_FILENAME_BASE/(.stories)//}';",
+      "",
+      "export default {",
+      "  argTypes: {},",
+      "  component: Component,",
+      "  parameters: {",
+      "    design: {",
+      "      type: 'figspec',",
+      "      url: '',",
+      "    },",
+      "  },",
+      "} as ComponentMeta<typeof Component>;",
+      "",
+      "export const Default: ComponentStoryObj<typeof Component> = {",
+      "  args: {},",
+      "  parameters: {},",
+      "  play: async ({ canvasElement }) => {",
+      "    const canvas = within(canvasElement);",
+      "  },",
+      "};",
+      ""
+    ],
+    "description": "Storybook Template"
+  },
+
+  // ----------------------------------------------------------------
   // test
   // ----------------------------------------------------------------
   "React Testing Library": {
@@ -135,9 +169,7 @@
   "Logger": {
     "prefix": "lgr",
     "scope": "typescript",
-    "body": [
-      "private readonly logger = new Logger(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.name);"
-    ],
+    "body": ["private readonly logger = new Logger(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.name);"],
     "description": "Logger"
   },
   "comment block": {
@@ -372,11 +404,7 @@
   "PrismaClient": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "pc",
-    "body": [
-      "import { PrismaClient } from '@prisma/client';",
-      "",
-      "const prisma = new PrismaClient();"
-    ],
+    "body": ["import { PrismaClient } from '@prisma/client';", "", "const prisma = new PrismaClient();"],
     "description": "PrismaClient"
   },
   "prisma.$transaction": {
