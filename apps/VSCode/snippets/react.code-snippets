@@ -6,6 +6,7 @@
     "prefix": "!storybook",
     "scope": "typescriptreact",
     "body": [
+      "import { expect } from '@storybook/jest';",
       "import { ComponentStoryObj, ComponentMeta } from '@storybook/react';",
       "import { within } from '@storybook/testing-library';",
       "import Component from './${TM_FILENAME_BASE/(.stories)//}';",
@@ -26,6 +27,8 @@
       "  parameters: {},",
       "  play: async ({ canvasElement }) => {",
       "    const canvas = within(canvasElement);",
+      "",
+      "    expect()",
       "  },",
       "};",
       ""
