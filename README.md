@@ -26,6 +26,8 @@ Busy? Just run command below;)
 curl -L https://nozomiishii.dev/dotfiles/install | bash
 ```
 
+## Outline
+
 - [📦 New Macbook? Awesome!!](#new-macbook?)
   - [Install](#install)
   - [Install Manually](#install-manually)
