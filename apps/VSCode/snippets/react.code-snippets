@@ -215,13 +215,15 @@
   // ----------------------------------------------------------------
   "TypeScript React Functional Component": {
     "scope": "typescriptreact",
-    "prefix": "rtf",
+    "prefix": "!react",
     "body": [
-      "import React from 'react'",
+      "interface ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props {",
+      "  $1",
+      "}",
       "",
-      "export const $TM_FILENAME_BASE: React.FC = () => {",
+      "export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({}: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props) {",
       "  return (",
-      "    <div>$TM_FILENAME_BASE</div>",
+      "    <div>${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}</div>",
       "  );",
       "}"
     ],
@@ -229,7 +231,7 @@
   },
   "TypeScript React Functional Component with Interface": {
     "scope": "typescriptreact",
-    "prefix": "rtfi",
+    "prefix": "rtf",
     "body": [
       "import React from 'react'",
       "",
