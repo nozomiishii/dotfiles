@@ -8,7 +8,7 @@
     "body": [
       "import { expect } from '@storybook/jest';",
       "import { ComponentStoryObj, ComponentMeta } from '@storybook/react';",
-      "import { within } from '@storybook/testing-library';",
+      "import { within, screen } from '@storybook/testing-library';",
       "import Component from './${TM_FILENAME_BASE/(.stories)//}';",
       "",
       "export default {",
@@ -27,6 +27,7 @@
       "  parameters: {},",
       "  play: async ({ canvasElement }) => {",
       "    const canvas = within(canvasElement);",
+      "    screen.logTestingPlaygroundURL();",
       "",
       "    expect()",
       "  },",
