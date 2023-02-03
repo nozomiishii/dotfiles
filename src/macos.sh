@@ -124,8 +124,8 @@ defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 #  ^ = control
 #  ~ = option
 #  $ = shift
-# General Keyboard Shortcut => Paste and Match Style : ⌘ + V
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Paste and Match Style" -string "@v"
+# General Keyboard Shortcut => Paste and Match Style : ⌘ + V => Use Command + Shift + V instead
+# defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Paste and Match Style" -string "@v"
 # Chrome Keyboard Shortcut => Browsing Data... : ⌃ + ⇧ + ⌘+ ⌥ + D
 defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Clear Browsing Data..." -string "@~^\$d"
 # Chrome Keyboard Shortcut => Print... : ⇧ + ⌘ + ⌥ + P
