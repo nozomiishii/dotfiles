@@ -4,7 +4,7 @@
   // ----------------------------------------------------------------
   "pretty console log": {
     "prefix": "log",
-    "body": ["dbg!($CLIPBOARD);"],
+    "body": ["dbg!(&`$CLIPBOARD);"],
     "description": "pretty console log"
   },
   "pretty console check": {
