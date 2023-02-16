@@ -15,6 +15,7 @@ repos=(
   nozomiishii/cv
   nozomiishii/nozomiishii
   nozomiishii/configs
+  nozomiishii/renovate
   nozomiishii/archives
 )
 
