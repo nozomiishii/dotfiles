@@ -36,13 +36,18 @@ for plugin in $(asdf plugin list); do
   fi
 done
 
+if ! type node > /dev/null 2>&1; then
+  echo '- 🐉 Install Node with Volta⚡️'
+  curl https://get.volta.sh | bash
+  volta install node
+  volta install yarn@1
+fi
+
 if [ ! -d ~/.config/yarn/global/node_modules ]; then
   # corepackでyarnを管理する
   # https://shikiyura.com/2022/08/install_nodejs_using_asdf/
   corepack enable
   corepack enable npm
-  corepack prepare yarn@1.22.19 --activate
-  asdf reshim nodejs
   yarn -v
 
   echo '- 🚚 Setup Yarn global'
@@ -54,7 +59,10 @@ if [ ! -d ~/.config/yarn/global/node_modules ]; then
   gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 fi
 
-if type cargo > /dev/null 2>&1; then
+if ! type cargo > /dev/null 2>&1; then
+  echo '- 🦀 Install Rust'
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
   echo '- 🦀 Setup rust-analyzer'
   rustup component add rust-analyzer
   rustup toolchain install stable-aarch64-apple-darwin
@@ -69,7 +77,6 @@ if type cargo > /dev/null 2>&1; then
   cargo install wasm-pack
   cargo install sea-orm-cli
   cargo install diesel_cli --no-default-features --features postgres
-  asdf reshim rust
 fi
 
 printf "🎉 The Environment setup is complete \n\n"
