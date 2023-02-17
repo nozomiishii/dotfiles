@@ -34,7 +34,7 @@ post-merge:
 
     tool-versions:
       files: git diff --name-only HEAD main
-      glob: '.tool-versions'
+      glob: 'configs/asdf/.tool-versions'
       run: yarn install:environment
 
     delete-merged-branches:
