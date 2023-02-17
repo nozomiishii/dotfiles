@@ -638,7 +638,7 @@
   resolved "https://registry.yarnpkg.com/@jsdevtools/ono/-/ono-7.1.3.tgz#9df03bbd7c696a5c58885c34aa06da41c8543796"
   integrity sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==
 
-"@nestjs/cli@~8.2.3":
+"@nestjs/cli@8.2.8":
   version "8.2.8"
   resolved "https://registry.yarnpkg.com/@nestjs/cli/-/cli-8.2.8.tgz#63e5b477f90e6d0238365dcc6236b95bf4f0c807"
   integrity sha512-y5Imcw1EY0OxD3POAM7SLUB1rFdn5FjbfSsyJrokjKmXY+i6KcBdbRrv3Ox7aeJ4W7wXuckIXZEUlK6lC52dnA==
@@ -666,7 +666,7 @@
     webpack "5.73.0"
     webpack-node-externals "3.0.0"
 
-"@nestjs/schematics@^8.0.3", "@nestjs/schematics@~8.0.8":
+"@nestjs/schematics@8.0.11", "@nestjs/schematics@^8.0.3":
   version "8.0.11"
   resolved "https://registry.yarnpkg.com/@nestjs/schematics/-/schematics-8.0.11.tgz#5d0c56184826660a2c01b1c326dbdbb12880e864"
   integrity sha512-W/WzaxgH5aE01AiIErE9QrQJ73VR/M/8p8pq0LZmjmNcjZqU5kQyOWUxZg13WYfSpJdOa62t6TZRtFDmgZPoIg==
@@ -3021,12 +3021,12 @@ create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-next-app@~13.1.5:
+create-next-app@13.1.6:
   version "13.1.6"
   resolved "https://registry.yarnpkg.com/create-next-app/-/create-next-app-13.1.6.tgz#5d8fa03b44be1a1ddb0dad3eb5b80d9cc720415c"
   integrity sha512-L0DajZKvef1aXt/kIxVWzlBYDH3/FVstGRM160M7/XWs4f6VyELgqfM9P0Tz0chDKg0DLhe1YQBZpyllY7rQhw==
 
-create-react-app@~5.0.1:
+create-react-app@5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/create-react-app/-/create-react-app-5.0.1.tgz#b0d30d89aaa4f09bbd8bc2f2bcb3fb5637e01af6"
   integrity sha512-UkxTKK8I9HuZZHqkNq/JkKXDgdLeiRGc+bL58Iae2g+7WwFomAj4wppn6JfqlZM2IKYRlZtgLlmVr5oZfdd1xg==
@@ -3997,7 +3997,7 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-firebase-tools@~10.4.0:
+firebase-tools@10.4.2:
   version "10.4.2"
   resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-10.4.2.tgz#39e3d896b7890341a2bc9d63c6994b74e8f43f64"
   integrity sha512-SrJX7ZroWulM4WH66GHAFAWKX4yvmofKVOIzSGnJ7wOsmqiapAEf0V2HwmMdlEKbRddwd+LSEa9wnNFVzjrebQ==
@@ -6635,7 +6635,7 @@ number-to-bn@1.7.0:
     bn.js "4.11.6"
     strip-hex-prefix "1.0.0"
 
-nx@13.9.7, nx@~13.9.3:
+nx@13.9.7:
   version "13.9.7"
   resolved "https://registry.yarnpkg.com/nx/-/nx-13.9.7.tgz#668c7e1ce779f7a288d86acedd3092e9a1b0ab3e"
   integrity sha512-q9OWcL8vi0w9BJLrki6U/M84mc6EH5syBBmzpsG2kbwdMYGkoYaicbi/qcui+uVI9iVLysVElpc9LSMNiDEhLw==
@@ -8744,7 +8744,7 @@ triple-beam@^1.3.0:
   resolved "https://registry.yarnpkg.com/triple-beam/-/triple-beam-1.3.0.tgz#a595214c7298db8339eeeee083e4d10bd8cb8dd9"
   integrity sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
 
-truffle@~5.5.5:
+truffle@5.5.32:
   version "5.5.32"
   resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.5.32.tgz#7aba18f0a34167d55956e1ab000325364faff0b6"
   integrity sha512-TebI2DGM2nHwRv8tbCuq7tgRGtvV6gIL+t3SSKyu5OEbrPNjD2EGg8qW6c2H7tSWNHOG5LrfL2fSQpLjy4eJTg==
@@ -8899,15 +8899,15 @@ typescript@4.3.4:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.4.tgz#3f85b986945bcf31071decdd96cf8bfa65f9dcbc"
   integrity sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew==
 
+typescript@4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.4.tgz#caa78bbc3a59e6a5c510d35703f6a09877ce45e9"
+  integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
+
 typescript@4.7.4:
   version "4.7.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.4.tgz#1a88596d1cf47d59507a1bcdfb5b9dfe4d488235"
   integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
-
-typescript@~4.6.2:
-  version "4.6.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.4.tgz#caa78bbc3a59e6a5c510d35703f6a09877ce45e9"
-  integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
 
 uid-number@^0.0.6:
   version "0.0.6"
@@ -9196,7 +9196,7 @@ vary@^1, vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
-vercel@~24.0.0:
+vercel@24.0.1:
   version "24.0.1"
   resolved "https://registry.yarnpkg.com/vercel/-/vercel-24.0.1.tgz#30feae9e9d80c679f4d2c77a43b0d297405e5bfb"
   integrity sha512-LmWW65KyWJV/GTxlcVwcifGp1yywUSNP3fcMNZQLdd6fVC3CHJUyHz5t4GD8O1VM56NqvnnYgqNbGYBQXLN5gQ==

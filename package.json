@@ -39,14 +39,14 @@
     "update:submodule": "git submodule foreach git pull"
   },
   "devDependencies": {
-    "@commitlint/cli": "~17.1.2",
-    "@commitlint/config-conventional": "~17.1.0",
-    "@commitlint/cz-commitlint": "~17.1.2",
-    "@evilmartians/lefthook": "~1.1.1",
-    "@nozomiishii/prettier-config": "~0.1.7",
-    "@prettier/plugin-ruby": "~3.1.2",
-    "commitizen": "~4.2.5",
-    "markdownlint-cli2": "~0.4.0"
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
+    "@commitlint/cz-commitlint": "17.1.2",
+    "@evilmartians/lefthook": "1.1.1",
+    "@nozomiishii/prettier-config": "0.1.7",
+    "@prettier/plugin-ruby": "3.1.2",
+    "commitizen": "4.2.5",
+    "markdownlint-cli2": "0.4.0"
   },
   "packageManager": "yarn@1.22.19",
   "volta": {
