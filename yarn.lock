@@ -23,7 +23,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@commitlint/cli@~17.1.2":
+"@commitlint/cli@17.1.2":
   version "17.1.2"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-17.1.2.tgz#38240f84936df5216f749f06f838dc50cc85a43d"
   integrity sha512-h/4Hlka3bvCLbnxf0Er2ri5A44VMlbMSkdTRp8Adv2tRiklSTRIoPGs7OEXDv3EoDs2AAzILiPookgM4Gi7LOw==
@@ -39,7 +39,7 @@
     resolve-global "1.0.0"
     yargs "^17.0.0"
 
-"@commitlint/config-conventional@~17.1.0":
+"@commitlint/config-conventional@17.1.0":
   version "17.1.0"
   resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-17.1.0.tgz#9bd852766e08842bfe0fe4deb40e152eb718ec1b"
   integrity sha512-WU2p0c9/jLi8k2q2YrDV96Y8XVswQOceIQ/wyJvQxawJSCasLdRB3kUIYdNjOCJsxkpoUlV/b90ZPxp1MYZDiA==
@@ -54,7 +54,7 @@
     "@commitlint/types" "^17.0.0"
     ajv "^8.11.0"
 
-"@commitlint/cz-commitlint@~17.1.2":
+"@commitlint/cz-commitlint@17.1.2":
   version "17.1.2"
   resolved "https://registry.yarnpkg.com/@commitlint/cz-commitlint/-/cz-commitlint-17.1.2.tgz#14a989ace5c27bb4d4ec05171521c0fb20f0b9d4"
   integrity sha512-U1cpvTiri5Ib3m4xkmI4sk4Wh95dQRy2hrxt8YWTSKvyBHpOXfu9EIIqDQ+j8/aLSKo2RjBxS4lValxXnpJ4xA==
@@ -197,7 +197,7 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@evilmartians/lefthook@~1.1.1":
+"@evilmartians/lefthook@1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@evilmartians/lefthook/-/lefthook-1.1.1.tgz#26e0de9ca3df1c8d2d97840f187a52cd95bb5f59"
   integrity sha512-5C/AD937A6jz4mdBLAKXIeYVkxvLmPWxlv1YWfuHcIwZ2wp4W3z1Htjjtp+7gtO41CoCycIJcaxLfwaAsbS6qA==
@@ -241,7 +241,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nozomiishii/prettier-config@~0.1.7":
+"@nozomiishii/prettier-config@0.1.7":
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/@nozomiishii/prettier-config/-/prettier-config-0.1.7.tgz#d984318442ff6d3290fee66d94bbb25130d2fcdd"
   integrity sha512-3kaaHfoZ/8INBmsQyTVBnAD6/3W7o9R6jPb6aj02I9cNuKhYTH//ug96uFnA3Z7ou/UXDo5XpLYh6W7fL+Mvhw==
@@ -262,7 +262,7 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@prettier/plugin-ruby@~3.1.2":
+"@prettier/plugin-ruby@3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-3.1.2.tgz#184b154d666fb4af3c41cf6bd55c373bb3b3540f"
   integrity sha512-0riBsZYu9MEdWgiZPKpZTdCbvLOk01xTvOs1wJbO7Hw4Fd/rX4Qhz+qsgJm+zloO99Zng88OQy96nSb6KUQHZg==
@@ -559,7 +559,7 @@ color-name@~1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-commitizen@^4.0.3, commitizen@~4.2.5:
+commitizen@4.2.5, commitizen@^4.0.3:
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/commitizen/-/commitizen-4.2.5.tgz#48e5a5c28334c6e8ed845cc24fc9f072efd3961e"
   integrity sha512-9sXju8Qrz1B4Tw7kC5KhnvwYQN88qs2zbiB8oyMsnXZyJ24PPGiNM3nHr73d32dnE3i8VJEXddBFIbOgYSEXtQ==
@@ -1365,7 +1365,7 @@ markdownlint-cli2-formatter-default@0.0.3:
   resolved "https://registry.yarnpkg.com/markdownlint-cli2-formatter-default/-/markdownlint-cli2-formatter-default-0.0.3.tgz#5aecd6e576ad18801b76e58bbbaf0e916c583ab8"
   integrity sha512-QEAJitT5eqX1SNboOD+SO/LNBpu4P4je8JlR02ug2cLQAqmIhh8IJnSK7AcaHBHhNADqdGydnPpQOpsNcEEqCw==
 
-markdownlint-cli2@~0.4.0:
+markdownlint-cli2@0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/markdownlint-cli2/-/markdownlint-cli2-0.4.0.tgz#9e29150278fd3f1fe31a05fc46bd95d2370e8758"
   integrity sha512-EcwP5tAbyzzL3ACI0L16LqbNctmh8wNX56T+aVvIxWyTAkwbYNx2V7IheRkXS3mE7R/pnaApZ/RSXcXuzRVPjg==
