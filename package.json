@@ -49,7 +49,7 @@
     "markdownlint-cli2": "~0.4.0"
   },
   "packageManager": "yarn@1.22.19",
-  "engines": {
-    "node": "16.17.x"
+  "volta": {
+    "node": "18.14.0"
   }
 }
