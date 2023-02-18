@@ -45,7 +45,7 @@
     "@evilmartians/lefthook": "1.2.9",
     "@nozomiishii/prettier-config": "0.1.10",
     "@prettier/plugin-ruby": "3.2.2",
-    "commitizen": "4.2.5",
+    "commitizen": "4.3.0",
     "markdownlint-cli2": "0.4.0"
   },
   "packageManager": "yarn@1.22.19",
