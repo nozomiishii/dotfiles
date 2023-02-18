@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@nestjs/cli": "8.2.8",
+    "@nestjs/cli": "9.2.0",
     "@nestjs/schematics": "8.0.11",
     "create-next-app": "13.1.6",
     "create-react-app": "5.0.1",
