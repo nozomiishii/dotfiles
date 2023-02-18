@@ -4,7 +4,7 @@
     "@nestjs/schematics": "8.0.11",
     "create-next-app": "13.1.6",
     "create-react-app": "5.0.1",
-    "firebase-tools": "10.4.2",
+    "firebase-tools": "10.9.2",
     "nx": "13.9.7",
     "truffle": "5.5.32",
     "typescript": "4.6.4",
