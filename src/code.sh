@@ -10,7 +10,6 @@ if [ ! -d "$CODE_DIR" ]; then
 fi
 
 repos=(
-  nozomiishii/.vscode
   nozomiishii/dev
   nozomiishii/cv
   nozomiishii/nozomiishii
