@@ -11,7 +11,6 @@ fi
 
 repos=(
   nozomiishii/dev
-  nozomiishii/cv
   nozomiishii/nozomiishii
   nozomiishii/configs
   nozomiishii/renovate
