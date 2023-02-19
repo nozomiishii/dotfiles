@@ -297,6 +297,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@nozomiishii/markdownlint-cli2-config@0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@nozomiishii/markdownlint-cli2-config/-/markdownlint-cli2-config-0.0.0.tgz#bab3703bba7f325afb8b19476cd2aa7a9b284270"
+  integrity sha512-v8kPKcFZCzGM3jt+ABZrx2JDzFSVmHzL2/vkuZDhajinNGA06IERbIpaXT1VblVERJJMzTbkN+d572gfZcTRCQ==
+
 "@nozomiishii/prettier-config@0.1.11":
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/@nozomiishii/prettier-config/-/prettier-config-0.1.11.tgz#f62739d625412b3df7e8db299695f58f2347abc4"
