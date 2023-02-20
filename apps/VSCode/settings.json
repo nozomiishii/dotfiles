@@ -238,7 +238,7 @@
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
 
   // ----------------------------------------------------------------
-  // Lint
+  // editor.codeActionsOnSave
   // ----------------------------------------------------------------
   "editor.codeActionsOnSave": {
     "source.addMissingImports": true,
