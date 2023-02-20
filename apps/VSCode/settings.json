@@ -415,6 +415,5 @@
     "rust",
     "softwareTerms",
     "typescript"
-  ],
-  "go.toolsManagement.autoUpdate": true
+  ]
 }
