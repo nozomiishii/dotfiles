@@ -258,23 +258,6 @@
   "sqlfluff.suppressNotifications": true,
 
   // ----------------------------------------------------------------
-  // textlint
-  // ----------------------------------------------------------------
-  "textlint.languages": [
-    "markdown",
-    "mdx",
-    "plaintext",
-    "html",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "textlint.autoFixOnSave": true,
-  "textlint.nodePath": "/Users/nozomiishii/dotfiles/configs/yarn/.config/yarn/global/node_modules",
-  "textlint.configPath": "/Users/nozomiishii/dotfiles/.textlintrc.yaml",
-
-  // ----------------------------------------------------------------
   // Markdown
   // ----------------------------------------------------------------
   "[markdown]": {
