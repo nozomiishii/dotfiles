@@ -114,7 +114,8 @@
     "*.ejs": "html",
     "*.ejs.t": "html",
     "LICENSE": "plaintext",
-    ".env.sample": "dotenv"
+    ".env.sample": "dotenv",
+    "CODEOWNERS": "ignore"
   },
 
   // ----------------------------------------------------------------
