@@ -6,7 +6,7 @@ pre-commit:
 
   commands:
     format:
-      run: npx -y prettier --ignore-unknown --write {staged_files} '!.vscode' '!apps' '!**/p10k.zsh' '!**/zinit.zsh'
+      run: npx -y prettier --ignore-unknown --write {staged_files} '!apps' '!**/p10k.zsh' '!**/zinit.zsh'
 
     lint-markdown:
       glob: '*.md'
