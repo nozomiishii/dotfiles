@@ -79,4 +79,9 @@ if ! type cargo > /dev/null 2>&1; then
   cargo install diesel_cli --no-default-features --features postgres
 fi
 
+if ! type poetry > /dev/null 2>&1; then
+  echo '- 🐍 Install Poetry'
+  curl -sSL https://install.python-poetry.org | python3 -
+fi
+
 printf "🎉 The Environment setup is complete \n\n"
