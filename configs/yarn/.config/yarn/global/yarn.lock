@@ -2314,14 +2314,14 @@
   resolved "https://registry.yarnpkg.com/@truffle/dashboard-message-bus-common/-/dashboard-message-bus-common-0.1.5.tgz#180c8c421b2836b7bd109944e7956f427236d8ab"
   integrity sha512-F4RfXi7ymNA3HFOlaujRJxAb3I8ciErCRQq+MZVaqjSPF9LSw23IizZsGpLaY43K2bGoBSxyNQRZWxsUEBujPQ==
 
-"@truffle/db-loader@^0.2.16":
+"@truffle/db-loader@^0.2.17":
   version "0.2.17"
   resolved "https://registry.yarnpkg.com/@truffle/db-loader/-/db-loader-0.2.17.tgz#85b9c4b4e63b3ad1249a75bddbe6da5a1a967427"
   integrity sha512-oVDZ3vlYopbUwkHl9sYpF3T//P2diJMwDWYWK3oSg7uEpLm4uroAK8MyrOpLW5XAsIUn+Z4BLS3JGMwQd8aI2Q==
   optionalDependencies:
     "@truffle/db" "^2.0.17"
 
-"@truffle/db@^2.0.16", "@truffle/db@^2.0.17":
+"@truffle/db@^2.0.17":
   version "2.0.17"
   resolved "https://registry.yarnpkg.com/@truffle/db/-/db-2.0.17.tgz#358f490f58050c0a67e47211ef2b920e10e7bea6"
   integrity sha512-7vO595WwvE2Tjp6p4rFmr4Q4d5qJFM4fhAsUBHzfVpWlz0szBsSnzn2RK5/NSS4Rqqp8HLBcfuRShuYFqajx0w==
@@ -2346,7 +2346,7 @@
     pouchdb-find "^7.0.0"
     web3-utils "1.8.2"
 
-"@truffle/debugger@^11.0.27":
+"@truffle/debugger@^11.0.28":
   version "11.0.28"
   resolved "https://registry.yarnpkg.com/@truffle/debugger/-/debugger-11.0.28.tgz#7f393a66f2cd6255779958bd23aedfb386194c88"
   integrity sha512-0AN7GjwXTDHGzdx9H3+5JTRtSsCy0T4C+QoJ/iOUpT5palzxIykMEB064afu9TUo/jLtLNOR29pQSmmTKW6d7w==
@@ -11736,19 +11736,19 @@ trough@^2.0.0:
   resolved "https://registry.yarnpkg.com/trough/-/trough-2.1.0.tgz#0f7b511a4fde65a46f18477ab38849b22c554876"
   integrity sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==
 
-truffle@5.7.7:
-  version "5.7.7"
-  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.7.7.tgz#e7b1755049bbdd2eae3621f1229b3eb0beee525a"
-  integrity sha512-xvDFkxkZGe6YEQI9NXN1Kev8u9hmdIO3pXoHsG7DsnORlWFMXFLd8at4canWjLy0W0wBtuiYeQUBRKhmQxVa9Q==
+truffle@5.7.8:
+  version "5.7.8"
+  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.7.8.tgz#facc636e782bafb1c233a26dd6cc39834e94501b"
+  integrity sha512-25z9RjJpZG2m6bpPLXx2PflsoAMSXRAXH3Ce7cWYbKL/SRpWvs0BRLZwY1LbxK/5vsMVWVarXgcKp/wjgO/kKg==
   dependencies:
-    "@truffle/db-loader" "^0.2.16"
-    "@truffle/debugger" "^11.0.27"
+    "@truffle/db-loader" "^0.2.17"
+    "@truffle/debugger" "^11.0.28"
     app-module-path "^2.2.0"
     ganache "7.7.5"
     mocha "10.1.0"
     original-require "^1.0.1"
   optionalDependencies:
-    "@truffle/db" "^2.0.16"
+    "@truffle/db" "^2.0.17"
 
 ts-morph@12.0.0:
   version "12.0.0"
