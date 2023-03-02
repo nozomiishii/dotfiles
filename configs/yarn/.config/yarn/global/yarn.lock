@@ -4768,10 +4768,10 @@ create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-next-app@13.2.1:
-  version "13.2.1"
-  resolved "https://registry.yarnpkg.com/create-next-app/-/create-next-app-13.2.1.tgz#52c99ef3e7e2553f0cf0670bdb793b81b46e80fa"
-  integrity sha512-uQd6MVDFY1ZjMWEXCELfzBT/lnA0U/wBxPFnUNwKFqfKLUVZ6myam9NZDb4PM9X/8UetzhZz0/K5GVZzLXlU7A==
+create-next-app@13.2.3:
+  version "13.2.3"
+  resolved "https://registry.yarnpkg.com/create-next-app/-/create-next-app-13.2.3.tgz#dfa716c8d549cdf463a75b876e74b83720f89e50"
+  integrity sha512-nL9GnGOXehYjoRGKiWiMRMuy0Kbmj3HVR95QPpepIFci8tFYMj0R3FsaI0PJrUyM8oC0jmS6Y8+CXb0TLlYBnw==
 
 create-react-app@5.0.1:
   version "5.0.1"
