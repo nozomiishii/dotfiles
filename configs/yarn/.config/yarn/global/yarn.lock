@@ -2240,10 +2240,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
-"@truffle/abi-utils@^0.3.8":
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/@truffle/abi-utils/-/abi-utils-0.3.8.tgz#23cafa152673dfff8d0d22f08f44b8c0f9719a52"
-  integrity sha512-RevMtlEuQw9cE2VWzQuvLDSYPCVSZQQUOsaK8ArcwxXct6ugiJCDC7tNouhHzP1Y4ccdZtG2y/XPHQJdzgYdZQ==
+"@truffle/abi-utils@^0.3.9":
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/@truffle/abi-utils/-/abi-utils-0.3.9.tgz#c476f5cfe01072b513b3e93fd7bea05cf7bd9d96"
+  integrity sha512-G5dqgwRHx5zwlXjz3QT8OJVfB2cOqWwD6DwKso0KttUt/zejhCjnkKq72rSgyeLMkz7wBB9ERLOsupLBILM8MA==
   dependencies:
     change-case "3.0.2"
     fast-check "3.1.1"
@@ -2256,13 +2256,13 @@
   dependencies:
     cbor "^5.2.0"
 
-"@truffle/codec@^0.14.15":
-  version "0.14.15"
-  resolved "https://registry.yarnpkg.com/@truffle/codec/-/codec-0.14.15.tgz#79d253c05c09a036ccba86a2a909519ebf14309a"
-  integrity sha512-cooWy8blmvYQQRBKgzWJnDUS6mZE9cvnmpVN15jU6TseAQkBtmfYfCH12QCKEWMq2+R4yQICP54WNCYg78g72g==
+"@truffle/codec@^0.14.16":
+  version "0.14.16"
+  resolved "https://registry.yarnpkg.com/@truffle/codec/-/codec-0.14.16.tgz#eebfb169e46709d6cee53f069a53fc1dff410eaa"
+  integrity sha512-a9UY3n/FnkKN3Q4zOuMFOOcLWb80mdknj+voim4vvXYtJm1aAZQZE5sG9aLnMBTl4TiGLzUtfNDVYY7WgWgDag==
   dependencies:
-    "@truffle/abi-utils" "^0.3.8"
-    "@truffle/compile-common" "^0.9.3"
+    "@truffle/abi-utils" "^0.3.9"
+    "@truffle/compile-common" "^0.9.4"
     big.js "^6.0.3"
     bn.js "^5.1.3"
     cbor "^5.2.0"
@@ -2272,10 +2272,10 @@
     utf8 "^3.0.0"
     web3-utils "1.8.2"
 
-"@truffle/compile-common@^0.9.3":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@truffle/compile-common/-/compile-common-0.9.3.tgz#d8e78195992669430d21e2b3c63c5a4bc72d8e10"
-  integrity sha512-9S86H5DRC0zEj164KeClP/6jVt1M/nRd7St89h6QbuIU0JjpqSz1SXpkvqhbFoV9hhW+4ZGh0NysjrdPlk7gFw==
+"@truffle/compile-common@^0.9.4":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@truffle/compile-common/-/compile-common-0.9.4.tgz#064208cda70491692b538f717809bb904a122c20"
+  integrity sha512-mnqJB/hLiPHNf+WKwt/2MH6lv34xSG/SFCib7+ckAklutUqVLeFo8EwQxinuHNkU7LY0C+YgZXhK1WTCO5YRJQ==
   dependencies:
     "@truffle/error" "^0.2.0"
     colors "1.4.0"
@@ -2314,21 +2314,21 @@
   resolved "https://registry.yarnpkg.com/@truffle/dashboard-message-bus-common/-/dashboard-message-bus-common-0.1.5.tgz#180c8c421b2836b7bd109944e7956f427236d8ab"
   integrity sha512-F4RfXi7ymNA3HFOlaujRJxAb3I8ciErCRQq+MZVaqjSPF9LSw23IizZsGpLaY43K2bGoBSxyNQRZWxsUEBujPQ==
 
-"@truffle/db-loader@^0.2.17":
-  version "0.2.17"
-  resolved "https://registry.yarnpkg.com/@truffle/db-loader/-/db-loader-0.2.17.tgz#85b9c4b4e63b3ad1249a75bddbe6da5a1a967427"
-  integrity sha512-oVDZ3vlYopbUwkHl9sYpF3T//P2diJMwDWYWK3oSg7uEpLm4uroAK8MyrOpLW5XAsIUn+Z4BLS3JGMwQd8aI2Q==
+"@truffle/db-loader@^0.2.18":
+  version "0.2.18"
+  resolved "https://registry.yarnpkg.com/@truffle/db-loader/-/db-loader-0.2.18.tgz#30bcd9de3323518f8923b13a54c227da3ec88bd0"
+  integrity sha512-28guAnfRpKBz6H8iw9Pd8LzCSBCZ2s4IcMePRH5FggmD4ANRrS7v8l1udQDHIajM9btQRYKFsXkmrsE+dSZYTw==
   optionalDependencies:
-    "@truffle/db" "^2.0.17"
+    "@truffle/db" "^2.0.18"
 
-"@truffle/db@^2.0.17":
-  version "2.0.17"
-  resolved "https://registry.yarnpkg.com/@truffle/db/-/db-2.0.17.tgz#358f490f58050c0a67e47211ef2b920e10e7bea6"
-  integrity sha512-7vO595WwvE2Tjp6p4rFmr4Q4d5qJFM4fhAsUBHzfVpWlz0szBsSnzn2RK5/NSS4Rqqp8HLBcfuRShuYFqajx0w==
+"@truffle/db@^2.0.18":
+  version "2.0.18"
+  resolved "https://registry.yarnpkg.com/@truffle/db/-/db-2.0.18.tgz#1de5955f242799334967cd52e352f71b507f6edf"
+  integrity sha512-eJdAVSwOXiN1HGn1bBDdqg5yII11mNAGPIV6ZcLQ4eRyifr9WM8yG5oyEAkSH+J+Fep8rgA7TKu9siWYnARCCA==
   dependencies:
     "@graphql-tools/delegate" "^8.4.3"
     "@graphql-tools/schema" "^8.3.1"
-    "@truffle/abi-utils" "^0.3.8"
+    "@truffle/abi-utils" "^0.3.9"
     "@truffle/code-utils" "^3.0.2"
     "@truffle/config" "^1.3.52"
     abstract-leveldown "^7.2.0"
@@ -2346,14 +2346,14 @@
     pouchdb-find "^7.0.0"
     web3-utils "1.8.2"
 
-"@truffle/debugger@^11.0.28":
-  version "11.0.28"
-  resolved "https://registry.yarnpkg.com/@truffle/debugger/-/debugger-11.0.28.tgz#7f393a66f2cd6255779958bd23aedfb386194c88"
-  integrity sha512-0AN7GjwXTDHGzdx9H3+5JTRtSsCy0T4C+QoJ/iOUpT5palzxIykMEB064afu9TUo/jLtLNOR29pQSmmTKW6d7w==
+"@truffle/debugger@^11.0.29":
+  version "11.0.29"
+  resolved "https://registry.yarnpkg.com/@truffle/debugger/-/debugger-11.0.29.tgz#3a27b5afaf30dca7d48fbe23d8134ccd6b44002d"
+  integrity sha512-QlLJW1o72d2o8dZZ73a9tKQPFBzBTP/tMlT4NeJ5UCtcz8qWAxrjGYtY4pRiToJtMGBthi2ixrpRAFkYcBAe8A==
   dependencies:
-    "@truffle/abi-utils" "^0.3.8"
-    "@truffle/codec" "^0.14.15"
-    "@truffle/source-map-utils" "^1.3.107"
+    "@truffle/abi-utils" "^0.3.9"
+    "@truffle/codec" "^0.14.16"
+    "@truffle/source-map-utils" "^1.3.108"
     bn.js "^5.1.3"
     debug "^4.3.1"
     json-pointer "^0.6.1"
@@ -2406,13 +2406,13 @@
     debug "^4.3.1"
     web3 "1.8.2"
 
-"@truffle/source-map-utils@^1.3.107":
-  version "1.3.107"
-  resolved "https://registry.yarnpkg.com/@truffle/source-map-utils/-/source-map-utils-1.3.107.tgz#b5460cf3e37cabb2fa96d4439c181a6c0f356b9e"
-  integrity sha512-R82cl+I2rpIvJciomfqAq4w5niywymgFIHqbhl0v6srrtn3roksrtIq5R/dXJSaMv4o0C5E6sxZ1IMy3E3+ahw==
+"@truffle/source-map-utils@^1.3.108":
+  version "1.3.108"
+  resolved "https://registry.yarnpkg.com/@truffle/source-map-utils/-/source-map-utils-1.3.108.tgz#19eb7d6eb776b8b6f9d5fde116cfaf56a0c7365c"
+  integrity sha512-yleh2/y+nsui9XmVgkq43795ar2JHaVO2RDHeA/IQ4NNmF7X5owOTdA5Rk/YvhqK1UUecvr2zKC3X3vLth8JFQ==
   dependencies:
     "@truffle/code-utils" "^3.0.2"
-    "@truffle/codec" "^0.14.15"
+    "@truffle/codec" "^0.14.16"
     debug "^4.3.1"
     json-pointer "^0.6.1"
     node-interval-tree "^1.3.3"
@@ -11736,19 +11736,19 @@ trough@^2.0.0:
   resolved "https://registry.yarnpkg.com/trough/-/trough-2.1.0.tgz#0f7b511a4fde65a46f18477ab38849b22c554876"
   integrity sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==
 
-truffle@5.7.8:
-  version "5.7.8"
-  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.7.8.tgz#facc636e782bafb1c233a26dd6cc39834e94501b"
-  integrity sha512-25z9RjJpZG2m6bpPLXx2PflsoAMSXRAXH3Ce7cWYbKL/SRpWvs0BRLZwY1LbxK/5vsMVWVarXgcKp/wjgO/kKg==
+truffle@5.7.9:
+  version "5.7.9"
+  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.7.9.tgz#a917d19c18b0327b1dbac00224b2b1e0d9735fab"
+  integrity sha512-QV3DMzBxyCayMFn7oOjgpHxzxQNJWPpgPFp81c72DKFq1F636tO8qEUPDbMeVihQhWuETv07guvnFRHtoD+blw==
   dependencies:
-    "@truffle/db-loader" "^0.2.17"
-    "@truffle/debugger" "^11.0.28"
+    "@truffle/db-loader" "^0.2.18"
+    "@truffle/debugger" "^11.0.29"
     app-module-path "^2.2.0"
     ganache "7.7.5"
     mocha "10.1.0"
     original-require "^1.0.1"
   optionalDependencies:
-    "@truffle/db" "^2.0.17"
+    "@truffle/db" "^2.0.18"
 
 ts-morph@12.0.0:
   version "12.0.0"
