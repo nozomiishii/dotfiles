@@ -2436,14 +2436,14 @@
   resolved "https://registry.yarnpkg.com/@truffle/dashboard-message-bus-common/-/dashboard-message-bus-common-0.1.5.tgz#180c8c421b2836b7bd109944e7956f427236d8ab"
   integrity sha512-F4RfXi7ymNA3HFOlaujRJxAb3I8ciErCRQq+MZVaqjSPF9LSw23IizZsGpLaY43K2bGoBSxyNQRZWxsUEBujPQ==
 
-"@truffle/db-loader@^0.2.18":
+"@truffle/db-loader@^0.2.19":
   version "0.2.19"
   resolved "https://registry.yarnpkg.com/@truffle/db-loader/-/db-loader-0.2.19.tgz#879a8bcb81ed31a98eefcadf8077ef056f55b0d9"
   integrity sha512-ObGmlBT8mOfJ7SMvKY9dvtB3vKxdq3k7MbXtcStoybIT5ZEWUEYD7oQ9MaAqNsayFAqSCgfEBn9uKBIa6wAPTw==
   optionalDependencies:
     "@truffle/db" "^2.0.19"
 
-"@truffle/db@^2.0.18", "@truffle/db@^2.0.19":
+"@truffle/db@^2.0.19":
   version "2.0.19"
   resolved "https://registry.yarnpkg.com/@truffle/db/-/db-2.0.19.tgz#c21cdf24487851ca44a93761ff763b88a4b3b54a"
   integrity sha512-bMpDVtBjedzKNSOUULUNTKZVqjbozGDpbEe8wcyn0ClhMijDTX0Dz51WS/oPkUQ2B2YpOEjZcKSnhWMCf+yPWw==
@@ -2468,7 +2468,7 @@
     pouchdb-find "^7.0.0"
     web3-utils "1.8.2"
 
-"@truffle/debugger@^11.0.29":
+"@truffle/debugger@^11.0.30":
   version "11.0.30"
   resolved "https://registry.yarnpkg.com/@truffle/debugger/-/debugger-11.0.30.tgz#071607fcdc20ad30933e6f6e628d16eea5c0e86f"
   integrity sha512-dto4JKF5QhodIDYlrjiZPair4m7Y8XI0WYLVMsnM3w28zhzeNZkvXlmbB8k2zjEp2jCKuaNow+5KxY6PyRqAGw==
@@ -6564,10 +6564,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha512-dsKNQNdj6xA3T+QlADDA7mOSlX0qiMINjn0cgr+eGHGsbSHzTabcIogz2+p/iqP1Xs6EP/sS2SbqH+brGTbq0g==
 
-ganache@7.7.5:
-  version "7.7.5"
-  resolved "https://registry.yarnpkg.com/ganache/-/ganache-7.7.5.tgz#e95f205c9d5d5483764cc1667a583d88d2c29ead"
-  integrity sha512-H8ybC7l9hhvor61uS4wvQ7UOYpgc4OcqZvFb3XGutPwbxQL4yYDoNjOumfUcq4JalYZF9ojzy95ss7lOvrw76w==
+ganache@7.7.6:
+  version "7.7.6"
+  resolved "https://registry.yarnpkg.com/ganache/-/ganache-7.7.6.tgz#058d44ae6b743b66abec1d2b1731f988d9bb417c"
+  integrity sha512-1ba5CERykZijw1kIRGUKKPEUqTDU+sEMElYemAS42w1kunu+/3OS5v+eQsJQ+fCVMEmspploA7S9rEWBcyVsLg==
   dependencies:
     "@trufflesuite/bigint-buffer" "1.1.10"
     "@types/bn.js" "^5.1.0"
@@ -11908,19 +11908,19 @@ trough@^2.0.0:
   resolved "https://registry.yarnpkg.com/trough/-/trough-2.1.0.tgz#0f7b511a4fde65a46f18477ab38849b22c554876"
   integrity sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==
 
-truffle@5.7.9:
-  version "5.7.9"
-  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.7.9.tgz#a917d19c18b0327b1dbac00224b2b1e0d9735fab"
-  integrity sha512-QV3DMzBxyCayMFn7oOjgpHxzxQNJWPpgPFp81c72DKFq1F636tO8qEUPDbMeVihQhWuETv07guvnFRHtoD+blw==
+truffle@5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.8.0.tgz#4a0529fd3e8bcb6d26407f64ff2d154cd92d1936"
+  integrity sha512-UoC6w5vpFWBd/79TVr3tg+TdVMKhzrGtqR0u7hAmshB5edb52A9IIXoRZZOnagQg/eDAZBukDZ8cKbGMbVEACA==
   dependencies:
-    "@truffle/db-loader" "^0.2.18"
-    "@truffle/debugger" "^11.0.29"
+    "@truffle/db-loader" "^0.2.19"
+    "@truffle/debugger" "^11.0.30"
     app-module-path "^2.2.0"
-    ganache "7.7.5"
+    ganache "7.7.6"
     mocha "10.1.0"
     original-require "^1.0.1"
   optionalDependencies:
-    "@truffle/db" "^2.0.18"
+    "@truffle/db" "^2.0.19"
 
 ts-morph@12.0.0:
   version "12.0.0"
