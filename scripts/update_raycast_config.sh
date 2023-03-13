@@ -47,6 +47,7 @@ git add "$CONFIG_PATH"
 git commit --no-verify -m "feat: update Raycast config"
 
 current_branch=$(git branch --show-current)
+git pull origin "$current_branch"
 git push origin "$current_branch"
 
 printf "\n\n🎉 Update Success 🎉\n"
