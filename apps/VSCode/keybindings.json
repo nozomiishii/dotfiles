@@ -114,7 +114,7 @@
   {
     "key": "cmd+t",
     "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
   {
     "key": "ctrl+shift+tab",
