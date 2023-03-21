@@ -6,7 +6,7 @@
     "create-react-app": "5.0.1",
     "firebase-tools": "11.24.1",
     "nx": "15.8.7",
-    "truffle": "5.8.0",
+    "truffle": "5.8.1",
     "typescript": "5.0.2",
     "vercel": "28.17.0"
   }
