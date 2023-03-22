@@ -315,6 +315,10 @@
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
   },
+  // ----------------------------------------------------------------
+  // Github pull requests
+  // ----------------------------------------------------------------
+  "githubPullRequests.terminalLinksHandler": "github",
 
   // ----------------------------------------------------------------
   // vscode-icons
