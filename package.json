@@ -17,7 +17,6 @@
     "commit": "cz",
     "format": "yarn prettier --check",
     "format:fix": "yarn prettier --write",
-    "preinstall": "npx -y only-allow yarn",
     "install:all": "./install.sh",
     "install:apps": "./install.sh --apps",
     "install:brew": "./install.sh --homebrew",
