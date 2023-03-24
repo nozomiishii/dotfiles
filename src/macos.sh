@@ -68,6 +68,8 @@ defaults write com.apple.screencapture show-thumbnail -bool false
 echo "- 🐤 NSGlobalDomain(General)"
 # Dark Mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+# Set double-click a window's title bar to None
+defaults read NSGlobalDomain AppleActionOnDoubleClick -string "None"
 # Set the accent color to green
 defaults write NSGlobalDomain AppleAccentColor -int 3
 # Set the highlight color to green
