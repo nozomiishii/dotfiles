@@ -92,7 +92,10 @@
 
     // Editor InlayHint
     "editorInlayHint.background": "#2D2A2E",
-    "editorInlayHint.foreground": "#727072"
+    "editorInlayHint.foreground": "#727072",
+
+    // Find and replace
+    "editor.findMatchHighlightBorder": "#939293"
   },
 
   // ----------------------------------------------------------------
