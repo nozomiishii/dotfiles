@@ -33,8 +33,8 @@
     "lint:fix": "yarn lint:markdownlint:fix",
     "lint:markdownlint": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lint:markdownlint:fix": "markdownlint-cli2-fix '**/*.md' '#node_modules'",
-    "prepare": "lefthook install",
     "prettier": "prettier . '!**/*.md' '!apps' '!**/p10k.zsh' '!**/zinit.zsh' --ignore-unknown --ignore-path .gitignore",
+    "setup": "lefthook install",
     "update:submodule": "git submodule foreach git pull"
   },
   "devDependencies": {
