@@ -62,8 +62,12 @@
   "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}",
   "terminal.external.osxExec": "iTerm.app",
   "terminal.explorerKind": "external",
+
+  // ----------------------------------------------------------------
+  // Theme
+  // ----------------------------------------------------------------
   "workbench.colorCustomizations": {
-    // Color theme for terminal
+    // Terminal
     "panel.background": "#121112",
     "terminal.foreground": "#bbbbbb",
     "terminal.background": "#121112",
@@ -83,10 +87,10 @@
     "terminal.ansiBrightRed": "#ff5555",
     "terminal.ansiBrightWhite": "#ffffff",
     "terminal.ansiBrightYellow": "#ffff55",
-    "terminal.selectionBackground": "#b5d5ff",
+    "terminal.selectionBackground": "#0b1a2d",
     "terminalCursor.foreground": "#bbbbbb",
 
-    // Color theme for editorInlayHint
+    // Editor InlayHint
     "editorInlayHint.background": "#2D2A2E",
     "editorInlayHint.foreground": "#727072"
   },
