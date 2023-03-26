@@ -136,14 +136,52 @@
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
-  // {
-  //   "key": "cmd+w",
-  //   "command": "workbench.action.terminal.sendSequence",
-  //   "args": {
-  //     "text": "tmux kill-session"
-  //   },
-  //   "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-  // },
+  // Change the focused index
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.terminal.focusAtIndex1",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.action.terminal.focusAtIndex2",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.action.terminal.focusAtIndex3",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.action.terminal.focusAtIndex4",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+5",
+    "command": "workbench.action.terminal.focusAtIndex5",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+6",
+    "command": "workbench.action.terminal.focusAtIndex6",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+7",
+    "command": "workbench.action.terminal.focusAtIndex7",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+8",
+    "command": "workbench.action.terminal.focusAtIndex8",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+9",
+    "command": "workbench.action.terminal.focusAtIndex9",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
 
   // ----------------------------------------------------------------
   // Git
