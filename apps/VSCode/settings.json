@@ -326,6 +326,7 @@
   // Github pull requests
   // ----------------------------------------------------------------
   "githubPullRequests.terminalLinksHandler": "github",
+  "githubPullRequests.pullBranch": "never",
 
   // ----------------------------------------------------------------
   // vscode-icons
