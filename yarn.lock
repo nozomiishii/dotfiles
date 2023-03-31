@@ -252,12 +252,12 @@
   resolved "https://registry.yarnpkg.com/@nozomiishii/markdownlint-cli2-config/-/markdownlint-cli2-config-0.0.1.tgz#5ae9d88ddd45a5dbebc80a7e0cbdaf3b6b18cab4"
   integrity sha512-CEm6GCuciaqrLgAD/Q/w7la47ewDHfxJBfVH+r0rO0WY7cWKqaSusYqzLCJuf0MLEmHZmCvXJ2W8+IQ3UfT4RQ==
 
-"@nozomiishii/prettier-config@0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@nozomiishii/prettier-config/-/prettier-config-0.1.13.tgz#057acdb33baf60226fedec634025a429e50818b0"
-  integrity sha512-I2OlkpOa/X7FR7YdoXZ6pfW22OAdGChQKk26842SEQuN6ByzBUC6BFja0GqV8Q3P6OipZJJHPZE4OmohlPrCsw==
+"@nozomiishii/prettier-config@0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@nozomiishii/prettier-config/-/prettier-config-0.1.14.tgz#6acedf021839cee45719ad386c24409953f396ae"
+  integrity sha512-LW6Phl2azrHSKeGDjddc4TRZ2Nx3bYJ7D3rShaSZZTB6cRgNNK98wG8UlS00Hptt+PtbN2/+e9FQ5ytuxMBqbw==
   dependencies:
-    prettier "2.8.6"
+    prettier "2.8.7"
     prettier-plugin-packagejson "2.4.3"
     prettier-plugin-sh "0.12.8"
 
@@ -1660,12 +1660,7 @@ prettier-plugin-sh@0.12.8:
     sh-syntax "^0.3.6"
     synckit "^0.8.1"
 
-prettier@2.8.6:
-  version "2.8.6"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.6.tgz#5c174b29befd507f14b83e3c19f83fdc0e974b71"
-  integrity sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==
-
-prettier@>=2.3.0:
+prettier@2.8.7, prettier@>=2.3.0:
   version "2.8.7"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.7.tgz#bb79fc8729308549d28fe3a98fce73d2c0656450"
   integrity sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==
