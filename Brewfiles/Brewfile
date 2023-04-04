@@ -189,6 +189,9 @@ cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files https://obsidian.md/
 cask "obsidian"
 
+# Desktop virtualization software https://www.parallels.com/products/desktop/
+cask "parallels"
+
 # Administration and development platform for PostgreSQL https://www.pgadmin.org/
 cask "pgadmin4"
 
