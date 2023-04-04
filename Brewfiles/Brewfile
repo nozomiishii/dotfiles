@@ -51,9 +51,6 @@ brew "gh"
 # Distributed revision control system. https://git-scm.com
 brew "git"
 
-# Dependencies: asdf nodejs  | GNU Pretty Good Privacy (PGP) package https://gnupg.org/
-brew "gpg"
-
 # GNU grep, egrep and fgrep https://www.gnu.org/software/grep/
 brew "grep"
 
