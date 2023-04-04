@@ -80,6 +80,10 @@ if OS.mac?
   # Online collaborative whiteboard platform https://miro.com/
   cask "miro"
 
+  # Desktop virtualization software https://www.parallels.com/products/desktop/
+  cask "parallels"
+  cask "parallels-toolbox"
+
   # Collaboration platform for API development. https://www.postman.com
   cask "postman"
 
