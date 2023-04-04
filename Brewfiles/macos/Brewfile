@@ -56,9 +56,6 @@ if OS.mac?
   # Voice and text chat software. https://discord.com
   cask "discord"
 
-  # .NET is a free, cross-platform, open source developer platform https://dotnet.microsoft.com/
-  cask "dotnet-sdk"
-
   # Tool for using an iPad as a second display https://www.duetdisplay.com/
   cask "duet"
 
