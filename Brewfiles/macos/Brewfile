@@ -121,16 +121,6 @@ if OS.mac?
   brew "openssl@3"
 
   # ----------------------------------------------------------------
-  # NOT WORKING ON M1 MAC
-  # ----------------------------------------------------------------
-
-  # hosted hypervisor for x86 virtualization https://www.virtualbox.org/
-  cask "virtualbox" if system '[ "$(uname -m)" = "x86_64" ]'
-
-  # Oracle VirtualBox Extension Pack https://www.virtualbox.org/
-  cask "virtualbox-extension-pack" if system '[ "$(uname -m)" = "x86_64" ]'
-
-  # ----------------------------------------------------------------
   # Mas
   # ----------------------------------------------------------------
 
