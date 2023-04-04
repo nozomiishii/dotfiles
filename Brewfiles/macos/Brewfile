@@ -136,5 +136,6 @@ if OS.mac?
 
   # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
   # mas "Xcode", id: 497_799_835
-  mas "LINE", id: 539_883_307
+
+  # mas "LINE", id: 539_883_307
 end
