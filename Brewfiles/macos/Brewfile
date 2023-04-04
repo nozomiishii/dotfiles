@@ -1,128 +1,128 @@
 if OS.mac?
-  instance_eval(File.read("Brewfiles/Brewfile"))
+  instance_eval(File.read('Brewfiles/Brewfile'))
 
   # ----------------------------------------------------------------
   # Brew
   # ----------------------------------------------------------------
 
   # Dependency manager for Cocoa projects https://cocoapods.org/
-  brew "cocoapods"
+  brew 'cocoapods'
 
   # Dependencies app.sh | Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
-  brew "duti"
+  brew 'duti'
 
   # The scalable code generator that saves you time. https://www.hygen.io/
-  tap "jondot/tap"
-  brew "hygen"
+  tap 'jondot/tap'
+  brew 'hygen'
 
   # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
-  brew "mas"
+  brew 'mas'
 
   # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
-  tap "smudge/smudge"
-  brew "nightlight"
+  tap 'smudge/smudge'
+  brew 'nightlight'
 
   # ----------------------------------------------------------------
   # Cask
   # ----------------------------------------------------------------
 
   # Tools for building Android applications https://developer.android.com/studio
-  cask "android-studio"
+  cask 'android-studio'
 
   # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
-  cask "appcleaner"
+  cask 'appcleaner'
 
   # Virtual Audio Driver https://existential.audio/blackhole/
-  cask "blackhole-2ch"
+  cask 'blackhole-2ch'
 
   # Free and open-source 3D creation suite. https://www.blender.org
-  cask "blender"
+  cask 'blender'
 
   # Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
-  cask "bleunlock"
+  cask 'bleunlock'
 
   # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
-  cask "brooklyn"
+  cask 'brooklyn'
 
   # Web browser focusing on privacy https://brave.com/
-  cask "brave-browser"
+  cask 'brave-browser'
 
   # Automated testing of webapps for Google Chrome https://sites.google.com/chromium.org/driver/
-  cask "chromedriver"
+  cask 'chromedriver'
 
   # Color picking application. https://colorsnapper.com
-  cask "colorsnapper"
+  cask 'colorsnapper'
 
   # Voice and text chat software. https://discord.com
-  cask "discord"
+  cask 'discord'
 
   # Tool for using an iPad as a second display https://www.duetdisplay.com/
-  cask "duet"
+  cask 'duet'
 
   # Automated organization https://www.noodlesoft.com/
-  cask "hazel"
+  cask 'hazel'
 
   # Keyboard customizer. https://pqrs.org/osx/karabiner
-  cask "karabiner-elements"
+  cask 'karabiner-elements'
 
   # Automation software https://www.keyboardmaestro.com/main/
-  cask "keyboard-maestro"
+  cask 'keyboard-maestro'
 
   # Display key code, unicode value and modifier keys state for any key combination https://manytricks.com/keycodes/
-  cask "key-codes"
+  cask 'key-codes'
 
   # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
-  cask "kindle"
+  cask 'kindle'
 
   # Preview and audit Kindle eBooks https://www.amazon.com/Kindle-Previewer/b?ie=UTF8&node=21381691011
-  cask "kindle-previewer"
+  cask 'kindle-previewer'
 
   # Online collaborative whiteboard platform https://miro.com/
-  cask "miro"
+  cask 'miro'
 
   # Desktop virtualization software https://www.parallels.com/products/desktop/
-  cask "parallels"
-  cask "parallels-toolbox"
+  cask 'parallels'
+  cask 'parallels-toolbox'
 
   # Collaboration platform for API development. https://www.postman.com
-  cask "postman"
+  cask 'postman'
 
   # VPN client focusing on security https://protonvpn.com/
-  cask "protonvpn"
+  cask 'protonvpn'
 
   # Messaging app with a focus on speed and security https://macos.telegram.org/
-  cask "telegram"
+  cask 'telegram'
 
   # Management tool for Unity. https://unity3d.com/get-unity/download
-  cask "unity-hub"
+  cask 'unity-hub'
 
   # Multimedia player. https://www.videolan.org/vlc
-  cask "vlc"
+  cask 'vlc'
 
   # Private Messenger https://wickr.com/me/
-  cask "wickrme"
+  cask 'wickrme'
 
   # Graphical network analyzer and capture tool https://www.wireshark.org
-  cask "wireshark"
+  cask 'wireshark'
 
   # Video communication and virtual meeting platform https://www.zoom.us/
-  cask "zoom"
+  cask 'zoom'
 
   # Desktop client for the Zulip team chat platform https://zulipchat.com/apps/
-  cask "zulip"
+  cask 'zulip'
 
   # ----------------------------------------------------------------
   # Embedded Rust | Wio Terminal
   # ----------------------------------------------------------------
 
   # Menu-driven communications program https://packages.debian.org/sid/minicom
-  brew "minicom"
+  brew 'minicom'
 
   # Low-level access to audio, keyboard, mouse, joystick, and graphics https://www.libsdl.org/
-  brew "sdl2"
+  brew 'sdl2'
 
   # Cryptography and SSL/TLS Toolkit https://openssl.org/
-  brew "openssl@3"
+  brew 'openssl@3'
 
   # ----------------------------------------------------------------
   # Mas

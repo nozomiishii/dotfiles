@@ -1,199 +1,199 @@
-cask_args appdir: "/Applications"
+cask_args appdir: '/Applications'
 
-tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
+tap 'heroku/brew'
+tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
+tap 'homebrew/core'
+tap 'homebrew/services'
 
 # ----------------------------------------------------------------
 # Brew
 # ----------------------------------------------------------------
 
 # Extendable version manager with support for Ruby, Node.js, Erlang & more https://asdf-vm.com/
-brew "asdf"
+brew 'asdf'
 
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
-brew "bat"
+brew 'bat'
 
 # Dependencies asdf golang | GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
-brew "coreutils"
+brew 'coreutils'
 
 # Load/unload environment variables based on $PWD https://direnv.net/
-brew "direnv"
+brew 'direnv'
 
 # Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
-brew "ethereum"
+brew 'ethereum'
 
 # Modern replacement for ls. https://github.com/ogham/exa
-brew "exa"
+brew 'exa'
 
 # Simple, fast and user-friendly alternative to find https://github.com/sharkdp/fd
-brew "fd"
+brew 'fd'
 
 # Play, record, convert, and stream audio and video https://ffmpeg.org/
-brew "ffmpeg"
+brew 'ffmpeg'
 
 # Command-line tools for fly.io services https://fly.io
-brew "flyctl"
+brew 'flyctl'
 
 # Command-line fuzzy finder written in Go https://github.com/junegunn/fzf
-brew "fzf"
+brew 'fzf'
 
 # Command-line JSON processing tool https://github.com/antonmedv/fx
-brew "fx"
+brew 'fx'
 
 # GitHub command-line tool. https://github.com/cli/cli
-brew "gh"
+brew 'gh'
 
 # Distributed revision control system. https://git-scm.com
-brew "git"
+brew 'git'
 
 # GNU grep, egrep and fgrep https://www.gnu.org/software/grep/
-brew "grep"
+brew 'grep'
 
 # Like cURL, but for gRPC https://github.com/fullstorydev/grpcurl
-brew "grpcurl"
+brew 'grpcurl'
 
 # Kubernetes package manager https://helm.sh/
-brew "helm"
+brew 'helm'
 
 # Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
-brew "jq"
+brew 'jq'
 
 # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
-brew "neovim"
+brew 'neovim'
 
 # Run a Kubernetes cluster locally https://minikube.sigs.k8s.io/
-brew "minikube"
+brew 'minikube'
 
 # Generate clients, server & docs from an OpenAPI spec https://openapi-generator.tech/
-brew "openapi-generator"
+brew 'openapi-generator'
 
 # Object-relational database system https://www.postgresql.org/
-brew "postgresql@14"
+brew 'postgresql@14'
 
 # Protocol buffers (Google's data interchange format) https://github.com/protocolbuffers/protobuf/
-brew "protobuf"
+brew 'protobuf'
 
 # A Zsh Theme https://github.com/romkatv/powerlevel10k
-tap "romkatv/powerlevel10k"
-brew "powerlevel10k"
+tap 'romkatv/powerlevel10k'
+brew 'powerlevel10k'
 
 # Persistent key-value database, with built-in net interface https://redis.io/
-brew "redis"
+brew 'redis'
 
 # Perl-powered file rename script with many helpful built-ins http://plasmasturm.org/code/rename
-brew "rename"
+brew 'rename'
 
 # Search tool like grep and The Silver Searcher https://github.com/BurntSushi/ripgrep
-brew "ripgrep"
+brew 'ripgrep'
 
 # Intuitive find & replace CLI https://github.com/chmln/sd
-brew "sd"
+brew 'sd'
 
 # Static analysis and lint tool, for (ba)sh scripts https://www.shellcheck.net/
-brew "shellcheck"
+brew 'shellcheck'
 
 # Organize software neatly under a single directory tree https://www.gnu.org/software/stow/
-brew "stow"
+brew 'stow'
 
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
-tap "stripe/stripe-cli"
-brew "stripe"
+tap 'stripe/stripe-cli'
+brew 'stripe'
 
 # Text interface for Git repositories https://jonas.github.io/tig/
-brew "tig"
+brew 'tig'
 
 # Terminal multiplexer https://tmux.github.io/
-brew "tmux"
+brew 'tmux'
 
 # Display directories as trees http://mama.indstate.edu/users/ice/tree/
-brew "tree"
+brew 'tree'
 
 # Executes a program periodically, showing output fullscreen https://gitlab.com/procps-ng/procps
-brew "watch"
+brew 'watch'
 
 # ----------------------------------------------------------------
 # Cask
 # ----------------------------------------------------------------
 
 # Password manager that keeps all passwords secure behind one password. https://1password.com
-cask "1Password"
+cask '1Password'
 
 # Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
-cask "1password-cli"
+cask '1password-cli'
 
 # Trains AIs to understand and translate texts. https://www.deepl.com
-cask "deepl"
+cask 'deepl'
 
 # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
-cask "docker"
+cask 'docker'
 
 # Reimagine your terminal https://fig.io/
-cask "fig"
+cask 'fig'
 
 # Collaborative interface design tool. https://www.figma.com
-cask "figma"
+cask 'figma'
 
 # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
-cask "firefox-developer-edition"
+cask 'firefox-developer-edition'
 
 # font-meslo-lg-nerd-font https://github.com/ryanoasis/nerd-fonts
-cask "font-meslo-lg-nerd-font"
+cask 'font-meslo-lg-nerd-font'
 
 # GIT client　https://fork.dev/
-cask "fork"
+cask 'fork'
 
 # Personal blockchain for Ethereum development https://truffleframework.com/ganache/
-cask "ganache"
+cask 'ganache'
 
 # Web browser. https://www.google.com/chrome
-cask "google-chrome"
+cask 'google-chrome'
 
 # Google Cloud SDK https://cloud.google.com/sdk/
-cask "google-cloud-sdk"
+cask 'google-cloud-sdk'
 
 # Client for the Google Drive storage service https://www.google.com/drive/
-cask "google-drive"
+cask 'google-drive'
 
 # Google Japanese Input Method Editor. https://www.google.co.jp/ime
-cask "google-japanese-ime"
+cask 'google-japanese-ime'
 
 # HTTP and GraphQL Client https://insomnia.rest/
-cask "insomnia"
+cask 'insomnia'
 
 # Terminal emulator as alternative to Apple's Terminal app. https://www.iterm2.com
-cask "iterm2"
+cask 'iterm2'
 
 # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
-cask "ledger-live"
+cask 'ledger-live'
 
 # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
-cask "ngrok"
+cask 'ngrok'
 
 # App to write, plan, collaborate, and get organized. https://www.notion.so
-cask "notion"
+cask 'notion'
 
 # Knowledge base that works on top of a local folder of plain text Markdown files https://obsidian.md/
-cask "obsidian"
+cask 'obsidian'
 
 # Administration and development platform for PostgreSQL https://www.pgadmin.org/
-cask "pgadmin4"
+cask 'pgadmin4'
 
 # Control your tools with a few keystrokes https://raycast.app/
-cask "raycast"
+cask 'raycast'
 
 # Team communication and collaboration software. https://slack.com
-cask "slack"
+cask 'slack'
 
 # Music streaming service. https://www.spotify.com
-cask "spotify"
+cask 'spotify'
 
 # Native GUI tool for relational databases https://tableplus.com/
-cask "tableplus"
+cask 'tableplus'
 
 # Open-source code editor. https://code.visualstudio.com
-cask "visual-studio-code"
+cask 'visual-studio-code'
