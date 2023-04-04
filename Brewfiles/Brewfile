@@ -63,9 +63,6 @@ brew "helm"
 # Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
 brew "jq"
 
-# Dependencies: Diesel https://diesel.rs/guides/getting-started#:~:text=libpq%20for%20the%20PostgreSQL%20backend | Postgres C API library https://www.postgresql.org/docs/14/libpq.html
-brew "libpq"
-
 # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
 brew "neovim"
 
