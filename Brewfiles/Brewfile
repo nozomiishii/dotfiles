@@ -45,9 +45,6 @@ brew "fzf"
 # Command-line JSON processing tool https://github.com/antonmedv/fx
 brew "fx"
 
-# Dependencies: asdf nodejs  | GNU awk utility https://www.gnu.org/software/gawk/
-brew "gawk"
-
 # GitHub command-line tool. https://github.com/cli/cli
 brew "gh"
 
