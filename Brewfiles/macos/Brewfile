@@ -86,9 +86,6 @@ if OS.mac?
   # VPN client focusing on security https://protonvpn.com/
   cask "protonvpn"
 
-  # Jetbrains PyCharm Community Edition https://www.jetbrains.com/pycharm/
-  cask "pycharm-ce"
-
   # Messaging app with a focus on speed and security https://macos.telegram.org/
   cask "telegram"
 
