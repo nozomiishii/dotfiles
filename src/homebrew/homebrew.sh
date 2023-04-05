@@ -32,7 +32,7 @@ if [ -f Brewfile_merged ]; then
   rm Brewfile_merged
 fi
 
-brewfiles_path="$HOME/dotfiles/Brewfiles"
+brewfiles_path="$HOME/dotfiles/src/homebrew/Brewfiles"
 
 if "${setup_homebrew_full:-false}"; then
   printf "🍺 Homebrew setup(MacOS: full)\n"

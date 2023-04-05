@@ -86,7 +86,7 @@ reinstall() {
 setup_homebrew() {
   echo "🍺 Homebrew setup"
   pre_sudo
-  source "$ROOT_PATH/src/homebrew.sh"
+  source "$ROOT_PATH/src/homebrew/homebrew.sh"
 }
 
 # MacOS
@@ -197,7 +197,6 @@ if [ ! "$@" ]; then
   open /users
   open https://github.com/nozomiishii/dotfiles
 
-  git submodule update --init
   setup_apps
   setup_environment
 
