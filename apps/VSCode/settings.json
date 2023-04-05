@@ -114,7 +114,6 @@
   // File associations
   // ----------------------------------------------------------------
   "files.associations": {
-    "install": "shellscript",
     ".lintstagedrc": "json",
     "*.strings": "plist",
     "*.plist": "plist",
