@@ -41,21 +41,18 @@ if ! type node > /dev/null 2>&1; then
   curl https://get.volta.sh | bash
   volta install node
   volta install yarn@1
-fi
 
-if [ ! -d ~/.config/yarn/global/node_modules ]; then
   # corepackはnodeに標準で組み込まれたかもしれん
   npm install -g corepack
   corepack enable
   corepack enable npm
+
+  node -v
   yarn -v
-
-  echo '- 🚚 Setup Yarn global'
-  yarn global add
-
-  # to use @prettier/ruby
-  gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 fi
+
+# to use @prettier/ruby
+gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 
 if ! type cargo > /dev/null 2>&1; then
   echo '- 🦀 Install Rust'
