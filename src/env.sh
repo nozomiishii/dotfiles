@@ -44,15 +44,13 @@ if ! type node > /dev/null 2>&1; then
 fi
 
 if [ ! -d ~/.config/yarn/global/node_modules ]; then
-  # corepackでyarnを管理する
-  # https://shikiyura.com/2022/08/install_nodejs_using_asdf/
+  # corepackはnodeに標準で組み込まれたかもしれん
+  npm install -g corepack
   corepack enable
   corepack enable npm
   yarn -v
 
   echo '- 🚚 Setup Yarn global'
-  # . $(brew --prefix asdf)/libexec/asdf.sh
-  # export PATH="$(yarn global bin):$PATH"
   yarn global add
 
   # to use @prettier/ruby
