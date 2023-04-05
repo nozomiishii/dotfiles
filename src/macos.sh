@@ -69,7 +69,7 @@ echo "- 🐤 NSGlobalDomain(General)"
 # Dark Mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 # Set double-click a window's title bar to None
-defaults read NSGlobalDomain AppleActionOnDoubleClick -string "None"
+defaults write NSGlobalDomain AppleActionOnDoubleClick -string "None"
 # Set the accent color to green
 defaults write NSGlobalDomain AppleAccentColor -int 3
 # Set the highlight color to green
@@ -196,7 +196,7 @@ defaults write com.apple.dock wvous-br-modifier -int 1048576
 
 echo '- 📱 Simulator'
 # Simulator lifetime 'When Simulator starts boot the most recently used simulator': off
-defaults read com.apple.iphonesimulator StartLastDeviceOnLaunch -int 0
+defaults write com.apple.iphonesimulator StartLastDeviceOnLaunch -int 0
 
 echo "- 👼 Killall..."
 killall Dock
