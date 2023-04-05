@@ -203,8 +203,6 @@ if [ ! "$@" ]; then
   printf "🎉 The dotfiles installation is complete \n\n"
   # Turn display off after: 15 mins
   sudo pmset -c displaysleep 15
-  # Bootstrap yabai and skhd
-  brew services start --all
 
   printf "👨🏻‍🚀 Restart the mac \n"
   printf "'sudo reboot' \n\n\n"
