@@ -128,7 +128,8 @@
     "*.ejs.t": "html",
     "LICENSE": "plaintext",
     ".env.sample": "dotenv",
-    "CODEOWNERS": "ignore"
+    "CODEOWNERS": "ignore",
+    "Brewfile*": "ruby"
   },
 
   // ----------------------------------------------------------------
