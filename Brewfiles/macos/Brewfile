@@ -99,6 +99,9 @@ if OS.mac?
   # Multimedia player. https://www.videolan.org/vlc
   cask 'vlc'
 
+  # Virtualization tool https://github.com/insidegui/VirtualBuddy
+  cask 'VirtualBuddy'
+
   # Private Messenger https://wickr.com/me/
   cask 'wickrme'
 
