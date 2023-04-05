@@ -22,3 +22,4 @@ yarn-error.log
 
 # Brewfile.lock.json
 *.lock.json
+Brewfile_merged

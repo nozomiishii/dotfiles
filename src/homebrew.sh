@@ -30,7 +30,13 @@ if "${setup_homebrew_min:-false}"; then
   brew bundle --verbose --file "$HOME/dotfiles/Brewfiles/Brewfile"
 else
   printf "🍺 Homebrew setup(MacOS)\n"
-  brew bundle --verbose --file "$HOME/dotfiles/Brewfiles/macos/Brewfile"
+  if [ -f Brewfile_merged ]; then
+    rm Brewfile_merged
+  fi
+
+  cat "$HOME/dotfiles/Brewfiles/Brewfile" "$HOME/dotfiles/Brewfiles/Brewfile.macos" > Brewfile_merged
+  brew bundle --verbose --file=Brewfile_merged
+  rm Brewfile_merged
 fi
 
 printf "🎉 The Homebrew setup is complete \n\n"
