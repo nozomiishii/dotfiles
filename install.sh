@@ -197,6 +197,7 @@ if [ ! "$@" ]; then
   open /users
   open https://github.com/nozomiishii/dotfiles
 
+  git submodule update --init
   setup_apps
   setup_environment
 
