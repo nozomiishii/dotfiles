@@ -100,9 +100,6 @@ if OS.mac?
   # Virtualization tool https://github.com/insidegui/VirtualBuddy
   cask 'VirtualBuddy'
 
-  # Private Messenger https://wickr.com/me/
-  cask 'wickrme'
-
   # Graphical network analyzer and capture tool https://www.wireshark.org
   cask 'wireshark'
 
