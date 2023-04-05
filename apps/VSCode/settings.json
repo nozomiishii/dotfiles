@@ -128,7 +128,8 @@
     "LICENSE": "plaintext",
     ".env.sample": "dotenv",
     "CODEOWNERS": "ignore",
-    "Brewfile*": "ruby"
+    "Brewfile*": "ruby",
+    "**/Brewfiles/*": "ruby"
   },
 
   // ----------------------------------------------------------------
