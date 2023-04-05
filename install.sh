@@ -28,7 +28,7 @@ USAGE:
 OPTIONS:
     -a,    --apps          🧝🏻‍♀️ Apps setup
     -b,    --homebrew      🍺 Homebrew setup
-    -bm,   --homebrew-min  🍺 Homebrew setup(minimum)
+    -bf,   --homebrew-full  🍺 Homebrew setup(full)
     -c,    --code          🦄 Clone repositories
     -d,    --drive         🌎 Sync with google drive
     -e,    --environment   🌝 Environment setup(asdf)
@@ -218,8 +218,8 @@ for i in "$@"; do
       setup_homebrew
       shift
       ;;
-    -bm | --homebrew-min)
-      export setup_homebrew_min=true
+    -bf | --homebrew-full)
+      export setup_homebrew_full=true
       setup_homebrew
       shift
       ;;

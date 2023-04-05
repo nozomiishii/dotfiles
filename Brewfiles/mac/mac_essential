@@ -1,0 +1,55 @@
+if OS.mac?
+  # ----------------------------------------------------------------
+  # Brew
+  # ----------------------------------------------------------------
+
+  # Dependencies app.sh | Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
+  brew 'duti'
+
+  # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
+  brew 'mas'
+
+  # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
+  tap 'smudge/smudge'
+  brew 'nightlight'
+
+  # ----------------------------------------------------------------
+  # Cask
+  # ----------------------------------------------------------------
+
+  # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
+  cask 'appcleaner'
+
+  # Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
+  cask 'bleunlock'
+
+  # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
+  cask 'brooklyn'
+
+  # Automated testing of webapps for Google Chrome https://sites.google.com/chromium.org/driver/
+  cask 'chromedriver'
+
+  # Color picking application. https://colorsnapper.com
+  cask 'colorsnapper'
+
+  # Voice and text chat software. https://discord.com
+  cask 'discord'
+
+  # Tool for using an iPad as a second display https://www.duetdisplay.com/
+  cask 'duet'
+
+  # Automated organization https://www.noodlesoft.com/
+  cask 'hazel'
+
+  # Keyboard customizer. https://pqrs.org/osx/karabiner
+  cask 'karabiner-elements'
+
+  # Automation software https://www.keyboardmaestro.com/main/
+  cask 'keyboard-maestro'
+
+  # Collaboration platform for API development. https://www.postman.com
+  cask 'postman'
+
+  # Video communication and virtual meeting platform https://www.zoom.us/
+  cask 'zoom'
+end

@@ -1,6 +1,5 @@
 cask_args appdir: '/Applications'
 
-tap 'heroku/brew'
 tap 'homebrew/bundle'
 tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
@@ -18,32 +17,11 @@ brew 'asdf'
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew 'bat'
 
-# Dependencies asdf golang | GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
-brew 'coreutils'
-
 # Load/unload environment variables based on $PWD https://direnv.net/
 brew 'direnv'
 
-# Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
-brew 'ethereum'
-
 # Modern replacement for ls. https://github.com/ogham/exa
 brew 'exa'
-
-# Simple, fast and user-friendly alternative to find https://github.com/sharkdp/fd
-brew 'fd'
-
-# Play, record, convert, and stream audio and video https://ffmpeg.org/
-brew 'ffmpeg'
-
-# Command-line tools for fly.io services https://fly.io
-brew 'flyctl'
-
-# Command-line fuzzy finder written in Go https://github.com/junegunn/fzf
-brew 'fzf'
-
-# Command-line JSON processing tool https://github.com/antonmedv/fx
-brew 'fx'
 
 # GitHub command-line tool. https://github.com/cli/cli
 brew 'gh'
@@ -54,23 +32,11 @@ brew 'git'
 # GNU grep, egrep and fgrep https://www.gnu.org/software/grep/
 brew 'grep'
 
-# Like cURL, but for gRPC https://github.com/fullstorydev/grpcurl
-brew 'grpcurl'
-
-# Kubernetes package manager https://helm.sh/
-brew 'helm'
-
 # Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
 brew 'jq'
 
 # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
 brew 'neovim'
-
-# Run a Kubernetes cluster locally https://minikube.sigs.k8s.io/
-brew 'minikube'
-
-# Generate clients, server & docs from an OpenAPI spec https://openapi-generator.tech/
-brew 'openapi-generator'
 
 # Object-relational database system https://www.postgresql.org/
 brew 'postgresql@14'
@@ -100,21 +66,8 @@ brew 'shellcheck'
 # Organize software neatly under a single directory tree https://www.gnu.org/software/stow/
 brew 'stow'
 
-# Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
-tap 'stripe/stripe-cli'
-brew 'stripe'
-
-# Text interface for Git repositories https://jonas.github.io/tig/
-brew 'tig'
-
 # Terminal multiplexer https://tmux.github.io/
 brew 'tmux'
-
-# Display directories as trees http://mama.indstate.edu/users/ice/tree/
-brew 'tree'
-
-# Executes a program periodically, showing output fullscreen https://gitlab.com/procps-ng/procps
-brew 'watch'
 
 # ----------------------------------------------------------------
 # Cask
@@ -123,8 +76,8 @@ brew 'watch'
 # Password manager that keeps all passwords secure behind one password. https://1password.com
 cask '1Password'
 
-# Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
-cask '1password-cli'
+# Web browser focusing on privacy https://brave.com/
+cask 'brave-browser'
 
 # Trains AIs to understand and translate texts. https://www.deepl.com
 cask 'deepl'
@@ -138,17 +91,11 @@ cask 'fig'
 # Collaborative interface design tool. https://www.figma.com
 cask 'figma'
 
-# Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
-cask 'firefox-developer-edition'
-
 # font-meslo-lg-nerd-font https://github.com/ryanoasis/nerd-fonts
 cask 'font-meslo-lg-nerd-font'
 
 # GIT client　https://fork.dev/
 cask 'fork'
-
-# Personal blockchain for Ethereum development https://truffleframework.com/ganache/
-cask 'ganache'
 
 # Web browser. https://www.google.com/chrome
 cask 'google-chrome'
@@ -162,14 +109,8 @@ cask 'google-drive'
 # Google Japanese Input Method Editor. https://www.google.co.jp/ime
 cask 'google-japanese-ime'
 
-# HTTP and GraphQL Client https://insomnia.rest/
-cask 'insomnia'
-
 # Terminal emulator as alternative to Apple's Terminal app. https://www.iterm2.com
 cask 'iterm2'
-
-# Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
-cask 'ledger-live'
 
 # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
 cask 'ngrok'
@@ -177,26 +118,14 @@ cask 'ngrok'
 # App to write, plan, collaborate, and get organized. https://www.notion.so
 cask 'notion'
 
-# Knowledge base that works on top of a local folder of plain text Markdown files https://obsidian.md/
-cask 'obsidian'
-
-# Administration and development platform for PostgreSQL https://www.pgadmin.org/
-cask 'pgadmin4'
-
 # Control your tools with a few keystrokes https://raycast.app/
 cask 'raycast'
 
 # Team communication and collaboration software. https://slack.com
 cask 'slack'
 
-# Music streaming service. https://www.spotify.com
-cask 'spotify'
-
 # Native GUI tool for relational databases https://tableplus.com/
 cask 'tableplus'
-
-# Virtual machines UI using QEMU https://getutm.app/
-cask 'utm'
 
 # Open-source code editor. https://code.visualstudio.com
 cask 'visual-studio-code'

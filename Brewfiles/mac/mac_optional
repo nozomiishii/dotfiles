@@ -6,19 +6,9 @@ if OS.mac?
   # Dependency manager for Cocoa projects https://cocoapods.org/
   brew 'cocoapods'
 
-  # Dependencies app.sh | Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
-  brew 'duti'
-
   # The scalable code generator that saves you time. https://www.hygen.io/
   tap 'jondot/tap'
   brew 'hygen'
-
-  # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
-  brew 'mas'
-
-  # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
-  tap 'smudge/smudge'
-  brew 'nightlight'
 
   # ----------------------------------------------------------------
   # Cask
@@ -27,38 +17,11 @@ if OS.mac?
   # Tools for building Android applications https://developer.android.com/studio
   cask 'android-studio'
 
-  # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
-  cask 'appcleaner'
-
   # Virtual Audio Driver https://existential.audio/blackhole/
   cask 'blackhole-2ch'
 
   # Free and open-source 3D creation suite. https://www.blender.org
   cask 'blender'
-
-  # Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
-  cask 'bleunlock'
-
-  # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
-  cask 'brooklyn'
-
-  # Web browser focusing on privacy https://brave.com/
-  cask 'brave-browser'
-
-  # Automated testing of webapps for Google Chrome https://sites.google.com/chromium.org/driver/
-  cask 'chromedriver'
-
-  # Color picking application. https://colorsnapper.com
-  cask 'colorsnapper'
-
-  # Voice and text chat software. https://discord.com
-  cask 'discord'
-
-  # Tool for using an iPad as a second display https://www.duetdisplay.com/
-  cask 'duet'
-
-  # Automated organization https://www.noodlesoft.com/
-  cask 'hazel'
 
   # Keyboard customizer. https://pqrs.org/osx/karabiner
   cask 'karabiner-elements'
@@ -82,9 +45,6 @@ if OS.mac?
   cask 'parallels'
   cask 'parallels-toolbox'
 
-  # Collaboration platform for API development. https://www.postman.com
-  cask 'postman'
-
   # VPN client focusing on security https://protonvpn.com/
   cask 'protonvpn'
 
@@ -106,9 +66,6 @@ if OS.mac?
   # Video communication and virtual meeting platform https://www.zoom.us/
   cask 'zoom'
 
-  # Desktop client for the Zulip team chat platform https://zulipchat.com/apps/
-  cask 'zulip'
-
   # ----------------------------------------------------------------
   # Embedded Rust | Wio Terminal
   # ----------------------------------------------------------------
@@ -127,7 +84,7 @@ if OS.mac?
   # ----------------------------------------------------------------
 
   # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
-  # mas "Xcode", id: 497_799_835
+  mas 'Xcode', id: 497_799_835
 
-  # mas "LINE", id: 539_883_307
+  mas 'LINE', id: 539_883_307
 end
