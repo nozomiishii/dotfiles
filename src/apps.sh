@@ -18,10 +18,11 @@ if [ ! -d "$VSCODE_PATH" ]; then
 fi
 stow -vd "$APPS_PATH" -t "$VSCODE_PATH" VSCode
 
-echo "- 🥒 tmux"
-if [ ! -d "$HOME/.tmux/plugins/tpm/bin/" ]; then
-  ~/.tmux/plugins/tpm/bin/install_plugins
-fi
+# FIXME:tmux
+# echo "- 🥒 tmux"
+# if [ ! -d "$HOME/.tmux/plugins/tpm/bin/" ]; then
+#   ~/.tmux/plugins/tpm/bin/install_plugins
+# fi
 
 if [ ! -e "/Applications/Xcode.app" ]; then
   echo "🥲 Xcode not found"
