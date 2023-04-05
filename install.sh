@@ -192,7 +192,7 @@ if [ ! "$@" ]; then
   open "/Applications/Google Drive.app"
   open "/Applications/Google Chrome.app"
   open "/Applications/Raycast.app"
-  open "/Applications/1Password 7.app"
+  open "/Applications/1Password.app"
   open "/Applications/Karabiner-Elements.app"
   open /users
   open https://github.com/nozomiishii/dotfiles
