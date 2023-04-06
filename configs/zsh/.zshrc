@@ -30,9 +30,6 @@ if type direnv > /dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
 # asdf
 if [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then . $(brew --prefix asdf)/libexec/asdf.sh; fi
 
-# yarn
-if type yarn > /dev/null 2>&1; then export PATH="$(yarn global bin):$PATH"; fi
-
 # lang
 export LANG="en_US.UTF-8"
 
@@ -46,7 +43,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# Node
+# Node(Volta)
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
