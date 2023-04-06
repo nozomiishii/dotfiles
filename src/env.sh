@@ -59,7 +59,7 @@ if ! type node > /dev/null 2>&1; then
 fi
 
 # to use @prettier/ruby
-gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
+sudo gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 
 if ! type cargo > /dev/null 2>&1; then
   echo '- 🦀 Install Rust'
