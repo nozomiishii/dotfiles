@@ -6,7 +6,7 @@ printf "🧝🏻‍♀️ Starting Apps setup... \n"
 APPS_PATH="$HOME/dotfiles/apps"
 
 echo "- 🤖 Automator"
-if [ ! -f "$HOME/Desktop" ]; then
+if [ ! -f "$HOME/Desktop/OpenWithVisualStudioCode.workflow" ]; then
   cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
 fi
 
