@@ -9,20 +9,16 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
+(function () {
+  'use strict';
 
-    document.querySelector('form')
-      .addEventListener('keydown', (e) => {
-      if (e.code === "Enter" && !e.metaKey) {
+  document.querySelector('body').addEventListener(
+    'keydown',
+    (e) => {
+      if (e.code === 'Enter' && !e.metaKey) {
         e.stopPropagation();
       }
-    }, { capture: true });
-
-    document.querySelector('textarea')
-      .addEventListener('keydown', (e) => {
-      if (e.code === "Enter" && !e.metaKey) {
-        e.stopPropagation();
-      }
-    }, { capture: true });
+    },
+    { capture: true },
+  );
 })();
