@@ -23,8 +23,14 @@ commit-msg:
     'spell-check.sh':
       runner: bash
 
+post-commit:
+  scripts:
+    'maintenance-brewfile.sh':
+      runner: bash
+      interactive: true
+
 post-merge:
-  piped: true
+  parallel: true
 
   commands:
     npm:
