@@ -36,14 +36,20 @@ for plugin in $(asdf plugin list); do
   fi
 done
 
+if ! type poetry > /dev/null 2>&1; then
+  echo '- 🐍 Install Poetry'
+  curl -sSL https://install.python-poetry.org | python3 -
+fi
+
 if ! type node > /dev/null 2>&1; then
   echo '- 🐉 Install Node with Volta⚡️'
   curl https://get.volta.sh | bash
+
+  source ../configs/zsh/.zshrc
+
   volta install node
   volta install yarn@1
 
-  # corepackはnodeに標準で組み込まれたかもしれん
-  npm install -g corepack
   corepack enable
   corepack enable npm
 
@@ -72,11 +78,6 @@ if ! type cargo > /dev/null 2>&1; then
   cargo install wasm-pack
   cargo install sea-orm-cli
   cargo install diesel_cli --no-default-features --features postgres
-fi
-
-if ! type poetry > /dev/null 2>&1; then
-  echo '- 🐍 Install Poetry'
-  curl -sSL https://install.python-poetry.org | python3 -
 fi
 
 printf "🎉 The Environment setup is complete \n\n"
