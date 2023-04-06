@@ -45,7 +45,8 @@ if ! type node > /dev/null 2>&1; then
   echo '- 🐉 Install Node with Volta⚡️'
   curl https://get.volta.sh | bash
 
-  source ../configs/zsh/.zshrc
+  # shellcheck disable=SC1091
+  source "$HOME/.zshrc"
 
   volta install node
   volta install yarn@1
