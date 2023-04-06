@@ -49,7 +49,8 @@ tap 'romkatv/powerlevel10k'
 brew 'powerlevel10k'
 
 # Ruby version manager
-brew 'rbenv'
+# brew 'rbenv'
+# brew 'ruby-build'
 
 # Persistent key-value database, with built-in net interface https://redis.io/
 brew 'redis'
