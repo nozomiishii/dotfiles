@@ -129,7 +129,7 @@
     ".env.sample": "dotenv",
     "CODEOWNERS": "ignore",
     "Brewfile*": "ruby",
-    "**/Brewfiles/*": "ruby"
+    "**/Brewfiles/**": "ruby"
   },
 
   // ----------------------------------------------------------------
