@@ -213,6 +213,8 @@ if [ ! "$@" ]; then
   setup_homebrew
   setup_macos
   link_modules
+  setup_apps
+  setup_environment
 
   echo "👨🏻‍🚀 Open the apps that needs to be configured"
   open -b com.apple.systempreferences
@@ -224,15 +226,13 @@ if [ ! "$@" ]; then
   open /users
   open https://github.com/nozomiishii/dotfiles
 
-  setup_apps
-  setup_environment
-
   printf "🎉 The dotfiles installation is complete \n\n"
   # Turn display off after: 15 mins
   sudo pmset -c displaysleep 15
 
   printf "👨🏻‍🚀 Restart the mac \n"
-  printf "'sudo reboot' \n\n\n"
+  printf "run: \n"
+  printf "  sudo reboot \n\n\n"
 fi
 
 for i in "$@"; do
