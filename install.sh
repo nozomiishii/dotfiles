@@ -155,22 +155,47 @@ sync_with_drive() {
   source "$ROOT_PATH/src/drive.sh"
 }
 
+# This function installs the Xcode Command Line Tools if they are not already installed.
+# @See
+# https://gist.github.com/mokagio/b974620ee8dcf5c0671f
+# http://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
+install_xcode_cli_tools() {
+  # Check if Xcode CLI tools are already installed by trying to print the SDK path.
+  if ! xcode-select -p &> /dev/null; then
+    echo "👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
+    TEMP_FILE="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
+    touch "${TEMP_FILE}"
+
+    CLI_TOOLS=$(softwareupdate -l \
+      | grep "\*.*Command Line" \
+      | tail -n 1 | sed 's/^[^C]* //')
+
+    echo "👨🏻‍🚀 Installing: ${CLI_TOOLS}"
+    softwareupdate -i "${CLI_TOOLS}" --verbose
+
+    rm "${TEMP_FILE}"
+  else
+    echo "👨🏻‍🚀 Xcode CLI tools OK"
+  fi
+}
+
 if [ ! "$@" ]; then
   printf "\n👨🏻‍🚀 Install the best Mac setup for you!! \n"
 
-  if [[ ! -d /Applications/Xcode.app/Contents/Developer && ! -d /Library/Developer/CommandLineTools ]]; then
-    echo "👨🏻‍🚀 Ooops! you need to install xcode-select"
-    printf "\n xcode-select --install \n"
-    xcode-select --install
-    printf "\n👨🏻‍🚀 The installation pop-up will appear\n\n"
-    exit
-  fi
+  # if [[ ! -d /Applications/Xcode.app/Contents/Developer && ! -d /Library/Developer/CommandLineTools ]]; then
+  #   echo "👨🏻‍🚀 Ooops! you need to install xcode-select"
+  #   printf "\n xcode-select --install \n"
+  #   xcode-select --install
+  #   printf "\n👨🏻‍🚀 The installation pop-up will appear\n\n"
+  #   exit
+  # fi
 
   pre_sudo
   cd "$HOME"
-  if [ -d /Applications/Xcode.app ]; then
-    sudo xcodebuild -license accept
-  fi
+
+  echo "👨🏻‍🚀 Checking Xcode CLI tools"
+  install_xcode_cli_tools
+
   if [ ! -d "$HOME"/dotfiles ]; then
     clone_repo
   fi
