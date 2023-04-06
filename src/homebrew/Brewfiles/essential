@@ -17,6 +17,9 @@ brew 'asdf'
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew 'bat'
 
+# Bash Automated Testing System https://github.com/bats-core/bats-core
+brew 'bats-core'
+
 # Load/unload environment variables based on $PWD https://direnv.net/
 brew 'direnv'
 
