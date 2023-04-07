@@ -2,8 +2,6 @@
 .DS_Store
 
 # Apps
-# Alfred
-**/Alfred/Alfred.alfredpreferences/preferences/local
 # Karabiner
 **/karabiner/automatic_backups
 
@@ -12,14 +10,8 @@
 **/nvim/plugged
 # antigen
 **/antigen.zsh.zwc
-# yarn
+# Node
 node_modules
-yarn-error.log
-**/.config/yarn/global/node_modules
 # ssh
 **/.ssh/*
 !**/.ssh/config
-
-# Brewfile.lock.json
-*.lock.json
-Brewfile_merged
