@@ -24,9 +24,7 @@ fi
 stow -vd "$APPS_PATH" -t "$VSCODE_PATH" VSCode
 
 echo "- 🥒 tmux"
-if [ ! -d "$HOME/.tmux/plugins/tpm/bin/" ]; then
-  ~/.tmux/plugins/tpm/bin/install_plugins
-fi
+"$HOME/dotfiles/submodules/tpm/bin/install_plugins"
 
 if [ ! -e "/Applications/Xcode.app" ]; then
   echo "🥲 Xcode not found"
