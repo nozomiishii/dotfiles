@@ -12,12 +12,12 @@ source "$SCRIPT_DIR/../../utils/remove_temp_files.sh"
 # shellcheck source=../../utils/request_admin_privileges.sh
 source "$SCRIPT_DIR/../../utils/request_admin_privileges.sh"
 
-CHANGED_FILES_REMOTE=$(git diff --name-only HEAD origin/HEAD)
-if ! echo "$CHANGED_FILES_REMOTE" | grep -q "src/homebrew/"; then
+COMMITTED_FILES_DIFF=$(git diff --name-only "HEAD@{1}" HEAD)
+if ! echo "$COMMITTED_FILES_DIFF" | grep -q "src/homebrew/"; then
   exit 0
 fi
 
-echo "$CHANGED_FILES_REMOTE"
+echo "$COMMITTED_FILES_DIFF"
 
 printf "🍺 Starting Brewfile maintenance\n"
 request_admin_privileges
