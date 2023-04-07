@@ -167,6 +167,13 @@
   // Shell
   // ----------------------------------------------------------------
   "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.shellcheck": true
+    }
+  },
+  "[bats]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format",
     "editor.codeActionsOnSave": {
       "source.fixAll.shellcheck": true
     }
