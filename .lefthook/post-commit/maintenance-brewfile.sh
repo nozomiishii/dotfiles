@@ -17,6 +17,8 @@ if ! echo "$CHANGED_FILES_REMOTE" | grep -q "src/homebrew/"; then
   exit 0
 fi
 
+echo "$CHANGED_FILES_REMOTE"
+
 printf "🍺 Starting Brewfile maintenance\n"
 request_admin_privileges
 
