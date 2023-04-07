@@ -14,6 +14,10 @@
 # @raycast.author Nozomi Ishii
 # @raycast.authorURL https://github.com/nozomiishii
 
+# -C: Prevent overwriting files with output redirection
+# -e: Exit the script if any command returns a non-zero status
+# -u: Exit the script if an undefined variable is used
+# -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
 TEXT_RED="\033[1;31m"
