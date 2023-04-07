@@ -64,12 +64,22 @@ upgrade() {
   cd -
 }
 
-clone_repo() {
-  echo "👨🏻‍🚀 Clone nozomiishii/dotfiles..."
-  git clone https://github.com/nozomiishii/dotfiles.git
-  cd "$HOME"/dotfiles
-  git remote set-url origin git@github.com:nozomiishii/dotfiles.git
-  cd "$HOME"
+# Sets up the dotfiles repository by cloning the repository,
+# initializing and updating Git submodules, and changing the remote URL to SSH.
+setup_dotfiles_repository() {
+  local repo="nozomiishii/dotfiles"
+  local remote_url="https://github.com/${repo}.git"
+  local ssh_url="git@github.com:${repo}.git"
+  local dotfiles_dir="${HOME}/dotfiles"
+
+  printf "👨🏻‍🚀 Cloning %s...\n" "${repo}"
+  git clone "${remote_url}" "${dotfiles_dir}"
+
+  printf "👨🏻‍🚀 Initializing and updating Git submodules...\n"
+  (cd "${dotfiles_dir}" && git submodule update --init --recursive)
+
+  printf "👨🏻‍🚀 Changing remote URL to SSH...\n"
+  (cd "${dotfiles_dir}" && git remote set-url origin "${ssh_url}")
 }
 
 reinstall() {
@@ -77,7 +87,7 @@ reinstall() {
   echo "♻️ Reinstall this dotfiles repository"
 
   rm -rf "$HOME"/dotfiles
-  clone_repo
+  setup_dotfiles_repository
 
   exec $SHELL
 }
@@ -199,7 +209,7 @@ if [ ! "$@" ]; then
   install_xcode_cli_tools
 
   if [ ! -d "$HOME"/dotfiles ]; then
-    clone_repo
+    setup_dotfiles_repository
   fi
 
   # Turn display off after: Never
