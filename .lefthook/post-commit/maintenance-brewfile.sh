@@ -36,4 +36,4 @@ brew cleanup --verbose
 printf "🍺 Upgrading installed packages...\n"
 brew upgrade --verbose
 
-printf "\n🍺 Brewfile maintenance completed\n\n"
+printf "\n🍺 Brewfile maintenance is complete🎉\n\n"
