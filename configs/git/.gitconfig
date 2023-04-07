@@ -1,8 +1,5 @@
 [user]
 	name = Nozomi Ishii
-	# If you want to set up locally
-	# git config user.email "you@example.com"
-	# git config --list
 	email = nozomiishii.jp@gmail.com
 [pull]
 	rebase = true
@@ -11,3 +8,5 @@
 [core]
 	editor = nvim
 	ignorecase = false
+[submodule]
+	recurse = true
