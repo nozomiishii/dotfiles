@@ -5,8 +5,14 @@
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+# shellcheck source=./utils/install_xcode_cli_tools.sh
+source "$SCRIPT_DIR/utils/install_xcode_cli_tools.sh"
+
 #
 # zsh -c "$(curl -fsSL https://nozomiishii.dev/dotfiles/install)"
+#
 # -c: Take the first argument as a command to execute
 # -f (--fail): Quit silently when a server error occurs.
 # -s (--silent): Silent mode. Don't show progress meter or error messages. Makes Curl mute.
@@ -170,30 +176,6 @@ generate_sshkey() {
 sync_with_drive() {
   echo "🌎 Sync with google drive"
   source "$ROOT_PATH/src/drive.sh"
-}
-
-# This function installs the Xcode Command Line Tools if they are not already installed.
-# @See
-# https://gist.github.com/mokagio/b974620ee8dcf5c0671f
-# http://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
-install_xcode_cli_tools() {
-  # Check if Xcode CLI tools are already installed by trying to print the SDK path.
-  if ! xcode-select -p &> /dev/null; then
-    echo "👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
-    TEMP_FILE="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
-    touch "${TEMP_FILE}"
-
-    CLI_TOOLS=$(softwareupdate -l \
-      | grep "\*.*Command Line" \
-      | tail -n 1 | sed 's/^[^C]* //')
-
-    echo "👨🏻‍🚀 Installing: ${CLI_TOOLS}"
-    softwareupdate -i "${CLI_TOOLS}" --verbose
-
-    rm "${TEMP_FILE}"
-  else
-    echo "👨🏻‍🚀 Xcode CLI tools OK"
-  fi
 }
 
 if [ ! "$@" ]; then
