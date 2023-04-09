@@ -6,18 +6,18 @@ pre-commit:
 
   commands:
     format:
-      run: npx -y prettier --ignore-unknown --write {staged_files} '!apps' '!**/p10k.zsh' '!**/zinit.zsh'
+      run: yarn format
 
     lint-markdown:
       glob: '*.md'
-      run: npx -y markdownlint-cli2 {staged_files}
+      run: yarn markdownlint-cli2 {staged_files}
 
 commit-msg:
   parallel: true
 
   commands:
     commitlint:
-      run: npx commitlint --edit
+      run: yarn commitlint --edit {1} --verbose
 
   scripts:
     'spell-check.sh':
