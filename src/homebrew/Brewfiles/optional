@@ -1,89 +1,89 @@
-cask_args appdir: '/Applications'
+cask_args appdir: "/Applications"
 
-tap 'homebrew/bundle'
-tap 'homebrew/cask'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
-tap 'homebrew/core'
-tap 'homebrew/services'
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
 
 # ----------------------------------------------------------------
 # Brew
 # ----------------------------------------------------------------
 
 # Dependencies asdf golang | GNU File, Shell, and Text utilities https://www.gnu.org/software/coreutils
-brew 'coreutils'
+brew "coreutils"
 
 # Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
-brew 'ethereum'
+brew "ethereum"
 
 # Simple, fast and user-friendly alternative to find https://github.com/sharkdp/fd
-brew 'fd'
+brew "fd"
 
 # Play, record, convert, and stream audio and video https://ffmpeg.org/
-brew 'ffmpeg'
+brew "ffmpeg"
 
 # Command-line tools for fly.io services https://fly.io
-brew 'flyctl'
+brew "flyctl"
 
 # Command-line fuzzy finder written in Go https://github.com/junegunn/fzf
-brew 'fzf'
+brew "fzf"
 
 # Command-line JSON processing tool https://github.com/antonmedv/fx
-brew 'fx'
+brew "fx"
 
 # Like cURL, but for gRPC https://github.com/fullstorydev/grpcurl
-brew 'grpcurl'
+brew "grpcurl"
 
 # Kubernetes package manager https://helm.sh/
-brew 'helm'
+brew "helm"
 
 # Run a Kubernetes cluster locally https://minikube.sigs.k8s.io/
-brew 'minikube'
+brew "minikube"
 
 # Generate clients, server & docs from an OpenAPI spec https://openapi-generator.tech/
-brew 'openapi-generator'
+brew "openapi-generator"
 
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
-tap 'stripe/stripe-cli'
-brew 'stripe'
+tap "stripe/stripe-cli"
+brew "stripe"
 
 # Text interface for Git repositories https://jonas.github.io/tig/
-brew 'tig'
+brew "tig"
 
 # Display directories as trees http://mama.indstate.edu/users/ice/tree/
-brew 'tree'
+brew "tree"
 
 # Executes a program periodically, showing output fullscreen https://gitlab.com/procps-ng/procps
-brew 'watch'
+brew "watch"
 
 # ----------------------------------------------------------------
 # Cask
 # ----------------------------------------------------------------
 
 # Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
-cask '1password-cli'
+cask "1password-cli"
 
 # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
-cask 'firefox-developer-edition'
+cask "firefox-developer-edition"
 
 # Personal blockchain for Ethereum development https://truffleframework.com/ganache/
-cask 'ganache'
+cask "ganache"
 
 # HTTP and GraphQL Client https://insomnia.rest/
-cask 'insomnia'
+cask "insomnia"
 
 # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
-cask 'ledger-live'
+cask "ledger-live"
 
 # Knowledge base that works on top of a local folder of plain text Markdown files https://obsidian.md/
-cask 'obsidian'
+cask "obsidian"
 
 # Administration and development platform for PostgreSQL https://www.pgadmin.org/
-cask 'pgadmin4'
+cask "pgadmin4"
 
 # Music streaming service. https://www.spotify.com
-cask 'spotify'
+cask "spotify"
 
 # Virtual machines UI using QEMU https://getutm.app/
-cask 'utm'
+cask "utm"

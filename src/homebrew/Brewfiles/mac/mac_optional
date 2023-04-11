@@ -4,87 +4,87 @@ if OS.mac?
   # ----------------------------------------------------------------
 
   # Dependency manager for Cocoa projects https://cocoapods.org/
-  brew 'cocoapods'
+  brew "cocoapods"
 
   # The scalable code generator that saves you time. https://www.hygen.io/
-  tap 'jondot/tap'
-  brew 'hygen'
+  tap "jondot/tap"
+  brew "hygen"
 
   # ----------------------------------------------------------------
   # Cask
   # ----------------------------------------------------------------
 
   # Tools for building Android applications https://developer.android.com/studio
-  cask 'android-studio'
+  cask "android-studio"
 
   # Virtual Audio Driver https://existential.audio/blackhole/
-  cask 'blackhole-2ch'
+  cask "blackhole-2ch"
 
   # Free and open-source 3D creation suite. https://www.blender.org
-  cask 'blender'
+  cask "blender"
 
   # Keyboard customizer. https://pqrs.org/osx/karabiner
-  cask 'karabiner-elements'
+  cask "karabiner-elements"
 
   # Automation software https://www.keyboardmaestro.com/main/
-  cask 'keyboard-maestro'
+  cask "keyboard-maestro"
 
   # Display key code, unicode value and modifier keys state for any key combination https://manytricks.com/keycodes/
-  cask 'key-codes'
+  cask "key-codes"
 
   # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
-  cask 'kindle'
+  cask "kindle"
 
   # Preview and audit Kindle eBooks https://www.amazon.com/Kindle-Previewer/b?ie=UTF8&node=21381691011
-  cask 'kindle-previewer'
+  cask "kindle-previewer"
 
   # Online collaborative whiteboard platform https://miro.com/
-  cask 'miro'
+  cask "miro"
 
   # Desktop virtualization software https://www.parallels.com/products/desktop/
-  cask 'parallels'
-  cask 'parallels-toolbox'
+  cask "parallels"
+  cask "parallels-toolbox"
 
   # VPN client focusing on security https://protonvpn.com/
-  cask 'protonvpn'
+  cask "protonvpn"
 
   # Messaging app with a focus on speed and security https://macos.telegram.org/
-  cask 'telegram'
+  cask "telegram"
 
   # Management tool for Unity. https://unity3d.com/get-unity/download
-  cask 'unity-hub'
+  cask "unity-hub"
 
   # Multimedia player. https://www.videolan.org/vlc
-  cask 'vlc'
+  cask "vlc"
 
   # Virtualization tool https://github.com/insidegui/VirtualBuddy
-  cask 'VirtualBuddy'
+  cask "VirtualBuddy"
 
   # Graphical network analyzer and capture tool https://www.wireshark.org
-  cask 'wireshark'
+  cask "wireshark"
 
   # Video communication and virtual meeting platform https://www.zoom.us/
-  cask 'zoom'
+  cask "zoom"
 
   # ----------------------------------------------------------------
   # Embedded Rust | Wio Terminal
   # ----------------------------------------------------------------
 
   # Menu-driven communications program https://packages.debian.org/sid/minicom
-  brew 'minicom'
+  brew "minicom"
 
   # Low-level access to audio, keyboard, mouse, joystick, and graphics https://www.libsdl.org/
-  brew 'sdl2'
+  brew "sdl2"
 
   # Cryptography and SSL/TLS Toolkit https://openssl.org/
-  brew 'openssl@3'
+  brew "openssl@3"
 
   # ----------------------------------------------------------------
   # Mas
   # ----------------------------------------------------------------
 
   # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
-  mas 'Xcode', id: 497_799_835
+  mas "Xcode", id: 497_799_835
 
-  mas 'LINE', id: 539_883_307
+  mas "LINE", id: 539_883_307
 end

@@ -63,7 +63,7 @@ if ! type node > /dev/null 2>&1; then
   yarn -v
 fi
 
-# to use @prettier/ruby
+# to format just only Brewfile🥹
 ruby_version=$(ruby -e 'puts RUBY_VERSION')
 required_version="3.1.4"
 if [ "$ruby_version" != "$required_version" ]; then
@@ -71,7 +71,7 @@ if [ "$ruby_version" != "$required_version" ]; then
   rbenv global "$required_version"
 
   eval "$(rbenv init - zsh)"
-  sudo gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
+  gem install rufo
 fi
 
 if ! type cargo > /dev/null 2>&1; then
