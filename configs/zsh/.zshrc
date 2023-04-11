@@ -4,8 +4,15 @@
 # echo '🧙🏿 ...zshrc loading...'
 
 # Powerlevel10k
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
-source "$HOME/.zsh/p10k.zsh"
+powerlevel10k_prefix="$(brew --prefix 2> /dev/null)"
+if [ -f "${powerlevel10k_prefix}/opt/powerlevel10k/powerlevel10k.zsh-theme" ]; then
+  # shellcheck disable=SC1091
+  source "${powerlevel10k_prefix}/opt/powerlevel10k/powerlevel10k.zsh-theme"
+fi
+if [ -f "$HOME/.zsh/p10k.zsh" ]; then
+  # shellcheck disable=SC1094
+  source "$HOME/.zsh/p10k.zsh"
+fi
 
 # Package managers
 source "$HOME/.zsh/antigen.zsh"
@@ -26,7 +33,9 @@ source "$HOME/.zsh/functions.zsh"
 if type direnv > /dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
 
 # asdf
-if [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then . $(brew --prefix asdf)/libexec/asdf.sh; fi
+asdf_prefix="$(brew --prefix asdf 2> /dev/null)"
+# shellcheck disable=SC1091
+if [ -f "${asdf_prefix}/libexec/asdf.sh" ]; then . "${asdf_prefix}/libexec/asdf.sh"; fi
 
 # lang
 export LANG="en_US.UTF-8"
