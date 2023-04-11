@@ -30,7 +30,7 @@ ROOT_PATH="$HOME/dotfiles"
 CONFIGS_PATH="$ROOT_PATH/configs"
 
 usage() {
-  cat <<EOF
+  cat << EOF
 
 
 NAME
@@ -69,7 +69,7 @@ pre_sudo() {
     sudo -n true
     sleep 60
     kill -0 "$$" || exit
-  done 2>/dev/null &
+  done 2> /dev/null &
 }
 
 upgrade() {
@@ -190,14 +190,14 @@ sync_with_drive() {
 # http://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
 install_xcode_cli_tools() {
   # Check if Xcode CLI tools are already installed by trying to print the SDK path.
-  if ! xcode-select -p &>/dev/null; then
+  if ! xcode-select -p &> /dev/null; then
     echo "👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
     TEMP_FILE="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
     touch "${TEMP_FILE}"
 
-    CLI_TOOLS=$(softwareupdate -l |
-      grep "\*.*Command Line" |
-      tail -n 1 | sed 's/^[^C]* //')
+    CLI_TOOLS=$(softwareupdate -l \
+      | grep "\*.*Command Line" \
+      | tail -n 1 | sed 's/^[^C]* //')
 
     echo "👨🏻‍🚀 Installing: ${CLI_TOOLS}"
     softwareupdate -i "${CLI_TOOLS}" --verbose
@@ -256,63 +256,63 @@ fi
 
 for i in "$@"; do
   case "$i" in
-  -a | --apps)
-    setup_apps
-    shift
-    ;;
-  -b | --homebrew)
-    setup_homebrew
-    shift
-    ;;
-  -bf | --homebrew-full)
-    export setup_homebrew_full=true
-    setup_homebrew
-    shift
-    ;;
-  -c | --code)
-    setup_repositoris
-    shift
-    ;;
-  -d | --drive)
-    sync_with_drive
-    shift
-    ;;
-  -e | --environment)
-    setup_environment
-    shift
-    ;;
-  -h | --help)
-    usage
-    shift
-    ;;
-  -k | --sshkey)
-    generate_sshkey
-    shift
-    ;;
-  -l | --symlink)
-    link_modules
-    shift
-    ;;
-  -m | --macos)
-    setup_macos
-    shift
-    ;;
-  -r | --reinstall)
-    reinstall
-    shift
-    ;;
-  -ul=* | --unlink=*)
-    MODULES="${i#*=}"
-    unlink_modules
-    shift
-    ;;
-  -up | --upgrade)
-    upgrade
-    shift
-    ;;
-  *)
-    usage
-    shift
-    ;;
+    -a | --apps)
+      setup_apps
+      shift
+      ;;
+    -b | --homebrew)
+      setup_homebrew
+      shift
+      ;;
+    -bf | --homebrew-full)
+      export setup_homebrew_full=true
+      setup_homebrew
+      shift
+      ;;
+    -c | --code)
+      setup_repositoris
+      shift
+      ;;
+    -d | --drive)
+      sync_with_drive
+      shift
+      ;;
+    -e | --environment)
+      setup_environment
+      shift
+      ;;
+    -h | --help)
+      usage
+      shift
+      ;;
+    -k | --sshkey)
+      generate_sshkey
+      shift
+      ;;
+    -l | --symlink)
+      link_modules
+      shift
+      ;;
+    -m | --macos)
+      setup_macos
+      shift
+      ;;
+    -r | --reinstall)
+      reinstall
+      shift
+      ;;
+    -ul=* | --unlink=*)
+      MODULES="${i#*=}"
+      unlink_modules
+      shift
+      ;;
+    -up | --upgrade)
+      upgrade
+      shift
+      ;;
+    *)
+      usage
+      shift
+      ;;
   esac
 done

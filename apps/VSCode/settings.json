@@ -178,6 +178,7 @@
       "source.fixAll.shellcheck": true
     }
   },
+  "shellformat.flag": "--indent 2 --binary-next-line --case-indent --space-redirects",
   "shellcheck.ignorePatterns": {
     "**/*.xonshrc": true,
     "**/*.xsh": true,
