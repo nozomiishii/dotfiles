@@ -9,8 +9,6 @@ source "$HOME/.zsh/p10k.zsh"
 
 # Package managers
 source "$HOME/.zsh/antigen.zsh"
-# source "$HOME/.zsh/zinit.zsh"
-# source "$HOME/.zsh/zplug.zsh"
 
 # Config
 source "$HOME/.zsh/config.zsh"

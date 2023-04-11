@@ -32,7 +32,6 @@ target_patterns=(
 ignore_patterns=(
   "submodules/**"
   "**/p10k.zsh"
-  "**/zinit.zsh"
 )
 
 target_files=$(get_target_files --target "${target_patterns[*]}" --ignore "${ignore_patterns[*]}")
