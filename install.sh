@@ -54,7 +54,6 @@ OPTIONS:
     -m,    --macos         💻 MacOS setup
     -r,    --reinstall     ♻️ Reinstall this dotfiles repository
     -ul=*, --unlink=*      👋 Unlinking Symbolic links
-    -up,   --upgrade       🚀 Upgrading dotfiles
 
 
 
@@ -70,14 +69,6 @@ pre_sudo() {
     sleep 60
     kill -0 "$$" || exit
   done 2> /dev/null &
-}
-
-upgrade() {
-  echo "🚀 Upgrading dotfiles"
-  cd "$ROOT_PATH"
-  git pull origin main
-  printf "\n🚀 Dotfiles upgrade is complete \n\n"
-  cd -
 }
 
 # Sets up the dotfiles repository by cloning the repository,
@@ -304,10 +295,6 @@ for i in "$@"; do
     -ul=* | --unlink=*)
       MODULES="${i#*=}"
       unlink_modules
-      shift
-      ;;
-    -up | --upgrade)
-      upgrade
       shift
       ;;
     *)
