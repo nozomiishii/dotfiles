@@ -10,14 +10,14 @@ pre-commit:
 
     lint-markdown:
       glob: '*.md'
-      run: yarn markdownlint-cli2 {staged_files}
+      run: npx -y markdownlint-cli2 {staged_files}
 
 commit-msg:
   parallel: true
 
   commands:
     commitlint:
-      run: yarn commitlint --edit {1} --verbose
+      run: npx -y commitlint --edit {1} --verbose
 
   scripts:
     'spell-check.sh':
