@@ -1,0 +1,28 @@
+name: Shell code quality check
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  macos:
+    runs-on: macos-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          brew install shfmt
+          brew install shellcheck
+          brew install bats-core
+
+      - name: Format Check
+        run: ./utils/shfmt/shfmt.sh
+
+      # - name: Lint
+      #   run: yarn home:lint
+
+      - name: Test
+        run: |
+          bats ./utils/**
