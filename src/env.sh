@@ -50,8 +50,8 @@ if ! type node > /dev/null 2>&1; then
   echo '- 🐉 Install Node with Volta⚡️'
   curl https://get.volta.sh | bash
 
-  # shellcheck disable=SC1091
-  source "$HOME/.zshrc"
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
 
   volta install node
   volta install yarn@1
@@ -64,7 +64,15 @@ if ! type node > /dev/null 2>&1; then
 fi
 
 # to use @prettier/ruby
-sudo gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
+ruby_version=$(ruby -e 'puts RUBY_VERSION')
+required_version="3.1.4"
+if [ "$ruby_version" != "$required_version" ]; then
+  rbenv install "$required_version"
+  rbenv global "$required_version"
+
+  eval "$(rbenv init - zsh)"
+  sudo gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
+fi
 
 if ! type cargo > /dev/null 2>&1; then
   echo '- 🦀 Install Rust'
