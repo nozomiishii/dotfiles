@@ -17,6 +17,9 @@ echo -e '🐉 Node\n'
 
 echo '- 🐉 Install Node with Volta⚡️'
 curl https://get.volta.sh | bash
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 echo "- ⚡️ volta $(volta --version)"
 
 volta install node
