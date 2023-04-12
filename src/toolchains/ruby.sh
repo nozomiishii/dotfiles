@@ -17,6 +17,7 @@ echo "- 🐙 $(rbenv --version)"
 
 echo '- 🐙 Install ruby-build'
 brew install ruby-build
+brew upgrade ruby-build
 echo "- 🐙 $(ruby-build --version)"
 
 ruby_version=$(ruby -e 'puts RUBY_VERSION')
