@@ -1,13 +1,13 @@
-name: Command dev environment setup
+name: Setup toolchains
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - 'src/env.sh'
+      - 'src/toolchains/toolchains.sh'
   pull_request:
     paths:
-      - 'src/env.sh'
+      - 'src/toolchains/toolchains.sh'
 
 jobs:
   check:
@@ -16,5 +16,5 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
 
-      - name: Run Dev environment setup
-        run: ./src/env.sh
+      - name: Run setup toolchains
+        run: ./src/toolchains/toolchains.sh

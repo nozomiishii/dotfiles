@@ -47,11 +47,11 @@ OPTIONS:
     -bf,   --homebrew-full  🍺 Homebrew setup(full)
     -c,    --code          🦄 Clone repositories
     -d,    --drive         🌎 Sync with google drive
-    -e,    --environment   🌝 Environment setup
     -h,    --help          💡 Print this usage
     -k,    --sshkey        🔐 Generate ssh key
     -l,    --symlink       🗂 Symbolic link
     -m,    --macos         💻 MacOS setup
+    -t,    --toolchains    🌝 Toolchains setup
     -r,    --reinstall     ♻️ Reinstall this dotfiles repository
     -ul=*, --unlink=*      👋 Unlinking Symbolic links
 
@@ -140,8 +140,8 @@ setup_apps() {
 
 # Environment
 # Dependencis | Homebrew | Link | Apps (agree to the Xcode license)
-setup_environment() {
-  echo "🌝 Environment setup"
+setup_toolchains() {
+  echo "🌝 Toolchains setup"
   pre_sudo
 
   # if ! command -v dfx > /dev/null 2>&1; then
@@ -149,8 +149,7 @@ setup_environment() {
   #   DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
   # fi
 
-  echo "🌝 Environment setup"
-  source "$ROOT_PATH/src/env.sh"
+  source "$ROOT_PATH/src/toolchains/toolchains.sh"
 }
 
 # Code
@@ -224,7 +223,7 @@ if [ ! "$@" ]; then
   setup_macos
   link_modules
   setup_apps
-  setup_environment
+  setup_toolchains
 
   echo "👨🏻‍🚀 Open the apps that needs to be configured"
   open -b com.apple.systempreferences
@@ -268,10 +267,7 @@ for i in "$@"; do
       sync_with_drive
       shift
       ;;
-    -e | --environment)
-      setup_environment
-      shift
-      ;;
+
     -h | --help)
       usage
       shift
@@ -286,6 +282,10 @@ for i in "$@"; do
       ;;
     -m | --macos)
       setup_macos
+      shift
+      ;;
+    -t | --toolchains)
+      setup_toolchains
       shift
       ;;
     -r | --reinstall)
