@@ -111,7 +111,7 @@ setup_homebrew() {
 setup_macos() {
   echo "💻 MacOS setup"
   pre_sudo
-  source "$ROOT_PATH/src/macos.sh"
+  source "$ROOT_PATH/src/macos/macos.sh"
 }
 
 # Link
