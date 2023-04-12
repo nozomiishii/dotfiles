@@ -58,6 +58,7 @@ echo "- 🐉 node $(node --version)"
 echo "- 🚚 yarn $(yarn --version)"
 
 echo '- 🐉 Setup Node'
+npm install -g corepack
 corepack enable
 corepack enable npm
 
