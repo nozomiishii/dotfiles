@@ -9,10 +9,12 @@ GOOGLE_DRIVE_DIR="$HOME/Google\ Drive"
 # ----------------------------------------------------------------
 # NeoVim
 # ----------------------------------------------------------------
-alias vi="nvim"
-alias vim="nvim"
-alias view="nvim -R"
-alias vimconfig="vim $HOME/dotfiles/nvim/init.vim"
+if command -v nvim > /dev/null 2>&1; then
+  alias vi="nvim"
+  alias vim="nvim"
+  alias view="nvim -R"
+  alias vimconfig="vim $HOME/dotfiles/nvim/init.vim"
+fi
 
 # ----------------------------------------------------------------
 # Maintenance
