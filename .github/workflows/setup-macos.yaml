@@ -1,4 +1,4 @@
-name: Command macos setup
+name: Setup MacOS
 
 on:
   workflow_dispatch:
@@ -16,5 +16,5 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
 
-      - name: Run MacOS setup
+      - name: Run setup MacOS
         run: ./src/macos/macos.sh

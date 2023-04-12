@@ -1,4 +1,4 @@
-name: Command brew setup
+name: Setup homebrew
 
 on:
   workflow_dispatch:
@@ -16,5 +16,5 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
 
-      - name: Run Homebrew setup
+      - name: Run setup Homebrew
         run: ./src/homebrew/homebrew.sh

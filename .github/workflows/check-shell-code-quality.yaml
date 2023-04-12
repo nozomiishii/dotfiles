@@ -1,4 +1,4 @@
-name: Shell code quality check
+name: Check shell code quality
 
 on:
   workflow_dispatch:
