@@ -13,6 +13,11 @@ on:
         required: true
         default: 'false'
 
+      ruby_job:
+        description: 'Run ruby job (true/false)'
+        required: true
+        default: 'false'
+
       toolchains_job:
         description: 'Run toolchains job (true/false)'
         required: true
@@ -65,6 +70,26 @@ jobs:
       - name: Run setup python
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.python_job == 'true' || steps.filter.outputs.file == 'true'
         run: ./src/toolchains/python.sh
+
+  ruby:
+    runs-on: macos-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.ruby_job == 'true' || github.event_name != 'workflow_dispatch'
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Check file path
+        if: github.event_name != 'workflow_dispatch'
+        id: filter
+        uses: dorny/paths-filter@v2.2.1
+        with:
+          filters: |
+            file:
+              - '**/ruby.sh'
+
+      - name: Run setup ruby
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.ruby_job == 'true' || steps.filter.outputs.file == 'true'
+        run: ./src/toolchains/ruby.sh
 
   toolchains:
     runs-on: macos-latest

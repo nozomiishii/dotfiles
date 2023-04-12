@@ -7,113 +7,31 @@
 set -Ceu
 GREEN='\033[0;32m'
 NO_COLOR='\033[0m'
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 
 echo -e "🌝 Starting Environment setup...\n\n"
 
 # ----------------------------------------------------------------
 # Node
 # ----------------------------------------------------------------
-echo -e '🐉 Node\n'
-
-echo '- 🐉 Install Node with Volta⚡️'
-curl https://get.volta.sh | bash
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
-echo "- ⚡️ volta $(volta --version)"
-
-volta install node
-volta install yarn@1
-
-echo "- 🐉 node $(node --version)"
-echo "- 🚚 yarn $(yarn --version)"
-
-echo '- 🐉 Setup corepack'
-yarn global add corepack
-corepack enable
-corepack enable npm
-
-echo -e "\n${GREEN}🐉 Node setup is complete 🎉${NO_COLOR}\n\n"
+source "$SCRIPT_DIR/node.sh"
 
 # ----------------------------------------------------------------
 # Rust
 # ----------------------------------------------------------------
-echo -e '🦀 Rust\n'
-if ! command -v rustup > /dev/null 2>&1; then
-  echo '- 🦀 Install Rust'
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  # shellcheck disable=SC1091
-  source "$HOME/.cargo/env"
-fi
-rustup update
-echo "- 🦀 $(rustup --version)"
-echo "- 🦀 $(rustc --version)"
-echo "- 🦀 $(rustdoc --version)"
-echo "- 🦀 $(cargo --version)"
-
-echo '- 🦀 Setup rust-analyzer'
-rustup component add rust-analyzer
-rustup toolchain install stable-aarch64-apple-darwin
-
-echo '- 🦀 Setup Cargo global'
-cargo install cargo-edit
-cargo install cargo-watch
-cargo install cargo-nextest
-cargo install cargo-modules
-cargo install cargo-make
-cargo install create-tauri-app
-cargo install wasm-pack
-cargo install sea-orm-cli
-cargo install diesel_cli --no-default-features --features postgres
-
-echo -e "\n${GREEN}🦀 Rust setup is complete 🎉${NO_COLOR}\n\n"
+# source "$SCRIPT_DIR/rust.sh"
 
 # ----------------------------------------------------------------
 # Python
 # ----------------------------------------------------------------
-echo -e '🐍 Python\n'
-
-echo '- 🐍 Install pyenv'
-brew install pyenv
-echo "- 🐍 $(pyenv --version)"
-
-echo '- 🐍 Install Poetry'
-curl -sSL https://install.python-poetry.org | python3 -
-export PATH="$HOME/.local/bin:$PATH"
-echo "- 🐍 $(poetry --version)"
-
-echo -e "\n${GREEN}🐍 Python setup is complete 🎉${NO_COLOR}\n\n"
+# source "$SCRIPT_DIR/python.sh"
 
 # ----------------------------------------------------------------
 # Ruby
 #
 # Just want to format just only Brewfile🥹
 # ----------------------------------------------------------------
-echo -e '🐙 Ruby\n'
-
-echo '- 🐙 Install rbenv'
-brew install rbenv
-eval "$(rbenv init -)"
-echo "- 🐙 $(rbenv --version)"
-
-echo '- 🐙 Install ruby-build'
-brew install ruby-build
-echo "- 🐙 $(ruby-build --version)"
-
-ruby_version=$(ruby -e 'puts RUBY_VERSION')
-required_version="3.1.4"
-
-if [ "$ruby_version" != "$required_version" ]; then
-  echo '- 🐙 Install Ruby version'
-  rbenv install "$required_version"
-  rbenv global "$required_version"
-fi
-echo "- 🐙 $(ruby --version)"
-
-echo '- 🐙 Setup gem'
-gem install rufo
-
-echo -e "\n${GREEN}🐙 Ruby setup is complete 🎉${NO_COLOR}\n\n"
+source "$SCRIPT_DIR/ruby.sh"
 
 # ----------------------------------------------------------------
 # Result
