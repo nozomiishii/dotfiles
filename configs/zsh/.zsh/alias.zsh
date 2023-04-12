@@ -47,8 +47,11 @@ alias arc="cd $CODE_DIR/nozomiishii/archives"
 # ----------------------------------------------------------------
 alias quit="exec $SHELL -l"
 alias zz="exec $SHELL"
-alias ll="exa -laFh --git"
-alias ls="exa"
+
+if command -v exa > /dev/null 2>&1; then
+  alias ls="exa"
+  alias ll="exa -laFh --git"
+fi
 
 # ----------------------------------------------------------------
 # git
