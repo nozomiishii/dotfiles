@@ -5,9 +5,19 @@
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
+GREEN='\033[0;32m'
+NO_COLOR='\033[0m'
 
-printf "🍺 Starting Homebrew setup... \n"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+brewfiles_path="$SCRIPT_DIR/Brewfiles"
+# shellcheck source=../../utils/remove_temp_files/remove_temp_files.sh
+source "$SCRIPT_DIR/../../utils/remove_temp_files/remove_temp_files.sh"
 
+echo -e "🍺 Starting Homebrew setup...\n\n"
+
+# ----------------------------------------------------------------
+# Homebrew
+# ----------------------------------------------------------------
 arch_name="$(uname -m)"
 
 # For Intel mac
@@ -35,15 +45,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
 # ----------------------------------------------------------------
 
 brewfile_merged_path='/tmp/Brewfile_merged'
-if [ -f $brewfile_merged_path ]; then
-  rm $brewfile_merged_path
-fi
-if [ -f /tmp/Brewfile_merged.lock.json ]; then
-  rm /tmp/Brewfile_merged.lock.json
-fi
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-brewfiles_path="$SCRIPT_DIR/Brewfiles"
+remove_temp_files $brewfile_merged_path '/tmp/Brewfile_merged.lock.json'
 
 if "${setup_homebrew_full:-false}"; then
   printf "🍺 Homebrew setup(MacOS: full)\n"
@@ -54,7 +56,9 @@ else
 fi
 
 brew bundle --verbose --file=$brewfile_merged_path
-rm $brewfile_merged_path
-rm /tmp/Brewfile_merged.lock.json
+remove_temp_files $brewfile_merged_path '/tmp/Brewfile_merged.lock.json'
 
-printf "🎉 The Homebrew setup is complete \n\n"
+# ----------------------------------------------------------------
+# Result
+# ----------------------------------------------------------------
+echo -e "\n\n${GREEN}🎉 The Homebrew setup is complete 🎉${NO_COLOR}\n\n"
