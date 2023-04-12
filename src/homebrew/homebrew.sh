@@ -42,7 +42,8 @@ if [ -f /tmp/Brewfile_merged.lock.json ]; then
   rm /tmp/Brewfile_merged.lock.json
 fi
 
-brewfiles_path="$HOME/dotfiles/src/homebrew/Brewfiles"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+brewfiles_path="$SCRIPT_DIR/Brewfiles"
 
 if "${setup_homebrew_full:-false}"; then
   printf "🍺 Homebrew setup(MacOS: full)\n"
