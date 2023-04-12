@@ -2,6 +2,16 @@ name: Setup toolchains
 
 on:
   workflow_dispatch:
+    inputs:
+      node_job:
+        description: 'Run node job (true/false)'
+        required: true
+        default: 'false'
+      toolchains_job:
+        description: 'Run toolchains job (true/false)'
+        required: true
+        default: 'false'
+
   push:
     paths:
       - 'src/toolchains/**'
@@ -12,11 +22,13 @@ on:
 jobs:
   node:
     runs-on: macos-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.node_job == 'true' || github.event_name != 'workflow_dispatch'
     steps:
       - name: Get code
         uses: actions/checkout@v3
 
       - name: Check file path
+        if: github.event_name != 'workflow_dispatch'
         id: filter
         uses: dorny/paths-filter@v2.2.1
         with:
@@ -25,16 +37,18 @@ jobs:
               - '**/node.sh'
 
       - name: Run setup node
-        if: ${{ steps.filter.outputs.file == 'true' }}
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.node_job == 'true' || steps.filter.outputs.file == 'true'
         run: ./src/toolchains/node.sh
 
   toolchains:
     runs-on: macos-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.toolchains_job == 'true' || github.event_name != 'workflow_dispatch'
     steps:
       - name: Get code
         uses: actions/checkout@v3
 
       - name: Check file path
+        if: github.event_name != 'workflow_dispatch'
         id: filter
         uses: dorny/paths-filter@v2.2.1
         with:
@@ -43,5 +57,5 @@ jobs:
               - '**/toolchains.sh'
 
       - name: Run setup toolchains
-        if: ${{ steps.filter.outputs.file == 'true' }}
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.toolchains_job == 'true' || steps.filter.outputs.file == 'true'
         run: ./src/toolchains/toolchains.sh
