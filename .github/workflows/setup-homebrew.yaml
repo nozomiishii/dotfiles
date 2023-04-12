@@ -10,7 +10,7 @@ on:
       - 'src/**/homebrew/**'
 
 jobs:
-  check:
+  setup-homebrew:
     runs-on: macos-latest
     steps:
       - name: Get code

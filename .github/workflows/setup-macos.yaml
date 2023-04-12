@@ -10,7 +10,7 @@ on:
       - 'src/macos/macos.sh'
 
 jobs:
-  check:
+  setup-MacOS:
     runs-on: macos-latest
     steps:
       - name: Get code

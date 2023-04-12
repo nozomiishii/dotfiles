@@ -12,7 +12,7 @@ on:
       - '**/*.bats'
 
 jobs:
-  macos:
+  check-shell-code-quality:
     runs-on: macos-latest
     steps:
       - name: Get code
