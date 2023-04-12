@@ -32,11 +32,6 @@ source "$HOME/.zsh/functions.zsh"
 # direnv
 if type direnv > /dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
 
-# asdf
-asdf_prefix="$(brew --prefix asdf 2> /dev/null)"
-# shellcheck disable=SC1091
-if [ -f "${asdf_prefix}/libexec/asdf.sh" ]; then . "${asdf_prefix}/libexec/asdf.sh"; fi
-
 # lang
 export LANG="en_US.UTF-8"
 

@@ -164,7 +164,7 @@ chmod +x ~/dotfiles/install
 ~/dotfiles/install -a
 ```
 
-### 🌝 Environment setup(asdf)
+### 🌝 Environment setup
 
 ```shell
 ~/dotfiles/install -e

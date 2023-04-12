@@ -47,7 +47,7 @@ OPTIONS:
     -bf,   --homebrew-full  🍺 Homebrew setup(full)
     -c,    --code          🦄 Clone repositories
     -d,    --drive         🌎 Sync with google drive
-    -e,    --environment   🌝 Environment setup(asdf)
+    -e,    --environment   🌝 Environment setup
     -h,    --help          💡 Print this usage
     -k,    --sshkey        🔐 Generate ssh key
     -l,    --symlink       🗂 Symbolic link
@@ -149,7 +149,7 @@ setup_environment() {
   #   DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
   # fi
 
-  echo "🌝 Environment setup(asdf)"
+  echo "🌝 Environment setup"
   source "$ROOT_PATH/src/env.sh"
 }
 

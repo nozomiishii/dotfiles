@@ -38,10 +38,5 @@ post-merge:
       glob: '{package.json,yarn.lock}'
       run: yarn install
 
-    tool-versions:
-      files: git diff --name-only HEAD main
-      glob: 'configs/asdf/.tool-versions'
-      run: yarn install:environment
-
     delete-merged-branches:
       run: git branch --merged | grep -Ev '\*|master|main|dev|develop|development|stag|staging|prod|production' | xargs git branch -d; git fetch --prune;

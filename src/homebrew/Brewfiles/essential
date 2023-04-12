@@ -24,9 +24,6 @@ brew "bats-core"
 # Brew
 # ----------------------------------------------------------------
 
-# Extendable version manager with support for Ruby, Node.js, Erlang & more https://asdf-vm.com/
-brew "asdf"
-
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
 

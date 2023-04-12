@@ -8,40 +8,7 @@ set -Ceu
 GREEN='\033[0;32m'
 NO_COLOR='\033[0m'
 
-printf "🌝 Starting Environment setup(asdf)... \n"
-
-if [ ! -f ~/.tool-versions ]; then
-  echo '⚠️ ~/.tool-versions is not exist'
-  echo 'Run "./install -l" first'
-  exit
-fi
-
-plugins=$(awk '{print $1}' ~/.tool-versions)
-for plugin in $plugins; do
-  if [ ! -d ~/.asdf/plugins/"$plugin" ]; then
-    asdf plugin add "$plugin"
-  fi
-done
-
-is_runtime_versions_changed() {
-  plugin="$1"
-  specified=$(grep "$plugin" ~/.tool-versions | awk '{$1=""; print $0}')
-  installed=$(asdf list "$plugin" 2>&1)
-
-  is_changed=
-  for version in $specified; do
-    match=$(echo "$installed" | grep "$version")
-    [ -z "$match" ] && is_changed=1
-  done
-  [ "$is_changed" ]
-}
-
-for plugin in $(asdf plugin list); do
-  if is_runtime_versions_changed "$plugin"; then
-    echo "- 🚀 Installing plugin: $plugin"
-    asdf install "$plugin"
-  fi
-done
+echo -e "🌝 Starting Environment setup...\n\n"
 
 # ----------------------------------------------------------------
 # Node
