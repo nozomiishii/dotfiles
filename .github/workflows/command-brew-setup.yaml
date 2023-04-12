@@ -1,0 +1,19 @@
+name: Command brew setup
+
+on:
+  push:
+    paths:
+      - 'src/**/homebrew/**'
+  pull_request:
+    paths:
+      - 'src/**/homebrew/**'
+
+jobs:
+  check:
+    runs-on: macos-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Run Homebrew setup
+        run: ./install.sh --homebrew

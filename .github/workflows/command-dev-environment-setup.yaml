@@ -1,0 +1,19 @@
+name: Command Dev Environment Setup
+
+on:
+  push:
+    paths:
+      - 'src/**/env.sh'
+  pull_request:
+    paths:
+      - 'src/**/env.sh'
+
+jobs:
+  check:
+    runs-on: macos-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Run Dev environment setup
+        run: ./install.sh --environment

@@ -1,0 +1,19 @@
+name: Command macos setup
+
+on:
+  push:
+    paths:
+      - 'src/**/macos.sh'
+  pull_request:
+    paths:
+      - 'src/**/macos.sh'
+
+jobs:
+  check:
+    runs-on: macos-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Run MacOS setup
+        run: ./install.sh --macos
