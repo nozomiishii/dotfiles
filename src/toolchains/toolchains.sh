@@ -26,7 +26,7 @@ source "$SCRIPT_DIR/python.sh"
 #
 # Just want to format just only Brewfile🥹
 # ----------------------------------------------------------------
-# source "$SCRIPT_DIR/ruby.sh"
+source "$SCRIPT_DIR/ruby.sh"
 
 # ----------------------------------------------------------------
 # Rust

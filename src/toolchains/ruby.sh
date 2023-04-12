@@ -17,16 +17,20 @@ echo "- 🐙 $(rbenv --version)"
 
 echo '- 🐙 Install ruby-build'
 brew install ruby-build
-brew upgrade ruby-build
 echo "- 🐙 $(ruby-build --version)"
 
+# Get the latest stable version of Ruby
+# 1. List all installable Ruby versions with rbenv
+# 2. Filter out non-stable versions (e.g., development, pre-release versions)
+# 3. Get the last line, which is the latest stable version (rbenv list is sorted in ascending order)
+# 4. Remove leading whitespace to get the version number only
+latest_stable_version=$(rbenv install -l | grep -v - | tail -1 | sed 's/^ *//g')
 ruby_version=$(ruby -e 'puts RUBY_VERSION')
-required_version="3.1.4"
 
-if [ "$ruby_version" != "$required_version" ]; then
+if [ "$ruby_version" != "$latest_stable_version" ]; then
   echo '- 🐙 Install Ruby version'
-  rbenv install "$required_version"
-  rbenv global "$required_version"
+  rbenv install "$latest_stable_version"
+  rbenv global "$latest_stable_version"
 fi
 echo "- 🐙 $(ruby --version)"
 
