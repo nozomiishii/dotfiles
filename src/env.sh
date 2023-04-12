@@ -57,8 +57,10 @@ volta install yarn@1
 echo "- 🐉 node $(node --version)"
 echo "- 🚚 yarn $(yarn --version)"
 
-echo '- 🐉 Setup Node'
-npm install -g corepack
+echo '- 🐉 Setup corepack'
+if ! command -v corepack > /dev/null 2>&1; then
+  yarn global add corepack
+fi
 corepack enable
 corepack enable npm
 
