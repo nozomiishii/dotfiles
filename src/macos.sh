@@ -5,9 +5,14 @@
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
+GREEN='\033[0;32m'
+NO_COLOR='\033[0m'
 
-printf "💻 Starting MacOS setup... \n"
+echo -e "💻 Starting MacOS setup...\n\n"
 
+# ----------------------------------------------------------------
+# nvram
+# ----------------------------------------------------------------
 echo "- 🤖 nvram"
 # Disable auto-booting
 sudo nvram AutoBoot=%01
@@ -15,6 +20,9 @@ sudo nvram AutoBoot=%01
 sudo nvram StartupMute=%01
 sudo nvram SystemAudioVolume=%80
 
+# ----------------------------------------------------------------
+# Battery
+# ----------------------------------------------------------------
 echo "- 🔋 Battery"
 # pmset – manipulate power management settings
 # The settings are saved in /Library/Preferences/com.apple.PowerManagement.plist
@@ -24,6 +32,9 @@ sudo pmset -b lessbright 0
 # Prevent your mac from sleeping automatically when the display is off
 sudo pmset -c sleep 0
 
+# ----------------------------------------------------------------
+# Dock
+# ----------------------------------------------------------------
 echo "- 🚢 Dock" # killall Dock
 # Set the Dock position
 defaults write com.apple.dock orientation -string "right"
@@ -42,6 +53,9 @@ defaults write com.apple.dock largesize -int 56
 # disable Launchpad
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
+# ----------------------------------------------------------------
+# Menu bar
+# ----------------------------------------------------------------
 echo "- 🕹 Menu bar" # killall SystemUIServer
 # This setting configures the time and date format for the menubar digital clock
 defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  h:mm a"
@@ -52,6 +66,9 @@ defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreS
 # Not Share Do Not Disturb status across devicess
 defaults write com.apple.donotdisturbd disableCloudSync -bool true
 
+# ----------------------------------------------------------------
+# Control Center
+# ----------------------------------------------------------------
 echo "- 🪁 Control Center"
 # Hide Spotlight
 defaults write com.apple.controlcenter "NSStatusItem Visible Item-0" -bool false
@@ -66,10 +83,16 @@ defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool false
 # Hide Now Playing
 defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool false
 
+# ----------------------------------------------------------------
+# Screenshot
+# ----------------------------------------------------------------
 echo "- 📸 Screenshot"
 # Choose whether to display a thumbnail after taking a screenshot
 defaults write com.apple.screencapture show-thumbnail -bool false
 
+# ----------------------------------------------------------------
+# NSGlobalDomain(General)
+# ----------------------------------------------------------------
 echo "- 🐤 NSGlobalDomain(General)"
 # Dark Mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
@@ -96,6 +119,9 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 # Turn off auto period substitution
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
+# ----------------------------------------------------------------
+# Finder
+# ----------------------------------------------------------------
 echo "- 🗂 Finder" # killall Finder
 # Set the default finder view style to icon view
 defaults write com.apple.Finder FXPreferredViewStyle -string "icnv"
@@ -110,14 +136,23 @@ defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
+# ----------------------------------------------------------------
+# Mission Control
+# ----------------------------------------------------------------
 echo "- 🪧 Mission Control" # killall Dock
 # Choose whether to rearrange Spaces automatically.
 defaults write com.apple.dock mru-spaces -bool false
 
+# ----------------------------------------------------------------
+# Security & Privacy
+# ----------------------------------------------------------------
 echo "- 👮🏻‍♂️ Security & Privacy"
 # Turn on Firewall
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 
+# ----------------------------------------------------------------
+# Keyboard
+# ----------------------------------------------------------------
 echo "- ⌨️ Keyboard"
 # Set key repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
@@ -165,6 +200,9 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 '<dic
 # echo "- 📡 Network"
 # networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
 
+# ----------------------------------------------------------------
+# Trackpad
+# ----------------------------------------------------------------
 echo "- 🖲 Trackpad"
 # Haptic feedback => 0: Light 1: Medium 2: Firm
 defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
@@ -177,17 +215,21 @@ defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad -int 2
 
+# ----------------------------------------------------------------
+# Speech
+# ----------------------------------------------------------------
 echo "- 🗣 Speech"
 # Enable Text to Speech
 defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyFlag -bool true
 # Speak selected text when the key is pressed. Option + Space : 2097
 defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyCombo -int 2097
 
+# ----------------------------------------------------------------
+# Display
+# ----------------------------------------------------------------
 echo "- 🖥 Display"
 # Nightshift https://github.com/smudge/nightlight
-if ! command -v nightlight > /dev/null 2>&1; then
-  brew install smudge/smudge/nightlight
-fi
+brew install smudge/smudge/nightlight
 nightlight on
 nightlight schedule 7:00 6:59
 
@@ -200,10 +242,16 @@ defaults write com.apple.sidecar.display sidebarShown -bool false
 defaults write com.apple.dock wvous-br-corner -int 1
 defaults write com.apple.dock wvous-br-modifier -int 1048576
 
+# ----------------------------------------------------------------
+# Simulator
+# ----------------------------------------------------------------
 echo '- 📱 Simulator'
 # Simulator lifetime 'When Simulator starts boot the most recently used simulator': off
 defaults write com.apple.iphonesimulator StartLastDeviceOnLaunch -int 0
 
+# ----------------------------------------------------------------
+# Killall
+# ----------------------------------------------------------------
 echo "- 👼 Killall..."
 killall Dock
 killall Finder
@@ -212,4 +260,7 @@ killall SystemUIServer
 sudo killall cfprefsd
 sudo killall corebrightnessd
 
-printf "🎉 The MacOS setup is complete \n\n"
+# ----------------------------------------------------------------
+# Result
+# ----------------------------------------------------------------
+echo -e "\n\n${GREEN}🎉 The MacOS setup is complete 🎉${NO_COLOR}\n\n"
