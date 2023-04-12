@@ -7,6 +7,12 @@ on:
         description: 'Run node job (true/false)'
         required: true
         default: 'false'
+
+      python_job:
+        description: 'Run python job (true/false)'
+        required: true
+        default: 'false'
+
       toolchains_job:
         description: 'Run toolchains job (true/false)'
         required: true
@@ -39,6 +45,26 @@ jobs:
       - name: Run setup node
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.node_job == 'true' || steps.filter.outputs.file == 'true'
         run: ./src/toolchains/node.sh
+
+  python:
+    runs-on: macos-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.python_job == 'true' || github.event_name != 'workflow_dispatch'
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Check file path
+        if: github.event_name != 'workflow_dispatch'
+        id: filter
+        uses: dorny/paths-filter@v2.2.1
+        with:
+          filters: |
+            file:
+              - '**/python.sh'
+
+      - name: Run setup python
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.python_job == 'true' || steps.filter.outputs.file == 'true'
+        run: ./src/toolchains/python.sh
 
   toolchains:
     runs-on: macos-latest
