@@ -85,9 +85,10 @@ echo -e "\n${GREEN}🐍 Python setup is complete 🎉${NO_COLOR}\n\n"
 
 # ----------------------------------------------------------------
 # Ruby
+#
+# Just want to format just only Brewfile🥹
 # ----------------------------------------------------------------
 echo -e '🐙 Ruby\n'
-# to format just only Brewfile🥹
 
 echo '- 🐙 Install rbenv'
 brew install rbenv
