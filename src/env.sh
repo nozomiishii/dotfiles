@@ -79,6 +79,7 @@ echo "- 🐍 $(pyenv --version)"
 
 echo '- 🐍 Install Poetry'
 curl -sSL https://install.python-poetry.org | python3 -
+export PATH="$HOME/.local/bin:$PATH"
 echo "- 🐍 $(poetry --version)"
 
 echo -e "\n${GREEN}🐍 Python setup is complete 🎉${NO_COLOR}\n\n"
