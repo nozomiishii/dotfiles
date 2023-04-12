@@ -41,6 +41,9 @@ for plugin in $(asdf plugin list); do
   fi
 done
 
+# ----------------------------------------------------------------
+# Python
+# ----------------------------------------------------------------
 if ! command -v poetry > /dev/null 2>&1; then
   echo '- 🐍 Install Poetry'
   curl -sSL https://install.python-poetry.org | python3 -
@@ -48,52 +51,65 @@ if ! command -v poetry > /dev/null 2>&1; then
   poetry --version
 fi
 
+# ----------------------------------------------------------------
+# Node
+# ----------------------------------------------------------------
 if ! command -v node > /dev/null 2>&1; then
   echo '- 🐉 Install Node with Volta⚡️'
   curl https://get.volta.sh | bash
 
-  export VOLTA_HOME="$HOME/.volta"
-  export PATH="$VOLTA_HOME/bin:$PATH"
-
   volta install node
   volta install yarn@1
-
-  corepack enable
-  corepack enable npm
 
   node -v
   yarn -v
 fi
 
+# ----------------------------------------------------------------
+# Ruby
+# ----------------------------------------------------------------
 # to format just only Brewfile🥹
 ruby_version=$(ruby -e 'puts RUBY_VERSION')
 required_version="3.1.4"
 if [ "$ruby_version" != "$required_version" ]; then
   rbenv install "$required_version"
   rbenv global "$required_version"
-
-  eval "$(rbenv init - zsh)"
-  gem install rufo
 fi
 
+# ----------------------------------------------------------------
+# Rust
+# ----------------------------------------------------------------
 if ! command -v cargo > /dev/null 2>&1; then
   echo '- 🦀 Install Rust'
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-  echo '- 🦀 Setup rust-analyzer'
-  rustup component add rust-analyzer
-  rustup toolchain install stable-aarch64-apple-darwin
-
-  echo '- 📦 Setup Cargo global'
-  cargo install cargo-edit
-  cargo install cargo-watch
-  cargo install cargo-nextest
-  cargo install cargo-modules
-  cargo install cargo-make
-  cargo install create-tauri-app
-  cargo install wasm-pack
-  cargo install sea-orm-cli
-  cargo install diesel_cli --no-default-features --features postgres
 fi
+
+# ----------------------------------------------------------------
+# Install dependencies
+# ----------------------------------------------------------------
+# shellcheck disable=SC1091
+source "$HOME/.zshrc"
+
+echo '- 🐙 Setup Node'
+corepack enable
+corepack enable npm
+
+echo '- 🐙 Setup Ruby'
+gem install rufo
+
+echo '- 🦀 Setup rust-analyzer'
+rustup component add rust-analyzer
+rustup toolchain install stable-aarch64-apple-darwin
+
+echo '- 📦 Setup Cargo global'
+cargo install cargo-edit
+cargo install cargo-watch
+cargo install cargo-nextest
+cargo install cargo-modules
+cargo install cargo-make
+cargo install create-tauri-app
+cargo install wasm-pack
+cargo install sea-orm-cli
+cargo install diesel_cli --no-default-features --features postgres
 
 printf "🎉 The Environment setup is complete \n\n"
