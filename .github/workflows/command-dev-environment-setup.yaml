@@ -1,4 +1,4 @@
-name: Command Dev Environment Setup
+name: Command dev environment setup
 
 on:
   workflow_dispatch:
