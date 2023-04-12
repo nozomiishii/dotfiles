@@ -42,66 +42,41 @@ for plugin in $(asdf plugin list); do
 done
 
 # ----------------------------------------------------------------
-# Python
-# ----------------------------------------------------------------
-if ! command -v poetry > /dev/null 2>&1; then
-  echo '- 🐍 Install Poetry'
-  curl -sSL https://install.python-poetry.org | python3 -
-
-  poetry --version
-fi
-
-# ----------------------------------------------------------------
 # Node
 # ----------------------------------------------------------------
-if ! command -v node > /dev/null 2>&1; then
+echo -e '\n\n🐉 Node\n'
+if ! command -v volta > /dev/null 2>&1; then
   echo '- 🐉 Install Node with Volta⚡️'
   curl https://get.volta.sh | bash
-
-  volta install node
-  volta install yarn@1
-
-  node -v
-  yarn -v
 fi
+echo "- ⚡️ volta $(volta --version)"
 
-# ----------------------------------------------------------------
-# Ruby
-# ----------------------------------------------------------------
-# to format just only Brewfile🥹
-ruby_version=$(ruby -e 'puts RUBY_VERSION')
-required_version="3.1.4"
-if [ "$ruby_version" != "$required_version" ]; then
-  rbenv install "$required_version"
-  rbenv global "$required_version"
-fi
+volta install node
+volta install yarn@1
+
+echo "- 🐉 node $(node --version)"
+echo "- 🚚 yarn $(yarn --version)"
+
+echo '- 🐉 Setup Node'
+corepack enable
+corepack enable npm
 
 # ----------------------------------------------------------------
 # Rust
 # ----------------------------------------------------------------
-if ! command -v cargo > /dev/null 2>&1; then
+echo -e '\n\n🦀 Rust\n'
+if ! command -v rustup > /dev/null 2>&1; then
   echo '- 🦀 Install Rust'
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
 
-# ----------------------------------------------------------------
-# Install dependencies
-# ----------------------------------------------------------------
-# shellcheck disable=SC1091
-source "$HOME/.zshrc"
-
-echo '- 🐙 Setup Node'
-corepack enable
-corepack enable npm
-
-echo '- 🐙 Setup Ruby'
-gem install rufo
-
+echo "- 🦀 $(rustup --version)"
 echo '- 🦀 Setup rust-analyzer'
 rustup component add rust-analyzer
 rustup toolchain install stable-aarch64-apple-darwin
 
-echo '- 📦 Setup Cargo global'
+echo "- 🦀 $(cargo --version)"
+echo '- 🦀 Setup Cargo global'
 cargo install cargo-edit
 cargo install cargo-watch
 cargo install cargo-nextest
@@ -112,4 +87,36 @@ cargo install wasm-pack
 cargo install sea-orm-cli
 cargo install diesel_cli --no-default-features --features postgres
 
-printf "🎉 The Environment setup is complete \n\n"
+# ----------------------------------------------------------------
+# Python
+# ----------------------------------------------------------------
+echo -e '\n\n🐍 Python\n'
+if ! command -v poetry > /dev/null 2>&1; then
+  echo '- 🐍 Install Poetry'
+  curl -sSL https://install.python-poetry.org | python3 -
+fi
+echo "- 🐍 $(poetry --version)"
+
+# ----------------------------------------------------------------
+# Ruby
+# ----------------------------------------------------------------
+echo -e '\n\n🐙 Ruby\n'
+# to format just only Brewfile🥹
+ruby_version=$(ruby -e 'puts RUBY_VERSION')
+required_version="3.1.4"
+if [ "$ruby_version" != "$required_version" ]; then
+  echo '- 🐙 Install Ruby'
+  rbenv install "$required_version"
+  rbenv global "$required_version"
+fi
+echo "- 🐙 $(ruby --version)"
+
+echo '- 🐙 Setup Ruby'
+gem install rufo
+
+# ----------------------------------------------------------------
+# Result
+# ----------------------------------------------------------------
+GREEN='\033[0;32m'
+NO_COLOR='\033[0m'
+echo -e "\n\n${GREEN}🎉 The Environment setup is complete${NO_COLOR}\n\n"
