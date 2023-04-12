@@ -1,6 +1,7 @@
 name: Command Dev Environment Setup
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - './src/env.sh'

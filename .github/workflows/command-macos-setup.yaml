@@ -1,6 +1,7 @@
 name: Command macos setup
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - './src/macos.sh'

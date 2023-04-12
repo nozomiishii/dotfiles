@@ -1,6 +1,7 @@
 name: Command brew setup
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - './src/**/homebrew/**'

@@ -1,6 +1,7 @@
 name: Shell code quality check
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - '**/*.sh'
