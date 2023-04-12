@@ -33,7 +33,8 @@
     "lint:markdownlint": "npx -y markdownlint-cli2 '**/*.md' '#node_modules'",
     "lint:markdownlint:fix": "npx -y markdownlint-cli2-fix '**/*.md' '#node_modules'",
     "prettier": "prettier . '!**/*.md' '!apps' --ignore-unknown --ignore-path .gitignore",
-    "setup": "lefthook install"
+    "setup": "lefthook install",
+    "test": "bats ./utils/**"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "17.4.4",
