@@ -8,7 +8,7 @@ set -Ceu
 GREEN='\033[0;32m'
 NO_COLOR='\033[0m'
 
-echo -e "💻 Starting MacOS setup...\n\n"
+echo -e "💻 Starting MacOS setup...\n"
 
 # ----------------------------------------------------------------
 # nvram
