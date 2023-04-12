@@ -41,12 +41,14 @@ for plugin in $(asdf plugin list); do
   fi
 done
 
-if ! type poetry > /dev/null 2>&1; then
+if ! command -v poetry > /dev/null 2>&1; then
   echo '- 🐍 Install Poetry'
   curl -sSL https://install.python-poetry.org | python3 -
+
+  poetry --version
 fi
 
-if ! type node > /dev/null 2>&1; then
+if ! command -v node > /dev/null 2>&1; then
   echo '- 🐉 Install Node with Volta⚡️'
   curl https://get.volta.sh | bash
 
@@ -74,7 +76,7 @@ if [ "$ruby_version" != "$required_version" ]; then
   gem install rufo
 fi
 
-if ! type cargo > /dev/null 2>&1; then
+if ! command -v cargo > /dev/null 2>&1; then
   echo '- 🦀 Install Rust'
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 

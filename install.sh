@@ -144,7 +144,7 @@ setup_environment() {
   echo "🌝 Environment setup"
   pre_sudo
 
-  # if ! type dfx > /dev/null 2>&1; then
+  # if ! command -v dfx > /dev/null 2>&1; then
   #   echo "🌝 Environment setup(dfx)"
   #   DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
   # fi

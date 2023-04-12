@@ -185,7 +185,7 @@ defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKe
 
 echo "- 🖥 Display"
 # Nightshift https://github.com/smudge/nightlight
-if ! type nightlight > /dev/null 2>&1; then
+if ! command -v nightlight > /dev/null 2>&1; then
   brew install smudge/smudge/nightlight
 fi
 nightlight on
