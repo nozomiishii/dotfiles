@@ -55,7 +55,7 @@ command -v pyenv > /dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # Ruby
-eval "$(rbenv init - zsh)"
+eval "$(rbenv init -)"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

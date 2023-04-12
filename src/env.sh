@@ -93,6 +93,7 @@ echo -e '🐙 Ruby\n'
 
 echo '- 🐙 Install rbenv'
 brew install rbenv
+eval "$(rbenv init -)"
 echo "- 🐙 $(rbenv --version)"
 
 echo '- 🐙 Install ruby-build'
