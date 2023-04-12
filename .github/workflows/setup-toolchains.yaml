@@ -18,9 +18,8 @@ jobs:
 
       - name: Check file path
         id: filter
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v2.2.1
         with:
-          list-files: 'shell'
           filters: |
             file:
               - '**/node.sh'
@@ -37,9 +36,8 @@ jobs:
 
       - name: Check file path
         id: filter
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v2.2.1
         with:
-          list-files: 'shell'
           filters: |
             file:
               - '**/toolchains.sh'
