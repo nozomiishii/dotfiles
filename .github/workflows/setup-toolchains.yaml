@@ -4,17 +4,46 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'src/toolchains/toolchains.sh'
+      - 'src/toolchains/**'
   pull_request:
     paths:
-      - 'src/toolchains/toolchains.sh'
+      - 'src/toolchains/**'
 
 jobs:
-  check:
+  node:
     runs-on: macos-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
 
+      - name: Check file path
+        id: filter
+        uses: dorny/paths-filter@v2
+        with:
+          list-files: 'shell'
+          filters: |
+            file:
+              - '**/node.sh'
+
+      - name: Run setup node
+        if: ${{ steps.filter.outputs.file == 'true' }}
+        run: ./src/toolchains/node.sh
+
+  toolchains:
+    runs-on: macos-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Check file path
+        id: filter
+        uses: dorny/paths-filter@v2
+        with:
+          list-files: 'shell'
+          filters: |
+            file:
+              - '**/toolchains.sh'
+
       - name: Run setup toolchains
+        if: ${{ steps.filter.outputs.file == 'true' }}
         run: ./src/toolchains/toolchains.sh
