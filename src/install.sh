@@ -25,6 +25,8 @@
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
+GREEN='\033[0;32m'
+NO_COLOR='\033[0m'
 
 INSTALL_SCRIPT_DIR="$HOME/dotfiles/src"
 CONFIGS_PATH="$HOME/dotfiles/configs"
@@ -79,13 +81,13 @@ setup_dotfiles_repository() {
   local ssh_url="git@github.com:${repo}.git"
   local dotfiles_dir="${HOME}/dotfiles"
 
-  printf "👨🏻‍🚀 Cloning %s...\n" "${repo}"
+  echo -e "👨🏻‍🚀 Cloning %s...\n" "${repo}"
   git clone "${remote_url}" "${dotfiles_dir}"
 
-  printf "👨🏻‍🚀 Initializing and updating Git submodules...\n"
+  echo -e "👨🏻‍🚀 Initializing and updating Git submodules...\n"
   (cd "${dotfiles_dir}" && git submodule update --init --recursive)
 
-  printf "👨🏻‍🚀 Changing remote URL to SSH...\n"
+  echo -e "👨🏻‍🚀 Changing remote URL to SSH...\n"
   (cd "${dotfiles_dir}" && git remote set-url origin "${ssh_url}")
 }
 
@@ -199,12 +201,12 @@ install_xcode_cli_tools() {
 }
 
 if [ ! "$@" ]; then
-  printf "\n👨🏻‍🚀 Install the best Mac setup for you!! \n"
+  echo -e "\n👨🏻‍🚀 Install the best Mac setup for you!! \n"
 
   pre_sudo
   cd "$HOME"
 
-  echo "👨🏻‍🚀 Checking Xcode CLI tools"
+  echo -e "👨🏻‍🚀 Checking Xcode CLI tools\n"
   install_xcode_cli_tools
 
   if [ ! -d "$HOME"/dotfiles ]; then
@@ -234,13 +236,13 @@ if [ ! "$@" ]; then
   open /users
   open https://github.com/nozomiishii/dotfiles
 
-  printf "🎉 The dotfiles installation is complete \n\n"
+  echo -e "\n\n${GREEN}🎉 Congrats! The dotfiles installation is complete 🎉${NO_COLOR}\n\n"
   # Turn display off after: 15 mins
   sudo pmset -c displaysleep 15
 
-  printf "👨🏻‍🚀 Restart the mac \n"
-  printf "run: \n"
-  printf "  sudo reboot \n\n\n"
+  echo -e "👨🏻‍🚀 Restart the mac \n"
+  echo -e "run: \n"
+  echo -e "  sudo reboot \n\n\n"
 fi
 
 for i in "$@"; do

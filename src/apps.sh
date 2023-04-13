@@ -6,7 +6,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
-printf "🧝🏻‍♀️ Starting Apps setup... \n"
+echo -e "🧝🏻‍♀️ Starting Apps setup... \n"
 
 APPS_PATH="$HOME/dotfiles/apps"
 
@@ -30,7 +30,7 @@ if [ ! -e "/Applications/Xcode.app" ]; then
   echo "🥲 Xcode not found"
   echo "Xcode and NeoVim settings were skipped."
   echo "You will need to manually run the following command later"
-  printf "\n ~/dotfiles/install -a \n"
+  echo -e "\n ~/dotfiles/install -a \n"
 
 else
   echo "- 🍎 Xcode"
@@ -72,4 +72,4 @@ duti -s com.microsoft.VSCode css all
 duti -s com.microsoft.VSCode markdown all
 duti -s com.microsoft.VSCode sh all
 
-printf "🎉 The App setup is complete \n\n"
+echo -e "🎉 The App setup is complete \n\n"

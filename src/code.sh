@@ -6,7 +6,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
-printf "🦄 Starting Cloning repositories... \n"
+echo -e "🦄 Starting Cloning repositories... \n"
 
 CODE_DIR="$HOME/Code"
 if [ ! -d "$CODE_DIR" ]; then
@@ -29,4 +29,4 @@ for repo in "${repos[@]}"; do
   fi
 done
 
-printf "🎉 Cloning repositories is complete \n\n"
+echo -e "🎉 Cloning repositories is complete \n\n"

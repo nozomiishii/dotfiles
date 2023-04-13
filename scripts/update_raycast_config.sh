@@ -23,7 +23,7 @@ set -Ceu
 TEXT_RED="\033[1;31m"
 CONFIG_PATH="$HOME/dotfiles/apps/Raycast"
 
-printf "🚁 Update Raycast Config\n\n"
+echo -e "🚁 Update Raycast Config\n\n"
 
 backup_files_length=$(find "$CONFIG_PATH" -type f | wc -l)
 
@@ -54,4 +54,4 @@ current_branch=$(git branch --show-current)
 git pull origin "$current_branch"
 git push origin "$current_branch"
 
-printf "\n\n🎉 Update Success 🎉\n"
+echo -e "\n\n🎉 Update Success 🎉\n"

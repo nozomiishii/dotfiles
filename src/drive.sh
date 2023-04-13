@@ -6,7 +6,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
-printf "🌎 Starting syncing with google drive... \n"
+echo -e "🌎 Starting syncing with google drive... \n"
 
 GDRIVE_PATH="$HOME/My Drive"
 if [ ! -d "$GDRIVE_PATH" ]; then
@@ -23,4 +23,4 @@ echo "- 🐵 Blender"
 ln -nfs "$GDRIVE_PATH/Blender" "$HOME/Library/Application Support/Blender"
 ll "$HOME/Library/Application Support/Blender"
 
-printf "🎉 Syncing with google drive is complete \n\n"
+echo -e "🎉 Syncing with google drive is complete \n\n"
