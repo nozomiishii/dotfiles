@@ -27,8 +27,8 @@ jobs:
       - name: Format Check
         run: ./utils/shfmt/shfmt.sh
 
-      # - name: Lint
-      #   run: yarn home:lint
+      - name: Lint
+        run: ./utils/shellcheck/shellcheck.sh
 
       - name: Test
         run: |
