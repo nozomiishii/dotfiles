@@ -13,7 +13,7 @@
 # -S (--show-error): Show error message if it fails.
 # -L (--location): Enable redirection.
 #
-# curl -o - https://raw.githubusercontent.com/nozomiishii/dotfiles/main/install.sh | bash
+# curl -o - https://raw.githubusercontent.com/nozomiishii/dotfiles/main/src/install.sh | bash
 #
 
 # ----------------------------------------------------------------
@@ -103,7 +103,7 @@ reinstall() {
 setup_homebrew() {
   echo "🍺 Homebrew setup"
   pre_sudo
-  source "$ROOT_PATH/src/homebrew/homebrew.sh"
+  source "$ROOT_PATH/homebrew/homebrew.sh"
 }
 
 # MacOS
@@ -111,7 +111,7 @@ setup_homebrew() {
 setup_macos() {
   echo "💻 MacOS setup"
   pre_sudo
-  source "$ROOT_PATH/src/macos/macos.sh"
+  source "$ROOT_PATH/macos/macos.sh"
 }
 
 # Link
@@ -135,7 +135,7 @@ unlink_modules() {
 # Dependencis | Homebrew | Link
 setup_apps() {
   echo "🧝🏻‍♀️ Apps setup"
-  source "$ROOT_PATH/src/apps.sh"
+  source "$ROOT_PATH/apps.sh"
 }
 
 # Environment
@@ -149,28 +149,28 @@ setup_toolchains() {
   #   DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
   # fi
 
-  source "$ROOT_PATH/src/toolchains/toolchains.sh"
+  source "$ROOT_PATH/toolchains/toolchains.sh"
 }
 
 # Code
 # Dependencis | Homebrew
 setup_repositoris() {
   echo "🦄 Clone repositories"
-  source "$ROOT_PATH/src/code.sh"
+  source "$ROOT_PATH/code.sh"
 }
 
 # SSHkey
 # Dependencis | Homebrew
 generate_sshkey() {
   echo "🔐 Generate ssh key"
-  source "$ROOT_PATH/src/sshkey.sh"
+  source "$ROOT_PATH/sshkey.sh"
 }
 
 # Drive
 # Dependencis | Homebrew, Mirror Google Drive files
 sync_with_drive() {
   echo "🌎 Sync with google drive"
-  source "$ROOT_PATH/src/drive.sh"
+  source "$ROOT_PATH/drive.sh"
 }
 
 # This function installs the Xcode Command Line Tools if they are not already installed.
@@ -216,7 +216,6 @@ if [ ! "$@" ]; then
   # Prevent your mac from sleeping automatically when the display is off
   sudo pmset -c sleep 0
 
-  chmod +x "$HOME"/dotfiles/install.sh
   chmod +x "$HOME"/dotfiles/src/*
 
   setup_homebrew
