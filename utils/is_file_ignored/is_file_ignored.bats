@@ -2,8 +2,8 @@
 
 setup() {
   DIR="$(cd "$(dirname "$BATS_TEST_FILENAME")" > /dev/null 2>&1 && pwd)"
-  # make executables in src/ visible to PATH
-  load "$DIR/is_file_ignored.sh"
+  BASENAME="$(basename "$BATS_TEST_FILENAME" .bats)"
+  load "$DIR/$BASENAME.sh"
 }
 
 @test "returns 1 when no patterns are given" {

@@ -2,8 +2,8 @@
 
 setup() {
   DIR="$(cd "$(dirname "$BATS_TEST_FILENAME")" > /dev/null 2>&1 && pwd)"
-  # make executables in src/ visible to PATH
-  load "$DIR/remove_temp_files.sh"
+  BASENAME="$(basename "$BATS_TEST_FILENAME" .bats)"
+  load "$DIR/$BASENAME.sh"
 }
 
 # Test case: remove_temp_files should remove existing files
