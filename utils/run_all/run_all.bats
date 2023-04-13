@@ -2,6 +2,9 @@
 
 setup() {
   DIR="$(cd "$(dirname "$BATS_TEST_FILENAME")" > /dev/null 2>&1 && pwd)"
+  load "$DIR/../../submodules/bats-support/load"
+  load "$DIR/../../submodules/bats-assert/load"
+
   BASENAME="$(basename "$BATS_TEST_FILENAME" .bats)"
   load "$DIR/$BASENAME.sh"
 
@@ -27,13 +30,13 @@ teardown() {
   )
   run run_all --tool "cat" --target "${target_patterns[*]}" --ignore "${ignore_patterns[*]}"
 
-  [ "$status" -eq 0 ]
-  [ "${lines[0]}" = "echo 'Hello, World!'" ]
-  [[ "${lines[1]}" =~ "test_directory/test1.sh" ]]
-  [ "${lines[2]}" = "echo 'Goodbye, World!'" ]
-  [[ "${lines[3]}" =~ "test_directory/test2.sh" ]]
-  [[ "${lines[4]}" =~ "Great job! All 2 files processed successfully." ]]
-  [ "${#lines[@]}" -eq 5 ]
+  assert_success
+  assert_line --index 0 "echo 'Hello, World!'"
+  assert_line --index 1 --partial "test_directory/test1.sh"
+  assert_line --index 2 "echo 'Goodbye, World!'"
+  assert_line --index 3 --partial "test_directory/test2.sh"
+  assert_line --index 4 --partial "All 2 files processed successfully."
+  assert_equal "${#lines[@]}" 5
 }
 
 @test "Check run_all processes no files when all are ignored" {
@@ -46,9 +49,9 @@ teardown() {
   )
   run run_all --tool "cat" --target "${target_patterns[*]}" --ignore "${ignore_patterns[*]}"
 
-  [ "$status" -eq 0 ]
-  [[ "${lines[0]}" =~ "Great job! All 0 files processed successfully." ]]
-  [ "${#lines[@]}" -eq 1 ]
+  assert_success
+  assert_line --index 0 --partial "All 0 files processed successfully."
+  assert_equal "${#lines[@]}" 1
 }
 
 @test "Check run_all processes only specified files" {
@@ -61,9 +64,9 @@ teardown() {
   )
   run run_all --tool "cat" --target "${target_patterns[*]}" --ignore "${ignore_patterns[*]}"
 
-  [ "$status" -eq 0 ]
-  [ "${lines[0]}" = "echo 'Hello, World!'" ]
-  [[ "${lines[1]}" =~ "test_directory/test1.sh" ]]
-  [[ "${lines[2]}" =~ "Great job! All 1 files processed successfully." ]]
-  [ "${#lines[@]}" -eq 3 ]
+  assert_success
+  assert_line --index 0 "echo 'Hello, World!'"
+  assert_line --index 1 --partial "test_directory/test1.sh"
+  assert_equal "${#lines[@]}" 3
+
 }

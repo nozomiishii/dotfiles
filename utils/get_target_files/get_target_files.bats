@@ -2,6 +2,9 @@
 
 setup() {
   DIR="$(cd "$(dirname "$BATS_TEST_FILENAME")" > /dev/null 2>&1 && pwd)"
+  load "$DIR/../../submodules/bats-support/load"
+  load "$DIR/../../submodules/bats-assert/load"
+
   BASENAME="$(basename "$BATS_TEST_FILENAME" .bats)"
   load "$DIR/$BASENAME.sh"
 
@@ -26,13 +29,15 @@ teardown() {
 
 @test "get_target_files with no options should return all files" {
   run get_target_files
-  [ "$status" -eq 0 ]
-  [ "${#lines[@]}" -gt 0 ]
+
+  assert_success
+  assert_equal "${#lines[@]}" 3
 }
 
 @test "get_target_files with --ignore option should exclude matching files" {
   run get_target_files --ignore "*.sh"
-  [ "$status" -eq 0 ]
+
+  assert_success
   for file in "${lines[@]}"; do
     [[ $file != *.sh ]]
   done
@@ -40,7 +45,8 @@ teardown() {
 
 @test "get_target_files with --target option should include only matching files" {
   run get_target_files --target "*.sh"
-  [ "$status" -eq 0 ]
+
+  assert_success
   for file in "${lines[@]}"; do
     [[ $file == *.sh ]]
   done
@@ -48,7 +54,8 @@ teardown() {
 
 @test "get_target_files with both --ignore and --target options should apply both filters" {
   run get_target_files --ignore "submodules/**" --target "*.sh"
-  [ "$status" -eq 0 ]
+
+  assert_success
   for file in "${lines[@]}"; do
     [[ $file != submodules/* ]]
     [[ $file == *.sh ]]

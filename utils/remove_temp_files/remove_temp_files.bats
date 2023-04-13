@@ -2,6 +2,9 @@
 
 setup() {
   DIR="$(cd "$(dirname "$BATS_TEST_FILENAME")" > /dev/null 2>&1 && pwd)"
+  load "$DIR/../../submodules/bats-support/load"
+  load "$DIR/../../submodules/bats-assert/load"
+
   BASENAME="$(basename "$BATS_TEST_FILENAME" .bats)"
   load "$DIR/$BASENAME.sh"
 }
@@ -16,8 +19,8 @@ setup() {
   run remove_temp_files "$temp_file_1" "$temp_file_2"
 
   # Assert that the temporary files were removed
-  [ ! -f "$temp_file_1" ]
-  [ ! -f "$temp_file_2" ]
+  assert [ ! -f "$temp_file_1" ]
+  assert [ ! -f "$temp_file_2" ]
 }
 
 # Test case: remove_temp_files should not fail if files do not exist
@@ -29,8 +32,7 @@ setup() {
   # Call the remove_temp_files function with the non-existing file paths
   run remove_temp_files "$non_existing_file_1" "$non_existing_file_2"
 
-  # Assert that the function did not fail
-  [ "$status" -eq 0 ]
+  assert_success
 }
 
 # Test case: remove_temp_files should not remove directories
@@ -42,7 +44,7 @@ setup() {
   run remove_temp_files "$temp_directory"
 
   # Assert that the temporary directory was not removed
-  [ -d "$temp_directory" ]
+  assert [ -d "$temp_directory" ]
 
   # Clean up the temporary directory
   rmdir "$temp_directory"
