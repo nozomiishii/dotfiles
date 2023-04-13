@@ -2,7 +2,6 @@ if OS.mac?
   # ----------------------------------------------------------------
   # Brew
   # ----------------------------------------------------------------
-
   # Dependencies app.sh | Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
   brew "duti"
 
@@ -16,7 +15,6 @@ if OS.mac?
   # ----------------------------------------------------------------
   # Cask
   # ----------------------------------------------------------------
-
   # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
   cask "appcleaner"
 

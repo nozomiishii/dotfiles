@@ -10,7 +10,6 @@ tap "homebrew/services"
 # ----------------------------------------------------------------
 # Shell Development Environments
 # ----------------------------------------------------------------
-
 # Autoformat shell script source code https://github.com/mvdan/sh
 brew "shfmt"
 
@@ -21,9 +20,26 @@ brew "shellcheck"
 brew "bats-core"
 
 # ----------------------------------------------------------------
+# Python
+# ----------------------------------------------------------------
+# Python version management https://github.com/pyenv/pyenv
+brew "pyenv"
+
+# ----------------------------------------------------------------
+# Ruby
+# ----------------------------------------------------------------
+# Ruby version manager https://github.com/rbenv/rbenv#readme
+brew "rbenv"
+
+# Install various Ruby versions and implementations https://github.com/rbenv/ruby-build
+brew "ruby-build"
+
+# YAML Parser https://github.com/yaml/libyaml
+brew "libyaml"
+
+# ----------------------------------------------------------------
 # Brew
 # ----------------------------------------------------------------
-
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
 
@@ -54,16 +70,9 @@ brew "postgresql@14"
 # Protocol buffers (Google's data interchange format) https://github.com/protocolbuffers/protobuf/
 brew "protobuf"
 
-# Python version management https://github.com/pyenv/pyenv
-brew "pyenv"
-
 # A Zsh Theme https://github.com/romkatv/powerlevel10k
 tap "romkatv/powerlevel10k"
 brew "powerlevel10k"
-
-# Ruby version manager https://github.com/rbenv/rbenv#readme
-brew "rbenv"
-brew "ruby-build"
 
 # Persistent key-value database, with built-in net interface https://redis.io/
 brew "redis"
@@ -89,7 +98,6 @@ brew "tmux"
 # ----------------------------------------------------------------
 # Cask
 # ----------------------------------------------------------------
-
 # Password manager that keeps all passwords secure behind one password. https://1password.com
 cask "1Password"
 

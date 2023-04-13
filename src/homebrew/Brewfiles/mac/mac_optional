@@ -2,7 +2,6 @@ if OS.mac?
   # ----------------------------------------------------------------
   # Brew
   # ----------------------------------------------------------------
-
   # Dependency manager for Cocoa projects https://cocoapods.org/
   brew "cocoapods"
 
@@ -13,7 +12,6 @@ if OS.mac?
   # ----------------------------------------------------------------
   # Cask
   # ----------------------------------------------------------------
-
   # Tools for building Android applications https://developer.android.com/studio
   cask "android-studio"
 
@@ -69,7 +67,6 @@ if OS.mac?
   # ----------------------------------------------------------------
   # Embedded Rust | Wio Terminal
   # ----------------------------------------------------------------
-
   # Menu-driven communications program https://packages.debian.org/sid/minicom
   brew "minicom"
 
@@ -82,9 +79,9 @@ if OS.mac?
   # ----------------------------------------------------------------
   # Mas
   # ----------------------------------------------------------------
-
   # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
   mas "Xcode", id: 497_799_835
 
+  # New communication app which allows you to make FREE voice calls and send FREE messages https://apps.apple.com/app/line/id539883307
   mas "LINE", id: 539_883_307
 end

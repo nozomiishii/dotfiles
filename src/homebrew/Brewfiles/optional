@@ -10,7 +10,6 @@ tap "homebrew/services"
 # ----------------------------------------------------------------
 # Brew
 # ----------------------------------------------------------------
-
 # Official Go implementation of the Ethereum protocol https://geth.ethereum.org/
 brew "ethereum"
 
@@ -57,7 +56,6 @@ brew "watch"
 # ----------------------------------------------------------------
 # Cask
 # ----------------------------------------------------------------
-
 # Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
 cask "1password-cli"
 
