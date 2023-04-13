@@ -46,13 +46,15 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.11.1
+        uses: dorny/paths-filter@v2
         with:
           filters: |
             file:
               - '**/node.sh'
 
       - name: Run setup node
+        # Waiting for updates and bug fixes in dorny/paths-filter.
+        # Using v2.2.1 removes the lint warning for the workflow YAML, but set-output and Node version warnings are present during CI runs.
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.node_job == 'true' || steps.filter.outputs.file == 'true'
         run: ./src/toolchains/node.sh
 
@@ -66,13 +68,15 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.11.1
+        uses: dorny/paths-filter@v2
         with:
           filters: |
             file:
               - '**/python.sh'
 
       - name: Run setup python
+        # Waiting for updates and bug fixes in dorny/paths-filter.
+        # Using v2.2.1 removes the lint warning for the workflow YAML, but set-output and Node version warnings are present during CI runs.
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.python_job == 'true' || steps.filter.outputs.file == 'true'
         run: ./src/toolchains/python.sh
 
@@ -86,13 +90,15 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.11.1
+        uses: dorny/paths-filter@v2
         with:
           filters: |
             file:
               - '**/ruby.sh'
 
       - name: Run setup ruby
+        # Waiting for updates and bug fixes in dorny/paths-filter.
+        # Using v2.2.1 removes the lint warning for the workflow YAML, but set-output and Node version warnings are present during CI runs.
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.ruby_job == 'true' || steps.filter.outputs.file == 'true'
         run: ./src/toolchains/ruby.sh
 
@@ -106,13 +112,15 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.11.1
+        uses: dorny/paths-filter@v2
         with:
           filters: |
             file:
               - '**/rust.sh'
 
       - name: Run setup rust
+        # Waiting for updates and bug fixes in dorny/paths-filter.
+        # Using v2.2.1 removes the lint warning for the workflow YAML, but set-output and Node version warnings are present during CI runs.
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.rust_job == 'true' || steps.filter.outputs.file == 'true'
         run: ./src/toolchains/rust.sh
 
@@ -126,12 +134,14 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.11.1
+        uses: dorny/paths-filter@v2
         with:
           filters: |
             file:
               - '**/toolchains.sh'
 
       - name: Run setup toolchains
+        # Waiting for updates and bug fixes in dorny/paths-filter.
+        # Using v2.2.1 removes the lint warning for the workflow YAML, but set-output and Node version warnings are present during CI runs.
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.toolchains_job == 'true' || steps.filter.outputs.file == 'true'
         run: ./src/toolchains/toolchains.sh
