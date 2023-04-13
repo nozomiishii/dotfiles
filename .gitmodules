@@ -1,3 +1,9 @@
 [submodule "submodules/tpm"]
 	path = submodules/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "submodules/bats-assert"]
+	path = submodules/bats-assert
+	url = https://github.com/bats-core/bats-assert.git
+[submodule "submodules/bats-support"]
+	path = submodules/bats-support
+	url = https://github.com/bats-core/bats-support.git
