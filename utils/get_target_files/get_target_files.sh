@@ -51,10 +51,17 @@ get_target_files() {
   local target_files=""
 
   for file in $tracked_files $untracked_files; do
-    if is_file_ignored "$file" "${ignore_patterns[@]}" || ! is_file_ignored "$file" "${target_patterns[@]}"; then
+    # If the --ignore option is provided and the file matches any of the ignore patterns, skip the file
+    if [[ "${#ignore_patterns[@]}" -gt 0 ]] && is_file_ignored "$file" "${ignore_patterns[@]}"; then
       continue
     fi
 
+    # If the --target option is provided and the file does not match any of the target patterns, skip the file
+    if [[ "${#target_patterns[@]}" -gt 0 ]] && ! is_file_ignored "$file" "${target_patterns[@]}"; then
+      continue
+    fi
+
+    # If the file passes both filters, add it to the target_files list
     target_files+="$file"$'\n'
   done
 
