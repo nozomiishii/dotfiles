@@ -21,11 +21,10 @@ failed_files=""
 target_patterns=(
   "*.sh"
   "*.bash"
-  "*.zsh"
-  "*.ksh"
+  "*.bats"
   "*.dash"
-  "*.bat"
-  "*.cmd"
+  "*.ksh"
+  "*.zsh"
 )
 
 # List of directories and files to ignore (glob patterns)
