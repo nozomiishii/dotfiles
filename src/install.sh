@@ -1,33 +1,33 @@
 #!/bin/bash
 
 # ----------------------------------------------------------------
-# Usage
+# 🧙🏿‍♂️ Nozomiishii Doting Dotfiles
 # ----------------------------------------------------------------
 
+# ----------------------------------------------------------------
+# Usage
+# ----------------------------------------------------------------
 #
-# zsh -c "$(curl -fsSL https://nozomiishii.dev/dotfiles/install)"
+# run:
+#   curl https://raw.githubusercontent.com/nozomiishii/dotfiles/main/src/install.sh | bash
 #
-# -c: Take the first argument as a command to execute
-# -f (--fail): Quit silently when a server error occurs.
-# -s (--silent): Silent mode. Don't show progress meter or error messages. Makes Curl mute.
-# -S (--show-error): Show error message if it fails.
 # -L (--location): Enable redirection.
-#
-# curl -o - https://raw.githubusercontent.com/nozomiishii/dotfiles/main/src/install.sh | bash
+# Alternatively, run:
+#   curl -L https://nozomiishii.dev/dotfiles/install | bash
 #
 
 # ----------------------------------------------------------------
 # Implementation
 # ----------------------------------------------------------------
-
+#
 # -C: Prevent overwriting files with output redirection
 # -e: Exit the script if any command returns a non-zero status
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
-ROOT_PATH="$HOME/dotfiles"
-CONFIGS_PATH="$ROOT_PATH/configs"
+SCRIPT_DIR="$HOME/dotfiles/src"
+CONFIGS_PATH="$HOME/dotfiles/configs"
 
 usage() {
   cat << EOF
@@ -103,7 +103,7 @@ reinstall() {
 setup_homebrew() {
   echo "🍺 Homebrew setup"
   pre_sudo
-  source "$ROOT_PATH/homebrew/homebrew.sh"
+  source "$SCRIPT_DIR/homebrew/homebrew.sh"
 }
 
 # MacOS
@@ -111,7 +111,7 @@ setup_homebrew() {
 setup_macos() {
   echo "💻 MacOS setup"
   pre_sudo
-  source "$ROOT_PATH/macos/macos.sh"
+  source "$SCRIPT_DIR/macos/macos.sh"
 }
 
 # Link
@@ -135,7 +135,7 @@ unlink_modules() {
 # Dependencis | Homebrew | Link
 setup_apps() {
   echo "🧝🏻‍♀️ Apps setup"
-  source "$ROOT_PATH/apps.sh"
+  source "$SCRIPT_DIR/apps.sh"
 }
 
 # Environment
@@ -149,28 +149,28 @@ setup_toolchains() {
   #   DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
   # fi
 
-  source "$ROOT_PATH/toolchains/toolchains.sh"
+  source "$SCRIPT_DIR/toolchains/toolchains.sh"
 }
 
 # Code
 # Dependencis | Homebrew
 setup_repositoris() {
   echo "🦄 Clone repositories"
-  source "$ROOT_PATH/code.sh"
+  source "$SCRIPT_DIR/code.sh"
 }
 
 # SSHkey
 # Dependencis | Homebrew
 generate_sshkey() {
   echo "🔐 Generate ssh key"
-  source "$ROOT_PATH/sshkey.sh"
+  source "$SCRIPT_DIR/sshkey.sh"
 }
 
 # Drive
 # Dependencis | Homebrew, Mirror Google Drive files
 sync_with_drive() {
   echo "🌎 Sync with google drive"
-  source "$ROOT_PATH/drive.sh"
+  source "$SCRIPT_DIR/drive.sh"
 }
 
 # This function installs the Xcode Command Line Tools if they are not already installed.
