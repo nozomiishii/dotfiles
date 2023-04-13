@@ -46,7 +46,7 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.2.1
+        uses: dorny/paths-filter@v2.11.1
         with:
           filters: |
             file:
@@ -66,7 +66,7 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.2.1
+        uses: dorny/paths-filter@v2.11.1
         with:
           filters: |
             file:
@@ -86,7 +86,7 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.2.1
+        uses: dorny/paths-filter@v2.11.1
         with:
           filters: |
             file:
@@ -106,7 +106,7 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.2.1
+        uses: dorny/paths-filter@v2.11.1
         with:
           filters: |
             file:
@@ -126,7 +126,7 @@ jobs:
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
         id: filter
-        uses: dorny/paths-filter@v2.2.1
+        uses: dorny/paths-filter@v2.11.1
         with:
           filters: |
             file:
