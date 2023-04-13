@@ -294,7 +294,6 @@ for i in "$@"; do
     -ul=* | --unlink=*)
       MODULES="${i#*=}"
       unlink_modules
-      shift
       ;;
     *)
       usage

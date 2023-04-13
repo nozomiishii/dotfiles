@@ -7,7 +7,7 @@ setup() {
 
   # Create a temporary directory and initialize a new git repository
   temp_dir=$(mktemp -d)
-  cd "$temp_dir"
+  cd "$temp_dir" || exit 1
   git init
 
   # Create test files in the repository
