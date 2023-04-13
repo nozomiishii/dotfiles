@@ -19,6 +19,11 @@ echo '- 🐙 Install ruby-build'
 brew install ruby-build
 echo "- 🐙 $(ruby-build --version)"
 
+echo '- 🐙 Install libyaml'
+# https://qiita.com/notakaos/items/e3e30443b1e57f84e7d8
+# https://zenn.dev/fuuukeee3/articles/22caeb537cf1a6
+brew install libyaml
+
 # Get the latest stable version of Ruby
 # 1. List all installable Ruby versions with rbenv
 # 2. Filter out non-stable versions (e.g., development, pre-release versions)
