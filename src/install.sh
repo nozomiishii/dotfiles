@@ -26,7 +26,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
-SCRIPT_DIR="$HOME/dotfiles/src"
+INSTALL_SCRIPT_DIR="$HOME/dotfiles/src"
 CONFIGS_PATH="$HOME/dotfiles/configs"
 
 usage() {
@@ -103,7 +103,7 @@ reinstall() {
 setup_homebrew() {
   echo "🍺 Homebrew setup"
   pre_sudo
-  source "$SCRIPT_DIR/homebrew/homebrew.sh"
+  source "$INSTALL_SCRIPT_DIR/homebrew/homebrew.sh"
 }
 
 # MacOS
@@ -111,7 +111,7 @@ setup_homebrew() {
 setup_macos() {
   echo "💻 MacOS setup"
   pre_sudo
-  source "$SCRIPT_DIR/macos/macos.sh"
+  source "$INSTALL_SCRIPT_DIR/macos/macos.sh"
 }
 
 # Link
@@ -135,7 +135,7 @@ unlink_modules() {
 # Dependencis | Homebrew | Link
 setup_apps() {
   echo "🧝🏻‍♀️ Apps setup"
-  source "$SCRIPT_DIR/apps.sh"
+  source "$INSTALL_SCRIPT_DIR/apps.sh"
 }
 
 # Environment
@@ -149,28 +149,28 @@ setup_toolchains() {
   #   DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
   # fi
 
-  source "$SCRIPT_DIR/toolchains/toolchains.sh"
+  source "$INSTALL_SCRIPT_DIR/toolchains/toolchains.sh"
 }
 
 # Code
 # Dependencis | Homebrew
 setup_repositoris() {
   echo "🦄 Clone repositories"
-  source "$SCRIPT_DIR/code.sh"
+  source "$INSTALL_SCRIPT_DIR/code.sh"
 }
 
 # SSHkey
 # Dependencis | Homebrew
 generate_sshkey() {
   echo "🔐 Generate ssh key"
-  source "$SCRIPT_DIR/sshkey.sh"
+  source "$INSTALL_SCRIPT_DIR/sshkey.sh"
 }
 
 # Drive
 # Dependencis | Homebrew, Mirror Google Drive files
 sync_with_drive() {
   echo "🌎 Sync with google drive"
-  source "$SCRIPT_DIR/drive.sh"
+  source "$INSTALL_SCRIPT_DIR/drive.sh"
 }
 
 # This function installs the Xcode Command Line Tools if they are not already installed.
