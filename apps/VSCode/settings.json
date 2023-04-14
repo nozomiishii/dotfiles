@@ -11,7 +11,8 @@
   "security.workspace.trust.untrustedFiles": "open",
   "search.exclude": {
     "**/node_modules": true,
-    "**/target": true
+    "**/target": true,
+    "**/submodules": true,
   },
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "maximized",
