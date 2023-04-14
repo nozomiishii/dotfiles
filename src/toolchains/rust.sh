@@ -12,6 +12,7 @@ echo -e '🦀 Rust\n'
 
 if ! command -v rustup > /dev/null 2>&1; then
   echo '- 🦀 Install Rust'
+  export RUSTUP_INIT_SKIP_PATH_CHECK=yes
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   # shellcheck disable=SC1091
   source "$HOME/.cargo/env"
