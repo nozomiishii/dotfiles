@@ -76,12 +76,14 @@ pre_sudo() {
 # Sets up the dotfiles repository by cloning the repository,
 # initializing and updating Git submodules, and changing the remote URL to SSH.
 setup_dotfiles_repository() {
+  echo -e "\n\n👨🏻‍🚀 Setup Dotfiles Repository\n\n"
+
   local repo="nozomiishii/dotfiles"
   local remote_url="https://github.com/${repo}.git"
   local ssh_url="git@github.com:${repo}.git"
   local dotfiles_dir="${HOME}/dotfiles"
 
-  echo -e "👨🏻‍🚀 Cloning %s...\n" "${repo}"
+  echo -e "👨🏻‍🚀 Cloning ${repo}...\n"
   git clone "${remote_url}" "${dotfiles_dir}"
 
   echo -e "👨🏻‍🚀 Initializing and updating Git submodules...\n"
