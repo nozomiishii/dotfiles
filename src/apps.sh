@@ -5,8 +5,10 @@
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
+GREEN='\033[0;32m'
+NO_COLOR='\033[0m'
 
-echo -e "🧝🏻‍♀️ Starting Apps setup... \n"
+echo -e "🧝🏻‍♀️ Starting Apps setup...\n\n"
 
 APPS_PATH="$HOME/dotfiles/apps"
 
@@ -65,11 +67,14 @@ else
 fi
 
 echo "- 🗂 Set Default Apps for documents"
+
 # https://github.com/moretension/duti/
+brew install duti
+
 duti -s com.microsoft.VSCode yaml all
 duti -s com.microsoft.VSCode json all
 duti -s com.microsoft.VSCode css all
 duti -s com.microsoft.VSCode markdown all
 duti -s com.microsoft.VSCode sh all
 
-echo -e "🎉 The App setup is complete \n\n"
+echo -e "\n\n${GREEN}🧝🏻‍♀️ The App setup is complete 🎉${NO_COLOR}\n\n"
