@@ -27,7 +27,6 @@ if command -v rustc &> /dev/null && [ "$(command -v rustc)" != "$recommended_rus
 fi
 
 echo '- 🦀 Install Rust'
-# export RUSTUP_INIT_SKIP_PATH_CHECK=yes
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # shellcheck disable=SC1091
@@ -52,6 +51,6 @@ cargo install cargo-make
 cargo install create-tauri-app
 cargo install wasm-pack
 cargo install sea-orm-cli
-cargo install diesel_cli --no-default-features --features postgres
+# cargo install diesel_cli --no-default-features --features postgres
 
 echo -e "\n${GREEN}🦀 Rust setup is complete 🎉${NO_COLOR}\n\n"
