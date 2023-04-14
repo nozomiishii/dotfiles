@@ -1,7 +1,5 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# unicode of 🧙🏿‍♂️ => \U0001f9d9\U0001F3FF\u200d\U0002642
-# echo '🧙🏿 ...zshrc loading...'
 
 # Powerlevel10k
 powerlevel10k_prefix="$(brew --prefix 2> /dev/null)"
@@ -29,9 +27,6 @@ source "$HOME/.zsh/last-working-dir.zsh"
 # Functions
 source "$HOME/.zsh/functions.zsh"
 
-# direnv
-if type direnv > /dev/null 2>&1; then eval "$(direnv hook zsh)"; fi
-
 # lang
 export LANG="en_US.UTF-8"
 
@@ -49,13 +44,22 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# direnv
+if command -v direnv > /dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
+
 # Python
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv > /dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if command -v pyenv > /dev/null 2>&1; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  command -v pyenv > /dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 # Ruby
-eval "$(rbenv init -)"
+if command -v rbenv > /dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
