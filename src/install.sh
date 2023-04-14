@@ -76,7 +76,7 @@ pre_sudo() {
 # Sets up the dotfiles repository by cloning the repository,
 # initializing and updating Git submodules, and changing the remote URL to SSH.
 setup_dotfiles_repository() {
-  echo -e "\n\n👨🏻‍🚀 Setup Dotfiles Repository\n\n"
+  echo -e "👨🏻‍🚀 Setup Dotfiles Repository\n\n"
 
   local repo="nozomiishii/dotfiles"
   local remote_url="https://github.com/${repo}.git"
@@ -91,6 +91,8 @@ setup_dotfiles_repository() {
 
   echo -e "👨🏻‍🚀 Changing remote URL to SSH...\n"
   (cd "${dotfiles_dir}" && git remote set-url origin "${ssh_url}")
+
+  echo -e "\n\n${GREEN}👨🏻‍🚀 Setup Dotfiles Repository is complete 🎉${NO_COLOR}\n\n"
 }
 
 reinstall() {
@@ -183,6 +185,8 @@ sync_with_drive() {
 # https://gist.github.com/mokagio/b974620ee8dcf5c0671f
 # http://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
 install_xcode_cli_tools() {
+  echo -e "👨🏻‍🚀 Checking Xcode CLI tools\n\n"
+
   # Check if Xcode CLI tools are already installed by trying to print the SDK path.
   if ! xcode-select -p &> /dev/null; then
     echo "👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
@@ -197,18 +201,17 @@ install_xcode_cli_tools() {
     softwareupdate -i "${CLI_TOOLS}" --verbose
 
     rm "${TEMP_FILE}"
-  else
-    echo "👨🏻‍🚀 Xcode CLI tools OK"
   fi
+
+  echo -e "\n\n${GREEN}👨🏻‍🚀 Xcode CLI tools OK 🎉${NO_COLOR}\n\n"
 }
 
 if [ ! "$@" ]; then
-  echo -e "\n👨🏻‍🚀 Install the best Mac setup for you!! \n"
+  echo -e "👨🏻‍🚀 Install the best Mac setup for you!! \n\n"
 
   pre_sudo
   cd "$HOME"
 
-  echo -e "👨🏻‍🚀 Checking Xcode CLI tools\n"
   install_xcode_cli_tools
 
   if [ ! -d "$HOME"/dotfiles ]; then
@@ -242,7 +245,7 @@ if [ ! "$@" ]; then
   # Turn display off after: 15 mins
   sudo pmset -c displaysleep 15
 
-  echo -e "👨🏻‍🚀 Restart the mac \n"
+  echo -e "👨🏻‍🚀 Please restart your mac to reflect the settings.\n"
   echo -e "run: \n"
   echo -e "  sudo reboot \n\n\n"
 fi
