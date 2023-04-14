@@ -33,7 +33,4 @@ source "$SCRIPT_DIR/ruby.sh"
 # ----------------------------------------------------------------
 source "$SCRIPT_DIR/rust.sh"
 
-# ----------------------------------------------------------------
-# Result
-# ----------------------------------------------------------------
-echo -e "\n\n${GREEN}🎉 All Environment setup is complete 🎉${NO_COLOR}\n\n"
+echo -e "\n\n${GREEN}🌝 All Environment setup is complete 🎉${NO_COLOR}\n\n"
