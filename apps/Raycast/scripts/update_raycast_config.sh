@@ -39,7 +39,7 @@ print_success() {
   local green='\033[0;32m'
   local reset='\033[0m'
 
-  echo -e "${green}\n\n🎉: ${message}${reset}🎉\n\n"
+  echo -e "${green}\n\n${message}${reset}\n\n"
 }
 
 get_oldest_file() {
@@ -105,4 +105,4 @@ ls -lt "$BACKUP_DIR"
 remove_oldest_config
 update_raycast_config
 
-print_success "🚁 Update Raycast Config is Complete"
+print_success "🚁 Update Raycast Config is Complete 🎉"
