@@ -46,7 +46,7 @@ USAGE:
 OPTIONS:
     -a,    --apps          🧝🏻‍♀️ Apps setup
     -b,    --homebrew      🍺 Homebrew setup
-    -bf,   --homebrew-full  🍺 Homebrew setup(full)
+    -bf,   --homebrew-full 🍺 Homebrew setup(full)
     -c,    --code          🦄 Clone repositories
     -d,    --drive         🌎 Sync with google drive
     -h,    --help          💡 Print this usage
@@ -240,14 +240,16 @@ if [ ! "$@" ]; then
   open "/Applications/Karabiner-Elements.app"
   open /users
   open https://github.com/nozomiishii/dotfiles
+  echo "👨🏻‍🚀 Please refer to github to set up the launched application"
 
-  echo -e "\n\n${GREEN}🎉 Congrats! The dotfiles installation is complete 🎉${NO_COLOR}\n\n"
   # Turn display off after: 15 mins
   sudo pmset -c displaysleep 15
 
   echo -e "👨🏻‍🚀 Please restart your mac to reflect the settings.\n"
   echo -e "run: \n"
   echo -e "  sudo reboot \n\n\n"
+
+  echo -e "\n\n${GREEN}🎉 Congrats! The dotfiles installation is complete 🎉${NO_COLOR}\n\n"
 fi
 
 for i in "$@"; do
