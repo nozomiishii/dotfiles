@@ -10,13 +10,29 @@ NO_COLOR='\033[0m'
 
 echo -e '🦀 Rust\n'
 
-if ! command -v rustup > /dev/null 2>&1; then
-  echo '- 🦀 Install Rust'
-  export RUSTUP_INIT_SKIP_PATH_CHECK=yes
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  # shellcheck disable=SC1091
-  source "$HOME/.cargo/env"
+# Officially recommended rustc installation path
+recommended_rustc_path="$HOME/.cargo/bin/rustc"
+
+# Check if rustc is installed and not in the recommended path
+if command -v rustc &> /dev/null && [ "$(command -v rustc)" != "$recommended_rustc_path" ]; then
+  echo "- 🦀 rustc is installed in a non-recommended path. Uninstalling it."
+
+  # Check if rustc is installed via Homebrew
+  if brew list rust &> /dev/null; then
+    brew uninstall rust
+    echo "- 🦀 rustc has been uninstalled using Homebrew."
+  else
+    echo "- 🦀 Could not determine how rustc was installed. Please uninstall manually."
+  fi
 fi
+
+echo '- 🦀 Install Rust'
+# export RUSTUP_INIT_SKIP_PATH_CHECK=yes
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+# shellcheck disable=SC1091
+source "$HOME/.cargo/env"
+
 rustup update
 echo "- 🦀 $(rustup --version)"
 echo "- 🦀 $(rustc --version)"
