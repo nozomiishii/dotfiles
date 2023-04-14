@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Send message on ⌘+Enter
 // @author       Nozomi Ishii
-// @match        https://chat.openai.com/chat*
+// @match        https://chat.openai.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=openai.com
 // @grant        none
 // ==/UserScript==
