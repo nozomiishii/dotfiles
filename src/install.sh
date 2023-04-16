@@ -29,6 +29,7 @@ GREEN='\033[0;32m'
 RESET='\033[0m'
 
 INSTALL_SCRIPT_DIR="$HOME/dotfiles/src"
+CONFIGS_PATH="$HOME/dotfiles/configs"
 
 usage() {
   cat << EOF
@@ -53,6 +54,7 @@ OPTIONS:
     -l,    --symlink       🗂 Symbolic link
     -m,    --macos         💻 MacOS setup
     -t,    --toolchains    🌝 Toolchains setup
+    -ul=*, --unlink=*      👋 Unlinking Symbolic links
 
 
 
@@ -109,9 +111,19 @@ setup_macos() {
 
 # Link
 # Dependencis | Homebrew
-setup_symlinks() {
+link_modules() {
   echo "🗂 Symbolic link"
-  source "$INSTALL_SCRIPT_DIR/symlinks/symlinks.sh"
+
+  # shellcheck disable=SC2046
+  stow -vd "$CONFIGS_PATH" -t ~ -R $(ls "$CONFIGS_PATH")
+}
+
+# Unlink
+# Dependencis | Homebrew
+unlink_modules() {
+  echo "👋 Unlinking symbolic links"
+  stow -vD -d "$CONFIGS_PATH" -t ~ "$MODULES"
+  exit
 }
 
 # Apps
@@ -204,7 +216,7 @@ if [ ! "$@" ]; then
 
   setup_homebrew
   setup_macos
-  setup_symlinks
+  link_modules
   setup_apps
   setup_toolchains
 
@@ -261,7 +273,7 @@ for i in "$@"; do
       shift
       ;;
     -l | --symlink)
-      setup_symlinks
+      link_modules
       shift
       ;;
     -m | --macos)
@@ -271,6 +283,10 @@ for i in "$@"; do
     -t | --toolchains)
       setup_toolchains
       shift
+      ;;
+    -ul=* | --unlink=*)
+      MODULES="${i#*=}"
+      unlink_modules
       ;;
     *)
       usage
