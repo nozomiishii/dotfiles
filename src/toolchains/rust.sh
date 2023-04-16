@@ -6,7 +6,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 GREEN='\033[0;32m'
-NO_COLOR='\033[0m'
+RESET='\033[0m'
 
 echo -e '🦀 Rust\n'
 
@@ -53,4 +53,4 @@ cargo install wasm-pack
 cargo install sea-orm-cli
 # cargo install diesel_cli --no-default-features --features postgres
 
-echo -e "\n${GREEN}🦀 Rust setup is complete 🎉${NO_COLOR}\n\n"
+echo -e "\n${GREEN}🦀 Rust setup is complete 🎉${RESET}\n\n"

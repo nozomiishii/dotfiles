@@ -28,7 +28,7 @@ run_all() {
   local RED='\033[0;31m'
   local BG_RED='\033[41m'
   local WHITE='\033[1;37m'
-  local NO_COLOR='\033[0m'
+  local RESET='\033[0m'
 
   local tool
   local target_patterns=()
@@ -73,9 +73,9 @@ run_all() {
   for file in $target_files; do
     if eval "$tool" "\"$file\""; then
       processed_files_count=$((processed_files_count + 1))
-      echo -e "${GREEN}✓${NO_COLOR} $file"
+      echo -e "${GREEN}✓${RESET} $file"
     else
-      echo -e "${RED}✗${NO_COLOR} $file"
+      echo -e "${RED}✗${RESET} $file"
       exit_status=1
       failed_files_count=$((failed_files_count + 1))
       failed_files+="$file"$'\n'
@@ -86,9 +86,9 @@ run_all() {
   # Result
   # ----------------------------------------------------------------
   if [ "$exit_status" -eq 0 ]; then
-    echo -e "\n\n${BG_GREEN}${WHITE}PASS${GREEN} Great job! All $processed_files_count files processed successfully.${NO_COLOR}\n\n"
+    echo -e "\n\n${BG_GREEN}${WHITE}PASS${GREEN} Great job! All $processed_files_count files processed successfully.${RESET}\n\n"
   else
-    echo -e "\n\n${BG_RED}${WHITE}FAIL${RED} Oops! Failed to process $failed_files_count files.${NO_COLOR}\n$failed_files\n\n"
+    echo -e "\n\n${BG_RED}${WHITE}FAIL${RED} Oops! Failed to process $failed_files_count files.${RESET}\n$failed_files\n\n"
   fi
 
   return "$exit_status"

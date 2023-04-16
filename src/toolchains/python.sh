@@ -6,7 +6,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 GREEN='\033[0;32m'
-NO_COLOR='\033[0m'
+RESET='\033[0m'
 
 echo -e '🐍 Python\n'
 
@@ -19,4 +19,4 @@ curl -sSL https://install.python-poetry.org | python3 -
 export PATH="$HOME/.local/bin:$PATH"
 echo "- 🐍 $(poetry --version)"
 
-echo -e "\n${GREEN}🐍 Python setup is complete 🎉${NO_COLOR}\n\n"
+echo -e "\n${GREEN}🐍 Python setup is complete 🎉${RESET}\n\n"

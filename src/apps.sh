@@ -6,7 +6,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 GREEN='\033[0;32m'
-NO_COLOR='\033[0m'
+RESET='\033[0m'
 
 echo -e "🧝🏻‍♀️ Starting Apps setup...\n\n"
 
@@ -77,4 +77,4 @@ duti -s com.microsoft.VSCode css all
 duti -s com.microsoft.VSCode markdown all
 duti -s com.microsoft.VSCode sh all
 
-echo -e "\n\n${GREEN}🧝🏻‍♀️ The App setup is complete 🎉${NO_COLOR}\n\n"
+echo -e "\n\n${GREEN}🧝🏻‍♀️ The App setup is complete 🎉${RESET}\n\n"

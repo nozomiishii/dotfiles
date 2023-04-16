@@ -6,7 +6,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 GREEN='\033[0;32m'
-NO_COLOR='\033[0m'
+RESET='\033[0m'
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 
 echo -e "🌝 Starting Environment setup...\n\n"
@@ -33,4 +33,4 @@ source "$SCRIPT_DIR/ruby.sh"
 # ----------------------------------------------------------------
 source "$SCRIPT_DIR/rust.sh"
 
-echo -e "\n\n${GREEN}🌝 All Environment setup is complete 🎉${NO_COLOR}\n\n"
+echo -e "\n\n${GREEN}🌝 All Environment setup is complete 🎉${RESET}\n\n"

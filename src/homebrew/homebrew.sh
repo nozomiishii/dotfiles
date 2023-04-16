@@ -6,7 +6,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 GREEN='\033[0;32m'
-NO_COLOR='\033[0m'
+RESET='\033[0m'
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 brewfiles_path="$SCRIPT_DIR/Brewfiles"
@@ -61,4 +61,4 @@ remove_temp_files $brewfile_merged_path '/tmp/Brewfile_merged.lock.json'
 # ----------------------------------------------------------------
 # Result
 # ----------------------------------------------------------------
-echo -e "\n\n${GREEN}🎉 The Homebrew setup is complete 🎉${NO_COLOR}\n\n"
+echo -e "\n\n${GREEN}🎉 The Homebrew setup is complete 🎉${RESET}\n\n"

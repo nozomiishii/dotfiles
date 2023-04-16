@@ -26,7 +26,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 GREEN='\033[0;32m'
-NO_COLOR='\033[0m'
+RESET='\033[0m'
 
 INSTALL_SCRIPT_DIR="$HOME/dotfiles/src"
 CONFIGS_PATH="$HOME/dotfiles/configs"
@@ -92,7 +92,7 @@ setup_dotfiles_repository() {
   echo -e "👨🏻‍🚀 Changing remote URL to SSH...\n"
   (cd "${dotfiles_dir}" && git remote set-url origin "${ssh_url}")
 
-  echo -e "\n\n${GREEN}👨🏻‍🚀 Setup Dotfiles Repository is complete 🎉${NO_COLOR}\n\n"
+  echo -e "\n\n${GREEN}👨🏻‍🚀 Setup Dotfiles Repository is complete 🎉${RESET}\n\n"
 }
 
 reinstall() {
@@ -203,7 +203,7 @@ install_xcode_cli_tools() {
     rm "${TEMP_FILE}"
   fi
 
-  echo -e "\n\n${GREEN}👨🏻‍🚀 Xcode CLI tools OK 🎉${NO_COLOR}\n\n"
+  echo -e "\n\n${GREEN}👨🏻‍🚀 Xcode CLI tools OK 🎉${RESET}\n\n"
 }
 
 if [ ! "$@" ]; then
@@ -249,7 +249,7 @@ if [ ! "$@" ]; then
   echo -e "run: \n"
   echo -e "  sudo reboot \n\n\n"
 
-  echo -e "\n\n${GREEN}🎉 Congrats! The dotfiles installation is complete 🎉${NO_COLOR}\n\n"
+  echo -e "\n\n${GREEN}🎉 Congrats! The dotfiles installation is complete 🎉${RESET}\n\n"
 fi
 
 for i in "$@"; do

@@ -6,7 +6,7 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 GREEN='\033[0;32m'
-NO_COLOR='\033[0m'
+RESET='\033[0m'
 
 echo -e '🐉 Node\n'
 
@@ -28,4 +28,4 @@ yarn global add corepack
 corepack enable
 corepack enable npm
 
-echo -e "\n${GREEN}🐉 Node setup is complete 🎉${NO_COLOR}\n\n"
+echo -e "\n${GREEN}🐉 Node setup is complete 🎉${RESET}\n\n"
