@@ -151,21 +151,21 @@ setup_toolchains() {
 # Dependencis | Homebrew
 setup_repositoris() {
   echo "🦄 Clone repositories"
-  source "$INSTALL_SCRIPT_DIR/code.sh"
+  source "$INSTALL_SCRIPT_DIR/scripts/code.sh"
 }
 
 # SSHkey
 # Dependencis | Homebrew
 generate_sshkey() {
   echo "🔐 Generate ssh key"
-  source "$INSTALL_SCRIPT_DIR/sshkey.sh"
+  source "$INSTALL_SCRIPT_DIR/scripts/sshkey.sh"
 }
 
 # Drive
 # Dependencis | Homebrew, Mirror Google Drive files
 sync_with_drive() {
   echo "🌎 Sync with google drive"
-  source "$INSTALL_SCRIPT_DIR/drive.sh"
+  source "$INSTALL_SCRIPT_DIR/scripts/drive.sh"
 }
 
 # This function installs the Xcode Command Line Tools if they are not already installed.
