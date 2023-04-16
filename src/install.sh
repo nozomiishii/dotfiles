@@ -54,7 +54,6 @@ OPTIONS:
     -l,    --symlink       🗂 Symbolic link
     -m,    --macos         💻 MacOS setup
     -t,    --toolchains    🌝 Toolchains setup
-    -r,    --reinstall     ♻️ Reinstall this dotfiles repository
     -ul=*, --unlink=*      👋 Unlinking Symbolic links
 
 
@@ -93,16 +92,6 @@ setup_dotfiles_repository() {
   (cd "${dotfiles_dir}" && git remote set-url origin "${ssh_url}")
 
   echo -e "\n\n${GREEN}👨🏻‍🚀 Setup Dotfiles Repository is complete 🎉${RESET}\n\n"
-}
-
-reinstall() {
-  cd "$HOME"
-  echo "♻️ Reinstall this dotfiles repository"
-
-  rm -rf "$HOME"/dotfiles
-  setup_dotfiles_repository
-
-  exec $SHELL
 }
 
 # Homebrew
@@ -275,7 +264,6 @@ for i in "$@"; do
       sync_with_drive
       shift
       ;;
-
     -h | --help)
       usage
       shift
@@ -294,10 +282,6 @@ for i in "$@"; do
       ;;
     -t | --toolchains)
       setup_toolchains
-      shift
-      ;;
-    -r | --reinstall)
-      reinstall
       shift
       ;;
     -ul=* | --unlink=*)
