@@ -7,7 +7,6 @@
 set -Cu
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-# shellcheck disable=SC1091 source=../is_file_ignored/is_file_ignored.sh
 source "$SCRIPT_DIR/../is_file_ignored/is_file_ignored.sh"
 
 # Get the list of target files in the git repository, excluding deleted files

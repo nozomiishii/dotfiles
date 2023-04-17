@@ -19,9 +19,7 @@ echo "$COMMITTED_FILES_DIFF"
 # Dependencies
 # ----------------------------------------------------------------
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-# shellcheck source=../../utils/remove_temp_files/remove_temp_files.sh
 source "$SCRIPT_DIR/../../utils/remove_temp_files/remove_temp_files.sh"
-# shellcheck source=../../utils/request_admin_privileges/request_admin_privileges.sh
 source "$SCRIPT_DIR/../../utils/request_admin_privileges/request_admin_privileges.sh"
 
 # ----------------------------------------------------------------

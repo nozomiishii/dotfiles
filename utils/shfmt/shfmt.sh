@@ -7,8 +7,6 @@
 set -Ceu
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-
-# shellcheck disable=SC1091 source=../run_all/run_all.sh
 source "$SCRIPT_DIR/../run_all/run_all.sh"
 
 # List of directories and files to target (glob patterns)

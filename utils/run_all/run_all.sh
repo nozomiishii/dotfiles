@@ -7,7 +7,6 @@
 set -Ceu
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-# shellcheck source=../get_target_files/get_target_files.sh
 source "$SCRIPT_DIR/../get_target_files/get_target_files.sh"
 
 # ----------------------------------------------------------------

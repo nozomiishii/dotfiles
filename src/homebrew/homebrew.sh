@@ -10,7 +10,6 @@ RESET='\033[0m'
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 brewfiles_path="$SCRIPT_DIR/Brewfiles"
-# shellcheck source=../../utils/remove_temp_files/remove_temp_files.sh
 source "$SCRIPT_DIR/../../utils/remove_temp_files/remove_temp_files.sh"
 
 echo -e "🍺 Starting Homebrew setup...\n\n"
