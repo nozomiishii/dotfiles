@@ -13,6 +13,10 @@ echo -e "🧝🏻‍♀️ Starting Configs setup...\n\n"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 
 create_symlinks() {
+  local green='\033[0;32m'
+  local red="\033[1;31m"
+  local reset='\033[0m'
+
   local source_dir
   local target_dir
 
@@ -27,12 +31,23 @@ create_symlinks() {
         shift
         ;;
       *)
-        echo "Unknown parameter passed: $1"
+        echo -e "${red}ERROR: Unknown parameter passed: ${1}${reset}\n\n"
         exit 1
         ;;
     esac
     shift
   done
+
+  # Set the default value for source_dir if not provided
+  if [ -z "$source_dir" ]; then
+    source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+  fi
+
+  # Check if target_dir is provided, otherwise exit with an error
+  if [ -z "$target_dir" ]; then
+    echo -e "${red}ERROR: --target parameter is required${reset}\n\n"
+    exit 1
+  fi
 
   # Find all files in $SCRIPT_DIR and process each one
   find "$source_dir" -type f | while read -r file; do
@@ -67,6 +82,8 @@ create_symlinks() {
       # Create a symlink in the target directory for the file
       ln -fnsv "$file" "$target_dir/$relative_path"
     fi
+
+    echo -e "${green}✓ ${file#"$source_dir"/}${reset}"
   done
 }
 
