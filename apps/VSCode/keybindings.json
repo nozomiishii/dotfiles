@@ -88,6 +88,11 @@
     "when": "terminal.active"
   },
   {
+    "key": "alt+cmd+j",
+    "command": "workbench.action.terminal.new",
+    "when": "!terminal.active"
+  },
+  {
     "key": "alt+j",
     "command": "workbench.action.toggleMaximizedPanel",
     "when": "terminal.active"
