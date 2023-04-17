@@ -12,7 +12,7 @@
   "search.exclude": {
     "**/node_modules": true,
     "**/target": true,
-    "**/submodules": true,
+    "**/submodules": true
   },
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "maximized",
@@ -186,6 +186,9 @@
       "source.fixAll.shellcheck": true
     }
   },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "shellformat.flag": "--indent 2 --binary-next-line --case-indent --space-redirects",
   "shellcheck.ignorePatterns": {
     "**/*.xonshrc": true,
@@ -295,8 +298,6 @@
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
   "markdown-preview-github-styles.colorTheme": "dark",
-
-
   // ----------------------------------------------------------------
   // Ruby
   // ----------------------------------------------------------------
