@@ -47,12 +47,12 @@ OPTIONS:
     -a,    --apps          🧝🏻‍♀️ Apps setup
     -b,    --homebrew      🍺 Homebrew setup
     -bf,   --homebrew-full 🍺 Homebrew setup(full)
-    -c,    --code          🦄 Clone repositories
     -d,    --drive         🌎 Sync with google drive
     -h,    --help          💡 Print this usage
     -k,    --sshkey        🔐 Generate ssh key
     -l,    --symlink       🗂 Symbolic link
     -m,    --macos         💻 MacOS setup
+    -r,    --repo          🦄 Clone repositories
     -t,    --toolchains    🌝 Toolchains setup
     -ul=*, --unlink=*      👋 Unlinking Symbolic links
 
@@ -256,10 +256,7 @@ for i in "$@"; do
       setup_homebrew
       shift
       ;;
-    -c | --code)
-      setup_repositoris
-      shift
-      ;;
+
     -d | --drive)
       sync_with_drive
       shift
@@ -278,6 +275,10 @@ for i in "$@"; do
       ;;
     -m | --macos)
       setup_macos
+      shift
+      ;;
+    -r | --repo)
+      setup_repositoris
       shift
       ;;
     -t | --toolchains)
