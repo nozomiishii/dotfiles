@@ -10,6 +10,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
 # shellcheck source=../print/print_warning.sh
 source "$SCRIPT_DIR/../print/print_warning.sh"
+# shellcheck source=../print/print_error.sh
+source "$SCRIPT_DIR/../print/print_error.sh"
 
 # Create a directory, handling broken symlinks if necessary
 # Usage: mkdir_handling_symlinks "target_path"
@@ -50,7 +52,6 @@ mkdir_handling_symlinks() {
 #
 create_symlinks() {
   local green='\033[0;32m'
-  local red="\033[1;31m"
   local reset='\033[0m'
 
   local source_dir
@@ -72,7 +73,7 @@ create_symlinks() {
         shift
         ;;
       *)
-        echo -e "${red}ERROR: Unknown parameter passed: ${1}${reset}\n\n"
+        print_error "Unknown parameter passed: ${1}"
         exit 1
         ;;
     esac
@@ -81,13 +82,13 @@ create_symlinks() {
 
   # Set the default value for source_dir if not provided
   if [ -z "$source_dir" ]; then
-    echo -e "${red}ERROR: --source parameter is required${reset}\n\n"
+    print_error "--source parameter is required"
     exit 1
   fi
 
   # Check if target_dir is provided, otherwise exit with an error
   if [ -z "$target_dir" ]; then
-    echo -e "${red}ERROR: --target parameter is required${reset}\n\n"
+    print_error "--target parameter is required"
     exit 1
   fi
 
