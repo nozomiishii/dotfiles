@@ -6,15 +6,10 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
-# Print a warning message in yellow color
-# Usage: print_warning "message"
-print_warning() {
-  local message="$1"
-  local yellow='\033[1;33m'
-  local reset='\033[0m'
-
-  echo -e "${yellow}Warning: ${message}${reset}"
-}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+# Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
+# shellcheck source=../print/print_warning.sh
+source "$SCRIPT_DIR/../print/print_warning.sh"
 
 # Create a directory, handling broken symlinks if necessary
 # Usage: mkdir_handling_symlinks "target_path"
@@ -55,7 +50,6 @@ mkdir_handling_symlinks() {
 #
 create_symlinks() {
   local green='\033[0;32m'
-  local yellow='\033[1;33m'
   local red="\033[1;31m"
   local reset='\033[0m'
 
