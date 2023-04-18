@@ -29,7 +29,6 @@ GREEN='\033[0;32m'
 RESET='\033[0m'
 
 INSTALL_SCRIPT_DIR="$HOME/dotfiles/src"
-CONFIGS_PATH="$HOME/dotfiles/configs"
 
 usage() {
   cat << EOF
@@ -44,9 +43,9 @@ USAGE:
 
 
 OPTIONS:
-    -a,    --apps          🧝🏻‍♀️ Apps setup
     -b,    --homebrew      🍺 Homebrew setup
     -bf,   --homebrew-full 🍺 Homebrew setup(full)
+    -c,    --configs       🧝🏻‍♀️ Configs setup
     -d,    --drive         🌎 Sync with google drive
     -h,    --help          💡 Print this usage
     -k,    --sshkey        🔐 Generate ssh key
@@ -54,7 +53,6 @@ OPTIONS:
     -m,    --macos         💻 MacOS setup
     -r,    --repo          🦄 Clone repositories
     -t,    --toolchains    🌝 Toolchains setup
-    -ul=*, --unlink=*      👋 Unlinking Symbolic links
 
 
 
@@ -109,28 +107,11 @@ setup_macos() {
   source "$INSTALL_SCRIPT_DIR/macos/macos.sh"
 }
 
-# Link
-# Dependencis | Homebrew
-link_modules() {
-  echo "🗂 Symbolic link"
-
-  # shellcheck disable=SC2046
-  stow -vd "$CONFIGS_PATH" -t ~ -R $(ls "$CONFIGS_PATH")
-}
-
-# Unlink
-# Dependencis | Homebrew
-unlink_modules() {
-  echo "👋 Unlinking symbolic links"
-  stow -vD -d "$CONFIGS_PATH" -t ~ "$MODULES"
-  exit
-}
-
-# Apps
-# Dependencis | Homebrew | Link
-setup_apps() {
-  echo "🧝🏻‍♀️ Apps setup"
-  source "$INSTALL_SCRIPT_DIR/apps.sh"
+# Configs
+# Dependencis
+setup_configs() {
+  echo "🧝🏻‍♀️ Configs setup"
+  source "$INSTALL_SCRIPT_DIR/configs/configs.sh"
 }
 
 # Environment
@@ -147,7 +128,7 @@ setup_toolchains() {
   source "$INSTALL_SCRIPT_DIR/toolchains/toolchains.sh"
 }
 
-# Code
+# Repositories
 # Dependencis | Homebrew
 setup_repositoris() {
   echo "🦄 Clone repositories"
@@ -216,8 +197,7 @@ if [ ! "$@" ]; then
 
   setup_homebrew
   setup_macos
-  link_modules
-  setup_apps
+  setup_configs
   setup_toolchains
 
   echo "👨🏻‍🚀 Open the apps that needs to be configured"
@@ -243,10 +223,6 @@ fi
 
 for i in "$@"; do
   case "$i" in
-    -a | --apps)
-      setup_apps
-      shift
-      ;;
     -b | --homebrew)
       setup_homebrew
       shift
@@ -256,7 +232,10 @@ for i in "$@"; do
       setup_homebrew
       shift
       ;;
-
+    -c | --configs)
+      setup_configs
+      shift
+      ;;
     -d | --drive)
       sync_with_drive
       shift
@@ -267,10 +246,6 @@ for i in "$@"; do
       ;;
     -k | --sshkey)
       generate_sshkey
-      shift
-      ;;
-    -l | --symlink)
-      link_modules
       shift
       ;;
     -m | --macos)
@@ -284,10 +259,6 @@ for i in "$@"; do
     -t | --toolchains)
       setup_toolchains
       shift
-      ;;
-    -ul=* | --unlink=*)
-      MODULES="${i#*=}"
-      unlink_modules
       ;;
     *)
       usage

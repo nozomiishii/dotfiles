@@ -6,6 +6,35 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
+# Print a warning message in yellow color
+# Usage: print_warning "message"
+print_warning() {
+  local message="$1"
+  local yellow='\033[1;33m'
+  local reset='\033[0m'
+
+  echo -e "${yellow}Warning: ${message}${reset}"
+}
+
+# Create a directory, handling broken symlinks if necessary
+# Usage: mkdir_handling_symlinks "target_path"
+mkdir_handling_symlinks() {
+  local target_path="$1"
+
+  if ! mkdir -p "${target_path}"; then
+    print_warning "${target_path}"
+    print_warning "Failed to create directory, trying to remove broken symlink and recreate the directory"
+
+    rm -f "${target_path}"
+
+    mkdir -p "${target_path}" || {
+      print_warning "${target_path}"
+      print_warning "Failed to create directory after removing broken symlink"
+      exit 1
+    }
+  fi
+}
+
 # This function creates symlinks from the source directory to the target directory.
 # It can be used to set up configuration files or other types of files in the desired
 # target directory. It takes in three parameters:
@@ -26,6 +55,7 @@ set -Ceu
 #
 create_symlinks() {
   local green='\033[0;32m'
+  local yellow='\033[1;33m'
   local red="\033[1;31m"
   local reset='\033[0m'
 
@@ -101,11 +131,11 @@ create_symlinks() {
       #  -v    Cause ln to be verbose, showing files as they are processed.
       ln -fnsv "$file" "$target_dir"
     else
-      local target_subdir
       # Get the directory part of the relative path
+      local target_subdir
       target_subdir=$(dirname "$relative_path")
-      # Create the target directory in $HOME if it doesn't exist
-      mkdir -p "$target_dir/$target_subdir"
+
+      mkdir_handling_symlinks "${target_dir}/${target_subdir}"
 
       # Create a symlink in the target directory for the file
       ln -fnsv "$file" "$target_dir/$relative_path"
