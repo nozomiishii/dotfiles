@@ -89,9 +89,6 @@ brew "sd"
 # Static analysis and lint tool, for (ba)sh scripts https://www.shellcheck.net/
 brew "shellcheck"
 
-# Organize software neatly under a single directory tree https://www.gnu.org/software/stow/
-brew "stow"
-
 # Terminal multiplexer https://tmux.github.io/
 brew "tmux"
 

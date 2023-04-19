@@ -619,7 +619,6 @@ for x in {1..10}; do time zsh -i -c exit; done
 
 ### Dotfiles managed with
 
-- [GNU stow](https://www.gnu.org/software/stow/)
 - [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
 
 ## License
