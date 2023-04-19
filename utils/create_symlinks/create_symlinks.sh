@@ -134,7 +134,7 @@ create_symlinks() {
 
     local cyan='\033[36m'
     local reset='\033[0m'
-    msg --pass "${cyan}${file#"$source_dir"/}${reset}"
+    msg --check "${cyan}${file#"$source_dir"/}${reset}"
     echo -e "  ${output}\n"
   done
 }

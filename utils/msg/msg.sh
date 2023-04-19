@@ -11,6 +11,7 @@ set -Ceu
 # Usage:
 #   msg [options] "message"
 msg() {
+  # local cyan='\033[36m'
   local red="\033[1;31m"
   local green="\033[0;32m"
   local yellow="\033[1;33m"
@@ -27,14 +28,14 @@ msg() {
 
   while [[ "$#" -gt 0 ]]; do
     case $1 in
+      --check)
+        color="${green}"
+        prefix="✓${reset} "
+        ;;
       --error)
         color="${red}"
         prefix="ERROR: "
         newline_after="\n\n"
-        ;;
-      --pass)
-        color="${green}"
-        prefix="✓${reset} "
         ;;
       --success)
         color="${green}"

@@ -5,11 +5,12 @@
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
-GREEN='\033[0;32m'
-RESET='\033[0m'
-toolchains_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 
-echo -e "🌝 Starting Environment setup...\n\n"
+toolchains_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+# shellcheck source=../../utils/msg/msg.sh
+source "$toolchains_dir/../../utils/msg/msg.sh"
+
+msg --title "🌝 Initializing toolchains setup..."
 
 # ----------------------------------------------------------------
 # Node
@@ -33,4 +34,4 @@ source "$toolchains_dir/ruby.sh"
 # ----------------------------------------------------------------
 source "$toolchains_dir/rust.sh"
 
-echo -e "\n\n${GREEN}🌝 All Environment setup is complete 🎉${RESET}\n\n"
+msg --success "🌝 Toolchains setup is complete 🎉"

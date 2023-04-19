@@ -11,20 +11,20 @@ setup() {
   load "$dir/$filename.sh"
 }
 
+@test "msg function prints check message" {
+  run msg --check "check message"
+
+  echo "$output"
+  assert_success
+  assert_line --index 0 --partial "check message"
+}
+
 @test "msg function prints error message" {
   run msg --error "Error message"
 
   echo "$output"
   assert_success
   assert_line --index 0 --partial "ERROR: Error message"
-}
-
-@test "msg function prints pass message" {
-  run msg --pass "pass message"
-
-  echo "$output"
-  assert_success
-  assert_line --index 0 --partial "pass message"
 }
 
 @test "msg function prints success message" {

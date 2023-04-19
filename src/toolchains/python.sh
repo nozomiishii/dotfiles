@@ -5,10 +5,13 @@
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
-GREEN='\033[0;32m'
-RESET='\033[0m'
 
-echo -e '🐍 Python\n'
+python_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+# Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
+# shellcheck source=../../utils/msg/msg.sh
+source "$python_dir/../../utils/msg/msg.sh"
+
+msg --title '🐍 Python'
 
 echo '- 🐍 Install pyenv'
 brew install pyenv
@@ -19,4 +22,4 @@ curl -sSL https://install.python-poetry.org | python3 -
 export PATH="$HOME/.local/bin:$PATH"
 echo "- 🐍 $(poetry --version)"
 
-echo -e "\n${GREEN}🐍 Python setup is complete 🎉${RESET}\n\n"
+msg --success "🐍 Python setup is complete 🎉"

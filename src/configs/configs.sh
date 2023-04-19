@@ -13,8 +13,8 @@ source "$configs_dir/../../utils/create_symlinks/create_symlinks.sh"
 # shellcheck source=../../utils/msg/msg.sh
 source "$configs_dir/../../utils/msg/msg.sh"
 
-msg --title "🧝🏻‍♀️ Starting Configs setup..."
+msg --title "🧝🏻‍♀️ Initializing configs setup..."
 
 create_symlinks --source "$configs_dir" --target "$HOME"
 
-msg --success "🧝🏻‍♀️ Setup Configs is complete 🎉"
+msg --success "🧝🏻‍♀️ Configs setup is complete 🎉"

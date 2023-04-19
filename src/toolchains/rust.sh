@@ -5,10 +5,13 @@
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
-GREEN='\033[0;32m'
-RESET='\033[0m'
 
-echo -e '🦀 Rust\n'
+rust_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+# Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
+# shellcheck source=../../utils/msg/msg.sh
+source "$rust_dir/../../utils/msg/msg.sh"
+
+msg --title '🦀 Rust'
 
 # Officially recommended rustc installation path
 recommended_rustc_path="$HOME/.cargo/bin/rustc"
@@ -53,4 +56,4 @@ cargo install wasm-pack
 cargo install sea-orm-cli
 # cargo install diesel_cli --no-default-features --features postgres
 
-echo -e "\n${GREEN}🦀 Rust setup is complete 🎉${RESET}\n\n"
+msg --success "🦀 Rust setup is complete 🎉"
