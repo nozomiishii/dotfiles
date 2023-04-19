@@ -27,6 +27,14 @@ setup() {
   assert_line --index 0 --partial "ERROR: Error message"
 }
 
+@test "msg function prints info message" {
+  run msg --info "Info message"
+
+  echo "$output"
+  assert_success
+  assert_line --index 0 --partial "Info message"
+}
+
 @test "msg function prints success message" {
   run msg --success "Success message"
 

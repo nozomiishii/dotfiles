@@ -84,8 +84,8 @@ create_symlinks() {
 
     # Skip if the file matches the ignore pattern. Defaults to "^_".
     if [[ "${file#"$source_dir"/}" =~ $ignore_dir ]]; then
-      msg --warning "${file#"$source_dir"/}"
-      msg --warning "Skip. it matches the ignore pattern\n"
+      msg --info "* ${file#"$source_dir"/}"
+      msg --info "  Skip. it matches the ignore pattern\n"
       continue
     fi
 

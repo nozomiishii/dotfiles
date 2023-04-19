@@ -11,6 +11,7 @@ set -Ceu
 # Usage:
 #   msg [options] "message"
 msg() {
+  local blue='\033[0;34m'
   # local cyan='\033[36m'
   local red="\033[1;31m"
   local green="\033[0;32m"
@@ -36,6 +37,9 @@ msg() {
         color="${red}"
         prefix="ERROR: "
         newline_after="\n\n"
+        ;;
+      --info)
+        color="${blue}"
         ;;
       --success)
         color="${green}"
