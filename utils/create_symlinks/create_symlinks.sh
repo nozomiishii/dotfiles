@@ -6,12 +6,14 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+create_symlinks_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
 # shellcheck source=../print/print_warning.sh
-source "$SCRIPT_DIR/../print/print_warning.sh"
+source "$create_symlinks_dir/../print/print_warning.sh"
 # shellcheck source=../print/print_error.sh
-source "$SCRIPT_DIR/../print/print_error.sh"
+source "$create_symlinks_dir/../print/print_error.sh"
+# shellcheck source=../print/print_pass.sh
+source "$create_symlinks_dir/../print/print_pass.sh"
 
 # Create a directory, handling broken symlinks if necessary
 # Usage: mkdir_handling_symlinks "target_path"
@@ -51,9 +53,6 @@ mkdir_handling_symlinks() {
 #   create_symlinks --source "/path/to/source" --target "/path/to/target" --ignore "^_"
 #
 create_symlinks() {
-  local green='\033[0;32m'
-  local reset='\033[0m'
-
   local source_dir
   local target_dir
   local ignore_dir
@@ -97,7 +96,7 @@ create_symlinks() {
     ignore_dir="^_"
   fi
 
-  # Find all files in $SCRIPT_DIR and process each one
+  # Find all files in $create_symlinks_dir and process each one
   find "$source_dir" -type f | while read -r file; do
     # Skip if the file is the same as the source directory
     if [ "$(dirname "$file")" == "$source_dir" ]; then
@@ -112,6 +111,7 @@ create_symlinks() {
     # Remove the leading $source_dir part and the next directory from the file path
     local relative_path="${file#"$source_dir/"*/}"
 
+    local output
     if [ "$relative_path" == "." ]; then
       # Create a symlink in the target directory for the file
       #
@@ -124,7 +124,7 @@ create_symlinks() {
       #  -n    Same as -h, for compatibility with other ln implementations.
       #  -s    Create a symbolic link.
       #  -v    Cause ln to be verbose, showing files as they are processed.
-      ln -fnsv "$file" "$target_dir"
+      output=$(ln -fnsv "$file" "$target_dir")
     else
       # Get the directory part of the relative path
       local target_subdir
@@ -133,9 +133,12 @@ create_symlinks() {
       mkdir_handling_symlinks "${target_dir}/${target_subdir}"
 
       # Create a symlink in the target directory for the file
-      ln -fnsv "$file" "$target_dir/$relative_path"
+      output=$(ln -fnsv "$file" "$target_dir/$relative_path")
     fi
 
-    echo -e "${green}✓ ${file#"$source_dir"/}${reset}"
+    local cyan='\033[36m'
+    local reset='\033[0m'
+    print_pass "${cyan}${file#"$source_dir"/}${reset}"
+    echo -e "  ${output}\n"
   done
 }

@@ -10,9 +10,9 @@ RESET='\033[0m'
 
 echo -e "🧝🏻‍♀️ Starting Configs setup...\n\n"
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-source "$SCRIPT_DIR/../../utils/create_symlinks/create_symlinks.sh"
+configs_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+source "$configs_dir/../../utils/create_symlinks/create_symlinks.sh"
 
-create_symlinks --source "$SCRIPT_DIR" --target "$HOME"
+create_symlinks --source "$configs_dir" --target "$HOME"
 
 echo -e "\n\n${GREEN}🧝🏻‍♀️ Setup Configs is complete 🎉${RESET}\n\n"
