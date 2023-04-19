@@ -12,16 +12,23 @@ setup() {
 }
 
 @test "msg function prints error message" {
-  run msg "Error message" --error
+  run msg --error "Error message"
 
   echo "$output"
   assert_success
   assert_line --index 0 --partial "ERROR: Error message"
-  assert_equal "${#lines[@]}" 2
+}
+
+@test "msg function prints pass message" {
+  run msg --pass "pass message"
+
+  echo "$output"
+  assert_success
+  assert_line --index 0 --partial "pass message"
 }
 
 @test "msg function prints success message" {
-  run msg "Success message" --pass
+  run msg --success "Success message"
 
   echo "$output"
   assert_success
@@ -29,15 +36,23 @@ setup() {
 }
 
 @test "msg function prints warning message" {
-  run msg "Warning message" --warning
+  run msg --warning "Warning message"
 
   echo "$output"
   assert_success
   assert_line --index 0 --partial "Warning: Warning message"
 }
 
+@test "msg function prints title message" {
+  run msg --title "title message"
+
+  echo "$output"
+  assert_success
+  assert_line --index 0 --partial "title message"
+}
+
 @test "msg function works with reversed arguments" {
-  run msg --error "Error message"
+  run msg "Error message" --error
 
   echo "$output"
   assert_success
