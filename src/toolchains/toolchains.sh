@@ -7,30 +7,30 @@
 set -Ceu
 GREEN='\033[0;32m'
 RESET='\033[0m'
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+toolchains_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 
 echo -e "🌝 Starting Environment setup...\n\n"
 
 # ----------------------------------------------------------------
 # Node
 # ----------------------------------------------------------------
-source "$SCRIPT_DIR/node.sh"
+source "$toolchains_dir/node.sh"
 
 # ----------------------------------------------------------------
 # Python
 # ----------------------------------------------------------------
-source "$SCRIPT_DIR/python.sh"
+source "$toolchains_dir/python.sh"
 
 # ----------------------------------------------------------------
 # Ruby
 #
 # Just want to format just only Brewfile🥹
 # ----------------------------------------------------------------
-source "$SCRIPT_DIR/ruby.sh"
+source "$toolchains_dir/ruby.sh"
 
 # ----------------------------------------------------------------
 # Rust
 # ----------------------------------------------------------------
-source "$SCRIPT_DIR/rust.sh"
+source "$toolchains_dir/rust.sh"
 
 echo -e "\n\n${GREEN}🌝 All Environment setup is complete 🎉${RESET}\n\n"
