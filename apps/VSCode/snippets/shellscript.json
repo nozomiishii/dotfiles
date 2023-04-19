@@ -23,5 +23,16 @@
       "# ----------------------------------------------------------------"
     ],
     "description": "comment"
-  }
+  },
+
+  "source": {
+  "prefix": "src",
+  "body": [
+    "${TM_FILENAME_BASE}_dir=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" &> /dev/null && pwd)\"",
+    "# Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping",
+    "# shellcheck source=${1}",
+    "source \"$${TM_FILENAME_BASE}_dir/${2}\""
+  ],
+  "description": "source"
+}
 }
