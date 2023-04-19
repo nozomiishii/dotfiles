@@ -30,7 +30,7 @@
     "lint:fix": "yarn lint:markdownlint:fix",
     "lint:markdownlint": "npx -y markdownlint-cli2 '**/*.md' '#node_modules'",
     "lint:markdownlint:fix": "npx -y markdownlint-cli2-fix '**/*.md' '#node_modules'",
-    "prettier": "prettier . '!**/*.md' '!apps' '!submodules' --ignore-unknown --ignore-path .gitignore",
+    "prettier": "prettier . '!**/*.md' --ignore-unknown --ignore-path .gitignore",
     "setup": "lefthook install",
     "shellcheck": "./utils/shellcheck/shellcheck.sh",
     "shfmt": "./utils/shfmt/shfmt.sh",
