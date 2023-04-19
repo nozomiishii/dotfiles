@@ -44,7 +44,7 @@ duti -s com.microsoft.VSCode sh all
 # ----------------------------------------------------------------
 echo "- 🤖 Automator"
 if [ ! -f "$HOME/Desktop/OpenWithVisualStudioCode.workflow" ]; then
-  cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
+  cp -r "$configs_dir/_automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
 fi
 
 # ----------------------------------------------------------------
