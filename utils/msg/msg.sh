@@ -44,6 +44,8 @@ msg() {
         ;;
       --title)
         color="${bg_blue}${white}"
+        prefix=" "
+        suffix=" "
         newline_after="\n"
         ;;
       --warning)
