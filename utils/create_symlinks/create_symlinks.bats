@@ -24,6 +24,7 @@ teardown() {
 @test "create symlinks with unknown parameter" {
   run create_symlinks --unknown tmp/source_dir --source test_source --target test_target
 
+  echo "$output"
   assert_failure
   assert_line --index 0 --partial "Unknown parameter passed: --unknown"
 }
@@ -31,6 +32,7 @@ teardown() {
 @test "Symlinks are created in the target directory" {
   run create_symlinks --source test_source --target test_target
 
+  echo "$output"
   assert_success
   assert [ -L "test_target/file1" ]
 }
@@ -42,6 +44,7 @@ teardown() {
 
   run create_symlinks --source test_source --target test_target
 
+  echo "$output"
   assert_success
   assert [ -L "test_target/file1" ]
   assert [ -L "test_target/file2" ]
@@ -53,6 +56,7 @@ teardown() {
   touch test_source/_dir/ignore_me
   run create_symlinks --source test_source --target test_target
 
+  echo "$output"
   assert_success
   assert [ -L "test_target/file1" ]
   assert [ ! -L "test_target/ignore_me" ]
@@ -65,6 +69,7 @@ teardown() {
   touch test_source/@dir/ignore_me
   run create_symlinks --source test_source --target test_target --ignore "^@"
 
+  echo "$output"
   assert_success
   assert [ -L "test_target/file1" ]
   assert [ -L "test_target/include_me" ]

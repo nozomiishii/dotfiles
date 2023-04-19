@@ -30,6 +30,7 @@ teardown() {
   )
   run run_all --tool "cat" --target "${target_patterns[*]}" --ignore "${ignore_patterns[*]}"
 
+  echo "$output"
   assert_success
   assert_line --index 0 "echo 'Hello, World!'"
   assert_line --index 1 --partial "test_directory/test1.sh"
@@ -49,6 +50,7 @@ teardown() {
   )
   run run_all --tool "cat" --target "${target_patterns[*]}" --ignore "${ignore_patterns[*]}"
 
+  echo "$output"
   assert_success
   assert_line --index 0 --partial "All 0 files processed successfully."
   assert_equal "${#lines[@]}" 1
@@ -64,9 +66,9 @@ teardown() {
   )
   run run_all --tool "cat" --target "${target_patterns[*]}" --ignore "${ignore_patterns[*]}"
 
+  echo "$output"
   assert_success
   assert_line --index 0 "echo 'Hello, World!'"
   assert_line --index 1 --partial "test_directory/test1.sh"
   assert_equal "${#lines[@]}" 3
-
 }

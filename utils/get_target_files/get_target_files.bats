@@ -30,6 +30,7 @@ teardown() {
 @test "get_target_files with no options should return all files" {
   run get_target_files
 
+  echo "$output"
   assert_success
   assert_equal "${#lines[@]}" 3
 }
@@ -37,6 +38,7 @@ teardown() {
 @test "get_target_files with --ignore option should exclude matching files" {
   run get_target_files --ignore "*.sh"
 
+  echo "$output"
   assert_success
   for file in "${lines[@]}"; do
     [[ $file != *.sh ]]
@@ -46,6 +48,7 @@ teardown() {
 @test "get_target_files with --target option should include only matching files" {
   run get_target_files --target "*.sh"
 
+  echo "$output"
   assert_success
   for file in "${lines[@]}"; do
     [[ $file == *.sh ]]
@@ -55,6 +58,7 @@ teardown() {
 @test "get_target_files with both --ignore and --target options should apply both filters" {
   run get_target_files --ignore "submodules/**" --target "*.sh"
 
+  echo "$output"
   assert_success
   for file in "${lines[@]}"; do
     [[ $file != submodules/* ]]

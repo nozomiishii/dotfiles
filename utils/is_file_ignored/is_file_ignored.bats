@@ -13,6 +13,7 @@ setup() {
   local patterns=()
   run is_file_ignored "file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_failure
 }
 
@@ -20,6 +21,7 @@ setup() {
   local patterns=("!file.sh")
   run is_file_ignored "file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_failure
 }
 
@@ -27,6 +29,7 @@ setup() {
   local patterns=("*.sh" "*.zsh")
   run is_file_ignored "test.txt" "${patterns[@]}"
 
+  echo "$output"
   assert_failure
 }
 
@@ -34,6 +37,7 @@ setup() {
   local patterns=("!dir/nested/*.sh" "!dir/nested/file.sh")
   run is_file_ignored "dir/nested/file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_failure
 }
 
@@ -41,6 +45,7 @@ setup() {
   local patterns=("dir/nested/*.sh" "!dir/nested/file.sh")
   run is_file_ignored "dir/nested/file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_failure
 }
 
@@ -48,6 +53,7 @@ setup() {
   local patterns=("file.sh")
   run is_file_ignored "file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_success
 }
 
@@ -55,6 +61,7 @@ setup() {
   local patterns=("*.sh" "*.zsh")
   run is_file_ignored "file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_success
 }
 
@@ -62,6 +69,7 @@ setup() {
   local patterns=("dir/**")
   run is_file_ignored "dir/file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_success
 }
 
@@ -69,6 +77,7 @@ setup() {
   local patterns=("dir/**")
   run is_file_ignored "dir/nested/file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_success
 }
 
@@ -76,6 +85,7 @@ setup() {
   local patterns=("dir/**" "dir/nested/*.sh")
   run is_file_ignored "dir/nested/file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_success
 }
 
@@ -83,5 +93,6 @@ setup() {
   local patterns=("dir/*.sh" "!dir/nested/file.sh")
   run is_file_ignored "dir/file.sh" "${patterns[@]}"
 
+  echo "$output"
   assert_success
 }

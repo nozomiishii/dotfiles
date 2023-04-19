@@ -18,7 +18,7 @@ setup() {
   # Call the remove_temp_files function with the temporary file paths
   run remove_temp_files "$temp_file_1" "$temp_file_2"
 
-  # Assert that the temporary files were removed
+  echo "$output"
   assert [ ! -f "$temp_file_1" ]
   assert [ ! -f "$temp_file_2" ]
 }
@@ -32,6 +32,7 @@ setup() {
   # Call the remove_temp_files function with the non-existing file paths
   run remove_temp_files "$non_existing_file_1" "$non_existing_file_2"
 
+  echo "$output"
   assert_success
 }
 
@@ -43,7 +44,7 @@ setup() {
   # Call the remove_temp_files function with the temporary directory path
   run remove_temp_files "$temp_directory"
 
-  # Assert that the temporary directory was not removed
+  echo "$output"
   assert [ -d "$temp_directory" ]
 
   # Clean up the temporary directory
