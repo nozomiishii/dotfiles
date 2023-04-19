@@ -35,7 +35,7 @@ usage() {
 
 
 NAME
-    ./install - Install Nozomi's favourite mac setups.
+    ./install - Nozomiishii Doting Dotfiles
 
 
 USAGE:
@@ -88,6 +88,10 @@ msg_title() {
 # until the current process has finished.
 #
 request_admin_privileges() {
+  if [ "${CI}" = "true" ]; then
+    return
+  fi
+
   # Ask for the administrator password upfront
   sudo -v
 
