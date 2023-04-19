@@ -6,8 +6,10 @@
 # -x: Enable command tracing for easier debugging
 set -Cu
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-source "$SCRIPT_DIR/../is_file_ignored/is_file_ignored.sh"
+get_target_files_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+# Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
+# shellcheck source=../is_file_ignored/is_file_ignored.sh
+source "$get_target_files_dir/../is_file_ignored/is_file_ignored.sh"
 
 # Get the list of target files in the git repository, excluding deleted files
 # and files matching the given exclude patterns.
