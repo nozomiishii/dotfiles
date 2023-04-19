@@ -8,12 +8,8 @@ set -Ceu
 
 create_symlinks_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
-# shellcheck source=../print/print_warning.sh
-source "$create_symlinks_dir/../print/print_warning.sh"
-# shellcheck source=../print/print_error.sh
-source "$create_symlinks_dir/../print/print_error.sh"
-# shellcheck source=../print/print_pass.sh
-source "$create_symlinks_dir/../print/print_pass.sh"
+# shellcheck source=../msg/msg.sh
+source "$create_symlinks_dir/../msg/msg.sh"
 
 # Create a directory, handling broken symlinks if necessary
 # Usage: mkdir_handling_symlinks "target_path"
@@ -21,14 +17,14 @@ mkdir_handling_symlinks() {
   local target_path="$1"
 
   if ! mkdir -p "${target_path}"; then
-    print_warning "${target_path}"
-    print_warning "Failed to create directory, trying to remove broken symlink and recreate the directory"
+    msg --warning "${target_path}"
+    msg --warning "Failed to create directory, trying to remove broken symlink and recreate the directory"
 
     rm -f "${target_path}"
 
     mkdir -p "${target_path}" || {
-      print_warning "${target_path}"
-      print_warning "Failed to create directory after removing broken symlink"
+      msg --warning "${target_path}"
+      msg --warning "Failed to create directory after removing broken symlink"
       exit 1
     }
   fi
@@ -72,7 +68,7 @@ create_symlinks() {
         shift
         ;;
       *)
-        print_error "Unknown parameter passed: ${1}"
+        msg --error "Unknown parameter passed: ${1}"
         exit 1
         ;;
     esac
@@ -81,13 +77,13 @@ create_symlinks() {
 
   # Set the default value for source_dir if not provided
   if [ -z "$source_dir" ]; then
-    print_error "--source parameter is required"
+    msg --error "--source parameter is required"
     exit 1
   fi
 
   # Check if target_dir is provided, otherwise exit with an error
   if [ -z "$target_dir" ]; then
-    print_error "--target parameter is required"
+    msg --error "--target parameter is required"
     exit 1
   fi
 
@@ -138,7 +134,7 @@ create_symlinks() {
 
     local cyan='\033[36m'
     local reset='\033[0m'
-    print_pass "${cyan}${file#"$source_dir"/}${reset}"
+    msg --pass "${cyan}${file#"$source_dir"/}${reset}"
     echo -e "  ${output}\n"
   done
 }
