@@ -24,34 +24,36 @@ maintenance_brewfile_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && 
 source "$maintenance_brewfile_dir/../../utils/remove_temp_files/remove_temp_files.sh"
 # shellcheck source=../../utils/request_admin_privileges/request_admin_privileges.sh
 source "$maintenance_brewfile_dir/../../utils/request_admin_privileges/request_admin_privileges.sh"
+# shellcheck source=../../utils/msg/msg.sh
+source "$maintenance_brewfile_dir/../../utils/msg/msg.sh"
 
 # ----------------------------------------------------------------
 # Main
 # ----------------------------------------------------------------
 maintenance_brewfile() {
-  echo -e "🍺 Starting Brewfile maintenance\n"
+  msg --title "🍺 Starting Brewfile maintenance"
   request_admin_privileges
 
   local brewfile_merged_path='/tmp/Brewfile_merged'
   remove_temp_files $brewfile_merged_path '/tmp/Brewfile_merged.lock.json'
 
-  echo -e "🍺 Merging temporary Brewfile...\n"
+  echo -e "- 🍺 Merging temporary Brewfile..."
   local brewfiles_path="$HOME/dotfiles/src/homebrew/Brewfiles"
   cat "$brewfiles_path/essential" "$brewfiles_path/optional" "$brewfiles_path/mac/mac_essential" "$brewfiles_path/mac/mac_optional" > $brewfile_merged_path
 
   # Uninstall packages not listed in the merged Brewfile, with details on what is being removed
-  echo -e "🍺 Performing Brewfile cleanup...\n"
+  echo -e "- 🍺 Performing Brewfile cleanup..."
   brew bundle cleanup --verbose --file=$brewfile_merged_path --force
   remove_temp_files $brewfile_merged_path '/tmp/Brewfile_merged.lock.json'
 
   # Remove outdated versions of installed packages and unnecessary files to free up disk space
-  echo -e "🍺 Cleaning up old packages and files...\n"
+  echo -e "- 🍺 Cleaning up old packages and files..."
   brew cleanup --verbose
 
   # Upgrade all installed packages to their latest versions
-  echo -e "🍺 Upgrading installed packages...\n"
+  echo -e "- 🍺 Upgrading installed packages..."
   brew upgrade --verbose
 
-  echo -e "\n🍺 Brewfile maintenance is complete🎉\n\n"
+  msg --success "🍺 Brewfile maintenance is complete🎉"
 }
 maintenance_brewfile
