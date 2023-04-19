@@ -17,7 +17,7 @@
 #
 
 # ----------------------------------------------------------------
-# Implementation
+# Main
 # ----------------------------------------------------------------
 #
 # -C: Prevent overwriting files with output redirection
@@ -84,15 +84,21 @@ msg_title() {
   echo -e "\n"
 }
 
-pre_sudo() {
+# Requests administrator privileges upfront and temporarily increases sudo's timeout
+# until the current process has finished.
+#
+request_admin_privileges() {
   # Ask for the administrator password upfront
   sudo -v
-  # Temporarily increasing sudo's timeout until the process has finished
-  while true; do
-    sudo -n true
-    sleep 60
-    kill -0 "$$" || exit
-  done 2> /dev/null &
+
+  # Temporarily increase sudo's timeout until the process has finished
+  (
+    while true; do
+      sudo -n true
+      sleep 60
+      kill -0 "$$" || exit
+    done
+  ) 2> /dev/null &
 }
 
 # Sets up the dotfiles repository by cloning the repository,
@@ -147,33 +153,29 @@ install_xcode_cli_tools() {
   msg_success "👨🏻‍🚀 Xcode CLI tools are ready to go 🎉"
 }
 
-# Homebrew
 setup_homebrew() {
   msg_title "🍺 Homebrew setup"
 
-  pre_sudo
+  request_admin_privileges
   source "$install_dir/homebrew/homebrew.sh"
 }
 
-# MacOS
 # Dependencis | Homebrew
 setup_macos() {
   msg_title "💻 MacOS setup"
 
-  pre_sudo
+  request_admin_privileges
   source "$install_dir/macos/macos.sh"
 }
 
-# Configs
 # Dependencis
 setup_configs() {
   msg_title "🧝🏻‍♀️ Configs setup"
 
-  pre_sudo
+  request_admin_privileges
   source "$install_dir/configs/configs.sh"
 }
 
-# Environment
 # Dependencis | Homebrew | Link | Apps (agree to the Xcode license)
 setup_toolchains() {
   msg_title "🌝 Toolchains setup"
@@ -182,32 +184,28 @@ setup_toolchains() {
   #   echo "🌝 Environment setup(dfx)"
   #   DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
   # fi
-  pre_sudo
+  request_admin_privileges
   source "$install_dir/toolchains/toolchains.sh"
 }
 
-# Repositories
 # Dependencis | Homebrew
 setup_repositoris() {
   msg_title "🦄 Clone repositories"
   source "$install_dir/scripts/code.sh"
 }
 
-# SSHkey
 # Dependencis | Homebrew
 generate_sshkey() {
   msg_title "🔐 Generate ssh key"
   source "$install_dir/scripts/sshkey.sh"
 }
 
-# Drive
 # Dependencis | Homebrew, Mirror Google Drive files
 sync_with_drive() {
   msg_title "🌎 Sync with google drive"
   source "$install_dir/scripts/drive.sh"
 }
 
-# Install
 install() {
   cd "$HOME"
 
@@ -232,7 +230,7 @@ install() {
 EOF
   echo -e "${reset}"
 
-  pre_sudo
+  request_admin_privileges
   install_xcode_cli_tools
 
   if [ ! -d "$HOME"/dotfiles ]; then
