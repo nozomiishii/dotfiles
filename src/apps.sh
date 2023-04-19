@@ -12,22 +12,6 @@ echo -e "🧝🏻‍♀️ Starting Apps setup...\n\n"
 
 APPS_PATH="$HOME/dotfiles/apps"
 
-echo "- 🤖 Automator"
-if [ ! -f "$HOME/Desktop/OpenWithVisualStudioCode.workflow" ]; then
-  cp -r "$HOME/dotfiles/apps/Automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
-fi
-
-echo "- 🐟 VSCode"
-VSCODE_PATH="$HOME/Library/Application Support/Code/User"
-if [ ! -d "$VSCODE_PATH" ]; then
-  mkdir -p "$VSCODE_PATH"
-  open "/Applications/Visual Studio Code.app"
-fi
-stow -vd "$APPS_PATH" -t "$VSCODE_PATH" VSCode
-
-echo "- 🥒 tmux"
-"$HOME/dotfiles/submodules/tpm/bin/install_plugins"
-
 if [ ! -e "/Applications/Xcode.app" ]; then
   echo "🥲 Xcode not found"
   echo "Xcode and NeoVim settings were skipped."
@@ -65,16 +49,5 @@ else
     nvim --headless +PlugInstall +qall
   fi
 fi
-
-echo "- 🗂 Set Default Apps for documents"
-
-# https://github.com/moretension/duti/
-brew install duti
-
-duti -s com.microsoft.VSCode yaml all
-duti -s com.microsoft.VSCode json all
-duti -s com.microsoft.VSCode css all
-duti -s com.microsoft.VSCode markdown all
-duti -s com.microsoft.VSCode sh all
 
 echo -e "\n\n${GREEN}🧝🏻‍♀️ The App setup is complete 🎉${RESET}\n\n"

@@ -10,25 +10,8 @@ create_symlinks_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 # Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
 # shellcheck source=../msg/msg.sh
 source "$create_symlinks_dir/../msg/msg.sh"
-
-# Create a directory, handling broken symlinks if necessary
-# Usage: mkdir_handling_symlinks "target_path"
-mkdir_handling_symlinks() {
-  local target_path="$1"
-
-  if ! mkdir -p "${target_path}"; then
-    msg --warning "${target_path}"
-    msg --warning "Failed to create directory, trying to remove broken symlink and recreate the directory"
-
-    rm -f "${target_path}"
-
-    mkdir -p "${target_path}" || {
-      msg --warning "${target_path}"
-      msg --warning "Failed to create directory after removing broken symlink"
-      exit 1
-    }
-  fi
-}
+# shellcheck source=../mkdir_handling_broken_symlinks/mkdir_handling_broken_symlinks.sh
+source "$create_symlinks_dir/../mkdir_handling_broken_symlinks/mkdir_handling_broken_symlinks.sh"
 
 # This function creates symlinks from the source directory to the target directory.
 # It can be used to set up configuration files or other types of files in the desired
@@ -126,7 +109,7 @@ create_symlinks() {
       local target_subdir
       target_subdir=$(dirname "$relative_path")
 
-      mkdir_handling_symlinks "${target_dir}/${target_subdir}"
+      mkdir_handling_broken_symlinks "${target_dir}/${target_subdir}"
 
       # Create a symlink in the target directory for the file
       output=$(ln -fnsv "$file" "$target_dir/$relative_path")
