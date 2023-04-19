@@ -20,8 +20,8 @@
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-BACKUP_DIR="$(cd "$SCRIPT_DIR/../backup" && pwd)"
+update_raycast_config_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+raycast_backup_dir="$(cd "$update_raycast_config_dir/../backup" && pwd)"
 
 # ----------------------------------------------------------------
 # Functions
@@ -64,7 +64,7 @@ get_oldest_file() {
 remove_oldest_config() {
   local old_config_file
 
-  old_config_file=$(get_oldest_file "$BACKUP_DIR")
+  old_config_file=$(get_oldest_file "$raycast_backup_dir")
 
   echo "old_config_file"
   mv "$old_config_file" "$HOME/.Trash"
@@ -73,7 +73,7 @@ remove_oldest_config() {
 }
 
 update_raycast_config() {
-  git add "$BACKUP_DIR"
+  git add "$raycast_backup_dir"
   git commit --no-verify -m "chore(backup): update Raycast config"
 
   local current_branch
@@ -86,23 +86,27 @@ update_raycast_config() {
 # ----------------------------------------------------------------
 # Main
 # ----------------------------------------------------------------
-echo -e "🚁 Update Raycast Config\n\n"
+main() {
+  echo -e "🚁 Update Raycast Config\n\n"
 
-backup_files_length=$(find "$BACKUP_DIR" -type f | wc -l)
+  local backup_files_length
+  backup_files_length=$(find "$raycast_backup_dir" -type f | wc -l)
 
-if [ "$backup_files_length" -eq 0 ]; then
-  print_error "No backup files. Export your Raycast app settings to $BACKUP_DIR"
-  exit 1
-fi
+  if [ "$backup_files_length" -eq 0 ]; then
+    print_error "No backup files. Export your Raycast app settings to $raycast_backup_dir"
+    exit 1
+  fi
 
-if [ "$backup_files_length" -eq 1 ]; then
-  print_error "No duplicate backup files. Export your Raycast app settings to $BACKUP_DIR"
-  exit 1
-fi
+  if [ "$backup_files_length" -eq 1 ]; then
+    print_error "No duplicate backup files. Export your Raycast app settings to $raycast_backup_dir"
+    exit 1
+  fi
 
-ls -lt "$BACKUP_DIR"
+  ls -lt "$raycast_backup_dir"
 
-remove_oldest_config
-update_raycast_config
+  remove_oldest_config
+  update_raycast_config
 
-print_success "🚁 Update Raycast Config is Complete 🎉"
+  print_success "🚁 Update Raycast Config is Complete 🎉"
+}
+main
