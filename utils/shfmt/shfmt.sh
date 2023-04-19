@@ -6,8 +6,10 @@
 # -x: Enable command tracing for easier debugging
 set -Ceu
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-source "$SCRIPT_DIR/../run_all/run_all.sh"
+shfmt_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+# Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
+# shellcheck source=../run_all/run_all.sh
+source "$shfmt_dir/../run_all/run_all.sh"
 
 # List of directories and files to target (glob patterns)
 target_patterns=(

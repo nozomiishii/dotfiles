@@ -6,8 +6,10 @@
 # -x: Enable command tracing for easier debugging
 set -Ceu
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-source "$SCRIPT_DIR/../get_target_files/get_target_files.sh"
+run_all_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+# Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
+# shellcheck source=../get_target_files/get_target_files.sh
+source "$run_all_dir/../get_target_files/get_target_files.sh"
 
 # ----------------------------------------------------------------
 # Function
