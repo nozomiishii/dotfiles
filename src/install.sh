@@ -25,10 +25,10 @@
 # -u: Exit the script if an undefined variable is used
 # -x: (Optional) Enable command tracing for easier debugging
 set -Ceu
-GREEN='\033[0;32m'
-RESET='\033[0m'
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-INSTALL_SCRIPT_DIR="$HOME/dotfiles/src"
+install_dir="$HOME/dotfiles/src"
 
 usage() {
   cat << EOF
@@ -59,6 +59,31 @@ OPTIONS:
 EOF
 }
 
+msg_error() {
+  local message=$1
+  local red="\033[1;31m"
+  local reset='\033[0m'
+
+  echo -e "${red}ERROR: ${message}${reset}"
+}
+
+msg_success() {
+  local message=$1
+  local green='\033[0;32m'
+  local reset='\033[0m'
+
+  echo -e "${green}\n\n${message}${reset}\n\n"
+}
+
+msg_title() {
+  local message=$1
+
+  echo -e "----------------------------------------------------------------"
+  echo -e "${message}"
+  echo -e "----------------------------------------------------------------"
+  echo -e "\n"
+}
+
 pre_sudo() {
   # Ask for the administrator password upfront
   sudo -v
@@ -73,80 +98,23 @@ pre_sudo() {
 # Sets up the dotfiles repository by cloning the repository,
 # initializing and updating Git submodules, and changing the remote URL to SSH.
 setup_dotfiles_repository() {
-  echo -e "👨🏻‍🚀 Setup Dotfiles Repository\n\n"
+  msg_title "👨🏻‍🚀 Setup Dotfiles Repository"
 
   local repo="nozomiishii/dotfiles"
   local remote_url="https://github.com/${repo}.git"
   local ssh_url="git@github.com:${repo}.git"
   local dotfiles_dir="${HOME}/dotfiles"
 
-  echo -e "👨🏻‍🚀 Cloning ${repo}...\n"
+  echo -e "- 👨🏻‍🚀 Cloning ${repo}..."
   git clone "${remote_url}" "${dotfiles_dir}"
 
-  echo -e "👨🏻‍🚀 Initializing and updating Git submodules...\n"
+  echo -e "- 👨🏻‍🚀 Initializing and updating Git submodules..."
   (cd "${dotfiles_dir}" && git submodule update --init --recursive)
 
-  echo -e "👨🏻‍🚀 Changing remote URL to SSH...\n"
+  echo -e "- 👨🏻‍🚀 Changing remote URL to SSH..."
   (cd "${dotfiles_dir}" && git remote set-url origin "${ssh_url}")
 
-  echo -e "\n\n${GREEN}👨🏻‍🚀 Setup Dotfiles Repository is complete 🎉${RESET}\n\n"
-}
-
-# Homebrew
-setup_homebrew() {
-  echo "🍺 Homebrew setup"
-  pre_sudo
-  source "$INSTALL_SCRIPT_DIR/homebrew/homebrew.sh"
-}
-
-# MacOS
-# Dependencis | Homebrew
-setup_macos() {
-  echo "💻 MacOS setup"
-  pre_sudo
-  source "$INSTALL_SCRIPT_DIR/macos/macos.sh"
-}
-
-# Configs
-# Dependencis
-setup_configs() {
-  echo "🧝🏻‍♀️ Configs setup"
-  source "$INSTALL_SCRIPT_DIR/configs/configs.sh"
-}
-
-# Environment
-# Dependencis | Homebrew | Link | Apps (agree to the Xcode license)
-setup_toolchains() {
-  echo "🌝 Toolchains setup"
-  pre_sudo
-
-  # if ! command -v dfx > /dev/null 2>&1; then
-  #   echo "🌝 Environment setup(dfx)"
-  #   DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
-  # fi
-
-  source "$INSTALL_SCRIPT_DIR/toolchains/toolchains.sh"
-}
-
-# Repositories
-# Dependencis | Homebrew
-setup_repositoris() {
-  echo "🦄 Clone repositories"
-  source "$INSTALL_SCRIPT_DIR/scripts/code.sh"
-}
-
-# SSHkey
-# Dependencis | Homebrew
-generate_sshkey() {
-  echo "🔐 Generate ssh key"
-  source "$INSTALL_SCRIPT_DIR/scripts/sshkey.sh"
-}
-
-# Drive
-# Dependencis | Homebrew, Mirror Google Drive files
-sync_with_drive() {
-  echo "🌎 Sync with google drive"
-  source "$INSTALL_SCRIPT_DIR/scripts/drive.sh"
+  msg_success "👨🏻‍🚀 Setup Dotfiles Repository is complete 🎉"
 }
 
 # This function installs the Xcode Command Line Tools if they are not already installed.
@@ -155,11 +123,14 @@ sync_with_drive() {
 # https://gist.github.com/mokagio/b974620ee8dcf5c0671f
 # http://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
 install_xcode_cli_tools() {
-  echo -e "👨🏻‍🚀 Checking Xcode CLI tools\n\n"
+  msg_title "👨🏻‍🚀 Install Xcode CLI tools"
+  echo "- 👨🏻‍🚀 Checking Xcode CLI tools..."
 
   # Check if Xcode CLI tools are already installed by trying to print the SDK path.
-  if ! xcode-select -p &> /dev/null; then
-    echo "👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
+  if xcode-select -p &> /dev/null; then
+    echo "- 👨🏻‍🚀 Xcode CLI tools are already installed"
+  else
+    echo "- 👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
     TEMP_FILE="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
     touch "${TEMP_FILE}"
 
@@ -167,21 +138,101 @@ install_xcode_cli_tools() {
       | grep "\*.*Command Line" \
       | tail -n 1 | sed 's/^[^C]* //')
 
-    echo "👨🏻‍🚀 Installing: ${CLI_TOOLS}"
+    echo "- 👨🏻‍🚀 Installing: ${CLI_TOOLS}"
     softwareupdate -i "${CLI_TOOLS}" --verbose
 
     rm "${TEMP_FILE}"
   fi
 
-  echo -e "\n\n${GREEN}👨🏻‍🚀 Xcode CLI tools OK 🎉${RESET}\n\n"
+  msg_success "👨🏻‍🚀 Xcode CLI tools are ready to go 🎉"
 }
 
-if [ ! "$@" ]; then
-  echo -e "👨🏻‍🚀 Install the best Mac setup for you!! \n\n"
+# Homebrew
+setup_homebrew() {
+  msg_title "🍺 Homebrew setup"
 
   pre_sudo
+  source "$install_dir/homebrew/homebrew.sh"
+}
+
+# MacOS
+# Dependencis | Homebrew
+setup_macos() {
+  msg_title "💻 MacOS setup"
+
+  pre_sudo
+  source "$install_dir/macos/macos.sh"
+}
+
+# Configs
+# Dependencis
+setup_configs() {
+  msg_title "🧝🏻‍♀️ Configs setup"
+
+  pre_sudo
+  source "$install_dir/configs/configs.sh"
+}
+
+# Environment
+# Dependencis | Homebrew | Link | Apps (agree to the Xcode license)
+setup_toolchains() {
+  msg_title "🌝 Toolchains setup"
+
+  # if ! command -v dfx > /dev/null 2>&1; then
+  #   echo "🌝 Environment setup(dfx)"
+  #   DFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
+  # fi
+  pre_sudo
+  source "$install_dir/toolchains/toolchains.sh"
+}
+
+# Repositories
+# Dependencis | Homebrew
+setup_repositoris() {
+  msg_title "🦄 Clone repositories"
+  source "$install_dir/scripts/code.sh"
+}
+
+# SSHkey
+# Dependencis | Homebrew
+generate_sshkey() {
+  msg_title "🔐 Generate ssh key"
+  source "$install_dir/scripts/sshkey.sh"
+}
+
+# Drive
+# Dependencis | Homebrew, Mirror Google Drive files
+sync_with_drive() {
+  msg_title "🌎 Sync with google drive"
+  source "$install_dir/scripts/drive.sh"
+}
+
+# Install
+install() {
   cd "$HOME"
 
+  local yellow='\033[1;33m'
+  local reset='\033[0m'
+
+  echo -e "${yellow}"
+  cat << EOF
+
+👨🏻‍🚀 Nozomiishii Doting Dotfiles
+   Get ready for your ultimate Mac setup!
+
+██████╗░░█████╗░████████╗███████╗██╗██╗░░░░░███████╗░██████╗
+██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██║██║░░░░░██╔════╝██╔════╝
+██║░░██║██║░░██║░░░██║░░░█████╗░░██║██║░░░░░█████╗░░╚█████╗░
+██║░░██║██║░░██║░░░██║░░░██╔══╝░░██║██║░░░░░██╔══╝░░░╚═══██╗
+██████╔╝╚█████╔╝░░░██║░░░██║░░░░░██║███████╗███████╗██████╔╝
+╚═════╝░░╚════╝░░░░╚═╝░░░╚═╝░░░░░╚═╝╚══════╝╚══════╝╚═════╝░
+
+
+
+EOF
+  echo -e "${reset}"
+
+  pre_sudo
   install_xcode_cli_tools
 
   if [ ! -d "$HOME"/dotfiles ]; then
@@ -214,55 +265,83 @@ if [ ! "$@" ]; then
   # Turn display off after: 15 mins
   sudo pmset -c displaysleep 15
 
-  echo -e "👨🏻‍🚀 Please restart your mac to reflect the settings.\n"
-  echo -e "run: \n"
-  echo -e "  sudo reboot \n\n\n"
+  echo -e "${yellow}"
+  cat << EOF
 
-  echo -e "\n\n${GREEN}🎉 Congrats! The dotfiles installation is complete 🎉${RESET}\n\n"
-fi
 
-for i in "$@"; do
-  case "$i" in
-    -b | --homebrew)
-      setup_homebrew
-      shift
-      ;;
-    -bf | --homebrew-full)
-      export setup_homebrew_full=true
-      setup_homebrew
-      shift
-      ;;
-    -c | --configs)
-      setup_configs
-      shift
-      ;;
-    -d | --drive)
-      sync_with_drive
-      shift
-      ;;
-    -h | --help)
-      usage
-      shift
-      ;;
-    -k | --sshkey)
-      generate_sshkey
-      shift
-      ;;
-    -m | --macos)
-      setup_macos
-      shift
-      ;;
-    -r | --repo)
-      setup_repositoris
-      shift
-      ;;
-    -t | --toolchains)
-      setup_toolchains
-      shift
-      ;;
-    *)
-      usage
-      shift
-      ;;
-  esac
-done
+
+░█████╗░░█████╗░███╗░░██╗░██████╗░██████╗░░█████╗░████████╗░██████╗██╗
+██╔══██╗██╔══██╗████╗░██║██╔════╝░██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██║
+██║░░╚═╝██║░░██║██╔██╗██║██║░░██╗░██████╔╝███████║░░░██║░░░╚█████╗░██║
+██║░░██╗██║░░██║██║╚████║██║░░╚██╗██╔══██╗██╔══██║░░░██║░░░░╚═══██╗╚═╝
+╚█████╔╝╚█████╔╝██║░╚███║╚██████╔╝██║░░██║██║░░██║░░░██║░░░██████╔╝██╗
+░╚════╝░░╚════╝░╚═╝░░╚══╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚═════╝░╚═╝
+
+
+🎉 All dotfiles installation is now complete 🎉
+
+
+👨🏻‍🚀 Restart your mac to reflect the settings. Happy Coding🫰🏻
+
+    run:
+      sudo reboot
+
+
+
+EOF
+  echo -e "${reset}"
+}
+
+main() {
+  if [ ! "$@" ]; then
+    install
+    exit 0
+  fi
+
+  for i in "$@"; do
+    case "$i" in
+      -b | --homebrew)
+        setup_homebrew
+        shift
+        ;;
+      -bf | --homebrew-full)
+        export setup_homebrew_full=true
+        setup_homebrew
+        shift
+        ;;
+      -c | --configs)
+        setup_configs
+        shift
+        ;;
+      -d | --drive)
+        sync_with_drive
+        shift
+        ;;
+      -h | --help)
+        usage
+        shift
+        ;;
+      -k | --sshkey)
+        generate_sshkey
+        shift
+        ;;
+      -m | --macos)
+        setup_macos
+        shift
+        ;;
+      -r | --repo)
+        setup_repositoris
+        shift
+        ;;
+      -t | --toolchains)
+        setup_toolchains
+        shift
+        ;;
+      *)
+        usage
+        shift
+        ;;
+    esac
+  done
+}
+main "$@"
