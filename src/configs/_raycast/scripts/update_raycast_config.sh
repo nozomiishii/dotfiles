@@ -26,7 +26,7 @@ raycast_backup_dir="$(cd "$update_raycast_config_dir/../backup" && pwd)"
 # ----------------------------------------------------------------
 # Functions
 # ----------------------------------------------------------------
-print_error() {
+msg_error() {
   local message=$1
   local red="\033[1;31m"
   local reset='\033[0m'
@@ -34,12 +34,21 @@ print_error() {
   echo -e "${red}ERROR: ${message}${reset}"
 }
 
-print_success() {
+msg_success() {
   local message=$1
   local green='\033[0;32m'
   local reset='\033[0m'
 
   echo -e "${green}\n\n${message}${reset}\n\n"
+}
+
+msg_title() {
+  local message=$1
+  local white="\033[1;37m"
+  local bg_blue="\033[44m"
+  local reset='\033[0m'
+
+  echo -e "\n\n${bg_blue}${white} ${message} ${reset}\n"
 }
 
 get_oldest_file() {
@@ -87,18 +96,18 @@ update_raycast_config() {
 # Main
 # ----------------------------------------------------------------
 main() {
-  echo -e "🚁 Update Raycast Config\n\n"
+  msg_title "🚁 Update Raycast Config"
 
   local backup_files_length
   backup_files_length=$(find "$raycast_backup_dir" -type f | wc -l)
 
   if [ "$backup_files_length" -eq 0 ]; then
-    print_error "No backup files. Export your Raycast app settings to $raycast_backup_dir"
+    msg_error "No backup files. Export your Raycast app settings to $raycast_backup_dir"
     exit 1
   fi
 
   if [ "$backup_files_length" -eq 1 ]; then
-    print_error "No duplicate backup files. Export your Raycast app settings to $raycast_backup_dir"
+    msg_error "No duplicate backup files. Export your Raycast app settings to $raycast_backup_dir"
     exit 1
   fi
 
@@ -107,6 +116,6 @@ main() {
   remove_oldest_config
   update_raycast_config
 
-  print_success "🚁 Update Raycast Config is Complete 🎉"
+  msg_success "🚁 Update Raycast Config is Complete 🎉"
 }
 main
