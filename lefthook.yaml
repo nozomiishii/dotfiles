@@ -20,7 +20,7 @@ commit-msg:
       run: npx -y commitlint --edit {1} --verbose
 
   scripts:
-    'spell-check.sh':
+    'spell_check.sh':
       runner: bash
 
 post-commit:
