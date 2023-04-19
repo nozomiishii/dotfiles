@@ -79,6 +79,7 @@ setup_xcode() {
 
     # XCode required to install vim plug
     echo '- 👾 NeoVim'
+    brew install neovim
     # Turn key repear on
     defaults write -g ApplePressAndHoldEnabled -bool false
 
