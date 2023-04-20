@@ -5,6 +5,8 @@ set encoding=utf-8
 call plug#begin()
   " https://github.com/phanviet/vim-monokai-pro
   Plug 'phanviet/vim-monokai-pro'
+  " dependencies: phanviet/vim-monokai-pro | https://github.com/sheerun/vim-polyglot
+  Plug 'sheerun/vim-polyglot'
   " https://github.com/preservim/nerdtree
   Plug 'preservim/nerdtree'
   " https://github.com/junegunn/fzf
@@ -37,9 +39,9 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
-  \ 'coc-eslint', 
-  \ 'coc-prettier', 
-  \ 'coc-json', 
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
   \ ]
 
 " Prettier
