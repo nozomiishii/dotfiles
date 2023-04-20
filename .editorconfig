@@ -5,7 +5,7 @@ root = true
 charset = utf-8
 indent_style = space
 # See: https://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types
-end_of_line=lf　
+end_of_line=lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
