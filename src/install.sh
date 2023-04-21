@@ -295,6 +295,26 @@ EOF
 }
 
 main() {
+  if [ "$(uname)" != "Darwin" ]; then
+    local yellow='\033[1;33m'
+    local reset='\033[0m'
+
+    echo -e "${yellow}"
+    cat << EOF
+----------------------------------------------------------------
+
+Oops...🥹
+Currently, only macOS is supported.
+
+Stay tuned for support on other operating systems in the future!
+
+----------------------------------------------------------------
+EOF
+    echo -e "${reset}"
+
+    exit 1
+  fi
+
   if [ ! "$@" ]; then
     install
     exit 0
