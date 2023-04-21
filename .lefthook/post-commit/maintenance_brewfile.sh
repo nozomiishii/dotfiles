@@ -22,10 +22,32 @@ maintenance_brewfile_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && 
 # Including 'shellcheck source' enables Bash IDE (language server) to perform definition peeking and jumping
 # shellcheck source=../../utils/remove_temp_files/remove_temp_files.sh
 source "$maintenance_brewfile_dir/../../utils/remove_temp_files/remove_temp_files.sh"
-# shellcheck source=../../utils/request_admin_privileges/request_admin_privileges.sh
-source "$maintenance_brewfile_dir/../../utils/request_admin_privileges/request_admin_privileges.sh"
 # shellcheck source=../../utils/msg/msg.sh
 source "$maintenance_brewfile_dir/../../utils/msg/msg.sh"
+
+# ----------------------------------------------------------------
+# Functions
+# ----------------------------------------------------------------
+# Requests administrator privileges upfront and temporarily increases sudo's timeout
+# until the current process has finished.
+#
+request_admin_privileges() {
+  if [ "${CI:-false}" = "true" ]; then
+    return
+  fi
+
+  # Ask for the administrator password upfront
+  sudo -v
+
+  # Temporarily increase sudo's timeout until the process has finished
+  (
+    while true; do
+      sudo -n true
+      sleep 60
+      kill -0 "$$" || exit
+    done
+  ) 2> /dev/null &
+}
 
 # ----------------------------------------------------------------
 # Main
