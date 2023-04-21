@@ -59,6 +59,9 @@ brew "watch"
 # Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
 cask "1password-cli"
 
+# Web browser https://www.microsoft.com/edge
+cask "microsoft-edge"
+
 # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
 cask "firefox-developer-edition"
 
