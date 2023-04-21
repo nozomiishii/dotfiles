@@ -36,7 +36,7 @@ request_admin_privileges() {
     return
   fi
 
-  # Ask for the administrator password upfront
+  echo -e "- 👨🏻‍🚀 Please enter your password to grant sudo access for this operation"
   sudo -v
 
   # Temporarily increase sudo's timeout until the process has finished
