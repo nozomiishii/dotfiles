@@ -8,12 +8,22 @@
 # Usage
 # ----------------------------------------------------------------
 #
-# run:
+# To install the dotfiles, you can use one of the following commands:
+#
+# 1. Using the raw GitHub link:
 #   curl https://raw.githubusercontent.com/nozomiishii/dotfiles/main/src/install.sh | bash
 #
-# -L (--location): Enable redirection.
-# Alternatively, run:
+# 2. Using the short URL with -L (--location) flag to enable redirection:
 #   curl -L https://nozomiishii.dev/dotfiles/install | bash
+#
+#
+# To install the full version of the dotfiles, you can use one of the following commands with either `-f` or `--full` flag:
+#
+# 1. Using the raw GitHub link:
+#    curl https://raw.githubusercontent.com/nozomiishii/dotfiles/main/src/install.sh | bash -- -f (or --full)
+#
+# 2. Using the short URL:
+#    curl -L https://nozomiishii.dev/dotfiles/install | bash -s -- -f (or --full)
 #
 
 # ----------------------------------------------------------------
@@ -214,6 +224,7 @@ install() {
   cd "$HOME"
 
   local yellow='\033[1;33m'
+  local magenta="\033[35m"
   local reset='\033[0m'
 
   echo -e "${yellow}"
@@ -229,9 +240,15 @@ install() {
 ██████╔╝╚█████╔╝░░░██║░░░██║░░░░░██║███████╗███████╗██████╔╝
 ╚═════╝░░╚════╝░░░░╚═╝░░░╚═╝░░░░░╚═╝╚══════╝╚══════╝╚═════╝░
 
-
+EOF
+  if [ "${setup_homebrew_full:-false}" = "true" ]; then
+    echo -e "${magenta}"
+    cat << EOF
+Full version mode activated! It'll take a little longer,
+but the results are going to be fantastic. Just wait and see!
 
 EOF
+  fi
   echo -e "${reset}"
 
   request_admin_privileges
@@ -335,13 +352,18 @@ EOF
         setup_configs
         shift
         ;;
+      -f | --full)
+        export setup_homebrew_full=true
+        install
+        exit 0
+        ;;
       -d | --drive)
         sync_with_drive
         shift
         ;;
       -h | --help)
         usage
-        shift
+        exit 0
         ;;
       -k | --sshkey)
         generate_sshkey
@@ -361,7 +383,7 @@ EOF
         ;;
       *)
         usage
-        shift
+        exit 1
         ;;
     esac
   done

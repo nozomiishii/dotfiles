@@ -17,6 +17,7 @@
     "format": "yarn prettier --check",
     "format:fix": "yarn prettier --write",
     "install:all": "./src/install.sh",
+    "install:all:full": "./src/install.sh --full",
     "install:apps": "./src/install.sh --apps",
     "install:brew": "./src/install.sh --homebrew",
     "install:brew:full": "./src/install.sh --homebrew-full",

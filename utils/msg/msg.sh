@@ -15,6 +15,7 @@ msg() {
   # local cyan='\033[36m'
   local red="\033[1;31m"
   local green="\033[0;32m"
+  # local magenta="\033[35m"
   local yellow="\033[1;33m"
   local white="\033[1;37m"
   local bg_blue="\033[44m"
