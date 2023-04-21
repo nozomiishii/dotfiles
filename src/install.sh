@@ -88,7 +88,7 @@ msg_title() {
 # until the current process has finished.
 #
 request_admin_privileges() {
-  if [ "${CI}" = "true" ]; then
+  if [ "${CI:-false}" = "true" ]; then
     return
   fi
 
