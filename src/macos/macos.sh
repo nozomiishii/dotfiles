@@ -199,9 +199,8 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 '<dic
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 '<dict><key>enabled</key><false/></dict>'
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 '<dict><key>enabled</key><false/></dict>'
 
-# FIXME: Venturaでの設定を確認する
-# echo "- 📡 Network"
-# networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
+echo "- 📡 Network"
+networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8 || true
 
 # ----------------------------------------------------------------
 # Trackpad
