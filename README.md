@@ -26,6 +26,15 @@ Busy? Just run command below;)
 curl -L https://nozomiishii.dev/dotfiles/install | bash
 ```
 
+<details>
+<summary>with full version of Brewfile</summary>
+
+```shell
+curl -L https://nozomiishii.dev/dotfiles/install | bash -s -- --full
+```
+
+</details>
+
 ## Outline
 
 - [📦 New Macbook? Awesome!!](#new-macbook?)
@@ -133,41 +142,35 @@ cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
 ### Brew Install
 
 ```shell
-~/dotfiles/install -b
+~/dotfiles/src/install -b
 ```
 
 ### 🔫 When permission is not set
 
 ```shell
-ls -l ~/dotfiles/install
+ls -l ~/dotfiles/src/install
 ```
 
 ```shell
-chmod +x ~/dotfiles/install
+chmod +x ~/dotfiles/src/install
 ```
 
 ### 💻 macOS setup
 
 ```shell
-~/dotfiles/install -m
+~/dotfiles/src/install -m
 ```
 
-### 🗂 Symbolic Link
+### 🧝🏻‍♀️ Configs setup
 
 ```shell
-~/dotfiles/install -l
+~/dotfiles/src/install -c
 ```
 
-### 🧝🏻‍♀️ Apps setup
+### 🌝 Toolchains setup
 
 ```shell
-~/dotfiles/install -a
-```
-
-### 🌝 Environment setup
-
-```shell
-~/dotfiles/install -e
+~/dotfiles/src/install -t
 ```
 
 ### 🛋 Restart
@@ -264,18 +267,18 @@ Finder Sidebar
 
 ### 😼 Generate SSHkey and Login gh
 
-- ⚠️ You may not have to do ~/dotfiles/install -k by setting the following over 1password
+- ⚠️ You may not have to do ~/dotfiles/src/install -k by setting the following over 1password
 
 [Use 1Password to securely authenticate GitHub](https://developer.1password.com/docs/cli/shell-plugins/github/)
 
 ```shell
-~/dotfiles/install -k
+~/dotfiles/src/install -k
 ```
 
 ### 🦄 Clone repositories
 
 ```shell
-~/dotfiles/install -c
+~/dotfiles/src/install -r
 ```
 
 ### 🤵🏻‍♂️ Keyboard Maestro
