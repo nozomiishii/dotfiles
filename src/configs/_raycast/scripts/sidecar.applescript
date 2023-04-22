@@ -15,44 +15,56 @@
 
 
 # Raycast Example
-# https://github.com/raycast/script-commands/blob/50dd2d231f4ef53d4e12c5291b6a12181e357441/commands/system/toggle-sidecar.template.applescript
+# https://github.com/ijoseph/connect-sidecar/blob/main/Connect%20Sidecar%20-%20Ventura.applescript
+
+set IPAD_NAME to  "Nozomi’s iPad"
 
 
-use AppleScript version "2.4"
-use scripting additions
-
-set deviceName to "Nozomi’s iPad"
-set menuItemName to "Add Display"
-set delayTime to 0.1
-
-tell application "System Preferences"
-	reveal anchor "displaysDisplayTab" of pane id "com.apple.preference.displays"
-	activate
-	
+on sidecar_connection(ipad_name)
 	tell application "System Events"
-		tell application process "System Preferences"
-			tell window "Displays"
+		tell application process "System Settings"
+			repeat until exists pop up button 1 of group 1 of group 2 of splitter group 1 of group 1 of window "Displays"
+				delay 0.1
+			end repeat
 
-				repeat until exists of pop up button menuItemName
-					delay delayTime
-				end repeat
-
-				tell pop up button menuItemName
+			tell splitter group 1 of group 1 of window "Displays"
+				tell pop up button 1 of group 1 of group 2
 					click
-
-					repeat while not(exists of menu 1)
-						delay delayTime
+					delay 0.5
+					set add_display_items to name of menu items of menu 1 as list
+					#set add_display_items to item 1 of add_display_items
+					log add_display_items
+					set sel_item to 0
+					set section_break to 0
+					repeat with i from 1 to number of items in add_display_items
+						if item i of add_display_items = missing value then
+							set section_break to i
+							exit repeat
+						end if
 					end repeat
-
-					tell menu item deviceName of menu 1
-						click
-					end tell
+					if section_break = 0 then
+						set section_break to 1
+					end if
+					repeat with i from section_break to number of items in add_display_items
+						if item i of add_display_items = ipad_name then
+							set sel_item to i
+							log sel_item
+							exit repeat
+						end if
+					end repeat
+					click menu item sel_item of menu 1
+					return sel_item
 				end tell
 			end tell
+
 		end tell
-
 	end tell
-	quit
-end tell
+end sidecar_connection
 
+do shell script "/usr/bin/open file:///System/Library/PreferencePanes/Displays.prefPane/"
+delay 1
 
+sidecar_connection(IPAD_NAME)
+delay 1
+
+tell application "System Settings" to quit
