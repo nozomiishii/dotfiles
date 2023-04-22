@@ -18,6 +18,9 @@
 # https://github.com/ijoseph/connect-sidecar/blob/main/Connect%20Sidecar%20-%20Ventura.applescript
 
 set IPAD_NAME to  "Nozomi’s iPad"
+# Change the above line to the name of your iPad.
+# Note the likelihood of the right single quotation mark, (Unicode Codepoint 2019) character being used for possession,
+# which you might want to copy and paste, as it's not the same as the non-slanted one on the keyboard (Unicode Codepoint 27).
 
 
 on sidecar_connection(ipad_name)
@@ -32,7 +35,7 @@ on sidecar_connection(ipad_name)
 					click
 					delay 0.5
 					set add_display_items to name of menu items of menu 1 as list
-					#set add_display_items to item 1 of add_display_items
+					# set add_display_items to item 1 of add_display_items
 					log add_display_items
 					set sel_item to 0
 					set section_break to 0
