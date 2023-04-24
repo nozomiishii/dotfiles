@@ -35,7 +35,6 @@ on sidecar_connection(ipad_name)
 					click
 					delay 0.5
 					set add_display_items to name of menu items of menu 1 as list
-					# set add_display_items to item 1 of add_display_items
 					log add_display_items
 					set sel_item to 0
 					set section_break to 0
@@ -51,7 +50,7 @@ on sidecar_connection(ipad_name)
 					repeat with i from section_break to number of items in add_display_items
 						if item i of add_display_items = ipad_name then
 							set sel_item to i
-							log sel_item
+              -- log sel_item
 							exit repeat
 						end if
 					end repeat
