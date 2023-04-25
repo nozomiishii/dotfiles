@@ -2,7 +2,7 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Sidecar
+# @raycast.title Connect Sidecar
 # @raycast.mode silent
 
 # Optional parameters:
@@ -10,7 +10,7 @@
 # @raycast.packageName System
 
 # Documentation:
-# @raycast.description Toggle Sidecar
+# @raycast.description Connect Sidecar
 # @raycast.author Nozomi Ishii
 
 
