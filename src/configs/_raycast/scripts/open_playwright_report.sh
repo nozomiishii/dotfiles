@@ -26,6 +26,7 @@ set -Ceuo pipefail
 # Constants
 # ----------------------------------------------------------------
 report_zip="$HOME/Desktop/playwright-report.zip"
+port=8080
 
 # ----------------------------------------------------------------
 # Node.js Version Manager
@@ -69,7 +70,7 @@ main() {
 
   unzip -o "$report_zip" -d "$report_directory"
 
-  open "http://localhost:8080"
-  npx http-server "$report_directory"
+  npx http-server --port "$port" "$report_directory" &
+  open "http://localhost:${port}"
 }
 main
