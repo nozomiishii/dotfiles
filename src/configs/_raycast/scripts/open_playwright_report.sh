@@ -26,7 +26,6 @@ set -Ceuo pipefail
 # Constants
 # ----------------------------------------------------------------
 report_zip="$HOME/Desktop/playwright-report.zip"
-report_directory="$HOME/Desktop/playwright-report"
 
 # ----------------------------------------------------------------
 # Node.js Version Manager
@@ -64,6 +63,9 @@ main() {
     msg_error "playwright-report.zip not found on Desktop."
     exit 1
   fi
+
+  local report_directory
+  report_directory="${report_zip%.zip}"
 
   unzip -o "$report_zip" -d "$report_directory"
 
