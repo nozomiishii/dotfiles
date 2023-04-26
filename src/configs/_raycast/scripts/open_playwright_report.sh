@@ -10,7 +10,7 @@
 # @raycast.packageName System
 
 # Documentation:
-# @raycast.description This script searches for Playwright report zip files in the Download path, allows the user to select one, extracts it, and opens the report in the default web browser. If only one report file is found, it will automatically open that report without prompting the user.
+# @raycast.description This script searches for Playwright report zip files in the Download path, allows the user to select one, extracts it, and opens the report in the default web browser. If only one report file is found, it will automatically open that report without prompting the user. Replace the DOWNLOAD_PATH variable with the path of your download and the REPORT_ZIP_PREFIX variable with the name of your report for the script to work properly.
 # @raycast.author Nozomi Ishii
 # @raycast.authorURL https://github.com/nozomiishii
 
@@ -25,8 +25,8 @@ set -Ceu
 # ----------------------------------------------------------------
 # Constants
 # ----------------------------------------------------------------
-download_path="$HOME/Desktop"
-report_zip_prefix="playwright-report"
+DOWNLOAD_PATH="$HOME/Desktop"
+REPORT_ZIP_PREFIX="playwright-report"
 
 # ----------------------------------------------------------------
 # Node.js Version Manager
@@ -81,10 +81,10 @@ select_report_zip() {
   # | sort -nr   : Sort the output numerically (-n) and in reverse order (-r)
   # | awk '{print $2}' : Extract the filename (second field) from the first line
   local report_files
-  report_files=$(find "$download_path" -maxdepth 1 -name "${report_zip_prefix}*.zip" -type f -exec stat -f "%m %N" {} \; | sort -nr | awk '{print $2}')
+  report_files=$(find "$DOWNLOAD_PATH" -maxdepth 1 -name "${REPORT_ZIP_PREFIX}*.zip" -type f -exec stat -f "%m %N" {} \; | sort -nr | awk '{print $2}')
 
   if [ -z "$report_files" ]; then
-    msg_error "No ${report_zip_prefix} file found on ${download_path}"
+    msg_error "No ${REPORT_ZIP_PREFIX} file found on ${DOWNLOAD_PATH}"
     exit 1
   fi
 
