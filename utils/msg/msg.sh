@@ -30,6 +30,8 @@ msg() {
   local newline_before
   local newline_after
 
+  local is_stderr=0
+
   while [[ "$#" -gt 0 ]]; do
     case $1 in
       --check)
@@ -40,6 +42,7 @@ msg() {
         color="${red}"
         prefix="ERROR: "
         newline_after="\n\n"
+        is_stderr=1
         ;;
       --info)
         color="${blue}"
@@ -66,5 +69,11 @@ msg() {
     shift
   done
 
-  echo -e "${newline_before}${color}${prefix}${message}${suffix}${reset}${newline_after}"
+  local message="${newline_before}${color}${prefix}${message}${suffix}${reset}${newline_after}"
+
+  if [ "$is_stderr" -eq 1 ]; then
+    echo -e "$message" >&2
+    return
+  fi
+  echo -e "$message"
 }
