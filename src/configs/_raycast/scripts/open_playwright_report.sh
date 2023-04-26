@@ -133,7 +133,9 @@ main() {
   # https://www.npmjs.com/package/http-server
   #
   # --port 0  : Use --port 0 to look for an open port, starting at 8080.
-  npx -y http-server --port 0 "$report_directory" 2>&1 | tee "$output_file" &
+  # -c-1      : Set cache time (in seconds) for cache-control max-age header,
+  #             e.g. -c10 for 10 seconds. To disable caching, use -c-1
+  npx -y http-server -c-1 --port 0 "$report_directory" 2>&1 | tee "$output_file" &
   # Get the PID of the server process
   server_pid=$!
   # Wait for the http-server output to be available
