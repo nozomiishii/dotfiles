@@ -107,21 +107,20 @@ main() {
   # https://www.npmjs.com/package/http-server
   #
   # --port 0  : Use --port 0 to look for an open port, starting at 8080.
-  npx http-server --port 0 "$report_directory" 2>&1 | tee "$output_file" &
+  npx -y http-server --port 0 "$report_directory" 2>&1 | tee "$output_file" &
   # Wait for the http-server output to be available
   sleep 2
 
   # Extract the port number from the output file
   local assigned_port
-  assigned_port=$(grep -m1 -o -E "http:\/\/127\.0\.0\.1:([0-9]+)" "$output_file" | awk -F: '{print $NF}')
+  assigned_port=$(grep -m1 -o -E "http:\/\/127\.0\.0\.1:([0-9]+)" "$output_file" | awk -F: '{print $NF}' | sed $'s/\x1B\\[[0-9;]*[a-zA-Z]//g')
+  rm -f "$output_file"
 
   if [ -z "$assigned_port" ]; then
     msg_error "No assigned port found"
-    rm -f "$output_file"
     exit 1
   fi
 
   open "http://localhost:${assigned_port}"
-  rm -f "$output_file"
 }
 main
