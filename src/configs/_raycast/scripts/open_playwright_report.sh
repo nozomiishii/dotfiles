@@ -108,10 +108,18 @@ main() {
   #
   # --port 0  : Use --port 0 to look for an open port, starting at 8080.
   npx -y http-server --port 0 "$report_directory" 2>&1 | tee "$output_file" &
+  # Get the PID of the server process
+  server_pid=$!
   # Wait for the http-server output to be available
   sleep 2
 
   # Extract the port number from the output file
+  # awk
+  # -F:         : Use colon (:) as the field separator
+  # {print $NF} : Print the last field (port number) of each record
+  #
+  # Remove escape sequences (color codes, styles, etc.) from the output.
+  # sed $'s/\x1B\\[[0-9;]*[a-zA-Z]//g'
   local assigned_port
   assigned_port=$(grep -m1 -o -E "http:\/\/127\.0\.0\.1:([0-9]+)" "$output_file" | awk -F: '{print $NF}' | sed $'s/\x1B\\[[0-9;]*[a-zA-Z]//g')
   rm -f "$output_file"
@@ -122,5 +130,7 @@ main() {
   fi
 
   open "http://localhost:${assigned_port}"
+  # Bring the server process to the foreground and wait for it to finish
+  wait $server_pid
 }
 main
