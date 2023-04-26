@@ -10,7 +10,7 @@
 # @raycast.packageName System
 
 # Documentation:
-# @raycast.description Open playwright report
+# @raycast.description This script searches for Playwright report zip files in the Download path, allows the user to select one, extracts it, and opens the report in the default web browser. If only one report file is found, it will automatically open that report without prompting the user.
 # @raycast.author Nozomi Ishii
 # @raycast.authorURL https://github.com/nozomiishii
 
@@ -62,7 +62,50 @@ msg_error() {
   local red="\033[1;31m"
   local reset='\033[0m'
 
-  echo -e "${red}ERROR: ${message}${reset}" >&2
+  echo -e "\n${red}ERROR: ${message}${reset}\n\n" >&2
+}
+
+select_report_zip() {
+  local cyan=$'\e[36m'
+  local reset=$'\e[0m'
+
+  # Find all files in the download directory
+  # -maxdepth 1 : Search only in the download directory, not in subdirectories
+  # -name       : Match filenames with the specified pattern
+  # -type f     : Search for files only, not directories
+  # -exec       : Execute the 'stat' command on each matched file
+  #
+  # Use 'stat' to get the modification timestamp and filename for each file
+  # -f "%m %N"  : Format the output with the modification timestamp (%m) and filename (%N)
+  #
+  # | sort -nr   : Sort the output numerically (-n) and in reverse order (-r)
+  # | awk '{print $2}' : Extract the filename (second field) from the first line
+  local report_files
+  report_files=$(find "$download_path" -maxdepth 1 -name "${report_zip_prefix}*.zip" -type f -exec stat -f "%m %N" {} \; | sort -nr | awk '{print $2}')
+
+  if [ -z "$report_files" ]; then
+    msg_error "No ${report_zip_prefix} file found on ${download_path}"
+    exit 1
+  fi
+
+  local -a options
+  IFS=$'\n' read -rd '' -a options <<< "$report_files"
+
+  if [ "${#options[@]}" -eq 1 ]; then
+    echo "${options[0]}"
+    return
+  fi
+
+  local selected_file
+  PS3="${cyan}Choose the playwright-report zip file you want to open:${reset} "
+  select opt in "${options[@]}"; do
+    if [[ " ${options[*]} " == *" $opt "* ]]; then
+      selected_file="$opt"
+      break
+    fi
+  done
+
+  echo "$selected_file"
 }
 
 main() {
@@ -74,28 +117,11 @@ main() {
   # ----------------------------------------------------------------
   # Find Latest Report and Extract
   # ----------------------------------------------------------------
-  # Find all files in the download directory
-  # -maxdepth 1 : Search only in the download directory, not in subdirectories
-  # -name       : Match filenames with the specified pattern
-  # -type f     : Search for files only, not directories
-  # -exec       : Execute the 'stat' command on each matched file
-  #
-  # Use 'stat' to get the modification timestamp and filename for each file
-  # -f "%m %N"  : Format the output with the modification timestamp (%m) and filename (%N)
-  #
-  # | sort -nr   : Sort the output numerically (-n) and in reverse order (-r)
-  # | head -n 1  : Get the first line of the sorted output (the latest file)
-  # | awk '{print $2}' : Extract the filename (second field) from the first line
-  local latest_report_zip
-  latest_report_zip=$(find "$download_path" -maxdepth 1 -name "${report_zip_prefix}*.zip" -type f -exec stat -f "%m %N" {} \; | sort -nr | head -n 1 | awk '{print $2}')
+  local report_zip
+  report_zip=$(select_report_zip)
 
-  if [ -z "$latest_report_zip" ]; then
-    msg_error "No ${report_zip_prefix} file with timestamp found on ${download_path}"
-    exit 1
-  fi
-
-  local report_directory="${latest_report_zip%.zip}"
-  unzip -o "$latest_report_zip" -d "$report_directory"
+  local report_directory="${report_zip%.zip}"
+  unzip -o "$report_zip" -d "$report_directory"
 
   # ----------------------------------------------------------------
   # Launch HTTP Server and Open Report
