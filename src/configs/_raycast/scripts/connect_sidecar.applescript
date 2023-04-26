@@ -10,7 +10,7 @@
 # @raycast.packageName System
 
 # Documentation:
-# @raycast.description Connect Sidecar
+# @raycast.description This script connects your Mac to your iPad using Sidecar. It opens the Displays preference pane, finds your iPad in the list of available devices, and connects to it. Replace the IPAD_NAME variable with the name of your iPad for the script to work properly.
 # @raycast.author Nozomi Ishii
 
 
