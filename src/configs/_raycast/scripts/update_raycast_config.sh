@@ -10,7 +10,7 @@
 # @raycast.packageName System
 
 # Documentation:
-# @raycast.description Update Raycast config
+# @raycast.description This script updates your Raycast configuration by removing the oldest backup file, adding the latest backup file, and syncing with your remote git repository. It checks the number of backup files and exits if there are no duplicates, reminding you to export your Raycast app settings to the backup directory.
 # @raycast.author Nozomi Ishii
 # @raycast.authorURL https://github.com/nozomiishii
 
@@ -20,7 +20,7 @@
 # -o pipefail : Change pipeline exit status to the last non-zero exit
 #               code in the pipeline, or zero if all commands succeed
 # -x          : (Optional) Enable command tracing for easier debugging
-set -Ceuo pipefail
+set -Ceu
 
 update_raycast_config_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 raycast_backup_dir="$(cd "$update_raycast_config_dir/../backup" && pwd)"
