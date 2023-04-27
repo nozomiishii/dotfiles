@@ -189,6 +189,9 @@
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "shellformat.flag": "--indent 2 --binary-next-line --case-indent --space-redirects",
   "shellcheck.ignorePatterns": {
     "**/*.xonshrc": true,
