@@ -25,8 +25,8 @@ set -Ceu
 # ----------------------------------------------------------------
 # Constants
 # ----------------------------------------------------------------
-DOWNLOAD_PATH="$HOME/Desktop"
 REPORT_ZIP_PREFIX="playwright-report"
+DOWNLOAD_PATH="$HOME/Desktop"
 
 # ----------------------------------------------------------------
 # Node.js Version Manager
@@ -138,8 +138,20 @@ main() {
   npx -y http-server -c-1 --port 0 "$report_directory" 2>&1 | tee "$output_file" &
   # Get the PID of the server process
   server_pid=$!
+
+  # Initialize variables for the loop
+  local max_attempts=50
+  local attempts=0
   # Wait for the http-server output to be available
-  sleep 2
+  while ! grep -m1 -o -E "http:\/\/127\.0\.0\.1:([0-9]+)" "$output_file"; do
+    sleep 0.1
+    attempts=$((attempts + 1))
+
+    if [ "$attempts" -ge "$max_attempts" ]; then
+      msg_error "Timeout waiting for the http-server to start"
+      exit 1
+    fi
+  done
 
   # Extract the port number from the output file
   # awk
