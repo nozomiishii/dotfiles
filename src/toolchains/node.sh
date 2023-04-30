@@ -18,18 +18,21 @@ msg --title '🐉 Node'
 echo '- 🐉 Install Node with Volta⚡️'
 curl https://get.volta.sh | bash
 export VOLTA_HOME="$HOME/.volta"
+export VOLTA_FEATURE_PNPM=1
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 echo "- ⚡️ volta $(volta --version)"
 
 volta install node
+volta install corepack
 volta install yarn@1
+volta install pnpm
 
 echo "- 🐉 node $(node --version)"
 echo "- 🚚 yarn $(yarn --version)"
+echo "- 🎃 pnpm $(pnpm --version)"
 
 echo '- 🐉 Setup corepack'
-yarn global add corepack
 corepack enable
 corepack enable npm
 

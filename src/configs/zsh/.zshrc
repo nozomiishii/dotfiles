@@ -42,6 +42,7 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 # Node(Volta)
 export VOLTA_HOME="$HOME/.volta"
+export VOLTA_FEATURE_PNPM=1
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # direnv
