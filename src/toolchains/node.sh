@@ -36,4 +36,8 @@ echo '- 🐉 Setup corepack'
 corepack enable
 corepack enable npm
 
+# https://github.com/volta-cli/volta/issues/987
+npm install -g corepack
+corepack enable --install-directory ~/.volta/bin
+
 msg --success "🐉 Node setup is complete 🎉"
