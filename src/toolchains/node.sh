@@ -22,22 +22,25 @@ export VOLTA_FEATURE_PNPM=1
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 echo "- ⚡️ volta $(volta --version)"
-
 volta install node
+echo "- 🐉 node $(node --version)"
+
+echo '- 🐉 Setup corepack'
 volta install corepack
+
+# https://github.com/volta-cli/volta/issues/987
+# npm install -g corepack
+corepack enable --install-directory ~/.volta/bin
+
+# corepack enable
+corepack enable npm
+
+echo '- 🐉 Setup package Managers'
+
 volta install yarn@1
 volta install pnpm
 
-echo "- 🐉 node $(node --version)"
 echo "- 🚚 yarn $(yarn --version)"
 echo "- 🎃 pnpm $(pnpm --version)"
-
-echo '- 🐉 Setup corepack'
-corepack enable
-corepack enable npm
-
-# https://github.com/volta-cli/volta/issues/987
-npm install -g corepack
-corepack enable --install-directory ~/.volta/bin
 
 msg --success "🐉 Node setup is complete 🎉"
