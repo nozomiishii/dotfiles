@@ -12,7 +12,7 @@ on:
       - '**/*.bats'
 
 jobs:
-  shell-script-quality-checks:
+  shell-script-quality-checks-on-macos:
     runs-on: macos-latest
     steps:
       - name: Get code
@@ -35,3 +35,37 @@ jobs:
       - name: Test
         run: |
           bats ./utils/**
+
+  shell-script-quality-checks-on-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+
+      - name: Install Dependencies
+        run: |
+          echo -e "Install shfmt\n"
+          curl https://github.com/mvdan/sh/releases/download/v3.5.1/shfmt_v3.5.1_linux_amd64 -o shfmt
+          chmod a+x shfmt
+
+          echo -e "Install shellcheck\n"
+          sudo apt-get update -y
+          sudo apt-get install -y shellcheck
+
+          echo -e "Install bats\n"
+          sudo apt-get install -y git
+          git clone https://github.com/bats-core/bats-core.git
+          sudo bash bats-core/install.sh /usr/local
+
+      - name: Format Check
+        run: ./shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh
+
+      - name: Lint
+        run: shellcheck **/*.sh --exclude=SC1091
+
+      # FIXME: うまくいかない。macは通ってるのにな。謎い。
+      # - name: Test
+      #   run: |
+      #     bats ./utils/**
