@@ -1,4 +1,4 @@
-name: Check shell code quality
+name: Shell Script Quality Checks
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
         run: ./utils/shfmt/shfmt.sh
 
       - name: Lint
-        run: ./utils/shellcheck/shellcheck.sh
+        run: shellcheck **/*.sh --exclude=SC1091
 
       - name: Test
         run: |
