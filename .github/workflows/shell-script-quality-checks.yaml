@@ -30,7 +30,7 @@ jobs:
         run: shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh
 
       - name: Lint
-        run: shellcheck **/*.sh --exclude=SC1091
+        run: shellcheck --exclude=SC1091 **/*.sh
 
       - name: Test
         run: |
@@ -60,10 +60,14 @@ jobs:
           sudo bash bats-core/install.sh /usr/local
 
       - name: Format Check
+        # うまくいかないとき用
+        # find . -type f -iname "*.sh" -print0 | xargs -0 ./shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects
         run: ./shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh
 
       - name: Lint
-        run: shellcheck **/*.sh --exclude=SC1091
+        # うまくいかないとき用
+        # find . -type f -iname "*.sh" -print0 | xargs -0 shellcheck --external-sources --exclude=SC1091
+        run: shellcheck --exclude=SC1091 **/*.sh
 
       # FIXME: うまくいかない。macは通ってるのにな。謎い。
       # - name: Test
