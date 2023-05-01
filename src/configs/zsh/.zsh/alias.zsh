@@ -43,6 +43,7 @@ alias noz="cd $CODE_DIR/nozomiishii"
 alias dev="cd $CODE_DIR/nozomiishii/dev"
 alias docs="cd $CODE_DIR/nozomiishii/dev/docs"
 alias arc="cd $CODE_DIR/nozomiishii/archives"
+alias repo="cd $CODE_DIR"
 
 # ----------------------------------------------------------------
 # shell

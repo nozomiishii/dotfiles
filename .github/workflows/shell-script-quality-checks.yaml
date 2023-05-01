@@ -30,7 +30,8 @@ jobs:
         run: ./utils/shfmt/shfmt.sh
 
       - name: Lint
-        run: shellcheck **/*.sh --exclude=SC1091
+        # run: shellcheck **/*.sh --exclude=SC1091
+        run: shellcheck **/*.sh
 
       - name: Test
         run: |
