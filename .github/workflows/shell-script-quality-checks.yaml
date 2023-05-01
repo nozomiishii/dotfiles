@@ -12,7 +12,7 @@ on:
       - '**/*.bats'
 
 jobs:
-  check-shell-code-quality:
+  shell-script-quality-checks:
     runs-on: macos-latest
     steps:
       - name: Get code
@@ -27,11 +27,10 @@ jobs:
           brew install bats-core
 
       - name: Format Check
-        run: ./utils/shfmt/shfmt.sh
+        run: shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh
 
       - name: Lint
-        # run: shellcheck **/*.sh --exclude=SC1091
-        run: shellcheck **/*.sh
+        run: shellcheck **/*.sh --exclude=SC1091
 
       - name: Test
         run: |

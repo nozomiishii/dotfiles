@@ -61,6 +61,7 @@ msg() {
       --warning)
         color="${yellow}"
         prefix="Warning: "
+        is_stderr=1
         ;;
       *)
         message="$1"
