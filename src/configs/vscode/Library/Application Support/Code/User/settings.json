@@ -272,9 +272,7 @@
   // ESlint
   // ----------------------------------------------------------------
   "eslint.enable": true,
-  "eslint.format.enable": false,
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "eslint.experimental.useFlatConfig": true,
 
   // ----------------------------------------------------------------
   // editor.codeActionsOnSave
