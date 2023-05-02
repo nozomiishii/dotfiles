@@ -27,20 +27,21 @@ echo "- 🐉 node $(node --version)"
 
 echo '- 🐉 Setup corepack'
 volta install corepack
-
 # https://github.com/volta-cli/volta/issues/987
 # npm install -g corepack
-corepack enable --install-directory ~/.volta/bin
+corepack enable pnpm yarn npm --install-directory ~/.volta/bin
 
-# corepack enable
-corepack enable npm
-
+# corepack enable pnpm yarn npm
 echo '- 🐉 Setup package Managers'
 
-volta install yarn@1
+volta install npm
 volta install pnpm
+volta install yarn@1
 
-echo "- 🚚 yarn $(yarn --version)"
 echo "- 🎃 pnpm $(pnpm --version)"
+echo "- 🎁 npm $(npm --version)"
+echo "- 🚚 yarn $(yarn --version)"
+
+volta list
 
 msg --success "🐉 Node setup is complete 🎉"
