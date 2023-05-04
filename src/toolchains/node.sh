@@ -38,10 +38,6 @@ volta install npm
 volta install pnpm
 volta install yarn@1
 
-echo "- 🎃 pnpm $(pnpm --version)"
-echo "- 🎁 npm $(npm --version)"
-echo "- 🚚 yarn $(yarn --version)"
-
 volta list
 
 msg --success "🐉 Node setup is complete 🎉"
