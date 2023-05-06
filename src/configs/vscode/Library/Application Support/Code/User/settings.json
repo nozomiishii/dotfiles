@@ -127,7 +127,7 @@
     "*.ejs": "html",
     "*.ejs.t": "html",
     "LICENSE": "plaintext",
-    ".env.sample": "dotenv",
+    ".env.*": "dotenv",
     "CODEOWNERS": "ignore",
     "Brewfile*": "ruby",
     "**/Brewfiles/**": "ruby"
