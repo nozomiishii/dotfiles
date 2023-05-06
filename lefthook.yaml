@@ -1,5 +1,5 @@
 # Refer for explanation to following link:
-# https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+# https://github.com/evilmartians/lefthook
 
 pre-commit:
   parallel: true
@@ -40,9 +40,9 @@ post-merge:
   parallel: true
 
   commands:
-    npm:
-      files: git diff --name-only HEAD main
-      glob: '{package.json,yarn.lock}'
+    update-node-modules:
+      files: git diff --name-only HEAD^
+      glob: '**/{package.json,yarn.lock}'
       run: yarn install
 
     delete-merged-branches:
