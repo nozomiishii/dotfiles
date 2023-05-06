@@ -40,8 +40,9 @@ post-merge:
   parallel: true
 
   commands:
+    # If you have set 'git config pull.rebase true', use the 'post-rewrite' hook instead of the 'post-merge' hook.
     update-node-modules:
-      files: git diff --name-only HEAD^
+      files: git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD
       glob: '**/{package.json,yarn.lock}'
       run: yarn install
 
