@@ -1,12 +1,16 @@
 [user]
-	name = Nozomi Ishii
-	email = nozomiishii.jp@gmail.com
+name = Nozomi Ishii
+email = nozomiishii.jp@gmail.com
+
 [pull]
-	rebase = true
+rebase = false
+
 [init]
-	defaultBranch = main
+defaultBranch = main
+
 [core]
-	editor = nvim
-	ignorecase = false
+editor = nvim
+ignorecase = false
+
 [submodule]
-	recurse = true
+recurse = true
