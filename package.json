@@ -33,8 +33,8 @@
     "lint:markdownlint:fix": "npx -y markdownlint-cli2-fix '**/*.md' '#node_modules'",
     "prettier": "prettier . '!**/*.md' --ignore-unknown --ignore-path .gitignore",
     "setup": "lefthook install",
-    "shellcheck": "./utils/shellcheck/shellcheck.sh",
-    "shfmt": "./utils/shfmt/shfmt.sh",
+    "shellcheck": "shellcheck --exclude=SC1091 **/*.sh",
+    "shfmt": "shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh",
     "test": "bats ./utils/**"
   },
   "devDependencies": {
