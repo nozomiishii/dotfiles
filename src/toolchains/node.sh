@@ -38,6 +38,10 @@ volta install npm
 volta install pnpm
 volta install yarn@1
 
+corepack prepare npm@latest --activate
+corepack prepare pnpm@latest --activate
+corepack prepare yarn@1 --activate
+
 volta list
 
 msg --success "🐉 Node setup is complete 🎉"
