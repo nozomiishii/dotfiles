@@ -1,0 +1,29 @@
+name: Markdown lint
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.md'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**/*.md'
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.16.0
+
+      - name: lint
+        run: npx -y markdownlint-cli2 "**/*.md"
