@@ -40,10 +40,10 @@
   resolved "https://registry.yarnpkg.com/@nozomiishii/markdownlint-cli2-config/-/markdownlint-cli2-config-0.0.3.tgz#c65f925d500fa592378346ec6459d173f03692d5"
   integrity sha512-f1KLNvinX+1lnQfzVA8KiLUoIDP4rrk/kKOH1DDBOwgfDqGTQiD3d+W5j8hWcwPQ0hlBAUP4LP0gvbNGoVPeBg==
 
-"@nozomiishii/prettier-config@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@nozomiishii/prettier-config/-/prettier-config-0.2.0.tgz#9dbf16dd8365c8cb319d17803a31e06f7fa8546a"
-  integrity sha512-CewWSulf37DX9ayjpjHrR2uh7kxjw5BjpLy91yH81xY0RSldQye+gYKJsTvzpIhmdTEy5YCDWMK/NzSUfuvpSg==
+"@nozomiishii/prettier-config@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@nozomiishii/prettier-config/-/prettier-config-0.2.1.tgz#81864a755c654c605fffee5bcc3618303a8595b1"
+  integrity sha512-WTXO9bvogmBoGl3WXB5pz6HLAIUTC2bEuKHm1QyQrh72/WGaLbTpDBXkSafte3NqmGMnajSO2ghBE5PegoWU5g==
   dependencies:
     prettier "2.8.8"
     prettier-plugin-packagejson "2.4.3"
