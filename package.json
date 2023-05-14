@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "17.6.3",
-    "@evilmartians/lefthook": "1.3.12",
+    "@evilmartians/lefthook": "1.3.13",
     "@nozomiishii/markdownlint-cli2-config": "0.0.3",
     "@nozomiishii/prettier-config": "0.2.1"
   },
