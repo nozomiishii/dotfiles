@@ -90,7 +90,7 @@ update_raycast_config() {
   local current_branch
   current_branch=$(git branch --show-current)
 
-  git pull origin "$current_branch"
+  git pull --rebase origin "$current_branch"
   git push origin "$current_branch"
 }
 
