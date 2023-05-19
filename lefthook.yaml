@@ -1,50 +1,12 @@
 # Refer for explanation to following link:
 # https://github.com/evilmartians/lefthook
 
-pre-commit:
-  parallel: true
-
-  commands:
-    format:
-      # Markdown formatting is the responsibility of the markdownlint
-      exclude: ".*\\.md$"
-      run: npx -y prettier {staged_files} --ignore-unknown --ignore-path .gitignore --write
-
-    lint-markdown:
-      glob: '*.md'
-      run: npx -y markdownlint-cli2 {staged_files}
-
-    lint-file-extension-yaml:
-      files: git diff --name-only --staged
-      glob: '*.yml'
-      run: echo "Error! ".yml" extension found, please use ".yaml" instead." && exit 1
-
-commit-msg:
-  parallel: true
-
-  commands:
-    commitlint:
-      run: npx -y commitlint --edit {1} --verbose
-
-  scripts:
-    'spell_check.sh':
-      runner: bash
+remote:
+  git_url: https://github.com/nozomiishii/configs
+  config: packages/lefthook-config/index.yaml
 
 post-commit:
   scripts:
     'maintenance_brewfile.sh':
       runner: bash
       interactive: true
-
-post-merge:
-  parallel: true
-
-  commands:
-    # If you have set 'git config pull.rebase true', use the 'post-rewrite' hook instead of the 'post-merge' hook.
-    update-node-modules:
-      files: git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD
-      glob: '**/{package.json,yarn.lock}'
-      run: yarn install
-
-    delete-merged-branches:
-      run: git branch --merged | grep -Ev '\*|master|main|dev|develop|development|stag|staging|prod|production' | xargs git branch -d; git fetch --prune;

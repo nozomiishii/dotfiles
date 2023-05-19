@@ -74,6 +74,7 @@ alias gilw="gh issue list -a nozomiishii -w"
 # ----------------------------------------------------------------
 alias prisma="npx prisma"
 alias yul="yarn upgrade --latest"
+alias p='pnpm'
 
 # ----------------------------------------------------------------
 # network
@@ -111,4 +112,4 @@ alias tclean="$HOME/dotfiles/submodules/tpm/bin/clean_plugins"
 # ----------------------------------------------------------------
 # Tools
 # ----------------------------------------------------------------
-alias nozo:p="yarn add -D @nozomiishii/prettier-config && echo \"module.exports = { ...require('@nozomiishii/prettier-config') };\" > .prettierrc.js"
+alias nozo:p="pnpm add -D @nozomiishii/prettier-config && echo \"module.exports = require('@nozomiishii/prettier-config');\" > prettier.config.cjs"
