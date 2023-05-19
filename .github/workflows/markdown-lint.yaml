@@ -25,5 +25,8 @@ jobs:
         with:
           node-version: 18.16.0
 
+      - name: Install modules
+        run: yarn install --frozen-lockfile
+
       - name: lint
         run: npx -y markdownlint-cli2 "**/*.md"
