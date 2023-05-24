@@ -44,4 +44,7 @@ corepack prepare yarn@stable --activate
 
 volta list
 
+echo '- 🐉 Setup npm global'
+npm i -g @antfu/ni
+
 msg --success "🐉 Node setup is complete 🎉"
