@@ -40,6 +40,9 @@ brew "libyaml"
 # ----------------------------------------------------------------
 # Brew
 # ----------------------------------------------------------------
+# Run your GitHub Actions locally https://github.com/nektos/act
+brew "act"
+
 # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
 brew "bat"
 
