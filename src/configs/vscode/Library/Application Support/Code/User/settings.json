@@ -328,7 +328,6 @@
   "liveshare.presence": false,
   "tabnine.experimentalAutoImports": true,
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.general.showActivityBarBadge": false,
 
   // ----------------------------------------------------------------
