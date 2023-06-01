@@ -45,6 +45,6 @@ corepack prepare yarn@stable --activate
 volta list
 
 echo '- 🐉 Setup npm global'
-npm i -g @antfu/ni
+volta install typescript
 
 msg --success "🐉 Node setup is complete 🎉"
