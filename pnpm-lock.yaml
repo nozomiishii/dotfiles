@@ -4,6 +4,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: 17.6.3
     version: 17.6.3
+  '@nozomiishii/lefthook-config':
+    specifier: 0.0.1
+    version: 0.0.1
   '@nozomiishii/markdownlint-cli2-config':
     specifier: 0.0.6
     version: 0.0.6
@@ -39,6 +42,10 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+    dev: true
+
+  /@nozomiishii/lefthook-config@0.0.1:
+    resolution: {integrity: sha512-HJhgAjsz7JJWddDiP4rLyhHJHuYypRqegv7xdtyTpNKnkkV0ZpHsqAg4BNCyx74wcdIXnioQ5vYvIIMUa+zLBQ==}
     dev: true
 
   /@nozomiishii/markdownlint-cli2-config@0.0.6:

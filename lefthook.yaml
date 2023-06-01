@@ -7,9 +7,8 @@
 # Example:
 #   npx -y lefthook run -v post-merge
 
-remote:
-  git_url: https://github.com/nozomiishii/configs
-  config: packages/lefthook-config/index.yaml
+extends:
+  - ./node_modules/@nozomiishii/lefthook-config/index.yaml
 
 post-commit:
   scripts:
