@@ -114,4 +114,5 @@ alias tclean="$HOME/dotfiles/submodules/tpm/bin/clean_plugins"
 # ----------------------------------------------------------------
 alias nozo:p="pnpm add -D @nozomiishii/prettier-config && echo \"module.exports = require('@nozomiishii/prettier-config');\" > prettier.config.cjs"
 alias nozo:e="npx -y @nozomiishii/eslint-config@latest"
+alias nozo:n="npx -y create-next-app@latest --typescript --tailwind --no-eslint --app --src-dir --import-alias '@/*' --use-pnpm"
 alias nozo:i="nozo:p && nozo:e"
