@@ -30,7 +30,7 @@
       "  parameters: {},",
       "  play: async ({ args, canvasElement }) => {",
       "    const canvas = within(canvasElement);",
-      "    screen.logTestingPlaygroundURL();",
+      "    screen.logTestingPlaygroundURL(canvasElement);",
       "",
       "    expect();",
       "  },",
