@@ -40,7 +40,7 @@ volta install yarn@1
 
 corepack prepare npm@latest --activate
 corepack prepare pnpm@latest --activate
-corepack prepare yarn@1 --activate
+corepack prepare yarn@1.22.19 --activate
 
 volta list
 
