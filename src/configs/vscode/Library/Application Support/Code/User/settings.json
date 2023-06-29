@@ -441,7 +441,9 @@
   // ----------------------------------------------------------------
   // vitest
   // ----------------------------------------------------------------
-  "vitest.commandLine": "pnpm vitest --watch",
+  "vitest.enable": true,
+  "vitest.commandLine": "npx vitest --watch",
+  "vitest.exclude": ["**/e2e/**", "**/node_modules/**", "**/dist/**", "**/.{idea,git,cache,output,temp}/**"],
 
   // ----------------------------------------------------------------
   // Playwright
