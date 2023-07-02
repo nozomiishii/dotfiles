@@ -146,6 +146,9 @@ cask "notion"
 # Control your tools with a few keystrokes https://raycast.app/
 cask "raycast"
 
+# Spaced-repetition powered note-taking tool https://www.remnote.com/
+cask "remnote"
+
 # Team communication and collaboration software. https://slack.com
 cask "slack"
 
