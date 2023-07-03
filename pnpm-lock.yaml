@@ -15,8 +15,8 @@ devDependencies:
     specifier: 0.0.6
     version: 0.0.6
   '@nozomiishii/prettier-config':
-    specifier: 0.2.4
-    version: 0.2.4
+    specifier: 0.2.6
+    version: 0.2.6
 
 packages:
 
@@ -56,8 +56,9 @@ packages:
     resolution: {integrity: sha512-AypwFnarzh/d56hgKp+wg2DJ82kJl+AfpP2Cpl45ut9LwyeQBpqHegrLDzt7doQtojkEXIrMEHQnybFTOA6T1Q==}
     dev: true
 
-  /@nozomiishii/prettier-config@0.2.4:
-    resolution: {integrity: sha512-94Pppb9N8dfQExll9PJkTMYT46/FFjlyezWh4Hgg0sV9SjJ7B9Q7Wm8KPLguR/MDZK8aW0zOANQmZLmc2Nz3kQ==}
+  /@nozomiishii/prettier-config@0.2.6:
+    resolution: {integrity: sha512-fCamrpa7RvT6PI/uPFyIiY6IXVRhF4YMHyL8cPh6xfCqik1+DpioJbohwmddnDiaa0xIQqqA8FVlSf0nfjl/Ig==}
+    hasBin: true
     dependencies:
       prettier: 2.8.8
       prettier-plugin-packagejson: 2.4.3(prettier@2.8.8)
