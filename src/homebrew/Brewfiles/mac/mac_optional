@@ -61,9 +61,6 @@ if OS.mac?
   # Graphical network analyzer and capture tool https://www.wireshark.org
   cask "wireshark"
 
-  # Video communication and virtual meeting platform https://www.zoom.us/
-  cask "zoom"
-
   # ----------------------------------------------------------------
   # Embedded Rust | Wio Terminal
   # ----------------------------------------------------------------
