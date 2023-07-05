@@ -48,6 +48,9 @@ if OS.mac?
   # Collaboration platform for API development. https://www.postman.com
   cask "postman"
 
+  # Installing zoom has failed with error curl: (22) The requested URL returned error: 403
+  # https://github.com/nozomiishii/dotfiles/actions/runs/5439259116/jobs/9903150037
+  #
   # Video communication and virtual meeting platform https://www.zoom.us/
-  cask "zoom"
+  # cask "zoom"
 end
