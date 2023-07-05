@@ -1,0 +1,42 @@
+name: 'Node.js with pnpm'
+description: 'Setup Node.js and install dependencies using pnpm'
+
+inputs:
+  node-version:
+    description: 'Node version to install'
+    required: false
+    default: 18.16.0
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+        # このcacheはnode_modulesまでみてくれないので後述のpnpm-cacheで対応する
+        # https://github.com/actions/setup-node#caching-global-packages-data
+        # cache: pnpm
+
+    - name: pnpm setup
+      uses: pnpm/action-setup@v2
+
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+    - uses: actions/cache@v3
+      name: Setup pnpm cache
+      with:
+        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+        # Usage exampleに挙げられてる方法に加えてnode-versionもズレないように固定する
+        # https://github.com/pnpm/action-setup#use-cache-to-reduce-installation-time
+        key: ${{ runner.os }}-${{ inputs.node-version }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ inputs.node-version }}-pnpm-store-
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install
