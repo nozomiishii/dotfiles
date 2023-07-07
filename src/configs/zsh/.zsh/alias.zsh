@@ -116,3 +116,6 @@ alias nozo:p="npx -y @nozomiishii/prettier-config@latest"
 alias nozo:e="npx -y @nozomiishii/eslint-config@latest"
 alias nozo:n="npx -y create-next-app@latest --typescript --tailwind --no-eslint --app --src-dir --import-alias '@/*' --use-pnpm"
 alias nozo:i="nozo:p && nozo:e"
+
+# https://code-maven.com/display-notification-from-the-mac-command-line
+alias ding="osascript -e 'display alert \"🧙🏿‍♂️ ding!\"' > /dev/null 2>&1; open -a iTerm.app"
