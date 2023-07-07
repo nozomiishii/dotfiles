@@ -125,16 +125,14 @@
     ".skhdrc": "shellscript",
     ".yabairc": "shellscript",
     ".tmux.conf": "shellscript",
+    ".actrc": "properties",
     ".tool-versions": "properties",
     ".ssh/config": "ssh-config",
-    "*.ejs.t": "html",
-    "LICENSE": "plaintext",
-    ".env.*": "dotenv",
+    "*.ejs*": "html",
     "CODEOWNERS": "ignore",
     "Brewfile*": "ruby",
     "**/Brewfiles/**": "ruby",
-    ".env*": "dotenv",
-    ".env.sample": "dotenv"
+    ".env*": "dotenv"
   },
 
   // ----------------------------------------------------------------
