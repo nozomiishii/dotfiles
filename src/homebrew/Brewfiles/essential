@@ -61,6 +61,9 @@ brew "git"
 # GNU grep, egrep and fgrep https://www.gnu.org/software/grep/
 brew "grep"
 
+# Command-line benchmarking tool https://github.com/sharkdp/hyperfine
+brew "hyperfine"
+
 # Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
 brew "jq"
 
