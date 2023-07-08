@@ -41,7 +41,7 @@
     "@commitlint/config-conventional": "17.6.6",
     "@nozomiishii/lefthook-config": "0.0.3",
     "@nozomiishii/markdownlint-cli2-config": "0.0.6",
-    "@nozomiishii/prettier-config": "0.2.6",
+    "@nozomiishii/prettier-config": "0.3.0",
     "lefthook": "1.4.3"
   },
   "packageManager": "pnpm@8.6.6",
