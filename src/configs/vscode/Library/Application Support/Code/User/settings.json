@@ -299,9 +299,6 @@
   // ----------------------------------------------------------------
   // Markdown
   // ----------------------------------------------------------------
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  },
   "markdown-preview-github-styles.colorTheme": "dark",
   // ----------------------------------------------------------------
   // Ruby
@@ -474,5 +471,6 @@
     "rust",
     "softwareTerms",
     "typescript"
-  ]
+  ],
+  "codeQL.telemetry.enableTelemetry": true
 }
