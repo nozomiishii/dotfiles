@@ -112,6 +112,7 @@ alias tclean="$HOME/dotfiles/submodules/tpm/bin/clean_plugins"
 # ----------------------------------------------------------------
 # Tools
 # ----------------------------------------------------------------
+alias nozo:l="npx -y @nozomiishii/lefthook-config@latest"
 alias nozo:p="npx -y @nozomiishii/prettier-config@latest"
 alias nozo:e="npx -y @nozomiishii/eslint-config@latest"
 alias nozo:n="npx -y create-next-app@latest --typescript --tailwind --no-eslint --app --src-dir --import-alias '@/*' --use-pnpm"
