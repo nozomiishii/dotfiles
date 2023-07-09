@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "author": "Nozomi Ishii",
+  "type": "module",
   "main": "src/install.sh",
   "scripts": {
     "format": "yarn prettier --check",
@@ -29,9 +30,9 @@
     "install:toolchains": "./src/install.sh --toolchains",
     "lint": "yarn lint:markdownlint",
     "lint:fix": "yarn lint:markdownlint:fix",
-    "lint:markdownlint": "npx -y markdownlint-cli2 '**/*.md' '#node_modules'",
-    "lint:markdownlint:fix": "npx -y markdownlint-cli2-fix '**/*.md' '#node_modules'",
-    "prettier": "prettier . '!**/*.md' --ignore-unknown --ignore-path .gitignore",
+    "lint:markdownlint": "npx -y markdownlint-cli2@latest '**/*.md' '#node_modules'",
+    "lint:markdownlint:fix": "npx -y markdownlint-cli2-fix@latest '**/*.md' '#node_modules'",
+    "prettier": "prettier . --ignore-unknown",
     "setup": "lefthook install",
     "shellcheck": "shellcheck --exclude=SC1091 **/*.sh",
     "shfmt": "shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh",
@@ -39,9 +40,9 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "17.6.6",
-    "@nozomiishii/lefthook-config": "0.0.3",
+    "@nozomiishii/lefthook-config": "0.0.10",
     "@nozomiishii/markdownlint-cli2-config": "0.0.6",
-    "@nozomiishii/prettier-config": "0.3.0",
+    "@nozomiishii/prettier-config": "0.3.2",
     "lefthook": "1.4.3"
   },
   "packageManager": "pnpm@8.6.6",

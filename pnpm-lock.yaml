@@ -9,14 +9,14 @@ devDependencies:
     specifier: 17.6.6
     version: 17.6.6
   '@nozomiishii/lefthook-config':
-    specifier: 0.0.3
-    version: 0.0.3
+    specifier: 0.0.10
+    version: 0.0.10(lefthook@1.4.3)
   '@nozomiishii/markdownlint-cli2-config':
     specifier: 0.0.6
     version: 0.0.6
   '@nozomiishii/prettier-config':
-    specifier: 0.3.0
-    version: 0.3.0
+    specifier: 0.3.2
+    version: 0.3.2
   lefthook:
     specifier: 1.4.3
     version: 1.4.3
@@ -28,14 +28,6 @@ packages:
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 5.0.0
-    dev: true
-
-  /@evilmartians/lefthook@1.4.3:
-    resolution: {integrity: sha512-m9MMFdDqFpsctUev3pk4sGzjKXpYFZH9MTVSGrnAjo8HsP0XZ/L/UgPXY75BNUtqU+hvXCmBF8mxSLU93kjhvA==}
-    cpu: [x64, arm64, ia32]
-    os: [darwin, linux, win32]
-    hasBin: true
-    requiresBuild: true
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
@@ -59,26 +51,29 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nozomiishii/lefthook-config@0.0.3:
-    resolution: {integrity: sha512-wQmERsgf2vRNruIjqwoK4iOLXgPKP/EiMeVMMY+iPqkIKMJvEPU1WhtYpmuHoo6GNV1UgYzLZurmnBfg4dJXBQ==}
+  /@nozomiishii/lefthook-config@0.0.10(lefthook@1.4.3):
+    resolution: {integrity: sha512-6HD9Tqq/aDaYA5Y/KMl5LIVSPnrfGWaGUP77eiJchKmXvD7TJNY80MQJ0J4UERefOrHMEyzKuuxC3d6pwX2C7A==}
+    hasBin: true
+    peerDependencies:
+      lefthook: '>=1.4.0'
     dependencies:
-      '@evilmartians/lefthook': 1.4.3
+      lefthook: 1.4.3
     dev: true
 
   /@nozomiishii/markdownlint-cli2-config@0.0.6:
     resolution: {integrity: sha512-AypwFnarzh/d56hgKp+wg2DJ82kJl+AfpP2Cpl45ut9LwyeQBpqHegrLDzt7doQtojkEXIrMEHQnybFTOA6T1Q==}
     dev: true
 
-  /@nozomiishii/prettier-config@0.3.0:
-    resolution: {integrity: sha512-wEjb73c55IirNtIar8mEszh/4Kzx9rqLZec1RiQCUwscB65ohjbI6ImCyShdivBdEdASMl4D+SVdjiSa9jz5Jw==}
+  /@nozomiishii/prettier-config@0.3.2:
+    resolution: {integrity: sha512-mf+QtwWdnxc+MXr5q3hxtpcXoJfo/SKhI3jF9zC46UK+6b9QmpIAdOwNPj0yrnWvL1fKEIhnucTxQdWjnkbaAg==}
     hasBin: true
     dependencies:
       prettier: 3.0.0
       prettier-plugin-packagejson: 2.4.4(prettier@3.0.0)
     dev: true
 
-  /@pkgr/utils@2.4.1:
-    resolution: {integrity: sha512-JOqwkgFEyi+OROIyq7l4Jy28h/WwhDnG/cPkXG2Z1iFbubB6jsHW1NDvmyOzTBxHr3yg68YGirmh1JUgMqa+9w==}
+  /@pkgr/utils@2.4.2:
+    resolution: {integrity: sha512-POgTXhjrTfbTV63DiFXav4lBHiICLKKwDeaKn9Nphwj7WH6m0hMMCaJkMyRWjgtPFyRKRVoMXXjczsTQRDEhYw==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dependencies:
       cross-spawn: 7.0.3
@@ -266,8 +261,8 @@ packages:
       is-glob: 4.0.3
     dev: true
 
-  /globby@13.2.1:
-    resolution: {integrity: sha512-DPCBxctI7dN4EeIqjW2KGqgdcUMbrhJ9AzON+PlxCtvppWhubTLD4+a0GFxiym14ZvacUydTPjLPc2DlKz7EIg==}
+  /globby@13.2.2:
+    resolution: {integrity: sha512-Y1zNGV+pzQdh7H39l9zgB4PJqjRNqydvdYCDG4HFXM4XuvSaQQlEc91IU1yALL8gUTDomgBAfz3XJdmUS+oo0w==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       dir-glob: 3.0.1
@@ -611,7 +606,7 @@ packages:
       detect-newline: 4.0.0
       get-stdin: 9.0.0
       git-hooks-list: 3.1.0
-      globby: 13.2.1
+      globby: 13.2.2
       is-plain-obj: 4.1.0
       sort-object-keys: 1.1.3
     dev: true
@@ -630,7 +625,7 @@ packages:
     resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
-      '@pkgr/utils': 2.4.1
+      '@pkgr/utils': 2.4.2
       tslib: 2.6.0
     dev: true
 
