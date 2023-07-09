@@ -15,8 +15,8 @@ devDependencies:
     specifier: 0.0.6
     version: 0.0.6
   '@nozomiishii/prettier-config':
-    specifier: 0.3.0
-    version: 0.3.0
+    specifier: 0.3.1
+    version: 0.3.1
   lefthook:
     specifier: 1.4.3
     version: 1.4.3
@@ -69,8 +69,8 @@ packages:
     resolution: {integrity: sha512-AypwFnarzh/d56hgKp+wg2DJ82kJl+AfpP2Cpl45ut9LwyeQBpqHegrLDzt7doQtojkEXIrMEHQnybFTOA6T1Q==}
     dev: true
 
-  /@nozomiishii/prettier-config@0.3.0:
-    resolution: {integrity: sha512-wEjb73c55IirNtIar8mEszh/4Kzx9rqLZec1RiQCUwscB65ohjbI6ImCyShdivBdEdASMl4D+SVdjiSa9jz5Jw==}
+  /@nozomiishii/prettier-config@0.3.1:
+    resolution: {integrity: sha512-Ghxku9MwJ4dy5Mw1pUmdwnEQ8jUrCXZDJflMgBduO2octVdhYnDiCUWNEIgAaRC4vdLrLfUoSOlIs9B+2Y/82Q==}
     hasBin: true
     dependencies:
       prettier: 3.0.0
