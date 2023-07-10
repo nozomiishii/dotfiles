@@ -5,6 +5,9 @@
 <div align="center">
   <img src="https://media.giphy.com/media/LqajRC2pU0Je8/giphy.gif" alt="Brow my mind" width="480" />
 </div>
+<div align="right">
+  <small>via GIPHY</small>
+</div>
 <br>
 
 <!-- shields -->
