@@ -9,14 +9,14 @@ devDependencies:
     specifier: 17.6.6
     version: 17.6.6
   '@nozomiishii/lefthook-config':
-    specifier: 0.0.10
-    version: 0.0.10(lefthook@1.4.3)
+    specifier: 0.0.11
+    version: 0.0.11(lefthook@1.4.3)
   '@nozomiishii/markdownlint-cli2-config':
-    specifier: 0.0.6
-    version: 0.0.6
+    specifier: 0.1.1
+    version: 0.1.1
   '@nozomiishii/prettier-config':
-    specifier: 0.3.2
-    version: 0.3.2
+    specifier: 0.3.3
+    version: 0.3.3
   lefthook:
     specifier: 1.4.3
     version: 1.4.3
@@ -51,8 +51,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nozomiishii/lefthook-config@0.0.10(lefthook@1.4.3):
-    resolution: {integrity: sha512-6HD9Tqq/aDaYA5Y/KMl5LIVSPnrfGWaGUP77eiJchKmXvD7TJNY80MQJ0J4UERefOrHMEyzKuuxC3d6pwX2C7A==}
+  /@nozomiishii/lefthook-config@0.0.11(lefthook@1.4.3):
+    resolution: {integrity: sha512-EVGQ1wfjLP9F2gfH211inTeteg8HlIZWNjdk6HYvRInFbhltTQvAzVxkSXN89na6P0UlYkQnuAbmmPP2hNPKwg==}
     hasBin: true
     peerDependencies:
       lefthook: '>=1.4.0'
@@ -60,12 +60,15 @@ packages:
       lefthook: 1.4.3
     dev: true
 
-  /@nozomiishii/markdownlint-cli2-config@0.0.6:
-    resolution: {integrity: sha512-AypwFnarzh/d56hgKp+wg2DJ82kJl+AfpP2Cpl45ut9LwyeQBpqHegrLDzt7doQtojkEXIrMEHQnybFTOA6T1Q==}
+  /@nozomiishii/markdownlint-cli2-config@0.1.1:
+    resolution: {integrity: sha512-ba2rQWwqJp42a8vW46Oz8Q0+4VPV2gyclXQi2pXFokzfFvnysl5jKIeB54pWPxAFdCEwFTOxIVdb0EyoFVL3Ig==}
+    hasBin: true
+    dependencies:
+      markdownlint-cli2: 0.8.1
     dev: true
 
-  /@nozomiishii/prettier-config@0.3.2:
-    resolution: {integrity: sha512-mf+QtwWdnxc+MXr5q3hxtpcXoJfo/SKhI3jF9zC46UK+6b9QmpIAdOwNPj0yrnWvL1fKEIhnucTxQdWjnkbaAg==}
+  /@nozomiishii/prettier-config@0.3.3:
+    resolution: {integrity: sha512-bMr60eT4gVRjTda+CJAcBWX2gPMOtAzjOYMCTwzjboF+kn3EP0nQ7TS9iTFgwZGQpU1IVpTbtVCxVx2zR+HiPA==}
     hasBin: true
     dependencies:
       prettier: 3.0.0
@@ -82,6 +85,10 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       tslib: 2.6.0
+    dev: true
+
+  /argparse@2.0.1:
+    resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
     dev: true
 
   /array-ify@1.0.0:
@@ -186,6 +193,11 @@ packages:
       is-obj: 2.0.0
     dev: true
 
+  /entities@3.0.1:
+    resolution: {integrity: sha512-WiyBqoomrwMdFG1e0kqvASYfnlb0lp8M5o5Fw2OFq1hNZxxcNk8Ik0Xm7LxzBhuidnZB/UtBqVCgUz3kBOP51Q==}
+    engines: {node: '>=0.12'}
+    dev: true
+
   /execa@5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
@@ -259,6 +271,17 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       is-glob: 4.0.3
+    dev: true
+
+  /globby@13.1.4:
+    resolution: {integrity: sha512-iui/IiiW+QrJ1X1hKH5qwlMQyv34wJAYwH1vrf8b9kBA4sNiif3gKsMHa+BrdnOpEudWjpotfa7LrTzB1ERS/g==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      dir-glob: 3.0.1
+      fast-glob: 3.3.0
+      ignore: 5.2.4
+      merge2: 1.4.1
+      slash: 4.0.0
     dev: true
 
   /globby@13.2.2:
@@ -434,8 +457,63 @@ packages:
       lefthook-windows-x64: 1.4.3
     dev: true
 
+  /linkify-it@4.0.1:
+    resolution: {integrity: sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==}
+    dependencies:
+      uc.micro: 1.0.6
+    dev: true
+
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: true
+
+  /markdown-it@13.0.1:
+    resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==}
+    hasBin: true
+    dependencies:
+      argparse: 2.0.1
+      entities: 3.0.1
+      linkify-it: 4.0.1
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
+    dev: true
+
+  /markdownlint-cli2-formatter-default@0.0.4(markdownlint-cli2@0.8.1):
+    resolution: {integrity: sha512-xm2rM0E+sWgjpPn1EesPXx5hIyrN2ddUnUwnbCsD/ONxYtw3PX6LydvdH6dciWAoFDpwzbHM1TO7uHfcMd6IYg==}
+    peerDependencies:
+      markdownlint-cli2: '>=0.0.4'
+    dependencies:
+      markdownlint-cli2: 0.8.1
+    dev: true
+
+  /markdownlint-cli2@0.8.1:
+    resolution: {integrity: sha512-y0Siwt+RApKxSSb0CT9p7z1DcAO+ncjrB9IpC/jflJRIet4namCFmxLTbfBBQdPF6EntPk5yyXKe7vcoPGlnXw==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      globby: 13.1.4
+      markdownlint: 0.29.0
+      markdownlint-cli2-formatter-default: 0.0.4(markdownlint-cli2@0.8.1)
+      micromatch: 4.0.5
+      strip-json-comments: 5.0.0
+      yaml: 2.3.1
+    dev: true
+
+  /markdownlint-micromark@0.1.5:
+    resolution: {integrity: sha512-HvofNU4QCvfUCWnocQP1IAWaqop5wpWrB0mKB6SSh0fcpV0PdmQNS6tdUuFew1utpYlUvYYzz84oDkrD76GB9A==}
+    engines: {node: '>=16'}
+    dev: true
+
+  /markdownlint@0.29.0:
+    resolution: {integrity: sha512-ASAzqpODstu/Qsk0xW5BPgWnK/qjpBQ4e7IpsSvvFXcfYIjanLTdwFRJK1SIEEh0fGSMKXcJf/qhaZYHyME0wA==}
+    engines: {node: '>=16'}
+    dependencies:
+      markdown-it: 13.0.1
+      markdownlint-micromark: 0.1.5
+    dev: true
+
+  /mdurl@1.0.1:
+    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
     dev: true
 
   /merge-stream@2.0.0:
@@ -621,6 +699,11 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
+  /strip-json-comments@5.0.0:
+    resolution: {integrity: sha512-V1LGY4UUo0jgwC+ELQ2BNWfPa17TIuwBLg+j1AA/9RPzKINl1lhxVEu2r+ZTTO8aetIsUzE5Qj6LMSBkoGYKKw==}
+    engines: {node: '>=14.16'}
+    dev: true
+
   /synckit@0.8.5:
     resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -645,6 +728,10 @@ packages:
     resolution: {integrity: sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==}
     dev: true
 
+  /uc.micro@1.0.6:
+    resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
+    dev: true
+
   /untildify@4.0.0:
     resolution: {integrity: sha512-KK8xQ1mkzZeg9inewmFVDNkg3l5LUhoq9kN6iWYB/CC9YMG8HA+c1Q8HwDe6dEX7kErrEVNVBO3fWsVq5iDgtw==}
     engines: {node: '>=8'}
@@ -656,4 +743,9 @@ packages:
     hasBin: true
     dependencies:
       isexe: 2.0.0
+    dev: true
+
+  /yaml@2.3.1:
+    resolution: {integrity: sha512-2eHWfjaoXgTBC2jNM1LRef62VQa0umtvRiDSk6HSzW7RvS5YtkabJrwYLLEKWBc8a5U2PTSCs+dJjUTJdlHsWQ==}
+    engines: {node: '>= 14'}
     dev: true
