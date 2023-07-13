@@ -85,7 +85,7 @@ remove_oldest_config() {
 
 update_raycast_config() {
   git add "$raycast_backup_dir"
-  git commit --no-verify -m "chore(backup): update Raycast config"
+  git commit --no-verify --message 'chore(backup): update Raycast config'
 
   local current_branch
   current_branch=$(git branch --show-current)
@@ -94,12 +94,7 @@ update_raycast_config() {
   git push origin "$current_branch"
 }
 
-# ----------------------------------------------------------------
-# Main
-# ----------------------------------------------------------------
-main() {
-  msg_title "🚁 Update Raycast Config"
-
+check_backup_files() {
   local backup_files_length
   backup_files_length=$(find "$raycast_backup_dir" -type f | wc -l)
 
@@ -114,7 +109,15 @@ main() {
   fi
 
   ls -lt "$raycast_backup_dir"
+}
 
+# ----------------------------------------------------------------
+# Main
+# ----------------------------------------------------------------
+main() {
+  msg_title "🚁 Update Raycast Config"
+
+  check_backup_files
   remove_oldest_config
   update_raycast_config
 
