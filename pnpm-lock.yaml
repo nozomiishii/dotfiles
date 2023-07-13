@@ -9,8 +9,8 @@ devDependencies:
     specifier: 17.6.6
     version: 17.6.6
   '@nozomiishii/lefthook-config':
-    specifier: 0.0.11
-    version: 0.0.11(lefthook@1.4.3)
+    specifier: 0.0.12
+    version: 0.0.12
   '@nozomiishii/markdownlint-cli2-config':
     specifier: 0.1.1
     version: 0.1.1
@@ -25,6 +25,14 @@ packages:
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 5.0.0
+    dev: true
+
+  /@evilmartians/lefthook@1.4.5:
+    resolution: {integrity: sha512-lZT4HTz86yRBgoKSh34vCiaiit6F2t858UAUFDRU7dLadllKOagDYKQ/qlDojLzA8QC0LxI/OYYk2fke71dAmQ==}
+    cpu: [x64, arm64, ia32]
+    os: [darwin, linux, win32]
+    hasBin: true
+    requiresBuild: true
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
@@ -48,13 +56,11 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nozomiishii/lefthook-config@0.0.11(lefthook@1.4.3):
-    resolution: {integrity: sha512-EVGQ1wfjLP9F2gfH211inTeteg8HlIZWNjdk6HYvRInFbhltTQvAzVxkSXN89na6P0UlYkQnuAbmmPP2hNPKwg==}
+  /@nozomiishii/lefthook-config@0.0.12:
+    resolution: {integrity: sha512-g+mSafaJrLocsEY7UH60RFBR4isI1jitGmj+wapz/8biInlCbxIYwjbro7QYwye8K1no3mcyCHC48hBb5odwvw==}
     hasBin: true
-    peerDependencies:
-      lefthook: '>=1.4.0'
     dependencies:
-      lefthook: 1.4.3
+      '@evilmartians/lefthook': 1.4.5
     dev: true
 
   /@nozomiishii/markdownlint-cli2-config@0.1.1:
@@ -373,85 +379,6 @@ packages:
 
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
-    dev: true
-
-  /lefthook-darwin-arm64@1.4.3:
-    resolution: {integrity: sha512-ZFsgIzN+Z0c4RpMMHU/M4J43XFyXYGZI8r0GG4jqVMX+prDBIb/6vpgMdZxK5IozRUmnfLGQPXcVokE9WBHSOg==}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-darwin-x64@1.4.3:
-    resolution: {integrity: sha512-O6ZesdJ9MStI38gNfJh0ShExIf0KyHG1lR32F9FUFklFwhcquRM+uIDyDqVCxU3UWqmKwcbTk9AJWMjQZGPLxQ==}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-freebsd-arm64@1.4.3:
-    resolution: {integrity: sha512-6swb+98Qs6P9V9Rcd2lHWH2LunFEk+kfIPpf6oiPrOHnw3OkfFhQLmawX425Ari7Y9qy9gfDoNe/0/IR7YGmGw==}
-    cpu: [arm64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-freebsd-x64@1.4.3:
-    resolution: {integrity: sha512-+58NARATypmIj0kDutd29ozywr6IeA0lVBxsVzq7C5ycYrd31iNak3lnaEvNJvdj5fGVNEL9X7XRojylthZlAg==}
-    cpu: [x64]
-    os: [freebsd]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-linux-arm64@1.4.3:
-    resolution: {integrity: sha512-gAWJQEhgheOfPu579fhlcNNm3KoJbNkT11AATKHlFu+esyiCxI8xZVpGwDQVMphO7s43FKbkQJSvIM4tElb6FQ==}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-linux-x64@1.4.3:
-    resolution: {integrity: sha512-mVv/amRqX81nQcizhRRx/X6KKNIkMUG4HdDItWkDazwLAviZ2zv8TRcSaEYBOpriP/dBZm8gt6EhzPpfoWtcJw==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-windows-arm64@1.4.3:
-    resolution: {integrity: sha512-ccClPTC7AvhcbyT6pLzdV8K8e/P0T7p/THGRtcyjkKIU0IS89k95VazDlt22QPzUTc8UMNCQyZ1XY4UDx295jw==}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook-windows-x64@1.4.3:
-    resolution: {integrity: sha512-q1K5kycfqTYLm5/pOCiAFa+hoSFt/29QjHVZAWRmk/nKDIf8MvTWX0tdaEx7/VJuG3cgQT1jM+xiTwSmNUXTKg==}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
-  /lefthook@1.4.3:
-    resolution: {integrity: sha512-zvhAJ9wDQW7F27XYWRfx72L6LuPLu49be+sRUF+DKku1IGT+x3eHjQ9k70pt65lnEq1X8Xl/Xygm3Kwi/piOYg==}
-    hasBin: true
-    requiresBuild: true
-    optionalDependencies:
-      lefthook-darwin-arm64: 1.4.3
-      lefthook-darwin-x64: 1.4.3
-      lefthook-freebsd-arm64: 1.4.3
-      lefthook-freebsd-x64: 1.4.3
-      lefthook-linux-arm64: 1.4.3
-      lefthook-linux-x64: 1.4.3
-      lefthook-windows-arm64: 1.4.3
-      lefthook-windows-x64: 1.4.3
     dev: true
 
   /linkify-it@4.0.1:
