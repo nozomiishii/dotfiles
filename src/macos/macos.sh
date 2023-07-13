@@ -57,6 +57,8 @@ defaults write com.apple.dock magnification -bool true
 defaults write com.apple.dock largesize -int 56
 # disable Launchpad
 defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
+# disable Stage Manager
+defaults write com.apple.WindowManager GloballyEnabled -bool false
 
 # ----------------------------------------------------------------
 # Menu bar
