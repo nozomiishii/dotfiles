@@ -12,8 +12,8 @@ devDependencies:
     specifier: 1.4.5
     version: 1.4.5
   '@nozomiishii/lefthook-config':
-    specifier: 0.0.12
-    version: 0.0.12
+    specifier: 0.0.13
+    version: 0.0.13(@evilmartians/lefthook@1.4.5)
   '@nozomiishii/markdownlint-cli2-config':
     specifier: 0.1.1
     version: 0.1.1
@@ -59,9 +59,11 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nozomiishii/lefthook-config@0.0.12:
-    resolution: {integrity: sha512-g+mSafaJrLocsEY7UH60RFBR4isI1jitGmj+wapz/8biInlCbxIYwjbro7QYwye8K1no3mcyCHC48hBb5odwvw==}
+  /@nozomiishii/lefthook-config@0.0.13(@evilmartians/lefthook@1.4.5):
+    resolution: {integrity: sha512-7szGaVp5VsjsjElk5SPqbEGrIV42jiUDQLjJBQuDD2f0EXPcYkF780VOqxHFRouVEzMjeS8NBD7wvYqhFkge1Q==}
     hasBin: true
+    peerDependencies:
+      '@evilmartians/lefthook': '>=1.4.0'
     dependencies:
       '@evilmartians/lefthook': 1.4.5
     dev: true
