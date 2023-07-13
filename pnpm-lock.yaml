@@ -17,9 +17,6 @@ devDependencies:
   '@nozomiishii/prettier-config':
     specifier: 0.3.3
     version: 0.3.3
-  lefthook:
-    specifier: 1.4.3
-    version: 1.4.3
 
 packages:
 
