@@ -3,6 +3,8 @@ name: Setup Configs
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - 'src/configs/configs.sh'
   pull_request:

@@ -3,6 +3,8 @@ name: Setup MacOS
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - 'src/macos/macos.sh'
   pull_request:
