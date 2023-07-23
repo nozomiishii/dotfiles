@@ -3,73 +3,137 @@ name: Shell Script Quality Checks
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - '**/*.sh'
       - '**/*.bats'
+      - '.github/workflows/shell-script-quality-checks.yaml'
   pull_request:
     paths:
       - '**/*.sh'
       - '**/*.bats'
+      - '.github/workflows/shell-script-quality-checks.yaml'
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
-  shell-script-quality-checks-on-macos:
-    runs-on: macos-latest
+  format:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
       - name: Get code
         uses: actions/checkout@v3
         with:
           submodules: 'recursive'
 
-      - name: Install Dependencies
-        run: |
-          brew install shfmt
-          brew install shellcheck
-          brew install bats-core
+      - name: Setup Go - ubuntu-latest
+        if: ${{ matrix.os == 'ubuntu-latest'}}
+        uses: actions/setup-go@v4
+        with:
+          go-version: 'stable'
+
+      - name: Install Dependencies - ubuntu-latest
+        if: ${{ matrix.os == 'ubuntu-latest'}}
+        run: go install mvdan.cc/sh/v3/cmd/shfmt@latest
+
+      - name: Install Dependencies - macos-latest
+        if: ${{ matrix.os == 'macos-latest'}}
+        run: brew install shfmt
 
       - name: Format Check
         run: shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh
 
-      - name: Lint
-        run: shellcheck --exclude=SC1091 **/*.sh
-
-      - name: Test
+      - name: Tips
+        if: failure()
         run: |
-          bats ./utils/**
+          echo "Format check failed. To fix, you need to install and run 'shfmt'"
+          echo "Use these commands:"
+          echo ''
+          echo "brew install shfmt"
+          echo "shfmt --write --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh"
+          echo ''
+          echo "More on shfmt: https://github.com/mvdan/sh"
+          echo "Editor extensions for shfmt: https://github.com/mvdan/sh#related-projects"
 
-  shell-script-quality-checks-on-linux:
-    runs-on: ubuntu-latest
+  lint:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
       - name: Get code
         uses: actions/checkout@v3
         with:
           submodules: 'recursive'
 
-      - name: Install Dependencies
+      - name: Install Dependencies - ubuntu-latest
+        if: ${{ matrix.os == 'ubuntu-latest'}}
         run: |
-          echo -e "Install shfmt\n"
-          curl https://github.com/mvdan/sh/releases/download/v3.5.1/shfmt_v3.5.1_linux_amd64 -o shfmt
-          chmod a+x shfmt
-
-          echo -e "Install shellcheck\n"
           sudo apt-get update -y
           sudo apt-get install -y shellcheck
 
-          echo -e "Install bats\n"
-          sudo apt-get install -y git
-          git clone https://github.com/bats-core/bats-core.git
-          sudo bash bats-core/install.sh /usr/local
-
-      - name: Format Check
-        # うまくいかないとき用
-        # find . -type f -iname "*.sh" -print0 | xargs -0 ./shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects
-        run: ./shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh
+      - name: Install Dependencies - macos-latest
+        if: ${{ matrix.os == 'macos-latest'}}
+        run: brew install shellcheck
 
       - name: Lint
-        # うまくいかないとき用
-        # find . -type f -iname "*.sh" -print0 | xargs -0 shellcheck --external-sources --exclude=SC1091
-        run: shellcheck --exclude=SC1091 **/*.sh
+        run: shellcheck --external-sources --exclude=SC1091 **/*.sh
 
-      # FIXME: うまくいかない。macは通ってるのにな。謎い。
-      # - name: Test
-      #   run: |
-      #     bats ./utils/**
+      - name: Tips
+        if: failure()
+        run: |
+          echo "Lint failed. To fix, you need to install and run 'shellcheck'"
+          echo "Use these commands:"
+          echo ''
+          echo "brew install shellcheck"
+          echo "shellcheck --external-sources --exclude=SC1091 **/*.sh"
+          echo ''
+          echo "More on shellcheck: https://github.com/koalaman/shellcheck"
+          echo "Editor extensions for shellcheck: https://github.com/koalaman/shellcheck#in-your-editor"
+
+  test:
+    strategy:
+      matrix:
+        # FIXME: ubuntu-latestのときだけunbound variableってなってTest落ちる
+        # os: [macos-latest, ubuntu-latest]
+        os: [macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install -g bats
+
+      - name: Test
+        run: bats ./utils/**
+
+      - name: Tips
+        if: failure()
+        run: |
+          echo "Lint failed. To fix, you need to install and run 'bats'"
+          echo "Use these commands:"
+          echo ''
+          echo "brew install bats-core"
+          echo "bats ./utils/**"
+          echo ''
+          echo "More on bats: https://github.com/bats-core/bats-core"
+          echo "VSCode extensions for bats: https://github.com/jetmartin/bats"
