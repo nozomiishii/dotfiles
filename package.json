@@ -39,15 +39,15 @@
     "test": "bats ./utils/**"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "17.6.6",
-    "@evilmartians/lefthook": "1.4.5",
+    "@commitlint/config-conventional": "17.6.7",
+    "@evilmartians/lefthook": "1.4.7",
     "@nozomiishii/lefthook-config": "0.0.13",
     "@nozomiishii/markdownlint-cli2-config": "0.1.1",
     "@nozomiishii/prettier-config": "0.3.3"
   },
-  "packageManager": "pnpm@8.6.7",
+  "packageManager": "pnpm@8.6.10",
   "volta": {
-    "node": "18.16.1",
-    "pnpm": "8.6.7"
+    "node": "18.17.0",
+    "pnpm": "8.6.10"
   }
 }

@@ -29,6 +29,8 @@ on:
         default: 'false'
 
   push:
+    branches:
+      - main
     paths:
       - 'src/toolchains/**'
   pull_request:

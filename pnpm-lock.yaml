@@ -6,14 +6,14 @@ settings:
 
 devDependencies:
   '@commitlint/config-conventional':
-    specifier: 17.6.6
-    version: 17.6.6
+    specifier: 17.6.7
+    version: 17.6.7
   '@evilmartians/lefthook':
-    specifier: 1.4.5
-    version: 1.4.5
+    specifier: 1.4.7
+    version: 1.4.7
   '@nozomiishii/lefthook-config':
     specifier: 0.0.13
-    version: 0.0.13(@evilmartians/lefthook@1.4.5)
+    version: 0.0.13(@evilmartians/lefthook@1.4.7)
   '@nozomiishii/markdownlint-cli2-config':
     specifier: 0.1.1
     version: 0.1.1
@@ -23,15 +23,15 @@ devDependencies:
 
 packages:
 
-  /@commitlint/config-conventional@17.6.6:
-    resolution: {integrity: sha512-phqPz3BDhfj49FUYuuZIuDiw+7T6gNAEy7Yew1IBHqSohVUCWOK2FXMSAExzS2/9X+ET93g0Uz83KjiHDOOFag==}
+  /@commitlint/config-conventional@17.6.7:
+    resolution: {integrity: sha512-4oTpEUC0HRM54QRHBPMOJW1pETp7usxXn9RuNYNWHcmu8wi1mpws95hvS20u2n6HtIkTn0jfn7vHioCm4AGUTw==}
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 5.0.0
     dev: true
 
-  /@evilmartians/lefthook@1.4.5:
-    resolution: {integrity: sha512-lZT4HTz86yRBgoKSh34vCiaiit6F2t858UAUFDRU7dLadllKOagDYKQ/qlDojLzA8QC0LxI/OYYk2fke71dAmQ==}
+  /@evilmartians/lefthook@1.4.7:
+    resolution: {integrity: sha512-tEYMcE4ei0e3thWVX1Jo9RC4nlR8g8OXxpLKL2grUbA5m5Ch8PWj1aP5lLPOmWUomwR0Gkbf4lDCPNdraU+qzg==}
     cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
@@ -59,13 +59,13 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nozomiishii/lefthook-config@0.0.13(@evilmartians/lefthook@1.4.5):
+  /@nozomiishii/lefthook-config@0.0.13(@evilmartians/lefthook@1.4.7):
     resolution: {integrity: sha512-7szGaVp5VsjsjElk5SPqbEGrIV42jiUDQLjJBQuDD2f0EXPcYkF780VOqxHFRouVEzMjeS8NBD7wvYqhFkge1Q==}
     hasBin: true
     peerDependencies:
       '@evilmartians/lefthook': '>=1.4.0'
     dependencies:
-      '@evilmartians/lefthook': 1.4.5
+      '@evilmartians/lefthook': 1.4.7
     dev: true
 
   /@nozomiishii/markdownlint-cli2-config@0.1.1:
@@ -88,7 +88,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dependencies:
       cross-spawn: 7.0.3
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       is-glob: 4.0.3
       open: 9.1.0
       picocolors: 1.0.0
@@ -236,8 +236,8 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /fast-glob@3.3.0:
-    resolution: {integrity: sha512-ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==}
+  /fast-glob@3.3.1:
+    resolution: {integrity: sha512-kNFPyjhh5cKjrUltxs+wFx+ZkbRaxxmZ+X0ZU31SOsxCEtP9VPgtq2teZw1DebupL5GmDaNQ6yKMMVcM41iqDg==}
     engines: {node: '>=8.6.0'}
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -286,7 +286,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       dir-glob: 3.0.1
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 4.0.0
@@ -297,7 +297,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       dir-glob: 3.0.1
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 4.0.0

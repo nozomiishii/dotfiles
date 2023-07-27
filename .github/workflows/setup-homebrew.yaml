@@ -3,6 +3,8 @@ name: Setup homebrew
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - 'src/**/homebrew/**'
   pull_request:
