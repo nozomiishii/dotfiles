@@ -15,8 +15,8 @@ devDependencies:
     specifier: 0.0.13
     version: 0.0.13(@evilmartians/lefthook@1.4.8)
   '@nozomiishii/markdownlint-cli2-config':
-    specifier: 0.1.1
-    version: 0.1.1
+    specifier: 0.1.2
+    version: 0.1.2
   '@nozomiishii/prettier-config':
     specifier: 0.3.3
     version: 0.3.3
@@ -68,8 +68,8 @@ packages:
       '@evilmartians/lefthook': 1.4.8
     dev: true
 
-  /@nozomiishii/markdownlint-cli2-config@0.1.1:
-    resolution: {integrity: sha512-ba2rQWwqJp42a8vW46Oz8Q0+4VPV2gyclXQi2pXFokzfFvnysl5jKIeB54pWPxAFdCEwFTOxIVdb0EyoFVL3Ig==}
+  /@nozomiishii/markdownlint-cli2-config@0.1.2:
+    resolution: {integrity: sha512-sYBlByjMHrcZNNFBuoxdLj+V9lRvl/8/KziosAlB2tw+9WGV/A9fipxM59sLtIOGBUBr54BkdKHos/Mbqe5yog==}
     hasBin: true
     dependencies:
       markdownlint-cli2: 0.8.1
