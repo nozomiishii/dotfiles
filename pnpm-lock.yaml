@@ -12,14 +12,14 @@ devDependencies:
     specifier: 1.4.8
     version: 1.4.8
   '@nozomiishii/lefthook-config':
-    specifier: 0.0.13
-    version: 0.0.13(@evilmartians/lefthook@1.4.8)
+    specifier: 0.1.0
+    version: 0.1.0(@evilmartians/lefthook@1.4.8)
   '@nozomiishii/markdownlint-cli2-config':
-    specifier: 0.1.2
-    version: 0.1.2
+    specifier: 0.2.0
+    version: 0.2.0
   '@nozomiishii/prettier-config':
-    specifier: 0.3.3
-    version: 0.3.3
+    specifier: 0.4.0
+    version: 0.4.0
 
 packages:
 
@@ -59,8 +59,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nozomiishii/lefthook-config@0.0.13(@evilmartians/lefthook@1.4.8):
-    resolution: {integrity: sha512-7szGaVp5VsjsjElk5SPqbEGrIV42jiUDQLjJBQuDD2f0EXPcYkF780VOqxHFRouVEzMjeS8NBD7wvYqhFkge1Q==}
+  /@nozomiishii/lefthook-config@0.1.0(@evilmartians/lefthook@1.4.8):
+    resolution: {integrity: sha512-nOr4tJ095uzpi3Geq6g5H3eLjzhltURcoISXgrPDYLqIGiiW9GzQkwErY9AAiq4pk35ccphZwW8ZUkql/syoEQ==}
     hasBin: true
     peerDependencies:
       '@evilmartians/lefthook': '>=1.4.0'
@@ -68,19 +68,19 @@ packages:
       '@evilmartians/lefthook': 1.4.8
     dev: true
 
-  /@nozomiishii/markdownlint-cli2-config@0.1.2:
-    resolution: {integrity: sha512-sYBlByjMHrcZNNFBuoxdLj+V9lRvl/8/KziosAlB2tw+9WGV/A9fipxM59sLtIOGBUBr54BkdKHos/Mbqe5yog==}
+  /@nozomiishii/markdownlint-cli2-config@0.2.0:
+    resolution: {integrity: sha512-75fE0W3aG2YG0lEHBYIjVojuhpdu03U+M6OTTQON76aXqyh9rewW02nYGWCsSOdobnNf/exW+EyfrV0/DuZpkQ==}
     hasBin: true
     dependencies:
       markdownlint-cli2: 0.8.1
     dev: true
 
-  /@nozomiishii/prettier-config@0.3.3:
-    resolution: {integrity: sha512-bMr60eT4gVRjTda+CJAcBWX2gPMOtAzjOYMCTwzjboF+kn3EP0nQ7TS9iTFgwZGQpU1IVpTbtVCxVx2zR+HiPA==}
+  /@nozomiishii/prettier-config@0.4.0:
+    resolution: {integrity: sha512-nggKUXuH0QhWHoXhVrw9NVYZsVU6G5T+Pk8bdEB6mnjfzrbEtNl7U6JuQf3lYJ4sRjmslX6ZsG3WvRHd06eq1g==}
     hasBin: true
     dependencies:
       prettier: 3.0.0
-      prettier-plugin-packagejson: 2.4.4(prettier@3.0.0)
+      prettier-plugin-packagejson: 2.4.5(prettier@3.0.0)
     dev: true
 
   /@pkgr/utils@2.4.2:
@@ -534,8 +534,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /prettier-plugin-packagejson@2.4.4(prettier@3.0.0):
-    resolution: {integrity: sha512-Xk74PATiZDW+kELIh8e8EY0JpwHo9xbSGc4YfIfxmITWAF8yqHa7A+yAQLLMRoQEkKNi+xaMnR8BX2F9zrsczg==}
+  /prettier-plugin-packagejson@2.4.5(prettier@3.0.0):
+    resolution: {integrity: sha512-glG71jE1gO3y5+JNAhC8X+4yrlN28rub6Aj461SKbaPie9RgMiHKcInH2Moi2VGOfkTXaEHBhg4uVMBqa+kBUA==}
     peerDependencies:
       prettier: '>= 1.16.0'
     peerDependenciesMeta:
@@ -543,7 +543,7 @@ packages:
         optional: true
     dependencies:
       prettier: 3.0.0
-      sort-package-json: 2.5.0
+      sort-package-json: 2.5.1
       synckit: 0.8.5
     dev: true
 
@@ -605,8 +605,8 @@ packages:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
     dev: true
 
-  /sort-package-json@2.5.0:
-    resolution: {integrity: sha512-KIsqEi/ameVyhhatpzwialQVSMP1mFzRLJgTBKJDz0duQmhnBDjf8MFyFoIoVnW69SqjH3/bziCSlgiuz2KbHg==}
+  /sort-package-json@2.5.1:
+    resolution: {integrity: sha512-vx/KoZxm8YNMUqdlw7SGTfqR5pqZ/sUfgOuRtDILiOy/3AvzhAibyUe2cY3OpLs3oRSow9up4yLVtQaM24rbDQ==}
     hasBin: true
     dependencies:
       detect-indent: 7.0.1
