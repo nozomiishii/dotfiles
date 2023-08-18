@@ -38,6 +38,15 @@
     "key": "alt+cmd+w",
     "command": "workbench.action.closeEditorsInGroup"
   },
+  {
+    "key": "shift+cmd+r",
+    "command": "-reactSnippets.search",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "workbench.action.reloadWindow"
+  },
 
   // ----------------------------------------------------------------
   // Explorer
