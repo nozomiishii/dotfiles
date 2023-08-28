@@ -43,7 +43,8 @@
     "@evilmartians/lefthook": "1.4.9",
     "@nozomiishii/lefthook-config": "0.2.0",
     "@nozomiishii/markdownlint-cli2-config": "0.3.0",
-    "@nozomiishii/prettier-config": "0.5.0"
+    "@nozomiishii/prettier-config": "0.5.0",
+    "markdownlint-cli2": "0.9.2"
   },
   "packageManager": "pnpm@8.6.12",
   "volta": {
