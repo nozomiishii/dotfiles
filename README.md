@@ -391,10 +391,14 @@ Finder Sidebar
     Turn on
 
 - **⌨️ Keyboard**
+  <!-- 一旦ことえりを試してみる
+  - **Input Sources**
+    Delete "Kotoeri"
+    Add "google-japanese-ime" -->
 
-  - **Input Sources**  
-    Delete "Kotoeri"  
-    Add "google-japanese-ime"
+  - Candidate window
+    - Font size: 14
+    - Uncheck: Full-width numeral characters
 
 - **🖥 Displays**
 
