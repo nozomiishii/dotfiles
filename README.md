@@ -378,6 +378,8 @@ Finder Sidebar
   - **Current User**  
     Edit Profile photo
 
+- **☝🏻 Touch ID**
+  - Registering your left pinky for Touch ID, so you can eat pizza without any hassle.
 - **🧚🏻‍♀️ Accessibility**
 
   - **Spoken Content**  
