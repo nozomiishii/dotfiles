@@ -43,7 +43,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.node_job == 'true' || github.event_name != 'workflow_dispatch'
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
@@ -65,7 +65,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.python_job == 'true' || github.event_name != 'workflow_dispatch'
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
@@ -87,7 +87,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.ruby_job == 'true' || github.event_name != 'workflow_dispatch'
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
@@ -109,7 +109,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.rust_job == 'true' || github.event_name != 'workflow_dispatch'
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
@@ -131,7 +131,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.toolchains_job == 'true' || github.event_name != 'workflow_dispatch'
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check file path
         if: github.event_name != 'workflow_dispatch'
