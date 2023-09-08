@@ -42,3 +42,20 @@ gcr() {
   git fetch origin $1
   git checkout $1
 }
+
+nozo:n() {
+  npx -y create-next-app@latest --typescript --tailwind --no-eslint --app --src-dir --import-alias '@/*' --use-pnpm $1
+
+  cd $1
+
+  nozo:i
+
+  cat > next.config.js << EOF
+// @ts-check
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default nextConfig;
+EOF
+}
