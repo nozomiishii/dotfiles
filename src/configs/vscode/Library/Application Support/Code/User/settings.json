@@ -276,6 +276,7 @@
   "panda.color-hints.color-preview.enabled": true,
   "panda.rem-to-px.enabled": true,
   "panda.inlay-hints.enabled": false,
+  "panda.hovers.enabled": true,
 
   // ----------------------------------------------------------------
   // ESlint
