@@ -51,7 +51,7 @@ echo '- 🦀 Setup Cargo global'
 cargo install cargo-edit
 cargo install cargo-watch
 cargo install cargo-nextest
-cargo install cargo-modules
+# cargo install cargo-modules
 cargo install cargo-make
 cargo install create-tauri-app
 cargo install wasm-pack
