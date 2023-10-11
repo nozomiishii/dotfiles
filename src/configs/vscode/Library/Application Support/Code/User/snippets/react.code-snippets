@@ -234,6 +234,13 @@
     "body": ["backgroundColor: 'green',"],
     "description": "backgroundColor: 'green'"
   },
+  "css()": {
+    "prefix": "css",
+    "body": [
+      "className={css({$1})}"
+    ],
+    "description": "css()"
+  },
 
   // ----------------------------------------------------------------
   // pretty console
