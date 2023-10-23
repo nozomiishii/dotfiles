@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@commitlint/config-conventional':
-    specifier: 17.8.0
-    version: 17.8.0
+    specifier: 17.8.1
+    version: 17.8.1
   '@evilmartians/lefthook':
     specifier: 1.5.2
     version: 1.5.2
@@ -26,8 +26,8 @@ devDependencies:
 
 packages:
 
-  /@commitlint/config-conventional@17.8.0:
-    resolution: {integrity: sha512-MgiFXujmqAvi7M33C7OSMTznwrVkckrbXe/aZWQ/+KFGLLF6IE50XIcjGrW0/uiDGb/im5qbqF2dh1dCFNa+sQ==}
+  /@commitlint/config-conventional@17.8.1:
+    resolution: {integrity: sha512-NxCOHx1kgneig3VLauWJcDWS40DVjg7nKOpBEEK9E5fjJpQqLCilcnKkIIjdBH98kEO1q3NpE5NSrZ2kl/QGJg==}
     engines: {node: '>=v14'}
     dependencies:
       conventional-changelog-conventionalcommits: 6.1.0
