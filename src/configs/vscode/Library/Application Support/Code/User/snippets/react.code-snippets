@@ -144,7 +144,7 @@
   // ----------------------------------------------------------------
   "export * from './';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "prefix": "exx",
+    "prefix": "export*",
     "body": ["export * from './$1';"],
     "description": "export * from './';"
   },
@@ -153,24 +153,6 @@
     "prefix": "imp",
     "body": ["import { $2 } from '$1';"],
     "description": "import { $2 } from '$1';"
-  },
-  "import React from 'react';": {
-    "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "prefix": "imr",
-    "body": ["import React from 'react';"],
-    "description": "import React from 'react';"
-  },
-  "Import classnames": {
-    "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "prefix": "imcl",
-    "body": ["import classNames from 'classnames';"],
-    "description": "Import classnames"
-  },
-  "uuid": {
-    "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "prefix": "uuid",
-    "body": ["import { v4 as uuidv4 } from 'uuid';", "uuidv4()"],
-    "description": "uuid"
   },
   "Mock Api Response": {
     "prefix": "mockapi",
@@ -236,9 +218,7 @@
   },
   "css()": {
     "prefix": "css",
-    "body": [
-      "className={css({$1})}"
-    ],
+    "body": ["className={css({$1})}"],
     "description": "css()"
   },
 
