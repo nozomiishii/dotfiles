@@ -142,6 +142,12 @@
   // ----------------------------------------------------------------
   // Utils
   // ----------------------------------------------------------------
+  "export": {
+    "prefix": "export",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": ["export {} from './$1';", ""],
+    "description": "export"
+  },
   "export * from './';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "export*",
