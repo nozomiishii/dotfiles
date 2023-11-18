@@ -142,10 +142,16 @@
   // ----------------------------------------------------------------
   // Utils
   // ----------------------------------------------------------------
+  "use client": {
+    "prefix": "use client",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": ["'use client';"],
+    "description": "use client"
+  },
   "export": {
     "prefix": "export",
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "body": ["export {} from './$1';", ""],
+    "body": ["export {$0} from './$1';", ""],
     "description": "export"
   },
   "export * from './';": {
