@@ -39,7 +39,7 @@
     "test": "bats ./utils/**"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "18.4.2",
+    "@commitlint/config-conventional": "18.4.3",
     "@evilmartians/lefthook": "1.5.2",
     "@nozomiishii/lefthook-config": "0.2.0",
     "@nozomiishii/markdownlint-cli2-config": "0.3.0",
