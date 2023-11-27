@@ -46,9 +46,9 @@
     "@nozomiishii/prettier-config": "0.5.0",
     "markdownlint-cli2": "0.11.0"
   },
-  "packageManager": "pnpm@8.10.5",
+  "packageManager": "pnpm@8.11.0",
   "volta": {
     "node": "20.10.0",
-    "pnpm": "8.10.5"
+    "pnpm": "8.11.0"
   }
 }
