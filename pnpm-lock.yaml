@@ -18,8 +18,8 @@ devDependencies:
     specifier: 0.3.0
     version: 0.3.0
   '@nozomiishii/prettier-config':
-    specifier: 0.5.0
-    version: 0.5.0
+    specifier: 0.6.0
+    version: 0.6.0
   markdownlint-cli2:
     specifier: 0.11.0
     version: 0.11.0
@@ -78,12 +78,12 @@ packages:
       markdownlint-cli2: 0.8.1
     dev: true
 
-  /@nozomiishii/prettier-config@0.5.0:
-    resolution: {integrity: sha512-HWLjnf5jAlxUOMN+kDWXMKRHbR8JX1DPn1RqPU+yB0gvgC/z2yxRB147cixuv48alO3JSOgP0XVc+tu6j0aLyw==}
+  /@nozomiishii/prettier-config@0.6.0:
+    resolution: {integrity: sha512-x8ojL9mkIaIYvjfQRHuCevA3sNIB0GuXgT8WxM4bvcinGfRqCma5IlKQhgkm2kwUO96N2yYXEMvOX78kRKNO7g==}
     hasBin: true
     dependencies:
-      prettier: 3.0.1
-      prettier-plugin-packagejson: 2.4.5(prettier@3.0.1)
+      prettier: 3.1.0
+      prettier-plugin-packagejson: 2.4.6(prettier@3.1.0)
     dev: true
 
   /@pkgr/utils@2.4.2:
@@ -598,21 +598,21 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /prettier-plugin-packagejson@2.4.5(prettier@3.0.1):
-    resolution: {integrity: sha512-glG71jE1gO3y5+JNAhC8X+4yrlN28rub6Aj461SKbaPie9RgMiHKcInH2Moi2VGOfkTXaEHBhg4uVMBqa+kBUA==}
+  /prettier-plugin-packagejson@2.4.6(prettier@3.1.0):
+    resolution: {integrity: sha512-5JGfzkJRL0DLNyhwmiAV9mV0hZLHDwddFCs2lc9CNxOChpoWUQVe8K4qTMktmevmDlMpok2uT10nvHUyU59sNw==}
     peerDependencies:
       prettier: '>= 1.16.0'
     peerDependenciesMeta:
       prettier:
         optional: true
     dependencies:
-      prettier: 3.0.1
-      sort-package-json: 2.5.1
+      prettier: 3.1.0
+      sort-package-json: 2.6.0
       synckit: 0.8.5
     dev: true
 
-  /prettier@3.0.1:
-    resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
+  /prettier@3.1.0:
+    resolution: {integrity: sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -669,8 +669,8 @@ packages:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
     dev: true
 
-  /sort-package-json@2.5.1:
-    resolution: {integrity: sha512-vx/KoZxm8YNMUqdlw7SGTfqR5pqZ/sUfgOuRtDILiOy/3AvzhAibyUe2cY3OpLs3oRSow9up4yLVtQaM24rbDQ==}
+  /sort-package-json@2.6.0:
+    resolution: {integrity: sha512-XSQ+lY9bAYA8ZsoChcEoPlgcSMaheziEp1beox1JVxy1SV4F2jSq9+h2rJ+3mC/Dhu9Ius1DLnInD5AWcsDXZw==}
     hasBin: true
     dependencies:
       detect-indent: 7.0.1
