@@ -233,6 +233,21 @@
     "body": ["className={css({$1})}"],
     "description": "css()"
   },
+  "flex()": {
+    "prefix": "flex",
+    "body": ["className={flex({$1})}"],
+    "description": "flex()"
+  },
+  "grid()": {
+    "prefix": "grid",
+    "body": ["className={grid({$1})}"],
+    "description": "grid()"
+  },
+  "center()": {
+    "prefix": "center",
+    "body": ["className={center({$1})}"],
+    "description": "center()"
+  },
 
   // ----------------------------------------------------------------
   // pretty console
