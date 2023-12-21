@@ -72,6 +72,9 @@ defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 # disable Stage Manager
 defaults write com.apple.WindowManager GloballyEnabled -bool false
 
+# disable Click wallpaper to reveal desktop
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
 # ----------------------------------------------------------------
 # Menu bar
 # ----------------------------------------------------------------
