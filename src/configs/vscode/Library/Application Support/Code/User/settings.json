@@ -288,9 +288,9 @@
   // editor.codeActionsOnSave
   // ----------------------------------------------------------------
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": true,
-    "source.fixAll.eslint": true,
-    "source.fixAll.markdownlint": true
+    "source.addMissingImports": "always",
+    "source.fixAll.eslint": "always",
+    "source.fixAll.markdownlint": "always"
   },
 
   // ----------------------------------------------------------------
@@ -484,7 +484,12 @@
   // ----------------------------------------------------------------
   // codeQL
   // ----------------------------------------------------------------
-  "codeQL.telemetry.enableTelemetry": true
+  "codeQL.telemetry.enableTelemetry": true,
+  "[bats][shellscript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.shellcheck": "explicit"
+    }
+  }
 
   ///////////////////////////////////////////////////////////////////
 }
