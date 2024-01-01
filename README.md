@@ -200,26 +200,8 @@ sudo reboot
   Uncheck "Show 1Password in the menu bar"
 - Preferences > General > Keyboard shortcuts >  
   remove all shortcuts(because it conflicts with xcode)
-
-### 🗂 Finder
-
-- Rearrange the order of the sidebar
-
-```txt
-Finder Sidebar
- ┣ 📂Favorites
- ┃ ┣ 🌏Google Drive(My Drive)
- ┃ ┣ 🗃dotfiles
- ┃ ┣ 🏠$USER
- ┃ ┣ 🍎Applications
- ┃ ┗ 📖Desktop
- ┗ 📂Locations
-```
-
-### 🚁 Raycast
-
-- Sign in
-- Import Settings from "~/dotfiles/apps/Raycast"
+- Preferences > Developer > Check "Integrate with 1Password CLI"
+  - [Turn on the 1Password desktop app integration](https://developer.1password.com/docs/cli/get-started/#step-2-turn-on-the-1password-desktop-app-integration)
 
 ### 🌏 Chrome
 
@@ -254,13 +236,35 @@ Finder Sidebar
         - Activate the extension: `⌃Q`
         - Play/Pause: `⌃Space`
 
-### 🗿 fig
-
-- Setup
-
 ### ☁️ google-drive
 
 - Sign in and Sync
+
+### 🗂 Finder
+
+- Rearrange the order of the sidebar
+
+```txt
+Finder Sidebar
+ ┣ 📂Favorites
+ ┃ ┣ 🌏Google Drive(My Drive)
+ ┃ ┣ 🗃dotfiles
+ ┃ ┣ 🏠$USER
+ ┃ ┣ 🍎Applications
+ ┃ ┗ 📖Desktop
+ ┗ 📂Locations
+```
+
+### 🚁 Raycast
+
+- needs: Finder setup
+
+- Sign in
+- Import Settings from "~/dotfiles/src/configs/\_raycast/backup"
+
+### 🗿 fig
+
+- Setup
 
 ### 🐟 VSCode
 

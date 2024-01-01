@@ -1,10 +1,8 @@
 cask_args appdir: "/Applications"
 
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 
 # ----------------------------------------------------------------
@@ -103,6 +101,9 @@ brew "tmux"
 # ----------------------------------------------------------------
 # Password manager that keeps all passwords secure behind one password. https://1password.com
 cask "1Password"
+
+# Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
+cask "1password-cli"
 
 # Web browser focusing on privacy https://brave.com/
 cask "brave-browser"
