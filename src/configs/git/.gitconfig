@@ -1,7 +1,7 @@
 [user]
 name = Nozomi Ishii
 email = nozomiishii.jp@gmail.com
-signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILrAVeQiGquz7X3HPfkPPhZKgv0pNByLrb5qP94EYlBa
+signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDF31h4ogJY+JRiI+k0+aLoO/OTnEI1FCmyvA1LWXOqB
 
 [pull]
 rebase = false
