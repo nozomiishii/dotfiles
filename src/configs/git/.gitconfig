@@ -1,6 +1,7 @@
 [user]
 name = Nozomi Ishii
 email = nozomiishii.jp@gmail.com
+signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILrAVeQiGquz7X3HPfkPPhZKgv0pNByLrb5qP94EYlBa
 
 [pull]
 rebase = false
@@ -14,3 +15,12 @@ ignorecase = false
 
 [submodule]
 recurse = true
+
+[gpg]
+format = ssh
+
+[gpg "ssh"]
+program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
+[commit]
+gpgsign = true

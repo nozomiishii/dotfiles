@@ -12,6 +12,12 @@ if [ -f "$HOME/.zsh/p10k.zsh" ]; then
   source "$HOME/.zsh/p10k.zsh"
 fi
 
+# 1password GitHub CLI Plugin
+# https://developer.1password.com/docs/cli/shell-plugins/github/#step-2-configure-your-default-credentials
+#
+# shellcheck source=/dev/null
+source "$HOME/.config/op/plugins.sh"
+
 # Package managers
 source "$HOME/.zsh/antigen.zsh"
 

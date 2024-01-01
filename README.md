@@ -196,10 +196,9 @@ sudo reboot
 
 - Preferences > Security > Unlock using >  
   Check "Touch ID"
-- Preferences > General > Menu bar >  
-  Uncheck "Show 1Password in the menu bar"
 - Preferences > General > Keyboard shortcuts >  
-  remove all shortcuts(because it conflicts with xcode)
+  Show 1Password: `⌥⌘X`  
+  Autofill: `⌥⇧X`
 - Preferences > Developer > Check "Integrate with 1Password CLI"
   - [Turn on the 1Password desktop app integration](https://developer.1password.com/docs/cli/get-started/#step-2-turn-on-the-1password-desktop-app-integration)
 
@@ -275,15 +274,10 @@ Finder Sidebar
   Icons: Activate VSCode Icons
 - Add MonokaiPro License
 
-### 😼 Generate SSHkey and Login gh
+### 😼 SSH & Git
 
-- ⚠️ You may not have to do ~/dotfiles/src/install -k by setting the following over 1password
-
-[Use 1Password to securely authenticate GitHub](https://developer.1password.com/docs/cli/shell-plugins/github/)
-
-```shell
-~/dotfiles/src/install -k
-```
+- [1Password for SSH & Git](https://developer.1password.com/docs/ssh/)
+- [Use 1Password to securely authenticate the GitHub CLI](https://developer.1password.com/docs/cli/shell-plugins/github/#step-2-configure-your-default-credentials)
 
 ### 🦄 Clone repositories
 
