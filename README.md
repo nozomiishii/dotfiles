@@ -197,8 +197,8 @@ sudo reboot
 - Preferences > Security > Unlock using >  
   Check "Touch ID"
 - Preferences > General > Keyboard shortcuts >  
-  Show 1Password: `⌥⌘X`  
   Autofill: `⌥⇧X`
+- Preferences > Developer > Check "Use the SSH agent"
 - Preferences > Developer > Check "Integrate with 1Password CLI"
   - [Turn on the 1Password desktop app integration](https://developer.1password.com/docs/cli/get-started/#step-2-turn-on-the-1password-desktop-app-integration)
 
