@@ -22,6 +22,7 @@
     "install:apps": "./src/install.sh --apps",
     "install:brew": "./src/install.sh --homebrew",
     "install:brew:full": "./src/install.sh --homebrew-full",
+    "install:configs": "./src/install.sh --configs",
     "install:drive": "./src/install.sh --drive",
     "install:help": "./src/install.sh --help",
     "install:macos": "./src/install.sh --macos",

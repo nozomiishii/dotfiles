@@ -62,7 +62,6 @@ OPTIONS:
     -d,    --drive         🌎 Sync with google drive
     -h,    --help          💡 Print this usage
     -k,    --sshkey        🔐 Generate ssh key
-    -l,    --symlink       🗂 Symbolic link
     -m,    --macos         💻 MacOS setup
     -r,    --repo          🦄 Clone repositories
     -t,    --toolchains    🌝 Toolchains setup
