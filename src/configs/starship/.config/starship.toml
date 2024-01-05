@@ -49,17 +49,22 @@ symbol = '󰘬 '
 style = 'bold blue'
 
 
+[git_state]
+style = 'bold red'
+format = '[$state( $progress_current/$progress_total)]($style) '
+
+
 [git_status]
-format = '[$ahead_behind](bold blue)[$all_status](bold yellow) '
+format = '$conflicted[$ahead_behind](bold blue)$stashed$modified$staged$untracked'
 conflicted = '[~${count}](bold red) '
 ahead = '⇡${count} '
 behind = '⇣${count} '
-diverged = '⇕⇡${ahead_count}⇣${behind_count}  '
+diverged = '⇡${ahead_count}⇣${behind_count} '
 up_to_date = ''
-untracked = '?${count}'
+untracked = '[?${count}](bold yellow) '
 stashed = '[*${count}](bold blue) '
-modified = '!${count}'
-staged = '+${count}'
+modified = '[!${count}](bold yellow) '
+staged = '[+${count}](bold yellow) '
 renamed = ''
 deleted = ''
 
