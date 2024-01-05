@@ -54,6 +54,12 @@ style = 'bold red'
 format = '[$state( $progress_current/$progress_total)]($style) '
 
 
+[git_commit]
+format = '[󰜘 $hash$tag]($style) '
+style = 'bold blue'
+tag_symbol = ' 󰓹 '
+
+
 [git_status]
 format = '$conflicted[$ahead_behind](bold blue)$stashed$modified$staged$untracked'
 conflicted = '[~${count}](bold red) '
