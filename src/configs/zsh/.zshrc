@@ -1,25 +1,17 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
-# Powerlevel10k
-powerlevel10k_prefix="$(brew --prefix 2> /dev/null)"
-if [ -f "${powerlevel10k_prefix}/opt/powerlevel10k/powerlevel10k.zsh-theme" ]; then
-  # shellcheck disable=SC1091
-  source "${powerlevel10k_prefix}/opt/powerlevel10k/powerlevel10k.zsh-theme"
-fi
-if [ -f "$HOME/.zsh/p10k.zsh" ]; then
-  # shellcheck disable=SC1094
-  source "$HOME/.zsh/p10k.zsh"
-fi
+# starship
+eval "$(starship init zsh)"
+
+# Package managers
+eval "$(sheldon source)"
 
 # 1password GitHub CLI Plugin
 # https://developer.1password.com/docs/cli/shell-plugins/github/#step-2-configure-your-default-credentials
 #
 # shellcheck source=/dev/null
 source "$HOME/.config/op/plugins.sh"
-
-# Package managers
-source "$HOME/.zsh/antigen.zsh"
 
 # Config
 source "$HOME/.zsh/config.zsh"

@@ -497,11 +497,11 @@
 			<key>Name</key>
 			<string>🧙🏿‍♂️zsh</string>
 			<key>Non Ascii Font</key>
-			<string>MesloLGSNFM-Regular 14</string>
+			<string>HackNFM-Regular 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>MesloLGSNFM-Regular 14</string>
+			<string>Monaco 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Open Password Manager Automatically</key>
@@ -1003,11 +1003,11 @@
 			<key>Name</key>
 			<string>🥒 tmux</string>
 			<key>Non Ascii Font</key>
-			<string>MesloLGSNFM-Regular 14</string>
+			<string>HackNFM-Regular 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>MesloLGSNFM-Regular 14</string>
+			<string>Monaco 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Open Password Manager Automatically</key>

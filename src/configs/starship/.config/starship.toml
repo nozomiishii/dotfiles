@@ -1,0 +1,88 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# nerdfonts icons
+# use nf-md as you can possible
+# @see https://www.nerdfonts.com/cheat-sheet
+
+
+add_newline = false
+
+
+[aws]
+format = '[$symbol($profile)(\($region\))(\[$duration\])]($style) '
+symbol = '󰸏 '
+
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[✗](bold red)'
+
+
+[cmd_duration]
+format = '[󱎫 $duration]($style) '
+show_notifications = true
+
+
+[directory]
+format = '[󰝰 $path]($style)[$read_only]($read_only_style) '
+
+
+[direnv]
+disabled = false
+
+
+[docker_context]
+format = '[$symbol$context]($style) '
+symbol = '󰡨 '
+
+
+[gcloud]
+format = '[$symbol$account(@$domain)(\($region\))]($style) '
+symbol = ' '
+style = 'bold black'
+
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+symbol = '󰘬 '
+style = 'bold blue'
+
+
+[git_status]
+format = '[$ahead_behind](bold blue)[$all_status](bold yellow) '
+conflicted = '[~${count}](bold red) '
+ahead = '⇡${count} '
+behind = '⇣${count} '
+diverged = '⇕⇡${ahead_count}⇣${behind_count} '
+up_to_date = ''
+untracked = '?${count}'
+stashed = '[*${count}](bold blue) '
+modified = '!${count}'
+staged = '+${count}'
+renamed = ''
+deleted = ''
+
+
+[nodejs]
+format = '[$symbol($version)]($style) '
+symbol = '󰎙 '
+
+
+[package]
+disabled = true
+
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
+symbol = '󰌠 '
+
+
+[rust]
+format = '[$symbol($version)]($style) '
+symbol = '󱘗 '
+
+
+[terraform]
+format = '[$symbol$workspace]($style) '
+symbol = '󱁢 '

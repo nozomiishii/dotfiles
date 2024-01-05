@@ -1,5 +1,7 @@
 # https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/last-working-dir/last-working-dir.plugin.zsh
 
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
+
 # Flag indicating if we've previously jumped to last directory
 typeset -g ZSH_LAST_WORKING_DIRECTORY
 

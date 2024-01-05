@@ -1,9 +1,16 @@
 cask_args appdir: "/Applications"
 
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/services"
+# ----------------------------------------------------------------
+# Prompt
+# ----------------------------------------------------------------
+# Cross-shell prompt for astronauts https://starship.rs
+brew "starship"
+
+# Developer targeted fonts with a high number of glyphs https://github.com/ryanoasis/nerd-fonts
+cask "homebrew/cask-fonts/font-hack-nerd-font"
+
+# Fast, configurable, shell plugin manager https://sheldon.cli.rs
+brew "sheldon"
 
 # ----------------------------------------------------------------
 # Shell Development Environments
@@ -74,10 +81,6 @@ brew "postgresql@14"
 # Protocol buffers (Google's data interchange format) https://github.com/protocolbuffers/protobuf/
 brew "protobuf"
 
-# A Zsh Theme https://github.com/romkatv/powerlevel10k
-tap "romkatv/powerlevel10k"
-brew "powerlevel10k"
-
 # Persistent key-value database, with built-in net interface https://redis.io/
 brew "redis"
 
@@ -119,9 +122,6 @@ cask "fig"
 
 # Collaborative interface design tool. https://www.figma.com
 cask "figma"
-
-# font-meslo-lg-nerd-font https://github.com/ryanoasis/nerd-fonts
-cask "font-meslo-lg-nerd-font"
 
 # GIT client　https://fork.dev/
 cask "fork"
