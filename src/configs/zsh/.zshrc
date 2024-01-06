@@ -7,12 +7,6 @@ eval "$(starship init zsh)"
 # Package managers
 eval "$(sheldon source)"
 
-# 1password GitHub CLI Plugin
-# https://developer.1password.com/docs/cli/shell-plugins/github/#step-2-configure-your-default-credentials
-#
-# shellcheck source=/dev/null
-source "$HOME/.config/op/plugins.sh"
-
 # Config
 source "$HOME/.zsh/config.zsh"
 

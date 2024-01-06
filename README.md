@@ -277,7 +277,11 @@ Finder Sidebar
 ### 😼 SSH & Git
 
 - [1Password for SSH & Git](https://developer.1password.com/docs/ssh/)
-- [Use 1Password to securely authenticate the GitHub CLI](https://developer.1password.com/docs/cli/shell-plugins/github/#step-2-configure-your-default-credentials)
+
+- ## [Run gh auth login](https://cli.github.com/manual/)
+
+- When gh and 1password plugin are used together, fig auto complilte is not available.
+  ~- [Use 1Password to securely authenticate the GitHub CLI](https://developer.1password.com/docs/cli/shell-plugins/github/#step-2-configure-your-default-credentials)~
 
 ### 🦄 Clone repositories
 
