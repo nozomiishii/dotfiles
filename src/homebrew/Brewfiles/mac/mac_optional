@@ -41,7 +41,6 @@ if OS.mac?
 
   # Desktop virtualization software https://www.parallels.com/products/desktop/
   cask "parallels"
-  cask "parallels-toolbox"
 
   # VPN client focusing on security https://protonvpn.com/
   cask "protonvpn"

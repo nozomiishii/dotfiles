@@ -111,9 +111,6 @@ cask "1password-cli"
 # Web browser focusing on privacy https://brave.com/
 cask "brave-browser"
 
-# Trains AIs to understand and translate texts. https://www.deepl.com
-cask "deepl"
-
 # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
 cask "docker"
 
