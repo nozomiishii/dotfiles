@@ -4,17 +4,16 @@
 # starship
 eval "$(starship init zsh)"
 
-# Package managers
-eval "$(sheldon source)"
+# Initialize zsh's auto-completion system
+autoload -Uz compinit
+zmodload -i zsh/complist
+compinit
 
 # Config
 source "$HOME/.zsh/config.zsh"
 
 # Aliases
-source "$HOME/.zsh/alias.zsh"
-
-# Last working dir
-source "$HOME/.zsh/last-working-dir.zsh"
+source "$HOME/.zsh/alias/index.zsh"
 
 # Functions
 source "$HOME/.zsh/functions.zsh"

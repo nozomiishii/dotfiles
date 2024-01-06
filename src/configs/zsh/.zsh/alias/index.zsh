@@ -21,7 +21,6 @@ fi
 # ----------------------------------------------------------------
 alias brewi="./setup/homebrew.zsh"
 alias brewclean="brew bundle cleanup --verbose --file "$HOME/dotfiles/Brewfiles/macos/Brewfile" --force && brew cleanup && brew upgrade"
-alias zclean="zinit self-update && zinit update && zinit delete --clean"
 alias dotclean="brewclean && zclean"
 alias play="chmod +x ./playground.sh && ./playground.sh"
 
@@ -59,16 +58,10 @@ fi
 # ----------------------------------------------------------------
 # git
 # ----------------------------------------------------------------
-alias grmb="git branch --merged|egrep -v '\*|master|main|dev|develop|development|stag|staging|prod|production'|xargs git branch -d && git fetch --prune"
-alias deploy="git push origin prod && git checkout main"
+source "$HOME/.zsh/alias/git.zsh"
 alias ghb="gh browse"
 alias ghp="gh pr view --web"
-alias devprod="git checkout stag && git pull origin main && git push --force-with-lease origin stag && git checkout prod && git pull origin stag && git push --force-with-lease origin prod && git checkout main"
-alias devstag="git checkout stag && git pull origin main && git push --force-with-lease origin stag"
-alias stagprod="git checkout prod && git pull origin stag && git push --force-with-lease origin prod && git checkout main"
-alias gsmp="git submodule foreach git pull"
-alias gil="gh issue list -a nozomiishii"
-alias gilw="gh issue list -a nozomiishii -w"
+alias grmb="git branch --merged|egrep -v '\*|master|main|dev|develop|development|stag|staging|prod|production'|xargs git branch -d && git fetch --prune"
 
 # ----------------------------------------------------------------
 # npm
