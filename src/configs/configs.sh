@@ -40,6 +40,8 @@ duti -s com.microsoft.VSCode json all
 duti -s com.microsoft.VSCode css all
 duti -s com.microsoft.VSCode markdown all
 duti -s com.microsoft.VSCode sh all
+duti -s com.microsoft.VSCode js all
+duti -s com.microsoft.VSCode ts all
 
 # ----------------------------------------------------------------
 # Automator
