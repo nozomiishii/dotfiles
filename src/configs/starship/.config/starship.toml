@@ -61,7 +61,7 @@ tag_symbol = ' 󰓹 '
 
 
 [git_status]
-format = '$conflicted[$ahead_behind](bold blue)$stashed$modified$staged$untracked'
+format = '$conflicted[$ahead_behind](bold blue)$stashed$staged$deleted$renamed$modified$untracked'
 conflicted = '[~${count}](bold red) '
 ahead = '⇡${count} '
 behind = '⇣${count} '
@@ -71,8 +71,8 @@ untracked = '[?${count}](bold yellow) '
 stashed = '[*${count}](bold blue) '
 modified = '[!${count}](bold yellow) '
 staged = '[+${count}](bold yellow) '
-renamed = ''
-deleted = ''
+renamed = '[»${count}](bold yellow) '
+deleted = '[-${count}](bold yellow) '
 
 
 [nodejs]
