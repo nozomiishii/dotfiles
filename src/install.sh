@@ -222,6 +222,24 @@ sync_with_drive() {
   source "$install_dir/scripts/drive.sh"
 }
 
+open_config_apps() {
+  if [ "$CI" = "true" ]; then
+    echo "Running in CI environment - skipping app opening"
+    return
+  fi
+
+  echo "👨🏻‍🚀 Open the apps that needs to be configured"
+  open -b com.apple.systempreferences
+  open "/Applications/Google Drive.app"
+  open "/Applications/Google Chrome.app"
+  open "/Applications/Raycast.app"
+  open "/Applications/1Password.app"
+  open "/Applications/Karabiner-Elements.app"
+  open /users
+  open https://github.com/nozomiishii/dotfiles
+  echo "👨🏻‍🚀 Please refer to github to set up the launched application"
+}
+
 install() {
   cd "$HOME"
 
@@ -271,17 +289,7 @@ EOF
   setup_macos
   setup_configs
   setup_toolchains
-
-  echo "👨🏻‍🚀 Open the apps that needs to be configured"
-  open -b com.apple.systempreferences
-  open "/Applications/Google Drive.app"
-  open "/Applications/Google Chrome.app"
-  open "/Applications/Raycast.app"
-  open "/Applications/1Password.app"
-  open "/Applications/Karabiner-Elements.app"
-  open /users
-  open https://github.com/nozomiishii/dotfiles
-  echo "👨🏻‍🚀 Please refer to github to set up the launched application"
+  open_config_apps
 
   # Turn display off after: 15 mins
   sudo pmset -c displaysleep 15
