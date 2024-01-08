@@ -1,44 +1,58 @@
 [
-	{
-		"name": "dotfiles",
-		"rootPath": "/Users/nozomiishii/dotfiles",
-		"paths": [],
-		"tags": [],
-		"enabled": true
-	},
-	{
-		"name": "archives",
-		"rootPath": "/Users/nozomiishii/Code/nozomiishii/archives",
-		"paths": [],
-		"tags": [],
-		"enabled": true
-	},
-	{
-		"name": "configs",
-		"rootPath": "/Users/nozomiishii/Code/nozomiishii/configs",
-		"paths": [],
-		"tags": [],
-		"enabled": true
-	},
-	{
-		"name": "dev",
-		"rootPath": "/Users/nozomiishii/Code/nozomiishii/dev",
-		"paths": [],
-		"tags": [],
-		"enabled": true
-	},
-	{
-		"name": "nozomiishii",
-		"rootPath": "/Users/nozomiishii/Code/nozomiishii/nozomiishii",
-		"paths": [],
-		"tags": [],
-		"enabled": true
-	},
-	{
-		"name": "renovate",
-		"rootPath": "/Users/nozomiishii/Code/nozomiishii/renovate",
-		"paths": [],
-		"tags": [],
-		"enabled": true
-	}
+  {
+    "name": "dotfiles",
+    "rootPath": "/Users/nozomiishii/dotfiles",
+    "paths": [],
+    "tags": ["nozomiishii"],
+    "enabled": true
+  },
+  {
+    "name": "archives",
+    "rootPath": "/Users/nozomiishii/Code/nozomiishii/archives",
+    "paths": [],
+    "tags": ["nozomiishii"],
+    "enabled": true
+  },
+  {
+    "name": "configs",
+    "rootPath": "/Users/nozomiishii/Code/nozomiishii/configs",
+    "paths": [],
+    "tags": ["nozomiishii"],
+    "enabled": true
+  },
+  {
+    "name": "dev",
+    "rootPath": "/Users/nozomiishii/Code/nozomiishii/dev",
+    "paths": [],
+    "tags": ["nozomiishii"],
+    "enabled": true
+  },
+  {
+    "name": "nozomiishii",
+    "rootPath": "/Users/nozomiishii/Code/nozomiishii/nozomiishii",
+    "paths": [],
+    "tags": ["nozomiishii"],
+    "enabled": true
+  },
+  {
+    "name": "renovate",
+    "rootPath": "/Users/nozomiishii/Code/nozomiishii/renovate",
+    "paths": [],
+    "tags": ["nozomiishii"],
+    "enabled": true
+  },
+  {
+    "name": "finswer-bank",
+    "rootPath": "/Users/nozomiishii/Code/Finswer/finswer-bank",
+    "paths": [],
+    "tags": ["work"],
+    "enabled": true
+  },
+  {
+    "name": "finswer-bank-front",
+    "rootPath": "/Users/nozomiishii/Code/Finswer/finswer-bank/frontend",
+    "paths": [],
+    "tags": ["work"],
+    "enabled": true
+  }
 ]
