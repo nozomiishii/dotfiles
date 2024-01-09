@@ -20,7 +20,7 @@ error_symbol = '[✗](bold red)'
 
 
 [cmd_duration]
-format = '[󱎫 $duration]($style) '
+format = '[$duration]($style) '
 show_notifications = true
 
 
