@@ -40,6 +40,7 @@ disabled = false
 [docker_context]
 format = '[$symbol$context]($style) '
 symbol = '󰡨 '
+style = 'bold black'
 
 
 [gcloud]
