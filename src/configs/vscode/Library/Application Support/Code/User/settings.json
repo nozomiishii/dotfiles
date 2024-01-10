@@ -19,6 +19,7 @@
   "editor.unicodeHighlight.allowedLocales": {
     "ja": true
   },
+  "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
   "editor.tokenColorCustomizations": {
     "textMateRules": []
