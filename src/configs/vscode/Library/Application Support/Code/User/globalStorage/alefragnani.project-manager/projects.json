@@ -28,6 +28,13 @@
     "enabled": true
   },
   {
+    "name": "home",
+    "rootPath": "/Users/nozomiishii/Code/nozomiishii/dev/apps/home",
+    "paths": [],
+    "tags": ["nozomiishii"],
+    "enabled": true
+  },
+  {
     "name": "nozomiishii",
     "rootPath": "/Users/nozomiishii/Code/nozomiishii/nozomiishii",
     "paths": [],
