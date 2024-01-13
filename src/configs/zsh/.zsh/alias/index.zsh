@@ -50,9 +50,9 @@ alias repo="cd $CODE_DIR"
 alias quit="exec $SHELL -l"
 alias zz="exec $SHELL"
 
-if command -v exa > /dev/null 2>&1; then
-  alias ls="exa"
-  alias ll="exa -laFh --git"
+if command -v eza > /dev/null 2>&1; then
+  alias ls="eza"
+  alias ll="eza -laFh --git"
 fi
 
 # ----------------------------------------------------------------
