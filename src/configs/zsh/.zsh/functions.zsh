@@ -44,6 +44,12 @@ gcr() {
 }
 
 nozo:n() {
+  if [ "$#" -eq 0 ]; then
+    echo "Error: No argument supplied. "
+    echo "Usage: nozo:n <project_name>"
+    return 1
+  fi
+
   npx -y create-next-app@latest --typescript --tailwind --no-eslint --app --src-dir --import-alias '@/*' --use-pnpm $1
 
   cd $1
