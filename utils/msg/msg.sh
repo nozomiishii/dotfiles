@@ -1,11 +1,17 @@
 #!/bin/bash
 
-# -C          : Prevent overwriting files with output redirection
-# -e          : Exit the script if any command returns a non-zero status
-# -u          : Exit the script if an undefined variable is used
-# -o pipefail : Change pipeline exit status to the last non-zero exit
-#               code in the pipeline, or zero if all commands succeed
-# -x          : (Optional) Enable command tracing for easier debugging
+# -C          : Prevent overwriting existing files when redirecting output.
+#               - Helps to avoid accidentally overwriting files when using
+#                 redirection operators like > or >> in the script.
+# -e          : Exit the script if any command returns a non-zero status.
+#               - Ensures the script stops on the first error encountered.
+# -u          : Exit the script if an undefined variable is used.
+#               - Prevents running commands with unintended variables.
+# -o pipefail : Change pipeline exit status to the last non-zero exit code
+#               in the pipeline, or zero if all commands succeed.
+#               - Ensures proper error handling in pipelines.
+# -x          : (Optional) Enable command tracing for easier debugging.
+#               - Uncomment this option to debug the script.
 set -Ceuo pipefail
 
 # Print a message with specified type
@@ -23,12 +29,12 @@ msg() {
   local bg_blue="\033[44m"
   local reset='\033[0m'
 
-  local message
-  local color
-  local prefix
-  local suffix
-  local newline_before
-  local newline_after
+  local message=""
+  local color="${white}"
+  local prefix=""
+  local suffix=""
+  local newline_before=""
+  local newline_after=""
 
   local is_stderr=0
 
