@@ -21,8 +21,8 @@ devDependencies:
     specifier: 0.6.0
     version: 0.6.0
   markdownlint-cli2:
-    specifier: 0.12.0
-    version: 0.12.0
+    specifier: 0.12.1
+    version: 0.12.1
 
 packages:
 
@@ -409,6 +409,10 @@ packages:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
 
+  /jsonc-parser@3.2.0:
+    resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
+    dev: true
+
   /linkify-it@4.0.1:
     resolution: {integrity: sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==}
     dependencies:
@@ -444,12 +448,12 @@ packages:
       uc.micro: 2.0.0
     dev: true
 
-  /markdownlint-cli2-formatter-default@0.0.4(markdownlint-cli2@0.12.0):
+  /markdownlint-cli2-formatter-default@0.0.4(markdownlint-cli2@0.12.1):
     resolution: {integrity: sha512-xm2rM0E+sWgjpPn1EesPXx5hIyrN2ddUnUwnbCsD/ONxYtw3PX6LydvdH6dciWAoFDpwzbHM1TO7uHfcMd6IYg==}
     peerDependencies:
       markdownlint-cli2: '>=0.0.4'
     dependencies:
-      markdownlint-cli2: 0.12.0
+      markdownlint-cli2: 0.12.1
     dev: true
 
   /markdownlint-cli2-formatter-default@0.0.4(markdownlint-cli2@0.8.1):
@@ -460,16 +464,16 @@ packages:
       markdownlint-cli2: 0.8.1
     dev: true
 
-  /markdownlint-cli2@0.12.0:
-    resolution: {integrity: sha512-5nddNaPY1WC7BE1mkF8fiEkRDW8XbODwqYBPL3eyvFh7tLk74no+P8JRbCjghF7ozahCW5pF0TZ3ZS30m9H1Eg==}
+  /markdownlint-cli2@0.12.1:
+    resolution: {integrity: sha512-RcK+l5FjJEyrU3REhrThiEUXNK89dLYNJCYbvOUKypxqIGfkcgpz8g08EKqhrmUbYfYoLC5nEYQy53NhJSEtfQ==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
       globby: 14.0.0
+      jsonc-parser: 3.2.0
       markdownlint: 0.33.0
-      markdownlint-cli2-formatter-default: 0.0.4(markdownlint-cli2@0.12.0)
+      markdownlint-cli2-formatter-default: 0.0.4(markdownlint-cli2@0.12.1)
       micromatch: 4.0.5
-      strip-json-comments: 5.0.1
       yaml: 2.3.4
     dev: true
 
@@ -715,11 +719,6 @@ packages:
 
   /strip-json-comments@5.0.0:
     resolution: {integrity: sha512-V1LGY4UUo0jgwC+ELQ2BNWfPa17TIuwBLg+j1AA/9RPzKINl1lhxVEu2r+ZTTO8aetIsUzE5Qj6LMSBkoGYKKw==}
-    engines: {node: '>=14.16'}
-    dev: true
-
-  /strip-json-comments@5.0.1:
-    resolution: {integrity: sha512-0fk9zBqO67Nq5M/m45qHCJxylV/DhBlIOVExqgOMiCCrzrhU6tCibRXNqE3jwJLftzE9SNuZtYbpzcO+i9FiKw==}
     engines: {node: '>=14.16'}
     dev: true
 
