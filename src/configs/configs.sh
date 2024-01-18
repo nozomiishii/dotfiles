@@ -34,6 +34,9 @@ if [ ! -e "/Applications/Visual Studio Code.app" ]; then
   msg --warning "- 🧝🏻‍♀️ VSCode not found. installing..."
   brew install visual-studio-code
 fi
+
+# Example of how to retrieve the bundle identifier
+# osascript -e 'id of app "VLC"'
 brew install duti
 duti -s com.microsoft.VSCode yaml all
 duti -s com.microsoft.VSCode json all
@@ -42,6 +45,7 @@ duti -s com.microsoft.VSCode markdown all
 duti -s com.microsoft.VSCode sh all
 duti -s com.microsoft.VSCode js all
 duti -s com.microsoft.VSCode ts all
+duti -s org.videolan.vlc mp4 all
 
 # ----------------------------------------------------------------
 # Automator
