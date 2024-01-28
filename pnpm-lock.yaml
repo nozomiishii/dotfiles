@@ -6,14 +6,14 @@ settings:
 
 devDependencies:
   '@commitlint/config-conventional':
-    specifier: 18.4.4
-    version: 18.4.4
+    specifier: 18.5.0
+    version: 18.5.0
   '@evilmartians/lefthook':
-    specifier: 1.5.7
-    version: 1.5.7
+    specifier: 1.6.1
+    version: 1.6.1
   '@nozomiishii/lefthook-config':
     specifier: 0.2.0
-    version: 0.2.0(@evilmartians/lefthook@1.5.7)
+    version: 0.2.0(@evilmartians/lefthook@1.6.1)
   '@nozomiishii/markdownlint-cli2-config':
     specifier: 0.3.0
     version: 0.3.0
@@ -26,15 +26,15 @@ devDependencies:
 
 packages:
 
-  /@commitlint/config-conventional@18.4.4:
-    resolution: {integrity: sha512-Bz3sPQSboBN+Et/KyZrR+OJ3z9PrHDw7Bls0/hv94PmuHBtMq1dCGxS9XzTGzxeMNlytCC4kxF083tbhPljl3Q==}
+  /@commitlint/config-conventional@18.5.0:
+    resolution: {integrity: sha512-XGmU4u3Z7bCn0H0nTEG9LUn6hMDUIPP4P6dun7PKFhtnt/wwiKAqmPj+QRmFiqWjkOWcmrh7w7xRiDL32cWS5g==}
     engines: {node: '>=v18'}
     dependencies:
       conventional-changelog-conventionalcommits: 7.0.2
     dev: true
 
-  /@evilmartians/lefthook@1.5.7:
-    resolution: {integrity: sha512-rUf8fcHHPS4XX+2fEcVaYWrt30n0d+0EjeYcvOFFNQx7lgZr8FtwEZBpzUBx/1ysa3saqHmgyHoQMTd6FKtOGg==}
+  /@evilmartians/lefthook@1.6.1:
+    resolution: {integrity: sha512-4E35gOuECaf/+DaA0m1Q1U3BnaQclAUgK2UOYPyQOU0mCnvbMIqNJFiq2ArYuECEUIkTtAjoIzs1xkNFqUaOLQ==}
     cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
@@ -62,13 +62,13 @@ packages:
       fastq: 1.16.0
     dev: true
 
-  /@nozomiishii/lefthook-config@0.2.0(@evilmartians/lefthook@1.5.7):
+  /@nozomiishii/lefthook-config@0.2.0(@evilmartians/lefthook@1.6.1):
     resolution: {integrity: sha512-a7d5ZnXQYuzrtT4azoOGYh/XUZ8M3mdqPL14rbGv1aK1WTonZ3JM/vL2cOMBp6ndwPFJYMjpUKferNExIvlxJg==}
     hasBin: true
     peerDependencies:
       '@evilmartians/lefthook': '>=1.4.0'
     dependencies:
-      '@evilmartians/lefthook': 1.5.7
+      '@evilmartians/lefthook': 1.6.1
     dev: true
 
   /@nozomiishii/markdownlint-cli2-config@0.3.0:
