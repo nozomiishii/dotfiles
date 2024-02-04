@@ -33,9 +33,6 @@ if OS.mac?
   # Tool for using an iPad as a second display https://www.duetdisplay.com/
   cask "duet"
 
-  # App that shows GitHub notifications on the desktop https://github.com/gitify-app/gitify
-  cask "gitify"
-
   # Automated organization https://www.noodlesoft.com/
   cask "hazel"
 
