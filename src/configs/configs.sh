@@ -68,7 +68,7 @@ setup_tmux
 # Xcode
 # ----------------------------------------------------------------
 setup_xcode() {
-  if [ ! -e "/Applications/Xcode.app" ]; then
+  if [ ! -e "/Applications/Xcode.app" ] || [ "${CI:-false}" = "true" ]; then
     echo "🧝🏻‍♀️ Xcode not found"
     echo "Xcode and NeoVim settings were skipped."
 
