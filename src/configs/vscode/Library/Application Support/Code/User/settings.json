@@ -126,7 +126,7 @@
     ".skhdrc": "shellscript",
     ".yabairc": "shellscript",
     ".tmux.conf": "shellscript",
-    ".actrc*": "properties",
+    ".actrc": "properties",
     ".tool-versions": "properties",
     ".ssh/config": "ssh-config",
     "*.ejs*": "html",
@@ -180,13 +180,13 @@
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format",
     "editor.codeActionsOnSave": {
-      "source.fixAll.shellcheck": true
+      "source.fixAll.shellcheck": "explicit"
     }
   },
   "[bats]": {
     "editor.defaultFormatter": "foxundermoon.shell-format",
     "editor.codeActionsOnSave": {
-      "source.fixAll.shellcheck": true
+      "source.fixAll.shellcheck": "explicit"
     }
   },
   "[ignore]": {
@@ -289,9 +289,9 @@
   // editor.codeActionsOnSave
   // ----------------------------------------------------------------
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": "always",
-    "source.fixAll.eslint": "always",
-    "source.fixAll.markdownlint": "always"
+    "source.addMissingImports": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.markdownlint": "explicit"
   },
 
   // ----------------------------------------------------------------
