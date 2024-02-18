@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@evilmartians/lefthook": "1.6.1",
-    "@nozomiishii/commitlint-config": "0.0.2",
+    "@nozomiishii/commitlint-config": "0.0.3",
     "@nozomiishii/lefthook-config": "0.2.1",
     "@nozomiishii/markdownlint-cli2-config": "0.3.1",
     "@nozomiishii/prettier-config": "0.6.1",
