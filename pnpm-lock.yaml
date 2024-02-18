@@ -9,8 +9,8 @@ devDependencies:
     specifier: 1.6.1
     version: 1.6.1
   '@nozomiishii/commitlint-config':
-    specifier: 0.0.2
-    version: 0.0.2(@types/node@20.11.19)(typescript@5.3.3)
+    specifier: 0.0.3
+    version: 0.0.3(@types/node@20.11.19)(typescript@5.3.3)
   '@nozomiishii/lefthook-config':
     specifier: 0.2.1
     version: 0.2.1(@evilmartians/lefthook@1.6.1)
@@ -242,8 +242,8 @@ packages:
       fastq: 1.17.1
     dev: true
 
-  /@nozomiishii/commitlint-config@0.0.2(@types/node@20.11.19)(typescript@5.3.3):
-    resolution: {integrity: sha512-M+OwKyM/wo1F1tq9/4RJsYV8Zae+y3Zf7FgVUuwJJaHS6kZ+2n4yut3KuTHuv34aDrCK7FrpvwwWvYrZhoa3UQ==}
+  /@nozomiishii/commitlint-config@0.0.3(@types/node@20.11.19)(typescript@5.3.3):
+    resolution: {integrity: sha512-3jzx6czYe8jCobZG/apRWijQUb5Yh1mIXww9XYfOltapBWLEovOsc+OtTa32ikLBd2QPwUTrn1IX3S/MycLVBg==}
     hasBin: true
     dependencies:
       '@commitlint/cli': 18.6.1(@types/node@20.11.19)(typescript@5.3.3)
