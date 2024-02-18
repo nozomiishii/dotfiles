@@ -127,6 +127,7 @@
     ".yabairc": "shellscript",
     ".tmux.conf": "shellscript",
     ".actrc": "properties",
+    ".actrc*": "properties",
     ".tool-versions": "properties",
     ".ssh/config": "ssh-config",
     "*.ejs*": "html",
