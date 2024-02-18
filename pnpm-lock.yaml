@@ -9,8 +9,8 @@ devDependencies:
     specifier: 1.6.1
     version: 1.6.1
   '@nozomiishii/commitlint-config':
-    specifier: 0.0.3
-    version: 0.0.3(@types/node@20.11.19)(typescript@5.3.3)
+    specifier: 0.0.4
+    version: 0.0.4(@types/node@20.11.19)(typescript@5.3.3)
   '@nozomiishii/lefthook-config':
     specifier: 0.2.1
     version: 0.2.1(@evilmartians/lefthook@1.6.1)
@@ -18,8 +18,8 @@ devDependencies:
     specifier: 0.3.1
     version: 0.3.1
   '@nozomiishii/prettier-config':
-    specifier: 0.6.1
-    version: 0.6.1
+    specifier: 0.6.2
+    version: 0.6.2
   markdownlint-cli2:
     specifier: 0.12.1
     version: 0.12.1
@@ -242,8 +242,8 @@ packages:
       fastq: 1.17.1
     dev: true
 
-  /@nozomiishii/commitlint-config@0.0.3(@types/node@20.11.19)(typescript@5.3.3):
-    resolution: {integrity: sha512-3jzx6czYe8jCobZG/apRWijQUb5Yh1mIXww9XYfOltapBWLEovOsc+OtTa32ikLBd2QPwUTrn1IX3S/MycLVBg==}
+  /@nozomiishii/commitlint-config@0.0.4(@types/node@20.11.19)(typescript@5.3.3):
+    resolution: {integrity: sha512-gWjD5VCFiZNSAiVU7TmfFlFwHJUOQvnQlpJ/xZlLm9eBGCRX3hjs95/mNeyopq+OmLk7wBWuvPFttiV6LNrbiA==}
     hasBin: true
     dependencies:
       '@commitlint/cli': 18.6.1(@types/node@20.11.19)(typescript@5.3.3)
@@ -270,8 +270,8 @@ packages:
       markdownlint-cli2: 0.12.1
     dev: true
 
-  /@nozomiishii/prettier-config@0.6.1:
-    resolution: {integrity: sha512-m0dqRCppkc2jyT+Lmtiv/94gMcoZ2aVodI+bvsLxKx2/qiisqjMqd8+YbMbaA6wbH+8PzVOn/HTPh9kWmSM7Qg==}
+  /@nozomiishii/prettier-config@0.6.2:
+    resolution: {integrity: sha512-RnpXSH/h8Xtgj3JwoAsjGK70lmElrVa865anE74DgY/mvm56QaBGPyVDSoD7DYYQUDuy8CFSkPh2pFK03vwm7g==}
     hasBin: true
     dependencies:
       prettier: 3.2.5
