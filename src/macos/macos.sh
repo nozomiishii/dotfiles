@@ -184,6 +184,9 @@ defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/$USER
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
+# Automatically empty bin after 30 days
+defaults write com.apple.finder "FXRemoveOldTrashItems" -bool "true"
+
 # ----------------------------------------------------------------
 # Mission Control
 # ----------------------------------------------------------------
