@@ -489,6 +489,11 @@
   "nxConsole.showNodeVersionOnStartup": false,
 
   // ----------------------------------------------------------------
+  // Github Copilot
+  // ----------------------------------------------------------------
+  "github.copilot.editor.enableAutoCompletions": false,
+
+  // ----------------------------------------------------------------
   // codeQL
   // ----------------------------------------------------------------
   "codeQL.telemetry.enableTelemetry": true,
