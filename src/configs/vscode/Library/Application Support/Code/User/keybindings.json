@@ -237,6 +237,30 @@
   },
 
   // ----------------------------------------------------------------
+  // Github Copilot
+  // ----------------------------------------------------------------
+  {
+    "key": "cmd+enter",
+    "command": "inlineChat.accept",
+    "when": "inlineChatFocused && inlineChatHasProvider && inlineChatVisible && !inlineChatEmpty"
+  },
+  {
+    "key": "enter",
+    "command": "-inlineChat.accept",
+    "when": "inlineChatFocused && inlineChatHasProvider && inlineChatVisible && !inlineChatEmpty"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "workbench.action.chat.acceptInput",
+    "when": "inChatInput && textInputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-workbench.action.chat.acceptInput",
+    "when": "inChatInput && textInputFocus"
+  },
+
+  // ----------------------------------------------------------------
   // User Snippets
   // ----------------------------------------------------------------
   {
