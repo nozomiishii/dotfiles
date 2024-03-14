@@ -111,11 +111,11 @@ cask "1password-cli"
 # Web browser focusing on privacy https://brave.com/
 cask "brave-browser"
 
+# CodeWhisperer for Command Line https://aws.amazon.com/codewhisperer/
+cask "codewhisperer"
+
 # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
 cask "docker"
-
-# Reimagine your terminal https://fig.io/
-cask "fig"
 
 # Collaborative interface design tool. https://www.figma.com
 cask "figma"
