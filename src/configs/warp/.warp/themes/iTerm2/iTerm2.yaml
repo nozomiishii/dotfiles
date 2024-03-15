@@ -1,0 +1,24 @@
+# https://docs.warp.dev/appearance/custom-themes
+accent: '#7ED321'
+background: '#121112'
+details: darker
+foreground: '#fcfcfa'
+terminal_colors:
+  bright:
+    black: '#555555'
+    blue: '#5555ff'
+    cyan: '#55ffff'
+    green: '#55ff55'
+    magenta: '#ff55ff'
+    red: '#ff5555'
+    white: '#ffffff'
+    yellow: '#ffff55'
+  normal:
+    black: '#121112'
+    blue: '#0000bb'
+    cyan: '#00bbbb'
+    green: '#00bb00'
+    magenta: '#bb00bb'
+    red: '#bb0000'
+    white: '#bbbbbb'
+    yellow: '#bbbb00'

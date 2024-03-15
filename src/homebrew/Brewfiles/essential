@@ -158,3 +158,6 @@ cask "tableplus"
 
 # Open-source code editor. https://code.visualstudio.com
 cask "visual-studio-code"
+
+# Rust-based terminal https://www.warp.dev/
+cask "warp"

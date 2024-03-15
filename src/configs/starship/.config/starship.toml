@@ -1,3 +1,5 @@
+# https://starship.rs/config/
+
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -20,8 +22,9 @@ symbol = ' '
 
 
 [character]
-success_symbol = '[󱞩](bold green)'
-error_symbol = '[✗](bold red)'
+# success_symbol = '[󱞩](bold green)'
+# error_symbol = '[✗](bold red)'
+disabled = true
 
 
 [cmd_duration]
