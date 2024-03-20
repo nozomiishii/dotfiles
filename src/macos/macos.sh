@@ -334,7 +334,9 @@ defaults write com.apple.iphonesimulator StartLastDeviceOnLaunch -int 0
 # ----------------------------------------------------------------
 # TouchID - Sudo
 # ----------------------------------------------------------------
-sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
+if [ "${CI}" != "true" ]; then
+  sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
+fi
 
 # ----------------------------------------------------------------
 # Killall
