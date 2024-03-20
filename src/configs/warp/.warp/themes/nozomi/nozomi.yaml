@@ -6,7 +6,19 @@ background: '#000000'
 details: darker
 foreground: '#fcfcfa'
 terminal_colors:
+  # Monokai Pro
   bright:
+    black: '#727072'
+    blue: '#ab9df2'
+    cyan: '#78dce8'
+    green: '#a9dc76'
+    magenta: '#f59762'
+    red: '#ff6188'
+    white: '#fcfcfa'
+    yellow: '#ffd866'
+
+  # iTerm2
+  normal:
     black: '#555555'
     blue: '#5555ff'
     cyan: '#55ffff'
@@ -15,12 +27,3 @@ terminal_colors:
     red: '#ff5555'
     white: '#ffffff'
     yellow: '#ffff55'
-  normal:
-    black: '#121112'
-    blue: '#5555ff'
-    cyan: '#00bbbb'
-    green: '#00bb00'
-    magenta: '#bb00bb'
-    red: '#bb0000'
-    white: '#bbbbbb'
-    yellow: '#bbbb00'
