@@ -69,6 +69,7 @@ alias grmb="git branch --merged|egrep -v '\*|master|main|dev|develop|development
 alias prisma="npx prisma"
 alias yul="yarn upgrade --latest"
 alias p='pnpm'
+alias pi='pnpm install'
 
 # ----------------------------------------------------------------
 # network
