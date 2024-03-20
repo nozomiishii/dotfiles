@@ -343,6 +343,11 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/s
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 
 # ----------------------------------------------------------------
+# TouchID - Sudo
+# ----------------------------------------------------------------
+sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
+
+# ----------------------------------------------------------------
 # Killall
 # ----------------------------------------------------------------
 echo "- 👼 Killall..."
