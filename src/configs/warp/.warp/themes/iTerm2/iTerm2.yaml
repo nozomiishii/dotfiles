@@ -1,6 +1,6 @@
 # https://docs.warp.dev/appearance/custom-themes
 accent: '#7ED321'
-background: '#121112'
+background: '#000000'
 details: darker
 foreground: '#fcfcfa'
 terminal_colors:
