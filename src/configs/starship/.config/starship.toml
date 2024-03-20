@@ -22,6 +22,7 @@ symbol = ' '
 
 
 [character]
+# Turned off to use Warp terminal's features
 # success_symbol = '[󱞩](bold green)'
 # error_symbol = '[✗](bold red)'
 disabled = true
@@ -29,7 +30,8 @@ disabled = true
 
 [cmd_duration]
 format = '[$duration]($style) '
-show_notifications = true
+# Turned off to use Warp terminal's features
+# show_notifications = true
 
 
 [directory]
