@@ -332,17 +332,6 @@ echo '- 📱 Simulator'
 defaults write com.apple.iphonesimulator StartLastDeviceOnLaunch -int 0
 
 # ----------------------------------------------------------------
-# iTerm2
-# ----------------------------------------------------------------
-echo "- 🎮 iTerm2"
-# General > Preferences > check "Load preferences from a custom folder or URL"
-defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-# Restore from the backup
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/src/configs/_iterm2"
-# General > Preferences > Save changes: when quits
-defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
-
-# ----------------------------------------------------------------
 # TouchID - Sudo
 # ----------------------------------------------------------------
 sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
