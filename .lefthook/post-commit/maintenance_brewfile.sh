@@ -62,8 +62,8 @@ maintenance_brewfile() {
   remove_temp_files $brewfile_merged_path '/tmp/Brewfile_merged.lock.json'
 
   echo -e "- 🍺 Merging temporary Brewfile..."
-  local brewfiles_path="$HOME/dotfiles/src/homebrew/Brewfiles"
-  cat "$brewfiles_path/essential" "$brewfiles_path/optional" "$brewfiles_path/mac/mac_essential" "$brewfiles_path/mac/mac_optional" > $brewfile_merged_path
+  local brewfiles_path="$HOME/dotfiles/src/homebrew"
+  cat "$brewfiles_path/Brewfile" "$brewfiles_path/Brewfile.optional" > $brewfile_merged_path
 
   # Uninstall packages not listed in the merged Brewfile, with details on what is being removed
   echo -e "- 🍺 Performing Brewfile cleanup..."
