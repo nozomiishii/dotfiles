@@ -44,16 +44,16 @@ export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
 # main
 # ----------------------------------------------------------------
 homebrew() {
-  local brewfiles_path="$homebrew_dir/Brewfiles"
+  local brewfiles_path="$homebrew_dir"
   local brewfile_merged_path='/tmp/Brewfile_merged'
   remove_temp_files $brewfile_merged_path '/tmp/Brewfile_merged.lock.json'
 
   if "${setup_homebrew_full:-false}"; then
-    echo -e "- 🍺 Homebrew setup(MacOS: full)\n"
-    cat "$brewfiles_path/essential" "$brewfiles_path/optional" "$brewfiles_path/mac/mac_essential" "$brewfiles_path/mac/mac_optional" > $brewfile_merged_path
+    echo -e "- 🍺 Homebrew setup(full)\n"
+    cat "$brewfiles_path/Brewfile" "$brewfiles_path/Brewfile.optional" > $brewfile_merged_path
   else
-    echo -e "- 🍺 Homebrew setup(MacOS: minimum)\n"
-    cat "$brewfiles_path/essential" "$brewfiles_path/mac/mac_essential" > $brewfile_merged_path
+    echo -e "- 🍺 Homebrew setup(minimum)\n"
+    cat "$brewfiles_path/Brewfile" > $brewfile_merged_path
   fi
 
   brew bundle --verbose --file=$brewfile_merged_path
