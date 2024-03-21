@@ -478,7 +478,8 @@
   // ----------------------------------------------------------------
   // Playwright
   // ----------------------------------------------------------------
-  "playwright.reuseBrowser": false,
+  "playwright.reuseBrowser": true,
+  "playwright.showTrace": false,
 
   // ----------------------------------------------------------------
   // cSpell
@@ -526,8 +527,7 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.shellcheck": "explicit"
     }
-  },
-  "playwright.showTrace": true
+  }
 
   ///////////////////////////////////////////////////////////////////
 }
