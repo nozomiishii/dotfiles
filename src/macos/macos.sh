@@ -335,10 +335,26 @@ defaults write com.apple.iphonesimulator StartLastDeviceOnLaunch -int 0
 # TouchID - Sudo
 # ----------------------------------------------------------------
 echo '- 👆 TouchID'
-
-if [ "${CI}" != "true" ]; then
+if [ "${CI:-false}" = "false" ]; then
   sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
 fi
+
+# ----------------------------------------------------------------
+# Warp
+# ----------------------------------------------------------------
+# -bool flag is not working, so please use the following command without any flag:
+# defaults write dev.warp.Warp-Stable Autosuggestions false
+echo '- 🎮 Warp'
+
+defaults write dev.warp.Warp-Stable Autosuggestions false
+defaults write dev.warp.Warp-Stable CompletionsOpenWhileTyping true
+defaults write dev.warp.Warp-Stable FontName -string '"Hack Nerd Font Mono"'
+defaults write dev.warp.Warp-Stable FontSize -string "14.0"
+defaults write dev.warp.Warp-Stable HonorPS1 true
+defaults write dev.warp.Warp-Stable OverrideOpacity -int 85
+defaults write dev.warp.Warp-Stable TelemetryEnabled false
+defaults write dev.warp.Warp-Stable Theme -string '{"Custom":{"name":"Nozomiishii","path":"/Users/nozomiishii/.warp/themes/nozomiishii/nozomiishii.yaml"}}'
+defaults write dev.warp.Warp-Stable Notifications -string '{"mode":"Enabled","is_long_running_enabled":true,"long_running_threshold":{"secs":30,"nanos":0},"is_password_prompt_enabled":true}'
 
 # ----------------------------------------------------------------
 # Killall

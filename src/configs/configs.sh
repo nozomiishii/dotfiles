@@ -56,52 +56,43 @@ if [ ! -f "$HOME/Desktop/OpenWithVisualStudioCode.workflow" ]; then
 fi
 
 # ----------------------------------------------------------------
-# tmux
-# ----------------------------------------------------------------
-echo "- 🥒 tmux"
-setup_tmux() {
-  "$configs_dir/../../submodules/tpm/bin/install_plugins" || true
-}
-setup_tmux
-
-# ----------------------------------------------------------------
 # Xcode
 # ----------------------------------------------------------------
 setup_xcode() {
   if [ ! -e "/Applications/Xcode.app" ] || [ "${CI:-false}" = "true" ]; then
     echo "🧝🏻‍♀️ Xcode not found"
     echo "Xcode and NeoVim settings were skipped."
+    return
+  fi
 
-  else
-    echo "- 🍎 Xcode"
-    local xcode_dir="$HOME/Library/Developer/Xcode/UserData"
-    if [ ! -d "$xcode_dir" ]; then
-      sudo xcodebuild -license accept
-      sudo xcodebuild -runFirstLaunch
-      mkdir -p "$xcode_dir"
-      open "/Applications/XCode.app"
-    fi
+  echo "- 🍎 Xcode"
+  local xcode_dir="$HOME/Library/Developer/Xcode/UserData"
+  if [ ! -d "$xcode_dir" ]; then
+    sudo xcodebuild -license accept
+    sudo xcodebuild -runFirstLaunch
+    mkdir -p "$xcode_dir"
+    open "/Applications/XCode.app"
+  fi
 
-    mkdir_handling_broken_symlinks "$HOME"/Library/Developer/Xcode/UserData/KeyBindings
-    create_symlinks --source "$configs_dir/_xcode" --target "$xcode_dir"
+  mkdir_handling_broken_symlinks "$HOME"/Library/Developer/Xcode/UserData/KeyBindings
+  create_symlinks --source "$configs_dir/_xcode" --target "$xcode_dir"
 
-    # XCode required to install vim plug
-    echo '- 👾 NeoVim'
-    brew install neovim
-    # Turn key repear on
-    defaults write -g ApplePressAndHoldEnabled -bool false
+  # XCode required to install vim plug
+  echo '- 👾 NeoVim'
+  brew install neovim
+  # Turn key repear on
+  defaults write -g ApplePressAndHoldEnabled -bool false
 
-    # Plug Install
-    local plug_dir="$HOME/.local/share/nvim/site/autoload/plug.vim"
-    if [ ! -f "$plug_dir" ]; then
-      echo '👾: Setup vim-plug'
-      sh -c "curl -fLo $plug_dir --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-      echo 'Install Neovim Plugins'
-      python3 -m pip install --user --upgrade pynvim
-      pip3 install -U pip
-      pip3 install -U neovim
-      nvim --headless +PlugInstall +qall
-    fi
+  # Plug Install
+  local plug_dir="$HOME/.local/share/nvim/site/autoload/plug.vim"
+  if [ ! -f "$plug_dir" ]; then
+    echo '👾: Setup vim-plug'
+    sh -c "curl -fLo $plug_dir --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    echo 'Install Neovim Plugins'
+    python3 -m pip install --user --upgrade pynvim
+    pip3 install -U pip
+    pip3 install -U neovim
+    nvim --headless +PlugInstall +qall
   fi
 }
 setup_xcode

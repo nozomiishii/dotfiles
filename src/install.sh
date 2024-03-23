@@ -59,9 +59,7 @@ OPTIONS:
     -b,    --homebrew      🍺 Homebrew setup
     -bf,   --homebrew-full 🍺 Homebrew setup(full)
     -c,    --configs       🧝🏻‍♀️ Configs setup
-    -d,    --drive         🌎 Sync with google drive
     -h,    --help          💡 Print this usage
-    -k,    --sshkey        🔐 Generate ssh key
     -m,    --macos         💻 MacOS setup
     -r,    --repo          🦄 Clone repositories
     -t,    --toolchains    🌝 Toolchains setup
@@ -208,18 +206,6 @@ setup_toolchains() {
 setup_repositoris() {
   msg_title "🦄 Clone repositories"
   source "$install_dir/scripts/code.sh"
-}
-
-# Dependencis | Homebrew
-generate_sshkey() {
-  msg_title "🔐 Generate ssh key"
-  source "$install_dir/scripts/sshkey.sh"
-}
-
-# Dependencis | Homebrew, Mirror Google Drive files
-sync_with_drive() {
-  msg_title "🌎 Sync with google drive"
-  source "$install_dir/scripts/drive.sh"
 }
 
 open_config_apps() {
