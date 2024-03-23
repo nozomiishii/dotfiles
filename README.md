@@ -104,13 +104,6 @@ Wait about 3 hours(Go grab some food and take a nap 🍕😪)
   ⌘ + space Terminal
 ```
 
-<!-- Change shell to zsh
-
-```shell
-  chsh -s /bin/zsh
-  echo $SHELL
-``` -->
-
 ```shell
 curl -L https://nozomiishii.dev/dotfiles/install | bash
 ```
@@ -261,10 +254,6 @@ Finder Sidebar
 - Sign in
 - Import Settings from "~/dotfiles/src/configs/\_raycast/backup"
 
-### 🗿 fig
-
-- Setup
-
 ### 🐟 VSCode
 
 - User Icon > Setting sync > Login >  
@@ -276,12 +265,7 @@ Finder Sidebar
 
 ### 😼 SSH & Git
 
-- [1Password for SSH & Git](https://developer.1password.com/docs/ssh/)
-
-- ## [Run gh auth login](https://cli.github.com/manual/)
-
-- When gh and 1password plugin are used together, fig auto complilte is not available.
-  ~- [Use 1Password to securely authenticate the GitHub CLI](https://developer.1password.com/docs/cli/shell-plugins/github/#step-2-configure-your-default-credentials)~
+- [Run gh auth login](https://cli.github.com/manual/)
 
 ### 🦄 Clone repositories
 
@@ -396,10 +380,6 @@ Finder Sidebar
     Turn on
 
 - **⌨️ Keyboard**
-  <!-- 一旦ことえりを試してみる
-  - **Input Sources**
-    Delete "Kotoeri"
-    Add "google-japanese-ime" -->
 
   - Candidate window
     - Font size: 14
