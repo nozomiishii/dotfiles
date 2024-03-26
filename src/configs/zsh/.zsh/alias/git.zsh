@@ -4,7 +4,6 @@
 autoload -Uz is-at-least
 git_version=$(git --version | cut -d ' ' -f 3)
 
-
 #
 # Functions
 #
@@ -24,14 +23,14 @@ function git_current_branch() {
   ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2> /dev/null)
   local ret=$?
   if [[ $ret != 0 ]]; then
-    [[ $ret == 128 ]] && return  # no git repo.
+    [[ $ret == 128 ]] && return # no git repo.
     ref=$(__git_prompt_git rev-parse --short HEAD 2> /dev/null) || return
   fi
   echo ${ref#refs/heads/}
 }
 
 # Pretty log messages
-function _git_log_prettily(){
+function _git_log_prettily() {
   if ! [ -z $1 ]; then
     git log --pretty=$1
   fi
@@ -40,14 +39,14 @@ compdef _git _git_log_prettily=git-log
 
 # Warn if the current branch is a WIP
 function work_in_progress() {
-  if $(git log -n 1 2>/dev/null | grep -q -c "\-\-wip\-\-"); then
+  if $(git log -n 1 2> /dev/null | grep -q -c "\-\-wip\-\-"); then
     echo "WIP!!"
   fi
 }
 
 # Check if main exists and use instead of master
 function git_main_branch() {
-  command git rev-parse --git-dir &>/dev/null || return
+  command git rev-parse --git-dir &> /dev/null || return
   local branch
   for branch in main trunk; do
     if command git show-ref -q --verify refs/heads/$branch; then
@@ -126,7 +125,9 @@ function gdnolock() {
 }
 compdef _git gdnolock=git-diff
 
-function gdv() { git diff -w "$@" | view - }
+function gdv() {
+  git diff -w "$@" | view -
+}
 compdef _git gdv=git-diff
 
 alias gf='git fetch'
@@ -225,6 +226,8 @@ alias gmt='git mergetool --no-prompt'
 alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
 alias gmum='git merge upstream/$(git_main_branch)'
 alias gma='git merge --abort'
+# NOTE: customised alias
+alias gmm='git merge main'
 
 alias gp='git push'
 alias gpd='git push --dry-run'
