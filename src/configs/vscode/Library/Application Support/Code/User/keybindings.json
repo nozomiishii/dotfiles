@@ -259,7 +259,23 @@
     "command": "-workbench.action.chat.acceptInput",
     "when": "inChatInput && textInputFocus"
   },
-
+  // ----------------------------------------------------------------
+  // Bookmarks
+  // ----------------------------------------------------------------
+  {
+    "key": "alt+cmd+s",
+    "command": "-saveAll"
+  },
+  {
+    "key": "alt+cmd+k",
+    "command": "-bookmarks.toggle",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+s",
+    "command": "bookmarks.toggle",
+    "when": "editorTextFocus"
+  },
   // ----------------------------------------------------------------
   // User Snippets
   // ----------------------------------------------------------------
