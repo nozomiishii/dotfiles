@@ -226,8 +226,6 @@ alias gmt='git mergetool --no-prompt'
 alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
 alias gmum='git merge upstream/$(git_main_branch)'
 alias gma='git merge --abort'
-# NOTE: customised alias
-alias gmm='git merge main'
 
 alias gp='git push'
 alias gpd='git push --dry-run'
@@ -326,3 +324,14 @@ function grename() {
 }
 
 unset git_version
+
+# NOTE: custom workflow
+function gmm() {
+  gsta
+  gcm
+  ggl
+  gco -
+  gm main
+  gstaa stash@{0}
+  gstc
+}
