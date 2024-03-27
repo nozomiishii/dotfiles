@@ -88,16 +88,16 @@
   // Terminal
   // ----------------------------------------------------------------
   {
-    "key": "alt+cmd+j",
+    "key": "shift+cmd+j",
     "command": "workbench.action.terminal.openNativeConsole"
   },
   {
-    "key": "shift+cmd+j",
+    "key": "alt+cmd+j",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
   {
-    "key": "shift+cmd+j",
+    "key": "alt+cmd+j",
     "command": "workbench.action.terminal.new",
     "when": "!terminal.active"
   },
