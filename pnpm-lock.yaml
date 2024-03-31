@@ -10,7 +10,7 @@ devDependencies:
     version: 1.6.7
   '@nozomiishii/commitlint-config':
     specifier: 0.0.4
-    version: 0.0.4(@types/node@20.11.30)(typescript@5.4.3)
+    version: 0.0.4(@types/node@20.12.2)(typescript@5.4.3)
   '@nozomiishii/lefthook-config':
     specifier: 0.2.1
     version: 0.2.1(@evilmartians/lefthook@1.6.7)
@@ -49,14 +49,14 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /@commitlint/cli@18.6.1(@types/node@20.11.30)(typescript@5.4.3):
+  /@commitlint/cli@18.6.1(@types/node@20.12.2)(typescript@5.4.3):
     resolution: {integrity: sha512-5IDE0a+lWGdkOvKH892HHAZgbAjcj1mT5QrfA/SVbLJV/BbBMGyKN0W5mhgjekPJJwEQdVNvhl9PwUacY58Usw==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
       '@commitlint/format': 18.6.1
       '@commitlint/lint': 18.6.1
-      '@commitlint/load': 18.6.1(@types/node@20.11.30)(typescript@5.4.3)
+      '@commitlint/load': 18.6.1(@types/node@20.12.2)(typescript@5.4.3)
       '@commitlint/read': 18.6.1
       '@commitlint/types': 18.6.1
       execa: 5.1.1
@@ -128,7 +128,7 @@ packages:
       '@commitlint/types': 18.6.1
     dev: true
 
-  /@commitlint/load@18.6.1(@types/node@20.11.30)(typescript@5.4.3):
+  /@commitlint/load@18.6.1(@types/node@20.12.2)(typescript@5.4.3):
     resolution: {integrity: sha512-p26x8734tSXUHoAw0ERIiHyW4RaI4Bj99D8YgUlVV9SedLf8hlWAfyIFhHRIhfPngLlCe0QYOdRKYFt8gy56TA==}
     engines: {node: '>=v18'}
     dependencies:
@@ -138,7 +138,7 @@ packages:
       '@commitlint/types': 18.6.1
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.4.3)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.11.30)(cosmiconfig@8.3.6)(typescript@5.4.3)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.12.2)(cosmiconfig@8.3.6)(typescript@5.4.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -243,11 +243,11 @@ packages:
       fastq: 1.17.1
     dev: true
 
-  /@nozomiishii/commitlint-config@0.0.4(@types/node@20.11.30)(typescript@5.4.3):
+  /@nozomiishii/commitlint-config@0.0.4(@types/node@20.12.2)(typescript@5.4.3):
     resolution: {integrity: sha512-gWjD5VCFiZNSAiVU7TmfFlFwHJUOQvnQlpJ/xZlLm9eBGCRX3hjs95/mNeyopq+OmLk7wBWuvPFttiV6LNrbiA==}
     hasBin: true
     dependencies:
-      '@commitlint/cli': 18.6.1(@types/node@20.11.30)(typescript@5.4.3)
+      '@commitlint/cli': 18.6.1(@types/node@20.12.2)(typescript@5.4.3)
       '@commitlint/config-conventional': 18.6.2
       '@commitlint/types': 18.6.1
     transitivePeerDependencies:
@@ -293,8 +293,8 @@ packages:
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
     dev: true
 
-  /@types/node@20.11.30:
-    resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
+  /@types/node@20.12.2:
+    resolution: {integrity: sha512-zQ0NYO87hyN6Xrclcqp7f8ZbXNbRfoGWNcMvHTPQp9UUrwI0mI7XBz+cu7/W6/VClYo2g63B0cjull/srU7LgQ==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -457,7 +457,7 @@ packages:
       split2: 4.2.0
     dev: true
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.11.30)(cosmiconfig@8.3.6)(typescript@5.4.3):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.12.2)(cosmiconfig@8.3.6)(typescript@5.4.3):
     resolution: {integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==}
     engines: {node: '>=v16'}
     peerDependencies:
@@ -465,7 +465,7 @@ packages:
       cosmiconfig: '>=8.2'
       typescript: '>=4'
     dependencies:
-      '@types/node': 20.11.30
+      '@types/node': 20.12.2
       cosmiconfig: 8.3.6(typescript@5.4.3)
       jiti: 1.21.0
       typescript: 5.4.3
