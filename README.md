@@ -332,8 +332,8 @@ Finder Sidebar
 ### 🫐 BLEUnlock
 
 - Device: Select your device
-- Unlock RSSI: -60xxxƒdBm
-- Lock RSSI: -70dBm
+- Unlock RSSI: -60dBm
+- Lock RSSI: -75dBm
 - Check 'Pause "Now Playing" while Locked'
 - Check 'Use Screensaver to Lock'
 - Check 'Launch at Login'
