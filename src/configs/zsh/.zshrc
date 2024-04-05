@@ -62,6 +62,13 @@ if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
+# pnpm
+export PNPM_HOME="/Users/nozomiishii/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 # Warp
 # Automatically "Warpify" subshells
 # shellcheck disable=SC2016
