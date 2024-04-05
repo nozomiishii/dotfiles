@@ -6,14 +6,14 @@ settings:
 
 devDependencies:
   '@evilmartians/lefthook':
-    specifier: 1.6.7
-    version: 1.6.7
+    specifier: 1.6.8
+    version: 1.6.8
   '@nozomiishii/commitlint-config':
     specifier: 0.0.4
     version: 0.0.4(@types/node@20.12.2)(typescript@5.4.3)
   '@nozomiishii/lefthook-config':
     specifier: 0.2.1
-    version: 0.2.1(@evilmartians/lefthook@1.6.7)
+    version: 0.2.1(@evilmartians/lefthook@1.6.8)
   '@nozomiishii/markdownlint-cli2-config':
     specifier: 0.3.1
     version: 0.3.1
@@ -214,8 +214,8 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@evilmartians/lefthook@1.6.7:
-    resolution: {integrity: sha512-nRCNWUl4xxkIwzChkARezEGuIcm6l2aywDPR3C4f8bGTzDJhVtEPcByqrOqPJ9emS7MnYz9WKI/NFdIsph/apw==}
+  /@evilmartians/lefthook@1.6.8:
+    resolution: {integrity: sha512-jN4vjfVbfVGx9Al+nWwBM6VggIjfTyfaf27HSsAec/odv0SSq6tTSJdW2tK4M+6jnwizXtFTw2DkMqPaXXap8g==}
     cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
@@ -255,13 +255,13 @@ packages:
       - typescript
     dev: true
 
-  /@nozomiishii/lefthook-config@0.2.1(@evilmartians/lefthook@1.6.7):
+  /@nozomiishii/lefthook-config@0.2.1(@evilmartians/lefthook@1.6.8):
     resolution: {integrity: sha512-Qw9o69ee1ZLqtpUh9eMRSPTlwAXUUI4dlDFBxw6qi2OVN33bVBBFaj/Ro6vq9LN8i34IlCEMt2jApbS/4G0EeQ==}
     hasBin: true
     peerDependencies:
       '@evilmartians/lefthook': '>=1.4.0'
     dependencies:
-      '@evilmartians/lefthook': 1.6.7
+      '@evilmartians/lefthook': 1.6.8
     dev: true
 
   /@nozomiishii/markdownlint-cli2-config@0.3.1:
