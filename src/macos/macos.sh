@@ -352,6 +352,7 @@ defaults write dev.warp.Warp-Stable FontName -string '"Hack Nerd Font Mono"'
 defaults write dev.warp.Warp-Stable FontSize -string "14.0"
 defaults write dev.warp.Warp-Stable HonorPS1 true
 defaults write dev.warp.Warp-Stable OverrideOpacity -int 85
+defaults write dev.warp.Warp-Stable ShowWarningBeforeQuitting false
 defaults write dev.warp.Warp-Stable TelemetryEnabled false
 defaults write dev.warp.Warp-Stable Theme -string '{"Custom":{"name":"Nozomiishii","path":"/Users/nozomiishii/.warp/themes/nozomiishii/nozomiishii.yaml"}}'
 defaults write dev.warp.Warp-Stable Notifications -string '{"mode":"Enabled","is_long_running_enabled":true,"long_running_threshold":{"secs":30,"nanos":0},"is_password_prompt_enabled":true}'
