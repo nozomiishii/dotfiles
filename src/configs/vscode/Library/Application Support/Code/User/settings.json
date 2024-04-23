@@ -407,6 +407,12 @@
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.associations.files": [
     {
+      "icon": "tsconfig",
+      "extensions": ["tsconfig.nextjs.json"],
+      "filename": true,
+      "format": "svg"
+    },
+    {
       "icon": "nest-controller",
       "extensions": ["controller.ts"],
       "format": "svg"
