@@ -526,6 +526,12 @@
   "github.copilot.editor.enableAutoCompletions": false,
 
   // ----------------------------------------------------------------
+  // Total TypeScript
+  // ----------------------------------------------------------------
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": false,
+
+  // ----------------------------------------------------------------
   // codeQL
   // ----------------------------------------------------------------
   "codeQL.telemetry.enableTelemetry": true,
