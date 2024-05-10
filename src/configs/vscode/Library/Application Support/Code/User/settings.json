@@ -183,6 +183,9 @@
     "vscode-kubernetes.minikube-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
     "vscode-kubernetes.kubectl-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/kubectl/kubectl"
   },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
 
   // ----------------------------------------------------------------
   // Terraform
