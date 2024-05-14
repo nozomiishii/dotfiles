@@ -7,6 +7,13 @@
     "enabled": true
   },
   {
+    "name": "lab",
+    "rootPath": "/Users/nozomiishii/Code/nozomiishii/lab",
+    "paths": [],
+    "tags": ["nozomiishii"],
+    "enabled": true
+  },
+  {
     "name": "archives",
     "rootPath": "/Users/nozomiishii/Code/nozomiishii/archives",
     "paths": [],
@@ -48,6 +55,22 @@
     "tags": ["nozomiishii"],
     "enabled": true
   },
+
+  {
+    "name": "e-dash-common-id",
+    "rootPath": "/Users/nozomiishii/Code/edash-product/e-dash-common-id",
+    "paths": [],
+    "tags": ["work"],
+    "enabled": true
+  },
+  {
+    "name": "e-dash-app",
+    "rootPath": "/Users/nozomiishii/Code/edash-product/e-dash-app",
+    "paths": [],
+    "tags": ["work"],
+    "enabled": true
+  },
+
   {
     "name": "finswer-bank",
     "rootPath": "/Users/nozomiishii/Code/Finswer/finswer-bank",
