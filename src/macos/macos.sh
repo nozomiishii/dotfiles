@@ -289,9 +289,9 @@ defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3
 # Disable swipe between pages
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
 
-# Look up & data detectors
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad -int 2
+# Disable Look up & detectors
+defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool false
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 0
 
 # ----------------------------------------------------------------
 # Speech
