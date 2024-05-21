@@ -9,14 +9,14 @@ importers:
   .:
     devDependencies:
       '@evilmartians/lefthook':
-        specifier: 1.6.11
-        version: 1.6.11
+        specifier: 1.6.12
+        version: 1.6.12
       '@nozomiishii/commitlint-config':
         specifier: 0.0.4
         version: 0.0.4(@types/node@20.12.12)(typescript@5.4.5)
       '@nozomiishii/lefthook-config':
         specifier: 0.2.1
-        version: 0.2.1(@evilmartians/lefthook@1.6.11)
+        version: 0.2.1(@evilmartians/lefthook@1.6.12)
       '@nozomiishii/markdownlint-cli2-config':
         specifier: 0.3.1
         version: 0.3.1
@@ -110,8 +110,8 @@ packages:
     resolution: {integrity: sha512-gwRLBLra/Dozj2OywopeuHj2ac26gjGkz2cZ+86cTJOdtWfiRRr4+e77ZDAGc6MDWxaWheI+mAV5TLWWRwqrFg==}
     engines: {node: '>=v18'}
 
-  '@evilmartians/lefthook@1.6.11':
-    resolution: {integrity: sha512-Luvfr90VGcfP4rMaJccjG5YfuZ4ebrVHxmDGi7naSdpPCLMpAbVkLWe8N0WzLd+BoolgDV35TTST7tmoCZiClQ==}
+  '@evilmartians/lefthook@1.6.12':
+    resolution: {integrity: sha512-/XPEl3ivb8JpvpXOooSumdYTKb8T4iUGh9l3Vpo5vDH+7h8Nk54Dzw+clT5ubXFSQNOV8BchDn5omVfcr0+15g==}
     cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
@@ -1108,7 +1108,7 @@ snapshots:
     dependencies:
       chalk: 4.1.2
 
-  '@evilmartians/lefthook@1.6.11': {}
+  '@evilmartians/lefthook@1.6.12': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -1131,9 +1131,9 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@nozomiishii/lefthook-config@0.2.1(@evilmartians/lefthook@1.6.11)':
+  '@nozomiishii/lefthook-config@0.2.1(@evilmartians/lefthook@1.6.12)':
     dependencies:
-      '@evilmartians/lefthook': 1.6.11
+      '@evilmartians/lefthook': 1.6.12
 
   '@nozomiishii/markdownlint-cli2-config@0.3.1':
     dependencies:
