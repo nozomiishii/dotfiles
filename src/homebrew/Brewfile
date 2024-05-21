@@ -7,7 +7,7 @@ cask_args appdir: "/Applications"
 brew "starship"
 
 # Developer targeted fonts with a high number of glyphs https://github.com/ryanoasis/nerd-fonts
-cask "homebrew/cask-fonts/font-hack-nerd-font"
+cask "font-hack-nerd-font"
 
 # Fish shell like syntax highlighting for zsh https://github.com/zsh-users/zsh-syntax-highlighting
 brew "zsh-syntax-highlighting"
