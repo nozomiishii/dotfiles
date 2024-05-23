@@ -53,6 +53,9 @@ brew "tree"
 # Executes a program periodically, showing output fullscreen https://gitlab.com/procps-ng/procps
 brew "watch"
 
+# Official Amazon AWS command-line interface https://aws.amazon.com/cli/
+brew "awscli"
+
 # ----------------------------------------------------------------
 # Cask
 # ----------------------------------------------------------------
@@ -98,6 +101,9 @@ if OS.mac?
 
   # Free and open-source 3D creation suite. https://www.blender.org
   cask "blender"
+
+  # Virtual video-calling space https://gather.town/
+  cask "gather"
 
   # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
   cask "kindle"
