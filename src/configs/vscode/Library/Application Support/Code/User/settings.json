@@ -202,6 +202,7 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
+  "prisma.showPrismaDataPlatformNotification": false,
 
   // ----------------------------------------------------------------
   // Shell
