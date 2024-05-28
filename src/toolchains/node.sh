@@ -46,5 +46,6 @@ volta list
 
 echo '- 🐉 Setup npm global'
 volta install typescript
+volta install @antfu/ni
 
 msg --success "🐉 Node setup is complete 🎉"
