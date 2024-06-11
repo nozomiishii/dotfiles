@@ -50,17 +50,13 @@ if command -v direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-# Python
-if command -v pyenv > /dev/null; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  command -v pyenv > /dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-fi
-
 # Ruby
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
+
+# Python
+source "$HOME/.rye/env"
 
 # pnpm
 export PNPM_HOME="/Users/nozomiishii/Library/pnpm"

@@ -15,13 +15,12 @@ source "$python_dir/../../utils/msg/msg.sh"
 
 msg --title '🐍 Python'
 
-echo '- 🐍 Install pyenv'
-brew install pyenv
-echo "- 🐍 $(pyenv --version)"
+echo '- 🐍 Install Rye'
+curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash
 
-echo '- 🐍 Install Poetry'
-curl -sSL https://install.python-poetry.org | python3 -
-export PATH="$HOME/.local/bin:$PATH"
-echo "- 🐍 $(poetry --version)"
+# shellcheck disable=SC1091
+source "$HOME/.rye/env"
+
+echo "- 🐍 $(rye toolchain list)"
 
 msg --success "🐍 Python setup is complete 🎉"

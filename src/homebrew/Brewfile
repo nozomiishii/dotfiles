@@ -28,12 +28,6 @@ brew "shellcheck"
 brew "bats-core"
 
 # ----------------------------------------------------------------
-# Python
-# ----------------------------------------------------------------
-# Python version management https://github.com/pyenv/pyenv
-brew "pyenv"
-
-# ----------------------------------------------------------------
 # Ruby
 # ----------------------------------------------------------------
 # Ruby version manager https://github.com/rbenv/rbenv#readme
