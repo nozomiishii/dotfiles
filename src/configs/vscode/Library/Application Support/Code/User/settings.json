@@ -265,14 +265,16 @@
   // ----------------------------------------------------------------
   // Python
   // ----------------------------------------------------------------
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "strict",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length", "119"],
-  "python.linting.flake8Enabled": true,
-  "python.linting.enabled": true,
-  "python.linting.flake8Args": ["--max-line-length", "119"],
+  // "python.formatting.provider": "black",
+  // "python.formatting.blackArgs": ["--line-length", "119"],
+  // "python.linting.flake8Enabled": true,
+  // "python.linting.enabled": true,
+  // "python.linting.flake8Args": ["--max-line-length", "119"],
 
   // ----------------------------------------------------------------
   // Prettier
@@ -319,7 +321,7 @@
   // editor.codeActionsOnSave
   // ----------------------------------------------------------------
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": "explicit",
+    // "source.addMissingImports": "explicit",
     "source.fixAll.eslint": "explicit",
     "source.fixAll.markdownlint": "explicit"
   },
@@ -544,6 +546,5 @@
       "source.fixAll.shellcheck": "explicit"
     }
   }
-
   ///////////////////////////////////////////////////////////////////
 }
