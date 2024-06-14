@@ -8,10 +8,10 @@
 # Configs
 # nvim
 **/nvim/plugged
-# antigen
-**/antigen.zsh.zwc
+
 # Node
 node_modules
+
 # ssh
 **/.ssh/*
 !**/.ssh/config

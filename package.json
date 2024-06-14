@@ -34,8 +34,7 @@
     "prettier": "prettier . --ignore-unknown",
     "setup": "lefthook install",
     "shellcheck": "shellcheck --exclude=SC1091 **/*.sh",
-    "shfmt": "shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh",
-    "test": "bats ./utils/**"
+    "shfmt": "shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh"
   },
   "devDependencies": {
     "@evilmartians/lefthook": "1.6.15",

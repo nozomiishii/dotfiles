@@ -2,5 +2,3 @@
 
 --artifact-server-path /tmp/act-artifacts
 --eventpath .github/act/event.json
-# @see https://github.com/nektos/act#github_token
-# --secret GITHUB_TOKEN="$(gh auth token)"
