@@ -103,6 +103,7 @@ disabled = true
 [python]
 format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
 symbol = '󰌠 '
+style = 'purple bold'
 
 
 [ruby]
