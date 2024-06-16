@@ -37,7 +37,7 @@
     "shfmt": "shfmt --diff --indent 2 --binary-next-line --case-indent --space-redirects **/*.sh"
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "1.6.15",
+    "@evilmartians/lefthook": "1.6.16",
     "@nozomiishii/commitlint-config": "0.0.4",
     "@nozomiishii/lefthook-config": "0.2.1",
     "@nozomiishii/markdownlint-cli2-config": "0.3.1",
