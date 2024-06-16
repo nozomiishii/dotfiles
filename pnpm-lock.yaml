@@ -424,8 +424,8 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  jiti@1.21.3:
-    resolution: {integrity: sha512-uy2bNX5zQ+tESe+TiC7ilGRz8AtRGmnJH55NC5S0nSUjvvvM2hJHmefHErugGXN4pNv4Qx7vLsnNw9qJ9mtIsw==}
+  jiti@1.21.6:
+    resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
 
   js-tokens@4.0.0:
@@ -1026,7 +1026,7 @@ snapshots:
     dependencies:
       '@types/node': 20.14.2
       cosmiconfig: 9.0.0(typescript@5.4.5)
-      jiti: 1.21.3
+      jiti: 1.21.6
       typescript: 5.4.5
 
   cosmiconfig@9.0.0(typescript@5.4.5):
@@ -1195,7 +1195,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  jiti@1.21.3: {}
+  jiti@1.21.6: {}
 
   js-tokens@4.0.0: {}
 
