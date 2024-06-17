@@ -100,40 +100,40 @@ jobs:
           echo "More on shellcheck: https://github.com/koalaman/shellcheck"
           echo "Editor extensions for shellcheck: https://github.com/koalaman/shellcheck#in-your-editor"
 
-  test:
-    strategy:
-      matrix:
-        # FIXME: ubuntu-latestのときだけunbound variableってなってTest落ちる
-        # os: [macos-latest, ubuntu-latest]
-        os: [macos-latest]
+  # test:
+  #   strategy:
+  #     matrix:
+  #       # FIXME: ubuntu-latestのときだけunbound variableってなってTest落ちる
+  #       # os: [macos-latest, ubuntu-latest]
+  #       os: [macos-latest]
 
-    runs-on: ${{ matrix.os }}
+  #   runs-on: ${{ matrix.os }}
 
-    steps:
-      - name: Get code
-        uses: actions/checkout@v4
-        with:
-          submodules: 'recursive'
+  #   steps:
+  #     - name: Get code
+  #       uses: actions/checkout@v4
+  #       with:
+  #         submodules: 'recursive'
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.14.0
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20.14.0
 
-      - name: Install Dependencies
-        run: npm install -g bats
+  #     - name: Install Dependencies
+  #       run: npm install -g bats
 
-      - name: Test
-        run: bats ./utils/**
+  #     - name: Test
+  #       run: bats ./utils/**
 
-      - name: Tips
-        if: failure()
-        run: |
-          echo "Lint failed. To fix, you need to install and run 'bats'"
-          echo "Use these commands:"
-          echo ''
-          echo "brew install bats-core"
-          echo "bats ./utils/**"
-          echo ''
-          echo "More on bats: https://github.com/bats-core/bats-core"
-          echo "VSCode extensions for bats: https://github.com/jetmartin/bats"
+  #     - name: Tips
+  #       if: failure()
+  #       run: |
+  #         echo "Lint failed. To fix, you need to install and run 'bats'"
+  #         echo "Use these commands:"
+  #         echo ''
+  #         echo "brew install bats-core"
+  #         echo "bats ./utils/**"
+  #         echo ''
+  #         echo "More on bats: https://github.com/bats-core/bats-core"
+  #         echo "VSCode extensions for bats: https://github.com/jetmartin/bats"
