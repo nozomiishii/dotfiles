@@ -118,7 +118,7 @@ jobs:
   #     - name: Setup Node
   #       uses: actions/setup-node@v4
   #       with:
-  #         node-version: 20.14.0
+  #         node-version: 20.15.0
 
   #     - name: Install Dependencies
   #       run: npm install -g bats
