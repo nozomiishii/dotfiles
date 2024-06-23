@@ -1,5 +1,0 @@
-# https://www.shellcheck.net/wiki/Directive
-
-# Allow ShellCheck to follow sourced files outside the current script.
-# This helps ShellCheck analyze the complete script, including external files.
-external-sources=true

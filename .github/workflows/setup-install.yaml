@@ -11,10 +11,10 @@ on:
     branches:
       - main
     paths:
-      - 'src/install.sh'
+      - 'install.sh'
   pull_request:
     paths:
-      - 'src/install.sh'
+      - 'install.sh'
 
 jobs:
   setup-install:
@@ -22,8 +22,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-        with:
-          submodules: 'recursive'
 
       - name: Run install
-        run: ./src/install.sh
+        run: install.sh
