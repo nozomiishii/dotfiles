@@ -11,10 +11,14 @@ on:
     branches:
       - main
     paths:
+      - 'home/**'
       - 'install.sh'
+      - '.github/workflows/setup-install.yaml'
   pull_request:
     paths:
+      - 'home/**'
       - 'install.sh'
+      - '.github/workflows/setup-install.yaml'
 
 jobs:
   setup-install:
@@ -24,4 +28,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run install
-        run: install.sh
+        run: bash install.sh
