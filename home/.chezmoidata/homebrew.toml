@@ -1,7 +1,0 @@
-[packages.darwin]
-taps = []
-brews = []
-casks = []
-
-[packages.darwin.mas]
-"Xcode" = 497799835

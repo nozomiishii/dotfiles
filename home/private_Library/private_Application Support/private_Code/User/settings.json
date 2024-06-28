@@ -163,12 +163,14 @@
     "Brewfile*": "ruby",
     "**/Brewfiles/**": "ruby",
     ".env*": "dotenv",
+
+    // chezmoi
     ".chezmoiroot": "properties",
     ".chezmoiversion": "properties",
     "dot_zprofile": "shellscript",
     "dot_zshrc": "shellscript",
     "dot_npmrc": "properties",
-    "private_dot_gitconfig": "properties",
+    "dot_gitconfig": "properties",
     "*.toml.tmpl": "toml"
   },
 
@@ -335,7 +337,7 @@
   // editor.codeActionsOnSave
   // ----------------------------------------------------------------
   "editor.codeActionsOnSave": {
-    // "source.addMissingImports": "explicit",
+    "source.addMissingImports": "explicit",
     "source.fixAll.eslint": "explicit",
     "source.fixAll.markdownlint": "explicit"
   },
@@ -504,6 +506,7 @@
   // Jest
   // ----------------------------------------------------------------
   "jest.runMode": "on-demand",
+  "jest.outputConfig":"test-results-based",
 
   // ----------------------------------------------------------------
   // vitest

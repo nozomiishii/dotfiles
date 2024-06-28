@@ -3,7 +3,3 @@
 
 # Node
 node_modules
-
-# ssh
-**/.ssh/*
-!**/.ssh/config

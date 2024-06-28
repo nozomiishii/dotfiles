@@ -17,12 +17,12 @@
   "scripts": {
     "format": "pnpm prettier --check",
     "format:fix": "pnpm prettier --write",
-    "lint": "pnpm lint:markdownlint",
-    "lint:fix": "pnpm lint:markdownlint:fix",
-    "lint:markdownlint": "npx -y markdownlint-cli2@latest '**/*.md' '#node_modules'",
-    "lint:markdownlint:fix": "npx -y markdownlint-cli2-fix@latest '**/*.md' '#node_modules'",
+    "lint": "pnpm markdownlint",
+    "lint:fix": "pnpm markdownlint:fix",
+    "markdownlint": "npx -y markdownlint-cli2@latest '**/*.md' '#node_modules'",
+    "markdownlint:fix": "npx -y markdownlint-cli2-fix@latest '**/*.md' '#node_modules'",
     "prettier": "prettier . --ignore-unknown",
-    "setup": "lefthook install"
+    "postinstall": "lefthook install"
   },
   "devDependencies": {
     "@evilmartians/lefthook": "1.6.17",

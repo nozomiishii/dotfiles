@@ -141,38 +141,10 @@ open https://nozomiishii.dev/dotfiles
 cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
 ```
 
-### Brew Install
+### Install
 
 ```shell
-~/dotfiles/src/install -b
-```
-
-### 🔫 When permission is not set
-
-```shell
-ls -l ~/dotfiles/src/install
-```
-
-```shell
-chmod +x ~/dotfiles/src/install
-```
-
-### 💻 macOS setup
-
-```shell
-~/dotfiles/src/install -m
-```
-
-### 🧝🏻‍♀️ Configs setup
-
-```shell
-~/dotfiles/src/install -c
-```
-
-### 🌝 Toolchains setup
-
-```shell
-~/dotfiles/src/install -t
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply nozomiishii --verbose
 ```
 
 ### 🛋 Restart
@@ -247,7 +219,6 @@ sudo reboot
 Finder Sidebar
  ┣ 📂Favorites
  ┃ ┣ 🌏Google Drive(My Drive)
- ┃ ┣ 🗃dotfiles
  ┃ ┣ 🏠$USER
  ┃ ┣ 🍎Applications
  ┃ ┗ 📖Desktop
@@ -273,12 +244,6 @@ Finder Sidebar
 ### 😼 SSH & Git
 
 - [Run gh auth login](https://cli.github.com/manual/)
-
-### 🦄 Clone repositories
-
-```shell
-~/dotfiles/src/install -r
-```
 
 ### 🤵🏻‍♂️ Keyboard Maestro
 
