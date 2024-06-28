@@ -219,8 +219,11 @@ cask "microsoft-edge"
 # Mozilla Firefox https://www.mozilla.org/firefox
 cask "firefox"
 
-# Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
-cask "firefox-developer-edition"
+# FIXME: it somehow fails on CI
+unless ENV["CI"]
+  # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
+  cask "firefox-developer-edition"
+end
 
 # HTTP and GraphQL Client https://insomnia.rest/
 cask "insomnia"
