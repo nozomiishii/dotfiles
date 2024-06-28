@@ -18,8 +18,8 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
 
-      - name: Setup
-        uses: ./.github/actions/setup-node
+      - name: install
+        run: pnpm install
 
       - name: lint
         run: npx -y markdownlint-cli2 "**/*.md"

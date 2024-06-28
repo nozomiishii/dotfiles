@@ -1,0 +1,10 @@
+mode = "symlink"
+
+[diff]
+command = "code"
+args = [
+  "--wait",
+  "--diff",
+  "{{ `{{ .Destination }}` }}",
+  "{{ `{{ .Target }}` }}",
+]

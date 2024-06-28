@@ -11,10 +11,14 @@ on:
     branches:
       - main
     paths:
-      - 'src/install.sh'
+      - 'home/**'
+      - 'install.sh'
+      - '.github/workflows/setup-install.yaml'
   pull_request:
     paths:
-      - 'src/install.sh'
+      - 'home/**'
+      - 'install.sh'
+      - '.github/workflows/setup-install.yaml'
 
 jobs:
   setup-install:
@@ -22,8 +26,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-        with:
-          submodules: 'recursive'
 
       - name: Run install
-        run: ./src/install.sh
+        run: bash install.sh

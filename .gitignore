@@ -1,17 +1,5 @@
 # System Files
 .DS_Store
 
-# Apps
-# Karabiner
-**/karabiner/automatic_backups
-
-# Configs
-# nvim
-**/nvim/plugged
-
 # Node
 node_modules
-
-# ssh
-**/.ssh/*
-!**/.ssh/config
