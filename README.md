@@ -245,6 +245,12 @@ Finder Sidebar
 
 - [Run gh auth login](https://cli.github.com/manual/)
 
+### 🦄 Clone repositories
+
+```shell
+make repo
+```
+
 ### 🤵🏻‍♂️ Keyboard Maestro
 
 - Register Keyboard Maestro... >  
