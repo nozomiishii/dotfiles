@@ -163,8 +163,6 @@
     "Brewfile*": "ruby",
     "**/Brewfiles/**": "ruby",
     ".env*": "dotenv",
-
-    // chezmoi
     ".chezmoiroot": "properties",
     ".chezmoiversion": "properties",
     "dot_zprofile": "shellscript",
