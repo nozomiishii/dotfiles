@@ -257,7 +257,7 @@
 
     // chezmoi
     "**/dot_zshrc": true,
-    "**/dot_zprofile": true,
+    "**/dot_zprofile": true
   },
 
   // ----------------------------------------------------------------
@@ -489,7 +489,7 @@
     // chezmoi
     {
       "icon": "git",
-      "extensions": ["private_dot_gitconfig"],
+      "extensions": ["dot_gitconfig"],
       "filename": true,
       "format": "svg"
     },
@@ -504,7 +504,7 @@
   // Jest
   // ----------------------------------------------------------------
   "jest.runMode": "on-demand",
-  "jest.outputConfig":"test-results-based",
+  "jest.outputConfig": "test-results-based",
 
   // ----------------------------------------------------------------
   // vitest
@@ -571,6 +571,6 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.shellcheck": "explicit"
     }
-  },
+  }
   ///////////////////////////////////////////////////////////////////
 }
