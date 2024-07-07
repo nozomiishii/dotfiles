@@ -106,6 +106,7 @@ brew "duti"
 brew "mas"
 
 # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
+tap "smudge/smudge"
 brew "smudge/smudge/nightlight"
 
 # Dependency manager for Cocoa projects https://cocoapods.org/
