@@ -125,6 +125,7 @@ brew "fx"
 brew "grpcurl"
 
 # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
+tap "stripe/stripe-cli"
 brew "stripe/stripe-cli/stripe"
 
 # Official Amazon AWS command-line interface https://aws.amazon.com/cli/
