@@ -10,7 +10,12 @@ set -Ceuo pipefail
 
 echo '- 👾 NeoVim'
 
-if [ ! -e "/Applications/Xcode.app" ] || [ "${CI:-false}" = "true" ]; then
+if [ "${CI:-false}" = "true" ]; then
+  echo "Running in CI environment, exiting script."
+  return
+fi
+
+if [ ! -e "/Applications/Xcode.app" ]; then
   echo "🧝🏻‍♀️ Xcode not found"
   echo "NeoVim settings were skipped."
   return
