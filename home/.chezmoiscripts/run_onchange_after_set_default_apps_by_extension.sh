@@ -10,11 +10,6 @@ set -Ceuo pipefail
 
 echo "- 🧮 duti"
 
-if [ "${CI:-false}" = "true" ]; then
-  echo "Running in CI environment, exiting script."
-  return
-fi
-
 duti -s com.microsoft.VSCode yaml all
 duti -s com.microsoft.VSCode json all
 duti -s com.microsoft.VSCode css all

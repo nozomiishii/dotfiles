@@ -12,13 +12,13 @@ echo '- 👾 NeoVim'
 
 if [ "${CI:-false}" = "true" ]; then
   echo "Running in CI environment, exiting script."
-  return
+  exit 0
 fi
 
 if [ ! -e "/Applications/Xcode.app" ]; then
   echo "🧝🏻‍♀️ Xcode not found"
   echo "NeoVim settings were skipped."
-  return
+  exit 0
 fi
 
 # Plug Install

@@ -10,11 +10,6 @@ set -Ceuo pipefail
 
 echo "- 🤖 Automator"
 
-if [ "${CI:-false}" = "true" ]; then
-  echo "Running in CI environment, exiting script."
-  return
-fi
-
 if [ ! -f "$HOME/Desktop/OpenWithVisualStudioCode.workflow" ]; then
   cp -r "$HOME/.config/automator/OpenWithVisualStudioCode.workflow" "$HOME/Desktop"
 fi
