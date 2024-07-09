@@ -335,3 +335,5 @@ function gmm() {
   gstaa stash@{0}
   gstc
 }
+
+alias undo='reset --soft HEAD^'
