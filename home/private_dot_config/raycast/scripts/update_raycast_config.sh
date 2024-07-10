@@ -97,6 +97,7 @@ update_raycast_config() {
 check_backup_files() {
   local backup_files_length
   backup_files_length=$(find "$raycast_backup_dir" -type f | wc -l)
+  echo "$raycast_backup_dir"
 
   if [ "$backup_files_length" -eq 0 ]; then
     msg_error "No backup files. Export your Raycast app settings to $raycast_backup_dir"
