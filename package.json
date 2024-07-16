@@ -25,16 +25,16 @@
     "postinstall": "lefthook install"
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "1.6.18",
+    "@evilmartians/lefthook": "1.7.2",
     "@nozomiishii/commitlint-config": "0.0.5",
     "@nozomiishii/lefthook-config": "0.2.2",
     "@nozomiishii/markdownlint-cli2-config": "0.3.1",
     "@nozomiishii/prettier-config": "0.6.2",
     "markdownlint-cli2": "0.13.0"
   },
-  "packageManager": "pnpm@9.4.0",
+  "packageManager": "pnpm@9.5.0",
   "volta": {
-    "node": "20.15.0",
-    "pnpm": "9.4.0"
+    "node": "20.15.1",
+    "pnpm": "9.5.0"
   }
 }
