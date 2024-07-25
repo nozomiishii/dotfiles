@@ -25,7 +25,7 @@
     "postinstall": "lefthook install"
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "1.7.4",
+    "@evilmartians/lefthook": "1.7.5",
     "@nozomiishii/commitlint-config": "0.0.5",
     "@nozomiishii/lefthook-config": "0.2.2",
     "@nozomiishii/markdownlint-cli2-config": "0.3.1",
