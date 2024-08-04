@@ -22,10 +22,8 @@ symbol = ' '
 
 
 [character]
-# Turned off to use Warp terminal's features
-# success_symbol = '[󱞩](bold green)'
-# error_symbol = '[✗](bold red)'
-disabled = true
+success_symbol = '[󱞩](bold green)'
+error_symbol = '[✗](bold red)'
 
 
 [cmd_duration]
