@@ -3,16 +3,13 @@
   // Storybook
   // ----------------------------------------------------------------
   "Storybook": {
-    "prefix": "!storybook",
-    "scope": "typescript,typescriptreact",
+    "prefix": "!sb",
+    "scope": "typescriptreact",
     "body": [
-      "import { expect } from '@storybook/jest';",
       "import { Meta, StoryObj } from '@storybook/react';",
-      "import { screen, within } from '@storybook/testing-library';",
       "import Component from './${TM_FILENAME_BASE/(.stories)//}';",
       "",
       "const meta = {",
-      "  argTypes: {},",
       "  component: Component,",
       "  parameters: {",
       "    design: {",
@@ -28,55 +25,34 @@
       "export const Default = {",
       "  args: {},",
       "  parameters: {},",
-      "  play: async ({ args, canvasElement }) => {",
-      "    const canvas = within(canvasElement);",
-      "    screen.logTestingPlaygroundURL(canvasElement);",
-      "",
-      "    expect();",
-      "  },",
       "} satisfies Story;",
-      ""
+      "",
     ],
-    "description": "Storybook Template"
-  },
-  "Storybook6": {
-    "prefix": "!storybook6",
-    "scope": "typescriptreact",
-    "body": [
-      "import { expect } from '@storybook/jest';",
-      "import { ComponentStoryObj, ComponentMeta } from '@storybook/react';",
-      "import { within, screen } from '@storybook/testing-library';",
-      "import Component from './${TM_FILENAME_BASE/(.stories)//}';",
-      "",
-      "export default {",
-      "  argTypes: {},",
-      "  component: Component,",
-      "  parameters: {",
-      "    design: {",
-      "      type: 'figspec',",
-      "      url: '',",
-      "    },",
-      "  },",
-      "} as ComponentMeta<typeof Component>;",
-      "",
-      "export const Default: ComponentStoryObj<typeof Component> = {",
-      "  args: {},",
-      "  parameters: {},",
-      "  play: async ({ canvasElement }) => {",
-      "    const canvas = within(canvasElement);",
-      "    screen.logTestingPlaygroundURL();",
-      "",
-      "    expect()",
-      "  },",
-      "};",
-      ""
-    ],
-    "description": "Storybook Template"
+    "description": "Storybook Template",
   },
 
   // ----------------------------------------------------------------
   // test
   // ----------------------------------------------------------------
+  "playwright": {
+    "prefix": "!",
+    "scope": "typescript,typescriptreact",
+    "body": [
+      "import { expect, test } from '@playwright/test';",
+      "",
+      "test.describe('', () => {",
+      "  const url = '';",
+      "  test('', async ({ page }) => {",
+      "    await page.goto(url);",
+      "",
+      "    expect(true).toBeTruthy();",
+      "  });",
+      "});",
+      "",
+    ],
+    "description": "playwright",
+  },
+
   "React Testing Library": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "rtl",
@@ -88,9 +64,9 @@
       "",
       "beforeEach(() => render(<${TM_FILENAME_BASE/(.test)//} />));",
       "",
-      "test('$1', () => {});"
+      "test('$1', () => {});",
     ],
-    "description": "React Testing Library"
+    "description": "React Testing Library",
   },
   "Endpoint Test": {
     "prefix": "et",
@@ -122,21 +98,9 @@
       "      });",
       "  });",
       "});",
-      ""
+      "",
     ],
-    "description": "Endpoint Test"
-  },
-  "data-testid=''": {
-    "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "prefix": "testid",
-    "body": ["data-testid='$1'"],
-    "description": "data-testid=''"
-  },
-  "await waitFor(() => {});": {
-    "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "prefix": "waitFor",
-    "body": ["await waitFor(() => {$1});"],
-    "description": "await waitFor(() => {});"
+    "description": "Endpoint Test",
   },
 
   // ----------------------------------------------------------------
@@ -146,25 +110,25 @@
     "prefix": "use client",
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "body": ["'use client';"],
-    "description": "use client"
+    "description": "use client",
   },
   "export": {
     "prefix": "export",
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "body": ["export {$0} from './$1';", ""],
-    "description": "export"
+    "description": "export",
   },
   "export * from './';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "export*",
     "body": ["export * from './$1';"],
-    "description": "export * from './';"
+    "description": "export * from './';",
   },
   "import { $2 } from '$1';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imp",
     "body": ["import { $2 } from '$1';"],
-    "description": "import { $2 } from '$1';"
+    "description": "import { $2 } from '$1';",
   },
   "Mock Api Response": {
     "prefix": "mockapi",
@@ -186,9 +150,9 @@
       "",
       "const response = await mockApiResponse({ message: '🥸: Hello from fakeApiResponse!' });",
       "console.log('[response]', response);",
-      ""
+      "",
     ],
-    "description": "Mock Api Response"
+    "description": "Mock Api Response",
   },
   "sleep": {
     "prefix": "sleep",
@@ -197,20 +161,20 @@
       "const seconds = 2;",
       "await new Promise((resolve) => setTimeout(resolve, seconds * 1000));",
       "console.log(`Wait ${seconds}s`);",
-      ""
+      "",
     ],
-    "description": "sleep"
+    "description": "sleep",
   },
   "Logger": {
     "prefix": "lgr",
     "scope": "typescript",
     "body": ["private readonly logger = new Logger(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.name);"],
-    "description": "Logger"
+    "description": "Logger",
   },
   "comment block": {
     "prefix": "cmmb",
     "body": ["/**", " * $1", " */"],
-    "description": "comment block"
+    "description": "comment block",
   },
 
   // ----------------------------------------------------------------
@@ -220,33 +184,33 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "rr",
     "body": ["backgroundColor: 'red',"],
-    "description": "backgroundColor: 'red'"
+    "description": "backgroundColor: 'red'",
   },
   "backgroundColor: 'green'": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "gg",
     "body": ["backgroundColor: 'green',"],
-    "description": "backgroundColor: 'green'"
+    "description": "backgroundColor: 'green'",
   },
   "css()": {
     "prefix": "css",
     "body": ["className={css({$1})}"],
-    "description": "css()"
+    "description": "css()",
   },
   "flex()": {
     "prefix": "flex",
     "body": ["className={flex({$1})}"],
-    "description": "flex()"
+    "description": "flex()",
   },
   "grid()": {
     "prefix": "grid",
     "body": ["className={grid({$1})}"],
-    "description": "grid()"
+    "description": "grid()",
   },
   "center()": {
     "prefix": "center",
     "body": ["className={center({$1})}"],
-    "description": "center()"
+    "description": "center()",
   },
 
   // ----------------------------------------------------------------
@@ -256,13 +220,13 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "lg",
     "body": ["console.log('[$CLIPBOARD: $TM_FILENAME]', $CLIPBOARD)"],
-    "description": "pretty console log"
+    "description": "pretty console log",
   },
   "pretty console check": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "lg",
     "body": ["console.log('[$CLIPBOARD: $TM_FILENAME]', JSON.stringify($CLIPBOARD, null, 2))"],
-    "description": "pretty console check"
+    "description": "pretty console check",
   },
 
   // ----------------------------------------------------------------
@@ -280,9 +244,9 @@
       "  return (",
       "    <div>${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}</div>",
       "  );",
-      "}"
+      "}",
     ],
-    "description": "Typescript React Functional Component"
+    "description": "Typescript React Functional Component",
   },
   "TypeScript React Functional Component with Interface": {
     "scope": "typescriptreact",
@@ -298,9 +262,9 @@
       "  return (",
       "    <div>$TM_FILENAME_BASE</div>",
       "  );",
-      "}"
+      "}",
     ],
-    "description": "Typescript React Functional Component with Interface"
+    "description": "Typescript React Functional Component with Interface",
   },
 
   // ----------------------------------------------------------------
@@ -319,9 +283,9 @@
       "      <Text>$TM_FILENAME_BASE</Text>",
       "    </View>",
       "  );",
-      "}"
+      "}",
     ],
-    "description": "Typescript React Native Functional Component"
+    "description": "Typescript React Native Functional Component",
   },
 
   // ----------------------------------------------------------------
@@ -335,9 +299,9 @@
       "  return <div>${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}</div>;",
       "};",
       "",
-      "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};"
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};",
     ],
-    "description": "Next.js Typescript Functional Component"
+    "description": "Next.js Typescript Functional Component",
   },
   "Next.js Image": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -346,9 +310,9 @@
       "import Image from 'next/image';",
       "<div className=\"relative w-16 h-16\">",
       "  <Image src={} alt=\"\" layout=\"fill\" objectFit=\"contain\" />",
-      "</div>"
+      "</div>",
     ],
-    "description": "Next.js Image"
+    "description": "Next.js Image",
   },
   "Next.js API": {
     "scope": "typescript",
@@ -444,15 +408,15 @@
       "};",
 
       "",
-      "export default ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/};"
+      "export default ${TM_FILENAME_BASE/(.*)/${1:/camelcase}/};",
     ],
-    "description": "api"
+    "description": "api",
   },
   "import Head from 'next/head';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imhd",
     "body": ["import Head from 'next/head';"],
-    "description": "import Head from 'next/head';"
+    "description": "import Head from 'next/head';",
   },
 
   // ----------------------------------------------------------------
@@ -462,7 +426,7 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "pc",
     "body": ["import { PrismaClient } from '@prisma/client';", "", "const prisma = new PrismaClient();"],
-    "description": "PrismaClient"
+    "description": "PrismaClient",
   },
   "prisma.$transaction": {
     "prefix": "ptra",
@@ -477,9 +441,9 @@
       "    data: {",
       "    },",
       "  }),",
-      "]);"
+      "]);",
     ],
-    "description": "prisma.$transaction"
+    "description": "prisma.$transaction",
   },
 
   // ----------------------------------------------------------------
@@ -489,31 +453,31 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "neth",
     "body": ["new THREE.$0"],
-    "description": "new THREE.$0"
+    "description": "new THREE.$0",
   },
   "scene.add($1);": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "snad",
     "body": ["scene.add($1);"],
-    "description": "scene.add($1);"
+    "description": "scene.add($1);",
   },
   "scene.add($CLIPBOARD);": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "scene.add",
     "body": ["scene.add($CLIPBOARD);"],
-    "description": "scene.add($CLIPBOARD);"
+    "description": "scene.add($CLIPBOARD);",
   },
   "import * as THREE from 'three';": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imth",
     "body": ["import * as THREE from 'three';"],
-    "description": "import * as THREE from 'three';"
+    "description": "import * as THREE from 'three';",
   },
   "const axesHelper = new THREE.AxesHelper();": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "helper",
     "body": ["const axesHelper = new THREE.AxesHelper();", "scene.add(axesHelper);"],
-    "description": "const axesHelper = new THREE.AxesHelper();"
+    "description": "const axesHelper = new THREE.AxesHelper();",
   },
 
   // ----------------------------------------------------------------
@@ -523,7 +487,7 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imdat",
     "body": ["import * as dat from 'dat.gui';", "", "const gui = new dat.GUI();", ""],
-    "description": "import * as dat from 'dat.gui';"
+    "description": "import * as dat from 'dat.gui';",
   },
 
   // ----------------------------------------------------------------
@@ -533,7 +497,7 @@
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "imgs",
     "body": ["import gsap from 'gsap';"],
-    "description": "import gsap from 'gsap';"
+    "description": "import gsap from 'gsap';",
   },
 
   // ----------------------------------------------------------------
@@ -557,9 +521,9 @@
       "    angle -= 0.01;",
       "  };",
       "};",
-      ""
+      "",
     ],
-    "description": "p5 typescript"
+    "description": "p5 typescript",
   },
   "p5 react function": {
     "scope": "typescript,typescriptreact",
@@ -592,8 +556,8 @@
       "",
       "  return <Sketch setup={setup} draw={draw} windowResized={windowResized} />;",
       "};",
-      ""
+      "",
     ],
-    "description": "p5 react function"
-  }
+    "description": "p5 react function",
+  },
 }
