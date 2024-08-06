@@ -42,6 +42,7 @@
       "",
       "test.describe('', () => {",
       "  const url = '';",
+      "",
       "  test('', async ({ page }) => {",
       "    await page.goto(url);",
       "",
