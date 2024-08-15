@@ -22,7 +22,7 @@
 #            - exec: code .
 
 ---
-name: "e-dash:common-id"
+name: 'e-dash:common-id'
 windows:
   - tabs:
       - layout:
