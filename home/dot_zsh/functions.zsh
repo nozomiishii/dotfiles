@@ -65,3 +65,25 @@ const nextConfig = {};
 export default nextConfig;
 EOF
 }
+
+# generate a commit message based on the branch name
+gcmsga() {
+  # Get the current branch name
+  local branch_name=$(git rev-parse --abbrev-ref HEAD)
+
+  # Matches "type(scope)/message"
+  local pattern_with_scope='^([a-z]+\([a-z]+\))\/(.+)$'
+  # Matches "type/message"
+  local pattern_without_scope='^([a-z]+)\/(.+)$'
+
+  # Check if the branch name matches the pattern type/message
+  if [[ $branch_name =~ $pattern_with_scope || $branch_name =~ $pattern_without_scope ]]; then
+    local type=${match[1]}
+    local message=${match[2]//-/ } # Replace hyphens with spaces
+
+    # Create and run the commit with the generated message
+    git commit -m "$type: $message"
+  else
+    echo "Error: Branch name '$branch_name' does not match the expected format 'type(scope)/message' or 'type/message'."
+  fi
+}
