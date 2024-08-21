@@ -30,8 +30,8 @@ error_symbol = '[✗](bold red)'
 format = '[$duration]($style) '
 # FIXME: Warp notification not working somehow
 # Turned off to use Warp terminal's features
-# show_notifications = true
-# min_time_to_notify = 60000
+show_notifications = true
+min_time_to_notify = 60_000
 
 
 [directory]
