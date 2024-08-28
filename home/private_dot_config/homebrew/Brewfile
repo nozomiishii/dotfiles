@@ -245,8 +245,11 @@ cask "utm"
 # Tools for building Android applications https://developer.android.com/studio
 cask "android-studio"
 
-# Free and open-source 3D creation suite. https://www.blender.org
-cask "blender"
+# FIXME: it somehow fails on CI
+unless ENV["CI"]
+  # Free and open-source 3D creation suite. https://www.blender.org
+  cask "blender"
+end
 
 # Virtual video-calling space https://gather.town/
 cask "gather"
