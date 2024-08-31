@@ -22,7 +22,7 @@
 #            - exec: code .
 
 ---
-name: 'e-dash:common-id'
+name: 'e-dash:survey'
 windows:
   - tabs:
       - layout:
@@ -30,9 +30,9 @@ windows:
           panes:
             - split_direction: vertical
               panes:
-                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-common-id
-                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-common-id
+                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey
+                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey
             - split_direction: vertical
               panes:
-                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-common-id
-                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-common-id
+                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey
+                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey
