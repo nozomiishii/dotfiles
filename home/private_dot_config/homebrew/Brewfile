@@ -134,151 +134,143 @@ brew "awscli"
 # ----------------------------------------------------------------
 # Cask
 # ----------------------------------------------------------------
-# Password manager that keeps all passwords secure behind one password. https://1password.com
-cask "1Password"
-
-# Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
-cask "1password-cli"
-
-# Web browser focusing on privacy https://brave.com/
-cask "brave-browser"
-
-# App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
-cask "docker"
-
-# Voice and text chat software. https://discord.com
-cask "discord"
-
-# Collaborative interface design tool. https://www.figma.com
-cask "figma"
-
-# GIT client　https://fork.dev/
-cask "fork"
-
-# Web browser. https://www.google.com/chrome
-cask "google-chrome"
-
-# Google Cloud SDK https://cloud.google.com/sdk/
-cask "google-cloud-sdk"
-
-# Client for the Google Drive storage service https://www.google.com/drive/
-cask "google-drive"
-
-# Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
-# cask "ngrok"
-
-# FIXME: it somehow fails on CI
 unless ENV["CI"]
+  # Password manager that keeps all passwords secure behind one password. https://1password.com
+  cask "1Password"
+
+  # Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
+  cask "1password-cli"
+
+  # Web browser focusing on privacy https://brave.com/
+  cask "brave-browser"
+
+  # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
+  cask "docker"
+
+  # Voice and text chat software. https://discord.com
+  cask "discord"
+
+  # Collaborative interface design tool. https://www.figma.com
+  cask "figma"
+
+  # GIT client　https://fork.dev/
+  cask "fork"
+
+  # Web browser. https://www.google.com/chrome
+  cask "google-chrome"
+
+  # Google Cloud SDK https://cloud.google.com/sdk/
+  cask "google-cloud-sdk"
+
+  # Client for the Google Drive storage service https://www.google.com/drive/
+  cask "google-drive"
+
+  # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
+  # cask "ngrok"
+
   # App to write, plan, collaborate, and get organized. https://www.notion.so
   cask "notion"
-end
 
-# Collaboration platform for API development. https://www.postman.com
-cask "postman"
+  # Collaboration platform for API development. https://www.postman.com
+  cask "postman"
 
-# Control your tools with a few keystrokes https://raycast.app/
-cask "raycast"
+  # Control your tools with a few keystrokes https://raycast.app/
+  cask "raycast"
 
-# Team communication and collaboration software. https://slack.com
-cask "slack"
+  # Team communication and collaboration software. https://slack.com
+  cask "slack"
 
-# Native GUI tool for relational databases https://tableplus.com/
-cask "tableplus"
+  # Native GUI tool for relational databases https://tableplus.com/
+  cask "tableplus"
 
-# Open-source code editor. https://code.visualstudio.com
-cask "visual-studio-code"
+  # Open-source code editor. https://code.visualstudio.com
+  cask "visual-studio-code"
 
-# Rust-based terminal https://www.warp.dev/
-cask "warp"
+  # Rust-based terminal https://www.warp.dev/
+  cask "warp"
 
-# Video communication and virtual meeting platform https://www.zoom.us/
-cask "zoom"
+  # Video communication and virtual meeting platform https://www.zoom.us/
+  cask "zoom"
 
-# FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
-cask "appcleaner"
+  # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
+  cask "appcleaner"
 
-# Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
-cask "bleunlock"
+  # Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
+  cask "bleunlock"
 
-# Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
-cask "brooklyn"
+  # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
+  cask "brooklyn"
 
-# Color picking application. https://colorsnapper.com
-cask "colorsnapper"
+  # Color picking application. https://colorsnapper.com
+  cask "colorsnapper"
 
-# Tool for using an iPad as a second display https://www.duetdisplay.com/
-cask "duet"
+  # Tool for using an iPad as a second display https://www.duetdisplay.com/
+  cask "duet"
 
-# Automated organization https://www.noodlesoft.com/
-cask "hazel"
+  # Automated organization https://www.noodlesoft.com/
+  cask "hazel"
 
-# Keyboard customizer. https://pqrs.org/osx/karabiner
-cask "karabiner-elements"
+  # Keyboard customizer. https://pqrs.org/osx/karabiner
+  cask "karabiner-elements"
 
-# Automation software https://www.keyboardmaestro.com/main/
-cask "keyboard-maestro"
+  # Automation software https://www.keyboardmaestro.com/main/
+  cask "keyboard-maestro"
 
-# Web browser https://www.microsoft.com/edge
-cask "microsoft-edge"
+  # Web browser https://www.microsoft.com/edge
+  cask "microsoft-edge"
 
-# Mozilla Firefox https://www.mozilla.org/firefox
-cask "firefox"
+  # Mozilla Firefox https://www.mozilla.org/firefox
+  cask "firefox"
 
-# FIXME: it somehow fails on CI
-unless ENV["CI"]
   # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
   cask "firefox-developer-edition"
-end
 
-# HTTP and GraphQL Client https://insomnia.rest/
-cask "insomnia"
+  # HTTP and GraphQL Client https://insomnia.rest/
+  cask "insomnia"
 
-# Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
-cask "ledger-live"
+  # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
+  cask "ledger-live"
 
-# Music streaming service. https://www.spotify.com
-cask "spotify"
+  # Music streaming service. https://www.spotify.com
+  cask "spotify"
 
-# Virtual machines UI using QEMU https://getutm.app/
-cask "utm"
+  # Virtual machines UI using QEMU https://getutm.app/
+  cask "utm"
 
-# Tools for building Android applications https://developer.android.com/studio
-cask "android-studio"
+  # Tools for building Android applications https://developer.android.com/studio
+  cask "android-studio"
 
-# FIXME: it somehow fails on CI
-unless ENV["CI"]
   # Free and open-source 3D creation suite. https://www.blender.org
   cask "blender"
-end
 
-# Virtual video-calling space https://gather.town/
-cask "gather"
+  # Virtual video-calling space https://gather.town/
+  cask "gather"
 
-# Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
-cask "kindle"
+  # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
+  cask "kindle"
 
-# Online collaborative whiteboard platform https://miro.com/
-cask "miro"
+  # Online collaborative whiteboard platform https://miro.com/
+  cask "miro"
 
-# VPN client focusing on security https://protonvpn.com/
-cask "protonvpn"
+  # VPN client focusing on security https://protonvpn.com/
+  cask "protonvpn"
 
-# Messaging app with a focus on speed and security https://macos.telegram.org/
-cask "telegram"
+  # Messaging app with a focus on speed and security https://macos.telegram.org/
+  cask "telegram"
 
-# Multimedia player. https://www.videolan.org/vlc
-cask "vlc"
+  # Multimedia player. https://www.videolan.org/vlc
+  cask "vlc"
 
-# Virtualization tool https://github.com/insidegui/VirtualBuddy
-cask "VirtualBuddy"
+  # Virtualization tool https://github.com/insidegui/VirtualBuddy
+  cask "VirtualBuddy"
 
-# Graphical network analyzer and capture tool https://www.wireshark.org
-cask "wireshark"
+  # Graphical network analyzer and capture tool https://www.wireshark.org
+  cask "wireshark"
 
-# ----------------------------------------------------------------
-# Mas
-# ----------------------------------------------------------------
-unless ENV["CI"]
+  # ----------------------------------------------------------------
+  # Mas
+  # ----------------------------------------------------------------
+
   # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
   mas "Xcode", id: 497_799_835
 
