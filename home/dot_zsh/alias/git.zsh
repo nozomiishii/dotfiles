@@ -336,4 +336,4 @@ function gmm() {
   gstc
 }
 
-alias undo='reset --soft HEAD^'
+alias greset='git reset --soft HEAD^'
