@@ -9,14 +9,14 @@ importers:
   .:
     devDependencies:
       '@evilmartians/lefthook':
-        specifier: 1.7.14
-        version: 1.7.14
+        specifier: 1.7.15
+        version: 1.7.15
       '@nozomiishii/commitlint-config':
         specifier: 0.0.5
-        version: 0.0.5(@types/node@22.5.2)(typescript@5.5.4)
+        version: 0.0.5(@types/node@22.5.4)(typescript@5.5.4)
       '@nozomiishii/lefthook-config':
         specifier: 0.2.2
-        version: 0.2.2(@evilmartians/lefthook@1.7.14)
+        version: 0.2.2(@evilmartians/lefthook@1.7.15)
       '@nozomiishii/markdownlint-cli2-config':
         specifier: 0.3.1
         version: 0.3.1
@@ -24,8 +24,8 @@ importers:
         specifier: 0.6.2
         version: 0.6.2
       markdownlint-cli2:
-        specifier: 0.13.0
-        version: 0.13.0
+        specifier: 0.14.0
+        version: 0.14.0
 
 packages:
 
@@ -110,8 +110,8 @@ packages:
     resolution: {integrity: sha512-tpyc+7i6bPG9mvaBbtKUeghfyZSDgWquIDfMgqYtTbmZ9Y9VzEm2je9EYcQ0aoz5o7NvGS+rcDec93yO08MHYA==}
     engines: {node: '>=v18'}
 
-  '@evilmartians/lefthook@1.7.14':
-    resolution: {integrity: sha512-0FPRdmd7hIZXjTQKQjLnmqxx4xGRIM1oGN9pJ4PyI14tOqEAwstmLIbauqQpTVTj3MAPeylsQVXh9RGaq/F2/A==}
+  '@evilmartians/lefthook@1.7.15':
+    resolution: {integrity: sha512-YgKTw9noH/SG0aOaPgrZNRgY7iJ0FuIVfvdB/aGsNulYLqiFnJyID2sfCaQ7PsGaFng2wdFBhmK/wbnb8+qPcA==}
     cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
@@ -161,8 +161,8 @@ packages:
   '@types/conventional-commits-parser@5.0.0':
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
 
-  '@types/node@22.5.2':
-    resolution: {integrity: sha512-acJsPTEqYqulZS/Yp/S3GgeE6GZ0qYODUR8aVr/DkhHQ8l9nd4j5x1/ZJy9/gHrRlFMqkO6i0I3E27Alu4jjPg==}
+  '@types/node@22.5.4':
+    resolution: {integrity: sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==}
 
   JSONStream@1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
@@ -362,8 +362,8 @@ packages:
     resolution: {integrity: sha512-/1WM/LNHRAOH9lZta77uGbq0dAEQM+XjNesWwhlERDVenqothRbnzTrL3/LrIoEPPjeUHC3vrS6TwoyxeHs7MQ==}
     engines: {node: '>=18'}
 
-  globby@14.0.1:
-    resolution: {integrity: sha512-jOMLD2Z7MAhyG8aJpNOpmziMOP4rPLcc95oQPKXBazW82z+CEgPFBQvEpRUa1KeIMUJo4Wsm+q6uzO/Q/4BksQ==}
+  globby@14.0.2:
+    resolution: {integrity: sha512-s3Fq41ZVh7vbbe2PN3nrW7yC7U7MFVc5c98/iTl9c2GawNMKx/J648KQRW6WKkuU8GIbbh2IXfIRQjOZnXcTnw==}
     engines: {node: '>=18'}
 
   has-flag@3.0.0:
@@ -447,8 +447,8 @@ packages:
   jsonc-parser@3.2.0:
     resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
 
-  jsonc-parser@3.2.1:
-    resolution: {integrity: sha512-AilxAyFOAcK5wA1+LeaySVBrHsGQvUFCDWXKpZjzaL0PqW+xfBOttn8GNtWKFWqneyMZj41MWF9Kl6iPWLwgOA==}
+  jsonc-parser@3.3.1:
+    resolution: {integrity: sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ==}
 
   jsonparse@1.3.1:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
@@ -504,30 +504,35 @@ packages:
     peerDependencies:
       markdownlint-cli2: '>=0.0.4'
 
+  markdownlint-cli2-formatter-default@0.0.5:
+    resolution: {integrity: sha512-4XKTwQ5m1+Txo2kuQ3Jgpo/KmnG+X90dWt4acufg6HVGadTUG5hzHF/wssp9b5MBYOMCnZ9RMPaU//uHsszF8Q==}
+    peerDependencies:
+      markdownlint-cli2: '>=0.0.4'
+
   markdownlint-cli2@0.12.1:
     resolution: {integrity: sha512-RcK+l5FjJEyrU3REhrThiEUXNK89dLYNJCYbvOUKypxqIGfkcgpz8g08EKqhrmUbYfYoLC5nEYQy53NhJSEtfQ==}
     engines: {node: '>=18'}
     hasBin: true
 
-  markdownlint-cli2@0.13.0:
-    resolution: {integrity: sha512-Pg4nF7HlopU97ZXtrcVISWp3bdsuc5M0zXyLp2/sJv2zEMlInrau0ZKK482fQURzVezJzWBpNmu4u6vGAhij+g==}
+  markdownlint-cli2@0.14.0:
+    resolution: {integrity: sha512-2cqdWy56frU2FTpbuGb83mEWWYuUIYv6xS8RVEoUAuKNw/hXPar2UYGpuzUhlFMngE8Omaz4RBH52MzfRbGshw==}
     engines: {node: '>=18'}
     hasBin: true
+
+  markdownlint-micromark@0.1.10:
+    resolution: {integrity: sha512-no5ZfdqAdWGxftCLlySHSgddEjyW4kui4z7amQcGsSKfYC5v/ou+8mIQVyg9KQMeEZLNtz9OPDTj7nnTnoR4FQ==}
+    engines: {node: '>=18'}
 
   markdownlint-micromark@0.1.8:
     resolution: {integrity: sha512-1ouYkMRo9/6gou9gObuMDnvZM8jC/ly3QCFQyoSPCS2XV1ZClU0xpKbL1Ar3bWWRT1RnBZkWUEiNKrI2CwiBQA==}
     engines: {node: '>=16'}
 
-  markdownlint-micromark@0.1.9:
-    resolution: {integrity: sha512-5hVs/DzAFa8XqYosbEAEg6ok6MF2smDj89ztn9pKkCtdKHVdPQuGMH7frFfYL9mLkvfFe4pTyAMffLbjf3/EyA==}
-    engines: {node: '>=18'}
-
   markdownlint@0.33.0:
     resolution: {integrity: sha512-4lbtT14A3m0LPX1WS/3d1m7Blg+ZwiLq36WvjQqFGsX3Gik99NV+VXp/PW3n+Q62xyPdbvGOCfjPqjW+/SKMig==}
     engines: {node: '>=18'}
 
-  markdownlint@0.34.0:
-    resolution: {integrity: sha512-qwGyuyKwjkEMOJ10XN6OTKNOVYvOIi35RNvDLNxTof5s8UmyGHlCdpngRHoRGNvQVGuxO3BJ7uNSgdeX166WXw==}
+  markdownlint@0.35.0:
+    resolution: {integrity: sha512-wgp8yesWjFBL7bycA3hxwHRdsZGJhjhyP1dSxKVKrza0EPFYtn+mHtkVy6dvP1kGSjovyG5B8yNP6Frj0UFUJg==}
     engines: {node: '>=18'}
 
   mdurl@2.0.0:
@@ -546,6 +551,10 @@ packages:
 
   micromatch@4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
+    engines: {node: '>=8.6'}
+
+  micromatch@4.0.8:
+    resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
 
   mimic-fn@4.0.0:
@@ -599,8 +608,8 @@ packages:
     resolution: {integrity: sha512-5HviZNaZcfqP95rwpv+1HDgUamezbqdSYTyzjTvwtJSnIH+3vnbmWsItli8OFEndS984VT55M3jduxZbX351gg==}
     engines: {node: '>=12'}
 
-  picocolors@1.0.1:
-    resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
+  picocolors@1.1.0:
+    resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
 
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -768,7 +777,7 @@ snapshots:
   '@babel/code-frame@7.24.7':
     dependencies:
       '@babel/highlight': 7.24.7
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
   '@babel/helper-validator-identifier@7.24.7': {}
 
@@ -777,13 +786,13 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
-  '@commitlint/cli@19.3.0(@types/node@22.5.2)(typescript@5.5.4)':
+  '@commitlint/cli@19.3.0(@types/node@22.5.4)(typescript@5.5.4)':
     dependencies:
       '@commitlint/format': 19.3.0
       '@commitlint/lint': 19.4.1
-      '@commitlint/load': 19.4.0(@types/node@22.5.2)(typescript@5.5.4)
+      '@commitlint/load': 19.4.0(@types/node@22.5.4)(typescript@5.5.4)
       '@commitlint/read': 19.4.0
       '@commitlint/types': 19.0.3
       execa: 8.0.1
@@ -830,7 +839,7 @@ snapshots:
       '@commitlint/rules': 19.4.1
       '@commitlint/types': 19.0.3
 
-  '@commitlint/load@19.4.0(@types/node@22.5.2)(typescript@5.5.4)':
+  '@commitlint/load@19.4.0(@types/node@22.5.4)(typescript@5.5.4)':
     dependencies:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/execute-rule': 19.0.0
@@ -838,7 +847,7 @@ snapshots:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.5.4)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@22.5.2)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@22.5.4)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -890,7 +899,7 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.0
       chalk: 5.3.0
 
-  '@evilmartians/lefthook@1.7.14': {}
+  '@evilmartians/lefthook@1.7.15': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -904,18 +913,18 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@nozomiishii/commitlint-config@0.0.5(@types/node@22.5.2)(typescript@5.5.4)':
+  '@nozomiishii/commitlint-config@0.0.5(@types/node@22.5.4)(typescript@5.5.4)':
     dependencies:
-      '@commitlint/cli': 19.3.0(@types/node@22.5.2)(typescript@5.5.4)
+      '@commitlint/cli': 19.3.0(@types/node@22.5.4)(typescript@5.5.4)
       '@commitlint/config-conventional': 19.2.2
       '@commitlint/types': 19.0.3
     transitivePeerDependencies:
       - '@types/node'
       - typescript
 
-  '@nozomiishii/lefthook-config@0.2.2(@evilmartians/lefthook@1.7.14)':
+  '@nozomiishii/lefthook-config@0.2.2(@evilmartians/lefthook@1.7.15)':
     dependencies:
-      '@evilmartians/lefthook': 1.7.14
+      '@evilmartians/lefthook': 1.7.15
 
   '@nozomiishii/markdownlint-cli2-config@0.3.1':
     dependencies:
@@ -934,9 +943,9 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
-      '@types/node': 22.5.2
+      '@types/node': 22.5.4
 
-  '@types/node@22.5.2':
+  '@types/node@22.5.4':
     dependencies:
       undici-types: 6.19.8
 
@@ -1018,9 +1027,9 @@ snapshots:
       meow: 12.1.1
       split2: 4.2.0
 
-  cosmiconfig-typescript-loader@5.0.0(@types/node@22.5.2)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4):
+  cosmiconfig-typescript-loader@5.0.0(@types/node@22.5.4)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4):
     dependencies:
-      '@types/node': 22.5.2
+      '@types/node': 22.5.4
       cosmiconfig: 9.0.0(typescript@5.5.4)
       jiti: 1.21.6
       typescript: 5.5.4
@@ -1088,7 +1097,7 @@ snapshots:
       '@nodelib/fs.walk': 1.2.8
       glob-parent: 5.1.2
       merge2: 1.4.1
-      micromatch: 4.0.5
+      micromatch: 4.0.8
 
   fast-uri@3.0.1: {}
 
@@ -1145,7 +1154,7 @@ snapshots:
       slash: 5.1.0
       unicorn-magic: 0.1.0
 
-  globby@14.0.1:
+  globby@14.0.2:
     dependencies:
       '@sindresorhus/merge-streams': 2.3.0
       fast-glob: 3.3.2
@@ -1207,7 +1216,7 @@ snapshots:
 
   jsonc-parser@3.2.0: {}
 
-  jsonc-parser@3.2.1: {}
+  jsonc-parser@3.3.1: {}
 
   jsonparse@1.3.1: {}
 
@@ -1261,9 +1270,9 @@ snapshots:
     dependencies:
       markdownlint-cli2: 0.12.1
 
-  markdownlint-cli2-formatter-default@0.0.4(markdownlint-cli2@0.13.0):
+  markdownlint-cli2-formatter-default@0.0.5(markdownlint-cli2@0.14.0):
     dependencies:
-      markdownlint-cli2: 0.13.0
+      markdownlint-cli2: 0.14.0
 
   markdownlint-cli2@0.12.1:
     dependencies:
@@ -1274,28 +1283,28 @@ snapshots:
       micromatch: 4.0.5
       yaml: 2.3.4
 
-  markdownlint-cli2@0.13.0:
+  markdownlint-cli2@0.14.0:
     dependencies:
-      globby: 14.0.1
+      globby: 14.0.2
       js-yaml: 4.1.0
-      jsonc-parser: 3.2.1
-      markdownlint: 0.34.0
-      markdownlint-cli2-formatter-default: 0.0.4(markdownlint-cli2@0.13.0)
-      micromatch: 4.0.5
+      jsonc-parser: 3.3.1
+      markdownlint: 0.35.0
+      markdownlint-cli2-formatter-default: 0.0.5(markdownlint-cli2@0.14.0)
+      micromatch: 4.0.8
+
+  markdownlint-micromark@0.1.10: {}
 
   markdownlint-micromark@0.1.8: {}
-
-  markdownlint-micromark@0.1.9: {}
 
   markdownlint@0.33.0:
     dependencies:
       markdown-it: 14.0.0
       markdownlint-micromark: 0.1.8
 
-  markdownlint@0.34.0:
+  markdownlint@0.35.0:
     dependencies:
       markdown-it: 14.1.0
-      markdownlint-micromark: 0.1.9
+      markdownlint-micromark: 0.1.10
 
   mdurl@2.0.0: {}
 
@@ -1306,6 +1315,11 @@ snapshots:
   merge2@1.4.1: {}
 
   micromatch@4.0.5:
+    dependencies:
+      braces: 3.0.3
+      picomatch: 2.3.1
+
+  micromatch@4.0.8:
     dependencies:
       braces: 3.0.3
       picomatch: 2.3.1
@@ -1351,7 +1365,7 @@ snapshots:
 
   path-type@5.0.0: {}
 
-  picocolors@1.0.1: {}
+  picocolors@1.1.0: {}
 
   picomatch@2.3.1: {}
 
