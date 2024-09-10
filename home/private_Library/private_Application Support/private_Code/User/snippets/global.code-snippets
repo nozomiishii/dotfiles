@@ -2,11 +2,11 @@
   "File name": {
     "prefix": "fname",
     "body": ["$TM_FILENAME_BASE"],
-    "description": "File name"
+    "description": "File name",
   },
   "NOZOMI ISHII": {
     "prefix": "nozo",
     "body": ["NOZOMI ISHII"],
-    "description": "NOZOMI ISHII"
-  }
+    "description": "NOZOMI ISHII",
+  },
 }

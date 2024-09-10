@@ -6,7 +6,7 @@
     "prefix": "!sb",
     "scope": "typescriptreact",
     "body": [
-      "import { Meta, StoryObj } from '@storybook/react';",
+      "import type { Meta, StoryObj } from '@storybook/react';",
       "import Component from './${TM_FILENAME_BASE/(.stories)//}';",
       "",
       "const meta = {",
@@ -14,7 +14,7 @@
       "  parameters: {",
       "    design: {",
       "      type: 'figspec',",
-      "      url: '',",
+      "      url: ,",
       "    },",
       "  },",
       "} satisfies Meta<typeof Component>;",
