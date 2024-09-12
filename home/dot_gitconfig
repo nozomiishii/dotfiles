@@ -4,7 +4,7 @@ email = nozomiishii.jp@gmail.com
 signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDF31h4ogJY+JRiI+k0+aLoO/OTnEI1FCmyvA1LWXOqB
 
 [pull]
-rebase = false
+rebase = true
 
 [init]
 defaultBranch = main
