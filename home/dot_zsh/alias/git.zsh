@@ -327,13 +327,17 @@ unset git_version
 
 # NOTE: custom workflow
 function gmm() {
-  gsta
-  gcm
-  ggl
-  gco -
-  gm main
-  gstaa stash@{0}
-  gstc
+  git stash push
+  git checkout main
+  git pull origin main
+  git checkout -
+  git rebase main
+
+  if git stash list | grep -q 'stash@{0}'; then
+    git stash pop
+  else
+    echo "No stash found, skipping git stash pop."
+  fi
 }
 
 alias greset='git reset --soft HEAD^'
