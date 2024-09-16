@@ -429,6 +429,12 @@
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.associations.files": [
     {
+      "icon": "playwright",
+      "extensions": ["playwright.ct.config.ts", "playwright.e2e.config.ts"],
+      "filename": true,
+      "format": "svg"
+    },
+    {
       "icon": "tsconfig",
       "extensions": ["tsconfig.nextjs.json"],
       "filename": true,
