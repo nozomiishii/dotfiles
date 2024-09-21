@@ -34,5 +34,5 @@ windows:
                 - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey
             - split_direction: vertical
               panes:
-                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey
-                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey
+                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey/frontend-survey
+                - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey/frontend-survey
