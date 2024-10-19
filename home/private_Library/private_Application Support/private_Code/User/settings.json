@@ -384,6 +384,10 @@
   "tabnine.experimentalAutoImports": true,
   "errorLens.enabledDiagnosticLevels": ["error", "warning"],
 
+  // ----------------------------------------------------------------
+  // Github Pull Requests
+  // ----------------------------------------------------------------
+  "githubPullRequests.commentExpandState": "collapseAll",
 
   // ----------------------------------------------------------------
   // todo-tree
