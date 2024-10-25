@@ -255,6 +255,9 @@ unless ENV["CI"]
   # VPN client focusing on security https://protonvpn.com/
   cask "protonvpn"
 
+  # Onion routing based messenger https://getsession.org/
+  cask "session"
+
   # Messaging app with a focus on speed and security https://macos.telegram.org/
   cask "telegram"
 
