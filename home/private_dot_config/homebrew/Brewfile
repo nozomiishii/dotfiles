@@ -82,7 +82,7 @@ brew "jq"
 brew "neovim"
 
 # Object-relational database system https://www.postgresql.org/
-brew "postgresql@14"
+brew "postgresql@17"
 
 # Protocol buffers (Google's data interchange format) https://github.com/protocolbuffers/protobuf/
 brew "protobuf"
