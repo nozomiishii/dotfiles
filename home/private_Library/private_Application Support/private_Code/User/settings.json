@@ -19,6 +19,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "search.exclude": {
     "**/node_modules": true,
+    "**/.next": true,
     "**/target": true,
     "**/submodules": true
   },
