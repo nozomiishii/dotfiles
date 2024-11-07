@@ -259,6 +259,21 @@
     "command": "-workbench.action.chat.acceptInput",
     "when": "inChatInput && textInputFocus"
   },
+  {
+    "key": "cmd+enter",
+    "command": "workbench.action.chat.submit",
+    "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress"
+  },
+  {
+    "key": "enter",
+    "command": "-workbench.action.chat.submit",
+    "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-github.copilot.generate",
+    "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
+  },
   // ----------------------------------------------------------------
   // Bookmarks
   // ----------------------------------------------------------------
