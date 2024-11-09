@@ -310,5 +310,14 @@
     "key": "cmd+k j",
     "command": "code-runner.run",
     "when": "!terminalFocus && editorTextFocus && !editorReadonly"
+  },
+  // i18n
+  {
+    "key": "ctrl+cmd+t",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorHasSelection",
+    "args": {
+      "snippet": "{t('${TM_SELECTED_TEXT}')}"
+    }
   }
 ]
