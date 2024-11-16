@@ -578,6 +578,16 @@
   // Github Copilot
   // ----------------------------------------------------------------
   "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.chat.temporalContext.enabled": true,
+  "github.copilot.chat.edits.enabled": true,
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "text": "私が日本語で質問を送信した場合、その質問を自然な口語の英語に翻訳し、ダブルクオーテーションで囲って文頭にタイトルとして表示してください。"
+    },
+    {
+      "text": "質問への回答は、自然な口語の英語で行ってください。回答の後に、その回答の日本語訳を追加してください。"
+    }
+  ],
 
   // ----------------------------------------------------------------
   // Total TypeScript
