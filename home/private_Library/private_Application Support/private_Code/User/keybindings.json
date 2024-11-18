@@ -251,23 +251,13 @@
   },
   {
     "key": "cmd+enter",
-    "command": "workbench.action.chat.acceptInput",
-    "when": "inChatInput && textInputFocus"
-  },
-  {
-    "key": "enter",
-    "command": "-workbench.action.chat.acceptInput",
-    "when": "inChatInput && textInputFocus"
-  },
-  {
-    "key": "cmd+enter",
     "command": "workbench.action.chat.submit",
-    "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress"
+    "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress && chatLocation != 'editing-session' || chatInputHasText && inChatInput && !chatSessionRequestInProgress && !isApplyingChatEdits && chatLocation == 'editing-session'"
   },
   {
     "key": "enter",
     "command": "-workbench.action.chat.submit",
-    "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress"
+    "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress && chatLocation != 'editing-session' || chatInputHasText && inChatInput && !chatSessionRequestInProgress && !isApplyingChatEdits && chatLocation == 'editing-session'"
   },
   {
     "key": "ctrl+enter",
