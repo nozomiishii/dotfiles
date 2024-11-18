@@ -264,23 +264,7 @@
     "command": "-github.copilot.generate",
     "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
   },
-  // ----------------------------------------------------------------
-  // Bookmarks
-  // ----------------------------------------------------------------
-  {
-    "key": "alt+cmd+s",
-    "command": "-saveAll"
-  },
-  {
-    "key": "alt+cmd+k",
-    "command": "-bookmarks.toggle",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+cmd+s",
-    "command": "bookmarks.toggle",
-    "when": "editorTextFocus"
-  },
+
   // ----------------------------------------------------------------
   // User Snippets
   // ----------------------------------------------------------------
