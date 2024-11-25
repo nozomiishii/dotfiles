@@ -255,8 +255,8 @@ unless ENV["CI"]
   # Online collaborative whiteboard platform https://miro.com/
   cask "miro"
 
-  # VPN client focusing on security https://protonvpn.com/
-  cask "protonvpn"
+  # VPN client for secure internet access and private browsing https://nordvpn.com/
+  cask "nordvpn"
 
   # Onion routing based messenger https://getsession.org/
   cask "session"
