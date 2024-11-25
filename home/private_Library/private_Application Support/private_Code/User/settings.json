@@ -1,5 +1,14 @@
 {
   "$schema": "vscode://schemas/settings/user",
+  // ----------------------------------------------------------------
+  // Essential
+  // ----------------------------------------------------------------
+  "workbench.colorTheme": "Monokai Pro",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.fontSize": 14,
+  "editor.minimap.enabled": false,
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": false,
 
   // ----------------------------------------------------------------
   // Security
@@ -10,8 +19,6 @@
   // ----------------------------------------------------------------
   // General
   // ----------------------------------------------------------------
-  "workbench.colorTheme": "Monokai Pro",
-  "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "newUntitledFile",
   "breadcrumbs.enabled": true,
   "files.insertFinalNewline": true,
@@ -57,21 +64,12 @@
   // ----------------------------------------------------------------
   // Editor
   // ----------------------------------------------------------------
-  "editor.tabSize": 2,
   "editor.wordWrap": "on",
-  "editor.fontSize": 14,
-  "editor.inlayHints.fontSize": 12, // Font size for type information hints
-  "editor.inlayHints.enabled": "offUnlessPressed", // toggle type information hints with ctrl + option
-  "javascript.inlayHints.parameterNames.enabled": "all",
-  "typescript.inlayHints.parameterNames.enabled": "all",
-  "editor.minimap.enabled": false,
   "editor.suggestSelection": "first",
   "editor.renderWhitespace": "trailing",
   "editor.acceptSuggestionOnEnter": "smart",
   "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.guides.bracketPairs": true,
-  "editor.bracketPairColorization.enabled": false,
   "editor.fontFamily": "Monaco, 'Hack Nerd Font', 'Apple Color Emoji'",
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.linkedEditing": true,
@@ -414,6 +412,7 @@
   // i18n-ally
   // ----------------------------------------------------------------
   "i18n-ally.autoDetection": false,
+  "i18n-ally.translate.openai.apiModel": "gpt-4",
 
   // ----------------------------------------------------------------
   // Go
@@ -577,6 +576,7 @@
   // ----------------------------------------------------------------
   // Github Copilot
   // ----------------------------------------------------------------
+  "copilot.vision.model": "Claude 3.5 Sonnet",
   "github.copilot.editor.enableAutoCompletions": false,
   "github.copilot.chat.temporalContext.enabled": true,
   "github.copilot.chat.edits.enabled": true,
