@@ -5,6 +5,7 @@
   // ----------------------------------------------------------------
   "workbench.colorTheme": "Monokai Pro",
   "workbench.iconTheme": "vscode-icons",
+  "workbench.activityBar.orientation": "vertical",
   "editor.fontSize": 14,
   "editor.minimap.enabled": false,
   "editor.guides.bracketPairs": true,
