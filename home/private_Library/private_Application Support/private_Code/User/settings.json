@@ -36,6 +36,7 @@
     "ja": true
   },
   "git.autofetch": true,
+  "git.autoStash": true,
   "git.openRepositoryInParentFolders": "always",
   "editor.tokenColorCustomizations": {
     "[*Light*]": {
