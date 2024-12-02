@@ -97,11 +97,6 @@
   "terminal.external.osxExec": "Warp.app",
   "terminal.explorerKind": "external",
 
-  // 多分、amazon Qのやつ。消えない。クリーンインストールしたら消す
-  "terminal.integrated.env.osx": {
-    "Q_NEW_SESSION": "1"
-  },
-
   // ----------------------------------------------------------------
   // Theme
   // ----------------------------------------------------------------
