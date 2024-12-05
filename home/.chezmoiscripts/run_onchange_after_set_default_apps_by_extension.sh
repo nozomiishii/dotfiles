@@ -10,11 +10,21 @@ set -Ceuo pipefail
 
 echo "- 🧮 duti"
 
-duti -s com.microsoft.VSCode yaml all
-duti -s com.microsoft.VSCode json all
-duti -s com.microsoft.VSCode css all
-duti -s com.microsoft.VSCode markdown all
-duti -s com.microsoft.VSCode sh all
-duti -s com.microsoft.VSCode js all
-duti -s com.microsoft.VSCode ts all
+# duti -s com.microsoft.VSCode yaml all
+# duti -s com.microsoft.VSCode json all
+# duti -s com.microsoft.VSCode css all
+# duti -s com.microsoft.VSCode markdown all
+# duti -s com.microsoft.VSCode sh all
+# duti -s com.microsoft.VSCode js all
+# duti -s com.microsoft.VSCode ts all
+
+# Cursor.app
+# https://github.com/desktop/desktop/issues/17462
+duti -s com.todesktop.230313mzl4w4u92 yaml all
+duti -s com.todesktop.230313mzl4w4u92 json all
+duti -s com.todesktop.230313mzl4w4u92 css all
+duti -s com.todesktop.230313mzl4w4u92 markdown all
+duti -s com.todesktop.230313mzl4w4u92 sh all
+duti -s com.todesktop.230313mzl4w4u92 js all
+duti -s com.todesktop.230313mzl4w4u92 ts all
 duti -s org.videolan.vlc mp4 all
