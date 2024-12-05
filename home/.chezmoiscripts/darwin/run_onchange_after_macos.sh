@@ -382,6 +382,9 @@ defaults write dev.warp.Warp-Stable Theme -string '{"Custom":{"name":"Nozomiishi
 # ----------------------------------------------------------------
 # Cursor
 # ----------------------------------------------------------------
+# Ensure the directory exists
+mkdir -p "$HOME/Library/Application Support/Cursor/User/"
+
 ln -sf "$HOME/Library/Application Support/Code/User/keybindings.json" "$HOME/Library/Application Support/Cursor/User/"
 ln -sf "$HOME/Library/Application Support/Code/User/settings.json" "$HOME/Library/Application Support/Cursor/User/"
 
