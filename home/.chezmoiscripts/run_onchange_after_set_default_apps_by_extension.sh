@@ -20,11 +20,15 @@ echo "- 🧮 duti"
 
 # Cursor.app
 # https://github.com/desktop/desktop/issues/17462
+duti -s com.todesktop.230313mzl4w4u92 toml all
 duti -s com.todesktop.230313mzl4w4u92 yaml all
+duti -s com.todesktop.230313mzl4w4u92 yml all
 duti -s com.todesktop.230313mzl4w4u92 json all
+duti -s com.todesktop.230313mzl4w4u92 jsonc all
 duti -s com.todesktop.230313mzl4w4u92 css all
 duti -s com.todesktop.230313mzl4w4u92 markdown all
 duti -s com.todesktop.230313mzl4w4u92 sh all
 duti -s com.todesktop.230313mzl4w4u92 js all
 duti -s com.todesktop.230313mzl4w4u92 ts all
+duti -s com.todesktop.230313mzl4w4u92 tsx all
 duti -s org.videolan.vlc mp4 all
