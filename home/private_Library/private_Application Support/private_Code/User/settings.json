@@ -408,6 +408,7 @@
   // i18n-ally
   // ----------------------------------------------------------------
   "i18n-ally.autoDetection": false,
+  "i18n-ally.annotations": false,
   "i18n-ally.translate.openai.apiModel": "gpt-4",
 
   // ----------------------------------------------------------------
