@@ -280,11 +280,6 @@
     "args": { "name": "pretty console check" },
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
   },
-  {
-    "key": "cmd+k j",
-    "command": "code-runner.run",
-    "when": "!terminalFocus && editorTextFocus && !editorReadonly"
-  },
   // i18n
   {
     "key": "ctrl+cmd+t",
