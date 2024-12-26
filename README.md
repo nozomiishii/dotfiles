@@ -251,13 +251,6 @@ Finder Sidebar
 make repo
 ```
 
-### 🤵🏻‍♂️ Keyboard Maestro
-
-- Register Keyboard Maestro... >  
-  Activate the License
-- Preferences... > Sync Marcos >  
-  Select "~/dotfiles/apps/KeyboardMaestro"
-
 ### 🧹 Hazel
 
 - License... >  

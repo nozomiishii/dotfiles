@@ -216,9 +216,6 @@ unless ENV["CI"]
   # Keyboard customizer. https://pqrs.org/osx/karabiner
   cask "karabiner-elements"
 
-  # Automation software https://www.keyboardmaestro.com/main/
-  cask "keyboard-maestro"
-
   # Web browser https://www.microsoft.com/edge
   cask "microsoft-edge"
 
