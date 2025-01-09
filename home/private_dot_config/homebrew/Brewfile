@@ -6,6 +6,9 @@ cask_args appdir: "/Applications"
 # Cross-shell prompt for astronauts https://starship.rs
 brew "starship"
 
+# Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
+# brew "ghostty"
+
 # FIXME: it somehow fails on CI
 unless ENV["CI"]
   # Developer targeted fonts with a high number of glyphs https://github.com/ryanoasis/nerd-fonts
