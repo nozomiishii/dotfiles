@@ -147,6 +147,9 @@ unless ENV["CI"]
   # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
   cask "docker"
 
+  # Replacement for Docker Desktop https://orbstack.dev/
+  cask "orbstack"
+
   # Voice and text chat software. https://discord.com
   cask "discord"
 
