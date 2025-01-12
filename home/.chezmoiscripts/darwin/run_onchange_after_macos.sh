@@ -216,6 +216,9 @@ echo "- 🪧 Mission Control" # killall Dock
 # Choose whether to rearrange Spaces automatically.
 defaults write com.apple.dock mru-spaces -bool false
 
+# Group apps in Mission Control
+defaults write com.apple.dock expose-group-apps -bool true
+
 # ----------------------------------------------------------------
 # Security & Privacy
 # ----------------------------------------------------------------
