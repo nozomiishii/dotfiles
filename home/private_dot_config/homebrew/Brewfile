@@ -267,6 +267,9 @@ unless ENV["CI"]
   # Messaging app with a focus on speed and security https://macos.telegram.org/
   cask "telegram"
 
+  # Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
+  cask "tailscale"
+
   # Instant messaging application focusing on security https://signal.org/
   cask "signal"
 
