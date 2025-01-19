@@ -25,6 +25,19 @@
 name: 'work'
 windows:
   - tabs:
+      - title: home
+        layout:
+          split_direction: horizontal
+          panes:
+            - split_direction: vertical
+              panes:
+                - cwd: /Users/nozomiishii/Desktop
+                - cwd: /Users/nozomiishii/Desktop
+            - split_direction: vertical
+              panes:
+                - cwd: /Users/nozomiishii/.local/share/chezmoi
+                - cwd: /Users/nozomiishii/.local/share/chezmoi
+
       - title: e-dash-survey
         layout:
           split_direction: horizontal
@@ -43,6 +56,7 @@ windows:
               panes:
                 - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey
                 - cwd: /Users/nozomiishii/Code/edash-product/e-dash-survey/frontend-survey
+
       - title: e-dash-app
         layout:
           split_direction: horizontal
@@ -55,16 +69,3 @@ windows:
               panes:
                 - cwd: /Users/nozomiishii/Code/edash-product/e-dash-app/frontend-user
                 - cwd: /Users/nozomiishii/Code/edash-product/e-dash-app/frontend-user
-
-      - title: home
-        layout:
-          split_direction: horizontal
-          panes:
-            - split_direction: vertical
-              panes:
-                - cwd: /Users/nozomiishii/Desktop
-                - cwd: /Users/nozomiishii/Desktop
-            - split_direction: vertical
-              panes:
-                - cwd: /Users/nozomiishii/Desktop
-                - cwd: /Users/nozomiishii/Desktop
