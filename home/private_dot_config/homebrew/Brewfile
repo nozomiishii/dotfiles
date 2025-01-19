@@ -162,6 +162,9 @@ unless ENV["CI"]
   # GIT client　https://fork.dev/
   cask "fork"
 
+  # Chromium based browser https://arc.net/
+  cask "arc"
+
   # Web browser. https://www.google.com/chrome
   cask "google-chrome"
 
