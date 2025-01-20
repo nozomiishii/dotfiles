@@ -9,14 +9,14 @@ importers:
   .:
     devDependencies:
       '@evilmartians/lefthook':
-        specifier: 1.10.7
-        version: 1.10.7
+        specifier: 1.10.8
+        version: 1.10.8
       '@nozomiishii/commitlint-config':
         specifier: 0.0.5
         version: 0.0.5(@types/node@22.10.7)(typescript@5.7.3)
       '@nozomiishii/lefthook-config':
         specifier: 0.2.2
-        version: 0.2.2(@evilmartians/lefthook@1.10.7)
+        version: 0.2.2(@evilmartians/lefthook@1.10.8)
       '@nozomiishii/markdownlint-cli2-config':
         specifier: 0.3.1
         version: 0.3.1
@@ -110,10 +110,11 @@ packages:
     resolution: {integrity: sha512-DSHae2obMSMkAtTBSOulg5X7/z+rGLxcXQIkg3OmWvY6wifojge5uVMydfhUvs7yQj+V7jNmRZ2Xzl8GJyqRgg==}
     engines: {node: '>=v18'}
 
-  '@evilmartians/lefthook@1.10.7':
-    resolution: {integrity: sha512-QQLKnBaaOFjl/sdu018AhqCoFI0bQSHRdC/kpCU4sANASwai/QBUzpzorR+xsi0++14/q7Nax04N60YF08fX4w==}
+  '@evilmartians/lefthook@1.10.8':
+    resolution: {integrity: sha512-qN0RJxh5iyPQlRl1vBv2vjq1sCeo0DgmypK6GGCN4tOfA7JvjTgG+fFcY1XJOIwF4MN9R86aD/aZvcI/uWuN0Q==}
     cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
+    deprecated: missing binaries
     hasBin: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -1011,7 +1012,7 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.1
       chalk: 5.4.1
 
-  '@evilmartians/lefthook@1.10.7': {}
+  '@evilmartians/lefthook@1.10.8': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -1034,9 +1035,9 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@nozomiishii/lefthook-config@0.2.2(@evilmartians/lefthook@1.10.7)':
+  '@nozomiishii/lefthook-config@0.2.2(@evilmartians/lefthook@1.10.8)':
     dependencies:
-      '@evilmartians/lefthook': 1.10.7
+      '@evilmartians/lefthook': 1.10.8
 
   '@nozomiishii/markdownlint-cli2-config@0.3.1':
     dependencies:
