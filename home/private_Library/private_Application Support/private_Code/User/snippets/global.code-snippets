@@ -11,7 +11,7 @@
   },
   "TODO with name and date": {
     "prefix": "todo",
-    "body": ["TODO(@nozomiishii)[${1:${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}}]: $0"],
+    "body": ["$LINE_COMMENT TODO(@nozomiishii)[${1:${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}}]: $0"],
     "description": "Add TODO comment with name and date",
   },
   "comment": {
