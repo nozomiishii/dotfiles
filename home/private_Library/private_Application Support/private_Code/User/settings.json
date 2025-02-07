@@ -382,6 +382,7 @@
   // ----------------------------------------------------------------
   // Github Pull Requests
   // ----------------------------------------------------------------
+  "githubPullRequests.notifications": "pullRequests",
   "githubPullRequests.commentExpandState": "collapseAll",
 
   // ----------------------------------------------------------------
