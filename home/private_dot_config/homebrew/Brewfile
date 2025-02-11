@@ -163,7 +163,7 @@ unless ENV["CI"]
   cask "fork"
 
   # Chromium based browser https://arc.net/
-  cask "arc"
+  # cask "arc"
 
   # Web browser. https://www.google.com/chrome
   cask "google-chrome"
