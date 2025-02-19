@@ -34,13 +34,13 @@
     "@nozomiishii/prettier-config": "0.6.2",
     "markdownlint-cli2": "0.17.2"
   },
-  "packageManager": "pnpm@10.4.0",
+  "packageManager": "pnpm@10.4.1",
   "engines": {
     "node": "22.14.0",
-    "pnpm": "10.4.0"
+    "pnpm": "10.4.1"
   },
   "volta": {
     "node": "22.14.0",
-    "pnpm": "10.4.0"
+    "pnpm": "10.4.1"
   }
 }
