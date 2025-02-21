@@ -584,7 +584,8 @@
   // ----------------------------------------------------------------
   "copilot.vision.model": "Claude 3.5 Sonnet",
   "github.copilot.editor.enableAutoCompletions": false,
-  "github.copilot.chat.temporalContext.enabled": true,
+  "github.copilot.chat.editor.temporalContext.enabled": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
   "github.copilot.chat.edits.enabled": true,
   "github.copilot.chat.codeGeneration.instructions": [
     {
