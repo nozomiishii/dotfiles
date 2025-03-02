@@ -18,6 +18,9 @@ end
 # Fish shell like syntax highlighting for zsh https://github.com/zsh-users/zsh-syntax-highlighting
 brew "zsh-syntax-highlighting"
 
+# Dictation tool including LLM reformatting https://superwhisper.com/
+cask "superwhisper"
+
 # ----------------------------------------------------------------
 # Shell Development Environments
 # ----------------------------------------------------------------
