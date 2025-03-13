@@ -56,7 +56,7 @@ fi
 
 export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
 
-brew bundle --no-lock --verbose --file="$HOME/.local/share/chezmoi/home/private_dot_config/homebrew/Brewfile"
+brew bundle --verbose --file="$HOME/.local/share/chezmoi/home/private_dot_config/homebrew/Brewfile"
 
 # ----------------------------------------------------------------
 # Homebrew - Cleanup
