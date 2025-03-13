@@ -31,4 +31,5 @@ duti -s com.todesktop.230313mzl4w4u92 sh all
 duti -s com.todesktop.230313mzl4w4u92 js all
 duti -s com.todesktop.230313mzl4w4u92 ts all
 duti -s com.todesktop.230313mzl4w4u92 tsx all
+duti -s com.todesktop.230313mzl4w4u92 svg all
 duti -s org.videolan.vlc mp4 all
