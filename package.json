@@ -17,7 +17,6 @@
   "scripts": {
     "format": "pnpm prettier . --check",
     "format:fix": "pnpm prettier . --write",
-    "preinstall": "corepack enable pnpm yarn npm",
     "postinstall": "lefthook install",
     "lint": "pnpm markdownlint",
     "lint:fix": "pnpm markdownlint:fix",
@@ -35,12 +34,9 @@
     "markdownlint-cli2": "0.17.2"
   },
   "packageManager": "pnpm@10.6.2",
-  "engines": {
-    "node": "22.14.0",
-    "pnpm": "10.6.2"
-  },
-  "volta": {
-    "node": "22.14.0",
-    "pnpm": "10.6.2"
+  "pnpm": {
+    "executionEnv": {
+      "nodeVersion": "22.14.0"
+    }
   }
 }
