@@ -341,3 +341,6 @@ function gmm() {
 }
 
 alias greset='git reset --soft HEAD^'
+
+# git worktree
+alias gw='git worktree'
