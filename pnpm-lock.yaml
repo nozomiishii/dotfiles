@@ -13,7 +13,7 @@ importers:
         version: 1.11.3
       '@nozomiishii/commitlint-config':
         specifier: 0.0.5
-        version: 0.0.5(@types/node@22.13.10)(typescript@5.8.2)
+        version: 0.0.5(@types/node@22.13.11)(typescript@5.8.2)
       '@nozomiishii/lefthook-config':
         specifier: 0.2.2
         version: 0.2.2(@evilmartians/lefthook@1.11.3)
@@ -146,8 +146,8 @@ packages:
     resolution: {integrity: sha512-RnpXSH/h8Xtgj3JwoAsjGK70lmElrVa865anE74DgY/mvm56QaBGPyVDSoD7DYYQUDuy8CFSkPh2pFK03vwm7g==}
     hasBin: true
 
-  '@pkgr/core@0.1.1':
-    resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
+  '@pkgr/core@0.1.2':
+    resolution: {integrity: sha512-fdDH1LSGfZdTH2sxdpVMw31BanV28K/Gry0cVFxaNP77neJSkd82mM8ErPNYs9e+0O7SdHBLTDzDgwUuy18RnQ==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
   '@sindresorhus/merge-streams@1.0.0':
@@ -170,8 +170,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@22.13.10':
-    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
+  '@types/node@22.13.11':
+    resolution: {integrity: sha512-iEUCUJoU0i3VnrCmgoWCXttklWcvoCIx4jzcP22fioIVSdTmjgoEvmAO/QPw6TcS9k5FrNgn4w7q5lGOd1CT5g==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -882,8 +882,8 @@ packages:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
 
-  yocto-queue@1.2.0:
-    resolution: {integrity: sha512-KHBC7z61OJeaMGnF3wqNZj+GGNXOyypZviiKpQeiHirG5Ib1ImwcLBH70rbMSkKfSmUNBsdf2PwaEJtKvgmkNw==}
+  yocto-queue@1.2.1:
+    resolution: {integrity: sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg==}
     engines: {node: '>=12.20'}
 
 snapshots:
@@ -896,11 +896,11 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.25.9': {}
 
-  '@commitlint/cli@19.3.0(@types/node@22.13.10)(typescript@5.8.2)':
+  '@commitlint/cli@19.3.0(@types/node@22.13.11)(typescript@5.8.2)':
     dependencies:
       '@commitlint/format': 19.8.0
       '@commitlint/lint': 19.8.0
-      '@commitlint/load': 19.8.0(@types/node@22.13.10)(typescript@5.8.2)
+      '@commitlint/load': 19.8.0(@types/node@22.13.11)(typescript@5.8.2)
       '@commitlint/read': 19.8.0
       '@commitlint/types': 19.8.0
       execa: 8.0.1
@@ -947,7 +947,7 @@ snapshots:
       '@commitlint/rules': 19.8.0
       '@commitlint/types': 19.8.0
 
-  '@commitlint/load@19.8.0(@types/node@22.13.10)(typescript@5.8.2)':
+  '@commitlint/load@19.8.0(@types/node@22.13.11)(typescript@5.8.2)':
     dependencies:
       '@commitlint/config-validator': 19.8.0
       '@commitlint/execute-rule': 19.8.0
@@ -955,7 +955,7 @@ snapshots:
       '@commitlint/types': 19.8.0
       chalk: 5.4.1
       cosmiconfig: 9.0.0(typescript@5.8.2)
-      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.13.10)(cosmiconfig@9.0.0(typescript@5.8.2))(typescript@5.8.2)
+      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.13.11)(cosmiconfig@9.0.0(typescript@5.8.2))(typescript@5.8.2)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -1025,9 +1025,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@nozomiishii/commitlint-config@0.0.5(@types/node@22.13.10)(typescript@5.8.2)':
+  '@nozomiishii/commitlint-config@0.0.5(@types/node@22.13.11)(typescript@5.8.2)':
     dependencies:
-      '@commitlint/cli': 19.3.0(@types/node@22.13.10)(typescript@5.8.2)
+      '@commitlint/cli': 19.3.0(@types/node@22.13.11)(typescript@5.8.2)
       '@commitlint/config-conventional': 19.2.2
       '@commitlint/types': 19.0.3
     transitivePeerDependencies:
@@ -1047,7 +1047,7 @@ snapshots:
       prettier: 3.2.5
       prettier-plugin-packagejson: 2.4.10(prettier@3.2.5)
 
-  '@pkgr/core@0.1.1': {}
+  '@pkgr/core@0.1.2': {}
 
   '@sindresorhus/merge-streams@1.0.0': {}
 
@@ -1055,7 +1055,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.11
 
   '@types/debug@4.1.12':
     dependencies:
@@ -1065,7 +1065,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@22.13.10':
+  '@types/node@22.13.11':
     dependencies:
       undici-types: 6.20.0
 
@@ -1141,9 +1141,9 @@ snapshots:
       meow: 12.1.1
       split2: 4.2.0
 
-  cosmiconfig-typescript-loader@6.1.0(@types/node@22.13.10)(cosmiconfig@9.0.0(typescript@5.8.2))(typescript@5.8.2):
+  cosmiconfig-typescript-loader@6.1.0(@types/node@22.13.11)(cosmiconfig@9.0.0(typescript@5.8.2))(typescript@5.8.2):
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.11
       cosmiconfig: 9.0.0(typescript@5.8.2)
       jiti: 2.4.2
       typescript: 5.8.2
@@ -1660,7 +1660,7 @@ snapshots:
 
   p-limit@4.0.0:
     dependencies:
-      yocto-queue: 1.2.0
+      yocto-queue: 1.2.1
 
   p-locate@6.0.0:
     dependencies:
@@ -1770,7 +1770,7 @@ snapshots:
 
   synckit@0.9.0:
     dependencies:
-      '@pkgr/core': 0.1.1
+      '@pkgr/core': 0.1.2
       tslib: 2.8.1
 
   text-extensions@2.4.0: {}
@@ -1819,4 +1819,4 @@ snapshots:
       y18n: 5.0.8
       yargs-parser: 21.1.1
 
-  yocto-queue@1.2.0: {}
+  yocto-queue@1.2.1: {}
