@@ -332,7 +332,7 @@
   // editor.codeActionsOnSave
   // ----------------------------------------------------------------
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": "explicit",
+    // "source.addMissingImports": "explicit",
     "source.fixAll.eslint": "explicit",
     "source.fixAll.markdownlint": "explicit"
   },
