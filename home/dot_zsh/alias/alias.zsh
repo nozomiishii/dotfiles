@@ -72,6 +72,11 @@ alias p='pnpm'
 alias pi='pnpm install'
 
 # ----------------------------------------------------------------
+# Playwright
+# ----------------------------------------------------------------
+alias pwr="npx playwright show-report"
+
+# ----------------------------------------------------------------
 # network
 # ----------------------------------------------------------------
 alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
