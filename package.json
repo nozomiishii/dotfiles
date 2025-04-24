@@ -33,7 +33,7 @@
     "@nozomiishii/prettier-config": "0.6.2",
     "markdownlint-cli2": "0.17.2"
   },
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.9.0",
   "pnpm": {
     "executionEnv": {
       "nodeVersion": "22.14.0"
