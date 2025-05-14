@@ -31,7 +31,7 @@
     "@nozomiishii/lefthook-config": "0.2.3",
     "@nozomiishii/markdownlint-cli2-config": "0.3.2",
     "@nozomiishii/prettier-config": "0.6.3",
-    "markdownlint-cli2": "0.17.2"
+    "markdownlint-cli2": "0.18.0"
   },
   "packageManager": "pnpm@10.10.0",
   "pnpm": {
