@@ -213,6 +213,11 @@
   // ----------------------------------------------------------------
   // Shell
   // ----------------------------------------------------------------
+  "[bats][shellscript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.shellcheck": "explicit"
+    }
+  },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format",
     "editor.codeActionsOnSave": {
@@ -424,6 +429,13 @@
   },
 
   // ----------------------------------------------------------------
+  // Lua
+  // ---------------------------------------------  -------------------
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+
+  // ----------------------------------------------------------------
   // Go
   // ----------------------------------------------------------------
   "go.toolsManagement.autoUpdate": true,
@@ -548,6 +560,7 @@
   // ----------------------------------------------------------------
   "playwright.reuseBrowser": true,
   "playwright.showTrace": false,
+  "playwright.pickLocatorCopyToClipboard": true,
 
   // ----------------------------------------------------------------
   // cSpell
@@ -610,11 +623,10 @@
   // codeQL
   // ----------------------------------------------------------------
   "codeQL.telemetry.enableTelemetry": true,
-  "[bats][shellscript]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.shellcheck": "explicit"
-    }
-  }
 
+  // ----------------------------------------------------------------
+  // Cursor
+  // ----------------------------------------------------------------
+  "cursor.composer.shouldChimeAfterChatFinishes": true
   ///////////////////////////////////////////////////////////////////
 }
