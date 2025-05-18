@@ -24,8 +24,8 @@ importers:
         specifier: 0.6.3
         version: 0.6.3
       markdownlint-cli2:
-        specifier: 0.18.0
-        version: 0.18.0
+        specifier: 0.18.1
+        version: 0.18.1
 
 packages:
 
@@ -517,8 +517,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  markdownlint-cli2@0.18.0:
-    resolution: {integrity: sha512-gHvff1KxBxTqaN1F5cTxRSxBipx+Qkki430tyg0wPxty67iQNZzxREZkXy8ltbj7ObMz1eYD4aspnYXfV0sHAw==}
+  markdownlint-cli2@0.18.1:
+    resolution: {integrity: sha512-/4Osri9QFGCZOCTkfA8qJF+XGjKYERSHkXzxSyS1hd3ZERJGjvsUao2h4wdnvpHp6Tu2Jh/bPHM0FE9JJza6ng==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1301,9 +1301,9 @@ snapshots:
     dependencies:
       markdownlint-cli2: 0.17.2
 
-  markdownlint-cli2-formatter-default@0.0.5(markdownlint-cli2@0.18.0):
+  markdownlint-cli2-formatter-default@0.0.5(markdownlint-cli2@0.18.1):
     dependencies:
-      markdownlint-cli2: 0.18.0
+      markdownlint-cli2: 0.18.1
 
   markdownlint-cli2@0.17.2:
     dependencies:
@@ -1316,14 +1316,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  markdownlint-cli2@0.18.0:
+  markdownlint-cli2@0.18.1:
     dependencies:
       globby: 14.1.0
       js-yaml: 4.1.0
       jsonc-parser: 3.3.1
       markdown-it: 14.1.0
       markdownlint: 0.38.0
-      markdownlint-cli2-formatter-default: 0.0.5(markdownlint-cli2@0.18.0)
+      markdownlint-cli2-formatter-default: 0.0.5(markdownlint-cli2@0.18.1)
       micromatch: 4.0.8
     transitivePeerDependencies:
       - supports-color
