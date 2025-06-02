@@ -15,8 +15,8 @@ importers:
         specifier: 0.0.6
         version: 0.0.6(@types/node@22.15.29)(typescript@5.8.3)
       '@nozomiishii/lefthook-config':
-        specifier: 0.2.3
-        version: 0.2.3(@evilmartians/lefthook@1.11.13)
+        specifier: 0.2.4
+        version: 0.2.4(@evilmartians/lefthook@1.11.13)
       '@nozomiishii/markdownlint-cli2-config':
         specifier: 0.3.2
         version: 0.3.2
@@ -132,11 +132,11 @@ packages:
     resolution: {integrity: sha512-LzD/P5QOma16AWMFsDavxu7mC9lw/zWrg3LRxNe02VllnmIjweZ790wL3gTwvPRfCJsDL9kGb44O1ciJYPXS3Q==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@0.2.3':
-    resolution: {integrity: sha512-DzMVDjj0ptshH1hBFZ84WUw8/SQAFrcfp6itDYFQOAVuDZRRU2ZgquosRENARx9o+1c4r5gEjgGoUBgh8syxiw==}
+  '@nozomiishii/lefthook-config@0.2.4':
+    resolution: {integrity: sha512-/RS2aGFrb/GB14txD8FKkX8NAj4ZNgcSN4q6VX81f7sqJso64yngbJuYoI9xxjfhETEffQvIQBxnUhojF/9Zfg==}
     hasBin: true
     peerDependencies:
-      '@evilmartians/lefthook': '>=1.11.12'
+      '@evilmartians/lefthook': '>=1.11.13'
 
   '@nozomiishii/markdownlint-cli2-config@0.3.2':
     resolution: {integrity: sha512-M8NwNOuFSW+8jdq8tkjdmLEkRSjpTqFJocJM77WgtTLlHzoh887Dp2AvfpMj3mSa4WSMxfhVaiwiGE5sglXtVQ==}
@@ -969,7 +969,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@nozomiishii/lefthook-config@0.2.3(@evilmartians/lefthook@1.11.13)':
+  '@nozomiishii/lefthook-config@0.2.4(@evilmartians/lefthook@1.11.13)':
     dependencies:
       '@evilmartians/lefthook': 1.11.13
 
