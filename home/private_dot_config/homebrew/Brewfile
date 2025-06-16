@@ -159,6 +159,9 @@ unless ENV["CI"]
   # Replacement for Docker Desktop https://orbstack.dev/
   cask "orbstack"
 
+  # Knowledge base that works on top of a local folder of plain text Markdown files https://obsidian.md/
+  cask "obsidian"
+
   # Voice and text chat software. https://discord.com
   cask "discord"
 
