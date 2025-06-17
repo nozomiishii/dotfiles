@@ -153,6 +153,9 @@ unless ENV["CI"]
   # Web browser focusing on privacy https://brave.com/
   cask "brave-browser"
 
+  # Anthropic's official Claude AI desktop app https://www.anthropic.com/
+  cask "claude"
+
   # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
   cask "docker"
 
