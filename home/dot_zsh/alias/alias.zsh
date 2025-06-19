@@ -40,7 +40,7 @@ alias restart_raycast='osascript -e '\''quit app "Raycast"'\'' && sleep 2 && ope
 alias dsk="cd ~/Desktop"
 alias plist="cd ~/Library/Preferences"
 
-alias dot="cd $HOME/dotfiles"
+alias dot="chezmoi cd"
 alias noz="cd $CODE_DIR/nozomiishii"
 alias dev="cd $CODE_DIR/nozomiishii/dev"
 alias arc="cd $CODE_DIR/nozomiishii/archives"
