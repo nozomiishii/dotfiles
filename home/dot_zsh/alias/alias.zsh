@@ -66,7 +66,7 @@ alias grmb="git branch --merged|egrep -v '\*|master|main|dev|develop|development
 alias gsta="git stash -u"
 
 # ----------------------------------------------------------------
-# npm
+# pnpm
 # ----------------------------------------------------------------
 alias p='pnpm'
 alias pi='pnpm install'
