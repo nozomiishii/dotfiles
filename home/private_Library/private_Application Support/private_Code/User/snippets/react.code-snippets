@@ -238,11 +238,11 @@
     "scope": "typescriptreact",
     "prefix": "!react",
     "body": [
-      "interface ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props {",
+      "type ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props = {",
       "  $1",
       "}",
       "",
-      "export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({}: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props) {",
+      "export function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({}: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props) {",
       "  return (",
       "    <div>${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}</div>",
       "  );",
@@ -250,24 +250,7 @@
     ],
     "description": "Typescript React Functional Component",
   },
-  "TypeScript React Functional Component with Interface": {
-    "scope": "typescriptreact",
-    "prefix": "rtf",
-    "body": [
-      "import React from 'react'",
-      "",
-      "interface P {",
-      "  $1",
-      "}",
-      "",
-      "export const $TM_FILENAME_BASE: React.FC<P> = ({}) => {",
-      "  return (",
-      "    <div>$TM_FILENAME_BASE</div>",
-      "  );",
-      "}",
-    ],
-    "description": "Typescript React Functional Component with Interface",
-  },
+
 
   // ----------------------------------------------------------------
   // React Native
