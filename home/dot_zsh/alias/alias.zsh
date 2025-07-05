@@ -70,6 +70,9 @@ alias gsta="git stash -u"
 # ----------------------------------------------------------------
 alias p='pnpm'
 alias pi='pnpm install'
+alias npm='pnpm'
+alias yarn='pnpm'
+
 
 # ----------------------------------------------------------------
 # Playwright
