@@ -62,6 +62,10 @@ fi
 # Python
 source "$HOME/.rye/env"
 
+# npm
+# Ok to proceed? - always proceed with 'yes'
+export npm_config_yes=true
+
 # pnpm
 export PNPM_HOME="/Users/nozomiishii/Library/pnpm"
 case ":$PATH:" in
