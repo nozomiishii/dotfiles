@@ -73,6 +73,10 @@ alias pi='pnpm install'
 alias npm='pnpm'
 alias yarn='pnpm'
 
+# ----------------------------------------------------------------
+# nextjs
+# ----------------------------------------------------------------
+alias nextjs="pnpx create-next-app@latest --typescript --tailwind --eslint --app --src-dir --no-turbopack --use-pnpm"
 
 # ----------------------------------------------------------------
 # Playwright
