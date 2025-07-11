@@ -59,8 +59,9 @@ if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-# Python
-source "$HOME/.rye/env"
+# Python(uv)
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
 
 # npm
 # Ok to proceed? - always proceed with 'yes'

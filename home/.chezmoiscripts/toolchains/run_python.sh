@@ -10,12 +10,12 @@ set -Ceuo pipefail
 
 echo '🐍 Python'
 
-echo '- 🐍 Install Rye'
-curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash
+# uv
+# https://docs.astral.sh/uv/getting-started/installation/
+echo '- 🐍 Install uv'
 
-# shellcheck disable=SC1091
-source "$HOME/.rye/env"
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-echo "- 🐍 $(rye toolchain list)"
+echo "- 🐍 uv: $(uv self version)"
 
 echo "🐍 Python setup is complete 🎉"
