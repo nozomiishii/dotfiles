@@ -10,37 +10,21 @@ set -Ceuo pipefail
 
 echo '🐉 Node'
 
-echo '- 🐉 Install Node with Volta⚡️'
-curl https://get.volta.sh | bash
-export VOLTA_HOME="$HOME/.volta"
-export VOLTA_FEATURE_PNPM=1
-export PATH="$VOLTA_HOME/bin:$PATH"
+# https://github.com/Schniz/fnm
+echo '- 🐉 Install Node with fnm🚀'
 
-echo "- ⚡️ volta $(volta --version)"
-volta install node
+brew install fnm
+eval "$(fnm env)"
+
+echo "- ⚡️ fnm $(fnm --version)"
+fnm install --lts
 echo "- 🐉 node $(node --version)"
 
 echo '- 🐉 Setup corepack'
-volta install corepack
-# https://github.com/volta-cli/volta/issues/987
-# npm install -g corepack
-corepack enable pnpm yarn npm --install-directory ~/.volta/bin
+corepack enable pnpm yarn npm
 
-# corepack enable pnpm yarn npm
-echo '- 🐉 Setup package Managers'
-
-volta install npm
-volta install pnpm
-volta install yarn@1
-
-corepack prepare npm@latest --activate
-corepack prepare pnpm@latest --activate
-corepack prepare yarn@1.22.19 --activate
-
-volta list
-
-echo '- 🐉 Setup npm global'
-volta install typescript
-volta install @antfu/ni
+echo '- 🐉 Setup pnpm global'
+pnpm add -g typescript
+pnpm add -g @anthropic-ai/claude-code
 
 echo "🐉 Node setup is complete 🎉"

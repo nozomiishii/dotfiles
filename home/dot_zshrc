@@ -44,15 +44,17 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# Node(Volta)
-export VOLTA_HOME="$HOME/.volta"
-export VOLTA_FEATURE_PNPM=1
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 # direnv
 if command -v direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
+
+# # npm
+# # Ok to proceed? - always proceed with 'yes'
+# export npm_config_yes=true
+
+# Node(fnm)
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Ruby
 if command -v rbenv > /dev/null; then
@@ -62,17 +64,6 @@ fi
 # Python(uv)
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
-
-# npm
-# Ok to proceed? - always proceed with 'yes'
-export npm_config_yes=true
-
-# pnpm
-export PNPM_HOME="/Users/nozomiishii/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
