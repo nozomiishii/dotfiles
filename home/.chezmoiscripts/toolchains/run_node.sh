@@ -23,6 +23,11 @@ echo "- 🐉 node $(node --version)"
 echo '- 🐉 Setup corepack'
 corepack enable pnpm yarn npm
 
+echo '- 🐉 Setup pnpm'
+if [ -z "${PNPM_HOME:-}" ]; then
+  pnpm setup
+fi
+
 echo '- 🐉 Setup pnpm global'
 pnpm add -g typescript
 pnpm add -g @anthropic-ai/claude-code
