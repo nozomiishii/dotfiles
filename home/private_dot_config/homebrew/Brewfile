@@ -7,7 +7,7 @@ cask_args appdir: "/Applications"
 brew "starship"
 
 # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
-# brew "ghostty"
+cask "ghostty"
 
 # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
 cask 'amazon-q'
