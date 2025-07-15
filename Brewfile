@@ -1,5 +1,8 @@
 cask_args appdir: "/Applications"
 
+# Organize software neatly under a single directory tree (e.g. /usr/local) https://www.gnu.org/software/stow/
+brew "stow"
+
 # ----------------------------------------------------------------
 # Prompt
 # ----------------------------------------------------------------
@@ -7,7 +10,7 @@ cask_args appdir: "/Applications"
 brew "starship"
 
 # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
-# brew "ghostty"
+cask "ghostty"
 
 # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
 cask 'amazon-q'
@@ -47,6 +50,12 @@ brew "ruby-build"
 
 # YAML Parser https://github.com/yaml/libyaml
 brew "libyaml"
+
+# ----------------------------------------------------------------
+# Node
+# ----------------------------------------------------------------
+# Fast Node Manager https://github.com/Schniz/fnm
+brew "fnm"
 
 # ----------------------------------------------------------------
 # Go
@@ -155,9 +164,6 @@ unless ENV["CI"]
 
   # Anthropic's official Claude AI desktop app https://www.anthropic.com/
   cask "claude"
-
-  # App to build and share containerized applications and microservices https://www.docker.com/products/docker-desktop
-  cask "docker"
 
   # Replacement for Docker Desktop https://orbstack.dev/
   cask "orbstack"
@@ -293,9 +299,6 @@ unless ENV["CI"]
 
   # Virtualization tool https://github.com/insidegui/VirtualBuddy
   cask "VirtualBuddy"
-
-  # Graphical network analyzer and capture tool https://www.wireshark.org
-  cask "wireshark"
 
   # ----------------------------------------------------------------
   # Mas

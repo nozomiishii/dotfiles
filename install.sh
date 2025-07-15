@@ -13,6 +13,7 @@
 # -x          : (Optional) Enable command tracing for easier debugging.
 #               - Uncomment this option to debug the script.
 set -Ceuo pipefail
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # ----------------------------------------------------------------
 # utils
@@ -107,7 +108,22 @@ echo -e "${reset}"
 request_admin_privileges
 install_xcode_cli_tools
 
-sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply nozomiishii --verbose
+echo -e "🍺 Homebrew"
+# もしかしたらRosettaまだいるかも
+# sudo softwareupdate --install-rosetta --agree-to-license
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
+
+brew bundle --verbose --file="$SCRIPT_DIR/Brewfile"
+brew bundle cleanup --verbose --force --file="$SCRIPT_DIR/Brewfile"
+brew cleanup --verbose
+brew upgrade --verbose
+
+echo -e "🐂 stow"
+# Symlink dotfiles using stow with verbose output and restow mode
+# --restow removes existing symlinks and recreates them to ensure clean state
+# --adopt takes ownership of existing files in target location instead of failing
+stow --verbose --restow --adopt --target="$HOME" home
 
 open_config_apps
 
