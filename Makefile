@@ -16,3 +16,7 @@ toolchains:
 .PHONY: repo
 repo:
 	bash ./scripts/clone_github_repos.sh
+
+.PHONY: link
+link:
+	stow --verbose --restow --adopt --target="$$HOME" home
