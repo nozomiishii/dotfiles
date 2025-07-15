@@ -1,8 +1,0 @@
----
-'workspace:toggle_ai_assistant': none
-'workspace:toggle_warp_drive': cmd-b
-'input:open_completion_suggestions': ctrl-space
-'pane_group:toggle_maximize_pane': cmd-z
-'pane_group:add_down': shift-cmd-|
-'pane_group:add_right': "cmd-\\"
-'terminal:bookmark_selected_block': none

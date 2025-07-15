@@ -56,13 +56,13 @@ fi
 
 export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
 
-brew bundle --verbose --file="$HOME/.local/share/chezmoi/home/private_dot_config/homebrew/Brewfile"
+brew bundle --verbose --file="$HOME/.local/share/chezmoi/Brewfile"
 
 # ----------------------------------------------------------------
 # Homebrew - Cleanup
 # ----------------------------------------------------------------
 # Uninstall packages not listed in the merged Brewfile, with details on what is being removed
-brew bundle cleanup --verbose --force --file="$HOME/.local/share/chezmoi/home/private_dot_config/homebrew/Brewfile"
+brew bundle cleanup --verbose --force --file="$HOME/.local/share/chezmoi/Brewfile"
 
 # Remove outdated versions of installed packages and unnecessary files to free up disk space
 brew cleanup --verbose
