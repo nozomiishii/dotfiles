@@ -1,0 +1,30 @@
+# official docs
+# https://ghostty.org/docs/config
+#
+# playground
+# https://ghostty.zerebos.com/
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+
+# macOS
+# https://zenn.dev/kawarimidoll/articles/5f219b4409424b
+macos-icon = xray
+
+# Theme
+# Run `ghostty +list-themes` to view a list of themes
+theme = "iTerm2 Dark Background"
+
+# Font
+font-size = 14
+
+font-family = "MesloLGS Nerd Font Mono"
+# turn off ligature https://ghostty.org/docs/config/reference#font-feature
+font-feature = -calt, -liga, -dlig
+
+# Show "Quit Ghostty?" dialog
+confirm-close-surface = false
+
+# keybindings
+# keybind = cmd+\=new_split:right
+# keybind = cmd+shift+\=new_split:down

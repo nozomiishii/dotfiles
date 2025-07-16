@@ -88,7 +88,7 @@
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.tabs.title": "${cwdFolder}",
   "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}",
-  "terminal.external.osxExec": "warp",
+  "terminal.external.osxExec": "ghostty",
   "terminal.explorerKind": "external",
 
   // ----------------------------------------------------------------
