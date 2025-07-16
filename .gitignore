@@ -3,3 +3,9 @@
 
 # Node
 node_modules
+
+# lefthook
+lefthook-local.yaml
+
+# act
+.actrc
