@@ -143,29 +143,17 @@
   // ----------------------------------------------------------------
   "files.associations": {
     "*.ejs": "html",
-    ".lintstagedrc": "json",
     "*.strings": "plist",
     "*.plist": "plist",
     "vimrc": "viml",
-    ".skhdrc": "shellscript",
-    ".yabairc": "shellscript",
     ".tmux.conf": "shellscript",
-    ".actrc": "properties",
     ".actrc*": "properties",
     ".tool-versions": "properties",
     ".ssh/config": "ssh-config",
     "*.ejs*": "html",
     "CODEOWNERS": "ignore",
     "Brewfile*": "ruby",
-    "**/Brewfiles/**": "ruby",
-    ".env*": "dotenv",
-    ".chezmoiroot": "properties",
-    ".chezmoiversion": "properties",
-    "dot_zprofile": "shellscript",
-    "dot_zshrc": "shellscript",
-    "dot_npmrc": "properties",
-    "dot_gitconfig": "properties",
-    "*.toml.tmpl": "toml"
+    ".env*": "dotenv"
   },
 
   // ----------------------------------------------------------------
@@ -259,11 +247,7 @@
     "**/*.zsh-theme": true,
     "**/.tmux.conf": true,
     "**/.envrc": true,
-    "**/.hushlogin": true,
-
-    // chezmoi
-    "**/dot_zshrc": true,
-    "**/dot_zprofile": true
+    "**/.hushlogin": true
   },
 
   // ----------------------------------------------------------------
@@ -334,14 +318,6 @@
   ],
 
   // ----------------------------------------------------------------
-  // PandaCSS
-  // ----------------------------------------------------------------
-  "panda.color-hints.color-preview.enabled": true,
-  "panda.rem-to-px.enabled": true,
-  "panda.inlay-hints.enabled": false,
-  "panda.hovers.enabled": true,
-
-  // ----------------------------------------------------------------
   // ESlint
   // ----------------------------------------------------------------
   "eslint.enable": true,
@@ -379,6 +355,7 @@
   // Markdown
   // ----------------------------------------------------------------
   "markdown-preview-github-styles.colorTheme": "dark",
+
   // ----------------------------------------------------------------
   // Ruby
   // ----------------------------------------------------------------
@@ -414,11 +391,6 @@
   "githubPullRequests.commentExpandState": "collapseAll",
 
   // ----------------------------------------------------------------
-  // todo-tree
-  // ----------------------------------------------------------------
-  "todo-tree.general.showActivityBarBadge": false,
-
-  // ----------------------------------------------------------------
   // scaffdog
   // ----------------------------------------------------------------
   "scaffdog.enable": false,
@@ -445,13 +417,6 @@
   // ----------------------------------------------------------------
   "gitlens.views.scm.grouped.views": {
     "stashes": false
-  },
-
-  // ----------------------------------------------------------------
-  // Lua
-  // ---------------------------------------------  -------------------
-  "[lua]": {
-    "editor.defaultFormatter": "sumneko.lua"
   },
 
   // ----------------------------------------------------------------
@@ -545,28 +510,8 @@
       "extensions": ["docker-compose.dev.yml"],
       "filename": true,
       "format": "svg"
-    },
-
-    // chezmoi
-    {
-      "icon": "git",
-      "extensions": ["dot_gitconfig"],
-      "filename": true,
-      "format": "svg"
-    },
-    {
-      "icon": "npm",
-      "extensions": ["dot_npmrc"],
-      "filename": true,
-      "format": "svg"
     }
   ],
-  // ----------------------------------------------------------------
-  // Jest
-  // ----------------------------------------------------------------
-  "jest.runMode": "on-demand",
-  "jest.outputConfig": "test-results-based",
-
   // ----------------------------------------------------------------
   // vitest
   // ----------------------------------------------------------------
@@ -616,11 +561,6 @@
   "cSpell.userWords": ["nozomiishii"],
 
   // ----------------------------------------------------------------
-  // NX
-  // ----------------------------------------------------------------
-  "nxConsole.showNodeVersionOnStartup": false,
-
-  // ----------------------------------------------------------------
   // Github Copilot
   // ----------------------------------------------------------------
   "copilot.vision.model": "Claude 3.5 Sonnet",
@@ -636,13 +576,6 @@
       "text": "質問への回答は、自然な口語の英語で行ってください。回答の後に、その回答の日本語訳を追加してください。"
     }
   ],
-
-  // ----------------------------------------------------------------
-  // Total TypeScript
-  // ----------------------------------------------------------------
-  "totalTypeScript.hideAllTips": false,
-  "totalTypeScript.hideBasicTips": false,
-
   // ----------------------------------------------------------------
   // codeQL
   // ----------------------------------------------------------------
