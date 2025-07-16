@@ -25,6 +25,12 @@ font-feature = -calt, -liga, -dlig
 # Show "Quit Ghostty?" dialog
 confirm-close-surface = false
 
+# Start Ghostty windows maximized
+# maximize = trueがうまく動いてないので、Run `printf '\e[18t'`で取得した画面サイズの値を使用してる
+# maximize = true
+window-height = 58
+window-width  = 204
+
 # keybindings
-# keybind = cmd+\=new_split:right
-# keybind = cmd+shift+\=new_split:down
+# keybind = super+\=new_split:right
+# keybind = super+shift+\=new_split:down
