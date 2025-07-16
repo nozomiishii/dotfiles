@@ -1,4 +1,12 @@
-cask_args appdir: "/Applications"
+# ----------------------------------------------------------------
+# Cask Install Options
+# ----------------------------------------------------------------
+# appdir: "/Applications"
+#   Place all GUI applications together in /Applications.
+#
+# no_quarantine: true
+#   Skip the initial Gatekeeper dialog "App downloaded from the Internet..." on first launch.
+cask_args appdir: "/Applications", no_quarantine: true
 
 # Organize software neatly under a single directory tree (e.g. /usr/local) https://www.gnu.org/software/stow/
 brew "stow"

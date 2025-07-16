@@ -112,12 +112,10 @@ echo -e "🍺 Homebrew"
 # もしかしたらRosettaまだいるかも
 # sudo softwareupdate --install-rosetta --agree-to-license
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
 
-brew bundle --verbose --file="$SCRIPT_DIR/Brewfile"
-brew bundle cleanup --verbose --force --file="$SCRIPT_DIR/Brewfile"
+
+brew bundle --verbose --cleanup --file="$SCRIPT_DIR/Brewfile"
 brew cleanup --verbose
-brew upgrade --verbose
 
 echo -e "🐂 stow"
 # Symlink dotfiles using stow with verbose output and restow mode

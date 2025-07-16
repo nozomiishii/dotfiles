@@ -1,6 +1,7 @@
 .PHONY: homebrew
 homebrew:
-	bash ./scripts/darwin/run_before_homebrew.sh
+	brew bundle --verbose --cleanup --file="./Brewfile"
+	brew cleanup --verbose
 
 .PHONY: macos
 macos:
