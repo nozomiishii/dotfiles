@@ -17,7 +17,7 @@
   "scripts": {
     "format": "pnpm prettier . --check",
     "format:fix": "pnpm prettier . --write",
-    "postinstall": "lefthook install",
+    "postinstall": "postinstall",
     "lint": "pnpm markdownlint",
     "lint:fix": "pnpm markdownlint:fix",
     "markdownlint": "npx -y markdownlint-cli2@latest '**/*.md' '#node_modules'",
@@ -30,6 +30,7 @@
     "@nozomiishii/commitlint-config": "0.0.6",
     "@nozomiishii/lefthook-config": "0.2.4",
     "@nozomiishii/markdownlint-cli2-config": "0.3.2",
+    "@nozomiishii/postinstall": "0.0.4",
     "@nozomiishii/prettier-config": "0.6.3",
     "markdownlint-cli2": "0.18.1"
   },
@@ -37,6 +38,9 @@
   "pnpm": {
     "executionEnv": {
       "nodeVersion": "22.14.0"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "@evilmartians/lefthook"
+    ]
   }
 }
