@@ -49,7 +49,7 @@ alias repo="cd $CODE_DIR"
 # ----------------------------------------------------------------
 # shell
 # ----------------------------------------------------------------
-alias zz="exec $SHELL"
+alias rr="exec $SHELL"
 
 if command -v eza > /dev/null 2>&1; then
   alias ls="eza --icons --group-directories-first"
