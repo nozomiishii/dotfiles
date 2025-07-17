@@ -215,15 +215,14 @@
   // ----------------------------------------------------------------
   {
     "key": "ctrl+q",
-    "command": "workbench.action.quickOpenNavigateNextInViewPicker",
-    "when": "!terminalFocus && inQuickOpen && inViewsPicker"
+    "command": "-workbench.action.quickOpenNavigateNextInViewPicker",
+    "when": "inQuickOpen && inViewsPicker"
   },
   {
     "key": "ctrl+q",
-    "command": "workbench.action.quickOpenView",
-    "when": "!terminalFocus"
+    "command": "-workbench.action.quickOpenView"
   },
-
+  
   // ----------------------------------------------------------------
   // Git
   // ----------------------------------------------------------------
