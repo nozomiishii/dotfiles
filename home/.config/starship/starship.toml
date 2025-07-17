@@ -29,7 +29,7 @@ min_time_to_notify = 60_000
 
 
 [git_branch]
-format = '[git:\([($branch)](bold red)\)]($style)'
+format = '[git:\([($branch)](bold red)\)]($style) '
 style = 'bold blue'
 
 
