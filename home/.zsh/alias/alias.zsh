@@ -6,10 +6,6 @@
 CODE_DIR="$HOME/Code"
 GOOGLE_DRIVE_DIR="$HOME/Google\ Drive"
 
-# ----------------------------------------------------------------
-# chezmoi
-# ----------------------------------------------------------------
-alias cz=chezmoi
 
 # ----------------------------------------------------------------
 # NeoVim
@@ -40,7 +36,7 @@ alias restart_raycast='osascript -e '\''quit app "Raycast"'\'' && sleep 2 && ope
 alias dsk="cd ~/Desktop"
 alias plist="cd ~/Library/Preferences"
 
-alias dot="chezmoi cd"
+alias dot="cd $HOME/dotfiles"
 alias noz="cd $CODE_DIR/nozomiishii"
 alias dev="cd $CODE_DIR/nozomiishii/dev"
 alias arc="cd $CODE_DIR/nozomiishii/archives"
