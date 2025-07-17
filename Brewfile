@@ -26,12 +26,6 @@ cask "ghostty"
 # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
 cask 'amazon-q'
 
-# FIXME: it somehow fails on CI
-unless ENV["CI"]
-  # Developer targeted fonts with a high number of glyphs https://github.com/ryanoasis/nerd-fonts
-  cask "font-hack-nerd-font"
-end
-
 # Fish shell like syntax highlighting for zsh https://github.com/zsh-users/zsh-syntax-highlighting
 brew "zsh-syntax-highlighting"
 
