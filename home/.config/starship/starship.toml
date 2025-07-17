@@ -3,60 +3,33 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# nerdfonts icons
-# use nf-md as you can possible
-# @see https://www.nerdfonts.com/cheat-sheet
-
-
 add_newline = false
 
-
-[aws]
-format = '[$symbol($profile)(\($region\))(\[$duration\])]($style) '
-symbol = '󰸏 '
-
-
-[buf]
-format = '[$symbol($version )]($style) '
-symbol = ' '
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_commit\
+$git_status\
+$cmd_duration\
+$line_break\
+$character
+"""
 
 
 [character]
-success_symbol = '[󱞩](bold green)'
-error_symbol = '[✗](bold red)'
+success_symbol = '[→](bold green)'
+error_symbol = '[x](bold red)'
 
 
 [cmd_duration]
 format = '[$duration]($style) '
-# FIXME: Warp notification not working somehow
-# Turned off to use Warp terminal's features
 show_notifications = true
 min_time_to_notify = 60_000
 
 
-[directory]
-format = '[󰝰 $path]($style)[$read_only]($read_only_style) '
-
-
-[direnv]
-disabled = false
-
-
-[docker_context]
-format = '[$symbol$context]($style) '
-symbol = '󰡨 '
-style = 'bold black'
-
-
-[gcloud]
-format = '[$symbol$account(@$domain)(\($region\))]($style) '
-symbol = ' '
-style = 'bold black'
-
-
 [git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style) '
-symbol = '󰘬 '
+format = '[git:\([($branch)](bold red)\)]($style)'
 style = 'bold blue'
 
 
@@ -66,9 +39,9 @@ format = '[$state( $progress_current/$progress_total)]($style) '
 
 
 [git_commit]
-format = '[󰜘 $hash$tag]($style) '
+format = '[$hash$tag]($style) '
 style = 'bold blue'
-tag_symbol = ' 󰓹 '
+tag_symbol = 'tag: '
 
 
 [git_status]
@@ -84,43 +57,3 @@ modified = '[!${count}](bold yellow) '
 staged = '[+${count}](bold yellow) '
 renamed = '[»${count}](bold yellow) '
 deleted = '[-${count}](bold yellow) '
-
-
-[golang]
-format = '[$symbol($version)]($style) '
-symbol = ' '
-
-
-[nodejs]
-format = '[$symbol($version)]($style) '
-symbol = '󰎙 '
-
-
-[package]
-disabled = true
-
-
-[python]
-format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
-symbol = '󰌠 '
-style = 'purple bold'
-
-
-[ruby]
-format = '[$symbol($version)]($style) '
-symbol = " "
-
-
-[rust]
-format = '[$symbol($version)]($style) '
-symbol = ' '
-
-
-[terraform]
-format = '[$symbol$workspace]($style) '
-symbol = '󱁢 '
-
-
-[swift]
-format = '[$symbol($version)]($style) '
-symbol = " "
