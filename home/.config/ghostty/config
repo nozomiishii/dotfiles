@@ -14,12 +14,11 @@ macos-option-as-alt = true
 
 # Theme
 # Run `ghostty +list-themes` to view a list of themes
-theme = "iTerm2 Dark Background"
+theme = "Dracula"
 
 # Font
 font-size = 14
 
-font-family = "MesloLGS Nerd Font Mono"
 # turn off ligature https://ghostty.org/docs/config/reference#font-feature
 font-feature = -calt, -liga, -dlig
 
