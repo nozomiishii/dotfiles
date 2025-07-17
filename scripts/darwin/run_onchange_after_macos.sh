@@ -318,17 +318,6 @@ defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool false
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 0
 
 # ----------------------------------------------------------------
-# Speech
-# ----------------------------------------------------------------
-# echo "- 🗣 Speech"
-
-# Enable Text to Speech
-# defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyFlag -bool true
-
-# Speak selected text when the key is pressed. Option + Space : 2097
-# defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyCombo -int 2097
-
-# ----------------------------------------------------------------
 # Display
 # ----------------------------------------------------------------
 echo "- 🖥 Display"
