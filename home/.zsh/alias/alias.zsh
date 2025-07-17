@@ -48,8 +48,8 @@ alias repo="cd $CODE_DIR"
 alias rr="exec $SHELL"
 
 if command -v eza > /dev/null 2>&1; then
-  alias ls="eza --icons --group-directories-first"
-  alias ll="eza --icons --group-directories-first --all --long --header --git"
+  alias ls="eza --group-directories-first"
+  alias ll="eza --group-directories-first --all --long --header --git"
 fi
 
 # ----------------------------------------------------------------
