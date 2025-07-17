@@ -211,6 +211,20 @@
   },
 
   // ----------------------------------------------------------------
+  // Conflict with Zellij
+  // ----------------------------------------------------------------
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.quickOpenNavigateNextInViewPicker",
+    "when": "!terminalFocus && inQuickOpen && inViewsPicker"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.quickOpenView",
+    "when": "!terminalFocus"
+  },
+
+  // ----------------------------------------------------------------
   // Git
   // ----------------------------------------------------------------
   {
