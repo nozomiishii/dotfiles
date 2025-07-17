@@ -96,31 +96,33 @@
   // ----------------------------------------------------------------
   "workbench.colorCustomizations": {
     // Terminal
-    "panel.background": "#121112",
-    "terminal.foreground": "#e6e6e6",
-    "terminal.background": "#121112",
-    "terminal.selectionBackground": "#44475a",
-    "terminal.selectionForeground": "#ffffff",
-    "terminalCursor.foreground": "#bbbbbb",
+
+    // Theme: Gitlab-Dark
+    //`/Applications/Ghostty.app/Contents/Resources/ghostty/themes/GitLab-Dark-Grey`
+    "panel.background": "#28262b",
+
+    "terminal.foreground": "#ffffff",
+    "terminal.background": "#28262b",
+    "terminal.selectionBackground": "#ad95e9",
+    "terminal.selectionForeground": "#28262b",
+    "terminalCursor.foreground": "#ffffff",
     "terminalCursor.background": "#ffffff",
 
-    // Dracula theme
-    // `/Applications/Ghostty.app/Contents/Resources/ghostty/themes/Dracula`
     "terminal.ansiBlack": "#000000",
-    "terminal.ansiRed": "#ff5555",
-    "terminal.ansiGreen": "#50fa7b",
-    "terminal.ansiYellow": "#f1fa8c",
-    "terminal.ansiBlue": "#bd93f9",
-    "terminal.ansiMagenta": "#ff79c6",
-    "terminal.ansiCyan": "#8be9fd",
-    "terminal.ansiWhite": "#bbbbbb",
-    "terminal.ansiBrightBlack": "#555555",
-    "terminal.ansiBrightRed": "#ff5555",
-    "terminal.ansiBrightGreen": "#50fa7b",
-    "terminal.ansiBrightYellow": "#f1fa8c",
-    "terminal.ansiBrightBlue": "#bd93f9",
-    "terminal.ansiBrightMagenta": "#ff79c6",
-    "terminal.ansiBrightCyan": "#8be9fd",
+    "terminal.ansiRed": "#f57f6c",
+    "terminal.ansiGreen": "#52b87a",
+    "terminal.ansiYellow": "#d99530",
+    "terminal.ansiBlue": "#7fb6ed",
+    "terminal.ansiMagenta": "#f88aaf",
+    "terminal.ansiCyan": "#32c5d2",
+    "terminal.ansiWhite": "#ffffff",
+    "terminal.ansiBrightBlack": "#000000",
+    "terminal.ansiBrightRed": "#f57f6c",
+    "terminal.ansiBrightGreen": "#52b87a",
+    "terminal.ansiBrightYellow": "#d99530",
+    "terminal.ansiBrightBlue": "#7fb6ed",
+    "terminal.ansiBrightMagenta": "#f88aaf",
+    "terminal.ansiBrightCyan": "#32c5d2",
     "terminal.ansiBrightWhite": "#ffffff",
 
     // Editor InlayHint
