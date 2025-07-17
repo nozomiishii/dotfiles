@@ -271,6 +271,7 @@ load_plugins {
 // simplified_ui true
  
 // Choose the theme that is specified in the themes section.
+// https://zellij.dev/documentation/theme-list.html
 // Default: default
 // 
 theme "ao"
