@@ -15,6 +15,7 @@ macos-option-as-alt = true
 # Theme
 # Run `ghostty +list-themes` to view a list of themes
 theme = "Dracula"
+background = "#121112"
 
 # Font
 font-size = 14

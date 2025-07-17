@@ -96,9 +96,9 @@
   // ----------------------------------------------------------------
   "workbench.colorCustomizations": {
     // Terminal
-    "panel.background": "#1E1F29",
+    "panel.background": "#121112",
     "terminal.foreground": "#e6e6e6",
-    "terminal.background": "#1E1F29",
+    "terminal.background": "#121112",
     "terminal.selectionBackground": "#44475a",
     "terminal.selectionForeground": "#ffffff",
     "terminalCursor.foreground": "#bbbbbb",
