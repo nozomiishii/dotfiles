@@ -311,6 +311,9 @@ unless ENV["CI"]
   # Virtualization tool https://github.com/insidegui/VirtualBuddy
   cask "VirtualBuddy"
 
+  # Agent-centric IDE with spec-driven development https://kiro.dev/
+  cask "kiro"
+
   # ----------------------------------------------------------------
   # Mas
   # ----------------------------------------------------------------
