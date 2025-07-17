@@ -10,6 +10,7 @@
 # macOS
 # https://zenn.dev/kawarimidoll/articles/5f219b4409424b
 macos-icon = xray
+macos-option-as-alt = true
 
 # Theme
 # Run `ghostty +list-themes` to view a list of themes
