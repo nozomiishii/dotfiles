@@ -17,6 +17,9 @@ brew "stow"
 # Cross-shell prompt for astronauts https://starship.rs
 brew "starship"
 
+# Pluggable terminal workspace, with terminal multiplexer as the base feature https://zellij.dev/
+brew "zellij"
+
 # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
 cask "ghostty"
 
