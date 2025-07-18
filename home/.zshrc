@@ -41,8 +41,11 @@ export GREP_COLOR='1;32'
 # Syntax highlighting for man command
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# Add Visual Studio Code (code)
+# vscode
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# kiro
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 # direnv
 if command -v direnv > /dev/null; then
