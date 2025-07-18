@@ -29,12 +29,12 @@ Busy? Just run command below;)
 curl -L https://nozomiishii.dev/dotfiles/install | bash
 ```
 
-<details>
+<!-- <details>
 <summary>with full version of Brewfile</summary>
 
 ```shell
 curl -L https://nozomiishii.dev/dotfiles/install | bash -s -- --full
-```
+``` -->
 
 <!-- これにするのが目標
 
@@ -220,6 +220,7 @@ Finder Sidebar
  ┣ 📂Favorites
  ┃ ┣ 🌏Google Drive(My Drive)
  ┃ ┣ 🏠$USER
+ ┃ ┣ 🧙🏿‍♂️dotfiles
  ┃ ┣ 🍎Applications
  ┃ ┗ 📖Desktop
  ┗ 📂Locations
@@ -288,12 +289,6 @@ make repo
 
 - Sign in
 
-### 🔮 DeepL
-
-- Sign in
-- Set hotkey to  
-  ⇧ + ⌘ + Space
-
 ### 🫐 BLEUnlock
 
 - Device: Select your device
@@ -336,8 +331,6 @@ make repo
   - **Current User**  
     Edit Profile photo
 
-- **☝🏻 Touch ID**
-  - Registering your left pinky for Touch ID, so you can eat pizza without any hassle.
 - **🧚🏻‍♀️ Accessibility**
 
   - **Spoken Content**  
@@ -392,27 +385,6 @@ make repo
   Monokai Pro
 - Preferences > Navigation >  
   Command-click on Code: Jumps to definition
-
-### 🦋 Affinity Designer
-
-- [Download App](https://store.serif.com/en-gb/account/downloads/)  
-  Activate the license
-
-### 📞 Cisco Packet Tracer
-
-- [Download](https://www.netacad.com/portal/resources/packet-tracer)
-
-### 🕶 ngrok
-
-- [Get Auth token](https://dashboard.ngrok.com/get-started/your-authtoken)
-
-```shell
-  ngrok authtoken <your_auth_token>
-```
-
-```shell
-ngrok http 3000
-```
 
 ### ⏱ Setup Time machine
 
@@ -485,13 +457,14 @@ open ~/Library/Preferences/.GlobalPreferences.plist
 Clean unused homebrew dependencies up, and upgrade them
 
 ```shell
-brew bundle cleanup --verbose --file "$HOME/dotfiles/Brewfile.macos.rb" --force && brew cleanup && brew upgrade
+	brew bundle --verbose --cleanup --file="./Brewfile"
+	brew cleanup --verbose
 ```
 
 ### Dev
 
 ```shell
-yarn install
+pnpm install
 ```
 
 To use @prettier/ruby
