@@ -35,5 +35,7 @@ window-height = 58
 window-width  = 204
 
 # keybindings
+# shift + enter: claude codeのinputを改行
+keybind = shift+enter=text:\n
 # keybind = super+\=new_split:right
 # keybind = super+shift+\=new_split:down
