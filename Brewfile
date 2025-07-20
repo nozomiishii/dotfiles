@@ -221,9 +221,6 @@ unless ENV["CI"]
   # Write, edit, and chat about your code with AI https://cursor.sh/
   cask "cursor"
 
-  # Rust-based terminal https://www.warp.dev/
-  cask "warp"
-
   # Video communication and virtual meeting platform https://www.zoom.us/
   cask "zoom"
 
