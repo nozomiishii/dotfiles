@@ -256,9 +256,6 @@ cask "blender"
 # Virtual video-calling space https://gather.town/
 cask "gather"
 
-# Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
-cask "kindle"
-
 # Online collaborative whiteboard platform https://miro.com/
 cask "miro"
 
@@ -286,13 +283,19 @@ cask "kiro"
 unless ENV["CI"]
   # ----------------------------------------------------------------
   # Mas
+  #
+  # Search `mas search <app_name>`
+  # info   `mas info <app_id>`
   # ----------------------------------------------------------------
   # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
   brew "mas"
 
   # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
-  mas "Xcode", id: 497_799_835
+  mas "Xcode", id: 497799835
+
+  # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
+  mas "Kindle", id: 302584613
 
   # New communication app which allows you to make FREE voice calls and send FREE messages https://apps.apple.com/app/line/id539883307
-  mas "LINE", id: 539_883_307
+  mas "LINE", id: 539883307
 end
