@@ -241,9 +241,6 @@ cask "firefox"
 # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
 cask "firefox-developer-edition"
 
-# HTTP and GraphQL Client https://insomnia.rest/
-cask "insomnia"
-
 # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
 cask "ledger-live"
 
