@@ -5,20 +5,12 @@ on:
     # The cron syntax consists of 5 fields: minute, hour, day, month, and day of the week.
     # This configuration means "run the workflow at 0 minutes, 0 hours, on every Monday".
     # So the workflow will run every Monday at 00:00 UTC.
-    - cron: '0 0 * * 1'
+    - cron: "0 0 * * 1"
   workflow_dispatch:
   push:
     branches:
       - main
-    paths:
-      - 'home/**'
-      - 'install.sh'
-      - '.github/workflows/setup-install.yaml'
   pull_request:
-    paths:
-      - 'home/**'
-      - 'install.sh'
-      - '.github/workflows/setup-install.yaml'
 
 jobs:
   setup-install:
