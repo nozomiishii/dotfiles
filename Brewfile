@@ -187,9 +187,6 @@ cask "google-cloud-sdk"
 # Client for the Google Drive storage service https://www.google.com/drive/
 cask "google-drive"
 
-# Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
-# cask "ngrok"
-
 # App to write, plan, collaborate, and get organized. https://www.notion.so
 cask "notion"
 
