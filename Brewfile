@@ -238,9 +238,6 @@ cask "microsoft-edge"
 # Mozilla Firefox https://www.mozilla.org/firefox
 cask "firefox"
 
-# Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
-cask "firefox-developer-edition"
-
 # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
 cask "ledger-live"
 
