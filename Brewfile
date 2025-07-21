@@ -24,7 +24,7 @@ brew "zellij"
 cask "ghostty"
 
 # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
-cask 'amazon-q'
+cask "amazon-q"
 
 # Fish shell like syntax highlighting for zsh https://github.com/zsh-users/zsh-syntax-highlighting
 brew "zsh-syntax-highlighting"
@@ -125,9 +125,6 @@ brew "tmux"
 # Dependencies app.sh | Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
 brew "duti"
 
-# Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
-brew "mas"
-
 # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
 tap "smudge/smudge"
 brew "smudge/smudge/nightlight"
@@ -157,157 +154,159 @@ brew "awscli"
 # ----------------------------------------------------------------
 # Cask
 # ----------------------------------------------------------------
+# Password manager that keeps all passwords secure behind one password. https://1password.com
+cask "1Password"
+
+# Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
+cask "1password-cli"
+
+# Web browser focusing on privacy https://brave.com/
+cask "brave-browser"
+
+# Anthropic's official Claude AI desktop app https://www.anthropic.com/
+cask "claude"
+
+# Replacement for Docker Desktop https://orbstack.dev/
+cask "orbstack"
+
+# Knowledge base that works on top of a local folder of plain text Markdown files https://obsidian.md/
+cask "obsidian"
+
+# Voice and text chat software. https://discord.com
+cask "discord"
+
+# Collaborative interface design tool. https://www.figma.com
+cask "figma"
+
+# GIT client　https://fork.dev/
+cask "fork"
+
+# Chromium based browser https://arc.net/
+# cask "arc"
+
+# Web browser. https://www.google.com/chrome
+cask "google-chrome"
+
+# Google Cloud SDK https://cloud.google.com/sdk/
+cask "google-cloud-sdk"
+
+# Client for the Google Drive storage service https://www.google.com/drive/
+cask "google-drive"
+
+# Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
+# cask "ngrok"
+
+# App to write, plan, collaborate, and get organized. https://www.notion.so
+cask "notion"
+
+# Collaboration platform for API development. https://www.postman.com
+cask "postman"
+
+# Control your tools with a few keystrokes https://raycast.app/
+cask "raycast"
+
+# Team communication and collaboration software. https://slack.com
+cask "slack"
+
+# Native GUI tool for relational databases https://tableplus.com/
+cask "tableplus"
+
+# Open-source code editor. https://code.visualstudio.com
+cask "visual-studio-code"
+
+# Write, edit, and chat about your code with AI https://cursor.sh/
+cask "cursor"
+
+# Video communication and virtual meeting platform https://www.zoom.us/
+cask "zoom"
+
+# FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
+cask "appcleaner"
+
+# Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
+cask "bleunlock"
+
+# Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
+cask "brooklyn"
+
+# Color picking application. https://colorsnapper.com
+cask "colorsnapper"
+
+# Tool for using an iPad as a second display https://www.duetdisplay.com/
+cask "duet"
+
+# Automated organization https://www.noodlesoft.com/
+cask "hazel"
+
+# Keyboard customizer. https://pqrs.org/osx/karabiner
+cask "karabiner-elements"
+
+# Web browser https://www.microsoft.com/edge
+cask "microsoft-edge"
+
+# Mozilla Firefox https://www.mozilla.org/firefox
+cask "firefox"
+
+# Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
+cask "firefox-developer-edition"
+
+# HTTP and GraphQL Client https://insomnia.rest/
+cask "insomnia"
+
+# Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
+cask "ledger-live"
+
+# Music streaming service. https://www.spotify.com
+cask "spotify"
+
+# Virtual machines UI using QEMU https://getutm.app/
+cask "utm"
+
+# Tools for building Android applications https://developer.android.com/studio
+cask "android-studio"
+
+# Free and open-source 3D creation suite. https://www.blender.org
+cask "blender"
+
+# Virtual video-calling space https://gather.town/
+cask "gather"
+
+# Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
+cask "kindle"
+
+# Online collaborative whiteboard platform https://miro.com/
+cask "miro"
+
+# VPN client for secure internet access and private browsing https://nordvpn.com/
+cask "nordvpn"
+
+# Onion routing based messenger https://getsession.org/
+cask "session"
+
+# Messaging app with a focus on speed and security https://macos.telegram.org/
+cask "telegram"
+
+# Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
+cask "tailscale"
+
+# Instant messaging application focusing on security https://signal.org/
+cask "signal"
+
+# Multimedia player. https://www.videolan.org/vlc
+cask "vlc"
+
+# Virtualization tool https://github.com/insidegui/VirtualBuddy
+cask "VirtualBuddy"
+
+# Agent-centric IDE with spec-driven development https://kiro.dev/
+cask "kiro"
+
 unless ENV["CI"]
-  # Password manager that keeps all passwords secure behind one password. https://1password.com
-  cask "1Password"
-
-  # Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
-  cask "1password-cli"
-
-  # Web browser focusing on privacy https://brave.com/
-  cask "brave-browser"
-
-  # Anthropic's official Claude AI desktop app https://www.anthropic.com/
-  cask "claude"
-
-  # Replacement for Docker Desktop https://orbstack.dev/
-  cask "orbstack"
-
-  # Knowledge base that works on top of a local folder of plain text Markdown files https://obsidian.md/
-  cask "obsidian"
-
-  # Voice and text chat software. https://discord.com
-  cask "discord"
-
-  # Collaborative interface design tool. https://www.figma.com
-  cask "figma"
-
-  # GIT client　https://fork.dev/
-  cask "fork"
-
-  # Chromium based browser https://arc.net/
-  # cask "arc"
-
-  # Web browser. https://www.google.com/chrome
-  cask "google-chrome"
-
-  # Google Cloud SDK https://cloud.google.com/sdk/
-  cask "google-cloud-sdk"
-
-  # Client for the Google Drive storage service https://www.google.com/drive/
-  cask "google-drive"
-
-  # Reverse proxy, secure introspectable tunnels to localhost https://ngrok.com/
-  # cask "ngrok"
-
-  # App to write, plan, collaborate, and get organized. https://www.notion.so
-  cask "notion"
-
-  # Collaboration platform for API development. https://www.postman.com
-  cask "postman"
-
-  # Control your tools with a few keystrokes https://raycast.app/
-  cask "raycast"
-
-  # Team communication and collaboration software. https://slack.com
-  cask "slack"
-
-  # Native GUI tool for relational databases https://tableplus.com/
-  cask "tableplus"
-
-  # Open-source code editor. https://code.visualstudio.com
-  cask "visual-studio-code"
-
-  # Write, edit, and chat about your code with AI https://cursor.sh/
-  cask "cursor"
-
-  # Video communication and virtual meeting platform https://www.zoom.us/
-  cask "zoom"
-
-  # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
-  cask "appcleaner"
-
-  # Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
-  cask "bleunlock"
-
-  # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
-  cask "brooklyn"
-
-  # Color picking application. https://colorsnapper.com
-  cask "colorsnapper"
-
-  # Tool for using an iPad as a second display https://www.duetdisplay.com/
-  cask "duet"
-
-  # Automated organization https://www.noodlesoft.com/
-  cask "hazel"
-
-  # Keyboard customizer. https://pqrs.org/osx/karabiner
-  cask "karabiner-elements"
-
-  # Web browser https://www.microsoft.com/edge
-  cask "microsoft-edge"
-
-  # Mozilla Firefox https://www.mozilla.org/firefox
-  cask "firefox"
-
-  # Mozilla Firefox Developer Edition. https://www.mozilla.org/firefox/developer
-  cask "firefox-developer-edition"
-
-  # HTTP and GraphQL Client https://insomnia.rest/
-  cask "insomnia"
-
-  # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
-  cask "ledger-live"
-
-  # Music streaming service. https://www.spotify.com
-  cask "spotify"
-
-  # Virtual machines UI using QEMU https://getutm.app/
-  cask "utm"
-
-  # Tools for building Android applications https://developer.android.com/studio
-  cask "android-studio"
-
-  # Free and open-source 3D creation suite. https://www.blender.org
-  cask "blender"
-
-  # Virtual video-calling space https://gather.town/
-  cask "gather"
-
-  # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
-  cask "kindle"
-
-  # Online collaborative whiteboard platform https://miro.com/
-  cask "miro"
-
-  # VPN client for secure internet access and private browsing https://nordvpn.com/
-  cask "nordvpn"
-
-  # Onion routing based messenger https://getsession.org/
-  cask "session"
-
-  # Messaging app with a focus on speed and security https://macos.telegram.org/
-  cask "telegram"
-
-  # Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
-  cask "tailscale"
-
-  # Instant messaging application focusing on security https://signal.org/
-  cask "signal"
-
-  # Multimedia player. https://www.videolan.org/vlc
-  cask "vlc"
-
-  # Virtualization tool https://github.com/insidegui/VirtualBuddy
-  cask "VirtualBuddy"
-
-  # Agent-centric IDE with spec-driven development https://kiro.dev/
-  cask "kiro"
-
   # ----------------------------------------------------------------
   # Mas
   # ----------------------------------------------------------------
+  # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
+  brew "mas"
 
   # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
   mas "Xcode", id: 497_799_835
