@@ -119,9 +119,6 @@ brew "ripgrep"
 # Intuitive find & replace CLI https://github.com/chmln/sd
 brew "sd"
 
-# Terminal multiplexer https://tmux.github.io/
-brew "tmux"
-
 # Dependencies app.sh | Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
 brew "duti"
 
