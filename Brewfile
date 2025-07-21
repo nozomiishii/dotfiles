@@ -268,9 +268,6 @@ cask "miro"
 # VPN client for secure internet access and private browsing https://nordvpn.com/
 cask "nordvpn"
 
-# Onion routing based messenger https://getsession.org/
-cask "session"
-
 # Messaging app with a focus on speed and security https://macos.telegram.org/
 cask "telegram"
 
