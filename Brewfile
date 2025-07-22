@@ -20,11 +20,17 @@ brew "starship"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature https://zellij.dev/
 brew "zellij"
 
-# Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
-cask "ghostty"
-
 # Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
 cask "tailscale"
+
+# Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
+cask "1password-cli"
+
+# Password manager that keeps all passwords secure behind one password. https://1password.com
+cask "1Password"
+
+# Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
+cask "ghostty"
 
 # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
 cask "amazon-q"
@@ -154,11 +160,6 @@ brew "awscli"
 # ----------------------------------------------------------------
 # Cask
 # ----------------------------------------------------------------
-# Password manager that keeps all passwords secure behind one password. https://1password.com
-cask "1Password"
-
-# Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
-cask "1password-cli"
 
 # Web browser focusing on privacy https://brave.com/
 cask "brave-browser"
