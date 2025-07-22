@@ -23,6 +23,9 @@ brew "zellij"
 # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
 cask "ghostty"
 
+# Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
+cask "tailscale"
+
 # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
 cask "amazon-q"
 
@@ -264,9 +267,6 @@ cask "nordvpn"
 
 # Messaging app with a focus on speed and security https://macos.telegram.org/
 cask "telegram"
-
-# Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
-cask "tailscale"
 
 # Instant messaging application focusing on security https://signal.org/
 cask "signal"
