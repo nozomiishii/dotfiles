@@ -1,6 +1,3 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-
 # starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
@@ -11,16 +8,7 @@ zmodload -i zsh/complist
 compinit
 
 # Syntax Highlighting
-if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
-  # shellcheck disable=SC1091
-  source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-fi
-
-# chezmoi
-export PATH="$HOME/.local/bin:$PATH"
-if command -v chezmoi > /dev/null; then
-  eval "$(chezmoi completion zsh)"
-fi
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Config
 source "$HOME/.zsh/config.zsh"
@@ -52,12 +40,10 @@ if command -v direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-# # npm
-# # Ok to proceed? - always proceed with 'yes'
-# export npm_config_yes=true
-
 # Node(fnm)
-eval "$(fnm env --use-on-cd --shell zsh)"
+if command -v fnm > /dev/null; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
 
 # pnpm
 export PNPM_HOME="/Users/nozomiishii/Library/pnpm"
@@ -72,8 +58,7 @@ if command -v rbenv > /dev/null; then
 fi
 
 # Python(uv)
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+if command -v uv > /dev/null; then
+  eval "$(uv generate-shell-completion zsh)"
+  eval "$(uvx --generate-shell-completion zsh)"
+fi

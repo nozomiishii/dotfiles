@@ -1,8 +1,18 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.pre.zsh"
 
+OS_NAME="$(uname -s)"
+
 # Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+homebrew() {
+  if [[ "$OS_NAME" == "Darwin" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
+  if [[ "$OS_NAME" == "Linux" ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi  
+}
+homebrew
 
 # OrbStack
 export DOCKER_HOST="unix:///Users/$USER/.orbstack/run/docker.sock"

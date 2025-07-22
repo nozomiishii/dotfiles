@@ -1,0 +1,13 @@
+{
+  "name": "dotfiles",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "./install.sh && yes | pnpm install",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-azuretools.vscode-docker"]
+    }
+  }
+}

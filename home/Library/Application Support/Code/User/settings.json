@@ -92,6 +92,21 @@
   "terminal.explorerKind": "external",
 
   // ----------------------------------------------------------------
+  // dev container
+  // ----------------------------------------------------------------
+  "terminal.integrated.profiles.linux": {
+    "zsh": { "path": "/usr/bin/zsh", "args": ["-l"] }
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+
+  // ----------------------------------------------------------------
+  // dotfiles
+  // ----------------------------------------------------------------
+  "dotfiles.repository": "nozomiishii/dotfiles",
+  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.installCommand": "install.sh",
+
+  // ----------------------------------------------------------------
   // Theme
   // ----------------------------------------------------------------
   "workbench.colorCustomizations": {

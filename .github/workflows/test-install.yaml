@@ -1,4 +1,4 @@
-name: Setup Install
+name: Test Install
 
 on:
   schedule:
@@ -13,8 +13,11 @@ on:
   pull_request:
 
 jobs:
-  setup-install:
-    runs-on: macos-latest
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
     steps:
       - name: Get code
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4

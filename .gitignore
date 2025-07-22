@@ -9,3 +9,6 @@ lefthook-local.yaml
 
 # act
 .actrc
+
+# pnpm
+.pnpm-store
