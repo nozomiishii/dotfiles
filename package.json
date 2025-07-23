@@ -15,6 +15,7 @@
   "type": "module",
   "main": "install.sh",
   "scripts": {
+    "test:perf": "bash scripts/test_shell_startup_time.sh",
     "format": "pnpm prettier . --check",
     "format:fix": "pnpm prettier . --write",
     "postinstall": "postinstall",
