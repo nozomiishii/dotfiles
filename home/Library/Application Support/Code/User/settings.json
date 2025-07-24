@@ -12,6 +12,14 @@
   "editor.bracketPairColorization.enabled": false,
 
   // ----------------------------------------------------------------
+  // dev container
+  // ----------------------------------------------------------------
+  "terminal.integrated.profiles.linux": {
+    "zsh": { "path": "/usr/bin/zsh", "args": ["-l"] }
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+
+  // ----------------------------------------------------------------
   // General
   // ----------------------------------------------------------------
   "workbench.startupEditor": "newUntitledFile",
@@ -90,14 +98,6 @@
   "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}",
   "terminal.external.osxExec": "ghostty",
   "terminal.explorerKind": "external",
-
-  // ----------------------------------------------------------------
-  // dev container
-  // ----------------------------------------------------------------
-  "terminal.integrated.profiles.linux": {
-    "zsh": { "path": "/usr/bin/zsh", "args": ["-l"] }
-  },
-  "terminal.integrated.defaultProfile.linux": "zsh",
 
   // ----------------------------------------------------------------
   // dotfiles
