@@ -24,6 +24,7 @@ echo '- 🐉 Setup corepack'
 corepack enable pnpm yarn npm
 
 echo '- 🐉 Setup npm global'
+npm i -g @devcontainers/cli
 npm i -g typescript
 npm i -g @anthropic-ai/claude-code
 
