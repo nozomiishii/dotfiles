@@ -14,6 +14,6 @@ extends:
 
 post-commit:
   scripts:
-    'maintenance_brewfile.sh':
+    "maintenance_brewfile.sh":
       runner: bash
       interactive: true
