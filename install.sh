@@ -121,10 +121,11 @@ install_homebrew() {
 }
 
 # ----------------------------------------------------------------
-# zsh Support for Linux (Dev Container)
+# zsh
 # ----------------------------------------------------------------
 install_zsh() {
-  echo -e "🐚 Installing zsh for Linux environment"
+  echo -e "🐚 Installing zsh"
+
   sudo apt update && sudo apt install -y zsh
 }
 
