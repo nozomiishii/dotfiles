@@ -12,12 +12,21 @@
   "editor.bracketPairColorization.enabled": false,
 
   // ----------------------------------------------------------------
+  // dotfiles
+  // ----------------------------------------------------------------
+  "dotfiles.repository": "nozomiishii/dotfiles",
+  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.installCommand": "install.sh",
+
+  // ----------------------------------------------------------------
   // dev container
   // ----------------------------------------------------------------
   "terminal.integrated.profiles.linux": {
     "zsh": { "path": "/usr/bin/zsh", "args": ["-l"] }
   },
   "terminal.integrated.defaultProfile.linux": "zsh",
+  "dev.containers.defaultFeatures": {},
+  "dev.containers.defaultExtensions": [],
 
   // ----------------------------------------------------------------
   // General
@@ -98,13 +107,6 @@
   "terminal.integrated.tabs.description": "${task}${separator}${local}${separator}${cwdFolder}",
   "terminal.external.osxExec": "ghostty",
   "terminal.explorerKind": "external",
-
-  // ----------------------------------------------------------------
-  // dotfiles
-  // ----------------------------------------------------------------
-  "dotfiles.repository": "nozomiishii/dotfiles",
-  "dotfiles.targetPath": "~/dotfiles",
-  "dotfiles.installCommand": "install.sh",
 
   // ----------------------------------------------------------------
   // Theme
@@ -199,9 +201,9 @@
     "vscode-kubernetes.minikube-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
     "vscode-kubernetes.kubectl-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/kubectl/kubectl"
   },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
+  // "[dockerfile]": {
+  //   "editor.defaultFormatter": "foxundermoon.shell-format"
+  // },
 
   // ----------------------------------------------------------------
   // Security - Dev container
@@ -228,11 +230,6 @@
   // ----------------------------------------------------------------
   // Shell
   // ----------------------------------------------------------------
-  "[bats][shellscript]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.shellcheck": "explicit"
-    }
-  },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format",
     "editor.codeActionsOnSave": {

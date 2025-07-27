@@ -1,13 +1,27 @@
 {
-  "name": "dotfiles",
-  "build": {
-    "dockerfile": "../Dockerfile"
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+  "name": "Dotfiles",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
   },
-  "remoteUser": "vscode",
-  "postCreateCommand": "./install.sh && yes | pnpm install",
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "yes | pnpm install",
+
+  // Configure tool-specific properties.
   "customizations": {
     "vscode": {
-      "extensions": ["ms-azuretools.vscode-docker"]
+      "extensions": [
+        // Docker
+        "ms-azuretools.vscode-docker",
+        "exiasr.hadolint"
+      ]
     }
   }
 }

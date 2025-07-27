@@ -24,15 +24,27 @@ brew "starship"
 brew "zellij"
 
 # Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
-cask "tailscale"
+brew "tailscale"
 
 # Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
 cask "1password-cli"
+
+# GitHub command-line tool. https://github.com/cli/cli
+brew "gh"
+
+# AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
+cask "amazon-q"
+
+# Smarter Dockerfile linter to validate best practices https://github.com/hadolint/hadolint
+brew "hadolint"
 
 # ----------------------------------------------------------------
 # macOS-only packages
 # ----------------------------------------------------------------
 if OS.mac?
+  # Mesh VPN based on WireGuard https://tailscale.com/
+  cask "tailscale-app"
+
   # Password manager that keeps all passwords secure behind one password. https://1password.com
   cask "1Password"
 
@@ -95,9 +107,6 @@ if OS.mac?
 
   # Modern replacement for ls. https://github.com/eza-community/eza
   brew "eza"
-
-  # GitHub command-line tool. https://github.com/cli/cli
-  brew "gh"
 
   # Distributed revision control system. https://git-scm.com
   brew "git"
