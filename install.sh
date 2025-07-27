@@ -97,11 +97,16 @@ open_config_apps() {
 # Homebrew (macOS & Linux)
 # ----------------------------------------------------------------
 install_homebrew() {
-  echo -e "🍺 Installing Homebrew for ${OS_NAME}"
-  # Non-interactive install (no prompt) and auto-confirm
-  NONINTERACTIVE=1 \
-  /bin/bash \
-  -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if ! command -v brew >/dev/null 2>&1; then
+    echo -e "🍺 Installing Homebrew for ${OS_NAME}"
+    # Non-interactive install (no prompt) and auto-confirm
+    NONINTERACTIVE=1 \
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  else
+    echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
+    brew update --force --quiet
+    brew upgrade --quiet
+  fi
 
   if [[ "$OS_NAME" == "Darwin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
