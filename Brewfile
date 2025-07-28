@@ -43,7 +43,7 @@ brew "hadolint"
 # ----------------------------------------------------------------
 if OS.mac?
   # Mesh VPN based on WireGuard https://tailscale.com/
-  cask "tailscale-app"
+  # cask "tailscale-app"
 
   # Password manager that keeps all passwords secure behind one password. https://1password.com
   cask "1Password"
