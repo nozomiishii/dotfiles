@@ -291,6 +291,9 @@ if OS.mac?
   # Agent-centric IDE with spec-driven development https://kiro.dev/
   cask "kiro"
 
+  # Open-source software for live streaming and screen recording https://obsproject.com/
+  cask "obs"
+
   unless ENV["CI"]
     # ----------------------------------------------------------------
     # Mas
