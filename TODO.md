@@ -4,6 +4,11 @@
   - https://zenn.dev/mozumasu/articles/mozumasu-lazy-git#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%81%AB%E3%82%B5%E3%82%AF%E3%83%83%E3%81%A8%E7%A7%BB%E5%8B%95(ghq%2C-fzf)
 - dev container, codespace で amazon q が動く
 - codespace で 1password が動く
+- dev containerでの認証保持。毎回認証したくない
+  - gh
+  - 1password
+  - claude
+  - amazon q
 - node 環境じゃなくても動くようにする。postinstall が落ちる
   - image かえる
 - run_onchange_after_macos.sh の適切な実行
