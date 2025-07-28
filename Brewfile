@@ -23,17 +23,8 @@ brew "starship"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature https://zellij.dev/
 brew "zellij"
 
-# Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
-brew "tailscale"
-
 # Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
 cask "1password-cli"
-
-# GitHub command-line tool. https://github.com/cli/cli
-brew "gh"
-
-# AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
-cask "amazon-q"
 
 # Smarter Dockerfile linter to validate best practices https://github.com/hadolint/hadolint
 brew "hadolint"
@@ -42,6 +33,19 @@ brew "hadolint"
 # macOS-only packages
 # ----------------------------------------------------------------
 if OS.mac?
+  # ----------------------------------------------------------------
+  # FIXME: 以下も入れたいけど, dev containerに入れようとするとエラーになる
+  # ----------------------------------------------------------------
+  # Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
+  brew "tailscale"
+
+  # GitHub command-line tool. https://github.com/cli/cli
+  brew "gh"
+
+  # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
+  cask "amazon-q"
+  # ----------------------------------------------------------------
+
   # Mesh VPN based on WireGuard https://tailscale.com/
   # cask "tailscale-app"
 
