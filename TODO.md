@@ -1,7 +1,7 @@
 # TODO
 
-- dev container で amazon q が動く
-- codespace で amazon q が動く
+- dev container, codespace で amazon q が動く
+- codespace で 1password が動く
 - node 環境じゃなくても動くようにする。postinstall が落ちる
   - image かえる
 - run_onchange_after_macos.sh の適切な実行
