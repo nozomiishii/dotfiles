@@ -62,6 +62,7 @@ alias z3="zellij --layout $HOME/.config/zellij/layouts/pane3.kdl"
 # claude
 # ----------------------------------------------------------------
 alias c="claude"
+alias yolo="claude --dangerously-skip-permissions"
 
 # ----------------------------------------------------------------
 # git
