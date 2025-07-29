@@ -1,4 +1,9 @@
 {
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [],
-  "enableAllProjectMcpServers": true
+  "permissions": {
+    "allow": [
+      "Bash(docker compose:*)"
+    ]
+  }
 }
