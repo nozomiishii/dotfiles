@@ -26,7 +26,9 @@
   },
   "terminal.integrated.defaultProfile.linux": "zsh",
   "dev.containers.defaultFeatures": {},
-  "dev.containers.defaultExtensions": [],
+  "dev.containers.defaultExtensions": [
+    "anthropic.claude-code"
+  ],
 
   // ----------------------------------------------------------------
   // General
