@@ -1,9 +1,13 @@
 services:
   app:
+    image: ghcr.io/nozomiishii/dotfiles-devcontainer:latest
+    # fallback
     build:
       context: .
       dockerfile: Dockerfile
+
     volumes:
       - ../..:/workspaces:cached
+
     command: sleep infinity
     network_mode: host
