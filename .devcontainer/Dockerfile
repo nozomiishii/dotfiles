@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm@sha256:7c2e711a4f7b02f32d2da16192d5e05aa7c95279be4ce889cff5df316f251c1d
+FROM mcr.microsoft.com/devcontainers/typescript-node:2-22-bookworm@sha256:2baa40a4eef3ac5b42d53acddaca3aac2e47bc30c54788f6fe299dbc5da83262
 
 # Enable corepack for pnpm
 RUN corepack enable pnpm
