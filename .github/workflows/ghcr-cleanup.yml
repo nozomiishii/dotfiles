@@ -1,0 +1,35 @@
+name: GHCR Cleanup
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 毎週 月曜 09:00 JST（= 月曜 00:00 UTC）
+    - cron: "0 0 * * 1"
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Prune non-latest tags older than 7 days
+        uses: snok/container-retention-policy@v3.0.0
+        with:
+          # 個人アカウントなので自分のユーザー名が入ります（自動で解決されます）
+          account: ${{ github.repository_owner }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+          # GHCR のイメージ名（あなたの build ワークフローと合わせています）
+          # 例: ghcr.io/<あなたのユーザー名>/<repo>-devcontainer
+          image-names: "${{ github.event.repository.name }}-devcontainer"
+
+          # latest と buildcache は常に保護（除外）
+          image-tags: "!latest,!buildcache"
+
+          # 7日より古いものを削除
+          cut-off: 7d
+
+          # 本番運用（dry-run: false）。最初に様子を見るなら true にしてね
+          dry-run: true
