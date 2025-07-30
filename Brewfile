@@ -250,9 +250,6 @@ if OS.mac?
   # Keyboard customizer. https://pqrs.org/osx/karabiner
   cask "karabiner-elements"
 
-  # Web browser https://www.microsoft.com/edge
-  cask "microsoft-edge"
-
   # Mozilla Firefox https://www.mozilla.org/firefox
   cask "firefox"
 
