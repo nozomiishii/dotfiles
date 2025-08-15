@@ -274,9 +274,6 @@ if OS.mac?
   # Online collaborative whiteboard platform https://miro.com/
   cask "miro"
 
-  # VPN client for secure internet access and private browsing https://nordvpn.com/
-  cask "nordvpn"
-
   # Messaging app with a focus on speed and security https://macos.telegram.org/
   cask "telegram"
 
@@ -304,6 +301,9 @@ if OS.mac?
     # ----------------------------------------------------------------
     # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
     brew "mas"
+
+    # VPN client for secure internet access and private browsing https://nordvpn.com/
+    mas "nordvpn", id: 905953485
 
     # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
     mas "Xcode", id: 497799835
