@@ -44,7 +44,10 @@ if OS.mac?
 
   # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
   cask "amazon-q"
+
   # ----------------------------------------------------------------
+  # OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager https://tofuutils.github.io/tenv/
+  brew "tenv"
 
   # Mesh VPN based on WireGuard https://tailscale.com/
   # cask "tailscale-app"

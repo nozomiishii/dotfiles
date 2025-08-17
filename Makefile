@@ -9,6 +9,7 @@ macos:
 
 .PHONY: toolchains
 toolchains:
+	bash ./scripts/toolchains/run_terraform.sh
 	bash ./scripts/toolchains/run_node.sh
 	bash ./scripts/toolchains/run_python.sh
 	bash ./scripts/toolchains/run_ruby.sh
