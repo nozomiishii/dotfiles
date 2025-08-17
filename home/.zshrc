@@ -76,7 +76,8 @@ fi
 
 # qコマンドの無効
 function q() {
-  return 127
+  local -r EXIT_CODE_COMMAND_NOT_FOUND=127
+  return $EXIT_CODE_COMMAND_NOT_FOUND
 }
 
 # Amazon Q post block. Keep at the bottom of this file.
