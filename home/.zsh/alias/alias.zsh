@@ -104,6 +104,11 @@ alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpow
 alias dsp="docker system prune --all --volumes"
 
 # ----------------------------------------------------------------
+# terraform
+# ----------------------------------------------------------------
+alias tf="terraform"
+
+# ----------------------------------------------------------------
 # Tools
 # ----------------------------------------------------------------
 alias nozo:l="npx -y @nozomiishii/lefthook-config@latest"
