@@ -24,6 +24,9 @@ jobs:
 
       - name: Check workflow files
         # https://github.com/rhysd/actionlint
+        #
+        # To run locally, execute the following command:
+        # docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
         uses: docker://rhysd/actionlint:1.7.7
         with:
           args: -color
