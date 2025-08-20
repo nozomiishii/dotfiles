@@ -15,7 +15,7 @@ on:
 jobs:
   install:
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 20
+    timeout-minutes: 40
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest]
