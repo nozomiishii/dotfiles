@@ -61,6 +61,9 @@ if OS.mac?
   # Dictation tool including LLM reformatting https://superwhisper.com/
   cask "superwhisper"
 
+  # GUI app and toolkit for Claude Code https://github.com/getasterisk/claudia
+  cask "claudia"
+
   # ----------------------------------------------------------------
   # Shell Development Environments
   # ----------------------------------------------------------------
