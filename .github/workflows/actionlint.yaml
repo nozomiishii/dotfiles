@@ -1,0 +1,29 @@
+name: Lint GitHub Actions workflows
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/**/*.ya?ml"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+
+      - name: Check workflow files
+        # https://github.com/rhysd/actionlint
+        uses: docker://rhysd/actionlint:1.7.7
+        with:
+          args: -color
