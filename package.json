@@ -36,16 +36,12 @@
     "markdownlint-cli2": "0.18.1"
   },
   "packageManager": "pnpm@10.14.0",
-  "devEngines": {
-    "runtime": {
-      "name": "node",
-      "version": "22.14.0",
-      "onFail": "download"
-    }
-  },
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@evilmartians/lefthook"
-    ]
+    ],
+    "executionEnv": {
+      "nodeVersion": "22.14.0"
+    }
   }
 }
