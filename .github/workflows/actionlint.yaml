@@ -1,6 +1,10 @@
 name: Lint GitHub Actions workflows
 on:
   workflow_dispatch:
+  # Remove push trigger for team development
+  push:
+    branches:
+      - main
   pull_request:
     paths:
       - ".github/**/*.ya?ml"
