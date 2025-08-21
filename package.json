@@ -36,6 +36,9 @@
     "markdownlint-cli2": "0.18.1"
   },
   "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": "22.14.0"
+  },
   "pnpm": {
     "ignoredBuiltDependencies": [
       "@evilmartians/lefthook"
