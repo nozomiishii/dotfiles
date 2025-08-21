@@ -7,7 +7,7 @@ on:
       - main
   pull_request:
     paths:
-      - ".github/**/*.ya?ml"
+      - '.github/**/*.ya?ml'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

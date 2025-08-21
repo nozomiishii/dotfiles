@@ -1,0 +1,48 @@
+name: Pull Request title
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+permissions:
+  pull-requests: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Validate PR title
+        uses: amannn/action-semantic-pull-request@24e6f016c1e110f5353026c0b6129a4118b9146c # v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          subjectPattern: ^[a-z][A-Za-z0-9 .,:;!?'"`@#$%&*()\[\]{}<>/\\|+=_~-]+(?<! )$
+          subjectPatternError: |
+            The subject "{subject}" found in the pull request title "{title}" didn't match the configured pattern.
+
+            Please follow these rules:
+            - Start with a lowercase English letter (a-z)
+            - Use only English letters, numbers, spaces, and allowed punctuation
+            - Do not end with a space
+            - Do not use emojis
+
+            Examples (valid):
+            - feat: add new API
+            - feat: fix bug #123
+            - feat: update action to v6 @user
+
+            Examples (invalid):
+            - feat: Capital start (upper case)
+            - feat: a  (too short)
+            - feat: trailing space␠  (trailing space)
+            - feat: emoji 🚀  (emoji not allowed)
+            - feat: 日本語 (english only allowed)
