@@ -49,6 +49,9 @@ if OS.mac?
   # OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager https://tofuutils.github.io/tenv/
   brew "tenv"
 
+  # Linter for Terraform files https://github.com/terraform-linters/tflint
+  brew "tflint"
+
   # Mesh VPN based on WireGuard https://tailscale.com/
   # cask "tailscale-app"
 
