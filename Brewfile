@@ -52,6 +52,9 @@ if OS.mac?
   # Linter for Terraform files https://github.com/terraform-linters/tflint
   brew "tflint"
 
+  # Tool to generate documentation from Terraform modules https://terraform-docs.io/
+  brew "terraform-docs"
+
   # Mesh VPN based on WireGuard https://tailscale.com/
   # cask "tailscale-app"
 
