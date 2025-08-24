@@ -30,7 +30,7 @@
     "@evilmartians/lefthook": "1.12.3",
     "@nozomiishii/commitlint-config": "0.0.7",
     "@nozomiishii/lefthook-config": "0.2.6",
-    "@nozomiishii/markdownlint-cli2-config": "0.3.2",
+    "@nozomiishii/markdownlint-cli2-config": "0.3.3",
     "@nozomiishii/postinstall": "0.0.4",
     "@nozomiishii/prettier-config": "0.6.3",
     "markdownlint-cli2": "0.18.1"
