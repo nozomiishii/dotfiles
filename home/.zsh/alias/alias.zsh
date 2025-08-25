@@ -107,6 +107,7 @@ alias dsp="docker system prune --all --volumes"
 # terraform
 # ----------------------------------------------------------------
 alias tf="terraform"
+alias tg="terragrunt"
 
 # ----------------------------------------------------------------
 # Tools

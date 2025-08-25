@@ -10,12 +10,13 @@ set -Ceuo pipefail
 
 echo '🛰️ Terraform'
 
-# https://github.com/Schniz/fnm
+# https://tofuutils.github.io/tenv/
 echo '- 🛰️ Install Terraform with tenv🚀'
 
 brew install tenv
 
 tenv tf install latest-stable
+tenv tg install latest-stable
 
 echo "- 🛰️ Terraform $(terraform -version)"
 
