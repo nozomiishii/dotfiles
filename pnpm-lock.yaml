@@ -21,8 +21,8 @@ importers:
         specifier: 0.3.3
         version: 0.3.3
       '@nozomiishii/postinstall':
-        specifier: 0.0.4
-        version: 0.0.4
+        specifier: 0.0.5
+        version: 0.0.5
       '@nozomiishii/prettier-config':
         specifier: 0.6.4
         version: 0.6.4
@@ -144,8 +144,9 @@ packages:
     engines: {node: 22.18.0}
     hasBin: true
 
-  '@nozomiishii/postinstall@0.0.4':
-    resolution: {integrity: sha512-0rFbaj0tzahMFyx1A4Y/4fY4F0QT6RpboS9KXqRZvoWYlVq+qJspG3o8PS5/jx2nj39O+opydYNpS+W1M/odGQ==}
+  '@nozomiishii/postinstall@0.0.5':
+    resolution: {integrity: sha512-ywRANzBm89s9P2lDszHq+3J8s4wAzTiUguAo5w9ZOw1QHTfDyDJFEGl/B6LG2IDIQPEdjxlFZpg+8k0aJnve8g==}
+    engines: {node: 22.18.0}
     hasBin: true
 
   '@nozomiishii/prettier-config@0.6.4':
@@ -344,8 +345,8 @@ packages:
       picomatch:
         optional: true
 
-  figlet@1.8.1:
-    resolution: {integrity: sha512-kEC3Sme+YvA8Hkibv0NR1oClGcWia0VB2fC1SlMy027cwe795Xx40Xiv/nw/iFAwQLupymWh+uhAAErn/7hwPg==}
+  figlet@1.8.2:
+    resolution: {integrity: sha512-iPCpE9B/rOcjewIzDnagP9F2eySzGeHReX8WlrZQJkqFBk2wvq8gY0c6U6Hd2y9HnX1LQcYSeP7aEHoPt6sVKQ==}
     engines: {node: '>= 0.4.0'}
     hasBin: true
 
@@ -789,8 +790,8 @@ packages:
     resolution: {integrity: sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg==}
     engines: {node: '>=12.20'}
 
-  zx@8.5.5:
-    resolution: {integrity: sha512-kzkjV3uqyEthw1IBDbA7Co2djji77vCP1DRvt58aYSMwiX4nyvAkFE8OBSEsOUbDJAst0Yo4asNvMTGG5HGPXA==}
+  zx@8.8.0:
+    resolution: {integrity: sha512-v0VZXgSHusDvTtZROno3Ws8xkE1uNSSwH/yF8Fm+ZwBrYhr+bRNNpsnTJ32eR/t6umc7lAz5WqdP800ugW9zFA==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -947,10 +948,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nozomiishii/postinstall@0.0.4':
+  '@nozomiishii/postinstall@0.0.5':
     dependencies:
-      figlet: 1.8.1
-      zx: 8.5.5
+      figlet: 1.8.2
+      zx: 8.8.0
 
   '@nozomiishii/prettier-config@0.6.4':
     dependencies:
@@ -1121,7 +1122,7 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.3
 
-  figlet@1.8.1: {}
+  figlet@1.8.2: {}
 
   fill-range@7.1.1:
     dependencies:
@@ -1620,4 +1621,4 @@ snapshots:
 
   yocto-queue@1.2.1: {}
 
-  zx@8.5.5: {}
+  zx@8.8.0: {}
