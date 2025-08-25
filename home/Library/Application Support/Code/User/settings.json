@@ -220,6 +220,20 @@
   "terraform.experimentalFeatures.validateOnSave": true,
 
   // ----------------------------------------------------------------
+  //　HCL
+  // ----------------------------------------------------------------
+  // https://github.com/hashicorp/vscode-hcl/issues/98
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.hcl$",
+        "cmd": "terragrunt hcl fmt --file ${file}",
+        "autoShowOutputPanel": "error"
+      }
+    ]
+  },
+
+  // ----------------------------------------------------------------
   // Prisma
   // ----------------------------------------------------------------
   "[prisma]": {
