@@ -28,11 +28,11 @@
   },
   "devDependencies": {
     "@evilmartians/lefthook": "1.12.3",
-    "@nozomiishii/commitlint-config": "0.0.7",
-    "@nozomiishii/lefthook-config": "0.2.7",
-    "@nozomiishii/markdownlint-cli2-config": "0.3.3",
-    "@nozomiishii/postinstall": "0.0.5",
-    "@nozomiishii/prettier-config": "0.6.4",
+    "@nozomiishii/commitlint-config": "0.0.8",
+    "@nozomiishii/lefthook-config": "0.2.8",
+    "@nozomiishii/markdownlint-cli2-config": "0.3.4",
+    "@nozomiishii/postinstall": "0.0.6",
+    "@nozomiishii/prettier-config": "0.6.5",
     "markdownlint-cli2": "0.18.1"
   },
   "packageManager": "pnpm@10.15.0",
