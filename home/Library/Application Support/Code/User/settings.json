@@ -190,7 +190,7 @@
   // Properties
   // ----------------------------------------------------------------
   "[properties]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
   },
 
   // ----------------------------------------------------------------
@@ -202,7 +202,7 @@
     "vscode-kubernetes.kubectl-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/kubectl/kubectl"
   },
   // "[dockerfile]": {
-  //   "editor.defaultFormatter": "foxundermoon.shell-format"
+  //   "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
   // },
 
   // ----------------------------------------------------------------
@@ -245,24 +245,23 @@
   // Shell
   // ----------------------------------------------------------------
   "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.shellcheck": "explicit"
     }
   },
   "[bats]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
     "editor.codeActionsOnSave": {
       "source.fixAll.shellcheck": "explicit"
     }
   },
   "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
   },
   "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.defaultFormatter": "dotenv.dotenv-vscode"
   },
-  "shellformat.flag": "--indent 2 --binary-next-line --case-indent --space-redirects",
   "shellcheck.ignorePatterns": {
     "**/*.xonshrc": true,
     "**/*.xsh": true,
