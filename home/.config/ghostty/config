@@ -16,8 +16,8 @@ macos-option-as-alt = true
 # Run `ghostty +list-themes` to view a list of themes
 #
 # Gitlab-Dark
-# `/Applications/Ghostty.app/Contents/Resources/ghostty/themes/GitLab-Dark-Grey`
-theme = "Gitlab-Dark"
+# `/Applications/Ghostty.app/Contents/Resources/ghostty/themes/GitLab Dark`
+theme = Gitlab Dark
 
 # Font
 font-size = 14
