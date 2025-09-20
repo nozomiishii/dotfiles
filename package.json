@@ -35,7 +35,7 @@
     "@nozomiishii/prettier-config": "0.6.5",
     "markdownlint-cli2": "0.18.1"
   },
-  "packageManager": "pnpm@10.16.1",
+  "packageManager": "pnpm@10.17.0",
   "engines": {
     "node": "22.19.0"
   },
