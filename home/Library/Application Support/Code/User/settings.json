@@ -450,6 +450,9 @@
   "gitlens.views.scm.grouped.views": {
     "stashes": false
   },
+  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
 
   // ----------------------------------------------------------------
   // Go
