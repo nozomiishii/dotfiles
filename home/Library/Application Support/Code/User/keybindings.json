@@ -222,7 +222,7 @@
     "key": "ctrl+q",
     "command": "-workbench.action.quickOpenView"
   },
-  
+
   // ----------------------------------------------------------------
   // Git
   // ----------------------------------------------------------------
@@ -233,12 +233,42 @@
   },
 
   // ----------------------------------------------------------------
-  // Open Markdown preview
+  // Markdown
   // ----------------------------------------------------------------
   {
-    "key": "alt+cmd+o",
-    "command": "markdown.showPreviewToSide",
-    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    "key": "alt+cmd+1",
+    "command": "md-shortcut.toggleTitleH1",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+cmd+2",
+    "command": "md-shortcut.toggleTitleH2",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+cmd+3",
+    "command": "md-shortcut.toggleTitleH3",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+cmd+4",
+    "command": "md-shortcut.toggleCheckboxes",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+cmd+5",
+    "command": "md-shortcut.toggleBullets",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+cmd+6",
+    "command": "md-shortcut.toggleNumbers",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+cmd+8",
+    "command": "md-shortcut.toggleCodeBlock",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
   },
 
   // ----------------------------------------------------------------
@@ -276,18 +306,6 @@
     "key": "ctrl+enter",
     "command": "-github.copilot.generate",
     "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
-  },
-
-  // ----------------------------------------------------------------
-  //  Cursor
-  // ----------------------------------------------------------------
-  {
-    "key": "cmd+i",
-    "command": "composerMode.agent"
-  },
-  {
-    "key": "cmd+l",
-    "command": "composerMode.chat"
   },
 
   // ----------------------------------------------------------------

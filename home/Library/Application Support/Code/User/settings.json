@@ -387,6 +387,7 @@
   // Markdown
   // ----------------------------------------------------------------
   "markdown-preview-github-styles.colorTheme": "dark",
+  "markdownShortcuts.bullets.marker": "-",
 
   // ----------------------------------------------------------------
   // Ruby
