@@ -1,27 +1,16 @@
 [
   // ----------------------------------------------------------------
-  // Development
+  // Editor split
   // ----------------------------------------------------------------
   {
-    "key": "ctrl+space",
-    "command": "editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+space",
-    "command": "-toggleSuggestionDetails",
-    "when": "suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "-cursorDown",
+    "key": "shift+cmd+\\",
+    "command": "workbench.action.splitEditorDown",
     "when": "textInputFocus"
   },
-  {
-    "key": "ctrl+n",
-    "command": "editor.action.rename",
-    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-  },
+
+  // ----------------------------------------------------------------
+  // Navigation
+  // ----------------------------------------------------------------
   {
     "key": "ctrl+[",
     "command": "workbench.action.navigateBack"
@@ -29,207 +18,6 @@
   {
     "key": "ctrl+]",
     "command": "workbench.action.navigateForward"
-  },
-
-  // ----------------------------------------------------------------
-  // Window
-  // ----------------------------------------------------------------
-  {
-    "key": "alt+cmd+w",
-    "command": "workbench.action.closeEditorsInGroup"
-  },
-  {
-    "key": "shift+cmd+r",
-    "command": "-reactSnippets.search",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+cmd+r",
-    "command": "workbench.action.reloadWindow"
-  },
-
-  // ----------------------------------------------------------------
-  // Explorer
-  // ----------------------------------------------------------------
-  {
-    "key": "cmd+n",
-    "command": "explorer.newFile"
-  },
-  {
-    "key": "cmd+n",
-    "command": "-workbench.action.files.newUntitledFile"
-  },
-  {
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active"
-  },
-
-  // ----------------------------------------------------------------
-  // Editor
-  // ----------------------------------------------------------------
-  {
-    "key": "shift+cmd+\\",
-    "command": "workbench.action.splitEditorDown",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "workbench.action.nextEditor",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+shift+tab",
-    "command": "workbench.action.previousEditor",
-    "when": "textInputFocus"
-  },
-
-  // ----------------------------------------------------------------
-  // Terminal
-  // ----------------------------------------------------------------
-  {
-    "key": "shift+cmd+j",
-    "command": "workbench.action.terminal.openNativeConsole"
-  },
-  {
-    "key": "alt+cmd+j",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "alt+cmd+j",
-    "command": "workbench.action.terminal.new",
-    "when": "!terminal.active"
-  },
-  {
-    "key": "alt+j",
-    "command": "workbench.action.toggleMaximizedPanel",
-    "when": "terminal.active"
-  },
-  {
-    "key": "alt+cmd+i",
-    "command": "workbench.action.terminal.moveToEditor",
-    "when": "terminal.active"
-  },
-  {
-    "key": "alt+i",
-    "command": "workbench.action.terminal.moveToTerminalPanel"
-  },
-  {
-    "key": "cmd+k",
-    "command": "workbench.action.terminal.clear",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-  },
-  {
-    "key": "cmd+t",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-  },
-  {
-    "key": "ctrl+shift+tab",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
-  },
-  {
-    "key": "cmd+right",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+left",
-    "command": "workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+w",
-    "command": "workbench.action.terminal.kill",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-  },
-
-  // Resize
-  {
-    "key": "alt+up",
-    "command": "workbench.action.terminal.resizePaneUp",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "alt+down",
-    "command": "workbench.action.terminal.resizePaneDown",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-
-  // Change the focused index
-  {
-    "key": "cmd+1",
-    "command": "workbench.action.terminal.focusAtIndex1",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+2",
-    "command": "workbench.action.terminal.focusAtIndex2",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+3",
-    "command": "workbench.action.terminal.focusAtIndex3",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+4",
-    "command": "workbench.action.terminal.focusAtIndex4",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+5",
-    "command": "workbench.action.terminal.focusAtIndex5",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+6",
-    "command": "workbench.action.terminal.focusAtIndex6",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+7",
-    "command": "workbench.action.terminal.focusAtIndex7",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+8",
-    "command": "workbench.action.terminal.focusAtIndex8",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "cmd+9",
-    "command": "workbench.action.terminal.focusAtIndex9",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-
-  // ----------------------------------------------------------------
-  // Conflict with Zellij
-  // ----------------------------------------------------------------
-  {
-    "key": "ctrl+q",
-    "command": "-workbench.action.quickOpenNavigateNextInViewPicker",
-    "when": "inQuickOpen && inViewsPicker"
-  },
-  {
-    "key": "ctrl+q",
-    "command": "-workbench.action.quickOpenView"
-  },
-
-  // ----------------------------------------------------------------
-  // Git
-  // ----------------------------------------------------------------
-  {
-    "key": "ctrl+cmd+a",
-    "command": "git.stageSelectedRanges",
-    "when": "isInDiffEditor"
   },
 
   // ----------------------------------------------------------------
@@ -272,44 +60,89 @@
   },
 
   // ----------------------------------------------------------------
-  // Extensions
+  // Window Groupまるごと閉じる
   // ----------------------------------------------------------------
   {
-    "key": "ctrl+,",
-    "command": "editor.emmet.action.wrapWithAbbreviation"
+    "key": "alt+cmd+w",
+    "command": "workbench.action.closeEditorsInGroup"
   },
 
   // ----------------------------------------------------------------
-  // Github Copilot
+  // Reload Window
   // ----------------------------------------------------------------
   {
-    "key": "cmd+enter",
-    "command": "inlineChat.accept",
-    "when": "inlineChatFocused && inlineChatHasProvider && inlineChatVisible && !inlineChatEmpty"
-  },
-  {
-    "key": "enter",
-    "command": "-inlineChat.accept",
-    "when": "inlineChatFocused && inlineChatHasProvider && inlineChatVisible && !inlineChatEmpty"
-  },
-  {
-    "key": "cmd+enter",
-    "command": "workbench.action.chat.submit",
-    "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress && chatLocation != 'editing-session' || chatInputHasText && inChatInput && !chatSessionRequestInProgress && !isApplyingChatEdits && chatLocation == 'editing-session'"
-  },
-  {
-    "key": "enter",
-    "command": "-workbench.action.chat.submit",
-    "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress && chatLocation != 'editing-session' || chatInputHasText && inChatInput && !chatSessionRequestInProgress && !isApplyingChatEdits && chatLocation == 'editing-session'"
-  },
-  {
-    "key": "ctrl+enter",
-    "command": "-github.copilot.generate",
-    "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
+    "key": "shift+cmd+r",
+    "command": "workbench.action.reloadWindow"
   },
 
   // ----------------------------------------------------------------
-  // User Snippets
+  // Create a new file
+  // ----------------------------------------------------------------
+  // focusが当たってる場所で新規ファイル作成に変更
+  {
+    "key": "cmd+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile"
+  },
+
+  // ----------------------------------------------------------------
+  // Terminal
+  // ----------------------------------------------------------------
+  // Terminal起動してなかったら新しく起動する
+  {
+    "key": "alt+cmd+j",
+    "command": "workbench.action.terminal.new",
+    "when": "!terminal.active"
+  },
+
+  // Terminal表示
+  {
+    "key": "alt+cmd+j",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+
+  // Terminal最大化
+  {
+    "key": "alt+j",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminal.active"
+  },
+
+  // Terminalアプリで開き直す
+  {
+    "key": "shift+cmd+j",
+    "command": "workbench.action.terminal.openNativeConsole"
+  },
+
+  // Terminalの新規タブ作成
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  },
+
+  // Terminalのタブを閉じる
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+  },
+
+  // ----------------------------------------------------------------
+  // Zellij
+  // ----------------------------------------------------------------
+  // Zellijを閉じるhotkeyとconflict
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenView"
+  },
+
+  // ----------------------------------------------------------------
+  // console.log
   // ----------------------------------------------------------------
   {
     "key": "ctrl+c",
@@ -323,7 +156,10 @@
     "args": { "name": "pretty console check" },
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
   },
+
+  // ----------------------------------------------------------------
   // i18n
+  // ----------------------------------------------------------------
   {
     "key": "ctrl+cmd+t",
     "command": "editor.action.insertSnippet",
