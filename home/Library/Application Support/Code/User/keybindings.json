@@ -58,6 +58,14 @@
     "command": "md-shortcut.toggleCodeBlock",
     "when": "editorTextFocus && editorLangId == 'markdown'"
   },
+  {
+    "key": "alt+cmd+9",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus && editorLangId == 'markdown'",
+    "args": {
+      "snippet": "[$TM_SELECTED_TEXT]($TM_SELECTED_TEXT)$0"
+    }
+  },
 
   // ----------------------------------------------------------------
   // Window Groupまるごと閉じる

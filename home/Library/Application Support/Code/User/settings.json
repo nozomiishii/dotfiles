@@ -388,6 +388,9 @@
   // ----------------------------------------------------------------
   "markdown-preview-github-styles.colorTheme": "dark",
   "markdownShortcuts.bullets.marker": "-",
+  "markdownShortcuts.icons.italic": false,
+  "markdownShortcuts.icons.bullets": false,
+  "markdownShortcuts.icons.bold": false,
 
   // ----------------------------------------------------------------
   // Obsidian
