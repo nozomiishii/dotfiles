@@ -21,12 +21,13 @@
   // ----------------------------------------------------------------
   // dev container
   // ----------------------------------------------------------------
-  "terminal.integrated.profiles.linux": {
-    "zsh": { "path": "/usr/bin/zsh", "args": ["-l"] }
-  },
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "dev.containers.defaultFeatures": {},
-  "dev.containers.defaultExtensions": ["anthropic.claude-code"],
+  // linuxでは動くがmacOSでは動かない
+  // "terminal.integrated.profiles.linux": {
+  //   "zsh": { "path": "/usr/bin/zsh", "args": ["-l"] }
+  // },
+  // "terminal.integrated.defaultProfile.linux": "zsh",
+  // "dev.containers.defaultFeatures": {},
+  // "dev.containers.defaultExtensions": ["anthropic.claude-code"],
 
   // ----------------------------------------------------------------
   // General
