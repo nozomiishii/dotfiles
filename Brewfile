@@ -36,8 +36,11 @@ if OS.mac?
   # ----------------------------------------------------------------
   # FIXME: 以下も入れたいけど, dev containerに入れようとするとエラーになる
   # ----------------------------------------------------------------
-  # Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
-  brew "tailscale"
+  # CLI: Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
+  # brew "tailscale"
+
+  # GUI: Mesh VPN based on WireGuard https://tailscale.com/
+  cask "tailscale-app"
 
   # GitHub command-line tool. https://github.com/cli/cli
   brew "gh"
@@ -54,9 +57,6 @@ if OS.mac?
 
   # Tool to generate documentation from Terraform modules https://terraform-docs.io/
   brew "terraform-docs"
-
-  # Mesh VPN based on WireGuard https://tailscale.com/
-  # cask "tailscale-app"
 
   # Password manager that keeps all passwords secure behind one password. https://1password.com
   cask "1Password"
