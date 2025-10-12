@@ -26,7 +26,7 @@ request_admin_privileges() {
       sleep 60
       kill -0 "$$" || exit
     done
-  ) 2> /dev/null &
+  ) 2>/dev/null &
 }
 
 request_admin_privileges
@@ -381,6 +381,14 @@ if [ -d "$vsicons_custom_icons_dir" ]; then
   rm -rf "$vsicons_custom_icons_dir"
 fi
 ln -sf "$HOME/Library/Application Support/Code/User/vsicons-custom-icons" "$vsicons_custom_icons_dir"
+
+# ----------------------------------------------------------------
+# Loginwindow
+# ----------------------------------------------------------------
+echo '- 🪟 window'
+
+# Disable relaunch apps on login
+defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 
 # ----------------------------------------------------------------
 # Killall
