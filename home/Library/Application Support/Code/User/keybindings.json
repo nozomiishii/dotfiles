@@ -12,11 +12,11 @@
   // Navigation
   // ----------------------------------------------------------------
   {
-    "key": "ctrl+[",
+    "key": "cmd+[",
     "command": "workbench.action.navigateBack"
   },
   {
-    "key": "ctrl+]",
+    "key": "cmd+]",
     "command": "workbench.action.navigateForward"
   },
 
