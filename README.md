@@ -203,6 +203,10 @@ sudo reboot
     - [I don't care about cookies](https://chrome.google.com/webstore/detail/i-dont-care-about-cookies/fihnjjcciajhdojfnbdddfaoknhalnja)
     - [Youtube filter](https://chrome.google.com/webstore/detail/youtube%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF/dfbfdjepofdfhdddfdggabjjndhiggji)
     - [Screenshot YouTube](https://chrome.google.com/webstore/detail/screenshot-youtube/gjoijpfmdhbjkkgnmahganhoinjjpohk)
+    - [Linkumori (URLs Cleaner) ](https://chromewebstore.google.com/detail/linkumori-urls-cleaner-fo/jchobbjgibcahbheicfocecmhocglkco)
+      - URL のクエリパラメータを自動削除
+    - [Amazon URL Shortener](https://chromewebstore.google.com/detail/amazon-url-shortener/bonkcfmjkpdnieejahndognlbogaikdg)
+      - amazon の URL 短くしてくれる
     - [Speechify Text to Speech Voice Reader](https://chrome.google.com/webstore/detail/speechify-text-to-speech/ljflmlehinmoeknoonhibbjpldiijjmm)
       - Shortcut
         - Activate the extension: `⌃Q`
