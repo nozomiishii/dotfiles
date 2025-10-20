@@ -32,11 +32,6 @@ export GREP_COLOR='1;32'
 # Syntax highlighting for man command
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# zellij
-if [[ -z "$ZELLIJ" ]]; then
-  zellij attach code 2>/dev/null
-fi
-
 # vscode
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 

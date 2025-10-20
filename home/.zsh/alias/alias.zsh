@@ -6,11 +6,10 @@
 CODE_DIR="$HOME/Code"
 GOOGLE_DRIVE_DIR="$HOME/Google\ Drive"
 
-
 # ----------------------------------------------------------------
 # NeoVim
 # ----------------------------------------------------------------
-if command -v nvim > /dev/null 2>&1; then
+if command -v nvim >/dev/null 2>&1; then
   alias vi="nvim"
   alias vim="nvim"
 fi
@@ -47,7 +46,7 @@ alias repo="cd $CODE_DIR"
 # ----------------------------------------------------------------
 alias rr="exec $SHELL"
 
-if command -v eza > /dev/null 2>&1; then
+if command -v eza >/dev/null 2>&1; then
   alias ls="eza --group-directories-first"
   alias ll="eza --group-directories-first --all --long --header --git"
 fi
@@ -56,7 +55,7 @@ fi
 # zellij
 # ----------------------------------------------------------------
 alias z="zellij"
-alias z3="zellij --layout $HOME/.config/zellij/layouts/pane3.kdl"
+alias zc="zellij attach code"
 
 # ----------------------------------------------------------------
 # claude

@@ -1,0 +1,64 @@
+layout {
+    cwd "$HOME"
+    tab name="Desktop" focus=true hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane cwd="Desktop" focus=true size="50%"
+            pane cwd="Desktop" size="50%"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="dotfiles" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane cwd="dotfiles" size="50%"
+            pane cwd="dotfiles" size="50%"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="infra" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane cwd="Code/nozomiishii/infra" size="50%"
+            pane cwd="Code/nozomiishii/infra" size="50%"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="configs" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane cwd="Code/nozomiishii/configs" size="50%"
+            pane cwd="Code/nozomiishii/configs" size="50%"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="dev" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane cwd="Code/nozomiishii/dev" size="50%"
+            pane cwd="Code/nozomiishii/dev" size="50%"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+}
+

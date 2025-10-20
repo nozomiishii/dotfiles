@@ -1,8 +1,8 @@
 // 次のコマンドで現状のレイアウトを保存
 // zellij action dump-layout > ~/dotfiles/home/.config/zellij/layouts/custom.kdl
 //
-// レイアウトを適応してmyworkセッション起動
-// zellij --new-session-with-layout pane3 --session mywork
+// レイアウトを適応してcodeセッション起動
+// zellij --new-session-with-layout code --session code
 layout {
     pane size=1 borderless=true {
         plugin location="tab-bar"
