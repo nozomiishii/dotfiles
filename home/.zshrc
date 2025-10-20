@@ -32,6 +32,11 @@ export GREP_COLOR='1;32'
 # Syntax highlighting for man command
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# zellij
+if [[ -z "$ZELLIJ" ]]; then
+  zellij attach code 2>/dev/null
+fi
+
 # vscode
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
@@ -39,12 +44,12 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 # direnv
-if command -v direnv > /dev/null; then
+if command -v direnv >/dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
 # Node(fnm)
-if command -v fnm > /dev/null; then
+if command -v fnm >/dev/null; then
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
@@ -52,24 +57,24 @@ fi
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export PNPM_HOME="$HOME/Library/pnpm"
   case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-    *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
   esac
 fi
 
 # Ruby
-if command -v rbenv > /dev/null; then
+if command -v rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
 
 # Python(uv)
-if command -v uv > /dev/null; then
+if command -v uv >/dev/null; then
   eval "$(uv generate-shell-completion zsh)"
   eval "$(uvx --generate-shell-completion zsh)"
 fi
 
 # Amazon Q
-if command -v q > /dev/null 2>&1; then
+if command -v q >/dev/null 2>&1; then
   # qコマンドはcursorのプロセス中断と被るため、コマンドをamazonqに変更
   function amazonq() { command q "$@"; }
 fi
