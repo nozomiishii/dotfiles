@@ -1,58 +1,62 @@
 [
   {
-    "name": "dotfiles",
+    "name": "🧙🏿‍♂️ dotfiles",
     "rootPath": "~/dotfiles",
-    "paths": [],
     "tags": [],
     "enabled": true
   },
   {
-    "name": "infra",
+    "name": "🪴 brain",
+    "rootPath": "~/Library/Mobile Documents/iCloud~md~obsidian/Documents",
+    "tags": [],
+    "enabled": true
+  },
+  {
+    "name": "🛰️ infra",
     "rootPath": "~/Code/nozomiishii/infra",
-    "paths": [],
     "tags": [],
     "enabled": true
   },
   {
-    "name": "configs",
+    "name": "🍱 configs",
     "rootPath": "~/Code/nozomiishii/configs",
-    "paths": [],
     "tags": [],
     "enabled": true
   },
   {
-    "name": "dev",
+    "name": "👨🏻‍🚀 dev",
     "rootPath": "~/Code/nozomiishii/dev",
-    "paths": [],
     "tags": [],
     "enabled": true
   },
   {
-    "name": "home",
+    "name": "👨🏻‍🚀 home",
     "rootPath": "~/Code/nozomiishii/dev/apps/home",
-    "paths": [],
     "tags": [],
     "enabled": true
   },
   {
-    "name": "nozomiishii",
+    "name": "🦕 nozomiishii",
     "rootPath": "~/Code/nozomiishii/nozomiishii",
-    "paths": [],
     "tags": [],
     "enabled": true
   },
   {
-    "name": "renovate",
+    "name": "🦄 renovate",
     "rootPath": "~/Code/nozomiishii/renovate",
-    "paths": [],
     "tags": [],
     "enabled": true
   },
   {
-    "name": "archives",
+    "name": "💾 archives",
     "rootPath": "~/Code/nozomiishii/archives",
-    "paths": [],
     "tags": [],
     "enabled": true
+  },
+  {
+    "name": "work - ここにまとめて入れて、VSCode workspaceで管理したら良さそう",
+    "rootPath": "~/Code/work",
+    "tags": [],
+    "enabled": false
   }
 ]
