@@ -19,6 +19,13 @@
   "dotfiles.installCommand": "install.sh",
 
   // ----------------------------------------------------------------
+  // vscode project manager
+  // ----------------------------------------------------------------
+  "projectManager.projectsLocation": "~/dotfiles/home/Library/Application Support/Code/User",
+  "projectManager.sortList": "Saved",
+
+
+  // ----------------------------------------------------------------
   // dev container
   // ----------------------------------------------------------------
   // linuxでは動くがmacOSでは動かない

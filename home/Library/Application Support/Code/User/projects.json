@@ -1,0 +1,58 @@
+[
+  {
+    "name": "dotfiles",
+    "rootPath": "~/dotfiles",
+    "paths": [],
+    "tags": [],
+    "enabled": true
+  },
+  {
+    "name": "infra",
+    "rootPath": "~/Code/nozomiishii/infra",
+    "paths": [],
+    "tags": [],
+    "enabled": true
+  },
+  {
+    "name": "configs",
+    "rootPath": "~/Code/nozomiishii/configs",
+    "paths": [],
+    "tags": [],
+    "enabled": true
+  },
+  {
+    "name": "dev",
+    "rootPath": "~/Code/nozomiishii/dev",
+    "paths": [],
+    "tags": [],
+    "enabled": true
+  },
+  {
+    "name": "home",
+    "rootPath": "~/Code/nozomiishii/dev/apps/home",
+    "paths": [],
+    "tags": [],
+    "enabled": true
+  },
+  {
+    "name": "nozomiishii",
+    "rootPath": "~/Code/nozomiishii/nozomiishii",
+    "paths": [],
+    "tags": [],
+    "enabled": true
+  },
+  {
+    "name": "renovate",
+    "rootPath": "~/Code/nozomiishii/renovate",
+    "paths": [],
+    "tags": [],
+    "enabled": true
+  },
+  {
+    "name": "archives",
+    "rootPath": "~/Code/nozomiishii/archives",
+    "paths": [],
+    "tags": [],
+    "enabled": true
+  }
+]
