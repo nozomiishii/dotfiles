@@ -1,3 +1,5 @@
+// tabづつでlayout作った方が変更に強いかも
+// zellij --new-session-with-layout code --session code
 layout {
     cwd "$HOME"
     tab name="Desktop" focus=true hide_floating_panes=true {
@@ -56,6 +58,15 @@ layout {
             pane cwd="Code/nozomiishii/dev" size="50%"
             pane cwd="Code/nozomiishii/dev" size="50%"
         }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    new_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane
         pane size=1 borderless=true {
             plugin location="zellij:status-bar"
         }
