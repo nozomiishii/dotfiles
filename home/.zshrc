@@ -72,13 +72,13 @@ fi
 if command -v q >/dev/null 2>&1; then
   # qコマンドはcursorのプロセス中断と被るため、コマンドをamazonqに変更
   function amazonq() { command q "$@"; }
-fi
 
-# qコマンドの無効
-function q() {
-  local -r EXIT_CODE_COMMAND_NOT_FOUND=127
-  return $EXIT_CODE_COMMAND_NOT_FOUND
-}
+  # qコマンドの無効
+  function q() {
+    local -r EXIT_CODE_COMMAND_NOT_FOUND=127
+    return $EXIT_CODE_COMMAND_NOT_FOUND
+  }
+fi
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
