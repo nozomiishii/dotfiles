@@ -153,7 +153,7 @@
   // Project Manager
   // ----------------------------------------------------------------
   {
-    "key": "ctrl+;",
+    "key": "cmd+;",
     "command": "projectManager.listProjects"
   },
   {
