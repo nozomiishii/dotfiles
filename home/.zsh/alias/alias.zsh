@@ -56,7 +56,19 @@ fi
 # ----------------------------------------------------------------
 alias z="zellij"
 alias zc="zellij attach code"
+z!() {
+  # 除外したいセッション名をここに列挙（スペース区切り）
+  local keep_sessions=("code" "web")
 
+  # 配列から正規表現を作成：^(code|web|foo)$ のように変換
+  local pattern="^($(
+    IFS='|'
+    echo "${keep_sessions[*]}"
+  ))$"
+
+  # 一致しないセッションを削除
+  zellij list-sessions --short | grep -Ev "$pattern" | xargs -r -n1 zellij delete-session --force
+}
 # ----------------------------------------------------------------
 # claude
 # ----------------------------------------------------------------
