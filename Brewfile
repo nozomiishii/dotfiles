@@ -196,6 +196,9 @@ if OS.mac?
   # Anthropic's official Claude AI desktop app https://www.anthropic.com/
   cask "claude"
 
+  # Terminal-based AI coding assistant https://www.anthropic.com/claude-code
+  cask "claude-code"
+
   # Replacement for Docker Desktop https://orbstack.dev/
   cask "orbstack"
 
