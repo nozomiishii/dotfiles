@@ -194,6 +194,7 @@
   // ----------------------------------------------------------------
   {
     "key": "alt+cmd+w",
-    "command": "composer.clearComposerTabs"
+    "command": "composer.clearComposerTabs",
+    "when": "composerFocused"
   },
 ]
