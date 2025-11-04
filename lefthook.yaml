@@ -11,9 +11,3 @@
 
 extends:
   - ./node_modules/@nozomiishii/lefthook-config/index.yaml
-
-post-commit:
-  scripts:
-    "maintenance_brewfile.sh":
-      runner: bash
-      interactive: true
