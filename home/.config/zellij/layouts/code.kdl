@@ -26,6 +26,18 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
+    tab name="brain" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane cwd="Library/Mobile Documents/iCloud~md~obsidian/Documents" size="50%"
+            pane cwd="Library/Mobile Documents/iCloud~md~obsidian/Documents" size="50%"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
     tab name="infra" hide_floating_panes=true {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
