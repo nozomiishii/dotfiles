@@ -55,7 +55,7 @@ fi
 # zellij
 # ----------------------------------------------------------------
 alias z="zellij"
-alias zc="zellij attach code"
+alias zz="zellij attach code"
 z!() {
   # 除外したいセッション名をここに列挙（スペース区切り）
   local keep_sessions=("code" "web")
