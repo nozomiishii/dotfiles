@@ -78,6 +78,9 @@ defaults write com.apple.Dock autohide-delay -float 60
 # Wipe all app icons
 defaults write com.apple.dock persistent-apps -array
 
+# Hide recent apps
+defaults write com.apple.dock show-recents -bool false
+
 # Set the icon size of Dock items in pixels.
 defaults write com.apple.dock tilesize -int 48
 
