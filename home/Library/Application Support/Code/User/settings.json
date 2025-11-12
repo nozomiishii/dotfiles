@@ -24,7 +24,6 @@
   "projectManager.projectsLocation": "~/dotfiles/home/Library/Application Support/Code/User",
   "projectManager.sortList": "Saved",
 
-
   // ----------------------------------------------------------------
   // dev container
   // ----------------------------------------------------------------
@@ -82,6 +81,9 @@
     },
     "textMateRules": []
   },
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+
 
   // ----------------------------------------------------------------
   // Editor
@@ -321,13 +323,6 @@
   // "python.linting.flake8Args": ["--max-line-length", "119"],
 
   // ----------------------------------------------------------------
-  // Prettier
-  // ----------------------------------------------------------------
-  "files.autoSave": "onFocusChange",
-  "editor.formatOnSave": true,
-  "prettier.requireConfig": true,
-
-  // ----------------------------------------------------------------
   // Stylelint | TailwindCSS
   // ----------------------------------------------------------------
   "stylelint.config": {
@@ -357,6 +352,38 @@
   ],
 
   // ----------------------------------------------------------------
+  // typescript
+  // ----------------------------------------------------------------
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.preferences.importModuleSpecifier": "relative",
+
+  // ----------------------------------------------------------------
+  // javascript
+  // ----------------------------------------------------------------
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.preferences.importModuleSpecifier": "relative",
+
+  // ----------------------------------------------------------------
+  // json
+  // ----------------------------------------------------------------
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // ----------------------------------------------------------------
   // ESlint
   // ----------------------------------------------------------------
   "eslint.enable": true,
@@ -368,6 +395,11 @@
   ],
 
   // ----------------------------------------------------------------
+  // Prettier
+  // ----------------------------------------------------------------
+  "prettier.requireConfig": true,
+
+  // ----------------------------------------------------------------
   // editor.codeActionsOnSave
   // ----------------------------------------------------------------
   "editor.codeActionsOnSave": {
@@ -375,9 +407,6 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll.markdownlint": "explicit"
   },
-
-  "javascript.preferences.importModuleSpecifier": "relative",
-  "typescript.preferences.importModuleSpecifier": "relative",
 
   // ----------------------------------------------------------------
   // sqlfluff
@@ -641,7 +670,7 @@
   // ----------------------------------------------------------------
   // Cursor
   // ----------------------------------------------------------------
-  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.composer.shouldChimeAfterChatFinishes": true
 
   ///////////////////////////////////////////////////////////////////
 }
