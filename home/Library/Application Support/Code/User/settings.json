@@ -177,8 +177,7 @@
   // ----------------------------------------------------------------
   "files.associations": {
     "*.ejs": "html",
-    "*.strings": "plist",
-    "*.plist": "plist",
+    "*.plist": "xml",
     "vimrc": "viml",
     ".tmux.conf": "shellscript",
     ".actrc*": "properties",
