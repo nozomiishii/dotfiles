@@ -33,7 +33,7 @@
     "@nozomiishii/markdownlint-cli2-config": "0.3.4",
     "@nozomiishii/postinstall": "0.0.6",
     "@nozomiishii/prettier-config": "0.6.5",
-    "markdownlint-cli2": "0.18.1"
+    "markdownlint-cli2": "0.19.0"
   },
   "packageManager": "pnpm@10.22.0",
   "engines": {
