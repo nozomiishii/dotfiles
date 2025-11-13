@@ -268,9 +268,6 @@ if OS.mac?
   # Automated organization https://www.noodlesoft.com/
   cask "hazel"
 
-  # Keyboard customizer. https://pqrs.org/osx/karabiner
-  cask "karabiner-elements"
-
   # Mozilla Firefox https://www.mozilla.org/firefox
   cask "firefox"
 
