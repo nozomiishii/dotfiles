@@ -292,6 +292,15 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 '<dic
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 '<dict><key>enabled</key><false/></dict>'
 
 # ----------------------------------------------------------------
+# Key Remapping
+# ----------------------------------------------------------------
+echo "- 🔄 Key Remapping"
+
+local_keymap_plist="$HOME/Library/LaunchAgents/local.keymap.plist"
+launchctl bootout "gui/$UID" "$local_keymap_plist" 2>/dev/null || true
+launchctl bootstrap "gui/$UID" "$local_keymap_plist"
+
+# ----------------------------------------------------------------
 # Network
 # ----------------------------------------------------------------
 echo "- 📡 Network"

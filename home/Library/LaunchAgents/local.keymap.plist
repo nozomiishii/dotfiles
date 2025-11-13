@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.keymap</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/hidutil</string>
+    <string>property</string>
+    <string>--set</string>
+    <!-- キーマッピング設定: CapsLock (0x700000039) と Left Control (0x7000000E0) を入れ替え -->
+    <string>{
+      "UserKeyMapping": [
+        {
+          "HIDKeyboardModifierMappingSrc": 0x700000039,
+          "HIDKeyboardModifierMappingDst": 0x7000000E0
+        },
+        {
+          "HIDKeyboardModifierMappingSrc": 0x7000000E0,
+          "HIDKeyboardModifierMappingDst": 0x700000039
+        }
+      ]
+    }</string>
+  </array>
+
+  <!-- ログイン時に自動実行 -->
+  <key>RunAtLoad</key>
+  <true/>
+</dict>
+</plist>
