@@ -235,9 +235,6 @@ sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 # ----------------------------------------------------------------
 echo "- ⌨️ Keyboard"
 
-# Disable input source switch popup
-defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled -bool false
-
 # Set key repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
 
