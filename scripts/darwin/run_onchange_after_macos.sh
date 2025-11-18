@@ -267,12 +267,6 @@ defaults write com.google.Chrome NSUserKeyEquivalents -dict-add "Bookmark This T
 # Firefox Developer Edition Keyboard Shortcut => Save Page As... : ⇧ + ⌘ + ⌥ + P
 defaults write org.mozilla.firefoxdeveloperedition NSUserKeyEquivalents -dict-add "Print..." -string "@~\$p"
 
-# Disable ⌃ + Space for "Select the previous input source"
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 '<dict><key>enabled</key><false/></dict>'
-
-# Disable ⌃ + ⌥ + Space for "Select next source in input menu"
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 '<dict><key>enabled</key><false/></dict>'
-
 # Disable ⌘ + Space for "Show Spotlight search"
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '<dict><key>enabled</key><false/></dict>'
 
