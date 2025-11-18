@@ -90,11 +90,12 @@ defaults write com.apple.dock magnification -bool true
 # Icon size of magnified Dock items
 defaults write com.apple.dock largesize -int 56
 
+# Stage Managerの運用やってみて合わなかったら消す
 # disable Launchpad
-defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
+# defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
 # disable Stage Manager
-defaults write com.apple.WindowManager GloballyEnabled -bool false
+# defaults write com.apple.WindowManager GloballyEnabled -bool false
 
 # disable Click wallpaper to reveal desktop
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
