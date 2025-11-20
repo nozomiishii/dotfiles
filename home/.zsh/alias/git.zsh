@@ -20,11 +20,11 @@ function __git_prompt_git() {
 # it's not a symbolic ref, but in a Git repo.
 function git_current_branch() {
   local ref
-  ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2> /dev/null)
+  ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2>/dev/null)
   local ret=$?
   if [[ $ret != 0 ]]; then
     [[ $ret == 128 ]] && return # no git repo.
-    ref=$(__git_prompt_git rev-parse --short HEAD 2> /dev/null) || return
+    ref=$(__git_prompt_git rev-parse --short HEAD 2>/dev/null) || return
   fi
   echo ${ref#refs/heads/}
 }
@@ -39,14 +39,14 @@ compdef _git _git_log_prettily=git-log
 
 # Warn if the current branch is a WIP
 function work_in_progress() {
-  if $(git log -n 1 2> /dev/null | grep -q -c "\-\-wip\-\-"); then
+  if $(git log -n 1 2>/dev/null | grep -q -c "\-\-wip\-\-"); then
     echo "WIP!!"
   fi
 }
 
 # Check if main exists and use instead of master
 function git_main_branch() {
-  command git rev-parse --git-dir &> /dev/null || return
+  command git rev-parse --git-dir &>/dev/null || return
   local branch
   for branch in main trunk; do
     if command git show-ref -q --verify refs/heads/$branch; then
@@ -132,9 +132,9 @@ compdef _git gdv=git-diff
 
 alias gf='git fetch'
 # --jobs=<n> was added in git 2.8
-is-at-least 2.8 "$git_version" \
-  && alias gfa='git fetch --all --prune --jobs=10' \
-  || alias gfa='git fetch --all --prune'
+is-at-least 2.8 "$git_version" &&
+  alias gfa='git fetch --all --prune --jobs=10' ||
+  alias gfa='git fetch --all --prune'
 alias gfo='git fetch origin'
 
 alias gfg='git ls-files | grep'
@@ -272,9 +272,9 @@ alias gss='git status -s'
 alias gst='git status'
 
 # use the default stash push on git 2.13 and newer
-is-at-least 2.13 "$git_version" \
-  && alias gsta='git stash push' \
-  || alias gsta='git stash save'
+is-at-least 2.13 "$git_version" &&
+  alias gsta='git stash push' ||
+  alias gsta='git stash save'
 
 alias gstaa='git stash apply'
 alias gstc='git stash clear'
@@ -344,3 +344,48 @@ alias greset='git reset --soft HEAD^'
 
 # git worktree
 alias gw='git worktree'
+
+# 作ったはいいが遅いし、lefthookでなぜかcommit message落とされる。featとかのとこに色がついてるのが原因な気がする
+# commit message
+gcai() {
+  if git diff --staged --quiet; then
+    echo "No staged changes to commit"
+    return 1
+  fi
+
+  local staged_diff=$(git diff --staged)
+
+  local prompt="Given the following staged git diff, propose a single-line conventional commit message summarizing the staged changes, using the Conventional Commits style (feat, fix, docs, etc.).
+
+  ${staged_diff}
+
+  Output exactly one line:
+  <type>: <summary>
+
+  Rules:
+  - Output only the commit message text
+  - No quotes, no commands, no backticks
+  - Just the message in format: type: description"
+
+  local output=$(copilot --prompt "$prompt")
+
+  # conventional commit形式の行を探す
+  local msg=$(echo "$output" | grep -E '^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\([^)]+\))?:' | head -1)
+
+  [ -z "$msg" ] && echo "Failed to generate" && return 1
+
+  echo "$msg"
+  echo -n "OK? [Y/n]: "
+  read -r ans
+
+  case "$ans" in
+  [yY] | "")
+    echo "$msg"
+    git commit -m "$msg"
+    ;;
+  *)
+    echo "Cancelled"
+    return 1
+    ;;
+  esac
+}
