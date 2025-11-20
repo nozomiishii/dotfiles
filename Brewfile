@@ -307,6 +307,9 @@ if OS.mac?
   # Agent-centric IDE with spec-driven development https://kiro.dev/
   cask "kiro"
 
+  # AI Coding Agent IDE https://antigravity.google/
+  cask "antigravity"
+
   # Open-source software for live streaming and screen recording https://obsproject.com/
   cask "obs"
 
