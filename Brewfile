@@ -314,6 +314,10 @@ if OS.mac?
   cask "obs"
 
   unless ENV["CI"]
+    # VPN client for secure internet access and private browsing https://nordvpn.com/
+    # mas "nordvpn", id: 905953485
+    cask "nordvpn"
+
     # ----------------------------------------------------------------
     # Mas
     #
@@ -322,9 +326,6 @@ if OS.mac?
     # ----------------------------------------------------------------
     # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
     brew "mas"
-
-    # VPN client for secure internet access and private browsing https://nordvpn.com/
-    mas "nordvpn", id: 905953485
 
     # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
     mas "Xcode", id: 497799835
