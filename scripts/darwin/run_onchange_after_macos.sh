@@ -242,9 +242,6 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 # Set delay until repeat
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-# Automatically switch to a document's input source
-defaults write com.apple.HIToolbox AppleGlobalTextInputProperties -dict-add TextInputGlobalPropertyPerContextInput -bool true
-
 # Fn key usage
 defaults write com.apple.HIToolbox AppleFnUsageType -int 0
 
