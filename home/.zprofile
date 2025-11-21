@@ -39,6 +39,9 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # OrbStack
 export DOCKER_HOST="unix:///Users/$USER/.orbstack/run/docker.sock"
 
+# Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 # shellcheck disable=SC1090
