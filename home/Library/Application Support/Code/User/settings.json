@@ -525,76 +525,7 @@
   // vscode-icons
   // ----------------------------------------------------------------
   "vsicons.dontShowNewVersionMessage": true,
-  "vsicons.associations.files": [
-    {
-      "icon": "playwright",
-      "extensions": ["playwright.ct.config.ts", "playwright.e2e.config.ts"],
-      "filename": true,
-      "format": "svg"
-    },
-    {
-      "icon": "tsconfig",
-      "extensions": ["tsconfig.nextjs.json"],
-      "filename": true,
-      "format": "svg"
-    },
-    {
-      "icon": "nest-controller",
-      "extensions": ["controller.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "nest-gateway",
-      "extensions": ["gateway.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "nest-module",
-      "extensions": ["module.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "nest-service",
-      "extensions": ["service.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "nest-decorator",
-      "extensions": ["decorator.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "nest-guard",
-      "extensions": ["guard.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "nest-pipe",
-      "extensions": ["pipe.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "nest-filter",
-      "extensions": ["filter.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "nest-middleware",
-      "extensions": ["middleware.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "nest-resolver",
-      "extensions": ["resolver.ts"],
-      "format": "svg"
-    },
-    {
-      "icon": "docker",
-      "extensions": ["docker-compose.dev.yml"],
-      "filename": true,
-      "format": "svg"
-    }
-  ],
+
   // ----------------------------------------------------------------
   // vitest
   // ----------------------------------------------------------------

@@ -371,6 +371,7 @@ mkdir -p "$HOME/Library/Application Support/Cursor/User/"
 
 ln -sf "$HOME/Library/Application Support/Code/User/keybindings.json" "$HOME/Library/Application Support/Cursor/User/"
 ln -sf "$HOME/Library/Application Support/Code/User/settings.json" "$HOME/Library/Application Support/Cursor/User/"
+ln -sf "$HOME/Library/Application Support/Code/User/projects.json" "$HOME/Library/Application Support/Cursor/User/"
 
 snippets_dir="$HOME/Library/Application Support/Cursor/User/snippets"
 if [ -d "$snippets_dir" ]; then
@@ -378,11 +379,6 @@ if [ -d "$snippets_dir" ]; then
 fi
 ln -sf "$HOME/Library/Application Support/Code/User/snippets" "$snippets_dir"
 
-vsicons_custom_icons_dir="$HOME/Library/Application Support/Cursor/User/vsicons-custom-icons"
-if [ -d "$vsicons_custom_icons_dir" ]; then
-  rm -rf "$vsicons_custom_icons_dir"
-fi
-ln -sf "$HOME/Library/Application Support/Code/User/vsicons-custom-icons" "$vsicons_custom_icons_dir"
 
 # ----------------------------------------------------------------
 # Loginwindow
