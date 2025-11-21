@@ -381,6 +381,23 @@ ln -sf "$HOME/Library/Application Support/Code/User/snippets" "$snippets_dir"
 
 
 # ----------------------------------------------------------------
+# Antigravity
+# ----------------------------------------------------------------
+# Ensure the directory exists
+mkdir -p "$HOME/Library/Application Support/Antigravity/User/"
+
+ln -sf "$HOME/Library/Application Support/Code/User/keybindings.json" "$HOME/Library/Application Support/Antigravity/User/"
+ln -sf "$HOME/Library/Application Support/Code/User/settings.json" "$HOME/Library/Application Support/Antigravity/User/"
+ln -sf "$HOME/Library/Application Support/Code/User/projects.json" "$HOME/Library/Application Support/Antigravity/User/"
+
+snippets_dir="$HOME/Library/Application Support/Antigravity/User/snippets"
+if [ -d "$snippets_dir" ]; then
+  rm -rf "$snippets_dir"
+fi
+ln -sf "$HOME/Library/Application Support/Code/User/snippets" "$snippets_dir"
+
+
+# ----------------------------------------------------------------
 # Loginwindow
 # ----------------------------------------------------------------
 echo '- 🪟 window'
