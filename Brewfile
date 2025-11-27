@@ -313,6 +313,9 @@ if OS.mac?
   # Open-source software for live streaming and screen recording https://obsproject.com/
   cask "obs"
 
+  # Assign keys, and then decorate and label them https://www.elgato.com/ww/en/s/downloads
+  cask "elgato-stream-deck"
+
   unless ENV["CI"]
     # VPN client for secure internet access and private browsing https://nordvpn.com/
     # mas "nordvpn", id: 905953485
