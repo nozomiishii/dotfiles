@@ -1,0 +1,20 @@
+# https://pnpm.io/settings
+#
+# ```bash
+# pnpm config list
+# ```
+
+# 使用するNode.jsのバージョン
+useNodeVersion: 22.21.1
+
+# 依存解決のうまくいっていないdependenciesのdependenciesをrootのnode_modulesまで巻き上げる
+publicHoistPattern:
+  - '@types/*'
+  - '*eslint*'
+  - '*prettier*'
+
+# lifecycle scriptsのlogを全部表示する
+reporter: append-only
+
+# pinバージョンでインストールする
+savePrefix: ''
