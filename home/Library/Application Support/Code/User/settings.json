@@ -358,6 +358,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferGoToSourceDefinition": true,
 
   // ----------------------------------------------------------------
   // javascript
@@ -369,6 +370,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "javascript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferGoToSourceDefinition": true,
 
   // ----------------------------------------------------------------
   // json
