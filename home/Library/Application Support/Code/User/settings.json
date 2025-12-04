@@ -58,29 +58,7 @@
   "git.autoStash": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "always",
-  "editor.tokenColorCustomizations": {
-    "[*Light*]": {
-      "textMateRules": [
-        {
-          "scope": "ref.matchtext",
-          "settings": {
-            "foreground": "#000"
-          }
-        }
-      ]
-    },
-    "[*Dark*]": {
-      "textMateRules": [
-        {
-          "scope": "ref.matchtext",
-          "settings": {
-            "foreground": "#fff"
-          }
-        }
-      ]
-    },
-    "textMateRules": []
-  },
+
   "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
 
@@ -599,7 +577,8 @@
   // ----------------------------------------------------------------
   // Cursor
   // ----------------------------------------------------------------
-  "cursor.composer.shouldChimeAfterChatFinishes": true
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.composer.usageSummaryDisplay": "always"
 
   ///////////////////////////////////////////////////////////////////
 }
