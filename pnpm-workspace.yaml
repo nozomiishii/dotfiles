@@ -18,3 +18,6 @@ reporter: append-only
 
 # pinバージョンでインストールする
 savePrefix: ''
+
+# 新しく公開されたパッケージのインストールを3日間遅延させる（サプライチェーン攻撃のリスク軽減）
+minimumReleaseAge: 4320
