@@ -16,6 +16,7 @@ repos=(
   nozomiishii/configs
   nozomiishii/renovate
   nozomiishii/archives
+  nozomiishii/workspaces
 )
 
 CODE_DIR="$HOME/Code"

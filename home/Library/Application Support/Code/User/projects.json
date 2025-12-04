@@ -54,6 +54,12 @@
     "enabled": true
   },
   {
+    "name": "👾 workspaces",
+    "rootPath": "~/Code/nozomiishii/workspaces",
+    "tags": [],
+    "enabled": true
+  },
+  {
     "name": "work - ここにまとめて入れて、VSCode workspaceで管理したら良さそう",
     "rootPath": "~/Code/work",
     "tags": [],
