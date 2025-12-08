@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "context7": {
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "eslint": {
+      "command": "pnpx",
+      "args": ["@eslint/mcp@latest"]
+    },
+    "Linear": {
+      "url": "https://mcp.linear.app/sse",
+      "headers": {}
+    },
+    "next-devtools": {
+      "command": "pnpx",
+      "args": ["next-devtools-mcp@latest"]
+    }
+  }
+}
