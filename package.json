@@ -27,7 +27,7 @@
     "test": "node --version"
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "2.0.7",
+    "@evilmartians/lefthook": "2.0.8",
     "@nozomiishii/commitlint-config": "0.0.8",
     "@nozomiishii/lefthook-config": "0.2.8",
     "@nozomiishii/markdownlint-cli2-config": "0.3.4",
