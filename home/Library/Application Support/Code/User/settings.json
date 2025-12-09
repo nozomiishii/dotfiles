@@ -578,6 +578,7 @@
   // Action Buttons
   // ----------------------------------------------------------------
   "actionButtons": {
+    "defaultColor": "#727072",
     "commands": [
       {
         "name": "$(pencil) obsidian",
