@@ -21,6 +21,20 @@
   },
 
   // ----------------------------------------------------------------
+  // triggerSuggest
+  // ----------------------------------------------------------------
+  {
+    "key": "ctrl+;",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+
+  // ----------------------------------------------------------------
   // Markdown
   // ----------------------------------------------------------------
   {
@@ -184,5 +198,5 @@
     "key": "alt+cmd+w",
     "command": "composer.clearComposerTabs",
     "when": "composerFocused"
-  },
+  }
 ]
