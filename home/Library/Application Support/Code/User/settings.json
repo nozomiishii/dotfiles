@@ -575,6 +575,18 @@
   "codeQL.telemetry.enableTelemetry": true,
 
   // ----------------------------------------------------------------
+  // Action Buttons
+  // ----------------------------------------------------------------
+  "actionButtons": {
+    "commands": [
+      {
+        "name": "$(pencil) obsidian",
+        "command": "open \"obsidian://adv-uri?vault=brain&filepath=$(echo '${file}' | sed 's|.*/brain/||')\""
+      }
+    ]
+  },
+
+  // ----------------------------------------------------------------
   // なんかこれ消しても消しても勝手に出てくる
   // ----------------------------------------------------------------
   "editor.tokenColorCustomizations": {
