@@ -15,7 +15,6 @@
   "type": "module",
   "main": "install.sh",
   "scripts": {
-    "test:perf": "bash scripts/test_shell_startup_time.sh",
     "format": "pnpm prettier . --check",
     "format:fix": "pnpm prettier . --write",
     "postinstall": "postinstall",
@@ -24,15 +23,16 @@
     "markdownlint": "npx -y markdownlint-cli2@latest '**/*.md' '#node_modules'",
     "markdownlint:fix": "npx -y markdownlint-cli2-fix@latest '**/*.md' '#node_modules'",
     "prettier": "prettier --ignore-unknown",
-    "test": "node --version"
+    "test": "node --version",
+    "test:perf": "bash scripts/test_shell_startup_time.sh"
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "2.0.8",
     "@nozomiishii/commitlint-config": "0.0.8",
-    "@nozomiishii/lefthook-config": "0.2.8",
+    "@nozomiishii/lefthook-config": "0.3.0",
     "@nozomiishii/markdownlint-cli2-config": "0.3.4",
     "@nozomiishii/postinstall": "0.0.6",
     "@nozomiishii/prettier-config": "0.6.5",
+    "lefthook": "2.0.8",
     "markdownlint-cli2": "0.19.1"
   },
   "packageManager": "pnpm@10.24.0",

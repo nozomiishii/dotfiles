@@ -2,12 +2,11 @@
 # https://github.com/evilmartians/lefthook
 #
 # Run the command to test:
-#   npx -y lefthook run [-v,--verbose] <hook-name>
+#   pnpx lefthook run [-v,--verbose] <hook-name>
 #
 # Examples:
-#   npx -y lefthook run --verbose pre-commit
-#   npx -y lefthook run --verbose commit-msg
-#   npx -y lefthook run --verbose post-merge
-
+#   pnpx lefthook run --verbose pre-commit
+#   pnpx lefthook run --verbose commit-msg
+#   pnpx lefthook run --verbose post-merge
 extends:
   - ./node_modules/@nozomiishii/lefthook-config/index.yaml

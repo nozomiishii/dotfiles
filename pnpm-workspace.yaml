@@ -13,13 +13,16 @@ publicHoistPattern:
   - '*eslint*'
   - '*prettier*'
 
-# lifecycle scriptsのlogを全部表示する
-reporter: append-only
-
 # pinバージョンでインストールする
 savePrefix: ''
 
-# 新しく公開されたパッケージのインストールを3日間遅延させる（サプライチェーン攻撃のリスク軽減）
-minimumReleaseAge: 4320
+# npmサプライチェーン攻撃対策
+# https://pnpm.io/blog/2025/12/05/newsroom-npm-supply-chain-security
+
+# 新しく公開されたパッケージのインストールを3日間遅延させる
+minimumReleaseAge: 4320 # 3日間 (3 × 24 × 60分)
 minimumReleaseAgeExclude:
   - '@nozomiishii/*'
+
+# 新しいバージョンの認証が古いバージョンよりも弱い場合、インストールは失敗する
+trustPolicy: no-downgrade
