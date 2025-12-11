@@ -305,14 +305,7 @@
       "at-rule-no-unknown": [
         true,
         {
-          "ignoreAtRules": [
-            "tailwind",
-            "apply",
-            "variants",
-            "responsive",
-            "screen",
-            "layer"
-          ]
+          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
         }
       ],
       "declaration-block-trailing-semicolon": null,
@@ -322,9 +315,7 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "tailwindCSS.experimental.classRegex": [
-    ["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"]
-  ],
+  "tailwindCSS.experimental.classRegex": [["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"]],
 
   // ----------------------------------------------------------------
   // typescript
@@ -364,12 +355,7 @@
   // ESlint
   // ----------------------------------------------------------------
   "eslint.enable": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
 
   // ----------------------------------------------------------------
   // Prettier
@@ -511,12 +497,7 @@
   // ----------------------------------------------------------------
   "vitest.enable": true,
   "vitest.commandLine": "npx vitest --watch",
-  "vitest.exclude": [
-    "**/e2e/**",
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/.{idea,git,cache,output,temp}/**"
-  ],
+  "vitest.exclude": ["**/e2e/**", "**/node_modules/**", "**/dist/**", "**/.{idea,git,cache,output,temp}/**"],
 
   // ----------------------------------------------------------------
   // Playwright
@@ -585,6 +566,13 @@
         "command": "open \"obsidian://adv-uri?vault=brain&filepath=$(echo '${file}' | sed 's|.*/brain/||')\""
       }
     ]
+  },
+
+  // ----------------------------------------------------------------
+  // command-runner
+  // ----------------------------------------------------------------
+  "command-runner.commands": {
+    "🎭 Open Trace viewer": "pnpx playwright show-trace ${selectedFile}"
   },
 
   // ----------------------------------------------------------------
