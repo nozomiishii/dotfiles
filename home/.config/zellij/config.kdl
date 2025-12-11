@@ -7,3 +7,6 @@ theme "ao"
 
 // Whether to show tips on startup
 show_startup_tips false
+
+// Default mode
+default_mode "locked"
