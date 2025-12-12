@@ -21,8 +21,8 @@ importers:
         specifier: 0.0.6
         version: 0.0.6
       '@nozomiishii/prettier-config':
-        specifier: 0.6.6
-        version: 0.6.6
+        specifier: 0.7.0
+        version: 0.7.0
       lefthook:
         specifier: 2.0.9
         version: 2.0.9
@@ -139,8 +139,8 @@ packages:
     resolution: {integrity: sha512-BIPFLSKsFYOPuX1HJQwl/XzNgUBw/GFViM1iZYaPgGphd5AmHl+UUNKgqeai18IvGGxDg1Eq6UwGKfdaLBp9hg==}
     hasBin: true
 
-  '@nozomiishii/prettier-config@0.6.6':
-    resolution: {integrity: sha512-9MSKHWz1LSEeQdzracArb2gdSkPi55IpVFvhDy9a6FkTy2xM99p4KCcqSFdU8APaqI6reqwdfpUeHUHZelFdVQ==}
+  '@nozomiishii/prettier-config@0.7.0':
+    resolution: {integrity: sha512-BM5Mzq+p45+lX2hPAGm/ScjVIrUn3SphI+83Hu3vR+0ukXDMmon0DH9UffIsR/YwO+gDSaDOmcjGzVY1W+ohtg==}
     hasBin: true
 
   '@pkgr/core@0.2.9':
@@ -1037,7 +1037,7 @@ snapshots:
       figlet: 1.8.2
       zx: 8.8.1
 
-  '@nozomiishii/prettier-config@0.6.6':
+  '@nozomiishii/prettier-config@0.7.0':
     dependencies:
       prettier: 3.7.4
       prettier-plugin-packagejson: 2.5.20(prettier@3.7.4)
