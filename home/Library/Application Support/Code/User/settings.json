@@ -572,6 +572,7 @@
   // command-runner
   // ----------------------------------------------------------------
   "command-runner.commands": {
+    "📃 Open in Obsidian":"open \"obsidian://adv-uri?vault=brain&filepath=$(echo '${file}' | sed 's|.*/brain/||')\"",
     "🎭 Open Trace viewer": "pnpx playwright show-trace ${selectedFile}"
   },
 
