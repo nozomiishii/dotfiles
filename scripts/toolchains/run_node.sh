@@ -27,5 +27,6 @@ echo '- 🐉 Setup npm global'
 npm install -g @devcontainers/cli
 npm install -g typescript
 npm install -g @github/copilot
+npm install -g @antfu/ni
 
 echo "🐉 Node setup is complete 🎉"
