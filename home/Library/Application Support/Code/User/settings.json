@@ -57,6 +57,7 @@
   "git.autofetch": true,
   "git.autoStash": true,
   "git.confirmSync": false,
+  "git.showCursorWorktrees": true,
   "git.openRepositoryInParentFolders": "always",
 
   "files.autoSave": "onFocusChange",
