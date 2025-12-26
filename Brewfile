@@ -70,6 +70,9 @@ if OS.mac?
   # Speech-to-text system https://withaqua.com/
   cask "aqua-voice"
 
+  # Terminal-based AI coding assistant https://www.anthropic.com/claude-code
+  cask "claude-code"
+
   # GUI app and toolkit for Claude Code https://github.com/getasterisk/claudia
   cask "claudia"
 

@@ -198,5 +198,17 @@
     "key": "alt+cmd+w",
     "command": "composer.clearComposerTabs",
     "when": "composerFocused"
+  },
+
+  // ----------------------------------------------------------------
+  // Claude Code
+  // ----------------------------------------------------------------
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u001b\r"
+    },
+    "when": "terminalFocus"
   }
 ]
