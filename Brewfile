@@ -49,7 +49,7 @@ if OS.mac?
   brew "gh"
 
   # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
-  cask "amazon-q"
+  cask "kiro-cli"
 
   # ----------------------------------------------------------------
   # OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager https://tofuutils.github.io/tenv/
@@ -75,9 +75,6 @@ if OS.mac?
 
   # Terminal-based AI coding assistant https://www.anthropic.com/claude-code
   cask "claude-code"
-
-  # GUI app and toolkit for Claude Code https://github.com/getasterisk/claudia
-  cask "claudia"
 
   # ----------------------------------------------------------------
   # Shell Development Environments
@@ -224,7 +221,7 @@ if OS.mac?
   cask "google-chrome"
 
   # Google Cloud SDK https://cloud.google.com/sdk/
-  cask "google-cloud-sdk"
+  cask "gcloud-cli"
 
   # Client for the Google Drive storage service https://www.google.com/drive/
   cask "google-drive"
@@ -275,7 +272,7 @@ if OS.mac?
   cask "firefox"
 
   # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
-  cask "ledger-live"
+  cask "ledger-wallet"
 
   # Music streaming service. https://www.spotify.com
   cask "spotify"
