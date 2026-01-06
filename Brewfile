@@ -29,6 +29,9 @@ cask "1password-cli"
 # Smarter Dockerfile linter to validate best practices https://github.com/hadolint/hadolint
 brew "hadolint"
 
+# Remote desktop app https://jumpdesktop.com/connect/
+cask "jump-desktop-connect"
+
 # ----------------------------------------------------------------
 # macOS-only packages
 # ----------------------------------------------------------------
@@ -172,9 +175,6 @@ if OS.mac?
 
   # Play, record, convert, and stream audio and video https://ffmpeg.org/
   brew "ffmpeg"
-
-  # Command-line tools for fly.io services https://fly.io
-  brew "flyctl"
 
   # Command-line JSON processing tool https://github.com/antonmedv/fx
   brew "fx"
