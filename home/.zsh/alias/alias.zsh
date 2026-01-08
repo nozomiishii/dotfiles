@@ -89,8 +89,6 @@ alias gsta="git stash -u"
 # ----------------------------------------------------------------
 # pnpm
 # ----------------------------------------------------------------
-alias p='pnpm'
-alias pi='pnpm install'
 alias npm='pnpm'
 alias npx='pnpx'
 alias yarn='pnpm'
