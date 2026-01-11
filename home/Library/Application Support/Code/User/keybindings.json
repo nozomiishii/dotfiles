@@ -154,6 +154,17 @@
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
 
+  // Terminalでctrl+rを有効化
+  {
+    "key": "ctrl+r",
+    "command": "workbench.action.openRecent",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+
   // ----------------------------------------------------------------
   // Zellij
   // ----------------------------------------------------------------
