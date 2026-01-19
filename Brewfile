@@ -289,9 +289,6 @@ if OS.mac?
   # Virtual video-calling space https://gather.town/
   cask "gather"
 
-  # Online collaborative whiteboard platform https://miro.com/
-  cask "miro"
-
   # Messaging app with a focus on speed and security https://macos.telegram.org/
   cask "telegram"
 
