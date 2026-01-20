@@ -32,6 +32,9 @@ brew "hadolint"
 # Remote desktop app https://jumpdesktop.com/connect/
 cask "jump-desktop-connect"
 
+# Generic machine emulator and virtualizer https://www.qemu.org/
+brew "qemu"
+
 # ----------------------------------------------------------------
 # macOS-only packages
 # ----------------------------------------------------------------
