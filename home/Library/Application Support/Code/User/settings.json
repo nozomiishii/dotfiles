@@ -539,6 +539,7 @@
   // ----------------------------------------------------------------
   // Github Copilot
   // ----------------------------------------------------------------
+  "chat.viewSessions.enabled": false,
   // "github.copilot.editor.enableAutoCompletions": false,
   // "github.copilot.chat.editor.temporalContext.enabled": true,
   // "github.copilot.nextEditSuggestions.enabled": true,
