@@ -307,9 +307,6 @@ if OS.mac?
   # Agent-centric IDE with spec-driven development https://kiro.dev/
   cask "kiro"
 
-  # AI Coding Agent IDE https://antigravity.google/
-  cask "antigravity"
-
   # Open-source software for live streaming and screen recording https://obsproject.com/
   cask "obs"
 
@@ -317,6 +314,9 @@ if OS.mac?
   cask "elgato-stream-deck"
 
   unless ENV["CI"]
+    # AI Coding Agent IDE https://antigravity.google/
+    cask "antigravity"
+
     # VPN client for secure internet access and private browsing https://nordvpn.com/
     # mas "nordvpn", id: 905953485
     cask "nordvpn"
