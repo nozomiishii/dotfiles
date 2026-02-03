@@ -42,7 +42,7 @@ request_admin_privileges() {
       sleep 60
       kill -0 "$$" || exit
     done
-  ) 2> /dev/null &
+  ) 2>/dev/null &
 }
 
 # This function installs the Xcode Command Line Tools if they are not already installed.
@@ -55,16 +55,16 @@ install_xcode_cli_tools() {
   echo "- 👨🏻‍🚀 Checking Xcode CLI tools..."
 
   # Check if Xcode CLI tools are already installed by trying to print the SDK path.
-  if xcode-select -p &> /dev/null; then
+  if xcode-select -p &>/dev/null; then
     echo "- 👨🏻‍🚀 Xcode CLI tools are already installed"
   else
     echo "- 👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
     TEMP_FILE="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
     touch "${TEMP_FILE}"
 
-    CLI_TOOLS=$(softwareupdate -l \
-      | grep "\*.*Command Line" \
-      | tail -n 1 | sed 's/^[^C]* //')
+    CLI_TOOLS=$(softwareupdate -l |
+      grep "\*.*Command Line" |
+      tail -n 1 | sed 's/^[^C]* //')
 
     echo "- 👨🏻‍🚀 Installing: ${CLI_TOOLS}"
     softwareupdate -i "${CLI_TOOLS}" --verbose
@@ -118,9 +118,9 @@ install_homebrew() {
 
   # Bundle packages from Brewfile (common for macOS & Linux)
   brew bundle \
-  --verbose \
-  --cleanup \
-  --file="$SCRIPT_DIR/Brewfile"
+    --verbose \
+    --cleanup \
+    --file="$SCRIPT_DIR/Brewfile"
 
   brew cleanup --verbose
 }
@@ -151,6 +151,15 @@ symlink_files() {
   stow --verbose --restow --target="$HOME" home
 }
 
+install_nix() {
+  echo "👨🏻‍🚀 Install Nix"
+  curl -fsSL https://install.determinate.systems/nix | sh -s -- install --no-confirm
+
+  # nixで管理したい
+  echo "👨🏻‍🚀 Install devenv"
+  nix-env --install --attr devenv -f https://github.com/NixOS/nixpkgs/tarball/nixpkgs-unstable
+}
+
 # ----------------------------------------------------------------
 # Install
 # ----------------------------------------------------------------
@@ -170,6 +179,7 @@ echo -e "${reset}"
 
 if [[ "$OS_NAME" == "Darwin" ]]; then
   request_admin_privileges
+  install_nix
   install_xcode_cli_tools
   install_homebrew
   symlink_files
@@ -177,6 +187,7 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
 fi
 
 if [[ "$OS_NAME" == "Linux" ]]; then
+  install_nix
   install_zsh
   install_homebrew
   symlink_files
