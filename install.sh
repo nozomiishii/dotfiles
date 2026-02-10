@@ -156,8 +156,9 @@ install_nix() {
   curl -fsSL https://install.determinate.systems/nix | sh -s -- install --no-confirm
 
   # nixで管理したい
-  echo "👨🏻‍🚀 Install devenv"
-  nix-env --install --attr devenv -f https://github.com/NixOS/nixpkgs/tarball/nixpkgs-unstable
+  # devenvの設定うまくいかない
+  # echo "👨🏻‍🚀 Install devenv"
+  # nix-env --install --attr devenv -f https://github.com/NixOS/nixpkgs/tarball/nixpkgs-unstable
 }
 
 # ----------------------------------------------------------------
