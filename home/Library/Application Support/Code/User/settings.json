@@ -153,6 +153,7 @@
   // File associations
   // ----------------------------------------------------------------
   "files.associations": {
+    "flake.lock": "json",
     "*.ejs": "html",
     "*.plist": "xml",
     "vimrc": "viml",
