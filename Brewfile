@@ -292,9 +292,6 @@ if OS.mac?
   # Virtual video-calling space https://gather.town/
   cask "gather"
 
-  # Messaging app with a focus on speed and security https://macos.telegram.org/
-  cask "telegram"
-
   # Instant messaging application focusing on security https://signal.org/
   cask "signal"
 
@@ -314,6 +311,9 @@ if OS.mac?
   cask "elgato-stream-deck"
 
   unless ENV["CI"]
+    # Messaging app with a focus on speed and security https://macos.telegram.org/
+    cask "telegram"
+
     # AI Coding Agent IDE https://antigravity.google/
     cask "antigravity"
 
