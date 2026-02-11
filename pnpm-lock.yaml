@@ -21,8 +21,8 @@ importers:
         specifier: 0.0.6
         version: 0.0.6
       '@nozomiishii/prettier-config':
-        specifier: 0.7.1
-        version: 0.7.1
+        specifier: 0.7.2
+        version: 0.7.2
       lefthook:
         specifier: 2.1.0
         version: 2.1.0
@@ -139,8 +139,8 @@ packages:
     resolution: {integrity: sha512-BIPFLSKsFYOPuX1HJQwl/XzNgUBw/GFViM1iZYaPgGphd5AmHl+UUNKgqeai18IvGGxDg1Eq6UwGKfdaLBp9hg==}
     hasBin: true
 
-  '@nozomiishii/prettier-config@0.7.1':
-    resolution: {integrity: sha512-y79NLkAvBZnIlfL2xD8y66eRuMFJKwcF8XSO7CQVAoJAXLZOAVYYYqQEdi2veGYuQewCN3bg65UKW4qBK/QNmg==}
+  '@nozomiishii/prettier-config@0.7.2':
+    resolution: {integrity: sha512-26m0d7586XNcT7+Q9Ai37Wa95oC0NKzm35iQklTS0MxGhVrbpdVywHjHYloocjiGVeoo4EFBQ3v1RJY4+1hy9w==}
     hasBin: true
 
   '@sindresorhus/merge-streams@4.0.0':
@@ -704,16 +704,16 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
-  prettier-plugin-packagejson@2.5.21:
-    resolution: {integrity: sha512-d9ivsysb1SeRaKDhjf6Hi7jBGnP4TVsh7DeVi8N5HtHJ5vwD7YHcQIuy6jRkr2qGW/VKbrEVDWVMODuqcZuz8Q==}
+  prettier-plugin-packagejson@3.0.0:
+    resolution: {integrity: sha512-z8/QmPSqx/ANvvQMWJSkSq1+ihBXeuwDEYdjX3ZjRJ5Ty1k7vGbFQfhzk2eDe0rwS/TNyRjWK/qnjJEStAOtDw==}
     peerDependencies:
-      prettier: '>= 1.16.0'
+      prettier: ^3
     peerDependenciesMeta:
       prettier:
         optional: true
 
-  prettier@3.8.0:
-    resolution: {integrity: sha512-yEPsovQfpxYfgWNhCfECjG5AQaO+K3dp6XERmOepyPDVqcJm+bjyCVO3pmU+nAPe0N5dDvekfGezt/EIiRe1TA==}
+  prettier@3.8.1:
+    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -759,8 +759,8 @@ packages:
   sort-object-keys@2.1.0:
     resolution: {integrity: sha512-SOiEnthkJKPv2L6ec6HMwhUcN0/lppkeYuN1x63PbyPRrgSPIuBJCiYxYyvWRTtjMlOi14vQUCGUJqS6PLVm8g==}
 
-  sort-package-json@3.5.0:
-    resolution: {integrity: sha512-moY4UtptUuP5sPuu9H9dp8xHNel7eP5/Kz/7+90jTvC0IOiPH2LigtRM/aSFSxreaWoToHUVUpEV4a2tAs2oKQ==}
+  sort-package-json@3.6.0:
+    resolution: {integrity: sha512-fyJsPLhWvY7u2KsKPZn1PixbXp+1m7V8NWqU8CvgFRbMEX41Ffw1kD8n0CfJiGoaSfoAvbrqRRl/DcHO8omQOQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1003,10 +1003,10 @@ snapshots:
       figlet: 1.8.2
       zx: 8.8.1
 
-  '@nozomiishii/prettier-config@0.7.1':
+  '@nozomiishii/prettier-config@0.7.2':
     dependencies:
-      prettier: 3.8.0
-      prettier-plugin-packagejson: 2.5.21(prettier@3.8.0)
+      prettier: 3.8.1
+      prettier-plugin-packagejson: 3.0.0(prettier@3.8.1)
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
@@ -1611,13 +1611,13 @@ snapshots:
 
   picomatch@4.0.3: {}
 
-  prettier-plugin-packagejson@2.5.21(prettier@3.8.0):
+  prettier-plugin-packagejson@3.0.0(prettier@3.8.1):
     dependencies:
-      sort-package-json: 3.5.0
+      sort-package-json: 3.6.0
     optionalDependencies:
-      prettier: 3.8.0
+      prettier: 3.8.1
 
-  prettier@3.8.0: {}
+  prettier@3.8.1: {}
 
   punycode.js@2.3.1: {}
 
@@ -1643,7 +1643,7 @@ snapshots:
 
   sort-object-keys@2.1.0: {}
 
-  sort-package-json@3.5.0:
+  sort-package-json@3.6.0:
     dependencies:
       detect-indent: 7.0.2
       detect-newline: 4.0.1
