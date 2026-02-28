@@ -321,6 +321,9 @@ if OS.mac?
     # mas "nordvpn", id: 905953485
     cask "nordvpn"
 
+    # Memory training application https://apps.ankiweb.net/
+    cask "anki"
+
     # ----------------------------------------------------------------
     # Mas
     #
