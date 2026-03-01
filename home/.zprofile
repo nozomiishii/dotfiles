@@ -41,6 +41,9 @@ export DOCKER_HOST="unix:///Users/$USER/.orbstack/run/docker.sock"
 # Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
+# Added by Obsidian
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 # shellcheck disable=SC1090
