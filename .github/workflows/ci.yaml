@@ -25,4 +25,4 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Run install
-        run: bash install.sh
+        run: curl -L https://nozomiishii.dev/dotfiles/install | bash
