@@ -18,7 +18,22 @@ set -Ceuo pipefail
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTFILES_REPO="https://github.com/nozomiishii/dotfiles.git"
+DOTFILES_DIR="$HOME/dotfiles"
+
+if [[ -n "${BASH_SOURCE[0]:-}" ]]; then
+  SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+else
+  if [[ -d "$DOTFILES_DIR/.git" ]]; then
+    echo "👨🏻‍🚀 Updating existing dotfiles repository..."
+    git -C "$DOTFILES_DIR" pull --rebase
+  else
+    echo "👨🏻‍🚀 Cloning dotfiles repository..."
+    git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
+  fi
+  SCRIPT_DIR="$DOTFILES_DIR"
+fi
+
 OS_NAME="$(uname -s)"
 
 # ----------------------------------------------------------------
