@@ -130,11 +130,27 @@ install_homebrew() {
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   fi
 
-  # Bundle packages from Brewfile (common for macOS & Linux)
-  brew bundle \
-    --verbose \
-    --cleanup \
-    --file="$SCRIPT_DIR/Brewfile"
+  # Bundle packages from Brewfile with retries to tolerate transient cask download failures
+  local max_attempts="${BREW_BUNDLE_MAX_ATTEMPTS:-5}"
+  local attempt=1
+  local backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
+
+  while [ "$attempt" -le "$max_attempts" ]; do
+    echo "brew bundle attempt ${attempt}/${max_attempts}"
+    if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" brew bundle \
+      --verbose \
+      --cleanup \
+      --file="$SCRIPT_DIR/Brewfile"; then
+      echo "brew bundle succeeded"
+      break
+    fi
+    if [ "$attempt" -eq "$max_attempts" ]; then
+      echo "brew bundle failed after ${max_attempts} attempts"
+      exit 1
+    fi
+    sleep "$((backoff_base * attempt))"
+    attempt="$((attempt + 1))"
+  done
 
   brew cleanup --verbose
 }

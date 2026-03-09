@@ -8,6 +8,9 @@
 # -x          : (Optional) Enable command tracing for easier debugging
 set -Ceuo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BREWFILE="${SCRIPT_DIR}/../../Brewfile"
+
 # ----------------------------------------------------------------
 # Utils
 # ----------------------------------------------------------------
@@ -27,6 +30,29 @@ request_admin_privileges() {
       kill -0 "$$" || exit
     done
   ) 2> /dev/null &
+}
+
+# Retry brew bundle to tolerate transient cask download failures (e.g. CDN).
+# Uses HOMEBREW_CURL_RETRIES for per-download retries and an outer retry loop with backoff.
+retry_brew_bundle() {
+  local max_attempts="${BREW_BUNDLE_MAX_ATTEMPTS:-5}"
+  local attempt=1
+  local backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
+
+  while [ "$attempt" -le "$max_attempts" ]; do
+    echo "brew bundle attempt ${attempt}/${max_attempts}"
+    if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" brew bundle --verbose --file="$BREWFILE"; then
+      echo "brew bundle succeeded"
+      return 0
+    fi
+    if [ "$attempt" -eq "$max_attempts" ]; then
+      echo "brew bundle failed after ${max_attempts} attempts"
+      return 1
+    fi
+    sleep "$((backoff_base * attempt))"
+    attempt="$((attempt + 1))"
+  done
+  return 1
 }
 
 request_admin_privileges
@@ -56,13 +82,13 @@ fi
 
 export HOMEBREW_CASK_OPTS="--no-quarantine --appdir=~/Applications"
 
-brew bundle --verbose --file="$HOME/.local/share/chezmoi/Brewfile"
+retry_brew_bundle
 
 # ----------------------------------------------------------------
 # Homebrew - Cleanup
 # ----------------------------------------------------------------
 # Uninstall packages not listed in the merged Brewfile, with details on what is being removed
-brew bundle cleanup --verbose --force --file="$HOME/.local/share/chezmoi/Brewfile"
+brew bundle cleanup --verbose --force --file="$BREWFILE"
 
 # Remove outdated versions of installed packages and unnecessary files to free up disk space
 brew cleanup --verbose
