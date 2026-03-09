@@ -50,11 +50,17 @@ request_admin_privileges() {
   echo -e "- 👨🏻‍🚀 Please enter your password to grant sudo access for this operation"
   sudo -v
 
-  # Temporarily increase sudo's timeout until the process has finished
+  SUDOERS_FILE="/etc/sudoers.d/temp_dotfiles_installer"
+  sudo sh -c "echo 'Defaults timestamp_timeout=120' > ${SUDOERS_FILE}"
+  sudo chmod 0440 "${SUDOERS_FILE}"
+  trap 'sudo rm -f "${SUDOERS_FILE}"' EXIT
+
+  sudo -v
+
   (
     while true; do
+      sleep 10
       sudo -n true
-      sleep 60
       kill -0 "$$" || exit
     done
   ) 2>/dev/null &
