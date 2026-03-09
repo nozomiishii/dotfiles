@@ -87,7 +87,6 @@ open_config_apps() {
   open "/Applications/Google Chrome.app"
   open "/Applications/Raycast.app"
   open "/Applications/1Password.app"
-  open "/Applications/Karabiner-Elements.app"
   open /users
   open https://github.com/nozomiishii/dotfiles
   echo "👨🏻‍🚀 Please refer to github to set up the launched application"
