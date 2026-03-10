@@ -19,6 +19,9 @@ echo '- 🐙 Install ruby-build'
 brew install ruby-build
 echo "- 🐙 $(ruby-build --version)"
 
+echo '- 🐙 Install openssl'
+brew install openssl
+
 echo '- 🐙 Install libyaml'
 # https://qiita.com/notakaos/items/e3e30443b1e57f84e7d8
 # https://zenn.dev/fuuukeee3/articles/22caeb537cf1a6
