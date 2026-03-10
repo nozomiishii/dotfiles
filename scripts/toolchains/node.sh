@@ -24,9 +24,12 @@ echo '- 🐉 Setup corepack'
 corepack enable pnpm yarn npm
 
 echo '- 🐉 Setup pnpm global'
-pnpm add -g @devcontainers/cli
-pnpm add -g typescript
-pnpm add -g @github/copilot
-pnpm add -g @antfu/ni
+(
+    cd /tmp
+    npm install -g @devcontainers/cli
+    npm install -g typescript
+    npm install -g @github/copilot
+    npm install -g @antfu/ni
+)
 
 echo "🐉 Node setup is complete 🎉"
