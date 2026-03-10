@@ -9,30 +9,7 @@
 set -Ceuo pipefail
 
 # ----------------------------------------------------------------
-# Utils
-# ----------------------------------------------------------------
-request_admin_privileges() {
-  if [ "${CI:-false}" = "true" ]; then
-    return
-  fi
-
-  echo -e "- 👨🏻‍🚀 Please enter your password to grant sudo access for this operation"
-  sudo -v
-
-  # Temporarily increase sudo's timeout until the process has finished
-  (
-    while true; do
-      sudo -n true
-      sleep 60
-      kill -0 "$$" || exit
-    done
-  ) 2>/dev/null &
-}
-
-request_admin_privileges
-
-# ----------------------------------------------------------------
-# MacOS setu
+# macOS setup
 # ----------------------------------------------------------------
 echo "💻 Initializing MacOS setup..."
 

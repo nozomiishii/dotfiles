@@ -5,15 +5,15 @@ homebrew:
 
 .PHONY: macos
 macos:
-	bash ./scripts/darwin/run_onchange_after_macos.sh
+	bash ./scripts/darwin/macos.sh
 
 .PHONY: toolchains
 toolchains:
-	bash ./scripts/toolchains/run_terraform.sh
-	bash ./scripts/toolchains/run_node.sh
-	bash ./scripts/toolchains/run_python.sh
-	bash ./scripts/toolchains/run_ruby.sh
-	bash ./scripts/toolchains/run_rust.sh
+	bash ./scripts/toolchains/terraform.sh
+	bash ./scripts/toolchains/node.sh
+	bash ./scripts/toolchains/python.sh
+	bash ./scripts/toolchains/ruby.sh
+	bash ./scripts/toolchains/rust.sh
 
 .PHONY: repo
 repo:

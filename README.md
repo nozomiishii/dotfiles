@@ -145,7 +145,7 @@ cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
 ### Install
 
 ```shell
-sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply nozomiishii --verbose
+./install.sh
 ```
 
 ### 🛋 Restart

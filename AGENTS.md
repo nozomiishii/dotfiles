@@ -57,7 +57,6 @@ This is a comprehensive dotfiles repository that automates the setup of developm
 2. **`scripts/` directory**: Contains automation scripts organized by:
    - Platform (`darwin/` for macOS-specific)
    - Purpose (`toolchains/` for language setup)
-   - Execution order (files prefixed with `run_onchange_after_` run when content changes)
 
 3. **Makefile**: Central automation hub providing consistent commands for common tasks.
 
@@ -69,7 +68,6 @@ This is a comprehensive dotfiles repository that automates the setup of developm
 ### Important Patterns
 
 - **Stow Usage**: All dotfiles in `home/` are symlinked to `~` via GNU Stow. Never create files directly in `~` when adding new configs.
-- **Script Naming**: Scripts using `run_onchange_after_` prefix are idempotent and run when their content changes.
 - **Package Management**: Uses Homebrew (via `Brewfile`) for system packages and pnpm for Node.js dependencies.
 - **Git Hooks**: Managed by lefthook with configuration in `lefthook.yaml`.
 - **Code Quality**: Prettier for formatting, commitlint for commit messages, markdownlint for documentation.

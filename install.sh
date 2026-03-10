@@ -117,22 +117,28 @@ open_config_apps() {
 # Homebrew (macOS & Linux)
 # ----------------------------------------------------------------
 install_homebrew() {
-  if ! command -v brew >/dev/null 2>&1; then
-    echo -e "🍺 Installing Homebrew for ${OS_NAME}"
-    # Non-interactive install (no prompt) and auto-confirm
-    NONINTERACTIVE=1 \
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  else
-    echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
-    brew update --force --quiet
-    brew upgrade --quiet
-  fi
-
   if [[ "$OS_NAME" == "Darwin" ]]; then
+    if ! command -v brew >/dev/null 2>&1; then
+      echo -e "🍺 Installing Homebrew for Apple Silicon"
+      sudo softwareupdate --install-rosetta --agree-to-license
+      NONINTERACTIVE=1 \
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    else
+      echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
+      brew update --force --quiet
+      brew upgrade --quiet
+    fi
     eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
-
-  if [[ "${OS_NAME}" == "Linux" ]]; then
+  elif [[ "${OS_NAME}" == "Linux" ]]; then
+    if ! command -v brew >/dev/null 2>&1; then
+      echo -e "🍺 Installing Homebrew for ${OS_NAME}"
+      NONINTERACTIVE=1 \
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    else
+      echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
+      brew update --force --quiet
+      brew upgrade --quiet
+    fi
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   fi
 
@@ -220,6 +226,16 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   install_xcode_cli_tools
   install_homebrew
   symlink_files
+  bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/node.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/python.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
+  bash "$SCRIPT_DIR/scripts/automator.sh"
+  bash "$SCRIPT_DIR/scripts/nvim.sh"
+  bash "$SCRIPT_DIR/scripts/default_apps.sh"
+  bash "$SCRIPT_DIR/scripts/clone_github_repos.sh"
   open_config_apps
 fi
 
@@ -228,6 +244,11 @@ if [[ "$OS_NAME" == "Linux" ]]; then
   install_zsh
   install_homebrew
   symlink_files
+  bash "$SCRIPT_DIR/scripts/toolchains/node.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/python.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
 fi
 
 echo -e "${yellow}"
