@@ -20,20 +20,6 @@ export LANG=C.UTF-8
 
 DOTFILES_REPO="https://github.com/nozomiishii/dotfiles.git"
 DOTFILES_DIR="$HOME/dotfiles"
-
-if [[ -n "${BASH_SOURCE[0]:-}" ]]; then
-  SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-else
-  if [[ -d "$DOTFILES_DIR/.git" ]]; then
-    echo "👨🏻‍🚀 Updating existing dotfiles repository..."
-    git -C "$DOTFILES_DIR" pull --rebase
-  else
-    echo "👨🏻‍🚀 Cloning dotfiles repository..."
-    git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
-  fi
-  SCRIPT_DIR="$DOTFILES_DIR"
-fi
-
 OS_NAME="$(uname -s)"
 
 # ----------------------------------------------------------------
@@ -70,6 +56,22 @@ request_admin_privileges() {
   ) 2>/dev/null &
 }
 
+clone_dotfiles_repo() {
+  if [[ -n "${BASH_SOURCE[0]:-}" ]]; then
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    return
+  fi
+
+  if [[ -d "$DOTFILES_DIR/.git" ]]; then
+    echo "👨🏻‍🚀 Updating existing dotfiles repository..."
+    git -C "$DOTFILES_DIR" pull --rebase
+  else
+    echo "👨🏻‍🚀 Cloning dotfiles repository..."
+    git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
+  fi
+  SCRIPT_DIR="$DOTFILES_DIR"
+}
+
 # ----------------------------------------------------------------
 # Install
 # ----------------------------------------------------------------
@@ -89,6 +91,7 @@ echo -e "${reset}"
 
 if [[ "$OS_NAME" == "Darwin" ]]; then
   request_admin_privileges
+  clone_dotfiles_repo
   bash "$SCRIPT_DIR/scripts/nix.sh"
   bash "$SCRIPT_DIR/scripts/darwin/xcode.sh"
   bash "$SCRIPT_DIR/scripts/homebrew.sh"
@@ -107,6 +110,7 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
 fi
 
 if [[ "$OS_NAME" == "Linux" ]]; then
+  clone_dotfiles_repo
   bash "$SCRIPT_DIR/scripts/nix.sh"
   bash "$SCRIPT_DIR/scripts/zsh.sh"
   bash "$SCRIPT_DIR/scripts/homebrew.sh"
