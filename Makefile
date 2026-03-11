@@ -1,6 +1,6 @@
 .PHONY: homebrew
 homebrew:
-	brew bundle --verbose --cleanup --file="./Brewfile"
+	cat ./Brewfile ./Brewfile.optional | brew bundle --verbose --cleanup --file=-
 	brew cleanup --verbose
 
 .PHONY: macos
