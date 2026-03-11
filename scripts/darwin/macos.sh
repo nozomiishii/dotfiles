@@ -334,11 +334,10 @@ fi
 # ----------------------------------------------------------------
 # Remote Login
 # ----------------------------------------------------------------
-# If you see 'setremotelogin: Turning Remote Login on or off requires Full Disk Access privileges',
-# please go to Privacy & Security > Full Disk Access and allow your Terminal app.
 echo '- 📡 Remote Login'
-sudo systemsetup -setremotelogin on
-sudo systemsetup -getremotelogin
+sudo launchctl load -w \
+  /System/Library/LaunchDaemons/ssh.plist
+sudo launchctl list com.openssh.sshd
 
 # ----------------------------------------------------------------
 # Cursor
