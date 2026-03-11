@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(gh pr merge:*)",
+      "Bash(gh api repos/*/pulls/*/merge*)"
+    ],
+    "allow": [
+      "Bash(gh run:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7"
+  ]
+}

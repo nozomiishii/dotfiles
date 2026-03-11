@@ -14,11 +14,11 @@ echo '🦀 Rust'
 recommended_rustc_path="$HOME/.cargo/bin/rustc"
 
 # Check if rustc is installed and not in the recommended path
-if command -v rustc &> /dev/null && [ "$(command -v rustc)" != "$recommended_rustc_path" ]; then
+if command -v rustc &>/dev/null && [ "$(command -v rustc)" != "$recommended_rustc_path" ]; then
   echo "- 🦀 rustc is installed in a non-recommended path. Uninstalling it."
 
   # Check if rustc is installed via Homebrew
-  if brew list rust &> /dev/null; then
+  if brew list rust &>/dev/null; then
     brew uninstall rust
     echo "- 🦀 rustc has been uninstalled using Homebrew."
   else
@@ -40,17 +40,19 @@ echo "- 🦀 $(cargo --version)"
 
 echo '- 🦀 Setup rust-analyzer'
 rustup component add rust-analyzer
-rustup toolchain install stable-aarch64-apple-darwin
+if [ "$(uname -s)" = "Darwin" ]; then
+  rustup toolchain install stable-aarch64-apple-darwin
+fi
 
-echo '- 🦀 Setup Cargo global'
-cargo install cargo-edit
-cargo install cargo-watch
-cargo install cargo-nextest
-# cargo install cargo-modules
-cargo install cargo-make
-cargo install create-tauri-app
-cargo install wasm-pack
-cargo install sea-orm-cli
+# echo '- 🦀 Setup Cargo global'
+# cargo install cargo-edit
+# cargo install cargo-watch
+# cargo install cargo-nextest
+# # cargo install cargo-modules
+# cargo install cargo-make
+# cargo install create-tauri-app
+# cargo install wasm-pack
+# cargo install sea-orm-cli
 # cargo install diesel_cli --no-default-features --features postgres
 
 echo "🦀 Rust setup is complete 🎉"
