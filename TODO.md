@@ -17,3 +17,5 @@
 - ts で設定書いてバイナリで実行できるようにする。もしくは install.sh を適切に分割する
 - toolchain の整理
   - 各 Dockerfile 用意しておくとかでいい気がしてる
+- Planを元にPRを作成する。
+　- PR名はConventional Commitsに作成し、英語で作成する。
