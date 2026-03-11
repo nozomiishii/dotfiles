@@ -32,9 +32,6 @@ brew "hadolint"
 # Remote desktop app https://jumpdesktop.com/connect/
 cask "jump-desktop-connect"
 
-# Generic machine emulator and virtualizer https://www.qemu.org/
-brew "qemu"
-
 # ----------------------------------------------------------------
 # macOS-only packages
 # ----------------------------------------------------------------
@@ -75,9 +72,6 @@ if OS.mac?
 
   # Speech-to-text system https://withaqua.com/
   cask "aqua-voice"
-
-  # Terminal-based AI coding assistant https://www.anthropic.com/claude-code
-  cask "claude-code"
 
   # ----------------------------------------------------------------
   # Shell Development Environments
@@ -192,10 +186,6 @@ if OS.mac?
   # Official Amazon AWS command-line interface https://aws.amazon.com/cli/
   brew "awscli"
 
-  # ----------------------------------------------------------------
-  # Cask
-  # ----------------------------------------------------------------
-
   # Web browser focusing on privacy https://brave.com/
   cask "brave-browser"
 
@@ -232,9 +222,6 @@ if OS.mac?
   # Client for the Google Drive storage service https://www.google.com/drive/
   cask "google-drive"
 
-  # App to write, plan, collaborate, and get organized. https://www.notion.so
-  cask "notion"
-
   # Collaboration platform for API development. https://www.postman.com
   cask "postman"
 
@@ -253,9 +240,6 @@ if OS.mac?
   # Write, edit, and chat about your code with AI https://cursor.sh/
   cask "cursor"
 
-  # Video communication and virtual meeting platform https://www.zoom.us/
-  cask "zoom"
-
   # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
   cask "appcleaner"
 
@@ -265,84 +249,21 @@ if OS.mac?
   # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
   cask "brooklyn"
 
-  # Color picking application. https://colorsnapper.com
-  cask "colorsnapper"
-
   # Tool for using an iPad as a second display https://www.duetdisplay.com/
   cask "duet"
-
-  # Automated organization https://www.noodlesoft.com/
-  cask "hazel"
 
   # Mozilla Firefox https://www.mozilla.org/firefox
   cask "firefox"
 
-  # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
-  cask "ledger-wallet"
-
-  # Music streaming service. https://www.spotify.com
-  cask "spotify"
-
-  # Virtual machines UI using QEMU https://getutm.app/
-  cask "utm"
-
-  # Tools for building Android applications https://developer.android.com/studio
-  cask "android-studio"
-
-  # Free and open-source 3D creation suite. https://www.blender.org
-  cask "blender"
-
-  # Virtual video-calling space https://gather.town/
-  cask "gather"
-
-  # Instant messaging application focusing on security https://signal.org/
-  cask "signal"
-
-  # Multimedia player. https://www.videolan.org/vlc
-  cask "vlc"
-
-  # Virtualization tool https://github.com/insidegui/VirtualBuddy
-  cask "VirtualBuddy"
-
-  # Agent-centric IDE with spec-driven development https://kiro.dev/
-  cask "kiro"
-
-  # Open-source software for live streaming and screen recording https://obsproject.com/
-  cask "obs"
-
-  # Assign keys, and then decorate and label them https://www.elgato.com/ww/en/s/downloads
-  cask "elgato-stream-deck"
-
   unless ENV["CI"]
-    # Messaging app with a focus on speed and security https://macos.telegram.org/
-    cask "telegram"
-
     # AI Coding Agent IDE https://antigravity.google/
     cask "antigravity"
+
+    # Messaging app with a focus on speed and security https://macos.telegram.org/
+    cask "telegram"
 
     # VPN client for secure internet access and private browsing https://nordvpn.com/
     # mas "nordvpn", id: 905953485
     cask "nordvpn"
-
-    # Memory training application https://apps.ankiweb.net/
-    cask "anki"
-
-    # ----------------------------------------------------------------
-    # Mas
-    #
-    # Search `mas search <app_name>`
-    # info   `mas info <app_id>`
-    # ----------------------------------------------------------------
-    # Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
-    brew "mas"
-
-    # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
-    mas "Xcode", id: 497799835
-
-    # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
-    mas "Kindle", id: 302584613
-
-    # New communication app which allows you to make FREE voice calls and send FREE messages https://apps.apple.com/app/line/id539883307
-    mas "LINE", id: 539883307
   end
 end
