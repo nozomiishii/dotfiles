@@ -10,7 +10,19 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'install.sh'
+      - 'Makefile'
+      - 'Brewfile'
+      - 'scripts/**'
+      - 'home/**'
   pull_request:
+    paths:
+      - 'install.sh'
+      - 'Makefile'
+      - 'Brewfile'
+      - 'scripts/**'
+      - 'home/**'
 
 jobs:
   install:
