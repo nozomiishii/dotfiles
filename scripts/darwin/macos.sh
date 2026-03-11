@@ -137,10 +137,10 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 defaults write NSGlobalDomain AppleActionOnDoubleClick -string "None"
 
 # Set the accent color to green
-defaults write NSGlobalDomain AppleAccentColor -int 3
+# defaults write NSGlobalDomain AppleAccentColor -int 3
 
 # Set the highlight color to green
-defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
+# defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
 
 # Autohides the Menu bar
 # defaults write NSGlobalDomain _HIHideMenuBar -bool true
@@ -355,7 +355,6 @@ if [ -d "$snippets_dir" ]; then
 fi
 ln -sf "$HOME/Library/Application Support/Code/User/snippets" "$snippets_dir"
 
-
 # ----------------------------------------------------------------
 # Antigravity
 # ----------------------------------------------------------------
@@ -371,7 +370,6 @@ if [ -d "$snippets_dir" ]; then
   rm -rf "$snippets_dir"
 fi
 ln -sf "$HOME/Library/Application Support/Code/User/snippets" "$snippets_dir"
-
 
 # ----------------------------------------------------------------
 # Loginwindow
