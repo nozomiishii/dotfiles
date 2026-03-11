@@ -37,6 +37,10 @@ ruby_version=$(ruby -e 'puts RUBY_VERSION')
 
 if [ "$ruby_version" != "$latest_stable_version" ]; then
   echo '- 🐙 Install Ruby version'
+  openssl_prefix=$(brew --prefix openssl@3 2>/dev/null || brew --prefix openssl 2>/dev/null)
+  if [ -n "$openssl_prefix" ]; then
+    export RUBY_CONFIGURE_OPTS="${RUBY_CONFIGURE_OPTS:-} --with-openssl-dir=$openssl_prefix"
+  fi
   rbenv install "$latest_stable_version"
   rbenv global "$latest_stable_version"
 fi
