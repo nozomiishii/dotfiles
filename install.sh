@@ -141,6 +141,12 @@ printf '%s\n' \
   "      sudo reboot" \
   "" \
   "" \
+  "📦 Optional Homebrew packages (Brewfile.optional):" \
+  "" \
+  "    run:" \
+  "      make homebrew" \
+  "" \
+  "" \
   "📦 After restarting, clone your private repositories:" \
   "" \
   "    1. gh auth login" \

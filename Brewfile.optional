@@ -1,0 +1,79 @@
+# ----------------------------------------------------------------
+# Cask Install Options
+# ----------------------------------------------------------------
+# appdir: "/Applications"
+#   Place all GUI applications together in /Applications.
+#
+# no_quarantine: true
+#   Skip the initial Gatekeeper dialog "App downloaded from the Internet..." on first launch.
+cask_args appdir: "/Applications", no_quarantine: true
+
+# App to write, plan, collaborate, and get organized. https://www.notion.so
+cask "notion"
+
+# Video communication and virtual meeting platform https://www.zoom.us/
+cask "zoom"
+
+# Color picking application. https://colorsnapper.com
+cask "colorsnapper"
+
+# Automated organization https://www.noodlesoft.com/
+cask "hazel"
+
+# Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
+cask "ledger-wallet"
+
+# Music streaming service. https://www.spotify.com
+cask "spotify"
+
+# Virtual machines UI using QEMU https://getutm.app/
+cask "utm"
+
+# Tools for building Android applications https://developer.android.com/studio
+cask "android-studio"
+
+# Free and open-source 3D creation suite. https://www.blender.org
+cask "blender"
+
+# Virtual video-calling space https://gather.town/
+cask "gather"
+
+# Instant messaging application focusing on security https://signal.org/
+cask "signal"
+
+# Multimedia player. https://www.videolan.org/vlc
+cask "vlc"
+
+# Virtualization tool https://github.com/insidegui/VirtualBuddy
+cask "VirtualBuddy"
+
+# Open-source software for live streaming and screen recording https://obsproject.com/
+cask "obs"
+
+# Memory training application https://apps.ankiweb.net/
+cask "anki"
+
+# ----------------------------------------------------------------
+# Temp
+# ----------------------------------------------------------------
+# OS作成の勉強用
+# Generic machine emulator and virtualizer https://www.qemu.org/
+brew "qemu"
+
+# ----------------------------------------------------------------
+# Mas
+#
+# Search `mas search <app_name>`
+# info   `mas info <app_id>`
+# ----------------------------------------------------------------
+# Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
+brew "mas"
+
+# Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
+mas "Xcode", id: 497799835
+
+# Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
+mas "Kindle", id: 302584613
+
+# New communication app which allows you to make FREE voice calls and send FREE messages https://apps.apple.com/app/line/id539883307
+mas "LINE", id: 539883307
