@@ -42,6 +42,10 @@ OS_NAME="$(uname -s)"
 yellow='\033[1;33m'
 reset='\033[0m'
 
+# request_admin_privileges is kept in this file (not extracted to a script)
+# because it manages main-process state: it sets an EXIT trap and starts a
+# background sudo keepalive. Running it in a subshell would not affect the
+# current process, so it must remain here.
 request_admin_privileges() {
   if [ "${CI:-false}" = "true" ]; then
     return
@@ -66,143 +70,6 @@ request_admin_privileges() {
   ) 2>/dev/null &
 }
 
-# This function installs the Xcode Command Line Tools if they are not already installed.
-#
-# @See
-# https://gist.github.com/mokagio/b974620ee8dcf5c0671f
-# http://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
-install_xcode_cli_tools() {
-  echo -e "👨🏻‍🚀 Install Xcode CLI tools"
-  echo "- 👨🏻‍🚀 Checking Xcode CLI tools..."
-
-  # Check if Xcode CLI tools are already installed by trying to print the SDK path.
-  if xcode-select -p &>/dev/null; then
-    echo "- 👨🏻‍🚀 Xcode CLI tools are already installed"
-  else
-    echo "- 👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
-    TEMP_FILE="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
-    touch "${TEMP_FILE}"
-
-    CLI_TOOLS=$(softwareupdate -l |
-      grep "\*.*Command Line" |
-      tail -n 1 | sed 's/^[^C]* //')
-
-    echo "- 👨🏻‍🚀 Installing: ${CLI_TOOLS}"
-    softwareupdate -i "${CLI_TOOLS}" --verbose
-
-    rm "${TEMP_FILE}"
-  fi
-
-  echo -e "👨🏻‍🚀 Xcode CLI tools are ready to go 🎉"
-}
-
-open_config_apps() {
-  if [ "${CI:-false}" = "true" ]; then
-    echo "Running in CI environment - skipping app opening"
-    return
-  fi
-
-  echo "👨🏻‍🚀 Open the apps that needs to be configured"
-  open -b com.apple.systempreferences
-  open "/Applications/Google Drive.app"
-  open "/Applications/Google Chrome.app"
-  open "/Applications/Raycast.app"
-  open "/Applications/1Password.app"
-  open /users
-  open https://github.com/nozomiishii/dotfiles
-  echo "👨🏻‍🚀 Please refer to github to set up the launched application"
-}
-
-# ----------------------------------------------------------------
-# Homebrew (macOS & Linux)
-# ----------------------------------------------------------------
-install_homebrew() {
-  if [[ "$OS_NAME" == "Darwin" ]]; then
-    if ! command -v brew >/dev/null 2>&1; then
-      echo -e "🍺 Installing Homebrew for Apple Silicon"
-      sudo softwareupdate --install-rosetta --agree-to-license
-      NONINTERACTIVE=1 \
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    else
-      echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
-      brew update --force --quiet
-      brew upgrade --quiet
-    fi
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  elif [[ "${OS_NAME}" == "Linux" ]]; then
-    if ! command -v brew >/dev/null 2>&1; then
-      echo -e "🍺 Installing Homebrew for ${OS_NAME}"
-      NONINTERACTIVE=1 \
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    else
-      echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
-      brew update --force --quiet
-      brew upgrade --quiet
-    fi
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  fi
-
-  # Bundle packages from Brewfile with retries to tolerate transient cask download failures
-  local max_attempts="${BREW_BUNDLE_MAX_ATTEMPTS:-5}"
-  local attempt=1
-  local backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
-
-  while [ "$attempt" -le "$max_attempts" ]; do
-    echo "brew bundle attempt ${attempt}/${max_attempts}"
-    if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" brew bundle \
-      --verbose \
-      --cleanup \
-      --file="$SCRIPT_DIR/Brewfile"; then
-      echo "brew bundle succeeded"
-      break
-    fi
-    if [ "$attempt" -eq "$max_attempts" ]; then
-      echo "brew bundle failed after ${max_attempts} attempts"
-      exit 1
-    fi
-    sleep "$((backoff_base * attempt))"
-    attempt="$((attempt + 1))"
-  done
-
-  brew cleanup --verbose
-}
-
-# ----------------------------------------------------------------
-# zsh
-# ----------------------------------------------------------------
-install_zsh() {
-  echo -e "🐚 Installing zsh"
-
-  sudo apt update && sudo apt install -y zsh
-}
-
-# ----------------------------------------------------------------
-# Symlink
-# ----------------------------------------------------------------
-symlink_files() {
-  echo -e "🐂 stow"
-
-  echo "Pre-removing known conflicting files..."
-  rm -f "$HOME/.gitconfig"
-  rm -f "$HOME/.zprofile"
-  rm -f "$HOME/.zshrc"
-  rm -f "$HOME/.bashrc"
-
-  # Symlink dotfiles using stow with verbose output and restow mode
-  # --restow removes existing symlinks and recreates them to ensure clean state
-  stow --verbose --restow --target="$HOME" home
-}
-
-install_nix() {
-  echo "👨🏻‍🚀 Install Nix"
-  curl -fsSL https://install.determinate.systems/nix | sh -s -- install --no-confirm
-
-  # nixで管理したい
-  # devenvの設定うまくいかない
-  # echo "👨🏻‍🚀 Install devenv"
-  # nix-env --install --attr devenv -f https://github.com/NixOS/nixpkgs/tarball/nixpkgs-unstable
-}
-
 # ----------------------------------------------------------------
 # Install
 # ----------------------------------------------------------------
@@ -222,10 +89,11 @@ echo -e "${reset}"
 
 if [[ "$OS_NAME" == "Darwin" ]]; then
   request_admin_privileges
-  install_nix
-  install_xcode_cli_tools
-  install_homebrew
-  symlink_files
+  bash "$SCRIPT_DIR/scripts/nix.sh"
+  bash "$SCRIPT_DIR/scripts/darwin/xcode.sh"
+  bash "$SCRIPT_DIR/scripts/homebrew.sh"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  bash "$SCRIPT_DIR/scripts/symlink.sh"
   bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/node.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/python.sh"
@@ -236,14 +104,15 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   bash "$SCRIPT_DIR/scripts/nvim.sh"
   bash "$SCRIPT_DIR/scripts/default_apps.sh"
   bash "$SCRIPT_DIR/scripts/clone_github_repos.sh"
-  open_config_apps
+  bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
 fi
 
 if [[ "$OS_NAME" == "Linux" ]]; then
-  install_nix
-  install_zsh
-  install_homebrew
-  symlink_files
+  bash "$SCRIPT_DIR/scripts/nix.sh"
+  bash "$SCRIPT_DIR/scripts/zsh.sh"
+  bash "$SCRIPT_DIR/scripts/homebrew.sh"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  bash "$SCRIPT_DIR/scripts/symlink.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/node.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/python.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
