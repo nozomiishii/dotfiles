@@ -56,6 +56,7 @@ make link
 
 - **PR のマージは必ずユーザーが手動で行う。** AI アシスタントが `gh pr merge` や GitHub API 経由でマージを実行してはならない。
 - PR の作成・更新・push は許可するが、マージの最終判断は常にユーザーに委ねること。
+- **PR タイトルは英語で記述し、CI の semantic pull request チェックに従う。** 小文字で始める英数字・記号のみ、末尾にスペースを付けない。例: `feat(darwin): use launchctl for Remote Login`. 詳細は [.github/workflows/_pull-request.yaml](.github/workflows/_pull-request.yaml) を参照。
 
 ## アーキテクチャ概要
 
