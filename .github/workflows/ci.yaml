@@ -27,7 +27,11 @@ jobs:
       - name: Run install (PR branch)
         if: github.event_name == 'pull_request'
         run: bash ./install.sh
+        env:
+          TENV_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run install (from URL)
         if: github.event_name != 'pull_request'
         run: curl -L https://nozomiishii.dev/dotfiles/install | bash
+        env:
+          TENV_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
