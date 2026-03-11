@@ -100,9 +100,6 @@ if OS.mac?
   # Install various Ruby versions and implementations https://github.com/rbenv/ruby-build
   brew "ruby-build"
 
-  # Cryptography and SSL/TLS Toolkit https://openssl.org/
-  brew "openssl"
-
   # YAML Parser https://github.com/yaml/libyaml
   brew "libyaml"
 
