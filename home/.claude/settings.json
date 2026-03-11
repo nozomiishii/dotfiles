@@ -6,7 +6,9 @@
       "Read(**/.env.*)",
       "Edit(**/.env)",
       "Edit(**/.env.*)",
-      "Bash(*.env*)"
+      "Bash(*.env*)",
+      "Bash(gh pr merge:*)",
+      "Bash(gh api repos/*/pulls/*/merge*)"
     ]
   }
 }
