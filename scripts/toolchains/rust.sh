@@ -40,7 +40,9 @@ echo "- 🦀 $(cargo --version)"
 
 echo '- 🦀 Setup rust-analyzer'
 rustup component add rust-analyzer
-rustup toolchain install stable-aarch64-apple-darwin
+if [ "$(uname -s)" = "Darwin" ]; then
+  rustup toolchain install stable-aarch64-apple-darwin
+fi
 
 echo '- 🦀 Setup Cargo global'
 cargo install cargo-edit
