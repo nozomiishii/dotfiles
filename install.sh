@@ -103,7 +103,6 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
-  bash "$SCRIPT_DIR/scripts/automator.sh"
   bash "$SCRIPT_DIR/scripts/nvim.sh"
   bash "$SCRIPT_DIR/scripts/default_apps.sh"
   bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
