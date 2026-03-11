@@ -103,7 +103,6 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   bash "$SCRIPT_DIR/scripts/automator.sh"
   bash "$SCRIPT_DIR/scripts/nvim.sh"
   bash "$SCRIPT_DIR/scripts/default_apps.sh"
-  bash "$SCRIPT_DIR/scripts/clone_github_repos.sh"
   bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
 fi
 
@@ -141,6 +140,11 @@ printf '%s\n' \
   "    run:" \
   "      sudo reboot" \
   "" \
+  "" \
+  "📦 After restarting, clone your private repositories:" \
+  "" \
+  "    1. gh auth login" \
+  "    2. make repo" \
   "" \
   ""
 echo -e "${reset}"
