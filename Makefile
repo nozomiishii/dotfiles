@@ -7,6 +7,10 @@ homebrew:
 macos:
 	bash ./scripts/darwin/macos.sh
 
+.PHONY: always-on
+always-on:
+	bash ./scripts/darwin/always_on.sh
+
 .PHONY: toolchains
 toolchains:
 	bash ./scripts/toolchains/terraform.sh

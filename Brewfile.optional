@@ -4,9 +4,7 @@
 # appdir: "/Applications"
 #   Place all GUI applications together in /Applications.
 #
-# no_quarantine: true
-#   Skip the initial Gatekeeper dialog "App downloaded from the Internet..." on first launch.
-cask_args appdir: "/Applications", no_quarantine: true
+cask_args appdir: "/Applications"
 
 # App to write, plan, collaborate, and get organized. https://www.notion.so
 cask "notion"
