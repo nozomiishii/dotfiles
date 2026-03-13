@@ -117,6 +117,33 @@ curl -L https://nozomiishii.dev/dotfiles/install | bash
 
 -L (--location): Enable redirection.
 
+### After installation
+
+1. **Reboot**  
+   Run `sudo reboot` to apply the settings.
+
+2. **(Optional) Homebrew**  
+   To install packages from Brewfile.optional:
+
+   ```shell
+   make homebrew
+   ```
+
+3. **(Optional) Always-on power settings**  
+   To disable sleep and use Wake on LAN etc. ([always_on.sh](scripts/darwin/always_on.sh)):
+
+   ```shell
+   make always-on
+   ```
+
+4. **Clone private repositories after reboot**  
+   After authenticating with GitHub, clone your private repos:
+
+   ```shell
+   gh auth login
+   make repo
+   ```
+
 <a id="install-manually"></a>
 
 <details>
@@ -153,6 +180,8 @@ cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
 ```shell
 sudo reboot
 ```
+
+Then follow the [After installation](#after-installation) steps above.
 
 </details>
 
