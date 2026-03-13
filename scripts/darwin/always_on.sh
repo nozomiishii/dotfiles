@@ -7,19 +7,40 @@
 #               code in the pipeline, or zero if all commands succeed
 set -Ceuo pipefail
 
-# ----------------------------------------------------------------
-# Always-on power settings (Mac mini, headless server, etc.)
-#
-# sleep 0     : Disable system sleep for all power sources (display off
-#               does not trigger sleep).
-# womp 1      : Enable Wake On Magic Packet (Wake On LAN).
-# autorestart 1 : Restart automatically after power loss.
-# ----------------------------------------------------------------
 echo "🔌 Applying always-on power management settings..."
 
+# Disable system sleep for all power sources
 sudo pmset -a sleep 0
+
+# Disable display sleep (useful for capture cards)
+sudo pmset -a displaysleep 0
+
+# Disable disk sleep
+sudo pmset -a disksleep 0
+
+# Enable Wake On Magic Packet (Wake On LAN)
 sudo pmset -a womp 1
+
+# Restart automatically after power loss
 sudo pmset -a autorestart 1
+
+# Keep TCP connections alive during sleep
+sudo pmset -a tcpkeepalive 1
+
+# Disable automatic logout (0 = disabled)
+sudo defaults write /Library/Preferences/.GlobalPreferences \
+  com.apple.autologout.AutoLogout \
+  -int 0
+
+# Disable password requirement after screensaver
+defaults write com.apple.screensaver \
+  askForPassword \
+  -int 0
+
+# Disable screensaver activation (idle time = 0)
+defaults -currentHost write com.apple.screensaver \
+  idleTime \
+  -int 0
 
 echo "📋 Current power settings:"
 pmset -g
