@@ -16,3 +16,7 @@ lefthook-local.yaml
 # claude
 **/.claude/settings.local.json
 **/CLAUDE.local.md
+
+# Logs
+*.log
+*.log.*
