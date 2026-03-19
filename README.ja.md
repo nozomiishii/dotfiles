@@ -1,6 +1,6 @@
 # dotfiles
 
-> [日本語版はこちら](README.ja.md)
+> [English version](README.md)
 
 <!-- Main Image -->
 <br>
@@ -22,7 +22,7 @@
 
 ## Gist
 
-Busy? Just run command below;)
+忙しい？下のコマンドをそのまま実行してください;)
 
 ```shell
 curl -L https://nozomiishii.dev/dotfiles/install | bash
@@ -43,11 +43,11 @@ curl -L dot.nozomiishii.dev | sh
 
 </details>
 
-## Development
+## 開発
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nozomiishii/dotfiles)
 
-## Outline
+## 目次
 
 - [📦 New Macbook? Awesome!!](#new-macbook?)
   - [Install](#install)
@@ -63,28 +63,28 @@ curl -L dot.nozomiishii.dev | sh
 
 ## 📦 New Macbook? Awesome
 
-Turn On and Follow the guide
+電源を入れてガイドに従ってください
 
 - Full Name: Nozomi Ishii
 - Account name: nozomiishii
 
-⚠️ Skip the AppleID sign in until the home screen. it takes time. ⚠️
+⚠️ ホーム画面が出るまで Apple ID のサインインはスキップしてください。時間がかかります。⚠️
 
-### Open Apple ID with Spotlight
+### SpotlightでApple IDを開く
 
 ```txt
   ⌘ + space Apple ID
 ```
 
-Sign in your iCloud and App Store, when you get to the home screen.
-(to get apps using mas command)
+ホーム画面に到達したら、iCloud と App Store にサインインします。
+(mas コマンドでアプリを取得するため)
 
-💡 Can you not use your personal apple ID on your company computer?
-Install xcode manually from the App Store.
+💡 会社のPCで個人の Apple ID を使えませんか？
+App Store から Xcode を手動でインストールしてください。
 
 ### 🍎 Apple ID
 
-- Edit your profile photo
+- プロフィール写真を編集
 
 - **☁️ iCloud**
 
@@ -99,15 +99,15 @@ Install xcode manually from the App Store.
   ⌘ + space App Store
 ```
 
-- Login
+- ログイン
 
 <a id="install"></a>
 
 ## Install
 
-Wait about 3 hours(Go grab some food and take a nap 🍕😪)
+約3時間待ちます（食事をして、昼寝しましょう 🍕😪）
 
-### Open Terminal with Spotlight
+### SpotlightでTerminalを開く
 
 ```txt
   ⌘ + space Terminal
@@ -117,29 +117,29 @@ Wait about 3 hours(Go grab some food and take a nap 🍕😪)
 curl -L https://nozomiishii.dev/dotfiles/install | bash
 ```
 
--L (--location): Enable redirection.
+-L (--location): リダイレクトを有効化
 
 ### After installation
 
-1. **Reboot**  
-   Run `sudo reboot` to apply the settings.
+1. **再起動**  
+   設定を反映するために `sudo reboot` を実行します。
 
-2. **(Optional) Homebrew**  
-   To install packages from Brewfile.optional:
+2. **(任意) Homebrew**  
+   Brewfile.optional からパッケージをインストールするには：
 
    ```shell
    make homebrew
    ```
 
-3. **(Optional) Always-on power settings**  
-   To disable sleep and use Wake on LAN etc. ([always_on.sh](scripts/darwin/always_on.sh)):
+3. **(任意) 常時起動（スリープ無効）設定**  
+   スリープを無効化して Wake on LAN などを使うために（[always_on.sh](scripts/darwin/always_on.sh)）：
 
    ```shell
    make always-on
    ```
 
-4. **Clone private repositories after reboot**  
-   After authenticating with GitHub, clone your private repos:
+4. **再起動後にプライベートリポジトリをクローン**  
+   GitHub で認証したら、プライベートリポジトリをクローンします：
 
    ```shell
    gh auth login
@@ -149,17 +149,17 @@ curl -L https://nozomiishii.dev/dotfiles/install | bash
 <a id="install-manually"></a>
 
 <details>
-<summary>Install Manually</summary>
+<summary>手動でインストール</summary>
 
-### Install xcode-select
+### xcode-select をインストール
 
 ```shell
 xcode-select --install
 ```
 
-xcode-select: this command-line Tools are required for Git and Homebrew
+xcode-select: このコマンドラインツールは Git と Homebrew に必要です。
 
-### Come to this page
+### このページを開く
 
 ```shell
 open https://nozomiishii.dev/dotfiles
@@ -177,40 +177,40 @@ cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
 ./install.sh
 ```
 
-### 🛋 Restart
+### 🛋 再起動
 
 ```shell
 sudo reboot
 ```
 
-Then follow the [After installation](#after-installation) steps above.
+その後、上の [After installation](#after-installation) の手順に従ってください。
 
 </details>
 
 <a id="app-preferences"></a>
 
-## App preferences
+## アプリの設定
 
 ### ⛓ Karabiner-Elements
 
-- Login
+- ログイン
 
 ### 🔑 1Password
 
 - Preferences > Security > Unlock using >  
-  Check "Touch ID"
+  「Touch ID」をチェック
 - Preferences > General > Keyboard shortcuts >  
-  Autofill: `⌥⇧X`
-- Preferences > Developer > Check "Use the SSH agent"
-- Preferences > Developer > Check "Integrate with 1Password CLI"
+  自動入力: `⌥⇧X`
+- Preferences > Developer > 「Use the SSH agent」をチェック
+- Preferences > Developer > 「Integrate with 1Password CLI」をチェック
   - [Turn on the 1Password desktop app integration](https://developer.1password.com/docs/cli/get-started/#step-2-turn-on-the-1password-desktop-app-integration)
 
 ### 🌏 Chrome
 
-- Sign in
-- Change Chrome to the Default Browser
-- Log in 1PasswordX
-- (Optional)
+- サインイン
+- Chromeをデフォルトブラウザに変更
+- 1PasswordX にログイン
+- （任意）
 
   - [Gmail notification](https://support.google.com/mail/answer/1075549?hl=ja&co=GENIE.Platform%3DDesktop)
   - [Show working hours on your calendar](https://support.google.com/a/users/answer/9308669)
@@ -246,11 +246,11 @@ Then follow the [After installation](#after-installation) steps above.
 
 ### ☁️ google-drive
 
-- Sign in and Sync
+- サインインして同期
 
 ### 🗂 Finder
 
-- Rearrange the order of the sidebar
+- サイドバーの順序を並べ替え
 
 ```txt
 Finder Sidebar
@@ -265,19 +265,19 @@ Finder Sidebar
 
 ### 🚁 Raycast
 
-- needs: Finder setup
+- Finder のセットアップが必要
 
-- Sign in
-- Import Settings from "~/dotfiles/src/configs/\_raycast/backup"
+- サインイン
+- 設定を "~/dotfiles/src/configs/\_raycast/backup" からインポート
 
 ### 🐟 VSCode
 
 - User Icon > Setting sync > Login >  
-  Select "Marge"  
-  ⚠️ Do NOT Select "Replace"
+  「Marge」を選択  
+  ⚠️ 「Replace」を選択しない
 - ⇧ + ⌘ + P > Open command pallet >  
-  Icons: Activate VSCode Icons
-- Add MonokaiPro License
+  Icons: VSCode Icons を有効化
+- MonokaiPro のライセンスを追加
 
 ### 😼 SSH & Git
 
@@ -292,17 +292,17 @@ make repo
 ### 🧹 Hazel
 
 - License... >  
-  Activate the License
+  ライセンスを有効化
 - Folder > Rule Sync Settings... > Use existing sync file... >  
   Select "~/dotfiles/apps/Hazel"
 - Preferences... > General >  
-  Uncheck "Show Hazel in the menu bar"
+  「Show Hazel in the menu bar」のチェックを外す
 - Preferences... > Trash >  
-  Check "Delete files sitting in the Trash for more than 1 Day"
+  「Delete files sitting in the Trash for more than 1 Day」をチェック
 
 ### 🎨 ColorSnapper2
 
-- Activate the license
+- ライセンスを有効化
 - General
   - Hotkeys:  
     Pick Color: ⌃ + ⌥ + C
@@ -320,20 +320,20 @@ make repo
 ### 🐘 TablePlus
 
 - TablePlus >  
-  Register license
+  ライセンスを登録
 
 ### 🐔 Slack
 
-- Sign in
+- サインイン
 
 ### 🫐 BLEUnlock
 
-- Device: Select your device
+- Device: 対象デバイスを選択
 - Unlock RSSI: -60dBm
 - Lock RSSI: -75dBm
-- Check 'Pause "Now Playing" while Locked'
-- Check 'Use Screensaver to Lock'
-- Check 'Launch at Login'
+- 「Pause "Now Playing" while Locked」をチェック
+- 「Use Screensaver to Lock」をチェック
+- 「Launch at Login」をチェック
 
 ### 💻 System Preferences
 
@@ -430,23 +430,23 @@ make repo
 
 <a id="customize"></a>
 
-## 👨🏻‍🍳 Customize
+## 👨🏻‍🍳 カスタマイズ
 
-### How to add app to Brewfile
+### Brewfile にアプリを追加するには
 
-Search the app
+アプリを検索します
 
 ```shell
   brew search <app_name>
 ```
 
-Check if it's an app you want to download.
+ダウンロードしたいアプリかどうか確認します
 
 ```shell
   brew info <app_name>
 ```
 
-### How to find the defaults command
+### defaults コマンドの探し方
 
 ```shell
 defaults read > before
@@ -455,7 +455,7 @@ defaults read > after
 diff before after
 ```
 
-### Search app plist
+### アプリの plist を検索
 
 ```shell
   ll ~/Library/Preferences/ | grep <app_name>
@@ -463,13 +463,13 @@ diff before after
   ll ~/Library/Preferences/ | grep firefox
 ```
 
-### NSGlobalDomain plist
+### NSGlobalDomain の plist
 
 ```shell
 open ~/Library/Preferences/.GlobalPreferences.plist
 ```
 
-### Read app config
+### アプリ設定を読む
 
 ```shell
   defaults read <app_name_plist>
@@ -477,7 +477,7 @@ open ~/Library/Preferences/.GlobalPreferences.plist
   defaults read notion.id
 ```
 
-### Symbolic link
+### シンボリックリンク
 
 ```shell
   ln -nfs <New_linking_file> <Existing_linked_files>
@@ -487,30 +487,30 @@ open ~/Library/Preferences/.GlobalPreferences.plist
 
 <a id="maintenance&dev"></a>
 
-## 👨🏻‍🏭 Maintenance & Dev
+## 👨🏻‍🏭 メンテナンス & 開発
 
-### Maintenance
+### メンテナンス
 
-Clean unused homebrew dependencies up, and upgrade them
+不要になった Homebrew の依存関係を削除し、アップグレードします
 
 ```shell
 	brew bundle --verbose --cleanup --file="./Brewfile"
 	brew cleanup --verbose
 ```
 
-### Dev
+### 開発
 
 ```shell
 pnpm install
 ```
 
-To use @prettier/ruby
+@prettier/ruby を使うには
 
 ```shell
 gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 ```
 
-## Check the performance of zsh
+## zsh のパフォーマンスを確認
 
 ```shell
 for x in {1..10}; do time zsh -i -c exit; done
@@ -518,84 +518,84 @@ for x in {1..10}; do time zsh -i -c exit; done
 
 <a id="troubleshooting"></a>
 
-## 🔫 Troubleshooting
+## 🔫 トラブルシューティング
 
-- **Audio-related**  
-  NVRAM Reset  
-  Shut down and Restart with  
+- **オーディオ関連**  
+  NVRAM リセット  
+  シャットダウンして、次のキーで再起動します  
   `⌥ + ⌘ + P + R`  
-  💡 NVRAM is a memory that saves its stored data regardless if the power is on or off
+  💡 NVRAM は、電源のオン/オフに関係なく保存されているデータを保持するメモリです
 
-- **Third-party app related**  
-  Safe mode  
-  Shut down and wait 10 seconds  
-  Restart with `⇧`  
-  💡Safe Mode temporarily disables any third-party applications and starts your device with default system apps
+- **サードパーティアプリ関連**  
+  セーフモード  
+  シャットダウンして 10 秒待つ  
+  `⇧` で再起動  
+  💡 セーフモードはサードパーティアプリを一時的に無効化し、デフォルトのシステムアプリで起動します
 
 <a id="reinstall-macos"></a>
 
-## 👼 Reinstall macOS
+## 👼 macOS を再インストール
 
-1: Unpair
+1: ペア解除
 
 - System Preferences > Bluetooth >  
-  Unpair Bluetooth devices
+  Bluetooth デバイスをペア解除
 
-2: Clean up
+2: 後片付け
 
-- Delete SSH keys on GitHub, GitLab
+- GitHub / GitLab から SSH キーを削除
 
-3: Sign out your iCloud.
+- 3: iCloud からサインアウト
 
 - System Preferences > Apple ID > iCloud >  
-  Turn off "Find My Mac"
+  「Macを探す」をオフ
 - System Preferences > Apple ID > Overview >  
-  Sign Out
+  サインアウト
 
-4: Deactivate license
+4: ライセンスを無効化
 
 - **🐘 TablePlus**  
-  TablePlus > Register license
+  TablePlus > ライセンスを登録
 
 - **🎨 ColorSnapper2**  
-  About ColorSnapper... >  
-  Deactivate license
+  ColorSnapper の情報... >  
+  ライセンスを無効化
 
 - **🧹 Hazel**  
-  License... > Remove
+  ライセンス... > 削除
 
-5: Erase All Content
+5: すべてのコンテンツを消去
 
-- Erase All Content - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)
-- From the Apple menu  in the corner of your screen, choose System Preferences
-- From the System Preferences menu in the menu bar, choose Erase All Content and Settings
+- すべてのコンテンツを消去 - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)
+- 画面左上の （Apple メニュー）から `システム設定` を選択
+- メニューバーの `システム設定` から「すべてのコンテンツと設定を消去」を選択
 
 <a id="references"></a>
 
-## 🙌 References
+## 🙌 参考
 
-### Tutorials
+### チュートリアル
 
 - [Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish)
 - [dotfiles + GitHub を使って開発環境をコマンド１発で構築する方法](https://www.youtube.com/watch?v=QZr33TQnIRk&t=9s)
 
-### Dotfiles
+### dotfiles
 
 - [Patrick McDonald - EIEIO](https://github.com/eieioxyz/dotfiles_macos)
 - [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
 - [Your unofficial guide to dotfiles on GitHub.](https://dotfiles.github.io/inspiration)
 - [JunichiSugiura/dotfiles](https://github.com/JunichiSugiura/dotfiles)
 
-### CheatSheets
+### チートシート
 
 - [macOS defaults list](https://macos-defaults.com)
 - [Homebrew | Basics Commands and Cheat sheet](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
 
-### Dotfiles managed with
+### dotfiles を管理しているもの
 
 - [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
 
-## License
+## ライセンス
 
 MIT License
 
