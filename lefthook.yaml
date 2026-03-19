@@ -10,3 +10,10 @@
 #   pnpx lefthook run --verbose post-merge
 extends:
   - ./node_modules/@nozomiishii/lefthook-config/index.yaml
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: readme-sync-check
+      glob: '{README.md,README.ja.md}'
+      run: git diff --cached --name-only | bash scripts/check-readme-sync.sh
