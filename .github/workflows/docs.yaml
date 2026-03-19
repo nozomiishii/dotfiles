@@ -58,7 +58,7 @@ jobs:
     permissions:
       pages: write
     environment:
-      name: github-pages
+      name: github_pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
