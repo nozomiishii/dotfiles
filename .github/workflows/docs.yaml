@@ -57,9 +57,6 @@ jobs:
     timeout-minutes: 30
     permissions:
       pages: write
-    environment:
-      name: github_pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
