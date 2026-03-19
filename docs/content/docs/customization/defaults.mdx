@@ -1,0 +1,32 @@
+---
+title: How to find the defaults command
+description: macOS defaults command tips and examples
+---
+
+## How to find the defaults command
+
+```shell
+defaults read > before
+defaults read > after
+diff before after
+```
+
+## Search app plist
+
+```shell
+ll ~/Library/Preferences/ | grep <app_name>
+ll ~/Library/Preferences/ | grep firefox
+```
+
+## NSGlobalDomain plist
+
+```shell
+open ~/Library/Preferences/.GlobalPreferences.plist
+```
+
+## Read app config
+
+```shell
+defaults read <app_name_plist>
+defaults read notion.id
+```

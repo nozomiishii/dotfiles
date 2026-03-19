@@ -1,0 +1,12 @@
+{
+  "title": "Dotfiles Docs",
+  "pages": [
+    "index",
+    "getting-started",
+    "app-preferences",
+    "customization",
+    "maintenance",
+    "troubleshooting",
+    "reinstall-macos"
+  ]
+}

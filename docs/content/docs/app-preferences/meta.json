@@ -1,0 +1,25 @@
+{
+  "title": "App Preferences",
+  "pages": [
+    "index",
+    "karabiner",
+    "onepassword",
+    "chrome",
+    "google-drive",
+    "finder",
+    "raycast",
+    "vscode",
+    "ssh-and-git",
+    "hazel",
+    "colorsnapper",
+    "tableplus",
+    "slack",
+    "bleunlock",
+    "system-preferences",
+    "calendar",
+    "blender",
+    "android-studio",
+    "xcode",
+    "time-machine"
+  ]
+}

@@ -1,3 +1,6 @@
+packages:
+  - 'docs'
+
 # https://pnpm.io/settings
 #
 # ```bash

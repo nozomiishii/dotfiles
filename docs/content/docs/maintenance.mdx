@@ -1,0 +1,31 @@
+---
+title: Maintenance & Dev
+description: Maintenance and development notes for this dotfiles repository
+---
+
+## Maintenance
+
+Clean unused homebrew dependencies up, and upgrade them
+
+```shell
+brew bundle --verbose --cleanup --file="./Brewfile"
+brew cleanup --verbose
+```
+
+## Dev
+
+```shell
+pnpm install
+```
+
+To use @prettier/ruby
+
+```shell
+gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
+```
+
+## Check the performance of zsh
+
+```shell
+for x in {1..10}; do time zsh -i -c exit; done
+```
