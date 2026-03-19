@@ -1,0 +1,20 @@
+---
+description: GitHub Actions ワークフローファイルの命名規則
+globs: .github/workflows/*.yaml
+alwaysApply: false
+---
+
+# GitHub Actions ワークフローの命名規則
+
+## `_` プレフィックス付きワークフロー
+
+`_` で始まるワークフロー（例: `_actionlint.yaml`, `_secretlint.yaml`, `_pull-request.yaml`）は複数プロジェクトで共通利用しているワークフロー。このリポジトリ固有のワークフローには `_` プレフィックスを付けないこと。
+
+```
+.github/workflows/
+  _actionlint.yaml        # 共通（全プロジェクト共通）
+  _pull-request.yaml      # 共通
+  _secretlint.yaml        # 共通
+  ci.yaml                 # このリポジトリ固有
+  readme-sync.yaml        # このリポジトリ固有
+```
