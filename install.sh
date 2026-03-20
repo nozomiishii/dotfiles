@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # -C          : Prevent overwriting existing files when redirecting output.
 #               - Helps to avoid accidentally overwriting files when using
