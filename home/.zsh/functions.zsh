@@ -32,11 +32,6 @@ rsdt() {
   open "/Applications/duet.app"
 }
 
-# Kill Port
-killp() {
-  kill -9 $(lsof -ti:$1) && echo "killed Port $1"
-}
-
 # Git checkout remote branch
 gcr() {
   git fetch origin $1
