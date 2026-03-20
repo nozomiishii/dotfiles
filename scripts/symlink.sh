@@ -19,3 +19,21 @@ rm -f "$HOME/.bashrc"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$SCRIPT_DIR"
 stow --verbose --restow --target="$HOME" home
+
+SKILLS_DIR="$HOME/.config/skills"
+if [ -d "$SKILLS_DIR" ]; then
+  echo "Linking skills to Cursor, Claude Code, and Codex..."
+  for skill_dir in "$SKILLS_DIR"/*/; do
+    [ -d "$skill_dir" ] || continue
+    name=$(basename "$skill_dir")
+
+    mkdir -p "$HOME/.cursor/skills"
+    ln -sfn "$SKILLS_DIR/$name" "$HOME/.cursor/skills/$name"
+
+    mkdir -p "$HOME/.codex/skills"
+    ln -sfn "$SKILLS_DIR/$name" "$HOME/.codex/skills/$name"
+
+    mkdir -p "$HOME/.claude/commands"
+    ln -sfn "$SKILLS_DIR/$name/SKILL.md" "$HOME/.claude/commands/$name.md"
+  done
+fi
