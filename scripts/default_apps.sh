@@ -22,7 +22,20 @@ echo "- 🧮 duti"
 # https://github.com/desktop/desktop/issues/17462
 CURSOR_BUNDLE_ID="com.todesktop.230313mzl4w4u92"
 
-cursor_extensions=(toml yaml yml json jsonc css markdown sh js ts tsx svg)
+cursor_extensions=(
+  toml
+  yaml
+  yml
+  json
+  jsonc
+  css
+  markdown
+  sh
+  js
+  ts
+  tsx
+  svg
+)
 
 for ext in "${cursor_extensions[@]}"; do
   duti -s "$CURSOR_BUNDLE_ID" "$ext" all
