@@ -21,7 +21,7 @@ repos=(
 
 CODE_DIR="$HOME/Code"
 if [ ! -d "$CODE_DIR" ]; then
-  echo "🦄" Creating" ./Code ..."
+  echo "🦄 Creating ./Code ..."
   mkdir -p "$CODE_DIR"
 fi
 

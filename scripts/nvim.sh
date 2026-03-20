@@ -26,7 +26,7 @@ plug_dir="$HOME/.local/share/nvim/site/autoload/plug.vim"
 
 if [ ! -f "$plug_dir" ]; then
   echo '👾: Setup vim-plug'
-  sh -c "curl -fLo $plug_dir --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  curl -fLo "$plug_dir" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
   echo 'Install Neovim Plugins'
   nvim --headless +PlugInstall +qall
