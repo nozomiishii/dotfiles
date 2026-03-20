@@ -73,7 +73,7 @@ z!() {
 # ----------------------------------------------------------------
 # claude
 # ----------------------------------------------------------------
-alias c="claude --permission-mode auto"
+alias c="claude --worktree --permission-mode auto"
 alias yolo="claude --dangerously-skip-permissions"
 alias cl="uvx claude-code-log@latest --open-browser"
 
