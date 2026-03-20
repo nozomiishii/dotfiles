@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # -C          : Prevent overwriting files with output redirection
 # -e          : Exit the script if any command returns a non-zero status
@@ -25,4 +25,4 @@ done
 
 average=$( echo "scale=3; $total / $iterations" | bc -l )
 
-echo "\n🚀 Average startup time: ${average}s over $iterations runs." 
+printf "\n🚀 Average startup time: %ss over %s runs.\n" "$average" "$iterations"

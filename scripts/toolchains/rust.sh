@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # -C          : Prevent overwriting files with output redirection
 # -e          : Exit the script if any command returns a non-zero status
