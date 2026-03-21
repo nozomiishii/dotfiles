@@ -13,5 +13,10 @@
   "model": "opus",
   "enabledPlugins": {
     "telegram@claude-plugins-official": true
+  },
+  "sandbox": {
+    "network": {
+      "allowedDomains": ["github.com"]
+    }
   }
 }
