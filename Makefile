@@ -14,6 +14,7 @@ always-on:
 .PHONY: toolchains
 toolchains:
 	bash ./scripts/toolchains/terraform.sh
+	bash ./scripts/toolchains/claude-code.sh
 	bash ./scripts/toolchains/node.sh
 	bash ./scripts/toolchains/python.sh
 	bash ./scripts/toolchains/ruby.sh
