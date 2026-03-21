@@ -64,6 +64,9 @@ if OS.mac?
   # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
   cask "ghostty"
 
+  # Japanese programming font based on IBM Plex and Inconsolata with Nerd Fonts https://github.com/yuru7/PlemolJP
+  cask "font-plemol-jp-nf"
+
   # Dictation tool including LLM reformatting https://superwhisper.com/
   cask "superwhisper"
 
