@@ -21,7 +21,7 @@
   // ----------------------------------------------------------------
   // vscode project manager
   // ----------------------------------------------------------------
-  "projectManager.projectsLocation": "~/dotfiles/home/Library/Application Support/Code/User",
+  "projectManager.projectsLocation": "~/Code/nozomiishii/workspaces",
   "projectManager.sortList": "Saved",
 
   // ----------------------------------------------------------------
