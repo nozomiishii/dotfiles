@@ -23,6 +23,7 @@ theme = Gitlab Dark
 font-size = 14
 
 # Font Family
+font-family = "PlemolJP Console NF"
 font-family = "Monaco"
 
 # turn off ligature https://ghostty.org/docs/config/reference#font-feature
