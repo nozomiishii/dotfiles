@@ -26,4 +26,4 @@ repo:
 
 .PHONY: link
 link:
-	stow --verbose --restow --adopt --target="$$HOME" home
+	bash ./scripts/symlink.sh
