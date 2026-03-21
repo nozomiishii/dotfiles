@@ -1,5 +1,4 @@
 {
-  "model": "opus",
   "permissions": {
     "deny": [
       "Read(**/.env)",
@@ -10,5 +9,9 @@
       "Bash(gh pr merge:*)",
       "Bash(gh api repos/*/pulls/*/merge*)"
     ]
+  },
+  "model": "opus",
+  "enabledPlugins": {
+    "telegram@claude-plugins-official": true
   }
 }
