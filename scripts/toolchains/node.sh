@@ -23,6 +23,12 @@ echo "- 🐉 node $(node --version)"
 echo '- 🐉 Setup corepack'
 corepack enable pnpm yarn npm
 
+echo '- 🐉 Install Bun'
+curl -fsSL https://bun.sh/install | bash
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+echo "- 🐉 bun $(bun --version)"
+
 echo '- 🐉 Setup pnpm global'
 (
     cd /tmp
