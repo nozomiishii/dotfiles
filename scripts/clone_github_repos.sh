@@ -17,6 +17,7 @@ repos=(
   nozomiishii/renovate
   nozomiishii/archives
   nozomiishii/workspaces
+  nozomiishii/pm
 )
 
 CODE_DIR="$HOME/Code"
