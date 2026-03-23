@@ -14,6 +14,9 @@
   "enabledPlugins": {
     "telegram@claude-plugins-official": true
   },
+  "attribution": {
+    "pr": ""
+  },
   "sandbox": {
     "network": {
       "allowedDomains": ["github.com"]
