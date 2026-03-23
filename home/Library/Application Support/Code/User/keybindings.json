@@ -165,6 +165,14 @@
     "command": "-workbench.action.openRecent"
   },
 
+  // undo
+  {
+    "key": "cmd+z",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u001f" },
+    "when": "terminalFocus"
+  }
+
   // ----------------------------------------------------------------
   // Zellij
   // ----------------------------------------------------------------

@@ -43,3 +43,6 @@ window-width  = 204
 keybind = shift+enter=text:\n
 # keybind = super+\=new_split:right
 # keybind = super+shift+\=new_split:down
+
+# undo
+keybind = super+z=text:\x1f
