@@ -73,9 +73,8 @@ z!() {
 # ----------------------------------------------------------------
 # claude
 # ----------------------------------------------------------------
-alias c="claude --worktree --permission-mode auto"
-alias yolo="claude --dangerously-skip-permissions"
-alias cl="uvx claude-code-log@latest --open-browser"
+alias c="claude"
+alias cw="claude --worktree"
 
 # ----------------------------------------------------------------
 # git
