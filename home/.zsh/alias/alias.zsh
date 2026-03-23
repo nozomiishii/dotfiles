@@ -87,13 +87,6 @@ alias grmb="git branch --merged|egrep -v '\*|master|main|dev|develop|development
 alias gsta="git stash -u"
 
 # ----------------------------------------------------------------
-# pnpm
-# ----------------------------------------------------------------
-alias npm='pnpm'
-alias npx='pnpx'
-alias yarn='pnpm'
-
-# ----------------------------------------------------------------
 # nextjs
 # ----------------------------------------------------------------
 alias nextjs="pnpx create-next-app@latest --typescript --tailwind --eslint --app --src-dir --no-turbopack --use-pnpm"
