@@ -1,12 +1,6 @@
 # Aliases
 
 # ----------------------------------------------------------------
-# Variables
-# ----------------------------------------------------------------
-CODE_DIR="$HOME/Code"
-GOOGLE_DRIVE_DIR="$HOME/Google\ Drive"
-
-# ----------------------------------------------------------------
 # NeoVim
 # ----------------------------------------------------------------
 if command -v nvim >/dev/null 2>&1; then
@@ -15,32 +9,9 @@ if command -v nvim >/dev/null 2>&1; then
 fi
 
 # ----------------------------------------------------------------
-# Open VScode
-# ----------------------------------------------------------------
-# alias fj="code ."
-
-# ----------------------------------------------------------------
 # Open Cursor
 # ----------------------------------------------------------------
-# alias fj="cursor . --reuse-window"
 alias fj="cursor ."
-
-# ----------------------------------------------------------------
-# Restart Raycast
-# ----------------------------------------------------------------
-alias restart_raycast='osascript -e '\''quit app "Raycast"'\'' && sleep 2 && open -a "Raycast"'
-
-# ----------------------------------------------------------------
-# Change Directory
-# ----------------------------------------------------------------
-alias dsk="cd ~/Desktop"
-alias plist="cd ~/Library/Preferences"
-
-alias dot="cd $HOME/dotfiles"
-alias noz="cd $CODE_DIR/nozomiishii"
-alias dev="cd $CODE_DIR/nozomiishii/dev"
-alias arc="cd $CODE_DIR/nozomiishii/archives"
-alias repo="cd $CODE_DIR"
 
 # ----------------------------------------------------------------
 # shell
@@ -86,21 +57,6 @@ alias grmb="git branch --merged|egrep -v '\*|master|main|dev|develop|development
 alias gsta="git stash -u"
 
 # ----------------------------------------------------------------
-# nextjs
-# ----------------------------------------------------------------
-alias nextjs="pnpx create-next-app@latest --typescript --tailwind --eslint --app --src-dir --no-turbopack --use-pnpm"
-
-# ----------------------------------------------------------------
-# Playwright
-# ----------------------------------------------------------------
-alias pwr="npx playwright show-report"
-
-# ----------------------------------------------------------------
-# network
-# ----------------------------------------------------------------
-alias wifi="networksetup -setairportpower en0 off && networksetup -setairportpower en0 on"
-
-# ----------------------------------------------------------------
 # Docker
 # ----------------------------------------------------------------
 alias dsp="docker system prune --all --volumes"
@@ -110,16 +66,3 @@ alias dsp="docker system prune --all --volumes"
 # ----------------------------------------------------------------
 alias tf="terraform"
 alias tg="terragrunt"
-
-# ----------------------------------------------------------------
-# Tools
-# ----------------------------------------------------------------
-alias nozo:l="npx -y @nozomiishii/lefthook-config@latest"
-alias nozo:p="npx -y @nozomiishii/prettier-config@latest"
-alias nozo:e="npx -y @nozomiishii/eslint-config@latest"
-alias nozo:i="nozo:p && nozo:e && mv postcss.config.js postcss.config.cjs"
-
-# ----------------------------------------------------------------
-# Workflow
-# ----------------------------------------------------------------
-alias noa="(dev && pnpm -F bots start noa --headed)"
