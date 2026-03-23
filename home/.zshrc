@@ -24,6 +24,11 @@ source "$HOME/.zsh/functions.zsh"
 # kiro
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
+# pm - VS Code Project Manager CLI
+export PM_CONFIG="$HOME/Code/nozomiishii/workspaces/projects.json"
+export PATH="${XDG_BIN_HOME:-$HOME/.local/bin}:$PATH"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh"
+
 # direnv
 if command -v direnv >/dev/null; then
   eval "$(direnv hook zsh)"
