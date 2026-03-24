@@ -18,3 +18,5 @@
 ## 設定管理
 
 - ~/.claude/settings.json を変更した場合は、必ず ~/.claude/settings.md も同期して更新すること。
+- sandbox の allowedDomains にドメインを追加する際は、可能な限りワイルドカード（`*.example.com`）で正規化すること。個別サブドメインが1つだけの場合はそのままでよい。
+- パーミッションの追加・変更は必ず `~/.claude/settings.json`（グローバル設定）に行うこと。プロジェクトの `settings.local.json` には追加しない。`settings.local.json` にルールが溜まっていた場合は、ユーザーにグローバルへの移行を提案すること。

@@ -56,7 +56,14 @@
       "Bash(open:*)",
       "Bash(code:*)",
       "Bash(cursor:*)",
-      "Bash(docker run:*)"
+      "Bash(docker run:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:github.blog)",
+      "WebFetch(domain:*.npmjs.org)",
+      "WebFetch(domain:*.npmjs.com)",
+      "WebFetch(domain:code.claude.com)",
+      "WebFetch(domain:docs.anthropic.com)"
     ],
     "deny": [
       "Read(**/.env)",
@@ -86,15 +93,17 @@
     "excludedCommands": ["docker", "docker-compose", "podman"],
     "filesystem": {
       "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc"],
-      "allowWrite": ["/tmp"]
+      "allowWrite": ["/tmp", "~/.npm"]
     },
     "network": {
       "allowLocalBinding": true,
+      "allowUnixSockets": [
+        "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+      ],
       "allowedDomains": [
         "github.com",
         "*.github.com",
         "*.npmjs.org",
-        "registry.npmjs.org",
         "registry.yarnpkg.com",
         "pypi.org",
         "files.pythonhosted.org",
@@ -104,9 +113,23 @@
         "cdn.jsdelivr.net",
         "unpkg.com",
         "esm.sh",
-        "api.anthropic.com"
+        "api.anthropic.com",
+        "*.npmjs.com",
+        "github.blog"
       ]
     }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/check-local-settings.sh"
+          }
+        ]
+      }
+    ]
   },
   "enabledPlugins": {
     "telegram@claude-plugins-official": true
@@ -115,6 +138,7 @@
     "pr": "",
     "commit": ""
   },
+  "enabledMcpjsonServers": ["context7"],
   "alwaysThinkingEnabled": true,
   "cleanupPeriodDays": 90
 }
