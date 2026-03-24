@@ -1,25 +1,120 @@
 {
   "permissions": {
-    "defaultMode": "auto",
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Read",
+      "Edit",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(pnpm:*)",
+      "Bash(bun:*)",
+      "Bash(node:*)",
+      "Bash(deno:*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(git push --force-with-lease:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(fd:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(mv:*)",
+      "Bash(touch:*)",
+      "Bash(chmod:*)",
+      "Bash(echo:*)",
+      "Bash(printf:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(jq:*)",
+      "Bash(xargs:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pip:*)",
+      "Bash(cargo:*)",
+      "Bash(rustc:*)",
+      "Bash(tsc:*)",
+      "Bash(eslint:*)",
+      "Bash(prettier:*)",
+      "Bash(biome:*)",
+      "Bash(vitest:*)",
+      "Bash(jest:*)",
+      "Bash(playwright:*)",
+      "Bash(nix:*)",
+      "Bash(home-manager:*)",
+      "Bash(brew:*)",
+      "Bash(tar:*)",
+      "Bash(unzip:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(open:*)",
+      "Bash(code:*)",
+      "Bash(cursor:*)",
+      "Bash(docker run:*)"
+    ],
     "deny": [
       "Read(**/.env)",
       "Read(**/.env.*)",
       "Edit(**/.env)",
       "Edit(**/.env.*)",
+      "Read(./secrets/**)",
       "Bash(*.env*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
       "Bash(gh pr merge:*)",
-      "Bash(gh api repos/*/pulls/*/merge*)"
+      "Bash(gh api repos/*/pulls/*/merge*)",
+      "Bash(sudo:*)",
+      "Bash(su:*)",
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)",
+      "Bash(shutdown:*)",
+      "Bash(reboot:*)",
+      "Bash(launchctl:*)",
+      "Bash(diskutil:*)"
     ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "excludedCommands": ["docker", "docker-compose", "podman"],
+    "filesystem": {
+      "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc"],
+      "allowWrite": ["/tmp"]
+    },
+    "network": {
+      "allowLocalBinding": true,
+      "allowedDomains": [
+        "github.com",
+        "*.github.com",
+        "*.npmjs.org",
+        "registry.npmjs.org",
+        "registry.yarnpkg.com",
+        "pypi.org",
+        "files.pythonhosted.org",
+        "crates.io",
+        "*.crates.io",
+        "deno.land",
+        "cdn.jsdelivr.net",
+        "unpkg.com",
+        "esm.sh",
+        "api.anthropic.com"
+      ]
+    }
   },
   "enabledPlugins": {
     "telegram@claude-plugins-official": true
   },
   "attribution": {
-    "pr": ""
+    "pr": "",
+    "commit": ""
   },
-  "sandbox": {
-    "network": {
-      "allowedDomains": ["github.com"]
-    }
-  }
+  "alwaysThinkingEnabled": true,
+  "cleanupPeriodDays": 90
 }

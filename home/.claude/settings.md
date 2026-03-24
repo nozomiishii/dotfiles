@@ -1,0 +1,151 @@
+# ~/.claude/settings.json リファレンス
+
+最終更新: 2026-03-24
+
+## 背景
+
+Claude Code にはローカル実行（CLI）とクラウド実行（Web）の2つの実行環境がある。
+
+クラウド実行は Anthropic のサンドボックス内で `--dangerously-skip-permissions` 相当の自律実行ができるが、`~/.claude/settings.json` や MCP サーバー等のローカル設定が読まれない。ローカル実行はその逆で、設定の自由度は高いが、デフォルトでは毎回パーミッション確認が入り作業が止まる。
+
+この設定は「クラウド実行の自律性 + ローカルの設定資産」のいいとこ取りを目指したもの。sandbox による OS レベルの分離を有効にすることで、`--dangerously-skip-permissions` なしでもほぼ止まらずに動く環境を実現している。
+
+## 設定の全体構成
+
+### sandbox
+
+```jsonc
+"sandbox": {
+  "enabled": true,                // サンドボックス有効化（macOS は Seatbelt、Linux は bubblewrap）
+  "autoAllowBashIfSandboxed": true, // sandbox 内の bash は許可プロンプトなしで自動実行
+  "allowUnsandboxedCommands": true, // sandbox 非対応コマンドは通常の許可フローにフォールバック
+  "excludedCommands": ["docker", "docker-compose", "podman"], // sandbox 内で動かないコマンド
+  ...
+}
+```
+
+sandbox は OS カーネルレベルでファイルシステムとネットワークを分離する。LLM の判断に頼る Auto Mode と異なり、物理的にアクセスをブロックするため安全性が高い。Anthropic の社内テストでは許可プロンプトが 84% 削減されたとのこと。
+
+`autoAllowBashIfSandboxed: true` がキーで、sandbox 内で実行可能な bash コマンドは承認なしで自動実行される。これにより `/sandbox` を毎回打つ必要もなくなる。
+
+`--dangerously-skip-permissions` は sandbox の制限をバイパスしない（パーミッションプロンプトをスキップするだけ）。そのため sandbox + skip-permissions は安全な組み合わせとして成立する。ただし通常のインタラクティブ開発では `claude` だけで十分で、skip-permissions は CI/CD やバッチ処理等の完全無人実行時のみ使う想定。
+
+### sandbox.filesystem
+
+```jsonc
+"filesystem": {
+  "denyRead": [
+    "~/.ssh",              // SSH 鍵
+    "~/.aws/credentials",  // AWS クレデンシャル
+    "~/.gnupg",            // GPG 鍵
+    "~/.config/gh/hosts.yml", // GitHub CLI トークン
+    "~/.netrc"             // 認証情報
+  ],
+  "allowWrite": ["/tmp"]
+}
+```
+
+sandbox のデフォルトではカレントディレクトリとサブディレクトリのみ書き込み可能で、読み取りはシステム全体。ここでは読み取りすら不要な機密ファイルを明示的にブロックしている。sandbox のバイパス事例（パストリックによる脱出等）も報告されているため、二重防御として設定。
+
+### sandbox.network
+
+```jsonc
+"network": {
+  "allowLocalBinding": true, // dev server のポートバインド許可
+  "allowedDomains": [
+    "github.com", "*.github.com",
+    "*.npmjs.org", "registry.npmjs.org", "registry.yarnpkg.com",
+    "pypi.org", "files.pythonhosted.org",
+    "crates.io", "*.crates.io",
+    "deno.land",
+    "cdn.jsdelivr.net", "unpkg.com", "esm.sh",
+    "api.anthropic.com"
+  ]
+}
+```
+
+すべてのネットワークトラフィックはプロキシ経由で、許可されたドメインのみ通信可能。クラウド実行と同等のネットワーク分離をローカルで再現している。新しいドメインが必要になったら初回だけ承認プロンプトが出て、以降は記憶される。
+
+### permissions.defaultMode
+
+```jsonc
+"defaultMode": "acceptEdits"
+```
+
+ファイル編集を自動承認するモード。bash コマンドは sandbox の autoAllow が担当するため、この組み合わせで「ファイル編集 = acceptEdits が承認」「bash = sandbox が承認」となり、ほぼ全操作がプロンプトなしで通る。
+
+Auto Mode（2026年3月12日〜リサーチプレビュー）と比較して、追加のトークンコスト・レイテンシがなく、安全性の根拠も LLM 判断ではなく OS レベル分離なのでこちらを採用。
+
+### permissions.allow
+
+```jsonc
+"allow": [
+  "Read", "Edit",          // 全ファイルの読み書き
+  "Bash(npm:*)",           // パッケージマネージャ系
+  "Bash(git:*)",           // Git 操作全般
+  "Bash(gh:*)",            // GitHub CLI
+  "Bash(git push --force-with-lease:*)", // 安全な force push のみ許可
+  "Bash(python3:*)",       // Python
+  "Bash(nix:*)",           // Nix
+  "Bash(home-manager:*)",  // Home Manager
+  "Bash(brew:*)",          // Homebrew
+  "Bash(docker run:*)",    // Docker 実行（sandbox 外でフォールバック）
+  // ... 他、開発でよく使うコマンド群
+]
+```
+
+元の設定にあったプロジェクト固有のフルパス（`/Users/nozomiishii/Code/...` や worktrees パス）はセッション中の承認蓄積だったため、sandbox 有効化に伴い汎用パターンに整理した。
+
+### permissions.deny
+
+```jsonc
+"deny": [
+  // --- .env 保護（元の設定から保持） ---
+  "Read(**/.env)", "Read(**/.env.*)",
+  "Edit(**/.env)", "Edit(**/.env.*)",
+  "Bash(*.env*)",
+
+  // --- git force push 制御 ---
+  "Bash(git push --force:*)",  // 危険：リモート履歴を破壊
+  "Bash(git push -f:*)",       // --force の短縮形
+
+  // --- GitHub PR マージ保護（元の設定から保持） ---
+  "Bash(gh pr merge:*)",
+  "Bash(gh api repos/*/pulls/*/merge*)",
+
+  // --- 危険コマンド ---
+  "Bash(sudo:*)", "Bash(su:*)",
+  "Bash(rm -rf /)", "Bash(rm -rf ~)",
+  "Bash(shutdown:*)", "Bash(reboot:*)",
+  "Bash(launchctl:*)", "Bash(diskutil:*)"
+]
+```
+
+deny ルールの評価順序: deny → ask → allow で、最初にマッチしたルールが勝つ。そのため `Bash(git:*)` で git 全般を allow しつつ、`Bash(git push --force:*)` で force push だけ deny できる。`--force-with-lease` は allow に明示的に入れているため通る。
+
+### その他
+
+```jsonc
+"enabledPlugins": { "telegram@claude-plugins-official": true }  // Telegram プラグイン
+"attribution": { "pr": "" }           // PR への Claude Code フッター非表示
+"alwaysThinkingEnabled": true         // Extended thinking を全セッションでデフォルト有効
+"cleanupPeriodDays": 90               // セッション履歴を 90 日保持（デフォルトは 30 日）
+```
+
+`alwaysThinkingEnabled` は思考トークン（アウトプットトークンとして課金）が追加されるため、単純なタスクには過剰な場合もある。セッション内で `Option+T` や `/effort` でいつでも調整可能。
+
+## 使い方
+
+```bash
+# 通常の開発（これだけでほぼ止まらず動く）
+claude
+
+# 完全無人実行（CI/CD・バッチ処理用。sandbox が効いているので安全）
+claude -p --dangerously-skip-permissions "全テストを実行して失敗を修正して"
+```
+
+## 注意事項
+
+- `settings.json` は Claude Code がセッション中に自動書き換えすることがある（パーミッション承認の蓄積等）。JSON 再シリアライズ時にコメントは消えるため、設定の意図はこのファイルに記録している
+- sandbox のバイパス事例（パストリック、sandbox 自体の無効化）が報告されているため、Git ブランチを切ってから作業させる・機密ファイルはプロジェクトディレクトリに置かない等の運用上の工夫も併用すること
+- クラウド実行（Web）では `~/.claude/settings.json` は読まれない。リポジトリ内の `.claude/settings.json` と `CLAUDE.md` のみが反映される
