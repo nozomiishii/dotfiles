@@ -63,7 +63,8 @@
       "WebFetch(domain:*.npmjs.org)",
       "WebFetch(domain:*.npmjs.com)",
       "WebFetch(domain:code.claude.com)",
-      "WebFetch(domain:docs.anthropic.com)"
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "deny": [
       "Read(**/.env)",
@@ -90,7 +91,7 @@
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": true,
-    "excludedCommands": ["docker", "docker-compose", "podman", "git"],
+    "excludedCommands": ["docker:*", "docker-compose:*", "podman:*", "git:*"],
     "filesystem": {
       "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc"],
       "allowWrite": ["/tmp", "~/.npm"]
