@@ -38,6 +38,10 @@ sudo pmset -b lessbright 0
 # Prevent your mac from sleeping automatically when the display is off
 sudo pmset -c sleep 0
 
+# Keep TCP connections alive during display sleep
+# Required for SSH/Claude Code access while screen is locked
+sudo pmset -c tcpkeepalive 1
+
 # ----------------------------------------------------------------
 # Dock
 # ----------------------------------------------------------------
