@@ -1,6 +1,6 @@
 # dotfiles
 
-[English](README.md)
+[English](README.md) | 日本語
 
 <!-- Main Image -->
 <br>
