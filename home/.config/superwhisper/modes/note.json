@@ -1,0 +1,35 @@
+{
+  "activationApps" : [
+
+  ],
+  "activationSites" : [
+
+  ],
+  "adjustOutputVolume" : false,
+  "contextFromActiveApplication" : false,
+  "contextFromClipboard" : false,
+  "contextFromSelection" : false,
+  "contextTemplate" : "Use the copied text as context to complete this task.\n\nCopied text: ",
+  "description" : "",
+  "diarize" : false,
+  "iconName" : "",
+  "key" : "note",
+  "language" : "ja",
+  "languageModelEnabled" : true,
+  "languageModelID" : "sl-1",
+  "literalPunctuation" : false,
+  "name" : "Note",
+  "pauseMediaPlayback" : false,
+  "prompt" : "",
+  "promptExamples" : [
+
+  ],
+  "realtimeOutput" : false,
+  "script" : "",
+  "scriptEnabled" : false,
+  "translateToEnglish" : false,
+  "type" : "note",
+  "useSystemAudio" : false,
+  "version" : 1,
+  "voiceModelID" : "sv-1"
+}
