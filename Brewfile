@@ -62,7 +62,7 @@ if OS.mac?
   cask "1Password"
 
   # Ghostty-based terminal with vertical tabs and notifications for AI coding agents
-  brew "manaflow-ai/cmux/cmux"
+  cask "manaflow-ai/cmux/cmux"
 
   # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
   cask "ghostty"
