@@ -62,8 +62,7 @@ if OS.mac?
   cask "1Password"
 
   # Ghostty-based terminal with vertical tabs and notifications for AI coding agents
-  tap "manaflow-ai/cmux"
-  brew "cmux"
+  brew "manaflow-ai/cmux/cmux"
 
   # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
   cask "ghostty"
@@ -168,7 +167,6 @@ if OS.mac?
   brew "duti"
 
   # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
-  tap "smudge/smudge"
   brew "smudge/smudge/nightlight"
 
   # Dependency manager for Cocoa projects https://cocoapods.org/
@@ -184,7 +182,6 @@ if OS.mac?
   brew "grpcurl"
 
   # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
-  tap "stripe/stripe-cli"
   brew "stripe/stripe-cli/stripe"
 
   # Official Amazon AWS command-line interface https://aws.amazon.com/cli/
