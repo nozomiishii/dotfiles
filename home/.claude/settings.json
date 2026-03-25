@@ -140,7 +140,7 @@
     "pr": "",
     "commit": ""
   },
-  "enabledMcpjsonServers": ["context7"],
+  "enabledMcpjsonServers": [],
   "alwaysThinkingEnabled": true,
   "cleanupPeriodDays": 90
 }
