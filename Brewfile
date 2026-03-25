@@ -61,6 +61,10 @@ if OS.mac?
   # Password manager that keeps all passwords secure behind one password. https://1password.com
   cask "1Password"
 
+  # Ghostty-based terminal with vertical tabs and notifications for AI coding agents
+  tap "manaflow-ai/cmux"
+  brew "cmux"
+
   # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
   cask "ghostty"
 
@@ -191,7 +195,6 @@ if OS.mac?
 
   # Anthropic's official Claude AI desktop app https://www.anthropic.com/
   cask "claude"
-
 
   # Replacement for Docker Desktop https://orbstack.dev/
   cask "orbstack"

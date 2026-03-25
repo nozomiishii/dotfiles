@@ -52,6 +52,10 @@ sandbox のデフォルトではカレントディレクトリとサブディレ
 ```jsonc
 "network": {
   "allowLocalBinding": true, // dev server のポートバインド許可
+  "allowUnixSockets": [
+    "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock", // 1Password SSH Agent
+    "~/Library/Application Support/cmux/cmux.sock"  // cmux IPC（ペイン間通信）
+  ],
   "allowedDomains": [
     "github.com", "*.github.com",
     "*.npmjs.org", "*.npmjs.com", "registry.yarnpkg.com",
