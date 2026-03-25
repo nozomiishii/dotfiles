@@ -60,13 +60,13 @@ make link
 - **PR タイトルは英語で記述し、CI の semantic pull request チェックに従う。** 小文字で始める英数字・記号のみ、末尾にスペースを付けない。例: `feat(darwin): use launchctl for Remote Login`. 詳細は [.github/workflows/_pull-request.yaml](.github/workflows/_pull-request.yaml) を参照。
 - **PR 作成時は `--body-file` を使用する。** HEREDOC で `--body` に直接渡すと、Markdown の `#` 見出しがコマンドインジェクション検出に引っかかり毎回承認が必要になる。代わりに一時ファイル経由で渡すこと:
   ```bash
-  # 1. body を一時ファイルに書き出す
-  cat > "$TMPDIR/pr-body.md" <<'EOF'
+  # 1. body を一時ファイルに書き出す（sandbox 内外で共通のパス）
+  cat > /tmp/pr-body.md <<'EOF'
   ## Summary
   ...
   EOF
-  # 2. --body-file で渡す
-  gh pr create --title "feat: ..." --body-file "$TMPDIR/pr-body.md"
+  # 2. --body-file で渡す（gh は sandbox 外で実行される）
+  gh pr create --title "feat: ..." --body-file /tmp/pr-body.md
   ```
 
 ## アーキテクチャ概要
