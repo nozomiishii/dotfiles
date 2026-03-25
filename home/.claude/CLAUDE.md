@@ -14,6 +14,7 @@
 ## Git
 
 - git 操作の前にブランチを確認し、main への直接コミットを避けること。
+- `cd <path> && git` の複合コマンドは使わず、`git -C <path>` を使用すること（bare repository attack 防止の sandbox 制約を回避するため）。
 
 ## 設定管理
 
