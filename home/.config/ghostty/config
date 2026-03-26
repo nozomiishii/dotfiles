@@ -19,12 +19,10 @@ macos-option-as-alt = true
 # `/Applications/Ghostty.app/Contents/Resources/ghostty/themes/GitLab Dark`
 theme = Gitlab Dark
 
-# Font
-font-size = 14
-
-# Font Family
-font-family = "PlemolJP Console NF"
-font-family = "Monaco"
+# Font (default)
+font-size = 13
+font-family = "UDEV Gothic LG"
+# font-family = "PlemolJP Console NF"
 
 # turn off ligature https://ghostty.org/docs/config/reference#font-feature
 font-feature = -calt, -liga, -dlig
