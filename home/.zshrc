@@ -21,6 +21,13 @@ source "$HOME/.zsh/alias/index.zsh"
 # Functions
 source "$HOME/.zsh/functions.zsh"
 
+# Ghostty shell integration
+# cmux が shell-integration ファイルを同梱していないため手動で読み込む
+# https://github.com/manaflow-ai/cmux/issues/177
+if [[ -n "$GHOSTTY_RESOURCES_DIR" ]]; then
+  builtin source "/Applications/Ghostty.app/Contents/Resources/ghostty/shell-integration/zsh/ghostty-integration"
+fi
+
 # kiro
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
