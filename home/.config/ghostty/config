@@ -33,10 +33,7 @@ font-feature = -calt, -liga, -dlig
 confirm-close-surface = false
 
 # Start Ghostty windows maximized
-# maximize = trueがうまく動いてないので、Run `printf '\e[18t'`で取得した画面サイズの値を使用してる
-# maximize = true
-window-height = 58
-window-width  = 204
+maximize = true
 
 # keybindings
 # shift + enter: claude codeのinputを改行
