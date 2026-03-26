@@ -94,7 +94,7 @@
     "excludedCommands": ["docker:*", "docker-compose:*", "podman:*", "git:*"],
     "filesystem": {
       "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc"],
-      "allowWrite": ["/tmp", "~/.npm"]
+      "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"]
     },
     "network": {
       "allowLocalBinding": true,
