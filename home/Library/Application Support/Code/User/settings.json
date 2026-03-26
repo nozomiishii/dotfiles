@@ -88,7 +88,7 @@
   // Terminal
   // ----------------------------------------------------------------
   "terminal.integrated.fontSize": 13,
-  "terminal.integrated.fontFamily": "UDEV Gothic LG, 'Apple Color Emoji'",
+  "terminal.integrated.fontFamily": "UDEV Gothic, 'Apple Color Emoji'",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.tabs.enabled": true,

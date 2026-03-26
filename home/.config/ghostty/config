@@ -21,7 +21,7 @@ theme = Gitlab Dark
 
 # Font (default)
 font-size = 13
-font-family = "UDEV Gothic LG"
+font-family = "UDEV Gothic"
 # font-family = "PlemolJP Console NF"
 
 # turn off ligature https://ghostty.org/docs/config/reference#font-feature
