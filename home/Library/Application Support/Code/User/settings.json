@@ -153,17 +153,18 @@
   // ----------------------------------------------------------------
   // File associations
   // ----------------------------------------------------------------
-  "files.associations": {
-    "flake.lock": "json",
-    "*.plist": "xml",
-    "vimrc": "viml",
-    ".actrc*": "properties",
-    ".tool-versions": "properties",
-    ".ssh/config": "ssh-config",
-    "Brewfile*": "ruby",
-    ".env*": "dotenv",
-    "*.ejs": "html"
-  },
+  // "files.associations": {
+  //   "flake.lock": "json",
+  //   "*.plist": "xml",
+  //   "vimrc": "viml",
+  //   ".actrc*": "properties",
+  //   ".tool-versions": "properties",
+  //   ".ssh/config": "ssh-config",
+  //   "Brewfile*": "ruby",
+  //   ".env*": "dotenv",
+  //   "*.ejs": "html",
+  //   "CODEOWNERS": "ignore"
+  // },
 
   // ----------------------------------------------------------------
   // Git
