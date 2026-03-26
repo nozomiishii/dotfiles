@@ -30,6 +30,9 @@ font-feature = -calt, -liga, -dlig
 # Show "Quit Ghostty?" dialog
 confirm-close-surface = false
 
+# New windows/tabs open in the same directory as the current terminal
+window-inherit-working-directory = true
+
 # Start Ghostty windows maximized
 maximize = true
 
