@@ -142,5 +142,9 @@
   },
   "enabledMcpjsonServers": [],
   "alwaysThinkingEnabled": true,
-  "cleanupPeriodDays": 90
+  "cleanupPeriodDays": 90,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  }
 }
