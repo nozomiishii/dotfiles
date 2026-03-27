@@ -36,6 +36,9 @@ window-inherit-working-directory = true
 # Start Ghostty windows maximized
 maximize = true
 
+# Restore window state (size, position, tabs) from the previous session
+window-save-state = always
+
 # keybindings
 # shift + enter: claude codeのinputを改行
 keybind = shift+enter=text:\n
