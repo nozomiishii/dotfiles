@@ -46,8 +46,8 @@ z!() {
 # ----------------------------------------------------------------
 alias c="claude"
 alias cr="claude --resume"
+alias ct="claude --teleport"
 alias cw="claude --worktree"
-alias cwr="claude --worktree --resume"
 
 # ----------------------------------------------------------------
 # git
