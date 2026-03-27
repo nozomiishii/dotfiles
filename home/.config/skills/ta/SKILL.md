@@ -14,13 +14,13 @@ description: >-
 現在のブランチが `main` でない場合、そのブランチに紐づく PR の状態を確認する:
 
 - `gh pr view --json state` を実行
-- **MERGED / CLOSED**: `main` に切り替えて新規ブランチを作成する
+- **MERGED / CLOSED**: `origin/main` から新規ブランチを作成する（`git checkout -b <branch> origin/main`）
 - **OPEN**: 既存ブランチ・PR を再利用し、追加コミットとして push する（新規 PR は作成しない）
 - **PR が存在しない**: そのブランチをそのまま使い、新規 PR を作成する
 
 ## 1. ブランチ作成（必要な場合のみ）
 
-ステップ 0 で新規作成が必要と判断された場合、`main` から変更内容に適したブランチを新規作成する。
+ステップ 0 で新規作成が必要と判断された場合、`origin/main` から変更内容に適したブランチを新規作成する。worktree でも動作するよう `git checkout main` は使わず、`git fetch origin main && git checkout -b <branch> origin/main` を使用する。
 
 ## 2. コミット・push
 
