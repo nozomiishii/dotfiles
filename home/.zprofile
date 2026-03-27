@@ -1,5 +1,3 @@
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.pre.zsh"
 OS_NAME="$(uname -s)"
 
 # Homebrew
@@ -52,6 +50,3 @@ export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
 # This won't be added again if you remove it.
 # shellcheck disable=SC1090
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zprofile.post.zsh"
