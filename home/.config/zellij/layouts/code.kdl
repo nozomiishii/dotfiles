@@ -87,6 +87,18 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
+    tab name="git-harvest" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="vertical" {
+            pane cwd="Code/nozomiishii/git-harvest" size="50%"
+            pane cwd="Code/nozomiishii/git-harvest" size="50%"
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
     tab name="nozomiishii" hide_floating_panes=true {
         pane size=1 borderless=true {
             plugin location="zellij:tab-bar"
