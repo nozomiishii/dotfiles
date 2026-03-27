@@ -1,5 +1,3 @@
-# Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 # starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
@@ -27,9 +25,6 @@ source "$HOME/.zsh/functions.zsh"
 if [[ -n "$GHOSTTY_RESOURCES_DIR" ]]; then
   builtin source "/Applications/Ghostty.app/Contents/Resources/ghostty/shell-integration/zsh/ghostty-integration"
 fi
-
-# kiro
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 # pm - VS Code Project Manager CLI
 export PM_CONFIG="$HOME/Code/nozomiishii/workspaces/projects.json"
@@ -60,17 +55,3 @@ if command -v uv >/dev/null; then
   eval "$(uvx --generate-shell-completion zsh)"
 fi
 
-# Amazon Q
-if command -v q >/dev/null 2>&1; then
-  # qコマンドはcursorのプロセス中断と被るため、コマンドをamazonqに変更
-  function amazonq() { command q "$@"; }
-
-  # qコマンドの無効
-  function q() {
-    local -r EXIT_CODE_COMMAND_NOT_FOUND=127
-    return $EXIT_CODE_COMMAND_NOT_FOUND
-  }
-fi
-
-# Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"

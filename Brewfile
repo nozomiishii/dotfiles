@@ -45,9 +45,6 @@ if OS.mac?
   # GitHub command-line tool. https://github.com/cli/cli
   brew "gh"
 
-  # AI-powered productivity tool for the command-line https://aws.amazon.com/q/developer/
-  cask "kiro-cli"
-
   # ----------------------------------------------------------------
   # OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager https://tofuutils.github.io/tenv/
   brew "tenv"

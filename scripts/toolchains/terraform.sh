@@ -21,7 +21,6 @@ tenv tg install latest-stable
 echo "- 🛰️ Terraform $(terraform -version)"
 
 echo '- 🛰️ Install Terraform autocomplete'
-# amazon qだと`terraform state <subcommand>`みたいなsubcommandのsubcommandまで補完してくれない
 terraform -install-autocomplete
 
 echo "🛰️ Terraform setup is complete 🎉"
