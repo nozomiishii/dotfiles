@@ -35,6 +35,7 @@ cursor_extensions=(
   ts
   tsx
   svg
+  pem
 )
 
 for ext in "${cursor_extensions[@]}"; do
