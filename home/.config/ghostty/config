@@ -48,3 +48,6 @@ keybind = shift+enter=text:\n
 
 # undo
 keybind = super+z=text:\x1f
+
+# pm
+keybind = super+alt+j=text:pm\n
