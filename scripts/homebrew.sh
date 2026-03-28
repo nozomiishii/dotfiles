@@ -21,10 +21,22 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
     echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
     brew update --force --quiet
     brew upgrade --quiet || {
-      echo "brew upgrade had link errors, fixing..."
-      for formula in $(brew list --formula); do
-        brew link --overwrite "$formula" 2>/dev/null || true
-      done
+      # CI 環境でのみリンク競合を修復する。
+      # GitHub Actions の macOS ランナーはイメージビルド時に Homebrew パッケージを
+      # プリインストールしているが、その後 Homebrew リポジトリに新バージョンが
+      # リリースされると、イメージに焼き込まれた旧バージョンの残骸ファイルが
+      # /opt/homebrew/ に残ったまま brew upgrade が走り、brew link が
+      # "already exists" で失敗する。
+      # ローカル環境では Homebrew が一貫してパッケージを管理しているため
+      # この問題は発生しない。
+      if [ "${CI:-false}" = "true" ]; then
+        echo "brew upgrade had link errors on CI, fixing..."
+        for formula in $(brew list --formula); do
+          brew link --overwrite "$formula" 2>/dev/null || true
+        done
+      else
+        exit 1
+      fi
     }
   fi
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -37,10 +49,14 @@ elif [[ "${OS_NAME}" == "Linux" ]]; then
     echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
     brew update --force --quiet
     brew upgrade --quiet || {
-      echo "brew upgrade had link errors, fixing..."
-      for formula in $(brew list --formula); do
-        brew link --overwrite "$formula" 2>/dev/null || true
-      done
+      if [ "${CI:-false}" = "true" ]; then
+        echo "brew upgrade had link errors on CI, fixing..."
+        for formula in $(brew list --formula); do
+          brew link --overwrite "$formula" 2>/dev/null || true
+        done
+      else
+        exit 1
+      fi
     }
   fi
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -64,13 +80,13 @@ while [ "$attempt" -le "$max_attempts" ]; do
     exit 1
   fi
 
-  # Fix brew link failures caused by pre-installed packages on CI runners.
-  # GitHub Actions macOS runners ship with many Homebrew formulae that conflict
-  # with the ones in our Brewfile, causing "brew link" to fail.
-  echo "Fixing brew link conflicts before retry..."
-  for formula in $(brew list --formula); do
-    brew link --overwrite "$formula" 2>/dev/null || true
-  done
+  # CI 環境でのみリンク競合を修復してからリトライする（理由は brew upgrade 側のコメント参照）。
+  if [ "${CI:-false}" = "true" ]; then
+    echo "Fixing brew link conflicts before retry..."
+    for formula in $(brew list --formula); do
+      brew link --overwrite "$formula" 2>/dev/null || true
+    done
+  fi
 
   sleep "$((backoff_base * attempt))"
   attempt="$((attempt + 1))"
