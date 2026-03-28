@@ -53,6 +53,15 @@ while [ "$attempt" -le "$max_attempts" ]; do
     echo "brew bundle failed after ${max_attempts} attempts"
     exit 1
   fi
+
+  # Fix brew link failures caused by pre-installed packages on CI runners.
+  # GitHub Actions macOS runners ship with many Homebrew formulae that conflict
+  # with the ones in our Brewfile, causing "brew link" to fail.
+  echo "Fixing brew link conflicts before retry..."
+  for formula in $(brew list --formula); do
+    brew link --overwrite "$formula" 2>/dev/null || true
+  done
+
   sleep "$((backoff_base * attempt))"
   attempt="$((attempt + 1))"
 done
