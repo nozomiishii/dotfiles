@@ -21,7 +21,7 @@ OS_NAME="$(uname -s)"
 # ref: https://github.com/nozomiishii/dotfiles/pull/725
 fix_brew_link_conflicts() {
   if [ "${CI:-false}" != "true" ]; then
-    return 1
+    return 0
   fi
   echo "Fixing brew link conflicts on CI..."
   for formula in $(brew list --formula); do
@@ -38,7 +38,7 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   else
     echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
     brew update --force --quiet
-    brew upgrade --quiet || fix_brew_link_conflicts
+    brew upgrade --quiet || { fix_brew_link_conflicts && brew upgrade --quiet; }
   fi
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [[ "${OS_NAME}" == "Linux" ]]; then
@@ -49,7 +49,7 @@ elif [[ "${OS_NAME}" == "Linux" ]]; then
   else
     echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
     brew update --force --quiet
-    brew upgrade --quiet || fix_brew_link_conflicts
+    brew upgrade --quiet || { fix_brew_link_conflicts && brew upgrade --quiet; }
   fi
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
@@ -72,7 +72,7 @@ while [ "$attempt" -le "$max_attempts" ]; do
     exit 1
   fi
 
-  fix_brew_link_conflicts || true
+  fix_brew_link_conflicts
 
   sleep "$((backoff_base * attempt))"
   attempt="$((attempt + 1))"
