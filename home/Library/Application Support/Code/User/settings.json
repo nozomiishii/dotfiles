@@ -576,7 +576,12 @@
   // Claude Code
   // ----------------------------------------------------------------
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.selectedModel": "opus"
+  "claudeCode.selectedModel": "opus",
+  "files.associations": {
+    "*.ejs": "html",
+    "flake.lock": "json",
+    ".env*": "dotenv"
+  }
 
   ///////////////////////////////////////////////////////////////////
 }
