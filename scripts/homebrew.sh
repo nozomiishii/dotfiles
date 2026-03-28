@@ -20,7 +20,12 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   else
     echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
     brew update --force --quiet
-    brew upgrade --quiet
+    brew upgrade --quiet || {
+      echo "brew upgrade had link errors, fixing..."
+      for formula in $(brew list --formula); do
+        brew link --overwrite "$formula" 2>/dev/null || true
+      done
+    }
   fi
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [[ "${OS_NAME}" == "Linux" ]]; then
@@ -31,7 +36,12 @@ elif [[ "${OS_NAME}" == "Linux" ]]; then
   else
     echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
     brew update --force --quiet
-    brew upgrade --quiet
+    brew upgrade --quiet || {
+      echo "brew upgrade had link errors, fixing..."
+      for formula in $(brew list --formula); do
+        brew link --overwrite "$formula" 2>/dev/null || true
+      done
+    }
   fi
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
