@@ -11,6 +11,24 @@ set -Ceuo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OS_NAME="$(uname -s)"
 
+# CI 環境でのみ brew link の競合を修復する。
+# GitHub Actions の macOS ランナーはイメージビルド時に Homebrew パッケージを
+# プリインストールしているが、その後 Homebrew リポジトリに新バージョンが
+# リリースされると、イメージに焼き込まれた旧バージョンの残骸ファイルが
+# /opt/homebrew/ に残ったまま brew upgrade / brew bundle が走り、brew link が
+# "already exists" で失敗する。
+# ローカル環境では Homebrew が一貫してパッケージを管理しているためこの問題は発生しない。
+# ref: https://github.com/nozomiishii/dotfiles/pull/725
+fix_brew_link_conflicts() {
+  if [ "${CI:-false}" != "true" ]; then
+    return 0
+  fi
+  echo "Fixing brew link conflicts on CI..."
+  for formula in $(brew list --formula); do
+    brew link --overwrite "$formula" 2>/dev/null || true
+  done
+}
+
 if [[ "$OS_NAME" == "Darwin" ]]; then
   if ! command -v brew >/dev/null 2>&1; then
     echo -e "🍺 Installing Homebrew for Apple Silicon"
@@ -20,7 +38,7 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   else
     echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
     brew update --force --quiet
-    brew upgrade --quiet
+    brew upgrade --quiet || { fix_brew_link_conflicts && brew upgrade --quiet; }
   fi
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [[ "${OS_NAME}" == "Linux" ]]; then
@@ -31,7 +49,7 @@ elif [[ "${OS_NAME}" == "Linux" ]]; then
   else
     echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
     brew update --force --quiet
-    brew upgrade --quiet
+    brew upgrade --quiet || { fix_brew_link_conflicts && brew upgrade --quiet; }
   fi
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
@@ -53,6 +71,9 @@ while [ "$attempt" -le "$max_attempts" ]; do
     echo "brew bundle failed after ${max_attempts} attempts"
     exit 1
   fi
+
+  fix_brew_link_conflicts
+
   sleep "$((backoff_base * attempt))"
   attempt="$((attempt + 1))"
 done
