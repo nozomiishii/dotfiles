@@ -133,9 +133,7 @@
       }
     ]
   },
-  "enabledPlugins": {
-    "telegram@claude-plugins-official": true
-  },
+  "enabledPlugins": {},
   "attribution": {
     "pr": "",
     "commit": ""
