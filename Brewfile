@@ -241,9 +241,6 @@ if OS.mac?
   # Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
   cask "bleunlock"
 
-  # Screen Saver by Pedro Carrasco. https://github.com/pedrommcarrasco/Brooklyn
-  cask "brooklyn"
-
   # Tool for using an iPad as a second display https://www.duetdisplay.com/
   cask "duet"
 
