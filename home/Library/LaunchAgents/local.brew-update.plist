@@ -13,7 +13,7 @@
     <string>exec "$HOME/dotfiles/scripts/darwin/brew_update.sh"</string>
   </array>
 
-  <!-- 毎日 07:00 に実行 -->
+  <!-- 毎日 07:00 に実行（Night Shift が一瞬解除されるタイミングに合わせている） -->
   <key>StartCalendarInterval</key>
   <dict>
     <key>Hour</key>
