@@ -59,6 +59,7 @@ alias ghp="gh pr view --web"
 alias ghpc="gh pr create --assignee @me --web"
 alias grmb="git branch --merged|egrep -v '\*|master|main|dev|develop|development|stag|staging|prod|production'|xargs git branch -d && git fetch --prune"
 alias gsta="git stash -u"
+alias ghv="git-harvest"
 
 # ----------------------------------------------------------------
 # Docker
