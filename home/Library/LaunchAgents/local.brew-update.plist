@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.brew-update</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-l</string>
+    <string>-c</string>
+    <string>exec "$HOME/dotfiles/scripts/darwin/brew_update.sh"</string>
+  </array>
+
+  <!-- 毎日 07:00 に実行（Night Shift が一瞬解除されるタイミングに合わせている） -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>7</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/dev/null</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/brew-update.log</string>
+</dict>
+</plist>
