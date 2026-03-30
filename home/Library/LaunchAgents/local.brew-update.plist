@@ -13,11 +13,11 @@
     <string>exec "$HOME/dotfiles/scripts/darwin/brew_update.sh"</string>
   </array>
 
-  <!-- 毎日 06:00 に実行 -->
+  <!-- 毎日 07:00 に実行 -->
   <key>StartCalendarInterval</key>
   <dict>
     <key>Hour</key>
-    <integer>6</integer>
+    <integer>7</integer>
     <key>Minute</key>
     <integer>0</integer>
   </dict>
