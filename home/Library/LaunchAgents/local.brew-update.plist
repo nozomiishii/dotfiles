@@ -8,7 +8,9 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>/Users/nozomiishii/dotfiles/scripts/darwin/brew_update.sh</string>
+    <string>-l</string>
+    <string>-c</string>
+    <string>exec "$HOME/dotfiles/scripts/darwin/brew_update.sh"</string>
   </array>
 
   <!-- 毎日 06:00 に実行 -->
