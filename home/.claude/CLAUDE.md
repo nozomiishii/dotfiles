@@ -16,6 +16,10 @@
 - git 操作の前にブランチを確認し、main への直接コミットを避けること。
 - `cd <path> && git` の複合コマンドは使わず、`git -C <path>` を使用すること（bare repository attack 防止の sandbox 制約を回避するため）。
 
+## GitHub Issue 検索
+
+- Closed as duplicate の Issue は結果に含めない。duplicate chain を辿って、現在 Open の canonical issue を返すこと。
+
 ## コミュニケーション
 
 - すぐに結論や解決策を出さず、ユーザーと議論しながら段階的に進めること。質問を投げかけたり仮説を共有しながら、一緒に考える姿勢で。
