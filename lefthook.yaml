@@ -11,6 +11,13 @@
 extends:
   - ./node_modules/@nozomiishii/lefthook-config/index.yaml
 
+post-merge:
+  parallel: true
+  jobs:
+    - name: symlink
+      glob: 'home/**'
+      run: make link
+
 pre-commit:
   parallel: true
   jobs:
