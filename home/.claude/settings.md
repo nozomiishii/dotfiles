@@ -75,12 +75,10 @@ sandbox のデフォルトではカレントディレクトリとサブディレ
 ### permissions.defaultMode
 
 ```jsonc
-"defaultMode": "acceptEdits"
+"defaultMode": "auto"
 ```
 
-ファイル編集を自動承認するモード。bash コマンドは sandbox の autoAllow が担当するため、この組み合わせで「ファイル編集 = acceptEdits が承認」「bash = sandbox が承認」となり、ほぼ全操作がプロンプトなしで通る。
-
-Auto Mode（2026年3月12日〜リサーチプレビュー）と比較して、追加のトークンコスト・レイテンシがなく、安全性の根拠も LLM 判断ではなく OS レベル分離なのでこちらを採用。
+Auto Mode をデフォルトに設定。バックグラウンドで安全性チェックを行いつつ、ほとんどの操作を自動承認する。sandbox による OS レベル分離と組み合わせることで、二重の安全層を確保している。
 
 ### permissions.allow
 
