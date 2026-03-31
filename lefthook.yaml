@@ -8,6 +8,7 @@
 #   pnpx lefthook run --verbose pre-commit
 #   pnpx lefthook run --verbose commit-msg
 #   pnpx lefthook run --verbose post-merge
+#   pnpx lefthook run --verbose pre-push
 extends:
   - ./node_modules/@nozomiishii/lefthook-config/index.yaml
 
@@ -17,6 +18,12 @@ post-merge:
     - name: symlink
       glob: 'home/**'
       run: make link
+
+pre-push:
+  parallel: true
+  jobs:
+    - name: check-pr-not-merged
+      run: bash scripts/check-pr-not-merged.sh
 
 pre-commit:
   parallel: true
