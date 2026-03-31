@@ -23,7 +23,7 @@
   </dict>
 
   <key>StandardOutPath</key>
-  <string>/dev/null</string>
+  <string>/tmp/brew-update.log</string>
   <key>StandardErrorPath</key>
   <string>/tmp/brew-update.log</string>
 </dict>
