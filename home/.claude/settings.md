@@ -75,10 +75,10 @@ sandbox のデフォルトではカレントディレクトリとサブディレ
 ### permissions.defaultMode
 
 ```jsonc
-"defaultMode": "auto"
+"defaultMode": "plan"
 ```
 
-Auto Mode をデフォルトに設定。バックグラウンドで安全性チェックを行いつつ、ほとんどの操作を自動承認する。sandbox による OS レベル分離と組み合わせることで、二重の安全層を確保している。
+Plan Mode をデフォルトに設定。セッション開始時は読み取り専用で議論・計画に集中し、実装準備ができたら `shift+tab` で実行モードに切り替える。議論→仕様固め→実装のワークフローに最適化。
 
 ### permissions.allow
 
