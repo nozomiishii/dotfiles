@@ -1,6 +1,6 @@
 {
   "permissions": {
-    "defaultMode": "auto",
+    "defaultMode": "plan",
     "allow": [
       "Read",
       "Edit",
