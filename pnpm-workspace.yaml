@@ -18,4 +18,6 @@ savePrefix: ''
 
 # 公開から3日未満のバージョンをインストールしない（サプライチェーン攻撃対策）
 # https://pnpm.io/settings#minimumreleaseage
-minimumReleaseAge: 4320
+# NOTE: transitive dependency の再解決時にフォールバックが効かない pnpm のバグにより一時無効化
+# https://github.com/pnpm/pnpm/issues/11068
+# minimumReleaseAge: 4320
