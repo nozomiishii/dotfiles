@@ -12,14 +12,14 @@ importers:
         specifier: 0.0.9
         version: 0.0.9(@types/node@25.5.0)(conventional-commits-parser@6.4.0)(typescript@6.0.2)
       '@nozomiishii/lefthook-config':
-        specifier: 0.3.5
-        version: 0.3.5(lefthook@2.1.4)
+        specifier: 0.3.6
+        version: 0.3.6(lefthook@2.1.4)
       '@nozomiishii/markdownlint-cli2-config':
         specifier: 0.3.5
         version: 0.3.5
       '@nozomiishii/postinstall':
-        specifier: 0.0.6
-        version: 0.0.6
+        specifier: 0.0.7
+        version: 0.0.7
       '@nozomiishii/prettier-config':
         specifier: 0.7.2
         version: 0.7.2
@@ -141,8 +141,8 @@ packages:
     resolution: {integrity: sha512-xgdRCVfYmTGmwQX4lZcQKXuwaS0dS/SmvolrqbAItSSm1J1ji8w3c7zefeg16YlNbGjIisOv/xZdcJh5AjgE3g==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@0.3.5':
-    resolution: {integrity: sha512-9/E8zcpDoyKD8XlaJqafyRZ6/MRfwiGWjtkDv4E3plkertWtBmx2ljPuATqSLboyUIW1QN5QfpNgU9CKKwEOjw==}
+  '@nozomiishii/lefthook-config@0.3.6':
+    resolution: {integrity: sha512-aXdSzgSkgtUY2Obt7qj5tOhZous3wmSmu3RZRzFRZutEoXgljuxqH4Q237YB0KgVl2RcR/tHEp7a6dRj238WPw==}
     hasBin: true
     peerDependencies:
       lefthook: '>=2.1.4'
@@ -151,8 +151,8 @@ packages:
     resolution: {integrity: sha512-5YZjv3i0MMexmGpa4L6spTHSUGCAAl541brOoqJaG6m9TEXIZW1zZ4Dd2cKl3Egmes5zv/vmfrc6JcRyVmR3qQ==}
     hasBin: true
 
-  '@nozomiishii/postinstall@0.0.6':
-    resolution: {integrity: sha512-BIPFLSKsFYOPuX1HJQwl/XzNgUBw/GFViM1iZYaPgGphd5AmHl+UUNKgqeai18IvGGxDg1Eq6UwGKfdaLBp9hg==}
+  '@nozomiishii/postinstall@0.0.7':
+    resolution: {integrity: sha512-p7tVsV9RS83PSfStoL5Z12+T0H5NLlWhUV4A9owccfKwiusiWQeNSzPtreaAxKhXpHv13omZ6BRHHmFXVT+bVQ==}
     hasBin: true
 
   '@nozomiishii/prettier-config@0.7.2':
@@ -241,6 +241,10 @@ packages:
 
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+
+  commander@14.0.3:
+    resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
+    engines: {node: '>=20'}
 
   commander@8.3.0:
     resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
@@ -350,9 +354,9 @@ packages:
       picomatch:
         optional: true
 
-  figlet@1.8.2:
-    resolution: {integrity: sha512-iPCpE9B/rOcjewIzDnagP9F2eySzGeHReX8WlrZQJkqFBk2wvq8gY0c6U6Hd2y9HnX1LQcYSeP7aEHoPt6sVKQ==}
-    engines: {node: '>= 0.4.0'}
+  figlet@1.11.0:
+    resolution: {integrity: sha512-EEx3OS/l2bFqcUNN2NM9FPJp8vAMrgbCxsbl2hbcJNNxOEwVe3mEzrhan7TbJQViZa8mMqhihlbCaqD+LyYKTQ==}
+    engines: {node: '>= 17.0.0'}
     hasBin: true
 
   fill-range@7.1.1:
@@ -831,8 +835,8 @@ packages:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
 
-  zx@8.8.1:
-    resolution: {integrity: sha512-qvsKBnvWHstHKCluKPlEgI/D3+mdiQyMoSSeFR8IX/aXzWIas5A297KxKgPJhuPXdrR6ma0Jzx43+GQ/8sqbrw==}
+  zx@8.8.5:
+    resolution: {integrity: sha512-SNgDF5L0gfN7FwVOdEFguY3orU5AkfFZm9B5YSHog/UDHv+lvmd82ZAsOenOkQixigwH2+yyH198AwNdKhj+RA==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -996,7 +1000,7 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@0.3.5(lefthook@2.1.4)':
+  '@nozomiishii/lefthook-config@0.3.6(lefthook@2.1.4)':
     dependencies:
       lefthook: 2.1.4
 
@@ -1006,10 +1010,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nozomiishii/postinstall@0.0.6':
+  '@nozomiishii/postinstall@0.0.7':
     dependencies:
-      figlet: 1.8.2
-      zx: 8.8.1
+      figlet: 1.11.0
+      zx: 8.8.5
 
   '@nozomiishii/prettier-config@0.7.2':
     dependencies:
@@ -1086,6 +1090,8 @@ snapshots:
       color-name: 1.1.4
 
   color-name@1.1.4: {}
+
+  commander@14.0.3: {}
 
   commander@8.3.0: {}
 
@@ -1177,7 +1183,9 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.4
 
-  figlet@1.8.2: {}
+  figlet@1.11.0:
+    dependencies:
+      commander: 14.0.3
 
   fill-range@7.1.1:
     dependencies:
@@ -1730,4 +1738,4 @@ snapshots:
       y18n: 5.0.8
       yargs-parser: 21.1.1
 
-  zx@8.8.1: {}
+  zx@8.8.5: {}
