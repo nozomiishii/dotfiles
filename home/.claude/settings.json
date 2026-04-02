@@ -86,7 +86,6 @@
       "Bash(launchctl:*)",
       "Bash(diskutil:*)",
       "Bash(op:*)",
-      "Bash(op :*)",
       "Bash(dig:*)",
       "Bash(nslookup:*)",
       "Bash(host:*)"
