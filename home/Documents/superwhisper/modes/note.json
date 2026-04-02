@@ -5,7 +5,7 @@
   "activationSites" : [
 
   ],
-  "adjustOutputVolume" : false,
+  "autocapitalizeInsert" : true,
   "contextFromActiveApplication" : false,
   "contextFromClipboard" : false,
   "contextFromSelection" : false,
@@ -16,10 +16,10 @@
   "key" : "note",
   "language" : "ja",
   "languageModelEnabled" : true,
-  "languageModelID" : "sl-1",
+  "languageModelID" : "gemini-3-flash-preview",
   "literalPunctuation" : false,
   "name" : "Note",
-  "pauseMediaPlayback" : false,
+  "playbackBehavior" : "keepPlaying",
   "prompt" : "",
   "promptExamples" : [
 
@@ -31,5 +31,5 @@
   "type" : "note",
   "useSystemAudio" : false,
   "version" : 1,
-  "voiceModelID" : "sv-1"
+  "voiceModelID" : "sw-ultra-cloud-v1-east"
 }
