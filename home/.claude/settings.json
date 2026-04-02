@@ -91,7 +91,7 @@
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
     "allowUnsandboxedCommands": true,
-    "excludedCommands": ["docker:*", "docker-compose:*", "podman:*", "git:*"],
+    "excludedCommands": ["docker:*", "docker-compose:*", "podman:*", "git:*", "gh:*"],
     "filesystem": {
       "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc"],
       "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"]
