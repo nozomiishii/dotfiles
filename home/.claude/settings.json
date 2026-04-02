@@ -84,7 +84,11 @@
       "Bash(shutdown:*)",
       "Bash(reboot:*)",
       "Bash(launchctl:*)",
-      "Bash(diskutil:*)"
+      "Bash(diskutil:*)",
+      "Bash(op:*)",
+      "Bash(dig:*)",
+      "Bash(nslookup:*)",
+      "Bash(host:*)"
     ]
   },
   "sandbox": {
@@ -93,7 +97,7 @@
     "allowUnsandboxedCommands": true,
     "excludedCommands": ["docker:*", "docker-compose:*", "podman:*", "git:*", "gh:*"],
     "filesystem": {
-      "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc"],
+      "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc", "~/.config/op"],
       "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"]
     },
     "network": {
@@ -133,6 +137,16 @@
       }
     ],
     "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/block-op-cli.sh",
+            "timeout": 5
+          }
+        ]
+      },
       {
         "matcher": "*",
         "hooks": [
