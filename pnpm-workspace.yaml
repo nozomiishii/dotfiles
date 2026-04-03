@@ -21,3 +21,6 @@ savePrefix: ''
 # NOTE: transitive dependency の再解決時にフォールバックが効かない pnpm のバグにより一時無効化
 # https://github.com/pnpm/pnpm/issues/11068
 # minimumReleaseAge: 4320
+
+# ログ出力形式をカスタマイズ
+reporter: append-only
