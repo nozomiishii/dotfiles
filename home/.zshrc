@@ -34,6 +34,9 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh"
 # git-harvest
 export PATH="${XDG_BIN_HOME:-$HOME/.local/bin}:$PATH"
 
+# Claude Code
+export CLAUDE_CODE_NO_FLICKER=1
+
 # direnv
 if command -v direnv >/dev/null; then
   eval "$(direnv hook zsh)"
