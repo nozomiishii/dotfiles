@@ -36,6 +36,9 @@ brew "fzf"
 # macOS-only packages
 # ----------------------------------------------------------------
 if OS.mac?
+  # Apple Brooklyn event inspired screen saver for Apple Silicon https://github.com/nozomiishii/Brooklyn
+  cask "nozomiishii/tap/brooklyn"
+
   # ----------------------------------------------------------------
   # FIXME: 以下も入れたいけど, dev containerに入れようとするとエラーになる
   # ----------------------------------------------------------------
