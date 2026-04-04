@@ -29,6 +29,9 @@ brew "hadolint"
 # Remote desktop app https://jumpdesktop.com/connect/
 cask "jump-desktop-connect"
 
+# Command-line fuzzy finder written in Go https://github.com/junegunn/fzf
+brew "fzf"
+
 # ----------------------------------------------------------------
 # macOS-only packages
 # ----------------------------------------------------------------
