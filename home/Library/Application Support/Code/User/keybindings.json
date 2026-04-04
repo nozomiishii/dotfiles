@@ -113,6 +113,13 @@
   // ----------------------------------------------------------------
   // Terminal
   // ----------------------------------------------------------------
+  // cmd+jはターミナルと競合するためオフ。
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel",
+    "when": "!isAuxiliaryWindowFocusedContext"
+  },
+
   // Terminal起動してなかったら新しく起動する
   {
     "key": "alt+cmd+j",
@@ -171,7 +178,7 @@
     "command": "workbench.action.terminal.sendSequence",
     "args": { "text": "\u001f" },
     "when": "terminalFocus"
-  }
+  },
 
   // ----------------------------------------------------------------
   // Zellij
