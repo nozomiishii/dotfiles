@@ -37,6 +37,7 @@ brew "fzf"
 # ----------------------------------------------------------------
 if OS.mac?
   # Apple Brooklyn event inspired screen saver for Apple Silicon https://github.com/nozomiishii/Brooklyn
+  tap "nozomiishii/tap"
   cask "nozomiishii/tap/brooklyn"
 
   # ----------------------------------------------------------------
