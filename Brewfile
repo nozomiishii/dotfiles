@@ -175,6 +175,9 @@ if OS.mac?
   # Dependency manager for Cocoa projects https://cocoapods.org/
   brew "cocoapods"
 
+  # Generate your Xcode project from a spec file and your folder structure https://github.com/yonaskolb/XcodeGen
+  brew "xcodegen"
+
   # Play, record, convert, and stream audio and video https://ffmpeg.org/
   brew "ffmpeg"
 
