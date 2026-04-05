@@ -89,10 +89,11 @@ macOS と Linux で開発環境のセットアップを自動化する dotfiles 
    - シェル設定: `.zshrc`、`.zprofile`、`.zsh/` ディレクトリ
    - アプリ設定: 主に `.config/`（XDG Base Directory 準拠）
    - macOS アプリデータ: VS Code、Xcode 設定は `Library/` に配置
+   - Claude Code 設定: `home/.claude/`（CLAUDE.md、settings.json、hooks、skills）
 
 ### 重要なパターン
 
-- **Stow の使い方**: `home/` 内の dotfiles は GNU Stow で `~` にシンボリックリンクされる。`~/` 配下のファイルを新規作成・編集する前に、まず `home/` に対応するソースがないか確認し、あればそちらを編集すること。`~` に直接ファイルを作成・変更しない。
+- **Stow の使い方**: `home/` 内の dotfiles は GNU Stow で `~` にシンボリックリンクされる。`~/` 配下のファイルを新規作成・編集する前に、まず `home/` に対応するソースがないか確認し、あればそちらを編集すること。`~` に直接ファイルを作成・変更しない。特に `~/.claude/CLAUDE.md`（グローバル指示）の実体は `home/.claude/CLAUDE.md` にある。
 - **パッケージ管理**: システムパッケージは Homebrew（`Brewfile`）、Node.js は pnpm を使用。
 - **Git フック**: lefthook で管理（`lefthook.yaml` で設定）。
 - **コード品質**: Prettier（フォーマット）、commitlint（コミットメッセージ）、markdownlint（ドキュメント）。
