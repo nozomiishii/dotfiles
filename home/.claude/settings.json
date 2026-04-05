@@ -29,6 +29,7 @@
       "Bash(touch:*)",
       "Bash(chmod:*)",
       "Bash(echo:*)",
+      "Bash(pbcopy:*)",
       "Bash(printf:*)",
       "Bash(sed:*)",
       "Bash(awk:*)",
