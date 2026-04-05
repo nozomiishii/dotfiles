@@ -107,6 +107,9 @@ if OS.mac?
   # YAML Parser https://github.com/yaml/libyaml
   brew "libyaml"
 
+  # Dependency manager that installs and runs Swift command-line tool packages https://github.com/yonaskolb/Mint
+  brew "mint"
+
   # ----------------------------------------------------------------
   # Node
   # ----------------------------------------------------------------
