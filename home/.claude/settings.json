@@ -1,6 +1,13 @@
 {
+  "cleanupPeriodDays": 90,
+  "env": {
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
-    "defaultMode": "plan",
     "allow": [
       "Read",
       "Edit",
@@ -90,42 +97,10 @@
       "Bash(dig:*)",
       "Bash(nslookup:*)",
       "Bash(host:*)"
-    ]
+    ],
+    "defaultMode": "plan"
   },
-  "sandbox": {
-    "enabled": true,
-    "autoAllowBashIfSandboxed": true,
-    "allowUnsandboxedCommands": true,
-    "excludedCommands": ["docker:*", "docker-compose:*", "podman:*", "git:*", "gh:*", "make:*", "mint:*"],
-    "filesystem": {
-      "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc", "~/.config/op"],
-      "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"]
-    },
-    "network": {
-      "allowLocalBinding": true,
-      "allowUnixSockets": [
-        "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock",
-        "~/Library/Application Support/cmux/cmux.sock"
-      ],
-      "allowedDomains": [
-        "github.com",
-        "*.github.com",
-        "*.npmjs.org",
-        "registry.yarnpkg.com",
-        "pypi.org",
-        "files.pythonhosted.org",
-        "crates.io",
-        "*.crates.io",
-        "deno.land",
-        "cdn.jsdelivr.net",
-        "unpkg.com",
-        "esm.sh",
-        "api.anthropic.com",
-        "*.npmjs.com",
-        "github.blog"
-      ]
-    }
-  },
+  "enabledMcpjsonServers": [],
   "hooks": {
     "SessionStart": [
       {
@@ -160,20 +135,47 @@
       }
     ]
   },
-  "env": {
-    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
-  },
-  "enabledPlugins": {},
-  "attribution": {
-    "pr": "",
-    "commit": ""
-  },
-  "enabledMcpjsonServers": [],
-  "spinnerTipsEnabled": false,
-  "alwaysThinkingEnabled": true,
-  "cleanupPeriodDays": 90,
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
-  }
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "*.github.com",
+        "*.npmjs.org",
+        "registry.yarnpkg.com",
+        "pypi.org",
+        "files.pythonhosted.org",
+        "crates.io",
+        "*.crates.io",
+        "deno.land",
+        "cdn.jsdelivr.net",
+        "unpkg.com",
+        "esm.sh",
+        "api.anthropic.com",
+        "*.npmjs.com",
+        "github.blog"
+      ],
+      "allowUnixSockets": [
+        "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock",
+        "~/Library/Application Support/cmux/cmux.sock"
+      ],
+      "allowLocalBinding": true
+    },
+    "filesystem": {
+      "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"],
+      "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc", "~/.config/op"]
+    },
+    "excludedCommands": ["docker:*", "docker-compose:*", "podman:*", "git:*", "gh:*", "make:*", "mint:*"]
+  },
+  "spinnerTipsEnabled": false,
+  "alwaysThinkingEnabled": true
 }
