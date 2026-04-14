@@ -8,7 +8,8 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>-lc</string>
+    <string>-l</string>
+    <string>-c</string>
     <!-- fswatch を Homebrew PATH で解決するためログインシェルで起動 -->
     <string>exec "$HOME/.local/bin/downloads-to-desktop.sh"</string>
   </array>

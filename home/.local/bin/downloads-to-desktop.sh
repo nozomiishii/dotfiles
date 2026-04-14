@@ -3,6 +3,10 @@
 # ~/Downloads に入ったファイルを ~/Desktop へ自動移動する。
 # AirDrop の保存先を変更できない macOS の制約を回避する用途。
 # fswatch でイベント監視し、ダウンロード途中の一時ファイルは除外する。
+#
+# 注: ディレクトリは対象外。
+# - iOS/iPadOS → Mac の AirDrop はフォルダが zip 化されて届くので単一ファイル扱いとなり移動される。
+# - Mac ↔ Mac のフォルダ AirDrop は ~/Downloads にフォルダのまま残る（想定運用外）。
 
 set -uo pipefail
 
