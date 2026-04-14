@@ -275,6 +275,17 @@ launchctl bootout "gui/$UID" "$local_keymap_plist" 2>/dev/null || true
 launchctl bootstrap "gui/$UID" "$local_keymap_plist"
 
 # ----------------------------------------------------------------
+# Downloads -> Desktop
+# ----------------------------------------------------------------
+# AirDrop の保存先は変更不可のため、~/Downloads に入ったファイルを
+# ~/Desktop へ自動移動する LaunchAgent を常駐させる
+echo "- 📥 Downloads -> Desktop"
+
+local_d2d_plist="$HOME/Library/LaunchAgents/local.downloads-to-desktop.plist"
+launchctl bootout "gui/$UID" "$local_d2d_plist" 2>/dev/null || true
+launchctl bootstrap "gui/$UID" "$local_d2d_plist"
+
+# ----------------------------------------------------------------
 # Network
 # ----------------------------------------------------------------
 echo "- 📡 Network"
