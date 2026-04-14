@@ -18,6 +18,10 @@ post-merge:
     - name: symlink
       glob: 'home/**'
       run: make link
+    - name: homebrew
+      glob: '{Brewfile,Brewfile.optional}'
+      interactive: true
+      run: make homebrew
 
 pre-push:
   parallel: true
