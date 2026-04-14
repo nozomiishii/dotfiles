@@ -176,6 +176,9 @@ if OS.mac?
   # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
   brew "smudge/smudge/nightlight"
 
+  # File change monitor used by the Downloads -> Desktop LaunchAgent https://github.com/emcrisostomo/fswatch
+  brew "fswatch"
+
   # Dependency manager for Cocoa projects https://cocoapods.org/
   brew "cocoapods"
 
