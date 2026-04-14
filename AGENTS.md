@@ -71,6 +71,12 @@ make link
   gh pr create --title "feat: ..." --body-file /private/tmp/claude-<uid>/pr-body.md
   ```
 
+## ポータビリティ
+
+- **ユーザー名をハードコードしない。** dotfiles は複数の Mac で異なるユーザー名で運用されるため、plist・スクリプト・設定ファイルで `/Users/<name>/...` と直書きせず `$HOME` / `~` を使うこと。
+  - LaunchAgent plist で `$HOME` 展開が必要な場合は `bash -l -c 'exec "$HOME/..."'` を経由する（参考: [home/Library/LaunchAgents/local.brew-update.plist](home/Library/LaunchAgents/local.brew-update.plist)）。
+  - `bash -l` は `/etc/profile` 経由で `path_helper` を動かし、`/etc/paths.d/homebrew` の `/opt/homebrew/bin` を PATH に取り込む役割も兼ねる。
+
 ## アーキテクチャ概要
 
 macOS と Linux で開発環境のセットアップを自動化する dotfiles リポジトリです。**GNU Stow** でシンボリックリンクを管理し、Make ターゲットで統一されたインターフェースを提供します。
