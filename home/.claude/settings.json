@@ -66,6 +66,7 @@
       "Bash(docker run:*)",
       "WebSearch",
       "WebFetch(domain:github.com)",
+      "WebFetch(domain:*.github.com)",
       "WebFetch(domain:github.blog)",
       "WebFetch(domain:*.npmjs.org)",
       "WebFetch(domain:*.npmjs.com)",
