@@ -16,6 +16,23 @@
 - git 操作の前にブランチを確認し、main への直接コミットを避けること。
 - `cd <path> && git` の複合コマンドは使わず、`git -C <path>` を使用すること（bare repository attack 防止の sandbox 制約を回避するため）。
 
+## GitHub / PR
+
+- **PR 本文**: プルリクエストの本文（body）は日本語で記述する。
+- **PR マージ**: マージは必ずユーザーが手動で行う。AI が `gh pr merge` や GitHub API 経由でマージを実行してはならない。
+- **PR 作成・更新・push**: これらは AI が実行してよい。マージの最終判断のみ常にユーザーに委ねる。
+- **PR 作成時**: `gh pr create` は `--body-file` を使う。HEREDOC で `--body` に直接渡すと、Markdown の `#` 見出しが command injection 検出に引っかかり毎回承認ダイアログが出る。
+
+例:
+
+```sh
+BODY_FILE=$(mktemp) && cat > "$BODY_FILE" <<'EOF'
+## Summary
+...
+EOF
+gh pr create --title "..." --body-file "$BODY_FILE"
+```
+
 ## GitHub Issue 検索
 
 - Closed as duplicate の Issue は結果に含めない。duplicate chain を辿って、現在 Open の canonical issue を返すこと。
