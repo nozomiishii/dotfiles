@@ -177,5 +177,7 @@
     "excludedCommands": ["docker:*", "docker-compose:*", "podman:*", "git:*", "gh:*", "make:*", "mint:*"]
   },
   "spinnerTipsEnabled": false,
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "model": "opus[1m]"
 }

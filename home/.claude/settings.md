@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-04-09
+最終更新: 2026-04-15
 
 ## 背景
 
@@ -240,6 +240,34 @@ sandbox のデフォルトではカレントディレクトリとサブディレ
 ```
 
 `alwaysThinkingEnabled` は思考トークン（アウトプットトークンとして課金）が追加されるため、単純なタスクには過剰な場合もある。セッション内で `Option+T` や `/effort` でいつでも調整可能。
+
+### effortLevel
+
+```jsonc
+"effortLevel": "high"  // 複雑タスク向けの深い推論をデフォルトに
+```
+
+Opus 4.6 / Sonnet 4.6 が対応する adaptive reasoning の持続レベル。`low` / `medium` / `high` の3段階がセッションをまたいで永続化される（`max` は Opus 4.6 限定で永続化不可）。軽いタスクでは過剰なので、セッション内で `/effort low` や `/model` の effort スライダーでいつでも下げられる。
+
+### model
+
+```jsonc
+"model": "opus[1m]"  // 最新 Opus + 1M context をデフォルト
+```
+
+`opus[1m]` は公式ドキュメント記載の alias 形式で、「最新 Opus モデル」＋「1M context window」を意味する。`[1m]` サフィックスは Claude Code 内部で処理され、API 送信前に strip される。alias なので Opus 4.7 がリリースされれば自動追随する。バージョンを固定したい場合は `claude-opus-4-6[1m]` のようにフルネームで書く。
+
+Max/Team/Enterprise プランでは `"model": "opus"` だけで自動的に 1M context にアップグレードされるが、プラン変更時の挙動ブレを避けるため明示的に `[1m]` を付けている。Pro プランでは 1M context は extra usage 扱い。
+
+参考: [Model configuration - Claude Code Docs](https://code.claude.com/docs/en/model-config#extended-context)
+
+**注意**: [anthropics/claude-code#45574](https://github.com/anthropics/claude-code/issues/45574) として、`"model"` が session start で反映されず `/model` での手動切替が必要になる事象が報告されている（Claude Code v2.1.97 時点）。issue は close 済み（duplicate）だが、最新版で直っているかは未確認。反映されなかった場合のフォールバックは以下:
+
+- `claude --model opus[1m]` で起動
+- `export ANTHROPIC_MODEL=opus[1m]` を shell の rc ファイルに追加
+- セッション内で `/model` 手動切替
+
+将来 #45574 が確実に修正されたらこの注意書きは削除する。
 
 ## 使い方
 
