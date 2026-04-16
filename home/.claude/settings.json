@@ -85,6 +85,8 @@
       "Bash(git push -f:*)",
       "Bash(gh pr merge:*)",
       "Bash(gh api repos/*/pulls/*/merge*)",
+      "Bash(gh repo create:*)",
+      "Bash(gh repo delete:*)",
       "Bash(sudo:*)",
       "Bash(su:*)",
       "Bash(rm -rf /)",
