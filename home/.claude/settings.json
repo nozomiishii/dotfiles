@@ -181,5 +181,6 @@
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
-  "model": "opus[1m]"
+  "model": "opus[1m]",
+  "tui": "fullscreen"
 }
