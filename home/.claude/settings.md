@@ -268,6 +268,16 @@ Max/Team/Enterprise プランでは `"model": "opus"` だけで自動的に 1M c
 
 将来 #45574 が確実に修正されたらこの注意書きは削除する。
 
+### tui
+
+```jsonc
+"tui": "fullscreen"  // フルスクリーン (alt screen) レンダラをデフォルトに
+```
+
+Claude Code 2.1.110 で追加された TUI レンダラの選択。`"default"` は通常の inline レンダリング、`"fullscreen"` は alt screen バッファを使ったちらつきの少ない描画。`fullscreen` モードでのみ `/focus` が有効になる。セッション内では `/tui default` / `/tui fullscreen` で切り替え可能。
+
+旧来の `CLAUDE_CODE_NO_FLICKER=1` 環境変数の置き換え。`/tui` 実行時に `CLAUDE_CODE_NO_FLICKER` は明示的に unset されるため、env var は将来的に廃止される見込み。settings の `tui` キーが env var より優先される。
+
 ## 使い方
 
 ```bash
