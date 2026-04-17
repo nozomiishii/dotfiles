@@ -182,7 +182,7 @@
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "model": "opus[1m]",
   "tui": "fullscreen"
 }

@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-04-16
+最終更新: 2026-04-17
 
 ## 背景
 
@@ -248,10 +248,21 @@ sandbox のデフォルトではカレントディレクトリとサブディレ
 ### effortLevel
 
 ```jsonc
-"effortLevel": "high"  // 複雑タスク向けの深い推論をデフォルトに
+"effortLevel": "xhigh"  // Opus 4.7 の推奨デフォルト
 ```
 
-Opus 4.6 / Sonnet 4.6 が対応する adaptive reasoning の持続レベル。`low` / `medium` / `high` の3段階がセッションをまたいで永続化される（`max` は Opus 4.6 限定で永続化不可）。軽いタスクでは過剰なので、セッション内で `/effort low` や `/model` の effort スライダーでいつでも下げられる。
+adaptive reasoning の持続レベル。モデル別にサポートされる level が異なる:
+
+| Model                   | Levels                                  |
+| :---------------------- | :-------------------------------------- |
+| Opus 4.7                | `low`, `medium`, `high`, `xhigh`, `max` |
+| Opus 4.6 / Sonnet 4.6   | `low`, `medium`, `high`, `max`          |
+
+`low` / `medium` / `high` / `xhigh` はセッションを跨いで永続化される。`max` は現在セッション限定（`CLAUDE_CODE_EFFORT_LEVEL` 環境変数経由を除く）。未サポートの level を指定した場合、そのモデルがサポートする一つ下の level にフォールバックする（例: `xhigh` は Opus 4.6 では `high` として動作）。
+
+Opus 4.7 の Claude Code デフォルトは全プラン `xhigh` で、公式も「ほとんどのコーディング・エージェントタスクで最高の結果」と推奨している。この設定も `xhigh` に揃え、`max` の overthinking リスクを避けつつ `high` より深く推論させる。軽いタスクでは過剰なので、セッション内で `/effort medium` や `/model` の effort スライダーでいつでも下げられる。
+
+Opus 4.7 は常に adaptive reasoning で動作し、`CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` や `MAX_THINKING_TOKENS` による fixed thinking budget は無効（Opus 4.6 / Sonnet 4.6 のみ適用可能）。
 
 ### model
 
@@ -259,7 +270,9 @@ Opus 4.6 / Sonnet 4.6 が対応する adaptive reasoning の持続レベル。`l
 "model": "opus[1m]"  // 最新 Opus + 1M context をデフォルト
 ```
 
-`opus[1m]` は公式ドキュメント記載の alias 形式で、「最新 Opus モデル」＋「1M context window」を意味する。`[1m]` サフィックスは Claude Code 内部で処理され、API 送信前に strip される。alias なので Opus 4.7 がリリースされれば自動追随する。バージョンを固定したい場合は `claude-opus-4-6[1m]` のようにフルネームで書く。
+`opus[1m]` は公式ドキュメント記載の alias 形式で、「最新 Opus モデル」＋「1M context window」を意味する。`[1m]` サフィックスは Claude Code 内部で処理され、API 送信前に strip される。Anthropic API では `opus` は現在 Opus 4.7 に解決される（Bedrock / Vertex / Foundry では Opus 4.6）。alias なので将来 Opus 4.8 がリリースされれば自動追随する。バージョンを固定したい場合は `claude-opus-4-7[1m]` のようにフルネームで書く。
+
+Opus 4.7 の利用には **Claude Code v2.1.111 以降** が必要。`claude update` でアップグレードする。
 
 Max/Team/Enterprise プランでは `"model": "opus"` だけで自動的に 1M context にアップグレードされるが、プラン変更時の挙動ブレを避けるため明示的に `[1m]` を付けている。Pro プランでは 1M context は extra usage 扱い。
 
