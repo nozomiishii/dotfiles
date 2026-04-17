@@ -7,4 +7,4 @@ description: >-
 
 # /tad
 
-/ta を実行する。ただし `gh pr create` 実行時に `--draft` フラグを付与してドラフト PR として作成すること。
+/ta を実行する。ただし PR 作成時はドラフト PR として作成すること。
