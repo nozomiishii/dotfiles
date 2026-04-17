@@ -9,28 +9,29 @@ description: >-
 
 ta — thanks, mate. ありがとう！議論して、一緒に作り上げた変更を仕上げて届ける。
 
+ユーザーが `/ta` を実行した時点で、コミット・push・PR 作成の明示依頼とみなす。
+
 変更内容を確認し、以下を順番に実行する:
 
-## 0. ブランチ状態チェック
+## 0. ブランチ判定
 
-現在のブランチが `main` でない場合、そのブランチに紐づく PR の状態を確認する:
+現在のブランチを確認する:
 
-- `gh pr view --json state` を実行
-- **MERGED / CLOSED**: `origin/main` から新規ブランチを作成する（`git checkout -b <branch> origin/main`）
-- **OPEN**: 既存ブランチ・PR を再利用し、追加コミットとして push する（新規 PR は作成しない）
-- **PR が存在しない**: そのブランチをそのまま使い、新規 PR を作成する
+- **`main` 以外のブランチにいる場合**: そのブランチに紐づく PR の状態を確認する
+  - **MERGED / CLOSED**: `origin/main` から新規ブランチを作成する
+  - **OPEN**: 既存ブランチ・PR を再利用し、追加コミットとして push する（新規 PR は作成しない）
+  - **PR が存在しない**: そのブランチをそのまま使い、新規 PR を作成する
+- **`main` にいる場合**: 変更内容に適した新規ブランチを `origin/main` から作成する
 
-## 1. ブランチ作成（必要な場合のみ）
+ブランチ作成時は worktree でも動作するよう `git checkout main` は使わず、`git fetch origin main && git checkout -b <branch> origin/main` を使用する。
 
-ステップ 0 で新規作成が必要と判断された場合、`origin/main` から変更内容に適したブランチを新規作成する。worktree でも動作するよう `git checkout main` は使わず、`git fetch origin main && git checkout -b <branch> origin/main` を使用する。
-
-## 2. コミット・push
+## 1. コミット・push
 
 変更をステージしてコミットし、リモートへ push する。
 
-## 3. PR 作成（必要な場合のみ）
+## 2. PR 作成（必要な場合のみ）
 
-既存の OPEN な PR がない場合、`gh pr create` で PR を作成する。
+既存の OPEN な PR がない場合、PR を作成する。
 
 ## 制約
 
