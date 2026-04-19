@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@nozomiishii/commitlint-config':
         specifier: 0.0.10
-        version: 0.0.10(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.2)
+        version: 0.0.10(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@nozomiishii/lefthook-config':
         specifier: 0.3.6
         version: 0.3.6(lefthook@2.1.6)
@@ -789,8 +789,8 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
-  typescript@6.0.2:
-    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -839,11 +839,11 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.28.5': {}
 
-  '@commitlint/cli@20.5.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.2)':
+  '@commitlint/cli@20.5.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
     dependencies:
       '@commitlint/format': 20.5.0
       '@commitlint/lint': 20.5.0
-      '@commitlint/load': 20.5.0(@types/node@25.6.0)(typescript@6.0.2)
+      '@commitlint/load': 20.5.0(@types/node@25.6.0)(typescript@6.0.3)
       '@commitlint/read': 20.5.0(conventional-commits-parser@6.4.0)
       '@commitlint/types': 20.5.0
       tinyexec: 1.1.1
@@ -892,14 +892,14 @@ snapshots:
       '@commitlint/rules': 20.5.0
       '@commitlint/types': 20.5.0
 
-  '@commitlint/load@20.5.0(@types/node@25.6.0)(typescript@6.0.2)':
+  '@commitlint/load@20.5.0(@types/node@25.6.0)(typescript@6.0.3)':
     dependencies:
       '@commitlint/config-validator': 20.5.0
       '@commitlint/execute-rule': 20.0.0
       '@commitlint/resolve-extends': 20.5.0
       '@commitlint/types': 20.5.0
-      cosmiconfig: 9.0.1(typescript@6.0.2)
-      cosmiconfig-typescript-loader: 6.3.0(@types/node@25.6.0)(cosmiconfig@9.0.1(typescript@6.0.2))(typescript@6.0.2)
+      cosmiconfig: 9.0.1(typescript@6.0.3)
+      cosmiconfig-typescript-loader: 6.3.0(@types/node@25.6.0)(cosmiconfig@9.0.1(typescript@6.0.3))(typescript@6.0.3)
       is-plain-obj: 4.1.0
       lodash.mergewith: 4.6.2
       picocolors: 1.1.1
@@ -973,9 +973,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nozomiishii/commitlint-config@0.0.10(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.2)':
+  '@nozomiishii/commitlint-config@0.0.10(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
     dependencies:
-      '@commitlint/cli': 20.5.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.2)
+      '@commitlint/cli': 20.5.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@commitlint/config-conventional': 20.5.0
       '@commitlint/types': 20.5.0
     transitivePeerDependencies:
@@ -1091,21 +1091,21 @@ snapshots:
       '@simple-libs/stream-utils': 1.2.0
       meow: 13.2.0
 
-  cosmiconfig-typescript-loader@6.3.0(@types/node@25.6.0)(cosmiconfig@9.0.1(typescript@6.0.2))(typescript@6.0.2):
+  cosmiconfig-typescript-loader@6.3.0(@types/node@25.6.0)(cosmiconfig@9.0.1(typescript@6.0.3))(typescript@6.0.3):
     dependencies:
       '@types/node': 25.6.0
-      cosmiconfig: 9.0.1(typescript@6.0.2)
+      cosmiconfig: 9.0.1(typescript@6.0.3)
       jiti: 2.6.1
-      typescript: 6.0.2
+      typescript: 6.0.3
 
-  cosmiconfig@9.0.1(typescript@6.0.2):
+  cosmiconfig@9.0.1(typescript@6.0.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.1
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 6.0.2
+      typescript: 6.0.3
 
   debug@4.4.3:
     dependencies:
@@ -1686,7 +1686,7 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  typescript@6.0.2: {}
+  typescript@6.0.3: {}
 
   uc.micro@2.1.0: {}
 
