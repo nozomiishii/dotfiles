@@ -68,7 +68,9 @@ brew "qemu"
 brew "mas"
 
 # Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
-mas "Xcode", id: 497799835
+# Disabled: current Xcode is not installed via MAS (no _MASReceipt), so `mas upgrade`
+# fails with "Failed to copy receipt" on every run. Update Xcode manually for now.
+# mas "Xcode", id: 497799835
 
 # Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
 mas "Kindle", id: 302584613
