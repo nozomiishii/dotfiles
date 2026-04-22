@@ -479,6 +479,15 @@
   // vscode-icons
   // ----------------------------------------------------------------
   "vsicons.dontShowNewVersionMessage": true,
+  "vsicons.associations.files": [
+    {
+      "icon": "brew",
+      "extensions": ["Brewfile.optional"],
+      "filename": true,
+      "format": "svg",
+      "extends": "brew"
+    }
+  ],
 
   // ----------------------------------------------------------------
   // vitest
