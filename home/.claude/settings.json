@@ -100,8 +100,9 @@
       "Bash(nslookup:*)",
       "Bash(host:*)"
     ],
-    "defaultMode": "plan"
+    "defaultMode": "auto"
   },
+  "model": "opus[1m]",
   "enabledMcpjsonServers": [],
   "hooks": {
     "SessionStart": [
@@ -175,14 +176,33 @@
       "allowLocalBinding": true
     },
     "filesystem": {
-      "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"],
-      "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc", "~/.config/op"]
+      "allowWrite": [
+        "/tmp",
+        "~/.npm",
+        "~/Library/pnpm/store"
+      ],
+      "denyRead": [
+        "~/.ssh",
+        "~/.aws/credentials",
+        "~/.gnupg",
+        "~/.config/gh/hosts.yml",
+        "~/.netrc",
+        "~/.config/op"
+      ]
     },
-    "excludedCommands": ["docker:*", "docker-compose:*", "podman:*", "git:*", "gh:*", "make:*", "mint:*"]
+    "excludedCommands": [
+      "docker:*",
+      "docker-compose:*",
+      "podman:*",
+      "git:*",
+      "gh:*",
+      "make:*",
+      "mint:*"
+    ]
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
   "effortLevel": "xhigh",
-  "model": "opus[1m]",
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "skipAutoPermissionPrompt": true
 }
