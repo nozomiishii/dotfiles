@@ -12,9 +12,9 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
-  pull-requests: read
-  actions: read
+  contents: read  # required by actions/checkout to fetch repository code
+  pull-requests: read  # required by dorny/paths-filter to list PR files via the GitHub API
+  actions: read  # required by gh api referenced_workflows to resolve the zizmor config SHA
 
 jobs:
   github-actions:
