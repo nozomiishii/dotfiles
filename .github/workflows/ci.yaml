@@ -22,10 +22,18 @@ on:
       - 'Brewfile'
       - 'scripts/**'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
 jobs:
   install:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 40
+    permissions:
+      contents: read  # required by actions/checkout to fetch repository code
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest]
@@ -33,6 +41,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: Run install (PR branch)
         if: github.event_name == 'pull_request'
