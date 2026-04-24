@@ -1,4 +1,4 @@
-name: Lint GitHub Actions workflows
+name: GitHub Actions
 
 on:
   workflow_dispatch:
@@ -14,7 +14,8 @@ concurrency:
 permissions:
   contents: read
   pull-requests: read
+  actions: read
 
 jobs:
-  actionlint:
-    uses: nozomiishii/workflows/.github/workflows/actionlint.yaml@7e6fb98cc189a7b5ef23eee616a04238c5d9a468 # v1.1.1
+  github-actions:
+    uses: nozomiishii/workflows/.github/workflows/github-actions.yaml@4114f39af968607bdcef88b48d29605df89728fd # v3.0.0
