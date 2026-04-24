@@ -14,6 +14,9 @@ extends:
 
 post-merge:
   parallel: true
+  # post-merge does not auto-populate changed files, so glob alone won't filter.
+  # Feed the merge diff to jobs so their glob can actually skip when unrelated.
+  files: git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD
   jobs:
     - name: symlink
       glob: 'home/**'
