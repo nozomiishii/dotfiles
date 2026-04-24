@@ -8,8 +8,8 @@ on:
       - synchronize
 
 permissions:
-  pull-requests: read
+  pull-requests: read  # required by action-semantic-pull-request to read the PR title via the GitHub API
 
 jobs:
   pull-request:
-    uses: nozomiishii/workflows/.github/workflows/pull-request.yaml@7e6fb98cc189a7b5ef23eee616a04238c5d9a468 # v1.1.1
+    uses: nozomiishii/workflows/.github/workflows/pull-request.yaml@4114f39af968607bdcef88b48d29605df89728fd # v3.0.0
