@@ -33,7 +33,7 @@
     "@nozomiishii/postinstall": "0.0.7",
     "@nozomiishii/prettier-config": "0.7.2",
     "lefthook": "2.1.6",
-    "markdownlint-cli2": "0.22.0"
+    "markdownlint-cli2": "0.22.1"
   },
   "packageManager": "pnpm@10.33.0",
   "engines": {
