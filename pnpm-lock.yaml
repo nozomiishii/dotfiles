@@ -9,20 +9,20 @@ importers:
   .:
     devDependencies:
       '@nozomiishii/commitlint-config':
-        specifier: 0.0.10
-        version: 0.0.10(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
+        specifier: 0.0.11
+        version: 0.0.11(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@nozomiishii/lefthook-config':
-        specifier: 0.3.6
-        version: 0.3.6(lefthook@2.1.6)
+        specifier: 0.3.7
+        version: 0.3.7(lefthook@2.1.6)
       '@nozomiishii/markdownlint-cli2-config':
-        specifier: 0.3.5
-        version: 0.3.5
+        specifier: 0.3.6
+        version: 0.3.6
       '@nozomiishii/postinstall':
-        specifier: 0.0.7
-        version: 0.0.7
+        specifier: 0.0.8
+        version: 0.0.8
       '@nozomiishii/prettier-config':
-        specifier: 0.7.2
-        version: 0.7.2
+        specifier: 0.7.3
+        version: 0.7.3
       lefthook:
         specifier: 2.1.6
         version: 2.1.6
@@ -133,26 +133,26 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nozomiishii/commitlint-config@0.0.10':
-    resolution: {integrity: sha512-TV9t41+Y83J8YfnDEihvM0Htd9H0VgccVagzQqMzSVL1IRKIBnC/MD7sWCabRJNpBgmDeL0j10h8jxAA92KzJw==}
+  '@nozomiishii/commitlint-config@0.0.11':
+    resolution: {integrity: sha512-llGP1DORQ15e6J7cWSqlIINWNT6Mk8GQg5DrfwMtJNO37A7hEiiINf9gklqAnZJtzA4+Z+w6nmM2ZoPUztMllw==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@0.3.6':
-    resolution: {integrity: sha512-aXdSzgSkgtUY2Obt7qj5tOhZous3wmSmu3RZRzFRZutEoXgljuxqH4Q237YB0KgVl2RcR/tHEp7a6dRj238WPw==}
+  '@nozomiishii/lefthook-config@0.3.7':
+    resolution: {integrity: sha512-NkH51s8qNzAFUmyTJZ4YUF1T1IuehqmONyYAc+wC5M2jyVN4vIQAgE/VqxXXtMr1wdNstZREujXMTbFwt0P38A==}
     hasBin: true
     peerDependencies:
-      lefthook: '>=2.1.4'
+      lefthook: '>=2.1.6'
 
-  '@nozomiishii/markdownlint-cli2-config@0.3.5':
-    resolution: {integrity: sha512-5YZjv3i0MMexmGpa4L6spTHSUGCAAl541brOoqJaG6m9TEXIZW1zZ4Dd2cKl3Egmes5zv/vmfrc6JcRyVmR3qQ==}
+  '@nozomiishii/markdownlint-cli2-config@0.3.6':
+    resolution: {integrity: sha512-Jc4/G+Wa/Rp5jSLXZe4UTqyyVQb/1VWKI9XSnntWVvDZ31fXY8k2Dbn5J+vKmlH9+gZzSLxH+S50Nhmp+kZ78Q==}
     hasBin: true
 
-  '@nozomiishii/postinstall@0.0.7':
-    resolution: {integrity: sha512-p7tVsV9RS83PSfStoL5Z12+T0H5NLlWhUV4A9owccfKwiusiWQeNSzPtreaAxKhXpHv13omZ6BRHHmFXVT+bVQ==}
+  '@nozomiishii/postinstall@0.0.8':
+    resolution: {integrity: sha512-9zcPwFuNhcGh3eVLNC3G/KdPC5dVP24lNwLwiQT+05axXE1AY+M8gx/oIOqVS0MCxfT7gb7tD3ypmqf9KQ5vqA==}
     hasBin: true
 
-  '@nozomiishii/prettier-config@0.7.2':
-    resolution: {integrity: sha512-26m0d7586XNcT7+Q9Ai37Wa95oC0NKzm35iQklTS0MxGhVrbpdVywHjHYloocjiGVeoo4EFBQ3v1RJY4+1hy9w==}
+  '@nozomiishii/prettier-config@0.7.3':
+    resolution: {integrity: sha512-RuUdwGpk93DwHD/F1YunLKs1ZEfqtNxQMK68wfh6cyDCOCPXYGY7UIt9XhWzmCYSkPket/UNDOF3Nw5/Y6gmug==}
     hasBin: true
 
   '@simple-libs/child-process-utils@1.0.2':
@@ -376,10 +376,6 @@ packages:
     resolution: {integrity: sha512-1pgFdhK3J2LeM+dVf2Pd424yHx2ou338lC0ErNP2hPx4j8eW1Sp0XqSjNxtk6Tc4Kr5wlWtSvz8cn2yb7/SG/w==}
     engines: {node: '>=20'}
 
-  globby@15.0.0:
-    resolution: {integrity: sha512-oB4vkQGqlMl682wL1IlWd02tXCbquGWM4voPEI85QmNKCaw8zGTm1f1rubFgkg3Eli2PtKlFgrnmUqasbQWlkw==}
-    engines: {node: '>=20'}
-
   globby@16.2.0:
     resolution: {integrity: sha512-QrJia2qDf5BB/V6HYlDTs0I0lBahyjLzpGQg3KT7FnCdTonAyPy2RtY802m2k4ALx6Dp752f82WsOczEVr3l6Q==}
     engines: {node: '>=20'}
@@ -548,10 +544,6 @@ packages:
   lodash.upperfirst@4.3.1:
     resolution: {integrity: sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg==}
 
-  markdown-it@14.1.0:
-    resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
-    hasBin: true
-
   markdown-it@14.1.1:
     resolution: {integrity: sha512-BuU2qnTti9YKgK5N+IeMubp14ZUKUUw7yeJbkjtosvHiP0AZ5c8IAgEMk79D0eC8F23r4Ac/q8cAIFdm2FtyoA==}
     hasBin: true
@@ -560,11 +552,6 @@ packages:
     resolution: {integrity: sha512-VVDGKsq9sgzu378swJ0fcHfSicUnMxnL8gnLm/Q4J/xsNJ4e5bA6lvAz7PCzIl0/No0lHyaWdqVD2jotxOSFMQ==}
     peerDependencies:
       markdownlint-cli2: '>=0.0.4'
-
-  markdownlint-cli2@0.20.0:
-    resolution: {integrity: sha512-esPk+8Qvx/f0bzI7YelUeZp+jCtFOk3KjZ7s9iBQZ6HlymSXoTtWGiIRZP05/9Oy2ehIoIjenVwndxGtxOIJYQ==}
-    engines: {node: '>=20'}
-    hasBin: true
 
   markdownlint-cli2@0.22.1:
     resolution: {integrity: sha512-X14ZbytybDCXAViDmtN4DKLt9ZTrRn+oOrxTYlg3a65jS6QcYYbAkGPh/En2L/GDNbFYJ6lKaQSUNrrbN1bPrw==}
@@ -682,10 +669,6 @@ packages:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
 
-  path-type@6.0.0:
-    resolution: {integrity: sha512-Vj7sf++t5pBD637NSfkxpHSMfWaeig5+DKWLhcqIYx6mWQz5hdJTGDVMQiJcw1ZYkhs7AazKDGpRVji1LJCZUQ==}
-    engines: {node: '>=18'}
-
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -697,16 +680,16 @@ packages:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
 
-  prettier-plugin-packagejson@3.0.0:
-    resolution: {integrity: sha512-z8/QmPSqx/ANvvQMWJSkSq1+ihBXeuwDEYdjX3ZjRJ5Ty1k7vGbFQfhzk2eDe0rwS/TNyRjWK/qnjJEStAOtDw==}
+  prettier-plugin-packagejson@3.0.2:
+    resolution: {integrity: sha512-kmoj3hEynXwoHDo8ZhmWAIjRBoQWCDUVackiWfSDWdgD0rS3LGB61T9zoVbume/cotYdCoadUh4sqViAmXvpBQ==}
     peerDependencies:
       prettier: ^3
     peerDependenciesMeta:
       prettier:
         optional: true
 
-  prettier@3.8.1:
-    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
+  prettier@3.8.3:
+    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -799,10 +782,6 @@ packages:
 
   undici-types@7.19.2:
     resolution: {integrity: sha512-qYVnV5OEm2AW8cJMCpdV20CDyaN3g0AjDlOGf1OW4iaDEx8MwdtChUp4zu4H0VP3nDRF/8RKWH+IPp9uW0YGZg==}
-
-  unicorn-magic@0.3.0:
-    resolution: {integrity: sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==}
-    engines: {node: '>=18'}
 
   unicorn-magic@0.4.0:
     resolution: {integrity: sha512-wH590V9VNgYH9g3lH9wWjTrUoKsjLF6sGLjhR4sH1LWpLmCOH0Zf7PukhDA8BiS7KHe4oPNkcTHqYkj7SOGUOw==}
@@ -973,7 +952,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nozomiishii/commitlint-config@0.0.10(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
+  '@nozomiishii/commitlint-config@0.0.11(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
     dependencies:
       '@commitlint/cli': 20.5.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@commitlint/config-conventional': 20.5.0
@@ -984,25 +963,25 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@0.3.6(lefthook@2.1.6)':
+  '@nozomiishii/lefthook-config@0.3.7(lefthook@2.1.6)':
     dependencies:
       lefthook: 2.1.6
 
-  '@nozomiishii/markdownlint-cli2-config@0.3.5':
+  '@nozomiishii/markdownlint-cli2-config@0.3.6':
     dependencies:
-      markdownlint-cli2: 0.20.0
+      markdownlint-cli2: 0.22.1
     transitivePeerDependencies:
       - supports-color
 
-  '@nozomiishii/postinstall@0.0.7':
+  '@nozomiishii/postinstall@0.0.8':
     dependencies:
       figlet: 1.11.0
       zx: 8.8.5
 
-  '@nozomiishii/prettier-config@0.7.2':
+  '@nozomiishii/prettier-config@0.7.3':
     dependencies:
-      prettier: 3.8.1
-      prettier-plugin-packagejson: 3.0.0(prettier@3.8.1)
+      prettier: 3.8.3
+      prettier-plugin-packagejson: 3.0.2(prettier@3.8.3)
 
   '@simple-libs/child-process-utils@1.0.2':
     dependencies:
@@ -1191,15 +1170,6 @@ snapshots:
     dependencies:
       ini: 6.0.0
 
-  globby@15.0.0:
-    dependencies:
-      '@sindresorhus/merge-streams': 4.0.0
-      fast-glob: 3.3.3
-      ignore: 7.0.5
-      path-type: 6.0.0
-      slash: 5.1.0
-      unicorn-magic: 0.3.0
-
   globby@16.2.0:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
@@ -1330,15 +1300,6 @@ snapshots:
 
   lodash.upperfirst@4.3.1: {}
 
-  markdown-it@14.1.0:
-    dependencies:
-      argparse: 2.0.1
-      entities: 4.5.0
-      linkify-it: 5.0.0
-      mdurl: 2.0.0
-      punycode.js: 2.3.1
-      uc.micro: 2.1.0
-
   markdown-it@14.1.1:
     dependencies:
       argparse: 2.0.1
@@ -1348,25 +1309,9 @@ snapshots:
       punycode.js: 2.3.1
       uc.micro: 2.1.0
 
-  markdownlint-cli2-formatter-default@0.0.6(markdownlint-cli2@0.20.0):
-    dependencies:
-      markdownlint-cli2: 0.20.0
-
   markdownlint-cli2-formatter-default@0.0.6(markdownlint-cli2@0.22.1):
     dependencies:
       markdownlint-cli2: 0.22.1
-
-  markdownlint-cli2@0.20.0:
-    dependencies:
-      globby: 15.0.0
-      js-yaml: 4.1.1
-      jsonc-parser: 3.3.1
-      markdown-it: 14.1.0
-      markdownlint: 0.40.0
-      markdownlint-cli2-formatter-default: 0.0.6(markdownlint-cli2@0.20.0)
-      micromatch: 4.0.8
-    transitivePeerDependencies:
-      - supports-color
 
   markdownlint-cli2@0.22.1:
     dependencies:
@@ -1604,21 +1549,19 @@ snapshots:
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
 
-  path-type@6.0.0: {}
-
   picocolors@1.1.1: {}
 
   picomatch@2.3.2: {}
 
   picomatch@4.0.4: {}
 
-  prettier-plugin-packagejson@3.0.0(prettier@3.8.1):
+  prettier-plugin-packagejson@3.0.2(prettier@3.8.3):
     dependencies:
       sort-package-json: 3.6.0
     optionalDependencies:
-      prettier: 3.8.1
+      prettier: 3.8.3
 
-  prettier@3.8.1: {}
+  prettier@3.8.3: {}
 
   punycode.js@2.3.1: {}
 
@@ -1691,8 +1634,6 @@ snapshots:
   uc.micro@2.1.0: {}
 
   undici-types@7.19.2: {}
-
-  unicorn-magic@0.3.0: {}
 
   unicorn-magic@0.4.0: {}
 
