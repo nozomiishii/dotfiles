@@ -52,6 +52,7 @@ fi
 surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null)
 
 esc=$'\033'
+st=$'\033\\'
 reset="${esc}[0m"
 red="${esc}[1;31m"
 green="${esc}[1;32m"
@@ -59,6 +60,9 @@ yellow="${esc}[1;33m"
 blue="${esc}[1;34m"
 magenta="${esc}[1;35m"
 cyan="${esc}[1;36m"
+gray="${esc}[90m"
+
+cursor_link="${esc}]8;;cursor://file${cwd}${st}[editor]${esc}]8;;${st}"
 
 git_parts=()
 git_parts+=("${cyan}${loc}${reset}")
@@ -69,6 +73,7 @@ env_parts=()
 env_parts+=("${magenta}${model}${reset}")
 env_parts+=("${yellow}${ctx_pct}%${reset}")
 [[ -n "$surface_ref" ]] && env_parts+=("${green}${surface_ref}${reset}")
+env_parts+=("${gray}${cursor_link}${reset}")
 
 join() {
   local sep="$1"
