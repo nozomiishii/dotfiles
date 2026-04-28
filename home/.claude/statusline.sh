@@ -1,10 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Claude Code statusline: model | cwd | git:(branch) | +N -N | ctx% | cmux | [editor]
 # starship 風の表記スタイルに合わせた構成
 
 input=$(cat)
 
-mapfile -t fields < <(jq -r '
+# mapfile is bash 4+. /bin/bash on macOS is 3.2 — read in a loop instead.
+fields=()
+while IFS= read -r line; do
+  fields+=("$line")
+done < <(jq -r '
   .model.display_name // "Claude",
   (.context_window.used_percentage // 0 | floor | tostring),
   (.cost.total_lines_added // 0 | tostring),
@@ -57,7 +61,12 @@ magenta="${esc}[1;35m"
 cyan="${esc}[1;36m"
 gray="${esc}[90m"
 
-cursor_link="${esc}]8;;cursor://file${cwd}${st}[editor]${esc}]8;;${st}"
+cwd_url="$cwd"
+cwd_url="${cwd_url//%/%25}"
+cwd_url="${cwd_url// /%20}"
+cwd_url="${cwd_url//\#/%23}"
+cwd_url="${cwd_url//\?/%3F}"
+cursor_link="${esc}]8;;cursor://file${cwd_url}${st}[editor]${esc}]8;;${st}"
 
 git_parts=()
 git_parts+=("${cyan}${loc}${reset}")
