@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@nozomiishii/commitlint-config':
-        specifier: 0.0.11
-        version: 0.0.11(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
+        specifier: 0.1.0
+        version: 0.1.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@nozomiishii/lefthook-config':
-        specifier: 0.3.7
-        version: 0.3.7(lefthook@2.1.6)
+        specifier: 0.4.0
+        version: 0.4.0(lefthook@2.1.6)
       '@nozomiishii/markdownlint-cli2-config':
         specifier: 0.3.6
         version: 0.3.6
@@ -40,8 +40,8 @@ packages:
     resolution: {integrity: sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==}
     engines: {node: '>=6.9.0'}
 
-  '@commitlint/cli@20.5.0':
-    resolution: {integrity: sha512-yNkyN/tuKTJS3wdVfsZ2tXDM4G4Gi7z+jW54Cki8N8tZqwKBltbIvUUrSbT4hz1bhW/h0CdR+5sCSpXD+wMKaQ==}
+  '@commitlint/cli@20.5.2':
+    resolution: {integrity: sha512-IXr5xd3IX8SEG936P8gcpozRplkDeDSwJlt8UvoY1winwIy2udTbQ/cOCgbaaxcjdDqVoS29VUcz/wkwnSozbA==}
     engines: {node: '>=v18'}
     hasBin: true
 
@@ -133,13 +133,12 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nozomiishii/commitlint-config@0.0.11':
-    resolution: {integrity: sha512-llGP1DORQ15e6J7cWSqlIINWNT6Mk8GQg5DrfwMtJNO37A7hEiiINf9gklqAnZJtzA4+Z+w6nmM2ZoPUztMllw==}
+  '@nozomiishii/commitlint-config@0.1.0':
+    resolution: {integrity: sha512-AIdh6vLtmu/PB02ZP/cJJxz6mDyvO268xRy2D0vQzwDnnC02FJyGjqEwVkKXf7CroPCDXGZbwFML69h2ghnFVA==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@0.3.7':
-    resolution: {integrity: sha512-NkH51s8qNzAFUmyTJZ4YUF1T1IuehqmONyYAc+wC5M2jyVN4vIQAgE/VqxXXtMr1wdNstZREujXMTbFwt0P38A==}
-    hasBin: true
+  '@nozomiishii/lefthook-config@0.4.0':
+    resolution: {integrity: sha512-vhFvd0PvaR0ewHUtBBNzHljf+qmIwcPEs662dHZvRADLbjfhhLkT6I7KmhxqCEWYQBO3FAjKF7nvDaqpMIxbXw==}
     peerDependencies:
       lefthook: '>=2.1.6'
 
@@ -359,6 +358,10 @@ packages:
   get-east-asian-width@1.5.0:
     resolution: {integrity: sha512-CQ+bEO+Tva/qlmw24dCejulK5pMzVnUOFOijVogd3KQs07HnRIgp8TGipvCCRT06xeYEbpbgwaCxglFyiuIcmA==}
     engines: {node: '>=18'}
+
+  git-harvest@0.1.20:
+    resolution: {integrity: sha512-T51kb4LsJYd9UnzouWcBQVXGxDLEiAV4pk1vO+fXUl2SPzNWX5+CBPDdVvBHoNNaebKeosKWAg07iBsVySNqvQ==}
+    hasBin: true
 
   git-hooks-list@4.2.1:
     resolution: {integrity: sha512-WNvqJjOxxs/8ZP9+DWdwWJ7cDsd60NHf39XnD82pDVrKO5q7xfPqpkK6hwEAmBa/ZSEE4IOoR75EzbbIuwGlMw==}
@@ -818,7 +821,7 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.28.5': {}
 
-  '@commitlint/cli@20.5.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
+  '@commitlint/cli@20.5.2(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
     dependencies:
       '@commitlint/format': 20.5.0
       '@commitlint/lint': 20.5.0
@@ -952,9 +955,9 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nozomiishii/commitlint-config@0.0.11(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
+  '@nozomiishii/commitlint-config@0.1.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
     dependencies:
-      '@commitlint/cli': 20.5.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
+      '@commitlint/cli': 20.5.2(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@commitlint/config-conventional': 20.5.0
       '@commitlint/types': 20.5.0
     transitivePeerDependencies:
@@ -963,8 +966,9 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@0.3.7(lefthook@2.1.6)':
+  '@nozomiishii/lefthook-config@0.4.0(lefthook@2.1.6)':
     dependencies:
+      git-harvest: 0.1.20
       lefthook: 2.1.6
 
   '@nozomiishii/markdownlint-cli2-config@0.3.6':
@@ -1151,6 +1155,8 @@ snapshots:
   get-caller-file@2.0.5: {}
 
   get-east-asian-width@1.5.0: {}
+
+  git-harvest@0.1.20: {}
 
   git-hooks-list@4.2.1: {}
 
