@@ -1,59 +1,75 @@
 #!/bin/bash
-# Claude Code statusline: model | worktree | diff | context% | cmux surface | cursor link
+# Claude Code statusline: model | cwd | git:(branch) | +N -N | ctx% | cmux | [editor]
+# starship 風の表記スタイルに合わせた構成
 
 input=$(cat)
 
 mapfile -t fields < <(jq -r '
   .model.display_name // "Claude",
-  .workspace.project_dir // .cwd,
-  .workspace.git_worktree // "",
-  .worktree.original_branch // "",
   (.context_window.used_percentage // 0 | floor | tostring),
   (.cost.total_lines_added // 0 | tostring),
   (.cost.total_lines_removed // 0 | tostring),
-  .cwd
+  .cwd,
+  .worktree.branch // "",
+  .workspace.project_dir // ""
 ' <<<"$input")
 
 model="${fields[0]}"
-project_dir="${fields[1]}"
-wt_name="${fields[2]}"
-orig_branch="${fields[3]}"
-ctx_pct="${fields[4]}"
-added="${fields[5]}"
-removed="${fields[6]}"
-cwd="${fields[7]}"
+ctx_pct="${fields[1]}"
+added="${fields[2]}"
+removed="${fields[3]}"
+cwd="${fields[4]}"
+branch_from_json="${fields[5]}"
+project_dir="${fields[6]}"
 
-project=$(basename "$project_dir")
-
-if [[ -n "$wt_name" ]]; then
-  loc="${project}[${wt_name}]"
-  [[ -n "$orig_branch" ]] && loc="${loc}<-${orig_branch}"
+root=$(basename "${project_dir:-$cwd}")
+leaf=$(basename "$cwd")
+if [[ -z "$leaf" || "$root" == "$leaf" ]]; then
+  loc="$root"
 else
-  loc="$project"
+  loc="${root}[${leaf}]"
+fi
+
+if [[ -n "$branch_from_json" ]]; then
+  branch="$branch_from_json"
+else
+  branch=$(git -C "$cwd" rev-parse --abbrev-ref HEAD 2>/dev/null)
 fi
 
 diff_text=""
-if [[ "$added" != "0" || "$removed" != "0" ]]; then
-  diff_text="+${added}/-${removed}"
+[[ "$added" != "0" ]] && diff_text="+${added}"
+if [[ "$removed" != "0" ]]; then
+  [[ -n "$diff_text" ]] && diff_text="${diff_text} "
+  diff_text="${diff_text}-${removed}"
 fi
 
 surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null)
 
 esc=$'\033'
 st=$'\033\\'
-cursor_link="${esc}]8;;cursor://file${cwd}${st}[open]${esc}]8;;${st}"
+cursor_link="${esc}]8;;cursor://file${cwd}${st}[editor]${esc}]8;;${st}"
 
-parts=()
-parts+=("${esc}[36m${model}${esc}[0m")
-parts+=("${esc}[35m${loc}${esc}[0m")
-[[ -n "$diff_text" ]] && parts+=("${esc}[33m${diff_text}${esc}[0m")
-parts+=("${esc}[34m${ctx_pct}%${esc}[0m")
-[[ -n "$surface_ref" ]] && parts+=("${esc}[32m${surface_ref}${esc}[0m")
-parts+=("${esc}[90m${cursor_link}${esc}[0m")
+git_parts=()
+git_parts+=("${esc}[1;36m${loc}${esc}[0m")
+[[ -n "$branch" ]] && git_parts+=("${esc}[1;34mgit:(${esc}[1;31m${branch}${esc}[0m${esc}[1;34m)${esc}[0m")
+[[ -n "$diff_text" ]] && git_parts+=("${esc}[1;33m${diff_text}${esc}[0m")
 
-output="${parts[0]}"
-for ((i = 1; i < ${#parts[@]}; i++)); do
-  output="${output} | ${parts[$i]}"
-done
+env_parts=()
+env_parts+=("${esc}[1;35m${model}${esc}[0m")
+env_parts+=("${esc}[1;33m${ctx_pct}%${esc}[0m")
+[[ -n "$surface_ref" ]] && env_parts+=("${esc}[1;32m${surface_ref}${esc}[0m")
+env_parts+=("${esc}[90m${cursor_link}${esc}[0m")
 
-printf '%s' "$output"
+join() {
+  local sep="$1"
+  shift
+  local out="$1"
+  shift
+  local p
+  for p in "$@"; do
+    out="${out}${sep}${p}"
+  done
+  printf '%s' "$out"
+}
+
+printf '%s\n%s' "$(join ' ' "${git_parts[@]}")" "$(join ' | ' "${env_parts[@]}")"
