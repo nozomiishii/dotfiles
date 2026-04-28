@@ -47,18 +47,29 @@ surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2
 
 esc=$'\033'
 st=$'\033\\'
+
+reset="${esc}[0m"
+c_dir="${esc}[1;36m"
+c_git="${esc}[1;34m"
+c_branch="${esc}[1;31m"
+c_diff="${esc}[1;33m"
+c_model="${esc}[1;35m"
+c_ctx="${esc}[1;33m"
+c_surface="${esc}[1;32m"
+c_link="${esc}[90m"
+
 cursor_link="${esc}]8;;cursor://file${cwd}${st}[editor]${esc}]8;;${st}"
 
 git_parts=()
-git_parts+=("${esc}[1;36m${loc}${esc}[0m")
-[[ -n "$branch" ]] && git_parts+=("${esc}[1;34mgit:(${esc}[1;31m${branch}${esc}[0m${esc}[1;34m)${esc}[0m")
-[[ -n "$diff_text" ]] && git_parts+=("${esc}[1;33m${diff_text}${esc}[0m")
+git_parts+=("${c_dir}${loc}${reset}")
+[[ -n "$branch" ]] && git_parts+=("${c_git}git:(${c_branch}${branch}${reset}${c_git})${reset}")
+[[ -n "$diff_text" ]] && git_parts+=("${c_diff}${diff_text}${reset}")
 
 env_parts=()
-env_parts+=("${esc}[1;35m${model}${esc}[0m")
-env_parts+=("${esc}[1;33m${ctx_pct}%${esc}[0m")
-[[ -n "$surface_ref" ]] && env_parts+=("${esc}[1;32m${surface_ref}${esc}[0m")
-env_parts+=("${esc}[90m${cursor_link}${esc}[0m")
+env_parts+=("${c_model}${model}${reset}")
+env_parts+=("${c_ctx}${ctx_pct}%${reset}")
+[[ -n "$surface_ref" ]] && env_parts+=("${c_surface}${surface_ref}${reset}")
+env_parts+=("${c_link}${cursor_link}${reset}")
 
 join() {
   local sep="$1"
