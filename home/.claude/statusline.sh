@@ -1,18 +1,16 @@
-#!/usr/bin/env bash
-# Claude Code statusline: model | cwd | git:(branch) | +N -N | ctx% | cmux | [editor]
-# starship 風の表記スタイルに合わせた構成
+#!/bin/bash
+# Claude Code statusline:
+#   1: dotfiles[seal] git:(branch) +5 !3 ?2
+#   2: Opus 4.7 | 42% | surface:63
 
 input=$(cat)
 
-# mapfile is bash 4+. /bin/bash on macOS is 3.2 — read in a loop instead.
 fields=()
 while IFS= read -r line; do
   fields+=("$line")
 done < <(jq -r '
   .model.display_name // "Claude",
   (.context_window.used_percentage // 0 | floor | tostring),
-  (.cost.total_lines_added // 0 | tostring),
-  (.cost.total_lines_removed // 0 | tostring),
   .cwd,
   .worktree.branch // "",
   .workspace.project_dir // ""
@@ -20,11 +18,9 @@ done < <(jq -r '
 
 model="${fields[0]}"
 ctx_pct="${fields[1]}"
-added="${fields[2]}"
-removed="${fields[3]}"
-cwd="${fields[4]}"
-branch_from_json="${fields[5]}"
-project_dir="${fields[6]}"
+cwd="${fields[2]}"
+branch_from_json="${fields[3]}"
+project_dir="${fields[4]}"
 
 root=$(basename "${project_dir:-$cwd}")
 leaf=$(basename "$cwd")
@@ -41,17 +37,21 @@ else
 fi
 
 diff_text=""
-[[ "$added" != "0" ]] && diff_text="+${added}"
-if [[ "$removed" != "0" ]]; then
-  [[ -n "$diff_text" ]] && diff_text="${diff_text} "
-  diff_text="${diff_text}-${removed}"
+porcelain=$(git -C "$cwd" status --porcelain=v1 2>/dev/null)
+if [[ -n "$porcelain" ]]; then
+  staged=$(grep -c '^[MADRC]' <<<"$porcelain")
+  modified=$(grep -c '^.[MD]' <<<"$porcelain")
+  untracked=$(grep -c '^??' <<<"$porcelain")
+  diff_parts=()
+  ((staged > 0)) && diff_parts+=("+${staged}")
+  ((modified > 0)) && diff_parts+=("!${modified}")
+  ((untracked > 0)) && diff_parts+=("?${untracked}")
+  diff_text="${diff_parts[*]}"
 fi
 
 surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null)
 
 esc=$'\033'
-st=$'\033\\'
-
 reset="${esc}[0m"
 red="${esc}[1;31m"
 green="${esc}[1;32m"
@@ -59,14 +59,6 @@ yellow="${esc}[1;33m"
 blue="${esc}[1;34m"
 magenta="${esc}[1;35m"
 cyan="${esc}[1;36m"
-gray="${esc}[90m"
-
-cwd_url="$cwd"
-cwd_url="${cwd_url//%/%25}"
-cwd_url="${cwd_url// /%20}"
-cwd_url="${cwd_url//\#/%23}"
-cwd_url="${cwd_url//\?/%3F}"
-cursor_link="${esc}]8;;cursor://file${cwd_url}${st}[editor]${esc}]8;;${st}"
 
 git_parts=()
 git_parts+=("${cyan}${loc}${reset}")
@@ -77,7 +69,6 @@ env_parts=()
 env_parts+=("${magenta}${model}${reset}")
 env_parts+=("${yellow}${ctx_pct}%${reset}")
 [[ -n "$surface_ref" ]] && env_parts+=("${green}${surface_ref}${reset}")
-env_parts+=("${gray}${cursor_link}${reset}")
 
 join() {
   local sep="$1"
