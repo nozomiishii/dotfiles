@@ -60,7 +60,8 @@ yellow="${esc}[1;33m"
 blue="${esc}[1;34m"
 magenta="${esc}[1;35m"
 cyan="${esc}[1;36m"
-gray="${esc}[90m"
+white="${esc}[1;37m"
+underline="${esc}[4m"
 
 cursor_link="${esc}]8;;cursor://file${cwd}${st}[editor]${esc}]8;;${st}"
 
@@ -73,7 +74,7 @@ env_parts=()
 env_parts+=("${magenta}${model}${reset}")
 env_parts+=("${yellow}${ctx_pct}%${reset}")
 [[ -n "$surface_ref" ]] && env_parts+=("${green}${surface_ref}${reset}")
-env_parts+=("${gray}${cursor_link}${reset}")
+env_parts+=("${white}${underline}${cursor_link}${reset}")
 
 join() {
   local sep="$1"
