@@ -49,6 +49,7 @@ alias cc="claude --continue"
 alias cr="claude --resume"
 alias ct="claude --teleport"
 alias cw="claude --worktree"
+alias cwr="claude --worktree --resume"
 alias cwt="claude --worktree --teleport"
 
 # ----------------------------------------------------------------
