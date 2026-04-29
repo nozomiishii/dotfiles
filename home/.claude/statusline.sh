@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Claude Code statusline:
-#   1: dotfiles[seal] git:(branch) +5 !3 ?2
-#   2: Opus 4.7 | 42% | surface:63
 
 input=$(cat)
 
