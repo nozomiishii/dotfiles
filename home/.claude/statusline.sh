@@ -24,7 +24,7 @@ red="${esc}[1;31m"
 green="${esc}[1;32m"
 yellow="${esc}[1;33m"
 blue="${esc}[1;34m"
-magenta="${esc}[1;35m"
+white="${esc}[37m"
 cyan="${esc}[1;36m"
 gray="${esc}[38;5;250m"
 
@@ -71,7 +71,7 @@ else
 fi
 
 env_parts=()
-env_parts+=("${magenta}${model}${reset}")
+env_parts+=("${white}${model}${reset}")
 env_parts+=("${yellow}${ctx_pct}%${reset}")
 [[ -n "$surface_ref" ]] && env_parts+=("${blue}${surface_ref}${reset}")
 env_parts+=("${gray}${cursor_link}${reset}")
