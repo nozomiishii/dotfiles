@@ -496,14 +496,7 @@
     },
     {
       "icon": "swift",
-      "extensions": ["Mintfile"],
-      "filename": true,
-      "format": "svg",
-      "extends": "swift"
-    },
-    {
-      "icon": "swift",
-      "extensions": [".swiftformat"],
+      "extensions": ["Mintfile", ".swiftformat"],
       "filename": true,
       "format": "svg",
       "extends": "swift"
