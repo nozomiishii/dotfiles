@@ -52,6 +52,25 @@ make link
 
 - **PR タイトルは英語で記述し、CI の semantic pull request チェックに従う。** 小文字で始める英数字・記号のみ、末尾にスペースを付けない。例: `feat(darwin): use launchctl for Remote Login`. 詳細は [.github/workflows/_pull-request.yaml](.github/workflows/_pull-request.yaml) を参照。
 - **コミットメッセージ（subject と body）は英語で記述する。** PR 本文（description）は日本語でよい。
+- **`home/.claude/statusline.sh` を変更する PR では、本文に修正前後の statusline 表示例を載せる。** ソース側にコメントで形式を残すと実装と乖離してメンテ漏れが起きるため、PR 本文側に書く。例:
+
+  ````markdown
+  ## Statusline before / after
+
+  Before:
+
+  ```
+  dotfiles[shiny-munching-rose] git:(main) !1
+  Opus 4.7 | 12% | surface:63 | [editor]
+  ```
+
+  After:
+
+  ```
+  dotfiles[shiny-munching-rose] git:(main) !1 cursor://file/Users/nozomiishii/dotfiles/.claude/worktrees/shiny-munching-rose
+  Opus 4.7 | 12% | surface:63
+  ```
+  ````
 
 ## ポータビリティ
 
