@@ -16,4 +16,4 @@
 - toolchain の整理
   - 各 Dockerfile 用意しておくとかでいい気がしてる
 - Planを元にPRを作成する。
-　- PR名はConventional Commitsに作成し、英語で作成する。
+  - PR名はConventional Commitsに作成し、英語で作成する。
