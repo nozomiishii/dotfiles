@@ -52,13 +52,11 @@ esc=$'\033'
 st=$'\033\\'
 reset="${esc}[0m"
 red="${esc}[1;31m"
-green="${esc}[1;32m"
 yellow="${esc}[1;33m"
 blue="${esc}[1;34m"
 magenta="${esc}[1;35m"
 cyan="${esc}[1;36m"
-white="${esc}[1;37m"
-underline="${esc}[4m"
+gray="${esc}[38;5;250m"
 
 cwd_url="$cwd"
 cwd_url="${cwd_url//%/%25}"
@@ -66,8 +64,7 @@ cwd_url="${cwd_url// /%20}"
 cwd_url="${cwd_url//\#/%23}"
 cwd_url="${cwd_url//\?/%3F}"
 cursor_url="cursor://file${cwd_url}"
-
-cursor_line="${white}${underline}${cursor_url}${reset}"
+cursor_link="${esc}]8;;${cursor_url}${st}[editor]${esc}]8;;${st}"
 
 git_parts=()
 git_parts+=("${cyan}${loc}${reset}")
@@ -77,7 +74,8 @@ git_parts+=("${cyan}${loc}${reset}")
 env_parts=()
 env_parts+=("${magenta}${model}${reset}")
 env_parts+=("${yellow}${ctx_pct}%${reset}")
-[[ -n "$surface_ref" ]] && env_parts+=("${green}${surface_ref}${reset}")
+[[ -n "$surface_ref" ]] && env_parts+=("${blue}${surface_ref}${reset}")
+env_parts+=("${gray}${cursor_link}${reset}")
 
 join() {
   local sep="$1"
@@ -91,4 +89,4 @@ join() {
   printf '%s' "$out"
 }
 
-printf '%s\n%s\n%s' "$cursor_line" "$(join ' ' "${git_parts[@]}")" "$(join ' | ' "${env_parts[@]}")"
+printf '%s\n%s' "$(join ' ' "${git_parts[@]}")" "$(join ' | ' "${env_parts[@]}")"
