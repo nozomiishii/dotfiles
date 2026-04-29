@@ -12,8 +12,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@nozomiishii/lefthook-config':
-        specifier: 0.4.0
-        version: 0.4.0(lefthook@2.1.6)
+        specifier: 0.4.1
+        version: 0.4.1(lefthook@2.1.6)
       '@nozomiishii/markdownlint-cli2-config':
         specifier: 0.3.6
         version: 0.3.6
@@ -137,8 +137,9 @@ packages:
     resolution: {integrity: sha512-AIdh6vLtmu/PB02ZP/cJJxz6mDyvO268xRy2D0vQzwDnnC02FJyGjqEwVkKXf7CroPCDXGZbwFML69h2ghnFVA==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@0.4.0':
-    resolution: {integrity: sha512-vhFvd0PvaR0ewHUtBBNzHljf+qmIwcPEs662dHZvRADLbjfhhLkT6I7KmhxqCEWYQBO3FAjKF7nvDaqpMIxbXw==}
+  '@nozomiishii/lefthook-config@0.4.1':
+    resolution: {integrity: sha512-REQMq4+prZ4i9kRipd983p+6SF/7j2hrmMX5nqjkkFe9L+j9jDLNYA17mmeahGSi6y1bKZLaS7+nxubpY46YDA==}
+    hasBin: true
     peerDependencies:
       lefthook: '>=2.1.6'
 
@@ -966,7 +967,7 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@0.4.0(lefthook@2.1.6)':
+  '@nozomiishii/lefthook-config@0.4.1(lefthook@2.1.6)':
     dependencies:
       git-harvest: 0.1.20
       lefthook: 2.1.6
