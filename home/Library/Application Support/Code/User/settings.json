@@ -493,6 +493,13 @@
       "filename": true,
       "format": "svg",
       "extends": "opentofu"
+    },
+    {
+      "icon": "swift",
+      "extensions": ["Mintfile", ".swiftformat"],
+      "filename": true,
+      "format": "svg",
+      "extends": "swift"
     }
   ],
 
