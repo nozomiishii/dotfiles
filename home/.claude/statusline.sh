@@ -68,18 +68,18 @@ cwd_url="${cwd_url//%/%25}"
 cwd_url="${cwd_url// /%20}"
 cwd_url="${cwd_url//\#/%23}"
 cwd_url="${cwd_url//\?/%3F}"
-cursor_link="${esc}]8;;cursor://file${cwd_url}${st}[editor]${esc}]8;;${st}"
+cursor_url="cursor://file${cwd_url}"
 
 git_parts=()
 git_parts+=("${cyan}${loc}${reset}")
 [[ -n "$branch" ]] && git_parts+=("${blue}git:(${red}${branch}${reset}${blue})${reset}")
 [[ -n "$diff_text" ]] && git_parts+=("${yellow}${diff_text}${reset}")
+git_parts+=("${white}${underline}${cursor_url}${reset}")
 
 env_parts=()
 env_parts+=("${magenta}${model}${reset}")
 env_parts+=("${yellow}${ctx_pct}%${reset}")
 [[ -n "$surface_ref" ]] && env_parts+=("${green}${surface_ref}${reset}")
-env_parts+=("${white}${underline}${cursor_link}${reset}")
 
 join() {
   local sep="$1"
