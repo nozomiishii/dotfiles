@@ -8,43 +8,12 @@ while IFS= read -r line; do
 done < <(jq -r '
   .model.display_name // "Claude",
   (.context_window.used_percentage // 0 | floor | tostring),
-  .cwd,
-  .worktree.branch // "",
-  .workspace.project_dir // ""
+  .cwd
 ' <<<"$input")
 
 model="${fields[0]}"
 ctx_pct="${fields[1]}"
 cwd="${fields[2]}"
-branch_from_json="${fields[3]}"
-project_dir="${fields[4]}"
-
-root=$(basename "${project_dir:-$cwd}")
-leaf=$(basename "$cwd")
-if [[ -z "$leaf" || "$root" == "$leaf" ]]; then
-  loc="$root"
-else
-  loc="${root}[${leaf}]"
-fi
-
-if [[ -n "$branch_from_json" ]]; then
-  branch="$branch_from_json"
-else
-  branch=$(git -C "$cwd" rev-parse --abbrev-ref HEAD 2>/dev/null)
-fi
-
-diff_text=""
-porcelain=$(git -C "$cwd" status --porcelain=v1 2>/dev/null)
-if [[ -n "$porcelain" ]]; then
-  staged=$(grep -c '^[MADRC]' <<<"$porcelain")
-  modified=$(grep -c '^.[MD]' <<<"$porcelain")
-  untracked=$(grep -c '^??' <<<"$porcelain")
-  diff_parts=()
-  ((staged > 0)) && diff_parts+=("+${staged}")
-  ((modified > 0)) && diff_parts+=("!${modified}")
-  ((untracked > 0)) && diff_parts+=("?${untracked}")
-  diff_text="${diff_parts[*]}"
-fi
 
 surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null)
 
@@ -67,7 +36,7 @@ cwd_url="${cwd_url//\?/%3F}"
 cursor_url="cursor://file${cwd_url}"
 cursor_link="${esc}]8;;${cursor_url}${st}[editor]${esc}]8;;${st}"
 
-git_parts=()
+# 1行目: worktree内ならカスタム表示、それ以外は starship に丸投げ
 git_dir=$(git -C "$cwd" rev-parse --git-dir 2>/dev/null)
 if [[ "$git_dir" == */worktrees/* ]]; then
   common=$(git -C "$cwd" rev-parse --git-common-dir 2>/dev/null)
@@ -75,13 +44,31 @@ if [[ "$git_dir" == */worktrees/* ]]; then
   repo_name=$(basename "$(dirname "$abs_common")")
   wt_top=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)
   wt_dir=$(basename "$wt_top")
-  git_parts+=("${cyan}${repo_name}${reset}")
-  git_parts+=("${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
+
+  diff_text=""
+  porcelain=$(git -C "$cwd" status --porcelain=v1 2>/dev/null)
+  if [[ -n "$porcelain" ]]; then
+    staged=$(grep -c '^[MADRC]' <<<"$porcelain")
+    modified=$(grep -c '^.[MD]' <<<"$porcelain")
+    untracked=$(grep -c '^??' <<<"$porcelain")
+    diff_parts=()
+    ((staged > 0)) && diff_parts+=("+${staged}")
+    ((modified > 0)) && diff_parts+=("!${modified}")
+    ((untracked > 0)) && diff_parts+=("?${untracked}")
+    diff_text="${diff_parts[*]}"
+  fi
+
+  parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
+  [[ -n "$diff_text" ]] && parts+=("${yellow}${diff_text}${reset}")
+  IFS=' '
+  top_line="${parts[*]}"
+  unset IFS
 else
-  git_parts+=("${cyan}${loc}${reset}")
-  [[ -n "$branch" ]] && git_parts+=("${blue}git:(${red}${branch}${reset}${blue})${reset}")
+  top_line=$(cd "$cwd" 2>/dev/null \
+    && STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" \
+       starship prompt --terminal-width=120 2>/dev/null \
+    | head -1 | sed 's/%[{}]//g')
 fi
-[[ -n "$diff_text" ]] && git_parts+=("${yellow}${diff_text}${reset}")
 
 env_parts=()
 env_parts+=("${magenta}${model}${reset}")
@@ -101,4 +88,4 @@ join() {
   printf '%s' "$out"
 }
 
-printf '%s\n%s' "$(join ' ' "${git_parts[@]}")" "$(join ' | ' "${env_parts[@]}")"
+printf '%s\n%s' "${top_line}" "$(join ' | ' "${env_parts[@]}")"
