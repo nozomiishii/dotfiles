@@ -65,7 +65,12 @@ cyan="${esc}[1;36m"
 white="${esc}[1;37m"
 underline="${esc}[4m"
 
-cursor_link="${esc}]8;;cursor://file${cwd}${st}[editor]${esc}]8;;${st}"
+cwd_url="$cwd"
+cwd_url="${cwd_url//%/%25}"
+cwd_url="${cwd_url// /%20}"
+cwd_url="${cwd_url//\#/%23}"
+cwd_url="${cwd_url//\?/%3F}"
+cursor_link="${esc}]8;;cursor://file${cwd_url}${st}[editor]${esc}]8;;${st}"
 
 git_parts=()
 git_parts+=("${cyan}${loc}${reset}")
