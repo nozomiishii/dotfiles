@@ -1,21 +1,7 @@
 #!/usr/bin/env bash
+set -uo pipefail
 
-input=$(cat)
-
-fields=()
-while IFS= read -r line; do
-  fields+=("$line")
-done < <(jq -r '
-  .model.display_name // "Claude",
-  (.context_window.used_percentage // 0 | floor | tostring),
-  .cwd
-' <<<"$input")
-
-model="${fields[0]}"
-ctx_pct="${fields[1]}"
-cwd="${fields[2]}"
-
-surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null)
+# --- colors ---
 
 esc=$'\033'
 st=$'\033\\'
@@ -28,49 +14,35 @@ white="${esc}[37m"
 cyan="${esc}[1;36m"
 gray="${esc}[38;5;250m"
 
-cwd_url="$cwd"
-cwd_url="${cwd_url//%/%25}"
-cwd_url="${cwd_url// /%20}"
-cwd_url="${cwd_url//\#/%23}"
-cwd_url="${cwd_url//\?/%3F}"
-cursor_url="cursor://file${cwd_url}"
-cursor_link="${esc}]8;;${cursor_url}${st}[editor]${esc}]8;;${st}"
+# --- input parsing ---
 
-# 1行目: worktree内ならカスタム表示、それ以外は starship に丸投げ
-git_dir=$(git -C "$cwd" rev-parse --git-dir 2>/dev/null)
-if [[ "$git_dir" == */worktrees/* ]]; then
-  common=$(git -C "$cwd" rev-parse --git-common-dir 2>/dev/null)
-  abs_common=$(cd "$cwd" 2>/dev/null && cd "$common" 2>/dev/null && pwd)
-  repo_name=$(basename "$(dirname "$abs_common")")
-  wt_top=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)
-  wt_dir=$(basename "$wt_top")
+input=$(cat)
 
-  diff_text=$(cd "$cwd" 2>/dev/null \
-    && STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" \
-       starship module git_status 2>/dev/null \
-    | sed 's/ *$//')
+fields=()
+while IFS= read -r line; do
+  fields+=("$line")
+done < <(jq -r '
+  .model.display_name // "Claude",
+  (.context_window.used_percentage // 0 | floor | tostring),
+  .cwd // ""
+' <<<"$input")
 
-  parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
-  [[ -n "$diff_text" ]] && parts+=("$diff_text")
-  IFS=' '
-  top_line="${parts[*]}"
-  unset IFS
-else
-  top_line=$(cd "$cwd" 2>/dev/null \
-    && STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" \
-       starship prompt --terminal-width=120 2>/dev/null \
-    | head -1 | sed 's/%[{}]//g')
+model="${fields[0]:-Claude}"
+ctx_pct="${fields[1]:-0}"
+cwd="${fields[2]:-$HOME}"
+
+# cmux が無い環境では fork ごと省略
+surface_ref=""
+if command -v cmux >/dev/null 2>&1; then
+  surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null || true)
 fi
 
-env_parts=()
-env_parts+=("${white}${model}${reset}")
-env_parts+=("${yellow}${ctx_pct}%${reset}")
-[[ -n "$surface_ref" ]] && env_parts+=("${blue}${surface_ref}${reset}")
-env_parts+=("${gray}${cursor_link}${reset}")
+# --- helpers ---
 
 join() {
   local sep="$1"
   shift
+  (($# == 0)) && return
   local out="$1"
   shift
   local p
@@ -80,4 +52,90 @@ join() {
   printf '%s' "$out"
 }
 
-printf '%s\n%s' "${top_line}" "$(join ' | ' "${env_parts[@]}")"
+# RFC 3986 unreserved + / 以外を percent-encode する。
+# LC_ALL=C で UTF-8 マルチバイト文字を byte 単位で正しくエンコード。
+urlencode() {
+  local s="$1"
+  local out="" i char
+  local LC_ALL=C
+  for ((i = 0; i < ${#s}; i++)); do
+    char="${s:$i:1}"
+    case "$char" in
+      [a-zA-Z0-9._~/-]) out+="$char" ;;
+      *)
+        printf -v char '%%%02X' "'$char"
+        out+="$char"
+        ;;
+    esac
+  done
+  printf '%s' "$out"
+}
+
+# starship は CWD 依存なので subshell で cd してから呼ぶ。
+# subshell 終了で親プロセスの PWD には漏れない。
+starship_at() {
+  (
+    cd "$cwd" 2>/dev/null || exit 0
+    STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" starship "$@" 2>/dev/null
+  )
+}
+
+# OSC 8 hyperlink で cwd を Cursor で開ける `[editor]` リンクを返す。
+build_cursor_link() {
+  local url="cursor://file$(urlencode "$cwd")"
+  printf '%s]8;;%s%s[editor]%s]8;;%s' "$esc" "$url" "$st" "$esc" "$st"
+}
+
+# --- renderers ---
+
+# 1行目: worktree内ならカスタム表示、それ以外は starship prompt に丸投げ。
+render_top_line() {
+  local git_dir="" git_common="" wt_top=""
+  {
+    IFS= read -r git_dir
+    IFS= read -r git_common
+    IFS= read -r wt_top
+  } < <(git -C "$cwd" rev-parse --git-dir --git-common-dir --show-toplevel 2>/dev/null || true)
+
+  local parts=()
+  if [[ "$git_dir" == */worktrees/* ]]; then
+    local abs_common repo_name wt_dir diff_text
+    abs_common=$(cd "$cwd" 2>/dev/null && cd "$git_common" 2>/dev/null && pwd)
+    repo_name=$(basename "$(dirname "$abs_common")")
+    wt_dir=$(basename "$wt_top")
+    diff_text=$(starship_at module git_status | sed 's/ *$//')
+
+    parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
+    [[ -n "$diff_text" ]] && parts+=("$diff_text")
+  else
+    # starship prompt は 2 行構成 ($directory ... $line_break $character) なので
+    # 1 行目 (cwd 行) のみを採用。2 行目の `→` は statusline には不要。
+    # 親シェル (zsh) から STARSHIP_SHELL が継承されると starship が zsh モードで
+    # %{ ... %} (zero-width マーカー) を埋め込むが、Claude statusline では
+    # 解釈されずリテラル表示されてしまうため sed で除去する。
+    local prompt
+    prompt=$(starship_at prompt --terminal-width=120 | head -1 | sed 's/%[{}]//g')
+    parts=("$prompt")
+  fi
+
+  join ' ' "${parts[@]}"
+}
+
+render_env_line() {
+  local parts=()
+  parts+=("${white}${model}${reset}")
+  parts+=("${yellow}${ctx_pct}%${reset}")
+  [[ -n "$surface_ref" ]] && parts+=("${blue}${surface_ref}${reset}")
+  parts+=("${gray}$(build_cursor_link)${reset}")
+  join ' | ' "${parts[@]}"
+}
+
+# --- output ---
+
+# cwd が消えた場合（git worktree remove 等）は警告のみ表示して env_line は維持
+if [[ ! -d "$cwd" ]]; then
+  printf '%s(stale cwd: %s)%s\n%s' "$red" "$cwd" "$reset" "$(render_env_line)"
+  exit 0
+fi
+
+printf '%s\n%s' "$(render_top_line)" "$(render_env_line)"
