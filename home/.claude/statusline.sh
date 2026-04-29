@@ -10,7 +10,6 @@ while IFS= read -r line; do
   fields+=("$line")
 done < <(jq -r '
   .model.display_name // "Claude",
-  .effort.level // "",
   (.context_window.used_percentage // 0 | floor | tostring),
   .cwd,
   .worktree.branch // "",
@@ -18,11 +17,10 @@ done < <(jq -r '
 ' <<<"$input")
 
 model="${fields[0]}"
-effort="${fields[1]}"
-ctx_pct="${fields[2]}"
-cwd="${fields[3]}"
-branch_from_json="${fields[4]}"
-project_dir="${fields[5]}"
+ctx_pct="${fields[1]}"
+cwd="${fields[2]}"
+branch_from_json="${fields[3]}"
+project_dir="${fields[4]}"
 
 root=$(basename "${project_dir:-$cwd}")
 leaf=$(basename "$cwd")
@@ -79,7 +77,6 @@ git_parts+=("${cyan}${loc}${reset}")
 
 env_parts=()
 env_parts+=("${magenta}${model}${reset}")
-[[ -n "$effort" ]] && env_parts+=("${red}${effort}${reset}")
 env_parts+=("${yellow}${ctx_pct}%${reset}")
 [[ -n "$surface_ref" ]] && env_parts+=("${green}${surface_ref}${reset}")
 env_parts+=("${white}${underline}${cursor_link}${reset}")
