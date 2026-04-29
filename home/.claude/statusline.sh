@@ -45,21 +45,13 @@ if [[ "$git_dir" == */worktrees/* ]]; then
   wt_top=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)
   wt_dir=$(basename "$wt_top")
 
-  diff_text=""
-  porcelain=$(git -C "$cwd" status --porcelain=v1 2>/dev/null)
-  if [[ -n "$porcelain" ]]; then
-    staged=$(grep -c '^[MADRC]' <<<"$porcelain")
-    modified=$(grep -c '^.[MD]' <<<"$porcelain")
-    untracked=$(grep -c '^??' <<<"$porcelain")
-    diff_parts=()
-    ((staged > 0)) && diff_parts+=("+${staged}")
-    ((modified > 0)) && diff_parts+=("!${modified}")
-    ((untracked > 0)) && diff_parts+=("?${untracked}")
-    diff_text="${diff_parts[*]}"
-  fi
+  diff_text=$(cd "$cwd" 2>/dev/null \
+    && STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" \
+       starship module git_status 2>/dev/null \
+    | sed 's/ *$//')
 
   parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
-  [[ -n "$diff_text" ]] && parts+=("${yellow}${diff_text}${reset}")
+  [[ -n "$diff_text" ]] && parts+=("$diff_text")
   IFS=' '
   top_line="${parts[*]}"
   unset IFS
