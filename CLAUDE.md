@@ -67,7 +67,8 @@ make link
   After:
 
   ```
-  dotfiles[shiny-munching-rose] git:(main) !1 cursor://file/Users/nozomiishii/dotfiles/.claude/worktrees/shiny-munching-rose
+  cursor://file/Users/nozomiishii/dotfiles/.claude/worktrees/shiny-munching-rose
+  dotfiles[shiny-munching-rose] git:(main) !1
   Opus 4.7 | 12% | surface:63
   ```
   ````

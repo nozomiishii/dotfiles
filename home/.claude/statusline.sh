@@ -67,11 +67,12 @@ cwd_url="${cwd_url//\#/%23}"
 cwd_url="${cwd_url//\?/%3F}"
 cursor_url="cursor://file${cwd_url}"
 
+cursor_line="${white}${underline}${cursor_url}${reset}"
+
 git_parts=()
 git_parts+=("${cyan}${loc}${reset}")
 [[ -n "$branch" ]] && git_parts+=("${blue}git:(${red}${branch}${reset}${blue})${reset}")
 [[ -n "$diff_text" ]] && git_parts+=("${yellow}${diff_text}${reset}")
-git_parts+=("${white}${underline}${cursor_url}${reset}")
 
 env_parts=()
 env_parts+=("${magenta}${model}${reset}")
@@ -90,4 +91,4 @@ join() {
   printf '%s' "$out"
 }
 
-printf '%s\n%s' "$(join ' ' "${git_parts[@]}")" "$(join ' | ' "${env_parts[@]}")"
+printf '%s\n%s\n%s' "$cursor_line" "$(join ' ' "${git_parts[@]}")" "$(join ' | ' "${env_parts[@]}")"
