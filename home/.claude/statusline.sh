@@ -52,6 +52,7 @@ esc=$'\033'
 st=$'\033\\'
 reset="${esc}[0m"
 red="${esc}[1;31m"
+green="${esc}[1;32m"
 yellow="${esc}[1;33m"
 blue="${esc}[1;34m"
 magenta="${esc}[1;35m"
@@ -67,8 +68,19 @@ cursor_url="cursor://file${cwd_url}"
 cursor_link="${esc}]8;;${cursor_url}${st}[editor]${esc}]8;;${st}"
 
 git_parts=()
-git_parts+=("${cyan}${loc}${reset}")
-[[ -n "$branch" ]] && git_parts+=("${blue}git:(${red}${branch}${reset}${blue})${reset}")
+git_dir=$(git -C "$cwd" rev-parse --git-dir 2>/dev/null)
+if [[ "$git_dir" == */worktrees/* ]]; then
+  common=$(git -C "$cwd" rev-parse --git-common-dir 2>/dev/null)
+  abs_common=$(cd "$cwd" 2>/dev/null && cd "$common" 2>/dev/null && pwd)
+  repo_name=$(basename "$(dirname "$abs_common")")
+  wt_top=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)
+  wt_dir=$(basename "$wt_top")
+  git_parts+=("${cyan}${repo_name}${reset}")
+  git_parts+=("${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
+else
+  git_parts+=("${cyan}${loc}${reset}")
+  [[ -n "$branch" ]] && git_parts+=("${blue}git:(${red}${branch}${reset}${blue})${reset}")
+fi
 [[ -n "$diff_text" ]] && git_parts+=("${yellow}${diff_text}${reset}")
 
 env_parts=()
