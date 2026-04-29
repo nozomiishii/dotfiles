@@ -1,5 +1,34 @@
 #!/usr/bin/env bash
 
+# --- helpers ---
+
+join() {
+  local sep="$1"
+  shift
+  local out="$1"
+  shift
+  local p
+  for p in "$@"; do
+    out="${out}${sep}${p}"
+  done
+  printf '%s' "$out"
+}
+
+urlencode() {
+  local s="$1"
+  s="${s//%/%25}"
+  s="${s// /%20}"
+  s="${s//\#/%23}"
+  s="${s//\?/%3F}"
+  printf '%s' "$s"
+}
+
+starship_at() {
+  STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" starship "$@" 2>/dev/null
+}
+
+# --- input parsing ---
+
 input=$(cat)
 
 fields=()
@@ -15,7 +44,15 @@ model="${fields[0]}"
 ctx_pct="${fields[1]}"
 cwd="${fields[2]}"
 
-surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null)
+cd "$cwd" 2>/dev/null
+
+# cmux が無い環境では fork ごと省略
+surface_ref=""
+if command -v cmux >/dev/null 2>&1; then
+  surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null)
+fi
+
+# --- colors ---
 
 esc=$'\033'
 st=$'\033\\'
@@ -28,56 +65,55 @@ white="${esc}[37m"
 cyan="${esc}[1;36m"
 gray="${esc}[38;5;250m"
 
-cwd_url="$cwd"
-cwd_url="${cwd_url//%/%25}"
-cwd_url="${cwd_url// /%20}"
-cwd_url="${cwd_url//\#/%23}"
-cwd_url="${cwd_url//\?/%3F}"
-cursor_url="cursor://file${cwd_url}"
+# --- cursor link ---
+
+cursor_url="cursor://file$(urlencode "$cwd")"
 cursor_link="${esc}]8;;${cursor_url}${st}[editor]${esc}]8;;${st}"
 
-# 1行目: worktree内ならカスタム表示、それ以外は starship に丸投げ
-git_dir=$(git -C "$cwd" rev-parse --git-dir 2>/dev/null)
-if [[ "$git_dir" == */worktrees/* ]]; then
-  common=$(git -C "$cwd" rev-parse --git-common-dir 2>/dev/null)
-  abs_common=$(cd "$cwd" 2>/dev/null && cd "$common" 2>/dev/null && pwd)
-  repo_name=$(basename "$(dirname "$abs_common")")
-  wt_top=$(git -C "$cwd" rev-parse --show-toplevel 2>/dev/null)
-  wt_dir=$(basename "$wt_top")
+# --- renderers ---
 
-  diff_text=$(cd "$cwd" 2>/dev/null \
-    && STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" \
-       starship module git_status 2>/dev/null \
-    | sed 's/ *$//')
+# 1行目: worktree内ならカスタム表示、それ以外は starship prompt に丸投げ。
+# 末尾 extras は両ブランチで append される拡張点。
+render_top_line() {
+  local extras=("$@")
+  local git_dir="" git_common="" wt_top=""
+  {
+    IFS= read -r git_dir
+    IFS= read -r git_common
+    IFS= read -r wt_top
+  } < <(git rev-parse --git-dir --git-common-dir --show-toplevel 2>/dev/null)
 
-  parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
-  [[ -n "$diff_text" ]] && parts+=("$diff_text")
-  IFS=' '
-  top_line="${parts[*]}"
-  unset IFS
-else
-  top_line=$(cd "$cwd" 2>/dev/null \
-    && STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" \
-       starship prompt --terminal-width=120 2>/dev/null \
-    | head -1 | sed 's/%[{}]//g')
-fi
+  local parts=()
+  if [[ "$git_dir" == */worktrees/* ]]; then
+    local abs_common repo_name wt_dir diff_text
+    abs_common=$(cd "$git_common" 2>/dev/null && pwd)
+    repo_name=$(basename "$(dirname "$abs_common")")
+    wt_dir=$(basename "$wt_top")
+    diff_text=$(starship_at module git_status | sed 's/ *$//')
 
-env_parts=()
-env_parts+=("${white}${model}${reset}")
-env_parts+=("${yellow}${ctx_pct}%${reset}")
-[[ -n "$surface_ref" ]] && env_parts+=("${blue}${surface_ref}${reset}")
-env_parts+=("${gray}${cursor_link}${reset}")
+    parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
+    [[ -n "$diff_text" ]] && parts+=("$diff_text")
+  else
+    # starship prompt の先頭行のみ採用し、zsh のプロンプトエスケープ %{ %} を除去
+    local prompt
+    prompt=$(starship_at prompt --terminal-width=120 | head -1 | sed 's/%[{}]//g')
+    parts=("$prompt")
+  fi
 
-join() {
-  local sep="$1"
-  shift
-  local out="$1"
-  shift
-  local p
-  for p in "$@"; do
-    out="${out}${sep}${p}"
-  done
-  printf '%s' "$out"
+  parts+=("${extras[@]}")
+  join ' ' "${parts[@]}"
 }
 
-printf '%s\n%s' "${top_line}" "$(join ' | ' "${env_parts[@]}")"
+render_env_line() {
+  local parts=()
+  parts+=("${white}${model}${reset}")
+  parts+=("${yellow}${ctx_pct}%${reset}")
+  [[ -n "$surface_ref" ]] && parts+=("${blue}${surface_ref}${reset}")
+  parts+=("${gray}${cursor_link}${reset}")
+  join ' | ' "${parts[@]}"
+}
+
+# --- output ---
+
+top_extras=()
+printf '%s\n%s' "$(render_top_line "${top_extras[@]}")" "$(render_env_line)"
