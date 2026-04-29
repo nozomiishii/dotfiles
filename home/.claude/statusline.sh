@@ -107,7 +107,11 @@ render_top_line() {
     parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
     [[ -n "$diff_text" ]] && parts+=("$diff_text")
   else
-    # starship prompt の先頭行のみ採用し、zsh のプロンプトエスケープ %{ %} を除去
+    # starship prompt は 2 行構成 ($directory ... $line_break $character) なので
+    # 1 行目 (cwd 行) のみを採用。2 行目の `→` は statusline には不要。
+    # 親シェル (zsh) から STARSHIP_SHELL が継承されると starship が zsh モードで
+    # %{ ... %} (zero-width マーカー) を埋め込むが、Claude statusline では
+    # 解釈されずリテラル表示されてしまうため sed で除去する。
     local prompt
     prompt=$(starship_at prompt --terminal-width=120 | head -1 | sed 's/%[{}]//g')
     parts=("$prompt")
