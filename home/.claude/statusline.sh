@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+set -uo pipefail
 
 # --- helpers ---
 
 join() {
   local sep="$1"
   shift
+  (($# == 0)) && return
   local out="$1"
   shift
   local p
@@ -14,17 +16,32 @@ join() {
   printf '%s' "$out"
 }
 
+# RFC 3986 unreserved + / 以外を percent-encode する。
+# LC_ALL=C で UTF-8 マルチバイト文字を byte 単位で正しくエンコード。
 urlencode() {
   local s="$1"
-  s="${s//%/%25}"
-  s="${s// /%20}"
-  s="${s//\#/%23}"
-  s="${s//\?/%3F}"
-  printf '%s' "$s"
+  local out="" i char
+  local LC_ALL=C
+  for ((i = 0; i < ${#s}; i++)); do
+    char="${s:$i:1}"
+    case "$char" in
+      [a-zA-Z0-9._~/-]) out+="$char" ;;
+      *)
+        printf -v char '%%%02X' "'$char"
+        out+="$char"
+        ;;
+    esac
+  done
+  printf '%s' "$out"
 }
 
+# starship は CWD 依存なので subshell で cd してから呼ぶ。
+# subshell 終了で親プロセスの PWD には漏れない。
 starship_at() {
-  STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" starship "$@" 2>/dev/null
+  (
+    cd "$cwd" 2>/dev/null || exit 0
+    STARSHIP_CONFIG="$HOME/.config/starship/starship.toml" starship "$@" 2>/dev/null
+  )
 }
 
 # --- input parsing ---
@@ -37,19 +54,17 @@ while IFS= read -r line; do
 done < <(jq -r '
   .model.display_name // "Claude",
   (.context_window.used_percentage // 0 | floor | tostring),
-  .cwd
+  .cwd // ""
 ' <<<"$input")
 
-model="${fields[0]}"
-ctx_pct="${fields[1]}"
-cwd="${fields[2]}"
-
-cd "$cwd" 2>/dev/null
+model="${fields[0]:-Claude}"
+ctx_pct="${fields[1]:-0}"
+cwd="${fields[2]:-$HOME}"
 
 # cmux が無い環境では fork ごと省略
 surface_ref=""
 if command -v cmux >/dev/null 2>&1; then
-  surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null)
+  surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null || true)
 fi
 
 # --- colors ---
@@ -73,20 +88,18 @@ cursor_link="${esc}]8;;${cursor_url}${st}[editor]${esc}]8;;${st}"
 # --- renderers ---
 
 # 1行目: worktree内ならカスタム表示、それ以外は starship prompt に丸投げ。
-# 末尾 extras は両ブランチで append される拡張点。
 render_top_line() {
-  local extras=("$@")
   local git_dir="" git_common="" wt_top=""
   {
     IFS= read -r git_dir
     IFS= read -r git_common
     IFS= read -r wt_top
-  } < <(git rev-parse --git-dir --git-common-dir --show-toplevel 2>/dev/null)
+  } < <(git -C "$cwd" rev-parse --git-dir --git-common-dir --show-toplevel 2>/dev/null || true)
 
   local parts=()
   if [[ "$git_dir" == */worktrees/* ]]; then
     local abs_common repo_name wt_dir diff_text
-    abs_common=$(cd "$git_common" 2>/dev/null && pwd)
+    abs_common=$(cd "$cwd" 2>/dev/null && cd "$git_common" 2>/dev/null && pwd)
     repo_name=$(basename "$(dirname "$abs_common")")
     wt_dir=$(basename "$wt_top")
     diff_text=$(starship_at module git_status | sed 's/ *$//')
@@ -100,7 +113,6 @@ render_top_line() {
     parts=("$prompt")
   fi
 
-  parts+=("${extras[@]}")
   join ' ' "${parts[@]}"
 }
 
@@ -115,5 +127,10 @@ render_env_line() {
 
 # --- output ---
 
-top_extras=()
-printf '%s\n%s' "$(render_top_line "${top_extras[@]}")" "$(render_env_line)"
+# cwd が消えた場合（git worktree remove 等）は警告のみ表示して env_line は維持
+if [[ ! -d "$cwd" ]]; then
+  printf '%s(stale cwd: %s)%s\n%s' "$red" "$cwd" "$reset" "$(render_env_line)"
+  exit 0
+fi
+
+printf '%s\n%s' "$(render_top_line)" "$(render_env_line)"
