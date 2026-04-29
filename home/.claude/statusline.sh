@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
+# --- colors ---
+
+esc=$'\033'
+st=$'\033\\'
+reset="${esc}[0m"
+red="${esc}[1;31m"
+green="${esc}[1;32m"
+yellow="${esc}[1;33m"
+blue="${esc}[1;34m"
+white="${esc}[37m"
+cyan="${esc}[1;36m"
+gray="${esc}[38;5;250m"
+
 # --- helpers ---
 
 join() {
@@ -66,19 +79,6 @@ surface_ref=""
 if command -v cmux >/dev/null 2>&1; then
   surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null || true)
 fi
-
-# --- colors ---
-
-esc=$'\033'
-st=$'\033\\'
-reset="${esc}[0m"
-red="${esc}[1;31m"
-green="${esc}[1;32m"
-yellow="${esc}[1;33m"
-blue="${esc}[1;34m"
-white="${esc}[37m"
-cyan="${esc}[1;36m"
-gray="${esc}[38;5;250m"
 
 # --- cursor link ---
 
