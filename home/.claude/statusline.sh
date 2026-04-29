@@ -14,6 +14,29 @@ white="${esc}[37m"
 cyan="${esc}[1;36m"
 gray="${esc}[38;5;250m"
 
+# --- input parsing ---
+
+input=$(cat)
+
+fields=()
+while IFS= read -r line; do
+  fields+=("$line")
+done < <(jq -r '
+  .model.display_name // "Claude",
+  (.context_window.used_percentage // 0 | floor | tostring),
+  .cwd // ""
+' <<<"$input")
+
+model="${fields[0]:-Claude}"
+ctx_pct="${fields[1]:-0}"
+cwd="${fields[2]:-$HOME}"
+
+# cmux が無い環境では fork ごと省略
+surface_ref=""
+if command -v cmux >/dev/null 2>&1; then
+  surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null || true)
+fi
+
 # --- helpers ---
 
 join() {
@@ -57,33 +80,11 @@ starship_at() {
   )
 }
 
-# --- input parsing ---
-
-input=$(cat)
-
-fields=()
-while IFS= read -r line; do
-  fields+=("$line")
-done < <(jq -r '
-  .model.display_name // "Claude",
-  (.context_window.used_percentage // 0 | floor | tostring),
-  .cwd // ""
-' <<<"$input")
-
-model="${fields[0]:-Claude}"
-ctx_pct="${fields[1]:-0}"
-cwd="${fields[2]:-$HOME}"
-
-# cmux が無い環境では fork ごと省略
-surface_ref=""
-if command -v cmux >/dev/null 2>&1; then
-  surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null || true)
-fi
-
-# --- cursor link ---
-
-cursor_url="cursor://file$(urlencode "$cwd")"
-cursor_link="${esc}]8;;${cursor_url}${st}[editor]${esc}]8;;${st}"
+# OSC 8 hyperlink で cwd を Cursor で開ける `[editor]` リンクを返す。
+build_cursor_link() {
+  local url="cursor://file$(urlencode "$cwd")"
+  printf '%s]8;;%s%s[editor]%s]8;;%s' "$esc" "$url" "$st" "$esc" "$st"
+}
 
 # --- renderers ---
 
@@ -125,7 +126,7 @@ render_env_line() {
   parts+=("${white}${model}${reset}")
   parts+=("${yellow}${ctx_pct}%${reset}")
   [[ -n "$surface_ref" ]] && parts+=("${blue}${surface_ref}${reset}")
-  parts+=("${gray}${cursor_link}${reset}")
+  parts+=("${gray}$(build_cursor_link)${reset}")
   join ' | ' "${parts[@]}"
 }
 
