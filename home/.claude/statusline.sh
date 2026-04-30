@@ -99,13 +99,19 @@ render_top_line() {
   } < <(git -C "$cwd" rev-parse --git-dir --git-common-dir --show-toplevel 2>/dev/null || true)
 
   if [[ "$git_dir" == */worktrees/* ]]; then
-    local abs_common repo_name wt_dir diff_text
+    local abs_common repo_name wt_dir diff_text branch
     abs_common=$(cd "$cwd" 2>/dev/null && cd "$git_common" 2>/dev/null && pwd)
     repo_name=$(basename "$(dirname "$abs_common")")
     wt_dir=$(basename "$wt_top")
     diff_text=$(starship_at module git_status | sed 's/ *$//')
+    branch=$(git -C "$cwd" branch --show-current 2>/dev/null)
 
     local parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
+    # claude -w 自動生成は branch = worktree-{wt_dir} で情報重複するので省略。
+    # 手動で別ブランチを切った worktree のときだけ git:() を追加。
+    if [[ -n "$branch" && "$branch" != "worktree-${wt_dir}" ]]; then
+      parts+=("${blue}git:(${red}${branch}${reset}${blue})${reset}")
+    fi
     [[ -n "$diff_text" ]] && parts+=("$diff_text")
     join ' ' "${parts[@]}"
     return
