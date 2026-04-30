@@ -82,7 +82,8 @@ starship_at() {
 
 # OSC 8 hyperlink で cwd を Cursor で開ける `[editor]` リンクを返す。
 build_cursor_link() {
-  local url="cursor://file$(urlencode "$cwd")"
+  local url
+  url="cursor://file$(urlencode "$cwd")"
   printf '%s]8;;%s%s[editor]%s]8;;%s' "$esc" "$url" "$st" "$esc" "$st"
 }
 
@@ -97,7 +98,6 @@ render_top_line() {
     IFS= read -r wt_top
   } < <(git -C "$cwd" rev-parse --git-dir --git-common-dir --show-toplevel 2>/dev/null || true)
 
-  local parts=()
   if [[ "$git_dir" == */worktrees/* ]]; then
     local abs_common repo_name wt_dir diff_text
     abs_common=$(cd "$cwd" 2>/dev/null && cd "$git_common" 2>/dev/null && pwd)
@@ -105,20 +105,18 @@ render_top_line() {
     wt_dir=$(basename "$wt_top")
     diff_text=$(starship_at module git_status | sed 's/ *$//')
 
-    parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
+    local parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
     [[ -n "$diff_text" ]] && parts+=("$diff_text")
-  else
-    # starship prompt は 2 行構成 ($directory ... $line_break $character) なので
-    # 1 行目 (cwd 行) のみを採用。2 行目の `→` は statusline には不要。
-    # 親シェル (zsh) から STARSHIP_SHELL が継承されると starship が zsh モードで
-    # %{ ... %} (zero-width マーカー) を埋め込むが、Claude statusline では
-    # 解釈されずリテラル表示されてしまうため sed で除去する。
-    local prompt
-    prompt=$(starship_at prompt --terminal-width=120 | head -1 | sed 's/%[{}]//g')
-    parts=("$prompt")
+    join ' ' "${parts[@]}"
+    return
   fi
 
-  join ' ' "${parts[@]}"
+  # starship prompt は 2 行構成 ($directory ... $line_break $character) なので
+  # 1 行目 (cwd 行) のみを採用。2 行目の `→` は statusline には不要。
+  # 親シェル (zsh) から STARSHIP_SHELL が継承されると starship が zsh モードで
+  # %{ ... %} (zero-width マーカー) を埋め込むが、Claude statusline では
+  # 解釈されずリテラル表示されてしまうため sed で除去する。
+  starship_at prompt --terminal-width=120 | head -1 | sed 's/%[{}]//g'
 }
 
 render_env_line() {
