@@ -1,0 +1,23 @@
+# Stow ignore list. Replaces stow's built-in default list — keep the
+# defaults below and add project-specific patterns at the bottom.
+# Patterns are regular expressions, matched per filename or per path.
+
+# --- stow defaults ---
+RCS
+.+,v
+CVS
+\.\#.+
+\.cvsignore
+\.svn
+_darcs
+\.hg
+\.git
+\.gitignore
+\.gitmodules
+\.bzr
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+# --- project additions ---
+\.DS_Store

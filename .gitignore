@@ -21,3 +21,6 @@ lefthook-local.yaml
 # Logs
 *.log
 *.log.*
+
+# SuperWhisper regenerates this on launch — let the app own it
+home/Documents/superwhisper/modes/default.json
