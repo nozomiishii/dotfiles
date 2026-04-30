@@ -12,12 +12,6 @@ cask "notion"
 # Video communication and virtual meeting platform https://www.zoom.us/
 cask "zoom"
 
-# Color picking application. https://colorsnapper.com
-cask "colorsnapper"
-
-# Automated organization https://www.noodlesoft.com/
-cask "hazel"
-
 # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
 cask "ledger-wallet"
 

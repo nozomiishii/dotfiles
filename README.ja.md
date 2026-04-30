@@ -191,10 +191,6 @@ sudo reboot
 
 ## アプリの設定
 
-### ⛓ Karabiner-Elements
-
-- ログインしてください
-
 ### 🔑 1Password
 
 - Preferences > Security > Unlock using >  
@@ -288,34 +284,6 @@ Finder Sidebar
 ```shell
 make repo
 ```
-
-### 🧹 Hazel
-
-- License... >  
-  ライセンスを有効化してください
-- Folder > Rule Sync Settings... > Use existing sync file... >  
-  "~/dotfiles/apps/Hazel" を選択
-- Preferences... > General >  
-  「Show Hazel in the menu bar」のチェックを外してください
-- Preferences... > Trash >  
-  「Delete files sitting in the Trash for more than 1 Day」にチェック
-
-### 🎨 ColorSnapper2
-
-- ライセンスを有効化してください
-- General
-  - Hotkeys:  
-    Pick Color: ⌃ + ⌥ + C
-  - Clipboard Format >
-    「Choose from Colors & Formats after picking」にチェック
-- Appearance
-  - Magnification >
-    15x
-- Code Style
-  - Hex >
-    「Uppercase」にチェック
-  - CSS Hex >
-    「Uppercase」にチェック
 
 ### 🐘 TablePlus
 
@@ -554,13 +522,6 @@ for x in {1..10}; do time zsh -i -c exit; done
 
 - 🐘 TablePlus  
   TablePlus > ライセンスを登録（解除）
-
-- 🎨 ColorSnapper2  
-  About ColorSnapper... >  
-  ライセンスを無効化してください
-
-- 🧹 Hazel  
-  License... > Remove
 
 5: すべてのコンテンツを消去
 

@@ -35,12 +35,6 @@ curl -L https://nozomiishii.dev/dotfiles/install | bash
 curl -L https://nozomiishii.dev/dotfiles/install | bash -s -- --full
 ``` -->
 
-<!-- これにするのが目標
-
-```shell
-curl -L dot.nozomiishii.dev | sh
-``` -->
-
 </details>
 
 ## Development
@@ -191,10 +185,6 @@ Then follow the [After installation](#after-installation) steps above.
 
 ## App preferences
 
-### ⛓ Karabiner-Elements
-
-- Login
-
 ### 🔑 1Password
 
 - Preferences > Security > Unlock using >  
@@ -212,7 +202,7 @@ Then follow the [After installation](#after-installation) steps above.
 - Log in 1PasswordX
 - (Optional)
 
-  - [Gmail notification](https://support.google.com/mail/answer/1075549?hl=ja&co=GENIE.Platform%3DDesktop)
+  - [Gmail notification](https://support.google.com/mail/answer/1075549?hl=en&co=GENIE.Platform%3DDesktop)
   - [Show working hours on your calendar](https://support.google.com/a/users/answer/9308669)
   - [Send email to Slack](https://slack.com/help/articles/206819278-Send-emails-to-Slack#:~:text=address%20to%20confirm.-,Use%20an%20email%20add%2Don,-Gmail)
 
@@ -236,9 +226,9 @@ Then follow the [After installation](#after-installation) steps above.
     - [Screenshot YouTube](https://chromewebstore.google.com/detail/gjoijpfmdhbjkkgnmahganhoinjjpohk)
     - [Requestly](https://chromewebstore.google.com/detail/mdnleldcmiljblolnjhpnblkcekpdkpa)
     - [Linkumori (URLs Cleaner) ](https://chromewebstore.google.com/detail/jchobbjgibcahbheicfocecmhocglkco)
-      - URL のクエリパラメータを自動削除
+      - Automatically removes tracking query parameters from URLs
     - [Amazon URL Shortener](https://chromewebstore.google.com/detail/bonkcfmjkpdnieejahndognlbogaikdg)
-      - amazon の URL 短くしてくれる
+      - Shortens Amazon product URLs
     - [Speechify Text to Speech Voice Reader](https://chromewebstore.google.com/detail/ljflmlehinmoeknoonhibbjpldiijjmm)
       - Shortcut
         - Activate the extension: `⌃Q`
@@ -288,34 +278,6 @@ Finder Sidebar
 ```shell
 make repo
 ```
-
-### 🧹 Hazel
-
-- License... >  
-  Activate the License
-- Folder > Rule Sync Settings... > Use existing sync file... >  
-  Select "~/dotfiles/apps/Hazel"
-- Preferences... > General >  
-  Uncheck "Show Hazel in the menu bar"
-- Preferences... > Trash >  
-  Check "Delete files sitting in the Trash for more than 1 Day"
-
-### 🎨 ColorSnapper2
-
-- Activate the license
-- General
-  - Hotkeys:  
-    Pick Color: ⌃ + ⌥ + C
-  - Clipboard Format >
-    Check "Choose from Colors & Formats after picking"
-- Appearance
-  - Magnification >
-    15x
-- Code Style
-  - Hex >
-    check "Uppercase"
-  - CSS Hex >
-    check "Uppercase"
 
 ### 🐘 TablePlus
 
@@ -557,13 +519,6 @@ for x in {1..10}; do time zsh -i -c exit; done
 - **🐘 TablePlus**  
   TablePlus > Register license
 
-- **🎨 ColorSnapper2**  
-  About ColorSnapper... >  
-  Deactivate license
-
-- **🧹 Hazel**  
-  License... > Remove
-
 5: Erase All Content
 
 - Erase All Content - [Japanese](https://support.apple.com/ja-jp/HT201065) | [English](https://support.apple.com/en-gb/HT201065)
@@ -577,7 +532,7 @@ for x in {1..10}; do time zsh -i -c exit; done
 ### Tutorials
 
 - [Dotfiles from Start to Finish-ish](https://www.udemy.com/course/dotfiles-from-start-to-finish-ish)
-- [dotfiles + GitHub を使って開発環境をコマンド１発で構築する方法](https://www.youtube.com/watch?v=QZr33TQnIRk&t=9s)
+- [How to set up a dev environment with one command using dotfiles + GitHub (Japanese)](https://www.youtube.com/watch?v=QZr33TQnIRk&t=9s)
 
 ### Dotfiles
 
