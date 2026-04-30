@@ -18,6 +18,11 @@ rm -f "$HOME/.bashrc"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$SCRIPT_DIR"
+
+# Drop macOS .DS_Store files macOS scatters into the package — otherwise
+# stow would happily link them into $HOME on every restow.
+find home -name '.DS_Store' -delete
+
 stow --verbose --restow --target="$HOME" home
 
 SKILLS_DIR="$HOME/.config/skills"
