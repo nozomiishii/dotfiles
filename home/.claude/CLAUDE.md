@@ -16,7 +16,7 @@
 - Edit / Write を呼ぶ前に、対象ファイルを必ず Read で読んでおくこと。Read していないファイルへの Edit / Write は「File must be read first」エラーで失敗し、作業が中断する。
 - 既に編集済みのファイルでも、長い作業で context が圧縮された後に再編集する場合や、sub-agent から親が作ったファイルを編集する場合は、改めて Read してから Edit を呼ぶこと。
 - もし「File must be read first」エラーが出たら、すぐに対象ファイルを Read してから Edit / Write を再試行すること。エラーをそのまま受け流して別の方向に進まない。
-- **削除許可の例外**: `.gitignore` で除外されているファイルや git 追跡外のローカルファイル（例: `.claude/settings.local.json`、`.DS_Store`、ローカル lock ファイル、ビルド成果物など）は、ユーザーの確認なしに削除・編集してよい。`.claude/settings.local.json` のように sandbox の `denyWithinAllow` で保護されているものは `dangerouslyDisableSandbox: true` で実行する（理由は `description` に明記）。git 追跡対象のファイルはこれまで通り、削除や大規模変更の前にユーザー確認を取ること。
+- **削除許可の例外**: `.gitignore` で除外されているファイルや git 追跡外のローカルファイル（例: `.claude/settings.local.json`、`.DS_Store`、ローカル lock ファイル、ビルド成果物など）は、ユーザーの確認なしに**削除**してよい。`.claude/settings.local.json` のように sandbox の `denyWithinAllow` で保護されているものは `dangerouslyDisableSandbox: true` で実行する（理由は `description` に明記）。**編集**は git 追跡対象と同様にユーザー確認を取ること。編集は削除よりステルス性が高く、git 履歴がないため復元できないため。
 
 ## Git
 
