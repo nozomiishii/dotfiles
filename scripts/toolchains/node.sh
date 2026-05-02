@@ -34,6 +34,7 @@ echo '- 🐉 Setup pnpm global'
     cd /tmp
     npm install -g @devcontainers/cli
     npm install -g typescript
+    npm install -g typescript-language-server
     npm install -g @github/copilot
     npm install -g @antfu/ni
 )
