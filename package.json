@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@nozomiishii/commitlint-config": "0.2.0",
-    "@nozomiishii/lefthook-config": "0.5.0",
+    "@nozomiishii/lefthook-config": "0.6.0",
     "@nozomiishii/markdownlint-cli2-config": "0.4.0",
     "@nozomiishii/postinstall": "0.1.0",
     "@nozomiishii/prettier-config": "0.8.0",
