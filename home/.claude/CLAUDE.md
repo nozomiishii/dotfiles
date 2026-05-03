@@ -24,6 +24,7 @@
 
 ## GitHub / PR
 
+- **PR タイトル**: Conventional Commits 形式（英語）で `<type>: <subject>` と書く。許可 type は `feat` / `fix` / `chore`（リポジトリで追加されている場合はそれに従う）。subject は小文字始まり / ASCII のみ / 末尾スペース禁止。これは nozomiishii/workflows の semantic pull request チェック（amannn/action-semantic-pull-request）と同じ規則で、違反すると CI が落ちる。
 - **PR 本文**: プルリクエストの本文（body）は日本語で記述する。
 - **PR マージ**: マージは必ずユーザーが手動で行う。AI が `gh pr merge` や GitHub API 経由でマージを実行してはならない。
 - **PR 作成・更新・push**: これらは AI が実行してよい。マージの最終判断のみ常にユーザーに委ねる。
