@@ -148,10 +148,4 @@ if [[ ! -d "$project_dir" ]]; then
   exit 0
 fi
 
-# project_dir は生きているが /add-dir 先など現在の cwd が消えたレアケース
-if [[ ! -d "$cwd" ]]; then
-  printf '%s(stale cwd: %s)%s\n%s' "$red" "$cwd" "$reset" "$(render_env_line)"
-  exit 0
-fi
-
 printf '%s\n%s' "$(render_top_line)" "$(render_env_line)"
