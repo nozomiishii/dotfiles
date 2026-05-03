@@ -24,12 +24,17 @@ while IFS= read -r line; do
 done < <(jq -r '
   .model.display_name // "Claude",
   (.context_window.used_percentage // 0 | floor | tostring),
-  .cwd // ""
+  .cwd // "",
+  .workspace.project_dir // .cwd // ""
 ' <<<"$input")
 
 model="${fields[0]:-Claude}"
 ctx_pct="${fields[1]:-0}"
 cwd="${fields[2]:-$HOME}"
+# project_dir は claude 起動時に固定。cwd は /add-dir や cd で動的に変わり、
+# worktree 削除時は Claude Code 側で別ディレクトリに自動 recover されるため、
+# stale 判定には fixed な project_dir を使う。
+project_dir="${fields[3]:-$cwd}"
 
 # cmux が無い環境では fork ごと省略
 surface_ref=""
@@ -136,9 +141,10 @@ render_env_line() {
 
 # --- output ---
 
-# cwd が消えた場合（git worktree remove 等）は警告のみ表示して env_line は維持
-if [[ ! -d "$cwd" ]]; then
-  printf '%s(stale cwd: %s)%s\n%s' "$red" "$cwd" "$reset" "$(render_env_line)"
+# project_dir (claude 起動時の固定 cwd) が消えた場合 (git worktree remove 等)
+# は警告のみ表示して env_line は維持。cwd は recover されるためここでは見ない。
+if [[ ! -d "$project_dir" ]]; then
+  printf '%s(stale project_dir: %s)%s\n%s' "$red" "$project_dir" "$reset" "$(render_env_line)"
   exit 0
 fi
 
