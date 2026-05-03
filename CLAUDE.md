@@ -66,13 +66,6 @@ macOS と Linux で開発環境のセットアップを自動化する dotfiles 
 - **Git フック**: lefthook で管理（`lefthook.yaml` で設定）。
 - **コード品質**: Prettier（フォーマット）、commitlint（コミットメッセージ）、markdownlint（ドキュメント）。
 
-### 主要ファイル
-
-- `install.sh`: 新規システムセットアップのエントリポイント
-- `Brewfile`: Homebrew パッケージ、cask、Mac App Store アプリの定義
-- `.github/workflows/test-install.yaml`: macOS と Ubuntu でのインストールテスト用 CI 設定
-- `.mcp.json`: AI アシスタント連携用 MCP サーバー設定
-
 ### 新規設定の追加手順
 
 1. `home/` 配下の適切なサブディレクトリに dotfiles を配置
