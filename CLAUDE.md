@@ -2,52 +2,6 @@
 
 このリポジトリで Claude Code (claude.ai/code) が作業する際のガイドラインです。
 
-## よく使うコマンド
-
-### 開発タスク
-
-```bash
-# Install Node.js dependencies
-pnpm install
-
-# Run tests (validates setup scripts)
-pnpm test
-
-# Format code with Prettier
-pnpm run format
-
-# Lint markdown files
-pnpm run lint
-
-# Run Prettier without writing changes
-pnpm run prettier
-
-# Test shell startup performance
-./scripts/test_shell_startup_time.sh
-```
-
-### システムセットアップタスク
-
-```bash
-# Install/update Homebrew packages
-make homebrew
-
-# Configure macOS settings
-make macos
-
-# Set up programming toolchains (Node, Python, Ruby, Rust)
-make toolchains
-
-# Clone GitHub repositories
-make repo
-
-# Symlink dotfiles to home directory using GNU Stow
-make link
-
-# Complete installation (macOS/Linux)
-./install.sh
-```
-
 ## Git・GitHub 運用ルール
 
 - **PR タイトルは英語で記述し、CI の semantic pull request チェックに従う。** 小文字で始める英数字・記号のみ、末尾にスペースを付けない。例: `feat(darwin): use launchctl for Remote Login`. 詳細は [.github/workflows/_pull-request.yaml](.github/workflows/_pull-request.yaml) を参照。
