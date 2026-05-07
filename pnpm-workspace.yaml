@@ -4,10 +4,11 @@
 # pnpm config list
 # ```
 
-# lefthook のフック登録は @nozomiishii/postinstall 経由で行うため、
-# パッケージ自身の install スクリプト実行は不要
-allowBuilds:
-  lefthook: false
+# build script は未記載のものはデフォルトで実行しない (v11 の挙動)。
+# strictDepBuilds: false で「未記載＝warning」に格下げし、
+# install を止めずに済ませる。本当に build が必要なものだけ
+# allowBuilds に true で明示する
+strictDepBuilds: false
 
 # 依存解決のうまくいっていないdependenciesのdependenciesをrootのnode_modulesまで巻き上げる
 publicHoistPattern:
@@ -17,3 +18,6 @@ publicHoistPattern:
 
 # pinバージョンでインストールする
 savePrefix: ''
+
+# ログ出力形式をカスタマイズ
+reporter: append-only
