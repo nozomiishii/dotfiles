@@ -4,10 +4,11 @@
 # pnpm config list
 # ```
 
-# lefthook のフック登録は @nozomiishii/postinstall 経由で行うため、
-# パッケージ自身の install スクリプト実行は不要
+# install スクリプトのポリシー: 実際に build/postinstall が動作に必要なら true、
+# 不要・別経路で代替できるなら false。推移依存はコメントで導入経路を明記する
 allowBuilds:
-  lefthook: false
+  # ── 直接依存 ──
+  lefthook: false # フック登録は @nozomiishii/postinstall 経由で行うため不要
 
 # 依存解決のうまくいっていないdependenciesのdependenciesをrootのnode_modulesまで巻き上げる
 publicHoistPattern:
