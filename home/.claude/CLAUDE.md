@@ -60,3 +60,24 @@ gh pr create --title "..." --body-file "$BODY_FILE"
 - ~/.claude/settings.json を変更した場合は、必ず ~/.claude/settings.md も同期して更新すること。
 - sandbox の allowedDomains にドメインを追加する際は、可能な限りワイルドカード（`*.example.com`）で正規化すること。個別サブドメインが1つだけの場合はそのままでよい。
 - パーミッションの追加・変更は必ず `~/.claude/settings.json`（グローバル設定）に行うこと。プロジェクトの `settings.local.json` には追加しない。`settings.local.json` にルールが溜まっていた場合は、ユーザーにグローバルへの移行を提案すること。
+
+## pnpm allowBuilds コメント
+
+`pnpm-workspace.yaml` の `allowBuilds` 各エントリには、build を許可/拒否する判断根拠が分かるコメントを必ず付けること。フォーマット:
+
+```yaml
+<package>: <bool> # <chain> | <用途>
+```
+
+- `<chain>`: package.json に書かれた依存（左端）から `<package>` 自身（右端）までの**全経路**を ` → ` で連結する。直接依存はパッケージ名 1 つ（長さ 1）。中間パッケージや「経由」「直接」などの語は省く。経路は `pnpm why <package>` で確認する。
+- `<用途>`: そのパッケージの役割と、build が必要（true）/不要（false）な理由を簡潔に書く。fallback で動作する場合などは理由まで含める。
+- 直接依存と推移依存をコメントや見出しで区別しない（`<chain>` の長さで一意に判別できるため）。
+
+例:
+
+```yaml
+allowBuilds:
+  lefthook: false # lefthook | フック登録は @nozomiishii/postinstall 経由で行うため不要
+  core-js-pure: true # renovate → @qnighy/marshal → @babel/runtime-corejs3 → core-js-pure | polyfill
+  dtrace-provider: false # renovate → bunyan → dtrace-provider | macOS/Solaris の DTrace 連携用 optional 機能。失敗時は no-op fallback で動作するため build 不要
+```
