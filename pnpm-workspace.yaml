@@ -4,8 +4,11 @@
 # pnpm config list
 # ```
 
-# 使用するNode.jsのバージョン
-useNodeVersion: 24.15.0
+# install スクリプトのポリシー: 実際に build/postinstall が動作に必要なら true、
+# 不要・別経路で代替できるなら false。推移依存はコメントで導入経路を明記する
+allowBuilds:
+  # ── 直接依存 ──
+  lefthook: false # フック登録は @nozomiishii/postinstall 経由で行うため不要
 
 # 依存解決のうまくいっていないdependenciesのdependenciesをrootのnode_modulesまで巻き上げる
 publicHoistPattern:
@@ -15,12 +18,6 @@ publicHoistPattern:
 
 # pinバージョンでインストールする
 savePrefix: ''
-
-# 公開から3日未満のバージョンをインストールしない（サプライチェーン攻撃対策）
-# https://pnpm.io/settings#minimumreleaseage
-# NOTE: transitive dependency の再解決時にフォールバックが効かない pnpm のバグにより一時無効化
-# https://github.com/pnpm/pnpm/issues/11068
-# minimumReleaseAge: 4320
 
 # ログ出力形式をカスタマイズ
 reporter: append-only
