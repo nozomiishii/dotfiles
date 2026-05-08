@@ -7,6 +7,12 @@ autoload -Uz compinit
 zmodload -i zsh/complist
 compinit
 
+# carapace - multi-shell completion engine
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+if command -v carapace >/dev/null; then
+  source <(carapace _carapace zsh)
+fi
+
 # Syntax Highlighting
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
@@ -41,16 +47,7 @@ if command -v fnm >/dev/null; then
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
 # Ruby
 if command -v rbenv >/dev/null; then
   eval "$(rbenv init -)"
-fi
-
-# Python(uv)
-if command -v uv >/dev/null; then
-  eval "$(uv generate-shell-completion zsh)"
-  eval "$(uvx --generate-shell-completion zsh)"
 fi
