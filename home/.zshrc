@@ -14,6 +14,11 @@ if command -v carapace >/dev/null; then
   source <(carapace _carapace)
 fi
 
+# zoxide - smarter cd with frecency
+if command -v zoxide >/dev/null; then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
+
 # zsh-autocomplete - real-time type-ahead menu
 source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 
