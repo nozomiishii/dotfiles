@@ -14,6 +14,12 @@ brew "stow"
 # Fish shell like syntax highlighting for zsh https://github.com/zsh-users/zsh-syntax-highlighting
 brew "zsh-syntax-highlighting"
 
+# Multi-shell multi-command argument completer https://carapace.sh
+brew "carapace"
+
+# Replace zsh tab completion menu with fzf https://github.com/Aloxaf/fzf-tab
+brew "fzf-tab"
+
 # Cross-shell prompt for astronauts https://starship.rs
 brew "starship"
 

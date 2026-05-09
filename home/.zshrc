@@ -7,7 +7,18 @@ autoload -Uz compinit
 zmodload -i zsh/complist
 compinit
 
-# Syntax Highlighting
+# carapace - multi-shell completion engine
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+if command -v carapace >/dev/null; then
+  source <(carapace _carapace)
+fi
+
+# fzf-tab - replace zsh tab completion with fzf preview menu
+# Must be sourced after compinit and before zsh-syntax-highlighting.
+source "$(brew --prefix)/share/fzf-tab/fzf-tab.zsh"
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+
+# Syntax Highlighting (must be sourced last)
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Config
@@ -41,16 +52,7 @@ if command -v fnm >/dev/null; then
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
 # Ruby
 if command -v rbenv >/dev/null; then
   eval "$(rbenv init -)"
-fi
-
-# Python(uv)
-if command -v uv >/dev/null; then
-  eval "$(uv generate-shell-completion zsh)"
-  eval "$(uvx --generate-shell-completion zsh)"
 fi
