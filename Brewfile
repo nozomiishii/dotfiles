@@ -17,8 +17,8 @@ brew "zsh-syntax-highlighting"
 # Multi-shell multi-command argument completer https://carapace.sh
 brew "carapace"
 
-# Real-time type-ahead completion for zsh https://github.com/marlonrichert/zsh-autocomplete
-brew "zsh-autocomplete"
+# Replace zsh tab completion menu with fzf https://github.com/Aloxaf/fzf-tab
+brew "fzf-tab"
 
 # Cross-shell prompt for astronauts https://starship.rs
 brew "starship"
