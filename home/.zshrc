@@ -14,7 +14,10 @@ if command -v carapace >/dev/null; then
   source <(carapace _carapace)
 fi
 
-# Syntax Highlighting
+# zsh-autocomplete - real-time type-ahead menu
+source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+
+# Syntax Highlighting (must be sourced last)
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Config
