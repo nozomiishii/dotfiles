@@ -38,9 +38,6 @@ cask "jump-desktop-connect"
 # Command-line fuzzy finder written in Go https://github.com/junegunn/fzf
 brew "fzf"
 
-# Smarter cd with frecency-based directory jumping https://github.com/ajeetdsouza/zoxide
-brew "zoxide"
-
 # ----------------------------------------------------------------
 # macOS-only packages
 # ----------------------------------------------------------------
