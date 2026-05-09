@@ -9,7 +9,6 @@ compinit
 
 # carapace - multi-shell completion engine
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 if command -v carapace >/dev/null; then
   source <(carapace _carapace)
 fi
