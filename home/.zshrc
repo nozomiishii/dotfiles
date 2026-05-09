@@ -15,7 +15,7 @@ fi
 
 # fzf-tab - replace zsh tab completion with fzf preview menu
 # Must be sourced after compinit and before zsh-syntax-highlighting.
-source "$(brew --prefix)/share/fzf-tab/fzf-tab.plugin.zsh"
+source "$(brew --prefix)/share/fzf-tab/fzf-tab.zsh"
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 
 # Syntax Highlighting (must be sourced last)
