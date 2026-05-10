@@ -1,6 +1,7 @@
 ---
 description: ChatGPT・Claude・Geminiに同じ質問を並列投下して回答を比較
 argument-hint: <question>
+model: sonnet
 allowed-tools:
   - mcp__claude-in-chrome__tabs_context_mcp
   - mcp__claude-in-chrome__tabs_create_mcp
@@ -48,6 +49,19 @@ $ARGUMENTS
 - **ChatGPT**: ページ下部のテキストエリア（`Ask anything` プレースホルダー）
 - **Claude**: ページ下部のテキストエリア（`How can I help you today?` 付近）
 - **Gemini**: ページ下部のテキストエリア（`Ask Gemini` プレースホルダー）
+
+#### 送信完了後: タブ URL を chat に出す
+
+3 タブとも送信が完了したら、`tabs_context_mcp` で各タブの最新 URL を取得し、ユーザー向けに以下のフォーマットで出力する（turn は終わらせず、続けてポーリングへ進む）:
+
+```
+送信完了。各タブの URL:
+- ChatGPT: <url>
+- Claude: <url>
+- Gemini: <url>
+```
+
+これでユーザーはポーリング中もブラウザで直接タブを確認できる。送信直後の URL は確定済み（チャット ID が振られた状態）なので必ずここで出すこと。
 
 #### Gemini の追加手順（送信前にモデルを Pro へ切替）
 
@@ -125,6 +139,11 @@ selector が UI 変更で動かなくなった場合は `read_page` で現在の
 - 共通点
 - 各社で異なる点・独自視点
 - 回答の質・精度
+
+## タブ URL
+- ChatGPT: <url>
+- Claude: <url>
+- Gemini: <url>
 ```
 
 **重要**: 「概要」セクションは 3 社全部の回答を読み終えてから書くこと。投げて返ってきた順に書くのではなく、すべて出揃ってから統合的にまとめる。
