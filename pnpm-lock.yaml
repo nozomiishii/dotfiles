@@ -9,20 +9,20 @@ importers:
   .:
     devDependencies:
       '@nozomiishii/commitlint-config':
-        specifier: 0.2.3
-        version: 0.2.3(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
+        specifier: 1.0.0
+        version: 1.0.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@nozomiishii/lefthook-config':
-        specifier: 0.7.1
-        version: 0.7.1(lefthook@2.1.6)
+        specifier: 1.0.0
+        version: 1.0.0(lefthook@2.1.6)
       '@nozomiishii/markdownlint-cli2-config':
-        specifier: 0.4.1
-        version: 0.4.1
+        specifier: 1.0.0
+        version: 1.0.0
       '@nozomiishii/postinstall':
-        specifier: 0.1.2
-        version: 0.1.2
+        specifier: 1.0.0
+        version: 1.0.0
       '@nozomiishii/prettier-config':
-        specifier: 0.9.1
-        version: 0.9.1(prettier@3.8.3)
+        specifier: 1.0.0
+        version: 1.0.0(prettier@3.8.3)
       lefthook:
         specifier: 2.1.6
         version: 2.1.6
@@ -136,26 +136,26 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nozomiishii/commitlint-config@0.2.3':
-    resolution: {integrity: sha512-iD3mFCEKeD2dI59BEGjE1ewfRzL9e38aw12/+doFIqtUR0MwFzZ/z887MA72pI7ISMqN/nDUu2RI7+U9g6dqmQ==}
+  '@nozomiishii/commitlint-config@1.0.0':
+    resolution: {integrity: sha512-VpQ08KGOwJY8jlFARne/Wg0TGnTD8K1eudPvZlTrIVbF2yThwb64l4jFQpcEN2EHCCd4C/ms+YmRbdcfcUpqgA==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@0.7.1':
-    resolution: {integrity: sha512-KorpEBNsr1fg4uUl6L9ZFUmyDAHR961KrfQZ9NR88l3dC1a4dQamyyTuyzd9o3MSJRv4OTxKFx3YW1nJFXtxhA==}
+  '@nozomiishii/lefthook-config@1.0.0':
+    resolution: {integrity: sha512-z/rueKMJ5nKZu/uiIdPxNbTBF4PFloUcHbpa72BHKjHVEZcqmXclTvQMJz3gnb0LRmg7NbwfgDSkBzmYe4Wrbw==}
     hasBin: true
     peerDependencies:
       lefthook: 2.1.6
 
-  '@nozomiishii/markdownlint-cli2-config@0.4.1':
-    resolution: {integrity: sha512-8/4ixTYJO/a8R6g3oU+6dbS83ClZWfL0NcArnfcJwUjVdxqtLNp97OZqUGPg0zf3XFnTkVcowMtAMvq5PiXjwQ==}
+  '@nozomiishii/markdownlint-cli2-config@1.0.0':
+    resolution: {integrity: sha512-NP3Lbe6roQqX1CYl0lu1cArp9X0zajkAgcYzxk+E/BM13sptpv6XOqWR1vy5q/RXmEaZJoq+zsK024ju4QB7lQ==}
     hasBin: true
 
-  '@nozomiishii/postinstall@0.1.2':
-    resolution: {integrity: sha512-hRqtSHIu8qPgNpHXHMaH8sN6S+oXiLxoZ1YU7pqF7AwVPnkSdoFqxsXqYrfKxqxPwKFiuK6VxuRxzt53fuK2Og==}
+  '@nozomiishii/postinstall@1.0.0':
+    resolution: {integrity: sha512-ODM9kxA1qN8RF9VUhwbucLcyKO1Iszaaph0F0lYWfKAQzvLGX7Xu3D9lvnL83GRx+366c+0S44VbjpbqNl3pVQ==}
     hasBin: true
 
-  '@nozomiishii/prettier-config@0.9.1':
-    resolution: {integrity: sha512-tm0vv1qpNTeEIsxszHMntrGsSKOISRTmYIqQMnS1mLyrfmsr+1YgiOHsN5tBAMt3dndjdTgCqVkqguIJG4Aauw==}
+  '@nozomiishii/prettier-config@1.0.0':
+    resolution: {integrity: sha512-mVfU2un2/CzZiodVreIlpCa5Tgz1eZDAGKS5Dvty+IHMY5t/XxFu8aWjR3ilcB0asq+HJ45eg1syLPabTw2yrQ==}
     hasBin: true
     peerDependencies:
       prettier: 3.8.3
@@ -368,8 +368,8 @@ packages:
     resolution: {integrity: sha512-CQ+bEO+Tva/qlmw24dCejulK5pMzVnUOFOijVogd3KQs07HnRIgp8TGipvCCRT06xeYEbpbgwaCxglFyiuIcmA==}
     engines: {node: '>=18'}
 
-  git-harvest@0.1.23:
-    resolution: {integrity: sha512-voIwKu0IgG1xn3VFMKdqzh1USR934wWpSmloD35pdujyjT/XKY5QeA7fv87GHTpKhJWsgiwqzFuiUPLegFk4hg==}
+  git-harvest@0.1.25:
+    resolution: {integrity: sha512-LBK4SF6olHa5WLRLUbPSRd0qh3O0vix0ccGPZKPNScNiB0HX1v/dCkWM3p8abL/Efa3RVKEFZyYhsjm/E0GKww==}
     hasBin: true
 
   git-hooks-list@4.2.1:
@@ -1063,7 +1063,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nozomiishii/commitlint-config@0.2.3(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
+  '@nozomiishii/commitlint-config@1.0.0(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
     dependencies:
       '@commitlint/cli': 20.5.3(@types/node@25.6.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@commitlint/config-conventional': 20.5.3
@@ -1074,23 +1074,23 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@0.7.1(lefthook@2.1.6)':
+  '@nozomiishii/lefthook-config@1.0.0(lefthook@2.1.6)':
     dependencies:
-      git-harvest: 0.1.23
+      git-harvest: 0.1.25
       lefthook: 2.1.6
 
-  '@nozomiishii/markdownlint-cli2-config@0.4.1':
+  '@nozomiishii/markdownlint-cli2-config@1.0.0':
     dependencies:
       markdownlint-cli2: 0.22.1
     transitivePeerDependencies:
       - supports-color
 
-  '@nozomiishii/postinstall@0.1.2':
+  '@nozomiishii/postinstall@1.0.0':
     dependencies:
       figlet: 1.11.0
       zx: 8.8.5
 
-  '@nozomiishii/prettier-config@0.9.1(prettier@3.8.3)':
+  '@nozomiishii/prettier-config@1.0.0(prettier@3.8.3)':
     dependencies:
       prettier: 3.8.3
       prettier-plugin-packagejson: 3.0.2(prettier@3.8.3)
@@ -1266,7 +1266,7 @@ snapshots:
 
   get-east-asian-width@1.5.0: {}
 
-  git-harvest@0.1.23: {}
+  git-harvest@0.1.25: {}
 
   git-hooks-list@4.2.1: {}
 
