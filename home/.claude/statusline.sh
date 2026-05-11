@@ -7,17 +7,12 @@ set -uo pipefail
 esc=$'\033'
 st=$'\033\\'
 reset="${esc}[0m"
-red="${esc}[31m"
 red_bold="${esc}[1;31m"
-green="${esc}[32m"
 green_bold="${esc}[1;32m"
 yellow="${esc}[33m"
 yellow_bold="${esc}[1;33m"
-blue="${esc}[34m"
 blue_bold="${esc}[1;34m"
 white="${esc}[37m"
-white_bold="${esc}[1;37m"
-cyan="${esc}[36m"
 cyan_bold="${esc}[1;36m"
 gray="${esc}[38;5;250m"
 
