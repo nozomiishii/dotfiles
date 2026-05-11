@@ -1,5 +1,5 @@
 {
-  "cleanupPeriodDays": 90,
+  "cleanupPeriodDays": 180,
   "env": {
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
   },
