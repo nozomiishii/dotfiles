@@ -212,8 +212,8 @@ if OS.mac?
   # Anthropic's official Claude AI desktop app https://www.anthropic.com/
   cask "claude"
 
-  # OpenAI's coding agent that runs locally on your computer https://github.com/openai/codex
-  brew "codex"
+  # OpenAI's coding agent that runs in your terminal https://github.com/openai/codex
+  cask "codex"
 
   # Replacement for Docker Desktop https://orbstack.dev/
   cask "orbstack"
