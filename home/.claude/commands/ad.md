@@ -1,28 +1,34 @@
 ---
 description: /a を deep research モードで実行する
 argument-hint: <question>
-model: sonnet
 allowed-tools:
-  - mcp__claude-in-chrome__tabs_context_mcp
-  - mcp__claude-in-chrome__tabs_create_mcp
-  - mcp__claude-in-chrome__navigate
-  - mcp__claude-in-chrome__find
-  - mcp__claude-in-chrome__form_input
-  - mcp__claude-in-chrome__computer
-  - mcp__claude-in-chrome__browser_batch
-  - mcp__claude-in-chrome__read_page
-  - mcp__claude-in-chrome__get_page_text
-  - mcp__claude-in-chrome__javascript_tool
-  - mcp__claude-in-chrome__read_console_messages
-  - Bash(sleep:*)
-  - Bash(osascript:*)
+  - Agent
 ---
 
-# /ad
+# /ad wrapper
 
-`/a` を実行する。基本的な挙動・タブ準備・送信・回答取得・レポート構成はすべて `/a`（`~/.claude/commands/a.md`）の手順に従うこと。
+このコマンドは Sonnet サブエージェントで実行する。親セッションが Opus 1M でも、サブエージェントは Sonnet 標準 context で走るので Extra Usage 課金 (1M Sonnet) を踏まない。
 
-ただし以下の差分を適用する。
+## 親セッションが行うこと（最優先）
+
+**今すぐ Agent tool を 1 回呼ぶ**。中間説明や事前確認は不要、即 dispatch する:
+
+- `subagent_type`: `"general-purpose"`
+- `model`: `"sonnet"`
+- `description`: `"3社並列 deep research"`
+- `prompt`: 下記「## Subagent execution」セクション（この見出しを含む下のすべて）の本文。`$ARGUMENTS` はそのまま渡してよい。
+
+サブエージェントの戻り値（3 社の deep research レポート）をそのままユーザーに表示して終了。
+
+---
+
+## Subagent execution
+
+# /ad (deep research モード)
+
+まず最初に `Read` で `/Users/nozomiishii/.claude/commands/a.md` を開き、`## Subagent execution` セクション以降の手順を **基本ワークフロー** として把握する。`/a` 側は `### Stage 1 instructions` と `### Stage 2 instructions` の 2 段構成になっているが、`/ad` ではこのサブエージェント 1 つで両 stage を直列実行する（Stage 1 で得る URL は内部で保持して Stage 2 に流す。途中で別 dispatch には分けない）。Stage 1 の「JSON 1 行だけ返す」制約はサブエージェント間 IPC 用なので `/ad` では無視し、基本的な挙動・タブ準備・送信・回答取得・レポート構成のみ参考にする。
+
+そのうえで、以下の差分を適用する。
 
 ## ⚠️ 絶対禁止事項
 
@@ -149,7 +155,7 @@ Deep Research は **基本的にどのサイトも追加質問してくる** （
 
 ポーリング中に都度検出する必要はない（その方式だと検出パターンの当たり外れが発生するし、複雑になる）。
 
-**順序**: 先に `/a` の Step 3 末尾「タブ URL を chat に出す」を実行（ユーザーがチャット側で URL を確認できる状態に）、その**後**で以下の Chrome フォーカスを実行する。
+**順序**: 先に `tabs_context_mcp` で 3 タブの最新 URL を取得して内部メモリに保持し（Stage 2 で使う & 最終レポートの「## タブ URL」に必ず含める）、その**後**で以下の Chrome フォーカス + 通知を実行する。途中の chat 表示は `/ad` では不可（サブエージェント直列実行のため）なので、URL は最終レポートにのみ載る点を許容する。
 
 **送信完了直後（ポーリング開始前）に実行**:
 
