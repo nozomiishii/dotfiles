@@ -3,15 +3,22 @@ set -uo pipefail
 
 # --- colors ---
 
+# 命名規則: <color> は non-bold、<color>_bold は bold 版。
 esc=$'\033'
 st=$'\033\\'
 reset="${esc}[0m"
-red="${esc}[1;31m"
-green="${esc}[1;32m"
-yellow="${esc}[1;33m"
-blue="${esc}[1;34m"
+red="${esc}[31m"
+red_bold="${esc}[1;31m"
+green="${esc}[32m"
+green_bold="${esc}[1;32m"
+yellow="${esc}[33m"
+yellow_bold="${esc}[1;33m"
+blue="${esc}[34m"
+blue_bold="${esc}[1;34m"
 white="${esc}[37m"
-cyan="${esc}[1;36m"
+white_bold="${esc}[1;37m"
+cyan="${esc}[36m"
+cyan_bold="${esc}[1;36m"
 gray="${esc}[38;5;250m"
 
 # --- input parsing ---
@@ -25,7 +32,9 @@ done < <(jq -r '
   .model.display_name // "Claude",
   (.context_window.used_percentage // 0 | floor | tostring),
   .cwd // "",
-  .workspace.project_dir // .cwd // ""
+  .workspace.project_dir // .cwd // "",
+  (.rate_limits.five_hour.used_percentage // empty | floor | tostring),
+  (.rate_limits.seven_day.used_percentage // empty | floor | tostring)
 ' <<<"$input")
 
 model="${fields[0]:-Claude}"
@@ -35,6 +44,10 @@ cwd="${fields[2]:-$HOME}"
 # worktree 削除時は Claude Code 側で別ディレクトリに自動 recover されるため、
 # stale 判定には fixed な project_dir を使う。
 project_dir="${fields[3]:-$cwd}"
+# 5h / 7d rate limit は Claude.ai 購読者のみ、最初の API 応答後に出現する。
+# 未取得の間は空文字で、env_line では該当パートを省略する。
+five_hour_pct="${fields[4]:-}"
+seven_day_pct="${fields[5]:-}"
 
 # cmux が無い環境では fork ごと省略
 surface_ref=""
@@ -111,11 +124,11 @@ render_top_line() {
     diff_text=$(starship_at module git_status | sed 's/ *$//')
     branch=$(git -C "$cwd" branch --show-current 2>/dev/null)
 
-    local parts=("${cyan}${repo_name}${reset}" "${green}worktree:(${red}${wt_dir}${reset}${green})${reset}")
+    local parts=("${cyan_bold}${repo_name}${reset}" "${green_bold}worktree:(${red_bold}${wt_dir}${reset}${green_bold})${reset}")
     # claude -w 自動生成は branch = worktree-{wt_dir} で情報重複するので省略。
     # 手動で別ブランチを切った worktree のときだけ git:() を追加。
     if [[ -n "$branch" && "$branch" != "worktree-${wt_dir}" ]]; then
-      parts+=("${blue}git:(${red}${branch}${reset}${blue})${reset}")
+      parts+=("${blue_bold}git:(${red_bold}${branch}${reset}${blue_bold})${reset}")
     fi
     [[ -n "$diff_text" ]] && parts+=("$diff_text")
     join ' ' "${parts[@]}"
@@ -133,8 +146,10 @@ render_top_line() {
 render_env_line() {
   local parts=()
   parts+=("${white}${model}${reset}")
-  parts+=("${yellow}${ctx_pct}%${reset}")
-  [[ -n "$surface_ref" ]] && parts+=("${blue}${surface_ref}${reset}")
+  parts+=("${yellow_bold}${ctx_pct}%${reset}")
+  [[ -n "$five_hour_pct" ]] && parts+=("${yellow}h ${five_hour_pct}%${reset}")
+  [[ -n "$seven_day_pct" ]] && parts+=("${yellow}w ${seven_day_pct}%${reset}")
+  [[ -n "$surface_ref" ]] && parts+=("${blue_bold}${surface_ref}${reset}")
   parts+=("${gray}$(build_cursor_link)${reset}")
   join ' | ' "${parts[@]}"
 }
@@ -144,7 +159,7 @@ render_env_line() {
 # project_dir (claude 起動時の固定 cwd) が消えた場合 (git worktree remove 等)
 # は警告のみ表示して env_line は維持。cwd は recover されるためここでは見ない。
 if [[ ! -d "$project_dir" ]]; then
-  printf '%s(stale project_dir: %s)%s\n%s' "$red" "$project_dir" "$reset" "$(render_env_line)"
+  printf '%s(stale project_dir: %s)%s\n%s' "$red_bold" "$project_dir" "$reset" "$(render_env_line)"
   exit 0
 fi
 

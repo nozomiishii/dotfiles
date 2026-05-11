@@ -31,6 +31,7 @@
 
 - 色や見た目を決める作業は、候補をまとめて実環境にレンダリングして比較すること。テキストとして ANSI エスケープを眺めても色は判別できない。
 - 例: statusline の色を選ぶとき、`home/.claude/statusline.sh` の出力を一時的に複数行にし、各行で異なる色コード + ラベルを並べて出す。Claude Code を再描画すれば全候補を同時に見比べられる。決まったら本番形（1行）に戻す。
+- **worktree で編集する場合、main repo (`~/dotfiles/home/.claude/statusline.sh`) にも同じ変更を反映する。** Claude Code が読むのは `~/.claude/statusline.sh` で、これは GNU Stow で main repo の `home/` に張られたシンボリックリンク。worktree 側の `home/` は参照されないので、色候補を一時並べたとき・本番形に戻すときの両方で、worktree と main repo に同じ編集を入れる必要がある。同様のことは `home/.claude/` 配下の他のファイル（hooks、skills、settings.json 等）や `home/.config/` 配下にも当てはまる。
 - 同様の手法は `home/.config/starship/starship.toml` や terminal config の調整にも使える。
 
 ## ポータビリティ
