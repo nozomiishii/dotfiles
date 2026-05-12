@@ -45,6 +45,7 @@ z!() {
 # claude
 # ----------------------------------------------------------------
 alias c="claude"
+alias ca="claude agents"
 alias cc="claude --continue"
 alias cr="claude --resume"
 alias ct="claude --teleport"
