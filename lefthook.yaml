@@ -10,7 +10,7 @@
 #   pnpx lefthook run --verbose post-merge
 #   pnpx lefthook run --verbose pre-push
 extends:
-  - ./node_modules/@nozomiishii/lefthook-config/index.yaml
+  - ./node_modules/@nozomiishii/lefthook-config/recommended.yaml
 
 post-merge:
   parallel: true
