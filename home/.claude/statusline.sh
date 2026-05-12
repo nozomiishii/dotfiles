@@ -67,6 +67,9 @@ join() {
 
 # RFC 3986 unreserved + / 以外を percent-encode する。
 # LC_ALL=C で UTF-8 マルチバイト文字を byte 単位で正しくエンコード。
+# `~` は技術的には unreserved だが、Cursor の URL handler がパス内の `~` を
+# ホーム展開等で誤解釈し ~/Library/Mobile Documents/iCloud~md~obsidian/...
+# 配下を開けないため、明示的に %7E にエスケープする。
 urlencode() {
   local s="$1"
   local out="" i char
@@ -74,7 +77,7 @@ urlencode() {
   for ((i = 0; i < ${#s}; i++)); do
     char="${s:$i:1}"
     case "$char" in
-      [a-zA-Z0-9._~/-]) out+="$char" ;;
+      [a-zA-Z0-9._/-]) out+="$char" ;;
       *)
         printf -v char '%%%02X' "'$char"
         out+="$char"
