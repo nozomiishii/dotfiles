@@ -5,7 +5,7 @@
   "activationSites" : [
 
   ],
-  "adjustOutputVolume" : false,
+  "autocapitalizeInsert" : true,
   "contextFromActiveApplication" : false,
   "contextFromClipboard" : false,
   "contextFromSelection" : false,
@@ -15,11 +15,10 @@
   "iconName" : "",
   "key" : "super",
   "language" : "ja",
-  "languageModelEnabled" : true,
-  "languageModelID" : "sl-1",
+  "languageModelID" : "claude-sonnet-4-6",
   "literalPunctuation" : false,
   "name" : "Super",
-  "pauseMediaPlayback" : false,
+  "playbackBehavior" : "keepPlaying",
   "prompt" : "",
   "promptExamples" : [
 
@@ -31,5 +30,5 @@
   "type" : "super",
   "useSystemAudio" : false,
   "version" : 1,
-  "voiceModelID" : "sv-1"
+  "voiceModelID" : "sw-ultra-cloud-v1-east"
 }
