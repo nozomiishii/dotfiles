@@ -33,12 +33,11 @@ confirm-close-surface = false
 # Start Ghostty windows maximized
 maximize = true
 
-# なんかこれ設定してから、CMAXの挙動が良くないような気がしたので一旦Off
-# # Restore window state (size, position, tabs) from the previous session
-# window-save-state = always
+# Restore window state (size, position, tabs) from the previous session
+window-save-state = always
 
-# # New windows/tabs open in the same directory as the current terminal
-# window-inherit-working-directory = true
+# New windows/tabs open in the same directory as the current terminal
+window-inherit-working-directory = true
 
 # keybindings
 # shift + enter: claude codeのinputを改行
