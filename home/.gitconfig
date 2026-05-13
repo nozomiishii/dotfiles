@@ -7,6 +7,7 @@ signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDF31h4ogJY+JRiI+k0+aLoO/OTnEI1
 # dev container内にnvim入れて初回起動遅くなるの懸念
 # editor = nvim
 ignorecase = false
+quotePath = false
 
 [init]
 defaultBranch = main
