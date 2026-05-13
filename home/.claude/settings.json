@@ -169,11 +169,16 @@
         "*.npmjs.com",
         "github.blog",
         "context7.com",
-        "*.context7.com"
+        "*.context7.com",
+        "cdn.playwright.dev",
+        "playwright.download.prss.microsoft.com"
       ],
       "allowUnixSockets": [
         "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock",
         "~/Library/Application Support/cmux/cmux.sock"
+      ],
+      "allowMachLookup": [
+        "org.chromium.Chromium.MachPortRendezvousServer.*"
       ],
       "allowLocalBinding": true
     },
