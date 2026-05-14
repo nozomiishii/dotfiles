@@ -10,15 +10,15 @@
     <string>/bin/bash</string>
     <string>-l</string>
     <string>-c</string>
-    <!-- fswatch を Homebrew PATH で解決するためログインシェルで起動 -->
-    <string>exec "$HOME/.local/bin/downloads-to-desktop.sh"</string>
+    <!-- osascript 経由で Finder に move を依頼。TCC は Finder が解決するため bash/osascript への FDA 付与は不要 -->
+    <string>exec /usr/bin/osascript "$HOME/.local/lib/downloads-to-desktop.applescript"</string>
   </array>
 
-  <!-- ログイン時に自動起動し、落ちたら再起動 -->
+  <!-- ログイン時に1回 + 5秒ごとに polling -->
   <key>RunAtLoad</key>
   <true/>
-  <key>KeepAlive</key>
-  <true/>
+  <key>StartInterval</key>
+  <integer>5</integer>
 
   <key>StandardOutPath</key>
   <string>/tmp/downloads-to-desktop.log</string>
