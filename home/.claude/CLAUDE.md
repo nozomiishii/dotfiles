@@ -43,6 +43,17 @@ gh pr create --title "..." --body-file "$BODY_FILE"
 ## GitHub Issue 検索
 
 - Closed as duplicate の Issue は結果に含めない。duplicate chain を辿って、現在 Open の canonical issue を返すこと。
+- 「subscribe / watch する価値があるか」を user に提案する場合、以下を必ず**実物で確認**してから引用すること:
+  - `state: OPEN` (CLOSED は提案しない)
+  - `stateReason` が `DUPLICATE` でない (canonical issue を辿る、`gh issue view <n> --json comments -q '.comments[].body'` で "duplicate of #..." を探す)
+  - 直近 3 ヶ月以内に update / コメントがある (= 活発に議論中)
+  - thumbsup や comment 数で community traction を示す
+- 推測や sub-agent / WebSearch の output を鵜呑みにせず、**必ず `gh issue view <number>` で state / updatedAt / stateReason / comments を実物確認する**。一度ダメ出しされた経験あり (2026-05-14: closed 済みや duplicate 済みの issue を「open で active」と紹介してしまった)。
+- 引用 / リストアップ時は state と直近 update 日付を併記すると user の検証コストが下がる。リンク化ルール (下記コミュニケーション section 参照) も守る:
+
+```markdown
+- [#32018](https://github.com/anthropics/claude-code/issues/32018) [BUG] Archived Code session cannot be unarchived (OPEN, 7👍, last update 2026-05-08)
+```
 
 ## 設計・spec の管理
 
