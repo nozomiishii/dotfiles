@@ -6,33 +6,61 @@ signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDF31h4ogJY+JRiI+k0+aLoO/OTnEI1
 [core]
 # dev container内にnvim入れて初回起動遅くなるの懸念
 # editor = nvim
+# ファイル名の大文字小文字を区別
 ignorecase = false
+# 非 ASCII ファイル名をエスケープせず生表示
 quotePath = false
 
 [init]
+# git init のデフォルトブランチ名
 defaultBranch = main
 
 [submodule]
+# checkout/pull/push 等で submodule を自動連動
 recurse = true
 
 [pull]
+# pull を rebase 形式に (merge commit を生やさず線形維持)
 rebase = true
+# pull 前に未 commit 変更を自動 stash、完了後に pop
 autostash = true
 
 [rebase]
+# rebase 前に未 commit 変更を自動 stash
 autoStash = true
+# stacked branch を一括 rebase した時、中間 ref も自動更新
+updateRefs = true
 
 [rerere]
+# 過去の conflict 解決を覚えて自動再適用
 enabled = true
 
+[fetch]
+# origin で削除された追跡 ref を fetch 時に自動削除
+prune = true
+# tag も同様に prune
+pruneTags = true
+
+[push]
+# 新規ブランチ初回 push で --set-upstream を省略可能に
+autoSetupRemote = true
+
+[merge]
+# fast-forward 可能な merge のみ許可 (手動 merge で commit を作らない安全弁)
+ff = only
+
 [gpg]
+# commit 署名形式
 format = ssh
 
 [gpg "ssh"]
+# 1Password の SSH 鍵で署名
 program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 
 [commit]
+# 全 commit を自動署名
 gpgsign = true
 
 [alias]
+# git-harvest コマンドへのショートカット
 harvest = !git-harvest
