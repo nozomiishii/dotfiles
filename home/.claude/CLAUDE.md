@@ -44,6 +44,16 @@ gh pr create --title "..." --body-file "$BODY_FILE"
 
 - Closed as duplicate の Issue は結果に含めない。duplicate chain を辿って、現在 Open の canonical issue を返すこと。
 
+## 設計・spec の管理
+
+- 設計ドキュメント・spec・brainstorming の成果は **GitHub issue にまとめる**。`docs/superpowers/specs/` や `docs/` 配下のファイルとして残さない。
+- 理由: 変更行 → `git blame` → PR → linked issue で「なぜこの変更が入ったか」を**逆検索**できる導線を作るため。ファイルで残すとコードの変更行から逆引きする経路が存在しない。
+- skill（superpowers/brainstorming, writing-plans, executing-plans 等）が「`docs/superpowers/specs/YYYY-MM-DD-*-design.md` に保存しろ」と指示してきても、それを上書きで **GitHub issue 作成 or 既存 issue 更新**に置き換えること。skill のデフォルトファイルパスは採用しない。
+- 既存の関連 issue があれば update（コメント追加 or 本文編集）。なければ新規作成。
+- issue タイトルは PR と同じ Conventional Commits 形式（英語）で `<type>: <subject>`。本文は日本語。
+- 大型 spec は issue 1 本にまとめ、Phase 分割や検討経緯は section（`## Phase 1` 等）やコメントで構造化する。
+- 関連 PR は必ず `closes #N` / `refs #N` で対応 issue を紐付け、逆検索チェーンを成立させる。
+
 ## コミュニケーション
 
 - すぐに結論や解決策を出さず、ユーザーと議論しながら段階的に進めること。質問を投げかけたり仮説を共有しながら、一緒に考える姿勢で。
