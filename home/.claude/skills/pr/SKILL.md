@@ -123,7 +123,23 @@ worktree でも動くよう `git checkout main` は使わない。
 
 push の後は CI が走り直すので、step 1 に戻って status を再取得する。
 
-抜ける条件（いずれかを満たしたら終了）:
+### CI 完了の待ち方
+
+push 直後は workflow がまだ queue されていない。`gh pr checks <PR>` を 15–30 秒間隔で polling して完了を待つ。
+
+**`gh pr checks --watch` は使わない**: workflow 全体が path-filter / `if:` 条件で skip された場合に `skipping` ステータスで残り、gh CLI が terminal と認識せず無限ループする（README 変更のみの PR で `actionlint` / `zizmor` などが path-filter で skip されるケース等）。
+
+polling 例:
+
+```bash
+while gh pr checks <PR> 2>/dev/null | awk '{print $2}' | grep -qE '^(pending|queued|in_progress)$'; do
+  sleep 20
+done
+```
+
+### 抜ける条件
+
+いずれかを満たしたら終了:
 
 - `mergeable: MERGEABLE` かつ `mergeStateStatus` が `CLEAN` / `HAS_HOOKS` / `UNSTABLE`（CI 全 pass）
 - 残った課題が「ユーザーの判断が必要なレビュー指摘」のみ
