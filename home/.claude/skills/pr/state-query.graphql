@@ -60,14 +60,6 @@ query($owner: String!, $name: String!, $number: Int!) {
           }
         }
       }
-
-      reviews(last: 20) {
-        nodes {
-          state
-          author { login }
-          submittedAt
-        }
-      }
     }
   }
 }
