@@ -56,13 +56,39 @@ gh pr view <N> --json number,url,headRefName,state,mergeStateStatus,mergeable,re
 
 ## 1. 状態の収集
 
-並列で取得する:
+GraphQL 1 ショットで PR の完全な state を取得し、temp file (`/tmp/claude-pr-state.json`) に保存して以降の判断で再利用する。本 iteration 内では再 fetch しない。section 3 の polling 終了時の最終 state がそのまま次 iter の入力になるので、section 1 はループ初回のみ動かす。
 
 ```bash
-gh pr checks <PR>
-gh pr view <PR> --json reviews,reviewDecision,mergeStateStatus,mergeable,statusCheckRollup
-gh api repos/{owner}/{repo}/pulls/<PR>/comments --jq '.[] | {id, path, line, body, in_reply_to_id}'
+# section 0 で抽出した owner / repo / PR 番号を env として使う
+export OWNER=<owner> NAME=<repo> NUM=<N>
+
+gh api graphql \
+  -F owner="$OWNER" -F name="$NAME" -F number="$NUM" \
+  -F query=@"$HOME/.claude/skills/pr/state-query.graphql" \
+  --jq '.data.repository.pullRequest' > /tmp/claude-pr-state.json
 ```
+
+GraphQL クエリ本体は [home/.claude/skills/pr/state-query.graphql](home/.claude/skills/pr/state-query.graphql) に分離。取得する主な field:
+
+- PR 本体: `state`, `isDraft`, `mergeable`, `mergeStateStatus`, `reviewDecision`, `headRefName`
+- CI check: `commits.nodes[0].commit.statusCheckRollup.{state, contexts.nodes[]}` — `CheckRun` には `conclusion`, `databaseId`, `checkSuite.workflowRun.databaseId` まで含む
+- レビュー: `reviewThreads.nodes[]` — `isResolved` で確定判定。`comments.nodes[]` に path / line / body / author
+
+state から判断する典型項目:
+
+| 用途 | jq path |
+|---|---|
+| merge 可能性 | `.mergeable`, `.mergeStateStatus`, `.reviewDecision` |
+| 失敗 check | `.commits.nodes[0].commit.statusCheckRollup.contexts.nodes[] \| select(.__typename == "CheckRun" and .conclusion == "FAILURE")` |
+| 失敗 run の `databaseId`（→ `gh run view`） | 上の結果から `.checkSuite.workflowRun.databaseId` |
+| pending check（polling 判定） | `.contexts.nodes[] \| select(.__typename == "CheckRun" and (.status == "QUEUED" or .status == "IN_PROGRESS"))` |
+| 未解決 review thread | `.reviewThreads.nodes[] \| select(.isResolved \| not)` |
+
+旧 3 並列 calls (`gh pr checks` + `gh pr view --json` + `gh api .../comments`) に対する利点:
+
+- 3 calls の間に CI 状態が更新されることで起きる snapshot ズレが消える
+- `reviewThreads.isResolved` で「未解決か」が直接取れる（旧 REST `comments` + `in_reply_to_id` chain を辿る推測判定が不要）
+- 失敗 run の `databaseId` が直接拾えるので、section 2-1 の `gh run view` に渡す ID 取得が独立 call なしで済む
 
 ## 2. 修復（優先度順）
 
@@ -72,10 +98,16 @@ gh api repos/{owner}/{repo}/pulls/<PR>/comments --jq '.[] | {id, path, line, bod
 
 ### 2-1. CI を直す
 
-失敗ジョブごとにログを取得:
+`/tmp/claude-pr-state.json` から失敗 run の ID を抽出してログ取得:
 
 ```bash
-gh run view <RUN_ID> --log-failed
+jq -r '
+  .commits.nodes[0].commit.statusCheckRollup.contexts.nodes[]
+  | select(.__typename == "CheckRun" and .conclusion == "FAILURE")
+  | .checkSuite.workflowRun.databaseId
+' /tmp/claude-pr-state.json | sort -u | while read -r RUN_ID; do
+  gh run view "$RUN_ID" --log-failed
+done
 ```
 
 ログを読み、原因に応じて修正する:
@@ -97,12 +129,22 @@ git push
 
 ### 2-2. レビュー指摘に対応
 
-未解決の review comment（自分の reply で閉じていないもの）を順に確認:
+`/tmp/claude-pr-state.json` の `reviewThreads` で **`isResolved = false`** の thread を順に確認する。GraphQL が確定状態を返すので、旧 REST `comments` + `in_reply_to_id` chain を辿る推測判定は不要。
+
+```bash
+jq -r '
+  .reviewThreads.nodes[]
+  | select(.isResolved | not)
+  | "[\(.id)] \(.comments.nodes[0].path // "?"):\(.comments.nodes[0].line // 0) — \(.comments.nodes[-1].body | .[0:80])"
+' /tmp/claude-pr-state.json
+```
+
+未解決 thread ごとに:
 
 - コード修正依頼: 直して commit & push
 - 質問・確認事項: GitHub 上で回答 comment を残す（`gh pr comment` または `gh api .../comments/<id>/replies`）
 - 自分では判断できないもの: ユーザーに「ここ判断ほしい」と渡して止まる
-- 既に対応済みっぽいもの: 触らない
+- 自分の最終 reply で実質片付いているが thread が open のまま: そのまま触らない（`isResolved` を flip するのはレビュアー側の仕事）
 
 自分が既に同じ回答を残しているコメントには再投稿しない。
 
@@ -121,13 +163,11 @@ worktree でも動くよう `git checkout main` は使わない。
 
 ## 3. ループ
 
-push の後は CI が走り直すので、step 1 に戻って status を再取得する。
+push の後は CI が走り直すので、graphql で state を取り直して `/tmp/claude-pr-state.json` を更新する。**polling 終了時の最終 state がそのまま次 iter の入力**になるので、section 1 で再取得しない。
 
 ### CI 完了の待ち方
 
-push 直後は workflow がまだ queue されていない。`gh pr checks <PR>` を 2 段階 backoff で polling する。固定 20s だと長時間 workflow（例: `nozomiishii/dotfiles` の CI）で polling 回数が爆発する。
-
-**`gh pr checks --watch` は使わない**: workflow 全体が path-filter / `if:` 条件で skip された場合に `skipping` ステータスで残り、gh CLI が terminal と認識せず無限ループする（README 変更のみの PR で `actionlint` / `zizmor` などが path-filter で skip されるケース等）。
+push 直後は workflow がまだ queue されていない。state を 2 段階 backoff で polling する。固定 20s だと長時間 workflow（例: `nozomiishii/dotfiles` の CI）で polling 回数が爆発する。
 
 polling 例:
 
@@ -137,7 +177,19 @@ polling 例:
 intervals=(5 60 60 60 60 60 60 60 60 60 60)
 deadline=$(( $(date +%s) + 60 * 60 ))
 i=0
-while gh pr checks <PR> 2>/dev/null | awk '{print $2}' | grep -qE '^(pending|queued|in_progress)$'; do
+
+refresh_state() {
+  gh api graphql \
+    -F owner="$OWNER" -F name="$NAME" -F number="$NUM" \
+    -F query=@"$HOME/.claude/skills/pr/state-query.graphql" \
+    --jq '.data.repository.pullRequest' > /tmp/claude-pr-state.json
+}
+
+refresh_state
+while jq -e '
+  .commits.nodes[0].commit.statusCheckRollup.contexts.nodes[]
+  | select(.__typename == "CheckRun" and (.status == "QUEUED" or .status == "IN_PROGRESS"))
+' /tmp/claude-pr-state.json >/dev/null 2>&1; do
   if [ "$(date +%s)" -ge "$deadline" ]; then
     echo "CI polling exceeded 60 min" >&2
     break
@@ -148,8 +200,12 @@ while gh pr checks <PR> 2>/dev/null | awk '{print $2}' | grep -qE '^(pending|que
     sleep 300
   fi
   i=$((i + 1))
+  refresh_state
 done
+# loop 抜け後の /tmp/claude-pr-state.json が次 iter の入力（section 1 で再取得しない）
 ```
+
+旧実装で警戒していた `gh pr checks --watch` 無限ループ問題（path-filter で skip された workflow が `skipping` ステータスで残り gh CLI が terminal と認識しないやつ）は、GraphQL ベースで CheckRun の `status` を直接見るようになったので回避される（`status` は `QUEUED` / `IN_PROGRESS` / `COMPLETED` の 3 値で、skip は `COMPLETED` 扱い）。
 
 スケジュール根拠:
 
