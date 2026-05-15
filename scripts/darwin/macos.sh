@@ -278,14 +278,10 @@ launchctl bootstrap "gui/$UID" "$local_keymap_plist"
 # Downloads -> Desktop
 # ----------------------------------------------------------------
 # AirDrop の保存先は変更不可のため、~/Downloads にファイルが追加されたら
-# ~/Desktop へ移動する LaunchAgent (WatchPaths) を登録する
+# ~/Desktop へ移動する LaunchAgent (fswatch + osascript) を登録する
 echo "- 📥 Downloads -> Desktop"
 
-# テンプレートから plist を生成 (plist 内で $HOME 展開できないため @HOME@ を実 $HOME に置換)
-local_d2d_template="$HOME/Library/LaunchAgents/local.downloads-to-desktop.plist.template"
 local_d2d_plist="$HOME/Library/LaunchAgents/local.downloads-to-desktop.plist"
-sed "s|@HOME@|$HOME|g" "$local_d2d_template" >"$local_d2d_plist"
-
 launchctl bootout "gui/$UID" "$local_d2d_plist" 2>/dev/null || true
 launchctl bootstrap "gui/$UID" "$local_d2d_plist"
 
