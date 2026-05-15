@@ -4,7 +4,7 @@
       {
         "matcher": "startup",
         "hooks": [
-          { "type": "command", "command": "bash ~/.claude/hooks/worktree-startup-update.sh" }
+          { "type": "command", "command": "bash ~/.claude/hooks/startup.sh" }
         ]
       }
     ]
