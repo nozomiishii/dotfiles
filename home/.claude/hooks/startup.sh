@@ -3,7 +3,7 @@
 
 git fetch origin --quiet || exit 0
 
-# 自分の commit が無ければ HEAD を origin/main まで進める（あれば作業を守るため触らない）。
+# 既存の commit や未保存変更を壊さない範囲で HEAD を origin/main まで進める。
 # 取り込み時に lock 更新があれば post-merge hook が pnpm install を実行する。
 if git merge-base --is-ancestor HEAD origin/main 2>/dev/null; then
   # merge commit を作らず HEAD を進めるだけ → linear history を維持
