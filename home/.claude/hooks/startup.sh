@@ -7,7 +7,7 @@
 #      ├─ No  → git merge --ff-only で HEAD を origin/main まで進める
 #      │        lock 変化があれば post-merge hook が pnpm install を実行
 #      └─ Yes → 何もしない（作業中の commit を守る）
-#   3. (どちらの場合も続けて) node_modules が無い？
+#   3. node_modules が無い？
 #      ├─ Yes → pnpm install（fresh worktree 初回など）
 #      └─ No  → 何もしない
 
