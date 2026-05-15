@@ -4,6 +4,16 @@
 
 - 日本語で応答する。コード・コマンド・技術用語はそのまま使用してよい。
 
+## 用語
+
+- 「ルーティン」「Routines」は **Claude Code の Routines 機能**を指す。Anthropic-managed cloud 上で動く saved Claude Code session で、scheduled / API / GitHub event の trigger で実行される。管理 UI は <https://claude.ai/code/routines>。CLI からは `/schedule` で作成（`/schedule` は Routines を作る一 surface であり、別機能ではない。将来 `/schedule` が無くなって `/routines` 系に統一される可能性もある）。
+- 公式ドキュメント: <https://code.claude.com/docs/en/routines> (旧 docs.anthropic.com 配下は 301 で同 URL に redirect)
+- 以下は **Routines とは別物**。混同しないこと:
+  - `/loop` skill / in-session scheduling: 開いている CLI session 内で prompt を interval / 自律ペースで繰り返す機能。cloud では動かない。<https://code.claude.com/docs/en/scheduled-tasks>
+  - Desktop scheduled tasks: ローカル Mac 上で動く scheduled task。<https://code.claude.com/docs/en/desktop-scheduled-tasks>
+  - OS の cron / launchd: dotfiles 側のローカルスケジューラ。
+- ユーザーが「ルーティン」「Routines」と言ったらまず **cloud Routines（claude.ai/code/routines）** を前提に動くこと。loop / Desktop scheduled tasks / OS cron として解釈するのは、文脈上明らかにそれを指している場合に限る。仕様確認は上記公式ドキュメントを起点にする。
+
 ## パーミッション・sandbox
 
 - コマンド実行の許可を確認する時は、Bash ツールの `description` に「何をするコマンドか」と「なぜこの実行が必要か」を日本語で簡潔に記述すること。例: 「PR を作成（GitHub API へのネットワークアクセスのため sandbox 外）」
