@@ -48,7 +48,7 @@ query($owner: String!, $name: String!, $number: Int!) {
           id
           isResolved
           isOutdated
-          comments(first: 20) {
+          comments(last: 5) {
             nodes {
               id
               author { login }
