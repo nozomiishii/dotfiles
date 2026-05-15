@@ -62,9 +62,6 @@ if OS.mac?
   # OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager https://tofuutils.github.io/tenv/
   brew "tenv"
 
-  # Linter for Terraform files https://github.com/terraform-linters/tflint
-  brew "tflint"
-
   # Tool to generate documentation from Terraform modules https://terraform-docs.io/
   brew "terraform-docs"
 
