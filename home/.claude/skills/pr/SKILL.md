@@ -133,7 +133,7 @@ polling 例:
 
 ```bash
 # 初回 5s で素早く確認 → ~10 分まで 60s 間隔 → それ以降は 300s 間隔
-# job timeout を 10 分に設定している workflow が多いため、10 分を超えたら粒度を粗くする
+# nozomiishii 配下を実測すると 98 job 中 56% が timeout-minutes:10 のため、10 分で粒度を切り替える
 intervals=(5 60 60 60 60 60 60 60 60 60 60)
 deadline=$(( $(date +%s) + 60 * 60 ))
 i=0
@@ -153,9 +153,9 @@ done
 
 スケジュール根拠:
 
-- 大半の workflow は 10 分以内に完了する想定（job timeout 10 分設定が多い）→ ~10 分までは 1 分粒度
-- 10 分超は outlier 扱いで 5 分粒度に落として polling 回数を抑える
-- `nozomiishii/dotfiles` の CI は p50=18.8m / max=45.1m の outlier。60 min timeout で吸収
+- `nozomiishii` 配下の workflow を実測すると 98 job のうち 92% が `timeout-minutes` 設定済み。そのうち **10 分が 56%**（次点 5 分 27%、1 分 11%、上位 3 値で 94%）。10 分が dominant なのは reusable workflow（`actionlint` / `zizmor` / `secretlint` / `release-please`）が各 repo に広く展開されているため
+- → 10 分までは 1 分粒度で十分、10 分超は outlier 扱いで 5 分粒度に落として polling 回数を抑える
+- 一方 `nozomiishii/dotfiles` の `ci.yaml install` は **40 分** の outlier（Brewfile / toolchain セットアップを fan-out）。60 min hard timeout で吸収
 - 固定 20s 比で 30 分待ちが ~90 calls → ~16 calls（約 1/6）
 
 ### 抜ける条件
