@@ -11,5 +11,6 @@ if git merge-base --is-ancestor HEAD origin/main 2>/dev/null; then
 fi
 
 if [ ! -d node_modules ]; then
-  pnpm install # fresh worktree 初回など
+  # fresh worktree 初回など
+  pnpm install
 fi
