@@ -44,6 +44,9 @@ pruneTags = true
 [push]
 # 新規ブランチ初回 push で --set-upstream を省略可能に
 autoSetupRemote = true
+# --force-with-lease 利用時に --force-if-includes も自動で付与
+# (background fetch で lease が失効するパターンを reflog で塞ぐ)
+useForceIfIncludes = true
 
 [merge]
 # fast-forward 可能な merge のみ許可 (手動 merge で commit を作らない安全弁)
