@@ -10,11 +10,11 @@
     <string>/bin/bash</string>
     <string>-l</string>
     <string>-c</string>
-    <!-- fswatch を Homebrew PATH で解決するためログインシェルで起動 -->
+    <!-- fswatch を Homebrew PATH で解決し、$HOME を bash 展開で解決するためログインシェルで起動 -->
     <string>exec "$HOME/.local/bin/downloads-to-desktop.sh"</string>
   </array>
 
-  <!-- ログイン時に自動起動し、落ちたら再起動 -->
+  <!-- ログイン時に自動起動、落ちたら再起動 -->
   <key>RunAtLoad</key>
   <true/>
   <key>KeepAlive</key>

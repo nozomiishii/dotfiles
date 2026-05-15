@@ -277,8 +277,8 @@ launchctl bootstrap "gui/$UID" "$local_keymap_plist"
 # ----------------------------------------------------------------
 # Downloads -> Desktop
 # ----------------------------------------------------------------
-# AirDrop の保存先は変更不可のため、~/Downloads に入ったファイルを
-# ~/Desktop へ自動移動する LaunchAgent を常駐させる
+# AirDrop の保存先は変更不可のため、~/Downloads にファイルが追加されたら
+# ~/Desktop へ移動する LaunchAgent (fswatch + osascript) を登録する
 echo "- 📥 Downloads -> Desktop"
 
 local_d2d_plist="$HOME/Library/LaunchAgents/local.downloads-to-desktop.plist"
