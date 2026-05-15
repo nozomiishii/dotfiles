@@ -2,11 +2,9 @@
   "hooks": {
     "SessionStart": [
       {
+        "matcher": "startup",
         "hooks": [
-          {
-            "type": "command",
-            "command": "pnpm install"
-          }
+          { "type": "command", "command": "bash ~/.claude/hooks/startup.sh" }
         ]
       }
     ]
