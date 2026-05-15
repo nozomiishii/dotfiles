@@ -281,13 +281,6 @@ launchctl bootstrap "gui/$UID" "$local_keymap_plist"
 # ~/Desktop へ移動する LaunchAgent (WatchPaths) を登録する
 echo "- 📥 Downloads -> Desktop"
 
-# 旧実装の Folder Action が残っていれば撤去 (macOS Tahoe で Folder Actions が動作不能なため WatchPaths に移行)
-osascript -e 'tell application "System Events"
-  try
-    delete folder action "Downloads"
-  end try
-end tell' >/dev/null 2>&1 || true
-
 # テンプレートから plist を生成 (plist 内で $HOME 展開できないため @HOME@ を実 $HOME に置換)
 local_d2d_template="$HOME/Library/LaunchAgents/local.downloads-to-desktop.plist.template"
 local_d2d_plist="$HOME/Library/LaunchAgents/local.downloads-to-desktop.plist"
