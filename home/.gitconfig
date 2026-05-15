@@ -8,7 +8,7 @@ signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDF31h4ogJY+JRiI+k0+aLoO/OTnEI1
 # editor = nvim
 # ファイル名の大文字小文字を区別
 ignorecase = false
-# 非 ASCII ファイル名をエスケープせず生表示
+# 日本語ファイル表示 (非 ASCII ファイル名をエスケープせず生表示)
 quotePath = false
 
 [init]
