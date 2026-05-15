@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# fresh worktree を origin/main に追従させる。
+# セッション開始時に worktree を整える（可能なら origin/main 取り込み、必要なら deps install）。
 #
 # Flow:
 #   1. git fetch origin で remote の状態を取り込む
