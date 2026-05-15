@@ -1,11 +1,22 @@
 #!/usr/bin/env bash
-# fresh worktree を origin/main に追従させる (分岐していたら何もしない)。
+# fresh worktree を origin/main に追従させる。
+#
+# Flow:
+#   1. git fetch origin で remote の状態を取り込む
+#   2. HEAD が origin/main の祖先か？
+#      ├─ Yes (自分独自の commit が無い) → git merge --ff-only で HEAD を origin/main まで進める
+#      └─ No  (自分の commit がある)     → 何もしない（作業中の commit を守る）
+#   3. node_modules が無い？
+#      ├─ Yes → pnpm install（lefthook が走らなかったケースの保険）
+#      └─ No  → 何もしない
 
 git fetch origin --quiet || exit 0
-# --ff-only は merge commit を作らず ref を前進させるだけ → linear history を維持
-git merge --ff-only origin/main --quiet 2>/dev/null || true
 
-# node_modules 不在 = fresh worktree (lefthook が走らなかったケースの保険)
+if git merge-base --is-ancestor HEAD origin/main 2>/dev/null; then
+  # --ff-only は merge commit を作らず ref を前進させるだけ → linear history を維持
+  git merge --ff-only origin/main --quiet
+fi
+
 if [ ! -d node_modules ]; then
   pnpm install
 fi
