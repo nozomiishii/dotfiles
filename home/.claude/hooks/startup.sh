@@ -3,11 +3,12 @@
 #
 # Flow:
 #   1. git fetch origin で remote の状態を取り込む
-#   2. HEAD が origin/main の祖先か？
-#      ├─ Yes (自分独自の commit が無い) → git merge --ff-only で HEAD を origin/main まで進める
-#      └─ No  (自分の commit がある)     → 何もしない（作業中の commit を守る）
+#   2. 自分独自の commit を持ってる？
+#      ├─ No  → git merge --ff-only で HEAD を origin/main まで進める
+#      │        lock 変化があれば post-merge hook が pnpm install を実行
+#      └─ Yes → 何もしない（作業中の commit を守る）
 #   3. node_modules が無い？
-#      ├─ Yes → pnpm install（lefthook が走らなかったケースの保険）
+#      ├─ Yes → pnpm install
 #      └─ No  → 何もしない
 
 git fetch origin --quiet || exit 0
