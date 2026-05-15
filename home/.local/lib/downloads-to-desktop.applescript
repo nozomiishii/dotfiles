@@ -1,6 +1,6 @@
 -- ~/Downloads の中身を ~/Desktop に移動する。
--- LaunchAgent から 5 秒ごとに osascript で起動される。
--- Finder 経由で move するため TCC は Finder が解決し、bash/osascript は Full Disk Access 不要。
+-- LaunchAgent の WatchPaths でファイル変更を検知 → osascript でこのスクリプトを起動。
+-- Finder 経由で move するため TCC は Finder が解決し、Full Disk Access は不要。
 
 tell application "Finder"
   set src to folder "Downloads" of (path to home folder)

@@ -14,11 +14,17 @@
     <string>exec /usr/bin/osascript "$HOME/.local/lib/downloads-to-desktop.applescript"</string>
   </array>
 
-  <!-- ログイン時に1回 + 5秒ごとに polling -->
+  <!-- ログイン時に1回 + WatchPaths で Downloads に変更があったら発火 -->
   <key>RunAtLoad</key>
   <true/>
-  <key>StartInterval</key>
-  <integer>5</integer>
+  <key>WatchPaths</key>
+  <array>
+    <!-- @HOME@ は macos.sh で実 $HOME に展開される (plist 内で $HOME 展開できないため動的生成) -->
+    <string>@HOME@/Downloads</string>
+  </array>
+  <!-- 連続発火を抑える最小間隔 (launchd デフォルト 10 秒だと体感が遅いので 1 秒へ短縮) -->
+  <key>ThrottleInterval</key>
+  <integer>1</integer>
 
   <key>StandardOutPath</key>
   <string>/tmp/downloads-to-desktop.log</string>
