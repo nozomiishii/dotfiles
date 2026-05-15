@@ -1,0 +1,65 @@
+query($owner: String!, $name: String!, $number: Int!) {
+  repository(owner: $owner, name: $name) {
+    pullRequest(number: $number) {
+      number
+      url
+      headRefName
+      state
+      isDraft
+      mergeable
+      mergeStateStatus
+      reviewDecision
+
+      commits(last: 1) {
+        nodes {
+          commit {
+            statusCheckRollup {
+              state
+              contexts(first: 100) {
+                nodes {
+                  __typename
+                  ... on CheckRun {
+                    name
+                    status
+                    conclusion
+                    detailsUrl
+                    databaseId
+                    checkSuite {
+                      workflowRun {
+                        databaseId
+                        workflow { name }
+                      }
+                    }
+                  }
+                  ... on StatusContext {
+                    context
+                    state
+                    targetUrl
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      reviewThreads(first: 50) {
+        nodes {
+          id
+          isResolved
+          isOutdated
+          comments(last: 5) {
+            nodes {
+              id
+              author { login }
+              body
+              path
+              line
+              createdAt
+            }
+          }
+        }
+      }
+    }
+  }
+}
