@@ -77,7 +77,7 @@ gh pr view <N> --json number,url,headRefName,state,mergeStateStatus,mergeable,re
 
 ## 1. 状態の収集
 
-GraphQL 1 ショットで PR の完全な state を取得し、temp file (`${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json`、PR 番号で名前空間を切って並列セッションでの衝突回避) に保存して以降の判断で再利用する。本 iteration 内では再 fetch しない。
+GraphQL 1 ショットで PR の完全な state を取得し、temp file (`${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`、owner / repo / PR 番号で名前空間を切って並列セッション + 異 repo 同 PR 番号での衝突回避) に保存して以降の判断で再利用する。本 iteration 内では再 fetch しない。
 
 **section 1 を実行するタイミング**:
 
@@ -87,7 +87,7 @@ GraphQL 1 ショットで PR の完全な state を取得し、temp file (`${TMP
 
 ```bash
 # $OWNER / $NAME / $NUM は section 0-1 でセット済み
-STATE_FILE="${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json"
+STATE_FILE="${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json"
 # 事前 planted の symlink 経由でリダイレクト先を上書きされる TOCTOU 攻撃を弾く
 [ -L "$STATE_FILE" ] && { echo "ERROR: $STATE_FILE is a symlink, refusing to write" >&2; exit 1; }
 umask 077  # 他ユーザー read 不可で作成（/tmp 直叩きフォールバック時の保険）
@@ -108,9 +108,9 @@ state から判断する典型項目:
 | 用途 | jq path |
 |---|---|
 | merge 可能性 | `.mergeable`, `.mergeStateStatus`, `.reviewDecision` |
-| 失敗 check | `.commits.nodes[0].commit.statusCheckRollup.contexts.nodes[] \| select(.__typename == "CheckRun" and .conclusion == "FAILURE")` |
+| 失敗 check | `.contexts.nodes[]? \| select(.__typename == "CheckRun" and (.conclusion \| IN("FAILURE","TIMED_OUT","CANCELLED","STARTUP_FAILURE","ACTION_REQUIRED")))` |
 | 失敗 run の `databaseId`（→ `gh run view`） | 上の結果から `.checkSuite.workflowRun.databaseId` |
-| pending check（polling 判定） | `.contexts.nodes[] \| select(.__typename == "CheckRun" and (.status == "QUEUED" or .status == "IN_PROGRESS"))` |
+| pending check（polling 判定） | rollup 全体で見るのが正解: `.statusCheckRollup.state` が `EXPECTED` / `PENDING`（個別 `CheckRun.status` を見ると `WAITING` / `REQUESTED` 等のレア値を取りこぼす） |
 | 未解決 review thread | `.reviewThreads.nodes[] \| select(.isResolved \| not)` |
 
 旧 3 並列 calls (`gh pr checks` + `gh pr view --json` + `gh api .../comments`) に対する利点:
@@ -123,7 +123,7 @@ state から判断する典型項目:
 
 - **GraphQL の connection cap**: `contexts(first: 100)` / `reviewThreads(first: 50)` / `comments(last: 5)`。各 thread の comments は `last: 5` で末尾側を取っているので `nodes[-1]` が確実に「最新コメント」になる（`first: 20` だと 21 件以上の thread で「先頭 20 件の末尾」=「実質的な中央」を最新と誤認する罠があるため）。reviewThreads / contexts の上限を超えるほど長期化した PR が出たら pagination 対応を検討する
 - **`StatusContext` (legacy CI integrations: Travis, AppVeyor 等)** は `__typename` で分岐して **失敗判定では無視**している（`nozomiishii` 配下は全 GitHub Actions = `CheckRun`）。今後 legacy CI を入れる repo で `/pr` を回す場合はここの再検討が必要
-- **state file の置き場所**: `${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json`。macOS では `$TMPDIR` が user-private な `/var/folders/<user>/.../T/` を指すので他ユーザーから読めない。Linux / WSL で `$TMPDIR` 未設定 → `/tmp` フォールバックの場合に備えて、書き込み前に **symlink check** で TOCTOU planted symlink を弾き、`umask 077` で perms 600 にして world-read を防ぐ。残存リスク: symlink check と redirect 間に共有 `/tmp` で攻撃者が swap する race window があるが、shell redirect の根源的制約なので mktemp に移行しない限り完全には潰せない（dotfiles ユースケースでは許容範囲と判断）
+- **state file の置き場所**: `${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`。macOS では `$TMPDIR` が user-private な `/var/folders/<user>/.../T/` を指すので他ユーザーから読めない。Linux / WSL で `$TMPDIR` 未設定 → `/tmp` フォールバックの場合に備えて、書き込み前に **symlink check** で TOCTOU planted symlink を弾き、`umask 077` で perms 600 にして world-read を防ぐ。残存リスク: symlink check と redirect 間に共有 `/tmp` で攻撃者が swap する race window があるが、shell redirect の根源的制約なので mktemp に移行しない限り完全には潰せない（dotfiles ユースケースでは許容範囲と判断）
 
 ## 2. 修復（優先度順）
 
@@ -133,15 +133,19 @@ state から判断する典型項目:
 
 ### 2-1. CI を直す
 
-`${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json` から失敗 run の ID を抽出してログ取得:
+`${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json` から失敗 run の ID を抽出してログ取得:
 
 ```bash
+# statusCheckRollup が null（push 直後の race）でも落ちないように nodes[]? を使う。
+# failing conclusion は FAILURE 以外にも TIMED_OUT / CANCELLED / STARTUP_FAILURE / ACTION_REQUIRED があり、
+# どれも「CI 真っ赤」として扱いたいので whitelist で広く拾う。
 jq -r '
-  .commits.nodes[0].commit.statusCheckRollup.contexts.nodes[]
-  | select(.__typename == "CheckRun" and .conclusion == "FAILURE")
+  .commits.nodes[0].commit.statusCheckRollup.contexts.nodes[]?
+  | select(.__typename == "CheckRun"
+           and (.conclusion | IN("FAILURE","TIMED_OUT","CANCELLED","STARTUP_FAILURE","ACTION_REQUIRED")))
   | .checkSuite.workflowRun.databaseId
   | select(. != null)
-' ${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json | sort -u | while read -r RUN_ID; do
+' ${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json | sort -u | while read -r RUN_ID; do
   gh run view "$RUN_ID" --log-failed
 done
 ```
@@ -165,14 +169,14 @@ git push
 
 ### 2-2. レビュー指摘に対応
 
-`${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json` の `reviewThreads` で **`isResolved = false`** の thread を順に確認する。GraphQL が確定状態を返すので、旧 REST `comments` + `in_reply_to_id` chain を辿る推測判定は不要。
+`${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json` の `reviewThreads` で **`isResolved = false`** の thread を順に確認する。GraphQL が確定状態を返すので、旧 REST `comments` + `in_reply_to_id` chain を辿る推測判定は不要。
 
 ```bash
 jq -r '
   .reviewThreads.nodes[]
   | select(.isResolved | not)
   | "[\(.id)] \(.comments.nodes[0].path // "?"):\(.comments.nodes[0].line // 0) — \(.comments.nodes[-1].body | .[0:80])"
-' ${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json
+' ${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json
 ```
 
 未解決 thread ごとに:
@@ -199,7 +203,7 @@ worktree でも動くよう `git checkout main` は使わない。
 
 ## 3. ループ
 
-push の後は CI が走り直すので、graphql で state を取り直して `${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json` を更新する。**polling 終了時の最終 state がそのまま次 iter の入力**になるので、section 1 で再取得しない。
+push の後は CI が走り直すので、graphql で state を取り直して `${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json` を更新する。**polling 終了時の最終 state がそのまま次 iter の入力**になるので、section 1 で再取得しない。
 
 ### CI 完了の待ち方
 
@@ -215,7 +219,7 @@ deadline=$(( $(date +%s) + 60 * 60 ))
 i=0
 
 refresh_state() {
-  local f="${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json"
+  local f="${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json"
   [ -L "$f" ] && { echo "ERROR: $f is a symlink, refusing to write" >&2; return 1; }
   umask 077
   gh api graphql \
@@ -236,7 +240,7 @@ while jq -e '
   | ($r == null)
     or ($r.state == "EXPECTED") or ($r.state == "PENDING")
     or (.mergeable == "UNKNOWN")
-' ${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json >/dev/null 2>&1; do
+' ${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json >/dev/null 2>&1; do
   if [ "$(date +%s)" -ge "$deadline" ]; then
     echo "CI polling exceeded 60 min" >&2
     break
@@ -249,7 +253,7 @@ while jq -e '
   i=$((i + 1))
   refresh_state
 done
-# loop 抜け後の ${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json が次 iter の入力（section 1 で再取得しない）
+# loop 抜け後の ${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json が次 iter の入力（section 1 で再取得しない）
 ```
 
 旧実装で警戒していた `gh pr checks --watch` 無限ループ問題（path-filter で skip された workflow を gh CLI が terminal と認識しないやつ）は、本実装が `statusCheckRollup.state` を直接見るので回避される。skip された workflow run は check が作られず rollup の集計対象から外れ、skip された個別 job は `conclusion: SKIPPED` で `COMPLETED` 扱いになるので、rollup state は最終的に `SUCCESS` / `FAILURE` / `ERROR` のいずれかに確実に落ちる。
@@ -277,7 +281,7 @@ done
 
 - **マージは絶対に実行しない**（`gh pr merge` / `gh api .../merge` 禁止）
 - **状態取得は section 1 の GraphQL に一元化する**: トラブルシューティング中でも `gh pr checks` / `gh pr view --json reviews,statusCheckRollup,...` / `gh api .../comments` を個別に呼ばない。3 calls 間の snapshot ズレと、resolved 判定の REST 推測ミスを避けるため
-- **state file (`${TMPDIR:-/tmp}/claude-pr-state-${NUM}.json`) は明示削除しない**: OS の `/tmp` 定期 purge に任せる。skill 終了時に `rm` を仕込まないことで、直後の手動デバッグ（`jq ... "${TMPDIR:-/tmp}/claude-pr-state-<NUM>.json"` で覗く）の利便性を維持する。書き込み側のセキュリティガード（symlink check + `umask 077`）は section 1 と `refresh_state` に組み込み済みなので、`/tmp` フォールバック環境でも TOCTOU planted symlink と world-read の主要経路は塞がれる
+- **state file (`${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`) は明示削除しない**: OS の `/tmp` 定期 purge に任せる。skill 終了時に `rm` を仕込まないことで、直後の手動デバッグ（`jq ... "${TMPDIR:-/tmp}/claude-pr-state-<OWNER>-<NAME>-<NUM>.json"` で覗く）の利便性を維持する。書き込み側のセキュリティガード（symlink check + `umask 077`）は section 1 と `refresh_state` に組み込み済みなので、`/tmp` フォールバック環境でも TOCTOU planted symlink と world-read の主要経路は塞がれる
 - PR タイトル / コミットメッセージは英語 Conventional Commits 形式（小文字始まり、ASCII のみ、scope 無し、末尾スペース禁止）
 - PR 本文に追記する必要が出た場合は、本文部分は日本語のまま
 - `gh pr edit` で本文を更新するときは `--body-file` を使う（HEREDOC で `--body` 直渡しは command injection 検出に引っかかる）
