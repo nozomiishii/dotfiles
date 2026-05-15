@@ -35,7 +35,7 @@
     "lefthook": "2.1.6",
     "markdownlint-cli2": "0.22.1"
   },
-  "packageManager": "pnpm@11.0.9",
+  "packageManager": "pnpm@11.1.0",
   "engines": {
     "node": "24.15.0"
   },
