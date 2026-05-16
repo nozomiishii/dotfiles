@@ -22,7 +22,7 @@
     "lint:fix": "pnpm markdownlint:fix",
     "markdownlint": "npx -y markdownlint-cli2@latest '**/*.md' '#node_modules'",
     "markdownlint:fix": "npx -y markdownlint-cli2-fix@latest '**/*.md' '#node_modules'",
-    "prettier": "prettier --ignore-unknown",
+    "prettier": "prettier --ignore-unknown --cache",
     "test": "node --version",
     "test:perf": "bash scripts/test_shell_startup_time.sh"
   },
