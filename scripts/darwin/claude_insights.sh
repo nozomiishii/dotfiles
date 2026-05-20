@@ -8,11 +8,17 @@
 set -Ceuo pipefail
 
 # Claude Code の利用状況レポート (/insights) を生成し、日本語に翻訳して
-# ブラウザで開き、macOS 通知で知らせる。
+# クリックで開く通知で知らせる。
 # launchd (local.claude-insights.plist) から毎月 1 日・15 日に起動される。
 #
-# 配信方法は今のところ「通知 + ブラウザ自動オープン」。後でメール送信に
+# 配信方法は今のところ「クリックで開く通知」。後でメール送信に
 # 差し替える場合は、末尾の「配信」ブロックだけ入れ替えればよい。
+
+# claude は公式 install.sh により ~/.local/bin に入る（Homebrew ではない）。
+# launchd は /bin/bash -l で起動するが、~/.local/bin を PATH に通すのは zsh 専用の
+# .zshrc だけなので、login bash の PATH には入らない（claude が command not found に
+# なる）。よってここで明示的に補う。terminal-notifier は /opt/homebrew/bin で解決可。
+export PATH="$HOME/.local/bin:$PATH"
 
 USAGE_DIR="$HOME/.claude/usage-data"
 REPORT_EN="$USAGE_DIR/report.html"
@@ -25,12 +31,19 @@ TRANSLATE_MODEL="opus"
 
 notify() {
   # $1: メッセージ, $2: サウンド名 (省略可)
-  local sound="${2:-}"
-  if [[ -n "$sound" ]]; then
-    osascript -e "display notification \"$1\" with title \"Claude Code Insights\" sound name \"$sound\""
+  # メッセージ・サウンド名は argv 経由で AppleScript に渡す。-e 文字列に直接埋め込むと
+  # " やバックスラッシュで構文が壊れる/インジェクションになるため。
+  osascript - "$1" "${2:-}" <<'APPLESCRIPT'
+on run argv
+  set msg to item 1 of argv
+  set snd to item 2 of argv
+  if snd is "" then
+    display notification msg with title "Claude Code Insights"
   else
-    osascript -e "display notification \"$1\" with title \"Claude Code Insights\""
-  fi
+    display notification msg with title "Claude Code Insights" sound name snd
+  end if
+end run
+APPLESCRIPT
 }
 
 fail() {
@@ -43,20 +56,28 @@ fail() {
 # 1. 英語レポートを生成
 # ----------------------------------------------------------------
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Generating insights report..."
+command -v claude >/dev/null 2>&1 || fail "claude not found in PATH"
+# 生成前の mtime を記録。/insights が（exit 0 でも）レポートを更新できなかった場合、
+# 古い report.html が残っていると stale なレポートを「新着」として通知してしまう。
+# 生成後に mtime が進んだことを確認して stale データを弾く。
+PREV_MTIME=$(stat -f %m "$REPORT_EN" 2>/dev/null || echo 0)
 claude -p "/insights" >/dev/null || fail "/insights generation failed"
 [[ -f "$REPORT_EN" ]] || fail "report.html was not generated"
+NEW_MTIME=$(stat -f %m "$REPORT_EN")
+(( NEW_MTIME > PREV_MTIME )) || fail "report.html was not refreshed (stale data; /insights may be a no-op)"
 
 # ----------------------------------------------------------------
 # 2. 日本語に翻訳
 # ----------------------------------------------------------------
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Translating to Japanese..."
-TRANSLATE_PROMPT='あなたは HTML 翻訳器です。入力 HTML の人間が読む表示テキスト（title, 見出し, 段落, ラベル, リスト項目など）だけを自然な日本語に翻訳し、それ以外（DOCTYPE, タグ, 属性, class名, <style> 内の CSS, リンクURL）は1文字も変えずに維持してください。出力は HTML 全体のみ。マークダウンのコードフェンス(```)や説明文は絶対に付けないこと。'
+TRANSLATE_PROMPT='あなたは HTML 翻訳器です。入力 HTML の人間が読む表示テキスト（title, 見出し, 段落, ラベル, リスト項目など）だけを自然な日本語に翻訳し、それ以外（DOCTYPE, タグ, 属性, class名, <style> 内の CSS, リンクURL）は1文字も変えずに維持してください。数値・日付・コスト・統計の値は1文字も変えないこと。出力は HTML 全体のみ。マークダウンのコードフェンス(```)や説明文は絶対に付けないこと。'
 
 # 翻訳結果を一時ファイルへ。途中失敗で report.ja.html を壊さないため。
 TMP_JA="$(mktemp)"
 trap 'rm -f "$TMP_JA"' EXIT
-# mktemp が作る既存ファイルへ書くため、noclobber (set -C) を >| で明示上書き
-cat "$REPORT_EN" | claude -p --model "$TRANSLATE_MODEL" "$TRANSLATE_PROMPT" >| "$TMP_JA" || fail "translation failed"
+# mktemp が作る既存ファイルへ書くため、noclobber (set -C) を >| で明示上書き。
+# stdin リダイレクトで渡し、claude の exit code を || fail で直接拾う。
+claude -p --model "$TRANSLATE_MODEL" "$TRANSLATE_PROMPT" >| "$TMP_JA" < "$REPORT_EN" || fail "translation failed"
 
 # 安全網: 万一コードフェンスが付いた場合は剥がす
 if [[ "$(head -1 "$TMP_JA")" == '```'* ]]; then
@@ -65,11 +86,15 @@ fi
 
 # 妥当性チェック: 翻訳結果が原文の構造を保っているか。
 # モデルが途中脱落・要約すると head/CSS/サイズが欠ける（sonnet で実測）ので、
-# 必須要素とサイズ下限（原文の 70%）の両方を確認し、壊れていれば原文を捨てない。
+# 先頭がHTML宣言で始まること・必須要素・サイズ下限（原文の70%）を確認し、
+# 壊れていれば原文を捨てずに通知して止める。
 EN_SIZE=$(wc -c < "$REPORT_EN")
 JA_SIZE=$(wc -c < "$TMP_JA")
+# 先頭がフェンス/前置き文でなく <!DOCTYPE か <html で始まること（sonnet は先頭脱落で </div> 始まりだった）
+head -1 "$TMP_JA" | grep -qiE '^[[:space:]]*<(!doctype|html)' || fail "translation broken (leading junk; not <!DOCTYPE/<html)"
 grep -qi '</html>' "$TMP_JA" || fail "translation broken (no </html>)"
-grep -qi '<style>' "$TMP_JA" || fail "translation broken (missing <style>, CSS dropped)"
+# <style> は属性付き(<style type="...">)もあり得るので [ >] で受ける
+grep -qiE '<style[ >]' "$TMP_JA" || fail "translation broken (missing <style>, CSS dropped)"
 if (( JA_SIZE * 100 < EN_SIZE * 70 )); then
   fail "translation too small (${JA_SIZE}B < 70% of source ${EN_SIZE}B), likely truncated"
 fi

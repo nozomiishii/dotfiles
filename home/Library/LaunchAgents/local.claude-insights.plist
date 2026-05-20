@@ -10,11 +10,13 @@
     <string>/bin/bash</string>
     <string>-l</string>
     <string>-c</string>
-    <!-- claude バイナリを Homebrew PATH で解決し、$HOME を bash 展開で解決するためログインシェルで起動 -->
+    <!-- $HOME を bash 展開で解決するためログインシェルで起動。claude(~/.local/bin) の
+         PATH 追加はスクリプト側で行う（login bash の PATH には入らないため） -->
     <string>exec "$HOME/dotfiles/scripts/darwin/claude_insights.sh"</string>
   </array>
 
-  <!-- 毎月 1 日・15 日の 10:00 に実行（月 2 回）。スリープ中なら起床時に 1 回拾う -->
+  <!-- 毎月 1 日・15 日の 10:00 に実行（月 2 回）。発火時刻にスリープなら起床時に取りこぼし分を
+       1 回実行する。電源オフのまま跨いだ回はスキップされる -->
   <key>StartCalendarInterval</key>
   <array>
     <dict>
