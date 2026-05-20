@@ -286,6 +286,17 @@ launchctl bootout "gui/$UID" "$local_d2d_plist" 2>/dev/null || true
 launchctl bootstrap "gui/$UID" "$local_d2d_plist"
 
 # ----------------------------------------------------------------
+# Claude Code Insights
+# ----------------------------------------------------------------
+# /insights の利用状況レポートを毎月 1 日・15 日に生成・日本語翻訳し、
+# ブラウザで開いて macOS 通知で知らせる LaunchAgent を登録する
+echo "- 📊 Claude Code Insights"
+
+local_insights_plist="$HOME/Library/LaunchAgents/local.claude-insights.plist"
+launchctl bootout "gui/$UID" "$local_insights_plist" 2>/dev/null || true
+launchctl bootstrap "gui/$UID" "$local_insights_plist"
+
+# ----------------------------------------------------------------
 # Network
 # ----------------------------------------------------------------
 echo "- 📡 Network"
