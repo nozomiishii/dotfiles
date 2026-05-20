@@ -1,0 +1,9 @@
+{
+  "controls": [
+    {
+      "id": "lazygit",
+      "title": "lazygit",
+      "command": "$HOME/.config/cmux/lazygit-here.sh"
+    }
+  ]
+}
