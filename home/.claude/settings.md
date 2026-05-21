@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-04-22
+最終更新: 2026-05-22
 
 ## 背景
 
@@ -344,6 +344,20 @@ Claude Code 2.1.110 で追加された「Push when Claude decides」機能。Rem
 `defaultMode: "auto"` でセッションを開始したときに表示される「Auto mode を有効にしますか？」の確認プロンプトをスキップする。sandbox を常時有効にしている前提で、auto mode を毎回無言で起動したいための設定。
 
 `permissions.skipDangerousModePermissionPrompt`（bypass permissions 用）と対になる auto mode 版。公式ドキュメントでは明示的に記載されていないが Claude Code 本体が読み取る設定キーとして実装されている。将来挙動が変わる可能性があるため、新しいセッションで確認プロンプトが戻ったらこの記述を見直す。
+
+### worktree
+
+```jsonc
+"worktree": {
+  "bgIsolation": "none"  // background セッション（claude --bg / /bg）を worktree 隔離せず本体で動かす
+}
+```
+
+`worktree.bgIsolation` は background セッションのファイル隔離モード（このリポジトリ単位）。Claude Code 本体のスキーマでは `"worktree"` がデフォルトで、background セッションがメイン checkout に Edit/Write しようとすると `EnterWorktree` を呼ぶまでブロックし、初回編集時に `.claude/worktrees/<id>` へ自動隔離する。`"none"` にすると background ジョブがワーキングコピーを直接編集できる。foreground セッションや `claude --worktree` 起動には影響しない（あれは起動時点で worktree を作る別経路）。
+
+`"none"` を選んだ理由は、worktree のセットアップ hook (`.claude/hooks/startup.sh`) が `SessionStart`（matcher: `startup`）に紐づいているため。`SessionStart` の source は `startup` / `resume` / `clear` / `compact` の 4 つだけで `worktree` は存在せず、background セッションが稼働中に `EnterWorktree` で遅延的に worktree へ移っても `SessionStart` は再発火しない。つまりデフォルトの `"worktree"` だと、新規 worktree に `node_modules` が無いまま `startup.sh` が走らず、依存未インストールでつまずく。`"none"` にすれば background は常に本体（起動時に `startup.sh` が `ff-only` + `pnpm install` で整えた状態）で動くため、この問題が起きない。
+
+トレードオフは、複数の background セッションを同じファイルに並列で走らせると衝突すること。並列編集を多用する運用に変える場合はデフォルトの `"worktree"` に戻し、代わりに `WorktreeCreate` hook 等で全 worktree 作成経路に deps install を配線する必要がある。
 
 ## 使い方
 

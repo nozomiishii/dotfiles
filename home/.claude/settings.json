@@ -214,5 +214,8 @@
   "tui": "fullscreen",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "worktree": {
+    "bgIsolation": "none"
+  }
 }
