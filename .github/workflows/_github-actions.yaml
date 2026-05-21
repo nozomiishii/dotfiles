@@ -14,4 +14,4 @@ permissions:
 
 jobs:
   github-actions:
-    uses: nozomiishii/workflows/.github/workflows/github-actions.yaml@91314aeeecdc7243ffe8ed3163eefebec2572f77 # v3.1.1
+    uses: nozomiishii/workflows/.github/workflows/github-actions.yaml@bdea1e0028e1f3c1ba9411f8024c1b247d0bfff7 # v3.1.2
