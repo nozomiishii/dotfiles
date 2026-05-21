@@ -46,11 +46,13 @@ z!() {
 # ----------------------------------------------------------------
 alias c="claude"
 alias ca="claude agents"
+alias cb="claude --bg"
 alias cc="claude --continue"
 alias cr="claude --resume"
 alias crs="claude respawn --all"
 alias ct="claude --teleport"
 alias cw="claude --worktree"
+alias cwb="claude --worktree --bg"
 alias cwr="claude --worktree --resume"
 alias cwt="claude --worktree --teleport"
 
