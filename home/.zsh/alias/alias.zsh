@@ -82,3 +82,9 @@ alias dsp="docker system prune --all --volumes"
 # ----------------------------------------------------------------
 alias tf="terraform"
 alias tg="terragrunt"
+
+# ----------------------------------------------------------------
+# Raycast
+# ----------------------------------------------------------------
+# Raycast 設定を export して専用ブランチで PR を作る
+alias rcb="$HOME/.config/raycast/scripts/raycast_backup.sh"
