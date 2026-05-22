@@ -92,6 +92,11 @@ gh pr create --title "..." --body-file "$BODY_FILE"
 - sandbox の allowedDomains にドメインを追加する際は、可能な限りワイルドカード（`*.example.com`）で正規化すること。個別サブドメインが1つだけの場合はそのままでよい。
 - パーミッションの追加・変更は必ず `~/.claude/settings.json`（グローバル設定）に行うこと。プロジェクトの `settings.local.json` には追加しない。`settings.local.json` にルールが溜まっていた場合は、ユーザーにグローバルへの移行を提案すること。
 
+## コメント
+
+- コード・設定ファイルに書くコメントは、できるだけ短くシンプルに、わかりやすい日本語で書く。短くてわかりやすいのが最善。
+- 最初から長く詳細に書き込まない。説明が足りずわかりにくいと指摘されたら、その都度必要な分だけ伸ばす。
+
 ## pnpm allowBuilds コメント
 
 `pnpm-workspace.yaml` の `allowBuilds` 各エントリには、build を許可/拒否する判断根拠が分かるコメントを必ず付けること。フォーマット:
