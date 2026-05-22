@@ -32,6 +32,20 @@
 - git 操作の前にブランチを確認し、main への直接コミットを避けること。
 - `cd <path> && git` の複合コマンドは使わず、`git -C <path>` を使用すること（bare repository attack 防止の sandbox 制約を回避するため）。
 
+## session の特定・復元
+
+session の実体は `~/.claude/projects/<encoded cwd>/<UUID>.jsonl`。ファイル名の UUID が `claude -r <UUID>` の復元キー。各行に `gitBranch` が入り、**remote-control した session は `bridge_status` 行に cloud URL（`https://claude.ai/code/session_xxx`）・sessionId・gitBranch がまとまって**記録される。これで session ⇄ cloud URL ⇄ branch を相互に引ける（cloud URL と UUID は別物）。
+
+復元の native フラグ: `claude -r <UUID>` / `claude -c`（cwd 直近） / `claude --from-pr <PR>`。URL・branch からの復元フラグは無いので grep で UUID を逆引きする:
+
+```sh
+# cloud URL → UUID（remote-control した session のみ）
+grep -rl '"url":"https://claude.ai/code/session_XXXX"' ~/.claude/projects | sed -E 's|.*/(.*)\.jsonl|\1|'
+# branch → 直近 session の UUID（全 session）
+grep -rl '"gitBranch":"<branch>"' ~/.claude/projects \
+  | while read f; do echo "$(stat -f '%m' "$f") $(basename "${f%.jsonl}")"; done | sort -rn | head -1
+```
+
 ## GitHub / PR
 
 - **PR タイトル**: Conventional Commits 形式（英語）で `<type>: <subject>` と書く。許可 type は `feat` / `fix` / `chore`（リポジトリで追加されている場合はそれに従う）。**scope は付けない**（`feat(api): ...` ではなく `feat: ...`）。caller 側で nozomiishii/workflows の `pull-request.yaml` に `scopes` input を渡している repo に限り scope 可（その場合は input で許可された scope のみ）。subject は小文字始まり / ASCII のみ / 末尾スペース禁止。これは nozomiishii/workflows の semantic pull request チェック（amannn/action-semantic-pull-request）と同じ規則で、違反すると CI が落ちる。
