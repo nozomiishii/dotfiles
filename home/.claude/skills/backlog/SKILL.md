@@ -23,7 +23,7 @@ argument-hint: バックログのタイトル / 補足（任意）
 - brain vault の canonical パス（Obsidian が見ている実体 / git の main checkout）:
   `BRAIN="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents"`
   （ユーザー名はハードコードせず `$HOME` を使う）
-- backlog ノートのスキーマは brain repo の `CLAUDE.md`（backlog/ の運用）に従う。
+- backlog ノートのスキーマ（frontmatter / 見出し構成）は本 skill のステップ 7 で定義する。brain repo `CLAUDE.md` のディレクトリ表にも `backlog/` 行があるが、運用詳細はこの skill に集約する。
 
 ## 手順
 
@@ -55,14 +55,15 @@ issue 作成・PR は外向き操作なので、**作成前に必ずドラフト
 
 - issue / PR タイトル: Conventional Commits（英語）`<type>: <subject>`（scope は付けない）。
 - issue / PR 本文: 日本語。
+- **session URL は issue / PR 本文に絶対含めない（public / private 問わず）**。session URL はステップ 7 の vault ノート（`## Session`）にのみ書く。ドラフト提示時も issue 本文側に URL を載せないこと。詳細は末尾「注意」参照。
 
 ### 5. issue を作成
 
-承認後、対象 repo に issue を立て、番号 / URL を控える:
+承認後、対象 repo に issue を立て、番号 / URL を控える。**issue 本文に session URL を含めないこと（public / private 問わず）**:
 
 ```sh
 BODY_FILE=$(mktemp) && cat > "$BODY_FILE" <<'EOF'
-（日本語の issue 本文）
+（日本語の issue 本文。session URL は書かない）
 EOF
 gh issue create -R <owner/repo> --title "<EN conventional commits>" --body-file "$BODY_FILE"
 ```
@@ -107,6 +108,8 @@ status: todo
 - 関連 issue / PR
 ```
 
+- frontmatter の `status` は `todo`（未着手）/ `doing`（着手中）/ `done`（完了）のいずれか。新規 backlog は通常 `todo`。
+- 本文は `## Issue`（成果物の issue）/ `## Session`（検討ログの session URL）/ `## 概要`（何をやりたいか・なぜ後回しか）/ `## 関連`（関連 issue / PR）の 4 見出しで構成する。
 - session URL が取れなかった場合は、`## Session` に「未取得（remote-control 未起動）。後で貼る」と明記し、ユーザーが後から追記できる形にする。
 
 ### 8. commit → push → PR
@@ -129,5 +132,6 @@ gh pr create -R <brain owner/repo> --base main --head "chore/backlog-<slug>" --t
 
 ## 注意
 
-- session URL を public な GitHub リポジトリや公開ページに生で貼らない（brain vault はローカル + iCloud で本人のみアクセスのため OK）。issue / PR 本文には URL でなく要約を書く。
+- **session URL は GitHub の issue / PR 本文には絶対に貼らない（public / private を問わず）**。session URL を載せてよいのは brain vault のノート（`## Session`）だけ。これは「URL の置き場を vault 1 箇所に限定して事故を防ぐ」ための意図的な運用境界なので、private repo だから OK といった例外も作らない。GitHub 側（issue / PR 本文）には URL でなく要約・タスク内容を書く。
+- なぜ vault は OK で GitHub は NG か: session URL（`https://claude.ai/code/session_xxx`）は visibility がデフォルト **Private**（owner 本人のみ閲覧可）。brain vault はローカル + iCloud 同期で本人のみアクセスするため Private session URL を置いても安全。一方 GitHub に貼ると、その issue / PR が public（または将来 public 化）した瞬間に会話全文が全 claude.ai ユーザーへ露出しうる。だから vault に一元化する。
 - ノートを worktree に書いた段階では Obsidian（canonical を見ている）にはまだ出ない。PR が main に merge されてから反映される。
