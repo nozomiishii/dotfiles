@@ -65,12 +65,9 @@ for _ in $(seq 1 30); do
   sleep 0.5
 done
 
-# Fallback: most recently modified .rayconfig in the dir.
-if [ -z "$new_file" ]; then
-  new_file="$(find "$backup_dir" -maxdepth 1 -name '*.rayconfig' -print0 2>/dev/null \
-    | xargs -0 ls -t 2>/dev/null | head -n1 || true)"
-fi
-
+# No marker-less fallback on purpose: picking the newest .rayconfig regardless of
+# the marker would select the pre-existing committed Raycast.rayconfig and report
+# a false "OK" when the export silently failed.
 if [ -z "$new_file" ] || [ ! -s "$new_file" ]; then
   echo "ERROR: no new .rayconfig produced in $backup_dir" >&2
   exit 1
@@ -78,8 +75,7 @@ fi
 
 # Normalize to the fixed filename (overwrite any previous one).
 if [ "$(basename "$new_file")" != "$fixed_name" ]; then
-  rm -f "$backup_dir/$fixed_name"
-  mv "$new_file" "$backup_dir/$fixed_name"
+  mv -f "$new_file" "$backup_dir/$fixed_name"
 fi
 
 echo "OK: $backup_dir/$fixed_name"
