@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
-# Trigger Raycast "Export Settings & Data" via deeplink, drive the macOS save
-# dialog with AppleScript, then normalize the result to a fixed filename.
+# Raycast 設定を export し、固定名 Raycast.rayconfig に正規化する。
 #
-# Prerequisites (one-time):
-#   - The external-trigger confirmation for this command is suppressed in
-#     Raycast via "Always Run Command".
-#   - The terminal app running this script has Accessibility permission so
-#     osascript can send keystrokes (else: error 1002).
-#   - The Raycast export passphrase is stored in Raycast (no prompt appears).
+# 前提（初回のみ）:
+#   - Raycast でこのコマンドの外部起動確認を「Always Run Command」で抑制済み。
+#   - 実行ターミナルに Accessibility 権限がある（無いと osascript が error 1002）。
+#   - export passphrase は Raycast に保存済み（プロンプトは出ない）。
 #
 # Usage: raycast_backup.sh <backup_dir>
-#
-# -C noclobber / -e errexit / -u nounset / -o pipefail
 set -Ceuo pipefail
 
 backup_dir="${1:?usage: raycast_backup.sh <backup_dir>}"
@@ -20,41 +15,39 @@ backup_dir="$(cd "$backup_dir" && pwd)"
 fixed_name="Raycast.rayconfig"
 deeplink="raycast://extensions/raycast/raycast/export-settings-data"
 
-# Reference time to detect the freshly written export.
+# 新しく書かれた export を検出するための基準時刻。
 marker="$(mktemp)"
 trap 'rm -f "$marker"' EXIT
 
-# Raycast's main UI (and the out-of-process save panel) is not reliably exposed
-# via the Accessibility tree, so the save dialog is driven with fixed delays +
-# blind keystrokes targeting the front window (approach from arunvelsriram/dotfiles).
-#
-# NSSavePanel does not accept a path in its filename field, but the Go-to-Folder
-# sheet (Cmd+Shift+G) is a path field -- type the POSIX path there, then Return to
-# navigate. (Clipboard paste / Cmd+V did NOT land on this machine even though plain
-# keys did -- Return closed the sheet -- so the path is typed directly instead.)
-# Refs: Apple Community 254893349, Satimage file_paths.
-#
-# Delays may need tuning per machine.
+# 保存ダイアログは AX 非露出なので、固定 delay + ブラインドキーストロークで操作する。
+# delay はマシン速度で要調整。
 osascript <<OSA
 set targetDir to "$backup_dir"
+-- Export を起動
 do shell script "open '$deeplink'"
-delay 1.5 -- wait for the Export form
+delay 1.5
 tell application "System Events"
-  key code 36 -- Export (Return) -> opens the save dialog
-  delay 1.8 -- wait for the save dialog
-  keystroke "g" using {command down, shift down} -- Go to Folder
-  delay 1.0 -- wait for the Go-to-Folder sheet (field opens empty + focused)
-  keystroke targetDir -- type the POSIX path into the Go-to field
-  delay 0.6
-  key code 36 -- confirm Go to Folder (navigate)
-  delay 0.8
-  key code 36 -- Save
+  -- Export 実行 → 保存ダイアログが開く
+  key code 36
+  delay 1.8
+  -- Go to Folder を開く（Cmd+Shift+G）
+  keystroke "g" using {command down, shift down}
   delay 1.0
-  key code 53 -- Escape (dismiss confirmation/notification)
+  -- パスを直接タイプ（Cmd+V は効かなかった）
+  keystroke targetDir
+  delay 0.6
+  -- パス確定して移動
+  key code 36
+  delay 0.8
+  -- 保存
+  key code 36
+  delay 1.0
+  -- 確認/通知を Escape で閉じる
+  key code 53
 end tell
 OSA
 
-# Wait (max ~15s) for a .rayconfig newer than the marker to appear.
+# marker より新しい .rayconfig が現れるまで最大 15 秒待つ。
 new_file=""
 for _ in $(seq 1 30); do
   candidate="$(find "$backup_dir" -maxdepth 1 -name '*.rayconfig' -newer "$marker" -print 2>/dev/null | head -n1)"
@@ -65,15 +58,13 @@ for _ in $(seq 1 30); do
   sleep 0.5
 done
 
-# No marker-less fallback on purpose: picking the newest .rayconfig regardless of
-# the marker would select the pre-existing committed Raycast.rayconfig and report
-# a false "OK" when the export silently failed.
+# marker を無視した fallback はあえて持たない（古い既存ファイルを拾って偽 OK になるため）。
 if [ -z "$new_file" ] || [ ! -s "$new_file" ]; then
   echo "ERROR: no new .rayconfig produced in $backup_dir" >&2
   exit 1
 fi
 
-# Normalize to the fixed filename (overwrite any previous one).
+# 固定名に正規化（既存があれば上書き）。
 if [ "$(basename "$new_file")" != "$fixed_name" ]; then
   mv -f "$new_file" "$backup_dir/$fixed_name"
 fi
