@@ -12,12 +12,17 @@ allowBuilds:
 
 # 依存解決のうまくいっていないdependenciesのdependenciesをrootのnode_modulesまで巻き上げる
 publicHoistPattern:
-  - '@types/*'
-  - '*eslint*'
-  - '*prettier*'
+  - "@types/*"
+  - "*eslint*"
+  - "*prettier*"
+
+# minimumReleaseAge は新しく公開された版を一定期間 install させない pnpm の安全機構。自前パッケージは待たず即取り込みたいので除外する。
+minimumReleaseAgeExclude:
+  - "@nozomiishii/*"
+  - git-harvest
 
 # pinバージョンでインストールする
-savePrefix: ''
+savePrefix: ""
 
 # ログ出力形式をカスタマイズ
 reporter: append-only
