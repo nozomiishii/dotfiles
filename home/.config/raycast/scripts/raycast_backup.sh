@@ -24,7 +24,7 @@ repo_root="$(cd -P "$(dirname "$src")/../../../.." && pwd)"
 # export を駆動し、生成された .rayconfig を固定名に正規化する。
 run_export() {
   local backup_dir="$1"
-  local marker new_file candidate
+  local new_file candidate
   marker="$(mktemp)"
 
   # 保存ダイアログは AX 非露出なので、固定 delay + ブラインドキーストロークで操作する。
@@ -62,7 +62,6 @@ OSA
     if [ -n "$candidate" ]; then new_file="$candidate"; break; fi
     sleep 0.5
   done
-  rm -f "$marker"
 
   # marker を無視した fallback はあえて持たない（古い既存ファイルを拾って偽 OK になるため）。
   if [ -z "$new_file" ] || [ ! -s "$new_file" ]; then
@@ -76,13 +75,22 @@ OSA
 
 branch="chore/raycast-backup-$(date +%Y%m%d-%H%M%S)"
 wt="$(mktemp -d)/wt"
+marker=""
+body_file=""
+pushed=0
 pr_created=0
 
 cleanup() {
   git -C "$repo_root" worktree remove --force "$wt" 2>/dev/null || true
   rm -rf "$(dirname "$wt")"
-  # PR を作れなかった場合は空ブランチを残さない。
-  [ "$pr_created" = 1 ] || git -C "$repo_root" branch -D "$branch" 2>/dev/null || true
+  rm -f "$marker" "$body_file"
+  # PR を作れなかったら、push 済みのリモート/ローカルブランチを残さない。
+  if [ "$pr_created" != 1 ]; then
+    if [ "$pushed" = 1 ]; then
+      git -C "$repo_root" push origin --delete "$branch" 2>/dev/null || true
+    fi
+    git -C "$repo_root" branch -D "$branch" 2>/dev/null || true
+  fi
 }
 trap cleanup EXIT
 
@@ -101,6 +109,7 @@ fi
 
 git -C "$wt" commit -m "chore: update Raycast config"
 git -C "$wt" push -u origin "$branch"
+pushed=1
 
 body_file="$(mktemp)"
 cat > "$body_file" <<'EOF'
@@ -109,8 +118,7 @@ cat > "$body_file" <<'EOF'
 Raycast 設定の定期バックアップ。`home/.config/raycast/backup/Raycast.rayconfig` を更新。
 EOF
 url="$(cd "$wt" && gh pr create --base main --title "chore: update Raycast config" --body-file "$body_file")"
-rm -f "$body_file"
 pr_created=1
 
 echo "PR: $url"
-open "$url"
+if [ -n "$url" ]; then open "$url"; fi
