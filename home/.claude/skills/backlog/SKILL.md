@@ -121,9 +121,10 @@ git -C "$WT" push -u origin "chore/backlog-<slug>"
 BODY_FILE=$(mktemp) && cat > "$BODY_FILE" <<'EOF'
 （日本語の PR 本文。refs #<issue> を含める）
 EOF
-gh pr create -R <brain owner/repo> --base main --title "chore: add <topic> backlog note" --body-file "$BODY_FILE"
+gh pr create -R <brain owner/repo> --base main --head "chore/backlog-<slug>" --title "chore: add <topic> backlog note" --body-file "$BODY_FILE"
 ```
 
+- `gh pr create` には `--head` を必ず付ける。実行時の cwd は brain worktree ではないため、付けないと head ブランチを cwd の git context から推測して失敗する。
 - **merge は必ずユーザーが手動で行う**。AI はマージしない。
 
 ## 注意
