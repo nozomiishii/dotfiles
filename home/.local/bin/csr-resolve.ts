@@ -35,6 +35,11 @@ export function messageText(d: Record<string, any>): string {
 
 export const repoOf = (cwd: string) => cwd.replace(/\/\.claude\/worktrees\/[^/]+$/, "");
 
+export function formatRow(s: Sess): string {
+  const display = `${basename(s.cwd)}  ${s.lastTs.slice(0, 10)}  ${s.humanTurns}t  ${s.uuid.slice(0, 8)}`;
+  return `${s.uuid}\t${repoOf(s.cwd)}\t${s.cwd}\t${display}`;
+}
+
 // cwd 内を fork lineage でまとめ、各 lineage の代表(最新 lastTs)を返す。
 // 親が matched 集合に無くても forkedFrom の uuid を lineage key にして兄弟 fork を畳む。
 export function lineageReps(sessions: Sess[]): Sess[] {
@@ -152,20 +157,8 @@ function resolveMode(arg: string): number {
     console.error(error.msg);
     return error.code;
   }
-  if (cands.length === 1) {
-    const s = cands[0]!;
-    process.stdout.write(`${repoOf(s.cwd)}\t${s.cwd}\t${s.uuid}\n`);
-  } else {
-    console.error("csr: 複数候補があります。branch 名で絞って再実行してください:");
-    for (const s of cands) {
-      const slug = basename(s.cwd);
-      const repo = basename(repoOf(s.cwd));
-      console.error(
-        `  ${slug.padEnd(26)} ${repo.padEnd(12)} ${s.lastTs.slice(0, 10)}  ${String(s.humanTurns).padStart(3)}turns  ${s.snippet}`,
-      );
-    }
-    return 1;
-  }
+  // 1 件でも複数でも同じ行フォーマットで stdout に出す。判定は csr() 側。
+  for (const s of cands) process.stdout.write(`${formatRow(s)}\n`);
   return 0;
 }
 

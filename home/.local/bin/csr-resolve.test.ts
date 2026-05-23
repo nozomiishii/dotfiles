@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { messageText, lineageReps, repoOf, type Sess } from "./csr-resolve.ts";
+import { formatRow, messageText, lineageReps, repoOf, type Sess } from "./csr-resolve.ts";
 
 describe("messageText", () => {
   test("string content はそのまま trim", () => {
@@ -80,5 +80,24 @@ describe("lineageReps", () => {
       base({ uuid: "q", lastTs: "2026-05-22T00:00:00Z" }),
     ]);
     expect(reps.map((s) => s.uuid).sort()).toEqual(["p", "q"]);
+  });
+});
+
+describe("formatRow", () => {
+  test("uuid\\trepo\\twt\\tdisplay を返す", () => {
+    const s: Sess = {
+      uuid: "5664bcf4-273f-4474-8f1e-799eb72c9088",
+      cwd: "/Users/x/dotfiles/.claude/worktrees/gentle-swinging-quasar",
+      forkedFrom: null,
+      lastTs: "2026-05-22T09:00:00Z",
+      humanTurns: 62,
+      snippet: "...",
+    };
+    expect(formatRow(s)).toBe(
+      "5664bcf4-273f-4474-8f1e-799eb72c9088\t" +
+        "/Users/x/dotfiles\t" +
+        "/Users/x/dotfiles/.claude/worktrees/gentle-swinging-quasar\t" +
+        "gentle-swinging-quasar  2026-05-22  62t  5664bcf4",
+    );
   });
 });
