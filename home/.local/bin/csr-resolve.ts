@@ -33,6 +33,48 @@ export function messageText(d: Record<string, any>): string {
   return "";
 }
 
+export type Msg = { role: "user" | "assistant"; text: string };
+
+const PREVIEW_TAIL = 16; // preview に出す末尾メッセージ数（"末尾多め"。残りは fzf スクロールで追う）
+const MSG_CAP = 1500; // 1 メッセージの上限（貼り付けログ等で preview が崩れるのを防ぐ）
+
+// jsonl 全体から text の human/assistant メッセージを時系列で集め、cwd と最大 timestamp も返す。
+export function collectMessages(text: string): { cwd: string; lastTs: string; messages: Msg[] } {
+  let cwd = "";
+  let lastTs = "";
+  const messages: Msg[] = [];
+  for (const line of text.split("\n")) {
+    if (!line) continue;
+    let d: Record<string, any>;
+    try {
+      d = JSON.parse(line);
+    } catch {
+      continue;
+    }
+    if (!d || typeof d !== "object") continue;
+    if (typeof d.cwd === "string" && !cwd) cwd = d.cwd;
+    if (typeof d.timestamp === "string" && d.timestamp > lastTs) lastTs = d.timestamp;
+    if (d.type === "user" || d.type === "assistant") {
+      const t = messageText(d);
+      if (t) messages.push({ role: d.type, text: t });
+    }
+  }
+  return { cwd, lastTs, messages };
+}
+
+// 末尾 tail 件を 👤/🤖 ラベル付きで整形。長い本文は cap で切り詰める。
+export function formatPreview(header: string, messages: Msg[], tail = PREVIEW_TAIL, cap = MSG_CAP): string {
+  const body = messages
+    .slice(-tail)
+    .map((m) => {
+      const label = m.role === "user" ? "👤" : "🤖";
+      const text = m.text.length > cap ? `${m.text.slice(0, cap)} …(略)` : m.text;
+      return `${label} ${text}`;
+    })
+    .join("\n\n");
+  return `${header}\n\n${body}\n`;
+}
+
 export const repoOf = (cwd: string) => cwd.replace(/\/\.claude\/worktrees\/[^/]+$/, "");
 
 export function formatRow(s: Sess): string {
@@ -162,11 +204,41 @@ function resolveMode(arg: string): number {
   return 0;
 }
 
+function previewMode(uuid: string): number {
+  let file = "";
+  for (const rel of new Glob(`*/${uuid}.jsonl`).scanSync(PROJECTS)) {
+    file = `${PROJECTS}/${rel}`;
+    break;
+  }
+  if (!file) {
+    console.error(`csr: session not found: ${uuid}`);
+    return 1;
+  }
+  let text: string;
+  try {
+    text = readFileSync(file, "utf8");
+  } catch {
+    console.error(`csr: cannot read: ${file}`);
+    return 1;
+  }
+  const { cwd, lastTs, messages } = collectMessages(text);
+  const header = `${uuid.slice(0, 8)} · ${basename(cwd) || "?"} · ${lastTs.slice(0, 10) || "?"}`;
+  process.stdout.write(formatPreview(header, messages));
+  return 0;
+}
+
 if (import.meta.main) {
-  const arg = process.argv[2];
-  if (!arg) {
+  const argv = process.argv.slice(2);
+  if (argv[0] === "--preview") {
+    if (!argv[1]) {
+      console.error("usage: csr-resolve.ts --preview <uuid>");
+      process.exit(2);
+    }
+    process.exit(previewMode(argv[1]));
+  }
+  if (!argv[0]) {
     console.error("usage: csr-resolve.ts <claude-session-url|branch-name>");
     process.exit(2);
   }
-  process.exit(resolveMode(arg));
+  process.exit(resolveMode(argv[0]));
 }
