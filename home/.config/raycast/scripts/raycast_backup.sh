@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Raycast 設定を export し、origin/main 基点の専用ブランチで PR を作ってブラウザで開く。
-# ターミナルから実行する（alias: rcb）。
+# ターミナルから実行する（alias: rbk）。
 #
 # 前提（初回のみ）:
 #   - Raycast でこのコマンドの外部起動確認を「Always Run Command」で抑制済み。

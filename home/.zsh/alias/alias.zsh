@@ -87,4 +87,4 @@ alias tg="terragrunt"
 # Raycast
 # ----------------------------------------------------------------
 # Raycast 設定を export して専用ブランチで PR を作る
-alias rcb="$HOME/.config/raycast/scripts/raycast_backup.sh"
+alias rbk="$HOME/.config/raycast/scripts/raycast_backup.sh"
