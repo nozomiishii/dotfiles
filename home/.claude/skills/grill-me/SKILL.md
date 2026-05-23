@@ -1,18 +1,12 @@
 ---
 name: grill-me
-description: >-
-  プランや設計を、共通理解に達するまで執拗に問い詰めて検証する。
-  ユーザーが /grill-me と入力したとき、または「詰めてほしい」「設計を grill して」
-  「プランをストレステストして」と言ったときに使用する。
+description: Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me".
 ---
 
-<!-- 出典: github.com/mattpocock/skills -->
+Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
 
-# /grill-me
+Ask the questions one at a time.
 
-このプランのあらゆる側面について、共通理解に達するまでユーザーを執拗にインタビューする。
-設計ツリーの各枝を辿り、決定どうしの依存関係を 1 つずつ解消していく。
+If a question can be answered by exploring the codebase, explore the codebase instead.
 
-- 質問は **1 つずつ** 投げる。
-- 各質問には、自分の推奨する答えを必ず添える。
-- コードベースを調べれば答えが出る質問は、質問せずに自分で調べる。
+<!-- https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md -->
