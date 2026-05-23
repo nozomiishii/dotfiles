@@ -16,7 +16,6 @@ export type Sess = {
   forkedFrom: string | null;
   lastTs: string;
   humanTurns: number;
-  snippet: string;
 };
 
 // d.message.content からテキストブロックを抽出する（tool_result/thinking/tool_use は除外）。
@@ -136,7 +135,6 @@ function findCandidates(arg: string): { cands: Sess[]; error?: { msg: string; co
     let forkedFrom: string | null = null;
     let lastTs = "";
     let humanTurns = 0;
-    let snippet = "";
     let hit = false;
 
     for (const line of text.split("\n")) {
@@ -162,15 +160,12 @@ function findCandidates(arg: string): { cands: Sess[]; error?: { msg: string; co
 
       if (d.type === "user") {
         const t = messageText(d); // tool_result は除外されるので人間ターンのみ数える。
-        if (t) {
-          humanTurns++;
-          if (!snippet) snippet = t.replace(/\s+/g, " ").trim().slice(0, 60);
-        }
+        if (t) humanTurns++;
       }
     }
 
     if (!hit || !cwd) continue;
-    matched.push({ uuid: basename(file, ".jsonl"), cwd, forkedFrom, lastTs, humanTurns, snippet });
+    matched.push({ uuid: basename(file, ".jsonl"), cwd, forkedFrom, lastTs, humanTurns });
   }
 
   if (matched.length === 0) {

@@ -57,7 +57,6 @@ describe("lineageReps", () => {
     forkedFrom: null,
     lastTs: "",
     humanTurns: 1,
-    snippet: "",
     ...o,
   });
   test("fork チェーンは最新 lastTs の1代表に畳む", () => {
@@ -91,7 +90,6 @@ describe("formatRow", () => {
       forkedFrom: null,
       lastTs: "2026-05-22T09:00:00Z",
       humanTurns: 62,
-      snippet: "...",
     };
     expect(formatRow(s)).toBe(
       "5664bcf4-273f-4474-8f1e-799eb72c9088\t" +
