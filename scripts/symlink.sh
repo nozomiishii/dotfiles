@@ -10,12 +10,6 @@ set -Ceuo pipefail
 
 echo -e "🐂 stow"
 
-echo "Pre-removing known conflicting files..."
-rm -f "$HOME/.gitconfig"
-rm -f "$HOME/.zprofile"
-rm -f "$HOME/.zshrc"
-rm -f "$HOME/.bashrc"
-
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$SCRIPT_DIR"
 
@@ -23,7 +17,10 @@ cd "$SCRIPT_DIR"
 # stow would happily link them into $HOME on every restow.
 find home -name '.DS_Store' -delete
 
-stow --verbose --restow --target="$HOME" home
+# repo を常に正とする。衝突する実体ファイルは --adopt で stow が吸収し
+# （削除しない）、直後に git restore で repo 版へ戻してローカル内容は破棄する。
+stow --adopt --verbose --restow --target="$HOME" home
+git restore home
 
 SKILLS_DIR="$HOME/.config/skills"
 if [ -d "$SKILLS_DIR" ]; then
