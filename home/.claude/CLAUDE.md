@@ -18,3 +18,4 @@
 
 ## 用語
 - Routines: Claude Code の Routines 機能 <https://code.claude.com/docs/ja/routines>
+  - 新規Routines作成時は、必ず既存実装を参考にすること。
