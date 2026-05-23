@@ -27,9 +27,11 @@ csr() {
       cut -f4 <<<"$rows" >&2
       return 1
     fi
+    # ホイール/トラックパッドのスクロールは preview に向ける（既定だとリストが動いて画面が揺れる）。
     line=$(fzf --delimiter=$'\t' --with-nth=4 \
                --preview='csr-resolve.ts --preview {1}' \
-               --preview-window='right:60%:wrap' <<<"$rows") || return 1
+               --preview-window='right:60%:wrap' \
+               --bind='scroll-up:preview-up,scroll-down:preview-down' <<<"$rows") || return 1
   else
     line=$lines[1]
   fi
