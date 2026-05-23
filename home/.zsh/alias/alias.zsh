@@ -52,7 +52,14 @@ alias cr="claude --resume"
 alias crs="claude respawn --all"
 alias ct="claude --teleport"
 alias cw="claude --worktree"
-alias cwb="claude --worktree --bg"
+# プロンプトは stdin で渡す。引数で渡すと worktree 名に流用され 64 字制限で死ぬため
+cwb() {
+  if [ $# -gt 0 ]; then
+    printf '%s' "$*" | claude --worktree --bg
+  else
+    claude --worktree --bg
+  fi
+}
 alias cwr="claude --worktree --resume"
 alias cwt="claude --worktree --teleport"
 
