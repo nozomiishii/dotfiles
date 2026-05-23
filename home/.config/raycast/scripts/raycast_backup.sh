@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Raycast 設定を export し、origin/main 基点の専用ブランチで PR を作ってブラウザで開く。
-# ターミナルから実行する（alias: rcb）。
+# ターミナルから実行する（alias: rbk）。
 #
 # 前提（初回のみ）:
 #   - Raycast でこのコマンドの外部起動確認を「Always Run Command」で抑制済み。
@@ -112,7 +112,8 @@ git -C "$wt" push -u origin "$branch"
 pushed=1
 
 body_file="$(mktemp)"
-cat > "$body_file" <<'EOF'
+# set -C 下では mktemp 済みファイルへの > が弾かれるので >| で上書きする。
+cat >| "$body_file" <<'EOF'
 ## 概要
 
 Raycast 設定の定期バックアップ。`home/.config/raycast/backup/Raycast.rayconfig` を更新。
