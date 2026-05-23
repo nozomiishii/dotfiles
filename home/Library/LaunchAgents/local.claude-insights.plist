@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.claude-insights</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-l</string>
+    <string>-c</string>
+    <!-- $HOME を bash 展開で解決するためログインシェルで起動。claude(~/.local/bin) の
+         PATH 追加はスクリプト側で行う（login bash の PATH には入らないため） -->
+    <string>exec "$HOME/dotfiles/scripts/darwin/claude_insights.sh"</string>
+  </array>
+
+  <!-- 毎月 1 日・15 日の 10:00 に実行（月 2 回）。発火時刻にスリープなら起床時に取りこぼし分を
+       1 回実行する。電源オフのまま跨いだ回はスキップされる -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Day</key>
+      <integer>1</integer>
+      <key>Hour</key>
+      <integer>10</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+    <dict>
+      <key>Day</key>
+      <integer>15</integer>
+      <key>Hour</key>
+      <integer>10</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+  </array>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/claude-insights.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/claude-insights.log</string>
+</dict>
+</plist>

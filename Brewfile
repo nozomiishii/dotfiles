@@ -58,6 +58,9 @@ if OS.mac?
   # GitHub command-line tool. https://github.com/cli/cli
   brew "gh"
 
+  # Send macOS notifications from the command line https://github.com/julienXX/terminal-notifier
+  brew "terminal-notifier"
+
   # ----------------------------------------------------------------
   # OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager https://tofuutils.github.io/tenv/
   brew "tenv"
