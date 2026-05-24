@@ -1,5 +1,7 @@
 # System Files
 .DS_Store
+# ネットワーク/USB ボリュームで macOS が生成する resource fork
+._*
 
 # Node
 node_modules
