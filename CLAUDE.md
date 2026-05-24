@@ -28,6 +28,5 @@ macOS と Linux で開発環境のセットアップを自動化する dotfiles 
 
 特定領域の作業時にだけ参照するドキュメント
 
-- [ドキュメントの新規作成、変更する](docs/index.md)
 - [statusline (`home/.claude/statusline.sh`) を修正・拡張する](docs/statusline.md)
 
