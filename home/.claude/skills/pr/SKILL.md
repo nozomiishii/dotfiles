@@ -181,12 +181,32 @@ jq -r '
 
 未解決 thread ごとに:
 
-- コード修正依頼: 直して commit & push
-- 質問・確認事項: GitHub 上で回答 comment を残す（`gh pr comment` または `gh api .../comments/<id>/replies`）
+- コード修正依頼: 直して commit → push。push 後、その commit で対応した thread に「thread に返信する」の手順で hash 付き返信を残す
+- 質問・確認事項: 同じく thread に返信して回答を残す
 - 自分では判断できないもの: ユーザーに「ここ判断ほしい」と渡して止まる
 - 自分の最終 reply で実質片付いているが thread が open のまま: そのまま触らない（`isResolved` を flip するのはレビュアー側の仕事）
 
 自分が既に同じ回答を残しているコメントには再投稿しない。
+
+#### thread に返信する
+
+返信は GraphQL mutation `addPullRequestReviewThreadReply` を使う。thread の node id（state file の `reviewThreads.nodes[].id`）をそのまま渡せるので、返信先 comment の databaseId を REST で別途引かずに済む。
+
+```bash
+gh api graphql -f query='
+  mutation($tid: ID!, $body: String!) {
+    addPullRequestReviewThreadReply(input: {pullRequestReviewThreadId: $tid, body: $body}) {
+      comment { url }
+    }
+  }' -f tid="$THREAD_ID" -f body="$BODY"
+```
+
+コード修正への返信は「修正内容を一言 ＋ 短縮 hash」。hash は修正を commit した後に `git rev-parse --short HEAD` で取り、1 commit で複数 thread を直した場合は同じ hash を各 thread に返す。GitHub は本文中の短い SHA を自動でコミットへリンクするので hash はそのまま書けばよい。
+
+返信の言語はレビューコメントに合わせる。state file の当該 thread の comment body に日本語文字（ひらがな・カタカナ・漢字）が含まれれば日本語、なければ英語にする。
+
+- 日本語: `<hash> で <対応内容> を修正しました`
+- 英語: `Fixed <what> in <hash>`
 
 ### 2-3. main の進みに追従
 
