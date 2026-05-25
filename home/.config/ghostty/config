@@ -11,6 +11,7 @@
 # https://zenn.dev/kawarimidoll/articles/5f219b4409424b
 macos-icon = holographic
 macos-option-as-alt = true
+macos-titlebar-style = tabs
 
 # Theme
 # Run `ghostty +list-themes` to view a list of themes
