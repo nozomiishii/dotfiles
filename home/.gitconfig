@@ -10,6 +10,8 @@ signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDF31h4ogJY+JRiI+k0+aLoO/OTnEI1
 ignorecase = false
 # 日本語ファイル表示 (非 ASCII ファイル名をエスケープせず生表示)
 quotePath = false
+# diff/show/log を delta で syntax highlight 表示 https://github.com/dandavison/delta
+pager = delta
 
 [init]
 # git init のデフォルトブランチ名
@@ -51,6 +53,18 @@ useForceIfIncludes = true
 [merge]
 # fast-forward 可能な merge のみ許可 (手動 merge で commit を作らない安全弁)
 ff = only
+
+[interactive]
+# git add -p などの対話 diff も delta で色付け
+diffFilter = delta --color-only
+
+[delta]
+# n で次・p で前の差分へジャンプ
+navigate = true
+# 差分を左右で表示
+side-by-side = true
+# hunk 見出し(@@行)を非表示
+hunk-header-style = omit
 
 [gpg]
 # commit 署名形式
