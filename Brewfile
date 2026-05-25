@@ -149,6 +149,9 @@ if OS.mac?
   # Distributed revision control system. https://git-scm.com
   brew "git"
 
+  # Syntax-highlighting pager for git, diff, grep output https://github.com/dandavison/delta
+  brew "git-delta"
+
   # GNU grep, egrep and fgrep https://www.gnu.org/software/grep/
   brew "grep"
 
