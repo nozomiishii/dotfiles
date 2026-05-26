@@ -140,6 +140,9 @@
       }
     ]
   },
+  "worktree": {
+    "bgIsolation": "none"
+  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -179,10 +182,10 @@
         "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock",
         "~/Library/Application Support/cmux/cmux.sock"
       ],
+      "allowLocalBinding": true,
       "allowMachLookup": [
         "org.chromium.Chromium.MachPortRendezvousServer.*"
-      ],
-      "allowLocalBinding": true
+      ]
     },
     "filesystem": {
       "allowWrite": [
@@ -215,8 +218,5 @@
   "tui": "fullscreen",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "worktree": {
-    "bgIsolation": "none"
-  }
+  "skipAutoPermissionPrompt": true
 }
