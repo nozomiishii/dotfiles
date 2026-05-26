@@ -65,6 +65,8 @@ navigate = true
 side-by-side = true
 # hunk 見出し(@@行)を非表示
 hunk-header-style = omit
+# 行内強調の単位。既定 \w+ だと空白の無い日本語は行全体が光るので、英数字は単語・他は1文字で区切る
+word-diff-regex = "[a-zA-Z0-9_]+|."
 
 [gpg]
 # commit 署名形式
