@@ -21,7 +21,7 @@ argument-hint: バックログのタイトル / 補足（任意）
 
 - ネタ元は **直前までの会話の要約**。会話が薄いときだけ、最小限の対話で概要・タイトルを補う。
 - brain vault の canonical パス（Obsidian が見ている実体 / git の main checkout）:
-  `BRAIN="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents"`
+  `BRAIN="$HOME/Code/nozomiishii/brain"`
   （ユーザー名はハードコードせず `$HOME` を使う）
 - backlog ノートのスキーマ（frontmatter / 見出し構成）は本 skill のステップ 7 で定義する。brain repo `CLAUDE.md` のディレクトリ表にも `backlog/` 行があるが、運用詳細はこの skill に集約する。
 
@@ -133,5 +133,5 @@ gh pr create -R <brain owner/repo> --base main --head "chore/backlog-<slug>" --t
 ## 注意
 
 - **session URL は GitHub の issue / PR 本文には絶対に貼らない（public / private を問わず）**。session URL を載せてよいのは brain vault のノート（`## Session`）だけ。これは「URL の置き場を vault 1 箇所に限定して事故を防ぐ」ための意図的な運用境界なので、private repo だから OK といった例外も作らない。GitHub 側（issue / PR 本文）には URL でなく要約・タスク内容を書く。
-- なぜ vault は OK で GitHub は NG か: session URL（`https://claude.ai/code/session_xxx`）は visibility がデフォルト **Private**（owner 本人のみ閲覧可）。brain vault はローカル + iCloud 同期で本人のみアクセスするため Private session URL を置いても安全。一方 GitHub に貼ると、その issue / PR が public（または将来 public 化）した瞬間に会話全文が全 claude.ai ユーザーへ露出しうる。だから vault に一元化する。
+- なぜ vault は OK で GitHub は NG か: session URL（`https://claude.ai/code/session_xxx`）は visibility がデフォルト **Private**（owner 本人のみ閲覧可）。brain vault は本人のみがアクセスするローカル環境のため Private session URL を置いても安全。一方 GitHub に貼ると、その issue / PR が public（または将来 public 化）した瞬間に会話全文が全 claude.ai ユーザーへ露出しうる。だから vault に一元化する。
 - ノートを worktree に書いた段階では Obsidian（canonical を見ている）にはまだ出ない。PR が main に merge されてから反映される。

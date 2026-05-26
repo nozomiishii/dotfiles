@@ -34,7 +34,6 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 
 - `enabled: false` は対象外
 - `rootPath` の `~` は `$HOME` に展開する（`jq` 後に shell or 自前で展開）
-- **パスを見ての事前絞り込みは絶対にしない**。「Obsidian の iCloud パスっぽいから git じゃないだろう」などの推測で対象から外さない（実例として `🪴 brain` = `~/Library/Mobile Documents/iCloud~md~obsidian/Documents` は git リポジトリで、CODEOWNERS など共通設定の対象になる）
 
 ## 1. 対象リストを提示する
 
@@ -44,7 +43,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 | name          | rootPath                              | 対象ファイル有無 |
 |---------------|---------------------------------------|------------------|
 | 🧙🏿‍♂️ dotfiles | ~/dotfiles                            | あり             |
-| 🪴 brain      | ~/Library/.../Documents               | なし             |
+| 🪴 brain      | ~/Code/nozomiishii/brain              | なし             |
 | 🛰️ infra      | ~/Code/nozomiishii/infra              | あり             |
 | ...           | ...                                   | ...              |
 ```
