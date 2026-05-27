@@ -9,7 +9,7 @@
 ## 実装
 - 設計ドキュメント・brainstormingの成果はGitHub issueにまとめる。
 
-## CLAUDE.md・skill・docs・コメントなどの書き方
+## CLAUDE.md・skill・docs・実装コメントなどの書き方
 - foolproofに書く。
 - 短くわかりやすい日本語で書く。指摘されたら、必要な分だけ伸ばす。
 - コードや他の文書を読めばわかる内容は書かない。
