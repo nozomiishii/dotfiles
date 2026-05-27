@@ -258,7 +258,6 @@ Finder Sidebar
 - needs: Finder setup
 
 - Sign in
-- Import Settings from "~/dotfiles/src/configs/\_raycast/backup"
 
 ### 🐟 VSCode
 
