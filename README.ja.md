@@ -264,7 +264,6 @@ Finder Sidebar
 - 先に Finder のセットアップを済ませてください
 
 - サインイン
-- "~/dotfiles/src/configs/\_raycast/backup" から設定をインポート
 
 ### 🐟 VSCode
 
