@@ -54,6 +54,7 @@ curl -L dot.nozomiishii.dev | sh
   - [Install Manually](#install-manually)
   - [App preferences](#app-preferences)
 - [👨🏻‍🍳 Customize](#customize)
+- [🍴 Fork して使う](#forking)
 - [👨🏻‍🏭 Maintenance & Dev](#maintenance&dev)
 - [🔫 Troubleshooting](#troubleshooting)
 - [👼 Reinstall macOS](#reinstall-macos)
@@ -450,6 +451,14 @@ open ~/Library/Preferences/.GlobalPreferences.plist
   # example
   ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
 ```
+
+<a id="forking"></a>
+
+## 🍴 Fork して使う
+
+このdotfilesは [nozomiishii](https://github.com/nozomiishii) の個人運用に最適化されており、GitHub アカウント名・メール・固定パス・個人 Homebrew tap・scoped npm package などが各所に直書きされている。
+
+fork して自分用に使う場合、書き換えが必要な箇所を [docs/forking.md](docs/forking.md) にまとめている。
 
 <a id="maintenance&dev"></a>
 
