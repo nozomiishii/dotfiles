@@ -168,7 +168,7 @@ open https://nozomiishii.dev/dotfiles
 ### Clone
 
 ```shell
-mkdir -p ~/Code/nozomiishii && git clone https://github.com/nozomiishii/dotfiles.git ~/Code/nozomiishii/dotfiles
+git clone https://github.com/nozomiishii/dotfiles.git ~/Code/nozomiishii/dotfiles
 ```
 
 ### Install

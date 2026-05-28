@@ -27,6 +27,11 @@ if ! git diff --quiet -- home || ! git diff --quiet --cached -- home; then
   exit 1
 fi
 
+# ~/.local/bin を実 dir として先に用意してから stow を走らせる。tree folding で
+# ~/.local/bin が repo 配下への folder-symlink に畳まれると、あとで張る ln -sfn の
+# 書き込み先が repo working tree に入って次回 make link が止まる。
+mkdir -p "$HOME/.local/bin"
+
 # repo を常に正とする。衝突する実体ファイルは --adopt で stow が吸収し（削除しない）、
 # 直後に git restore で repo 版へ戻す。home/ は上のチェックでクリーンなので、
 # restore が戻すのは adopt が吸収した分だけ。
@@ -51,9 +56,11 @@ if [ -d "$SKILLS_DIR" ]; then
   done
 fi
 
-# plist が指すための入口を ~/.local/bin に張る。
-LOCAL_BIN="$HOME/.local/bin"
-mkdir -p "$LOCAL_BIN"
-for script in brew_update.sh claude_insights.sh; do
-  ln -sfn "$SCRIPT_DIR/scripts/darwin/$script" "$LOCAL_BIN/$script"
-done
+# plist が指すための入口を ~/.local/bin に張る (Darwin のみ)。新しい launchd 入口を
+# 増やす場合はこの配列に追加する。
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  LOCAL_BIN_SCRIPTS=(brew_update.sh claude_insights.sh)
+  for script in "${LOCAL_BIN_SCRIPTS[@]}"; do
+    ln -sfn "$SCRIPT_DIR/scripts/darwin/$script" "$HOME/.local/bin/$script"
+  done
+fi

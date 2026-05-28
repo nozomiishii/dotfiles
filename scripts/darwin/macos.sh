@@ -297,6 +297,16 @@ launchctl bootout "gui/$UID" "$local_insights_plist" 2>/dev/null || true
 launchctl bootstrap "gui/$UID" "$local_insights_plist"
 
 # ----------------------------------------------------------------
+# Homebrew Update
+# ----------------------------------------------------------------
+# brew_update.sh を毎日 10:00 に走らせる LaunchAgent を登録する。
+echo "- 🍺 Homebrew Update"
+
+local_brew_update_plist="$HOME/Library/LaunchAgents/local.brew-update.plist"
+launchctl bootout "gui/$UID" "$local_brew_update_plist" 2>/dev/null || true
+launchctl bootstrap "gui/$UID" "$local_brew_update_plist"
+
+# ----------------------------------------------------------------
 # Network
 # ----------------------------------------------------------------
 echo "- 📡 Network"
