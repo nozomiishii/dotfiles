@@ -10,7 +10,7 @@
     <string>/bin/bash</string>
     <string>-l</string>
     <string>-c</string>
-    <string>exec "$HOME/dotfiles/scripts/darwin/brew_update.sh"</string>
+    <string>exec "$HOME/.local/bin/brew_update.sh"</string>
   </array>
 
   <!-- 毎日 10:00 に実行。スリープ中は StartCalendarInterval が発火せず次の wake に持ち越され、
