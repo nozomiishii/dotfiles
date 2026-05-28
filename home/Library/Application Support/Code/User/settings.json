@@ -16,7 +16,7 @@
   // dotfiles
   // ----------------------------------------------------------------
   "dotfiles.repository": "nozomiishii/dotfiles",
-  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.targetPath": "~/Code/nozomiishii/dotfiles",
   "dotfiles.installCommand": "install.sh",
 
   // ----------------------------------------------------------------
