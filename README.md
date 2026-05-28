@@ -48,6 +48,7 @@ curl -L https://nozomiishii.dev/dotfiles/install | bash -s -- --full
   - [Install Manually](#install-manually)
   - [App preferences](#app-preferences)
 - [👨🏻‍🍳 Customize](#customize)
+- [🍴 Forking](#forking)
 - [👨🏻‍🏭 Maintenance & Dev](#maintenance&dev)
 - [🔫 Troubleshooting](#troubleshooting)
 - [👼 Reinstall macOS](#reinstall-macos)
@@ -445,6 +446,14 @@ open ~/Library/Preferences/.GlobalPreferences.plist
   # example
   ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
 ```
+
+<a id="forking"></a>
+
+## 🍴 Forking
+
+This repo is tuned for [nozomiishii](https://github.com/nozomiishii)'s personal setup, so the GitHub username, email, fixed paths, personal Homebrew tap, and scoped npm packages are hard-coded throughout.
+
+If you fork it, see [docs/forking.md](docs/forking.md) for the list of places to update.
 
 <a id="maintenance&dev"></a>
 
