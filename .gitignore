@@ -18,6 +18,9 @@ lefthook-local.yaml
 **/CLAUDE.local.md
 **/.claude/worktrees/
 
+# Codex
+home/.codex/tmp/
+
 # Logs
 *.log
 *.log.*
