@@ -19,7 +19,7 @@ export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
 DOTFILES_REPO="https://github.com/nozomiishii/dotfiles.git"
-DOTFILES_DIR="$HOME/Code/nozomiishii/dotfiles"
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/Code/nozomiishii/dotfiles}"
 OS_NAME="$(uname -s)"
 
 # ----------------------------------------------------------------
