@@ -7,9 +7,7 @@
 #               code in the pipeline, or zero if all commands succeed
 set -Ceuo pipefail
 
-# launchd は ~/.local/bin/brew_update.sh (symlink) からこのスクリプトを起動するため、
-# BASH_SOURCE はその symlink パスになる。readlink -f で実体まで解決してから
-# scripts/darwin/.. の 2 階層上を repo root として取り出す。repo の配置に依存しない。
+# symlink を解決して repo root を得る。
 DOTFILES_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../.." && pwd)"
 
 if [[ ! -f "$DOTFILES_DIR/Makefile" ]]; then

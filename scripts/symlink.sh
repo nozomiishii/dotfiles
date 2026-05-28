@@ -51,9 +51,7 @@ if [ -d "$SKILLS_DIR" ]; then
   done
 fi
 
-# launchd から起動するスクリプトを ~/.local/bin に symlink する。plist は repo の
-# 実体パスではなく $HOME/.local/bin/<name>.sh を指すので、repo の配置場所が変わって
-# も plist の書き換えなしで追従する（SCRIPT_DIR 経由で常に repo 実体を指す）。
+# plist が指すための入口を ~/.local/bin に張る。
 LOCAL_BIN="$HOME/.local/bin"
 mkdir -p "$LOCAL_BIN"
 for script in brew_update.sh claude_insights.sh; do
