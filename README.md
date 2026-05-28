@@ -162,7 +162,7 @@ open https://nozomiishii.dev/dotfiles
 ### Clone
 
 ```shell
-cd ~ && git clone https://github.com/nozomiishii/dotfiles.git
+mkdir -p ~/Code/nozomiishii && git clone https://github.com/nozomiishii/dotfiles.git ~/Code/nozomiishii/dotfiles
 ```
 
 ### Install
