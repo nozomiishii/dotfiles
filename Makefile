@@ -22,6 +22,7 @@ toolchains: ## Set up language toolchains
 	bash ./scripts/toolchains/terraform.sh
 	bash ./scripts/toolchains/claude-code.sh
 	bash ./scripts/toolchains/node.sh
+	bash ./scripts/toolchains/codex.sh
 	bash ./scripts/toolchains/python.sh
 	bash ./scripts/toolchains/ruby.sh
 	bash ./scripts/toolchains/rust.sh
