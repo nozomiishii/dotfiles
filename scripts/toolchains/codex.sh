@@ -10,16 +10,6 @@ set -Ceuo pipefail
 
 echo '🤖 Codex'
 
-if [ "$(uname -s)" = "Darwin" ] && command -v brew >/dev/null 2>&1 && brew list --cask codex >/dev/null 2>&1; then
-  echo '- 🤖 Uninstall Homebrew cask codex'
-  brew uninstall --cask codex
-fi
-
-if ! command -v npm >/dev/null 2>&1; then
-  echo '- 🤖 npm is required. Run scripts/toolchains/node.sh first.'
-  exit 1
-fi
-
 # https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started
 echo '- 🤖 Install Codex CLI'
 npm install -g @openai/codex
