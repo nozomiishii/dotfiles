@@ -50,3 +50,10 @@ if [ -d "$SKILLS_DIR" ]; then
     ln -sfn "$SKILLS_DIR/$name/SKILL.md" "$HOME/.claude/commands/$name.md"
   done
 fi
+
+# plist が指すための入口を ~/.local/bin に張る。
+LOCAL_BIN="$HOME/.local/bin"
+mkdir -p "$LOCAL_BIN"
+for script in brew_update.sh claude_insights.sh; do
+  ln -sfn "$SCRIPT_DIR/scripts/darwin/$script" "$LOCAL_BIN/$script"
+done

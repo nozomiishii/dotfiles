@@ -42,7 +42,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 ```
 | name          | rootPath                              | 対象ファイル有無 |
 |---------------|---------------------------------------|------------------|
-| 🧙🏿‍♂️ dotfiles | ~/dotfiles                            | あり             |
+| 🧙🏿‍♂️ dotfiles | ~/Code/nozomiishii/dotfiles           | あり             |
 | 🪴 brain      | ~/Code/nozomiishii/brain              | なし             |
 | 🛰️ infra      | ~/Code/nozomiishii/infra              | あり             |
 | ...           | ...                                   | ...              |

@@ -7,7 +7,8 @@
 #               code in the pipeline, or zero if all commands succeed
 set -Ceuo pipefail
 
-DOTFILES_DIR="$HOME/dotfiles"
+# symlink を解決して repo root を得る。
+DOTFILES_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../.." && pwd)"
 
 if [[ ! -f "$DOTFILES_DIR/Makefile" ]]; then
   echo "dotfiles directory not found at $DOTFILES_DIR" >&2
