@@ -9,7 +9,7 @@
 
 ## 実装
 - 設計ドキュメント・brainstormingの成果はGitHub issueにまとめる。
-- Unit Testはプロジェクトで別途指定がなければ、テスト対象のファイルと同じ階層に配置する。
+- プロジェクトで別途指定がなければ、Unit Testはテスト対象のファイルと同じ階層に配置する。
 
 ## CLAUDE.md・skill・docs・実装コメントなどの書き方
 - foolproofに書く。
