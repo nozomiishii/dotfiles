@@ -1,6 +1,5 @@
 {
   "cleanupPeriodDays": 180,
-  "language": "japanese",
   "env": {
     "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
   },
@@ -104,7 +103,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
   "enabledMcpjsonServers": [],
   "hooks": {
     "SessionStart": [
@@ -152,6 +150,7 @@
     "swift-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
   },
+  "language": "japanese",
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
