@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-05-29
+最終更新: 2026-05-30
 
 ## 背景
 
@@ -344,6 +344,16 @@ Claude Code 2.1.110 で追加された「Push when Claude decides」機能。Rem
 `defaultMode: "auto"` でセッションを開始したときに表示される「Auto mode を有効にしますか？」の確認プロンプトをスキップする。sandbox を常時有効にしている前提で、auto mode を毎回無言で起動したいための設定。
 
 `permissions.skipDangerousModePermissionPrompt`（bypass permissions 用）と対になる auto mode 版。公式ドキュメントでは明示的に記載されていないが Claude Code 本体が読み取る設定キーとして実装されている。将来挙動が変わる可能性があるため、新しいセッションで確認プロンプトが戻ったらこの記述を見直す。
+
+### skipWorkflowUsageWarning
+
+```jsonc
+"skipWorkflowUsageWarning": true  // Workflow 起動時の使用量警告をスキップ
+```
+
+Workflow tool（複数サブエージェントを並列起動するオーケストレーション）を起動すると、「1 回の実行で多数のエージェントが走り使用量を大きく消費する」旨の警告が出る。`true` でこの警告を毎回スキップする。
+
+公式ドキュメントには未記載だが Claude Code 本体が読み取る設定キー。Workflow 自体を無効化する `disableWorkflows`、`workflow` というキーワードでの自動起動を制御する `workflowKeywordTriggerEnabled`（2.1.157 で追加）とは別物で、こちらは Workflow を使う前提で警告だけ消す。挙動が変わったら見直す。
 
 ## 使い方
 
