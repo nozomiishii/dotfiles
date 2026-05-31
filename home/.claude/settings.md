@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-05-30
+最終更新: 2026-05-31
 
 ## 背景
 
@@ -297,6 +297,18 @@ adaptive reasoning の持続レベル。モデル別にサポートされる lev
 Opus 4.7 の Claude Code デフォルトは全プラン `xhigh` で、公式も「ほとんどのコーディング・エージェントタスクで最高の結果」と推奨している。この設定も `xhigh` に揃え、`max` の overthinking リスクを避けつつ `high` より深く推論させる。軽いタスクでは過剰なので、セッション内で `/effort medium` や `/model` の effort スライダーでいつでも下げられる。
 
 Opus 4.7 は常に adaptive reasoning で動作し、`CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` や `MAX_THINKING_TOKENS` による fixed thinking budget は無効（Opus 4.6 / Sonnet 4.6 のみ適用可能）。
+
+### ultracode
+
+```jsonc
+"ultracode": true  // xhigh 推論 + workflow 自動オーケストレーションを常時有効化
+```
+
+`xhigh` の推論に加えて、実質的なタスクごとに Workflow tool（複数サブエージェントの fan-out）を自動で組ませる。起動時に読まれ、`effortLevel` より優先される（有効なら effort は `xhigh` 相当に解決される）。要件は Workflow が有効かつ xhigh 対応モデル（Opus 4.6 / 4.7 / 4.8, Sonnet 4.6）。
+
+本体スキーマ上は session-scoped で、UI（`/effort ultracode`）でトグルしても永続化されない。settings.json にこのキーを置いた場合のみ、新規セッションが常時 ultracode で起動する。`max` と同じく `effortLevel` の enum には入らない別キーである点に注意。
+
+週ごとの使用量を使い切れるか検証する実験のため一時的に有効化している。常用は token 消費が大きく、Workflow が発火したタスクで一気に消費するため、検証後は外して `xhigh` に戻す想定。外すときはこの1行を削除するだけでよい。公式ドキュメントには未記載だが Claude Code 本体が読み取る設定キー。
 
 ### tui
 
