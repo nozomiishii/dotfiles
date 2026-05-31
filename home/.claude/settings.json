@@ -216,8 +216,8 @@
   "effortLevel": "xhigh",
   "ultracode": true,
   "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "skipWorkflowUsageWarning": true
+  "skipAutoPermissionPrompt": true
 }
