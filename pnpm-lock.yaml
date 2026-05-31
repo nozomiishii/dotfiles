@@ -9,20 +9,20 @@ importers:
   .:
     devDependencies:
       '@nozomiishii/commitlint-config':
-        specifier: 1.3.0
-        version: 1.3.0(@types/node@25.9.1)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
+        specifier: 1.4.0
+        version: 1.4.0(@types/node@25.9.1)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@nozomiishii/lefthook-config':
-        specifier: 1.3.0
-        version: 1.3.0(lefthook@2.1.8)
+        specifier: 1.4.0
+        version: 1.4.0(lefthook@2.1.8)
       '@nozomiishii/markdownlint-cli2-config':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 1.4.0
+        version: 1.4.0
       '@nozomiishii/postinstall':
-        specifier: 1.3.0
-        version: 1.3.0
+        specifier: 1.4.0
+        version: 1.4.0
       '@nozomiishii/prettier-config':
-        specifier: 1.3.0
-        version: 1.3.0(prettier@3.8.3)
+        specifier: 1.4.0
+        version: 1.4.0(prettier@3.8.3)
       lefthook:
         specifier: 2.1.8
         version: 2.1.8
@@ -136,26 +136,26 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nozomiishii/commitlint-config@1.3.0':
-    resolution: {integrity: sha512-SgIypij/CWhy3UXHPamQWaFB9BAbY0k57U8nGKcivtFdrFsqkMgVZQirIWynYnXd7Izw7rlpeXUktUaxBFwk1w==}
+  '@nozomiishii/commitlint-config@1.4.0':
+    resolution: {integrity: sha512-XdGdCJgZr2zLEj73XR3vxD4VQNg/guwavgXbgwX+KfQ+uyZrff2w0VQ0gIHYza3NZgFCK7iIqxqBR31AYw151w==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@1.3.0':
-    resolution: {integrity: sha512-k/6ubWGdmyUrdWN7+nw5bT6CPs8BHJcMV0tD04gCMOOeICc+B/Nk9go6JwQoBF3h8my0bVTQ2iA/vzt91hXpvg==}
+  '@nozomiishii/lefthook-config@1.4.0':
+    resolution: {integrity: sha512-yrNHywlEn/8quxnspReAeWMYqXxpJtnnGpk9LokrURd4W9ErTGL6AcSALS6QQIbAyXRfonqBXD25+PcaZe7VoA==}
     hasBin: true
     peerDependencies:
       lefthook: 2.1.8
 
-  '@nozomiishii/markdownlint-cli2-config@1.3.0':
-    resolution: {integrity: sha512-Ohzy375e184g2S2ClN8P4Af7uUnjzi7CpRvRttbGgSWrYkAKytyoFRWbbZIUCSy3mM57v/hnBcTEYB1Z8CIHNw==}
+  '@nozomiishii/markdownlint-cli2-config@1.4.0':
+    resolution: {integrity: sha512-dFnFQKuP+mHqSJyOr/VboESaIjiaBOno+68xa/4C+I/p06Yr6PvRorYJ8RmhflR11cmcOE11X4vdA4ykjFiajw==}
     hasBin: true
 
-  '@nozomiishii/postinstall@1.3.0':
-    resolution: {integrity: sha512-FcsRTYiY3a0pZyjJTNWUAZR8QG8mK/MufEcib/UhcI9/ycJQhD+/IXg4shAwq8Hg5fKszxwHbb5LjahSYCLGLA==}
+  '@nozomiishii/postinstall@1.4.0':
+    resolution: {integrity: sha512-HFbZNCWxapANYIJgZ7sdR8C3vEf+d/kE8gfy1kmwVdGXNYSfNjTkybre6GtYOHJ6RyiDTQSUovZ8mAiYD9Mt2w==}
     hasBin: true
 
-  '@nozomiishii/prettier-config@1.3.0':
-    resolution: {integrity: sha512-C/k/MlNpjARC0jY3HIxrnrHID+dAP1NB4tP3t/leVrhOqJMUe+alAPlAHBqGfPzfTg8XuGJF7hqzLk8bntTb+w==}
+  '@nozomiishii/prettier-config@1.4.0':
+    resolution: {integrity: sha512-byooDZq6/BjnwvNs/ZabX/hKSoVxfExwIhkItb9c1cC4aWdxKgmQaQzcnZ1+tBNLESxP2xB5CsUSVSxeUjrzCQ==}
     hasBin: true
     peerDependencies:
       prettier: 3.8.3
@@ -1032,7 +1032,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nozomiishii/commitlint-config@1.3.0(@types/node@25.9.1)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
+  '@nozomiishii/commitlint-config@1.4.0(@types/node@25.9.1)(conventional-commits-parser@6.4.0)(typescript@6.0.3)':
     dependencies:
       '@commitlint/cli': 21.0.1(@types/node@25.9.1)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@commitlint/config-conventional': 21.0.1
@@ -1043,23 +1043,23 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@1.3.0(lefthook@2.1.8)':
+  '@nozomiishii/lefthook-config@1.4.0(lefthook@2.1.8)':
     dependencies:
       git-harvest: 0.2.2
       lefthook: 2.1.8
 
-  '@nozomiishii/markdownlint-cli2-config@1.3.0':
+  '@nozomiishii/markdownlint-cli2-config@1.4.0':
     dependencies:
       markdownlint-cli2: 0.22.1
     transitivePeerDependencies:
       - supports-color
 
-  '@nozomiishii/postinstall@1.3.0':
+  '@nozomiishii/postinstall@1.4.0':
     dependencies:
       figlet: 1.11.0
       zx: 8.8.5
 
-  '@nozomiishii/prettier-config@1.3.0(prettier@3.8.3)':
+  '@nozomiishii/prettier-config@1.4.0(prettier@3.8.3)':
     dependencies:
       prettier: 3.8.3
       prettier-plugin-packagejson: 3.0.2(prettier@3.8.3)
