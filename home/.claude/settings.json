@@ -182,24 +182,11 @@
         "~/Library/Application Support/cmux/cmux.sock"
       ],
       "allowLocalBinding": true,
-      "allowMachLookup": [
-        "org.chromium.Chromium.MachPortRendezvousServer.*"
-      ]
+      "allowMachLookup": ["org.chromium.Chromium.MachPortRendezvousServer.*"]
     },
     "filesystem": {
-      "allowWrite": [
-        "/tmp",
-        "~/.npm",
-        "~/Library/pnpm/store"
-      ],
-      "denyRead": [
-        "~/.ssh",
-        "~/.aws/credentials",
-        "~/.gnupg",
-        "~/.config/gh/hosts.yml",
-        "~/.netrc",
-        "~/.config/op"
-      ]
+      "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"],
+      "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.netrc", "~/.config/op"]
     },
     "excludedCommands": [
       "docker:*",
