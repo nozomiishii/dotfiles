@@ -42,6 +42,11 @@ sudo pmset -c sleep 0
 # Required for SSH/Claude Code access while screen is locked
 sudo pmset -c tcpkeepalive 1
 
+# Prevent sleep when the lid is closed while on charger (-c)
+# Enables headless clamshell operation for SSH/Claude Code access
+# without an external display. Reverts with: sudo pmset -c disablesleep 0
+sudo pmset -c disablesleep 1
+
 # ----------------------------------------------------------------
 # Dock
 # ----------------------------------------------------------------
