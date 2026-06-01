@@ -27,11 +27,11 @@
     "test:perf": "bash scripts/test_shell_startup_time.sh"
   },
   "devDependencies": {
-    "@nozomiishii/commitlint-config": "1.4.0",
-    "@nozomiishii/lefthook-config": "1.4.0",
-    "@nozomiishii/markdownlint-cli2-config": "1.4.0",
-    "@nozomiishii/postinstall": "1.4.0",
-    "@nozomiishii/prettier-config": "1.4.0",
+    "@nozomiishii/commitlint-config": "1.5.0",
+    "@nozomiishii/lefthook-config": "1.5.0",
+    "@nozomiishii/markdownlint-cli2-config": "1.5.0",
+    "@nozomiishii/postinstall": "1.5.0",
+    "@nozomiishii/prettier-config": "1.5.0",
     "lefthook": "2.1.9",
     "markdownlint-cli2": "0.22.1"
   },
