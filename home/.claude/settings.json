@@ -182,7 +182,7 @@
         "~/Library/Application Support/cmux/cmux.sock"
       ],
       "allowLocalBinding": true,
-      "allowMachLookup": ["org.chromium.Chromium.MachPortRendezvousServer.*"]
+      "allowMachLookup": ["org.chromium.Chromium.MachPortRendezvousServer.*", "com.apple.trustd.agent"]
     },
     "filesystem": {
       "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"],
