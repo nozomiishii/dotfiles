@@ -60,9 +60,14 @@ backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
 
 while [ "$attempt" -le "$max_attempts" ]; do
   echo "brew bundle attempt ${attempt}/${max_attempts}"
+  # --force: 非対話で cleanup を実行（無いと「削除対象あり」で exit 1）。
+  # --no-mas: App Store を cleanup 対象外にする。cleanup は Brewfile 外の mas アプリを
+  # 全削除する破壊的挙動になったため除外する（Homebrew/brew#22450）。
   if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" brew bundle \
     --verbose \
     --cleanup \
+    --force \
+    --no-mas \
     --file="$SCRIPT_DIR/Brewfile"; then
     echo "brew bundle succeeded"
     break

@@ -6,7 +6,7 @@ help: ## Show this help
 
 .PHONY: homebrew
 homebrew: ## Install/update Homebrew packages
-	cat ./Brewfile ./Brewfile.optional | brew bundle --verbose --cleanup --file=-
+	cat ./Brewfile ./Brewfile.optional | brew bundle --verbose --cleanup --force --no-mas --file=-
 	brew cleanup --verbose
 
 .PHONY: macos
