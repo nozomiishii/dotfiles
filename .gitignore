@@ -18,6 +18,9 @@ lefthook-local.yaml
 **/CLAUDE.local.md
 **/.claude/worktrees/
 
+# codex — config.toml は Codex / Desktop app が trust 等を自動追記するため管理しない
+home/.codex/config.toml
+
 # Logs
 *.log
 *.log.*

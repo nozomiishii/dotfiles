@@ -22,6 +22,6 @@ fi
 # コマンド文字列内に op CLI の呼び出しパターンがあるか検出
 # マッチ条件: 行頭・空白・セミコロン・&&・||・|・バッククォート・$( の直後に "op " が続く
 if echo "$command" | grep -qE '(^|\s|;|&&|\|\|?|`|\$\()op\s'; then
-  echo '{"hookSpecificOutput":{"permissionDecision":"deny","permissionDecisionReason":"1Password CLI (op) blocked by security hook (prompt injection protection)"}}'
+  echo '{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"deny","permissionDecisionReason":"1Password CLI (op) blocked by security hook (prompt injection protection)"}}'
   exit 0
 fi
