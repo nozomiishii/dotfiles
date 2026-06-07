@@ -64,13 +64,6 @@ if [ -d "$SKILLS_DIR" ]; then
   done
 fi
 
-# 旧 ~/.config/skills 時代の dangling 残骸を掃除。
-for stale in "$HOME/.codex/skills/ta" "$HOME/.codex/skills/tad"; do
-  if [ -L "$stale" ] && [ ! -e "$stale" ]; then
-    rm -f "$stale"
-  fi
-done
-
 # plist が指すための入口を ~/.local/bin に張る (Darwin のみ)。新しい launchd 入口を
 # 増やす場合はこの配列に追加する。
 if [[ "$(uname -s)" == "Darwin" ]]; then
