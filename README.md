@@ -269,6 +269,16 @@ Finder Sidebar
   Icons: Activate VSCode Icons
 - Add MonokaiPro License
 
+### 🤖 Codex
+
+`~/.codex/config.toml` is not tracked by dotfiles. Codex auto-writes machine-local state into it (project `trust_level` with absolute paths, `model`, and more) that doesn't belong in version control. Set the TUI preference by hand:
+
+```toml
+# ~/.codex/config.toml
+[tui]
+alternate_screen = "always"
+```
+
 ### 😼 SSH & Git
 
 - [Run gh auth login](https://cli.github.com/manual/)

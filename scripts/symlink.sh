@@ -38,21 +38,29 @@ mkdir -p "$HOME/.local/bin"
 stow --adopt --verbose --restow --target="$HOME" home
 git restore home
 
-SKILLS_DIR="$HOME/.config/skills"
+# ~/.ai/ を agent 設定の正本とし、各ツールの定位置へ symlink で配る。
+# 実体は home/.ai/（直前の stow で ~/.ai に配置済み）。
+AI_DIR="$HOME/.ai"
+
+# instructions: AGENTS.md を Claude(CLAUDE.md) と Codex(AGENTS.md) の定位置へ。
+# Claude は CLAUDE.md しか自動で読まないため symlink で橋渡しする。
+if [ -f "$AI_DIR/AGENTS.md" ]; then
+  mkdir -p "$HOME/.claude" "$HOME/.codex"
+  ln -sfn "$AI_DIR/AGENTS.md" "$HOME/.claude/CLAUDE.md"
+  ln -sfn "$AI_DIR/AGENTS.md" "$HOME/.codex/AGENTS.md"
+fi
+
+# skills: 各 skill を Claude / Codex の skills dir へ。
+# Codex の global skills は ~/.agents/skills（~/.codex/skills は読まれない）。
+SKILLS_DIR="$AI_DIR/skills"
 if [ -d "$SKILLS_DIR" ]; then
-  echo "Linking skills to Cursor, Claude Code, and Codex..."
+  echo "Linking ~/.ai/skills to Claude and Codex..."
+  mkdir -p "$HOME/.claude/skills" "$HOME/.agents/skills"
   for skill_dir in "$SKILLS_DIR"/*/; do
     [ -d "$skill_dir" ] || continue
     name=$(basename "$skill_dir")
-
-    mkdir -p "$HOME/.cursor/skills"
-    ln -sfn "$SKILLS_DIR/$name" "$HOME/.cursor/skills/$name"
-
-    mkdir -p "$HOME/.codex/skills"
-    ln -sfn "$SKILLS_DIR/$name" "$HOME/.codex/skills/$name"
-
-    mkdir -p "$HOME/.claude/commands"
-    ln -sfn "$SKILLS_DIR/$name/SKILL.md" "$HOME/.claude/commands/$name.md"
+    ln -sfn "$SKILLS_DIR/$name" "$HOME/.claude/skills/$name"
+    ln -sfn "$SKILLS_DIR/$name" "$HOME/.agents/skills/$name"
   done
 fi
 

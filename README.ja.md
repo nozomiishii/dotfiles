@@ -275,6 +275,16 @@ Finder Sidebar
   Icons: VSCode Icons を有効化
 - MonokaiPro のライセンスを追加してください
 
+### 🤖 Codex
+
+`~/.codex/config.toml` は dotfiles で管理しない。Codex が project の `trust_level`（絶対パス入り）や `model` などマシン固有の状態を自動追記し、version control に向かないため。TUI の設定だけ手動で入れる:
+
+```toml
+# ~/.codex/config.toml
+[tui]
+alternate_screen = "always"
+```
+
 ### 😼 SSH & Git
 
 - [Run gh auth login](https://cli.github.com/manual/)

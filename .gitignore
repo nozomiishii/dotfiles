@@ -18,6 +18,12 @@ lefthook-local.yaml
 **/CLAUDE.local.md
 **/.claude/worktrees/
 
+# codex — config.toml は Codex / Desktop app が trust 等（絶対パス + username）を
+# 自動追記するため管理しない。trust が config.toml から分離されたら管理に戻してよい。
+# https://github.com/openai/codex/issues/15433
+# https://github.com/openai/codex/issues/14601
+home/.codex/config.toml
+
 # Logs
 *.log
 *.log.*
