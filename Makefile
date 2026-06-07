@@ -6,7 +6,9 @@ help: ## Show this help
 
 .PHONY: homebrew
 homebrew: ## Install/update Homebrew packages
-	cat ./Brewfile ./Brewfile.optional | brew bundle --verbose --cleanup --file=-
+	# Brewfile を正にする（入れて、Brewfile にないものを削除。App Store は対象外）
+	cat ./Brewfile ./Brewfile.optional | HOMEBREW_BUNDLE_CLEANUP_NO_MAS=1 brew bundle --verbose --cleanup --force --file=-
+	# 古いバージョン・キャッシュを削除してディスクを空ける
 	brew cleanup --verbose
 
 .PHONY: macos
