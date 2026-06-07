@@ -58,17 +58,20 @@ max_attempts="${BREW_BUNDLE_MAX_ATTEMPTS:-5}"
 attempt=1
 backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
 
-# Brewfile のパッケージをインストール（ネットワーク失敗に備えてリトライ）
+# Brewfile を正にする（入れて、Brewfile にないものを削除。App Store は対象外）。
+# install と cleanup は一体にする（分けると node 等の依存を巻き添え削除するため）。
 while [ "$attempt" -le "$max_attempts" ]; do
-  echo "brew bundle install attempt ${attempt}/${max_attempts}"
-  if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" brew bundle install \
+  echo "brew bundle attempt ${attempt}/${max_attempts}"
+  if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" HOMEBREW_BUNDLE_CLEANUP_NO_MAS=1 brew bundle \
     --verbose \
+    --cleanup \
+    --force \
     --file="$SCRIPT_DIR/Brewfile"; then
-    echo "brew bundle install succeeded"
+    echo "brew bundle succeeded"
     break
   fi
   if [ "$attempt" -eq "$max_attempts" ]; then
-    echo "brew bundle install failed after ${max_attempts} attempts"
+    echo "brew bundle failed after ${max_attempts} attempts"
     exit 1
   fi
 
@@ -77,9 +80,6 @@ while [ "$attempt" -le "$max_attempts" ]; do
   sleep "$((backoff_base * attempt))"
   attempt="$((attempt + 1))"
 done
-
-# Brewfile にないパッケージを削除。App Store を対象外。
-brew bundle cleanup --force --no-mas --file="$SCRIPT_DIR/Brewfile"
 
 # 古いバージョン・キャッシュを削除してディスクを空ける
 brew cleanup --verbose
