@@ -10,16 +10,40 @@ compinit
 # carapace - multi-shell completion engine
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 if command -v carapace >/dev/null; then
+  # shellcheck source=/dev/null
   source <(carapace _carapace)
 fi
 
 # fzf-tab - replace zsh tab completion with fzf preview menu
 # Must be sourced after compinit and before zsh-syntax-highlighting.
-source "$(brew --prefix)/share/fzf-tab/fzf-tab.zsh"
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+brew_prefix=''
+if command -v brew >/dev/null; then
+  brew_prefix="$(brew --prefix)"
+  fzf_tab_path="$brew_prefix/share/fzf-tab/fzf-tab.zsh"
+
+  # shellcheck source=/dev/null
+  [[ -r "$fzf_tab_path" ]] && source "$fzf_tab_path"
+
+  if command -v eza >/dev/null; then
+    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+  fi
+fi
+
+# Set up fzf key bindings and fuzzy completion
+if command -v fzf >/dev/null; then
+  # shellcheck source=/dev/null
+  source <(fzf --zsh)
+fi
 
 # Syntax Highlighting (must be sourced last)
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [[ -n "$brew_prefix" ]]; then
+  zsh_syntax_highlighting_path="$brew_prefix/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  if [[ -r "$zsh_syntax_highlighting_path" ]]; then
+    # shellcheck source=/dev/null
+    source "$zsh_syntax_highlighting_path"
+  fi
+fi
+unset brew_prefix fzf_tab_path zsh_syntax_highlighting_path
 
 # Config
 source "$HOME/.zsh/config.zsh"
