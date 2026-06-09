@@ -17,6 +17,7 @@ npm install -g @openai/codex
 echo "- 🤖 codex $(codex --version)"
 
 echo '- 🤖 Install Codex plugins'
+codex plugin marketplace upgrade openai-curated
 codex plugin add superpowers@openai-curated
 
 echo "🤖 Codex setup is complete 🎉"
