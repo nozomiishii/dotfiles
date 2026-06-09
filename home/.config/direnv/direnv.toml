@@ -1,0 +1,5 @@
+[whitelist]
+prefix = [
+  "~/.codex/worktrees/",
+  "~/.claude/worktrees/",
+]
