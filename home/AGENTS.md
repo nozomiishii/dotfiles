@@ -25,7 +25,7 @@
   - 共通処理でLifecycle Hooksは使わない。ヘルパー関数、`using` 、テスト内に閉じた[Test hooks](https://vitest.dev/api/hooks.html#test-hooks)で組む。
 - tautology testを避ける。実装をなぞる期待値ではなく、仕様から期待値を決める。
 
-## CLAUDE.md・skill・docs・実装コメントなどの書き方
+## AGENTS.md・CLAUDE.md・skill・docs・実装コメントなどの書き方
 - foolproofに書く。
 - 短くわかりやすい日本語で書く。指摘されたら、必要な分だけ伸ばす。
 - コードや他の文書を読めばわかる内容は書かない。
