@@ -1,22 +1,24 @@
 #!/usr/bin/env bash
 #
-# check-skills-sync.sh - Verify skill symlinks are in sync
+# check-skills-sync.sh - Verify skill layout and installed Claude symlinks
 #
-# For each skill in home/.config/skills/<name>/, checks that the
-# corresponding symlinks exist at $HOME for Cursor, Claude Code, and Codex.
+# Repository mode checks the source layout under home/.agents/skills.
+# Local mode checks that make link has installed Claude Code symlinks.
 #
 # Usage:
-#   bash scripts/check-skills-sync.sh           # local / lefthook
-#   bash scripts/check-skills-sync.sh --repo    # CI (checks repo directory instead of $HOME)
+#   bash scripts/check-skills-sync.sh           # local
+#   bash scripts/check-skills-sync.sh --repo    # lefthook / CI
 #
 set -euo pipefail
 
 if [ "${1:-}" = "--repo" ]; then
-  SKILLS_DIR="home/.config/skills"
+  SKILLS_DIR="home/.agents/skills"
   TARGET_BASE="home"
+  check_targets=false
 else
-  SKILLS_DIR="$HOME/.config/skills"
+  SKILLS_DIR="$HOME/.agents/skills"
   TARGET_BASE="$HOME"
+  check_targets=true
 fi
 
 if [ ! -d "$SKILLS_DIR" ]; then
@@ -29,10 +31,16 @@ for skill_dir in "$SKILLS_DIR"/*/; do
   [ -d "$skill_dir" ] || continue
   name=$(basename "$skill_dir")
 
-  for target in \
-    "$TARGET_BASE/.cursor/skills/$name" \
-    "$TARGET_BASE/.codex/skills/$name" \
-    "$TARGET_BASE/.claude/commands/$name.md"; do
+  if [ ! -f "$skill_dir/SKILL.md" ]; then
+    echo "ERROR: missing skill file: $skill_dir/SKILL.md"
+    errors=$((errors + 1))
+  fi
+
+  if [ "$check_targets" = false ]; then
+    continue
+  fi
+
+  for target in "$TARGET_BASE/.claude/skills/$name"; do
     if [ ! -e "$target" ]; then
       echo "ERROR: missing skill link: $target"
       errors=$((errors + 1))

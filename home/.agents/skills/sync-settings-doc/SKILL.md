@@ -1,3 +1,10 @@
+---
+name: sync-settings-doc
+description: >-
+  ~/.claude/settings.json と ~/.claude/settings.md を比較し、Claude Code の最新情報を調べたうえで
+  ユーザー確認後に両方へ反映する。ユーザーが /sync-settings-doc と入力したときに使用する。
+---
+
 # Settings Sync & Review
 
 以下のステップを順番に実行してください。

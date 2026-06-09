@@ -1,4 +1,5 @@
 ---
+name: src
 description: 直近の話題について、公式ドキュメントURLとわかりやすい日本語ブログを提案する
 argument-hint: "[note]"
 allowed-tools:
