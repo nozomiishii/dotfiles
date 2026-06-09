@@ -67,6 +67,7 @@ export PATH="${XDG_BIN_HOME:-$HOME/.local/bin}:$PATH"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh"
 # Option+j
 bindkey -s '^[j' 'pm^M'
+# Codex terminal sends Option+j as ∆
 bindkey -s '∆' 'pm^M'
 
 # direnv
