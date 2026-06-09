@@ -17,6 +17,7 @@ curl -fsSL https://claude.ai/install.sh | bash
 echo "- 🤖 claude $(claude --version)"
 
 echo '- 🤖 Install Claude Code plugins'
+claude plugin marketplace update claude-plugins-official
 claude plugin install superpowers@claude-plugins-official
 
 echo "🤖 Claude Code setup is complete 🎉"
