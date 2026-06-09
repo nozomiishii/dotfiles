@@ -49,9 +49,6 @@ keybind = shift+enter=text:\n
 # undo
 keybind = super+z=text:\x1f
 
-# pm
-keybind = super+alt+j=text:pm\n
-
 # Disable OSC 9;4 progress bar (the blue bar at the top during long-running commands)
 # https://ghostty.org/docs/config/reference#progress-style
 progress-style = false

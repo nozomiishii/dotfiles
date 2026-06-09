@@ -65,6 +65,9 @@ fi
 export PM_CONFIG="$HOME/Code/nozomiishii/workspaces/projects.json"
 export PATH="${XDG_BIN_HOME:-$HOME/.local/bin}:$PATH"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh"
+# Option+j
+bindkey -s '^[j' 'pm^M'
+bindkey -s '∆' 'pm^M'
 
 # direnv
 if command -v direnv >/dev/null; then
