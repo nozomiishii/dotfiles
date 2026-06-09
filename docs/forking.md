@@ -40,8 +40,8 @@ repo の置き場所自体は配置非依存にしてあるので([#1057](https:
 | [`home/.zshrc`](../home/.zshrc) | `PM_CONFIG`（projects.json のパス） |
 | [`home/.config/zellij/layouts/code.kdl`](../home/.config/zellij/layouts/code.kdl) | 各 tab の `cwd="Code/nozomiishii/<name>"` |
 | [`home/Library/Application Support/Code/User/settings.json`](../home/Library/Application%20Support/Code/User/settings.json) | `dotfiles.repository` / `dotfiles.targetPath` / `projectManager.projectsLocation` / `vscode-kubernetes.minikube-path.mac` / `vscode-kubernetes.kubectl-path.mac` / `rufo.exe` |
-| [`home/.claude/skills/backlog/SKILL.md`](../home/.claude/skills/backlog/SKILL.md) | `BRAIN`（brain vault のパス） |
-| [`home/.claude/skills/broadcast/SKILL.md`](../home/.claude/skills/broadcast/SKILL.md) | projects / repos のパス |
+| [`home/.agents/skills/backlog/SKILL.md`](../home/.agents/skills/backlog/SKILL.md) | `BRAIN`（brain vault のパス） |
+| [`home/.agents/skills/broadcast/SKILL.md`](../home/.agents/skills/broadcast/SKILL.md) | projects / repos のパス |
 | [`home/.claude/commands/ad.md`](../home/.claude/commands/ad.md) | 内部参照パス |
 
 ## 任意（個人色、動くが書き換え推奨）
@@ -74,7 +74,7 @@ repo の置き場所自体は配置非依存にしてあるので([#1057](https:
 ## 不要（参考情報、書き換え不要）
 
 - コメント内の issue / PR 参照（例: `home/.zsh/functions.zsh` の `# 設計: nozomiishii/dotfiles#1006`）
-- 計測値・例示のコメント（`home/.claude/skills/pr/SKILL.md` の他人 repo 実測値など）
+- 計測値・例示のコメント（`home/.agents/skills/pr/SKILL.md` の他人 repo 実測値など）
 
 ---
 

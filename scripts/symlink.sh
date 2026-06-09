@@ -38,21 +38,23 @@ mkdir -p "$HOME/.local/bin"
 stow --adopt --verbose --restow --target="$HOME" home
 git restore home
 
-# ~/.ai/ を agent 設定の正本とし、各ツールの定位置へ symlink で配る。
-# 実体は home/.ai/（直前の stow で ~/.ai に配置済み）。
-AI_DIR="$HOME/.ai"
+# instructions: AGENTS.md を Claude(CLAUDE.md) と Codex(AGENTS.md) の定位置へ。
+# Claude は CLAUDE.md しか自動で読まないため symlink で橋渡しする。
+if [ -f "$HOME/AGENTS.md" ]; then
+  mkdir -p "$HOME/.claude" "$HOME/.codex"
+  ln -sfn "$HOME/AGENTS.md" "$HOME/.claude/CLAUDE.md"
+  ln -sfn "$HOME/AGENTS.md" "$HOME/.codex/AGENTS.md"
+fi
 
-# skills: 各 skill を Claude / Codex の skills dir へ。
-# Codex の global skills は ~/.agents/skills（~/.codex/skills は読まれない）。
-SKILLS_DIR="$AI_DIR/skills"
+# skills: Codex 標準の ~/.agents/skills を正本にし、Claude の定位置へ配る。
+SKILLS_DIR="$HOME/.agents/skills"
 if [ -d "$SKILLS_DIR" ]; then
-  echo "Linking ~/.ai/skills to Claude and Codex..."
-  mkdir -p "$HOME/.claude/skills" "$HOME/.agents/skills"
+  echo "Linking ~/.agents/skills to Claude..."
+  mkdir -p "$HOME/.claude/skills"
   for skill_dir in "$SKILLS_DIR"/*/; do
     [ -d "$skill_dir" ] || continue
     name=$(basename "$skill_dir")
     ln -sfn "$SKILLS_DIR/$name" "$HOME/.claude/skills/$name"
-    ln -sfn "$SKILLS_DIR/$name" "$HOME/.agents/skills/$name"
   done
 fi
 
