@@ -369,6 +369,14 @@ Claude Code 2.1.110 で追加された「Push when Claude decides」機能。Rem
 
 `permissions.skipDangerousModePermissionPrompt`（bypass permissions 用）と対になる auto mode 版。公式ドキュメントでは明示的に記載されていないが Claude Code 本体が読み取る設定キーとして実装されている。将来挙動が変わる可能性があるため、新しいセッションで確認プロンプトが戻ったらこの記述を見直す。
 
+### model
+
+```jsonc
+"model": "claude-opus-4-7"  // 新規セッションのデフォルトモデル
+```
+
+`/model` コマンドのセッション設定を永続化する。未指定時は claude-sonnet-4-6 が起動時デフォルト。セッション内で `/model` を実行すれば上書きできる。
+
 ## 使い方
 
 ```bash
