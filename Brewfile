@@ -204,7 +204,7 @@ if OS.mac?
   brew "grpcurl"
 
   # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
-  brew "stripe/stripe-cli/stripe"
+  brew "stripe-cli"
 
   # Official Amazon AWS command-line interface https://aws.amazon.com/cli/
   brew "awscli"
