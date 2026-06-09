@@ -65,7 +65,7 @@ fi
 export PM_CONFIG="$HOME/Code/nozomiishii/workspaces/projects.json"
 export PATH="${XDG_BIN_HOME:-$HOME/.local/bin}:$PATH"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh"
-# Option+j (Codex: ∆)
+# Option+j (ESC+j / ∆)
 bindkey -s '^[j' 'pm^M'
 bindkey -s '∆' 'pm^M'
 
