@@ -42,7 +42,6 @@ repo の置き場所自体は配置非依存にしてあるので([#1057](https:
 | [`home/Library/Application Support/Code/User/settings.json`](../home/Library/Application%20Support/Code/User/settings.json) | `dotfiles.repository` / `dotfiles.targetPath` / `projectManager.projectsLocation` / `vscode-kubernetes.minikube-path.mac` / `vscode-kubernetes.kubectl-path.mac` / `rufo.exe` |
 | [`home/.agents/skills/backlog/SKILL.md`](../home/.agents/skills/backlog/SKILL.md) | `BRAIN`（brain vault のパス） |
 | [`home/.agents/skills/broadcast/SKILL.md`](../home/.agents/skills/broadcast/SKILL.md) | projects / repos のパス |
-| [`home/.claude/commands/ad.md`](../home/.claude/commands/ad.md) | 内部参照パス |
 
 ## 任意（個人色、動くが書き換え推奨）
 

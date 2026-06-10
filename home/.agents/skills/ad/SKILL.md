@@ -1,8 +1,8 @@
 ---
+name: ad
 description: /a を deep research モードで実行する
 argument-hint: <question>
-allowed-tools:
-  - Agent
+disable-model-invocation: true
 ---
 
 # /ad wrapper
@@ -26,7 +26,7 @@ allowed-tools:
 
 # /ad (deep research モード)
 
-まず最初に `Read` で `/Users/nozomiishii/.claude/commands/a.md` を開き、`## Subagent execution` セクション以降の手順を **基本ワークフロー** として把握する。`/a` 側は `### Stage 1 instructions` と `### Stage 2 instructions` の 2 段構成になっているが、`/ad` ではこのサブエージェント 1 つで両 stage を直列実行する（Stage 1 で得る URL は内部で保持して Stage 2 に流す。途中で別 dispatch には分けない）。Stage 1 の「JSON 1 行だけ返す」制約はサブエージェント間 IPC 用なので `/ad` では無視し、基本的な挙動・タブ準備・送信・回答取得・レポート構成のみ参考にする。
+まず最初に `Read` で `$HOME/.agents/skills/a/SKILL.md` を開き、`## Subagent execution` セクション以降の手順を **基本ワークフロー** として把握する。`/a` 側は `### Stage 1 instructions` と `### Stage 2 instructions` の 2 段構成になっているが、`/ad` ではこのサブエージェント 1 つで両 stage を直列実行する（Stage 1 で得る URL は内部で保持して Stage 2 に流す。途中で別 dispatch には分けない）。Stage 1 の「JSON 1 行だけ返す」制約はサブエージェント間 IPC 用なので `/ad` では無視し、基本的な挙動・タブ準備・送信・回答取得・レポート構成のみ参考にする。
 
 そのうえで、以下の差分を適用する。
 
