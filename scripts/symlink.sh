@@ -38,18 +38,6 @@ mkdir -p "$HOME/.local/bin"
 stow --adopt --verbose --restow --target="$HOME" home
 git restore home
 
-# skills: Codex 標準の ~/.agents/skills を正本にし、Claude の定位置へ配る。
-SKILLS_DIR="$HOME/.agents/skills"
-if [ -d "$SKILLS_DIR" ]; then
-  echo "Linking ~/.agents/skills to Claude..."
-  mkdir -p "$HOME/.claude/skills"
-  for skill_dir in "$SKILLS_DIR"/*/; do
-    [ -d "$skill_dir" ] || continue
-    name=$(basename "$skill_dir")
-    ln -sfn "$SKILLS_DIR/$name" "$HOME/.claude/skills/$name"
-  done
-fi
-
 # plist が指すための入口を ~/.local/bin に張る (Darwin のみ)。新しい launchd 入口を
 # 増やす場合はこの配列に追加する。
 if [[ "$(uname -s)" == "Darwin" ]]; then
