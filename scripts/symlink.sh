@@ -58,13 +58,6 @@ if [ -d "$SKILLS_DIR" ]; then
   done
 fi
 
-# These custom commands moved to skills. Remove stale command files so Claude
-# exposes only the skill-backed slash commands.
-for command in a ad src sync-settings-doc; do
-  rm -f "$HOME/.claude/commands/$command.md"
-done
-rmdir "$HOME/.claude/commands" 2>/dev/null || true
-
 # plist が指すための入口を ~/.local/bin に張る (Darwin のみ)。新しい launchd 入口を
 # 増やす場合はこの配列に追加する。
 if [[ "$(uname -s)" == "Darwin" ]]; then
