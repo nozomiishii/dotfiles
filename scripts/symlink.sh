@@ -38,14 +38,6 @@ mkdir -p "$HOME/.local/bin"
 stow --adopt --verbose --restow --target="$HOME" home
 git restore home
 
-# instructions: AGENTS.md を Claude(CLAUDE.md) と Codex(AGENTS.md) の定位置へ。
-# Claude は CLAUDE.md しか自動で読まないため symlink で橋渡しする。
-if [ -f "$HOME/AGENTS.md" ]; then
-  mkdir -p "$HOME/.claude" "$HOME/.codex"
-  ln -sfn "$HOME/AGENTS.md" "$HOME/.claude/CLAUDE.md"
-  ln -sfn "$HOME/AGENTS.md" "$HOME/.codex/AGENTS.md"
-fi
-
 # skills: Codex 標準の ~/.agents/skills を正本にし、Claude の定位置へ配る。
 SKILLS_DIR="$HOME/.agents/skills"
 if [ -d "$SKILLS_DIR" ]; then
