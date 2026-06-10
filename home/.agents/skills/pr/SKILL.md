@@ -93,11 +93,11 @@ STATE_FILE="${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json"
 umask 077  # 他ユーザー read 不可で作成（/tmp 直叩きフォールバック時の保険）
 gh api graphql \
   -F owner="$OWNER" -F name="$NAME" -F number="$NUM" \
-  -F query=@"$HOME/.claude/skills/pr/state-query.graphql" \
+  -F query=@"$HOME/.agents/skills/pr/state-query.graphql" \
   --jq '.data.repository.pullRequest' > "$STATE_FILE"
 ```
 
-GraphQL クエリ本体は [home/.claude/skills/pr/state-query.graphql](home/.claude/skills/pr/state-query.graphql) に分離。取得する主な field:
+GraphQL クエリ本体は [home/.agents/skills/pr/state-query.graphql](home/.agents/skills/pr/state-query.graphql) に分離。取得する主な field:
 
 - PR 本体: `state`, `isDraft`, `mergeable`, `mergeStateStatus`, `reviewDecision`, `headRefName`
 - CI check: `commits.nodes[0].commit.statusCheckRollup.{state, contexts.nodes[]}` — `CheckRun` には `conclusion`, `databaseId`, `checkSuite.workflowRun.databaseId` まで含む
@@ -244,7 +244,7 @@ refresh_state() {
   umask 077
   gh api graphql \
     -F owner="$OWNER" -F name="$NAME" -F number="$NUM" \
-    -F query=@"$HOME/.claude/skills/pr/state-query.graphql" \
+    -F query=@"$HOME/.agents/skills/pr/state-query.graphql" \
     --jq '.data.repository.pullRequest' > "$f"
 }
 
