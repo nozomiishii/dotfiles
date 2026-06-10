@@ -42,14 +42,6 @@ git restore home
 # 実体は home/.ai/（直前の stow で ~/.ai に配置済み）。
 AI_DIR="$HOME/.ai"
 
-# instructions: AGENTS.md を Claude(CLAUDE.md) と Codex(AGENTS.md) の定位置へ。
-# Claude は CLAUDE.md しか自動で読まないため symlink で橋渡しする。
-if [ -f "$AI_DIR/AGENTS.md" ]; then
-  mkdir -p "$HOME/.claude" "$HOME/.codex"
-  ln -sfn "$AI_DIR/AGENTS.md" "$HOME/.claude/CLAUDE.md"
-  ln -sfn "$AI_DIR/AGENTS.md" "$HOME/.codex/AGENTS.md"
-fi
-
 # skills: 各 skill を Claude / Codex の skills dir へ。
 # Codex の global skills は ~/.agents/skills（~/.codex/skills は読まれない）。
 SKILLS_DIR="$AI_DIR/skills"
