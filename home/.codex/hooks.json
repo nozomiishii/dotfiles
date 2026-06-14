@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.ai/hooks/block-op-cli.sh",
+            "command": "bash ~/.hooks/block-op-cli.sh",
             "timeout": 5
           }
         ]
