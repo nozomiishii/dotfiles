@@ -25,14 +25,14 @@
 忙しい？下のコマンドをそのまま実行してね;)
 
 ```shell
-curl -L https://nozomiishii.dev/dotfiles/install | bash
+curl -fsSL https://dotfiles.nozo.sh | bash
 ```
 
 <!-- <details>
 <summary>with full version of Brewfile</summary>
 
 ```shell
-curl -L https://nozomiishii.dev/dotfiles/install | bash -s -- --full
+curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
 ``` -->
 
 <!-- これにするのが目標
@@ -115,10 +115,10 @@ App Store から Xcode を手動でインストールしてください。
 ```
 
 ```shell
-curl -L https://nozomiishii.dev/dotfiles/install | bash
+curl -fsSL https://dotfiles.nozo.sh | bash
 ```
 
--L (--location): リダイレクトを有効化
+-fsSL: -L は dotfiles.nozo.sh のリダイレクトを追跡, -f は HTTP エラーで中断 (壊れた応答を bash に渡さない), -sS は進捗を隠しつつエラーは表示。
 
 ### インストール後の作業
 

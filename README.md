@@ -25,14 +25,14 @@ English | [日本語](README.ja.md)
 Busy? Just run command below;)
 
 ```shell
-curl -L https://nozomiishii.dev/dotfiles/install | bash
+curl -fsSL https://dotfiles.nozo.sh | bash
 ```
 
 <!-- <details>
 <summary>with full version of Brewfile</summary>
 
 ```shell
-curl -L https://nozomiishii.dev/dotfiles/install | bash -s -- --full
+curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
 ``` -->
 
 </details>
@@ -109,10 +109,10 @@ Wait about 3 hours(Go grab some food and take a nap 🍕😪)
 ```
 
 ```shell
-curl -L https://nozomiishii.dev/dotfiles/install | bash
+curl -fsSL https://dotfiles.nozo.sh | bash
 ```
 
--L (--location): Enable redirection.
+-fsSL: -L follows the dotfiles.nozo.sh redirect, -f aborts on HTTP errors (so a broken response is never piped to bash), -sS hide progress but still show errors.
 
 ### After installation
 
