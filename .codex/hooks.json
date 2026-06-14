@@ -4,7 +4,7 @@
       {
         "matcher": "startup",
         "hooks": [
-          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.hooks/startup.sh\"" }
+          { "type": "command", "command": "bash \"$(git rev-parse --show-toplevel)/.hooks/startup.sh\"" }
         ]
       }
     ]
