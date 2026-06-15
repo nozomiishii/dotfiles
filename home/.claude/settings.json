@@ -155,7 +155,8 @@
         "context7.com",
         "*.context7.com",
         "cdn.playwright.dev",
-        "playwright.download.prss.microsoft.com"
+        "playwright.download.prss.microsoft.com",
+        "*.cloudflare.com"
       ],
       "allowUnixSockets": [
         "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock",
