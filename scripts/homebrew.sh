@@ -29,6 +29,17 @@ fix_brew_link_conflicts() {
   done
 }
 
+trust_brew_bundle_formulae() {
+  if ! brew help trust >/dev/null 2>&1; then
+    return 0
+  fi
+
+  # Brewfile の外部 tap formula だけを信頼する。
+  brew trust --formula \
+    smudge/smudge/nightlight \
+    stripe/stripe-cli/stripe
+}
+
 if [[ "$OS_NAME" == "Darwin" ]]; then
   if ! command -v brew >/dev/null 2>&1; then
     echo -e "🍺 Installing Homebrew for Apple Silicon"
@@ -53,6 +64,8 @@ elif [[ "${OS_NAME}" == "Linux" ]]; then
   fi
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
+trust_brew_bundle_formulae
 
 max_attempts="${BREW_BUNDLE_MAX_ATTEMPTS:-5}"
 attempt=1
