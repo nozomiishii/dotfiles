@@ -1,6 +1,6 @@
 #!/bin/bash
 # Claude Code on the web / Codex Cloud の Setup script 欄に貼る:
-#   bash <(curl -fsSL https://raw.githubusercontent.com/nozomiishii/dotfiles/main/scripts/cloud/setup.sh)
+#   curl -fsSL https://raw.githubusercontent.com/nozomiishii/dotfiles/main/scripts/cloud/setup.sh | bash
 set -euo pipefail
 
 raw="https://raw.githubusercontent.com/nozomiishii/dotfiles/main"
