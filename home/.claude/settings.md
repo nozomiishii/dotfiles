@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-06-07
+最終更新: 2026-06-17
 
 ## 背景
 
@@ -373,6 +373,14 @@ Claude Code 2.1.110 で追加された「Push when Claude decides」機能。Rem
 `defaultMode: "auto"` でセッションを開始したときに表示される「Auto mode を有効にしますか？」の確認プロンプトをスキップする。sandbox を常時有効にしている前提で、auto mode を毎回無言で起動したいための設定。
 
 `permissions.skipDangerousModePermissionPrompt`（bypass permissions 用）と対になる auto mode 版。公式ドキュメントでは明示的に記載されていないが Claude Code 本体が読み取る設定キーとして実装されている。将来挙動が変わる可能性があるため、新しいセッションで確認プロンプトが戻ったらこの記述を見直す。
+
+### model
+
+```jsonc
+"model": "claude-opus-4-6[1m]"  // デフォルトモデルを Opus 4.6（1M コンテキスト版）に固定
+```
+
+セッション開始時のデフォルトモデル。`[1m]` suffix は対応モデルで 1M トークンのコンテキストウィンドウを有効化する指定子。長い対話・大量のコード読み込みで context limit に達しにくくする狙い。
 
 ## 使い方
 
