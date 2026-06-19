@@ -96,10 +96,10 @@ starship_at() {
   )
 }
 
-# OSC 8 hyperlink で cwd を Cursor で開ける `[editor]` リンクを返す。
-build_cursor_link() {
+# OSC 8 hyperlink で cwd を VS Code で開ける `[editor]` リンクを返す。
+build_editor_link() {
   local url
-  url="cursor://file$(urlencode "$cwd")"
+  url="vscode://file$(urlencode "$cwd")"
   printf '%s]8;;%s%s[editor]%s]8;;%s' "$esc" "$url" "$st" "$esc" "$st"
 }
 
@@ -148,7 +148,7 @@ render_env_line() {
   [[ -n "$five_hour_pct" ]] && parts+=("${yellow}h ${five_hour_pct}%${reset}")
   [[ -n "$seven_day_pct" ]] && parts+=("${yellow}w ${seven_day_pct}%${reset}")
   [[ -n "$surface_ref" ]] && parts+=("${blue_bold}${surface_ref}${reset}")
-  parts+=("${gray}$(build_cursor_link)${reset}")
+  parts+=("${gray}$(build_editor_link)${reset}")
   join ' | ' "${parts[@]}"
 }
 
