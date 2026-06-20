@@ -28,10 +28,10 @@ done < <(jq -r '
   (.context_window.used_percentage // 0 | floor | tostring),
   .cwd // "",
   .workspace.project_dir // .cwd // "",
-  (.rate_limits.five_hour.used_percentage // "" | if . == "" then "" else floor | tostring end),
-  (.rate_limits.seven_day.used_percentage // "" | if . == "" then "" else floor | tostring end),
-  (.rate_limits.five_hour.resets_at // "" | tostring),
-  (.rate_limits.seven_day.resets_at // "" | tostring)
+  (.rate_limits.five_hour.used_percentage // empty | floor | tostring),
+  (.rate_limits.seven_day.used_percentage // empty | floor | tostring),
+  (.rate_limits.five_hour.resets_at // empty | tostring),
+  (.rate_limits.seven_day.resets_at // empty | tostring)
 ' <<<"$input")
 
 model="${fields[0]:-Claude}"
@@ -171,20 +171,12 @@ render_env_line() {
   if [[ -n "$five_hour_pct" ]]; then
     local h_remaining
     h_remaining=$(format_remaining "$five_hour_resets_at")
-    if [[ -n "$h_remaining" ]]; then
-      parts+=("${yellow}h ${five_hour_pct}% (${h_remaining})${reset}")
-    else
-      parts+=("${yellow}h ${five_hour_pct}%${reset}")
-    fi
+    parts+=("${yellow}h ${five_hour_pct}% (${h_remaining})${reset}")
   fi
   if [[ -n "$seven_day_pct" ]]; then
     local w_remaining
     w_remaining=$(format_remaining "$seven_day_resets_at")
-    if [[ -n "$w_remaining" ]]; then
-      parts+=("${yellow}w ${seven_day_pct}% (${w_remaining})${reset}")
-    else
-      parts+=("${yellow}w ${seven_day_pct}%${reset}")
-    fi
+    parts+=("${yellow}w ${seven_day_pct}% (${w_remaining})${reset}")
   fi
   [[ -n "$surface_ref" ]] && parts+=("${blue_bold}${surface_ref}${reset}")
   parts+=("${gray}$(build_editor_link)${reset}")
