@@ -29,7 +29,9 @@ done < <(jq -r '
   .cwd // "",
   .workspace.project_dir // .cwd // "",
   (.rate_limits.five_hour.used_percentage // empty | floor | tostring),
-  (.rate_limits.seven_day.used_percentage // empty | floor | tostring)
+  (.rate_limits.seven_day.used_percentage // empty | floor | tostring),
+  (.rate_limits.five_hour.resets_at // empty | tostring),
+  (.rate_limits.seven_day.resets_at // empty | tostring)
 ' <<<"$input")
 
 model="${fields[0]:-Claude}"
@@ -43,12 +45,14 @@ project_dir="${fields[3]:-$cwd}"
 # 未取得の間は空文字で、env_line では該当パートを省略する。
 five_hour_pct="${fields[4]:-}"
 seven_day_pct="${fields[5]:-}"
+five_hour_resets_at="${fields[6]:-}"
+seven_day_resets_at="${fields[7]:-}"
 
 # cmux が無い環境では fork ごと省略
 surface_ref=""
-if command -v cmux >/dev/null 2>&1; then
-  surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null || true)
-fi
+# if command -v cmux >/dev/null 2>&1; then
+#   surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null || true)
+# fi
 
 # --- helpers ---
 
@@ -85,6 +89,25 @@ urlencode() {
     esac
   done
   printf '%s' "$out"
+}
+
+format_remaining() {
+  local resets_at="$1"
+  [[ -z "$resets_at" ]] && return
+  local now remaining_sec days hours minutes
+  now=$(date +%s)
+  remaining_sec=$((resets_at - now))
+  ((remaining_sec <= 0)) && { printf '0m'; return; }
+  days=$((remaining_sec / 86400))
+  hours=$(( (remaining_sec % 86400) / 3600 ))
+  minutes=$(( (remaining_sec % 3600) / 60 ))
+  if ((days > 0)); then
+    printf '%dd%dh' "$days" "$hours"
+  elif ((hours > 0)); then
+    printf '%dh%02dm' "$hours" "$minutes"
+  else
+    printf '%dm' "$minutes"
+  fi
 }
 
 # starship は CWD 依存なので subshell で cd してから呼ぶ。
@@ -145,8 +168,24 @@ render_env_line() {
   local parts=()
   parts+=("${white}${model}${reset}")
   parts+=("${yellow_bold}${ctx_pct}%${reset}")
-  [[ -n "$five_hour_pct" ]] && parts+=("${yellow}h ${five_hour_pct}%${reset}")
-  [[ -n "$seven_day_pct" ]] && parts+=("${yellow}w ${seven_day_pct}%${reset}")
+  if [[ -n "$five_hour_pct" ]]; then
+    local h_remaining
+    h_remaining=$(format_remaining "$five_hour_resets_at")
+    if [[ -n "$h_remaining" ]]; then
+      parts+=("${yellow}h ${five_hour_pct}% (${h_remaining})${reset}")
+    else
+      parts+=("${yellow}h ${five_hour_pct}%${reset}")
+    fi
+  fi
+  if [[ -n "$seven_day_pct" ]]; then
+    local w_remaining
+    w_remaining=$(format_remaining "$seven_day_resets_at")
+    if [[ -n "$w_remaining" ]]; then
+      parts+=("${yellow}w ${seven_day_pct}% (${w_remaining})${reset}")
+    else
+      parts+=("${yellow}w ${seven_day_pct}%${reset}")
+    fi
+  fi
   [[ -n "$surface_ref" ]] && parts+=("${blue_bold}${surface_ref}${reset}")
   parts+=("${gray}$(build_editor_link)${reset}")
   join ' | ' "${parts[@]}"
