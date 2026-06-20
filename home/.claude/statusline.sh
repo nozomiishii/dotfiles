@@ -28,10 +28,10 @@ done < <(jq -r '
   (.context_window.used_percentage // 0 | floor | tostring),
   .cwd // "",
   .workspace.project_dir // .cwd // "",
-  (.rate_limits.five_hour.used_percentage // empty | floor | tostring),
-  (.rate_limits.seven_day.used_percentage // empty | floor | tostring),
-  (.rate_limits.five_hour.resets_at // empty | tostring),
-  (.rate_limits.seven_day.resets_at // empty | tostring)
+  (.rate_limits.five_hour.used_percentage // "" | if . == "" then "" else floor | tostring end),
+  (.rate_limits.seven_day.used_percentage // "" | if . == "" then "" else floor | tostring end),
+  (.rate_limits.five_hour.resets_at // "" | tostring),
+  (.rate_limits.seven_day.resets_at // "" | tostring)
 ' <<<"$input")
 
 model="${fields[0]:-Claude}"
