@@ -31,7 +31,8 @@ done < <(jq -r '
   (.rate_limits.five_hour.used_percentage // empty | floor | tostring),
   (.rate_limits.seven_day.used_percentage // empty | floor | tostring),
   (.rate_limits.five_hour.resets_at // empty | tostring),
-  (.rate_limits.seven_day.resets_at // empty | tostring)
+  (.rate_limits.seven_day.resets_at // empty | tostring),
+  (.effort.level // empty)
 ' <<<"$input")
 
 model="${fields[0]:-Claude}"
@@ -47,6 +48,7 @@ five_hour_pct="${fields[4]:-}"
 seven_day_pct="${fields[5]:-}"
 five_hour_resets_at="${fields[6]:-}"
 seven_day_resets_at="${fields[7]:-}"
+effort_level="${fields[8]:-}"
 
 # cmux が無い環境では fork ごと省略
 surface_ref=""
@@ -167,6 +169,7 @@ render_top_line() {
 render_env_line() {
   local parts=()
   parts+=("${white}${model}${reset}")
+  [[ -n "$effort_level" ]] && parts+=("${gray}${effort_level}${reset}")
   parts+=("${yellow_bold}${ctx_pct}%${reset}")
   if [[ -n "$five_hour_pct" ]]; then
     local h_remaining
