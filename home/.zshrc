@@ -9,6 +9,8 @@ compinit
 
 # carapace - multi-shell completion engine
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
+export CARAPACE_EXCLUDES='make'
+zstyle ':completion:*:*:make:*' tag-order targets
 if command -v carapace >/dev/null; then
   # shellcheck source=/dev/null
   source <(carapace _carapace)
