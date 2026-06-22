@@ -1,4 +1,5 @@
 [whitelist]
 prefix = [
+  "~/.codex/worktrees/",
   "~/Code/nozomiishii/",
 ]
