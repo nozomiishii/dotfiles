@@ -114,13 +114,15 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 -fsSL: -L follows the dotfiles.nozo.sh redirect, -f aborts on HTTP errors (so a broken response is never piped to bash), -sS hide progress but still show errors.
 
+<a id="after-installation"></a>
+
 ### After installation
 
 1. **Reboot**  
    Run `sudo reboot` to apply the settings.
 
-2. **(Optional) Homebrew**  
-   To install packages from Brewfile.optional:
+2. **Retry Homebrew if needed**
+   Re-run the unified Homebrew installer if a package download was interrupted:
 
    ```shell
    make homebrew
@@ -226,7 +228,7 @@ Then follow the [After installation](#after-installation) steps above.
     - [Youtube filter](https://chromewebstore.google.com/detail/dfbfdjepofdfhdddfdggabjjndhiggji)
     - [Screenshot YouTube](https://chromewebstore.google.com/detail/gjoijpfmdhbjkkgnmahganhoinjjpohk)
     - [Requestly](https://chromewebstore.google.com/detail/mdnleldcmiljblolnjhpnblkcekpdkpa)
-    - [Linkumori (URLs Cleaner) ](https://chromewebstore.google.com/detail/jchobbjgibcahbheicfocecmhocglkco)
+    - [Linkumori (URLs Cleaner)](https://chromewebstore.google.com/detail/jchobbjgibcahbheicfocecmhocglkco)
       - Automatically removes tracking query parameters from URLs
     - [Amazon URL Shortener](https://chromewebstore.google.com/detail/bonkcfmjkpdnieejahndognlbogaikdg)
       - Shortens Amazon product URLs
@@ -474,8 +476,7 @@ If you fork it, see [docs/forking.md](docs/forking.md) for the list of places to
 Clean unused homebrew dependencies up, and upgrade them
 
 ```shell
-	brew bundle --verbose --cleanup --file="./Brewfile"
-	brew cleanup --verbose
+make homebrew
 ```
 
 ### Dev
