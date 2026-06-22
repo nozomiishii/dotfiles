@@ -13,7 +13,7 @@ echo '🤖 Codex'
 # https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started
 echo '- 🤖 Install Codex CLI'
 eval "$(fnm env)"
-npm install -g @openai/codex
+(cd /tmp && npm install -g @openai/codex)
 
 echo "- 🤖 codex $(codex --version)"
 
