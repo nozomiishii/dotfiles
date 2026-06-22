@@ -70,7 +70,7 @@ fi
 trust_brew_bundle_formulae
 
 bundle_brewfile_paths=("$SCRIPT_DIR/Brewfile")
-if [[ "$OS_NAME" == "Darwin" ]]; then
+if [[ "$OS_NAME" == "Darwin" && "${HOMEBREW_BUNDLE_INCLUDE_OPTIONAL:-false}" == "1" ]]; then
   bundle_brewfile_paths+=("$SCRIPT_DIR/Brewfile.optional")
 fi
 
