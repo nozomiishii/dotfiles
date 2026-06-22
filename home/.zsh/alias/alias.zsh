@@ -62,6 +62,7 @@ cwb() {
 }
 alias cwr="claude --worktree --resume"
 alias cwt="claude --worktree --teleport"
+alias pwdc='printf "/add-dir %s" "$PWD" | pbcopy'
 
 # ----------------------------------------------------------------
 # git
