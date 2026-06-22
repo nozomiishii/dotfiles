@@ -34,10 +34,12 @@ trust_brew_bundle_formulae() {
     return 0
   fi
 
-  # Brewfile の外部 tap formula だけを信頼する。
+  # Brewfile の外部 tap entry だけを信頼する。
   brew trust --formula \
     smudge/smudge/nightlight \
     stripe/stripe-cli/stripe
+  brew trust --cask \
+    nozomiishii/tap/brooklyn
 }
 
 if [[ "$OS_NAME" == "Darwin" ]]; then
