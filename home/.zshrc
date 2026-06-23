@@ -3,17 +3,21 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
 
 # Initialize zsh's auto-completion system
+# Enable zsh completions distributed through the Nix profile.
+if [[ -d "$HOME/.nix-profile/share/zsh/site-functions" ]]; then
+  fpath=("$HOME/.nix-profile/share/zsh/site-functions" $fpath)
+fi
 autoload -Uz compinit
 zmodload -i zsh/complist
 compinit
 
 # carapace - multi-shell completion engine
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
-export CARAPACE_EXCLUDES='make'
+export CARAPACE_EXCLUDES='make,devenv'
 zstyle ':completion:*:*:make:*' tag-order targets
 if command -v carapace >/dev/null; then
   # shellcheck source=/dev/null
-  source <(carapace _carapace)
+  source <(carapace _carapace zsh)
 fi
 
 # fzf-tab - replace zsh tab completion with fzf preview menu
