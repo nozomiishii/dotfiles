@@ -148,7 +148,7 @@ printf '%s\n' \
   "      sudo reboot" \
   "" \
   "" \
-  "📦 Optional Homebrew packages (Brewfile.optional):" \
+  "📦 If Homebrew was interrupted:" \
   "" \
   "    run:" \
   "      make homebrew" \

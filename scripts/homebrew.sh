@@ -34,10 +34,12 @@ trust_brew_bundle_formulae() {
     return 0
   fi
 
-  # Brewfile の外部 tap formula だけを信頼する。
+  # Brewfile の外部 tap entry だけを信頼する。
   brew trust --formula \
     smudge/smudge/nightlight \
     stripe/stripe-cli/stripe
+  brew trust --cask \
+    nozomiishii/tap/brooklyn
 }
 
 if [[ "$OS_NAME" == "Darwin" ]]; then
@@ -67,6 +69,11 @@ fi
 
 trust_brew_bundle_formulae
 
+bundle_brewfile_paths=("$SCRIPT_DIR/Brewfile")
+if [[ "$OS_NAME" == "Darwin" && "${HOMEBREW_BUNDLE_INCLUDE_OPTIONAL:-false}" == "1" ]]; then
+  bundle_brewfile_paths+=("$SCRIPT_DIR/Brewfile.optional")
+fi
+
 max_attempts="${BREW_BUNDLE_MAX_ATTEMPTS:-5}"
 attempt=1
 backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
@@ -75,11 +82,11 @@ backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
 # install と cleanup は一体にする（分けると node 等の依存を巻き添え削除するため）。
 while [ "$attempt" -le "$max_attempts" ]; do
   echo "brew bundle attempt ${attempt}/${max_attempts}"
-  if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" HOMEBREW_BUNDLE_CLEANUP_NO_MAS=1 brew bundle \
+  if cat "${bundle_brewfile_paths[@]}" | HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" HOMEBREW_BUNDLE_CLEANUP_NO_MAS=1 brew bundle \
     --verbose \
     --cleanup \
     --force \
-    --file="$SCRIPT_DIR/Brewfile"; then
+    --file=-; then
     echo "brew bundle succeeded"
     break
   fi

@@ -120,13 +120,15 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 -fsSL: -L は dotfiles.nozo.sh のリダイレクトを追跡, -f は HTTP エラーで中断 (壊れた応答を bash に渡さない), -sS は進捗を隠しつつエラーは表示。
 
+<a id="after-installation"></a>
+
 ### インストール後の作業
 
 1. 再起動  
    設定を反映するために `sudo reboot` を実行してください。
 
-2. （任意）Homebrew  
-   Brewfile.optional のパッケージもインストールしたい場合はこちら：
+2. Homebrew が中断された場合
+   パッケージのダウンロードが途中で失敗した場合は、共通の Homebrew インストーラーを再実行してください：
 
    ```shell
    make homebrew
@@ -232,7 +234,7 @@ sudo reboot
     - [Youtube filter](https://chromewebstore.google.com/detail/dfbfdjepofdfhdddfdggabjjndhiggji)
     - [Screenshot YouTube](https://chromewebstore.google.com/detail/gjoijpfmdhbjkkgnmahganhoinjjpohk)
     - [Requestly](https://chromewebstore.google.com/detail/mdnleldcmiljblolnjhpnblkcekpdkpa)
-    - [Linkumori (URLs Cleaner) ](https://chromewebstore.google.com/detail/jchobbjgibcahbheicfocecmhocglkco)
+    - [Linkumori (URLs Cleaner)](https://chromewebstore.google.com/detail/jchobbjgibcahbheicfocecmhocglkco)
       - URL のクエリパラメータを自動削除
     - [Amazon URL Shortener](https://chromewebstore.google.com/detail/bonkcfmjkpdnieejahndognlbogaikdg)
       - amazon の URL 短くしてくれる
@@ -479,8 +481,7 @@ fork して自分用に使う場合、書き換えが必要な箇所を [docs/fo
 使わなくなった Homebrew の依存パッケージを整理して、最新にアップグレードしましょう
 
 ```shell
-	brew bundle --verbose --cleanup --file="./Brewfile"
-	brew cleanup --verbose
+make homebrew
 ```
 
 ### 開発
