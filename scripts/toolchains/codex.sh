@@ -12,7 +12,7 @@ echo '🤖 Codex'
 
 # https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started
 echo '- 🤖 Install Codex CLI'
-curl -fsSL https://github.com/openai/codex/releases/latest/download/install.sh | sh
+npm install -g @openai/codex
 
 echo "- 🤖 codex $(codex --version)"
 
