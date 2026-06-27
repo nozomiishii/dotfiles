@@ -25,8 +25,8 @@ jobs:
     timeout-minutes: 5
     permissions:
       contents: read  # required by actions/checkout to fetch repository code
-      pages: write
-      id-token: write
+      pages: write  # required by actions/deploy-pages to publish to GitHub Pages
+      id-token: write  # required by actions/deploy-pages for OIDC-based deployment verification
     environment:
       name: github-pages
     steps:
