@@ -3,15 +3,20 @@
 #   curl -fsSL https://raw.githubusercontent.com/nozomiishii/dotfiles/main/scripts/cloud/setup.sh | bash
 set -euo pipefail
 
-raw="https://raw.githubusercontent.com/nozomiishii/dotfiles/main"
+curl -fsSL "https://nozomiishii.github.io/dotfiles/cloud-setup.tar.gz" | tar xz
+
+# Hooks
+mkdir -p ~/.hooks
+cp home/.hooks/* ~/.hooks/
 
 # Claude Code
 mkdir -p ~/.claude
-curl -fsSL "$raw/home/AGENTS.md" -o ~/.claude/CLAUDE.md
-curl -fsSL "$raw/home/.claude/settings.json" |
-    jq '{permissions: {deny: .permissions.deny}}' \
-        >~/.claude/settings.json
+cp home/AGENTS.md ~/.claude/CLAUDE.md
+jq 'del(.statusLine, .sandbox)' home/.claude/settings.json >~/.claude/settings.json
 
 # Codex
 mkdir -p ~/.codex
-curl -fsSL "$raw/home/AGENTS.md" -o ~/.codex/AGENTS.md
+cp home/AGENTS.md ~/.codex/AGENTS.md
+cp home/.codex/hooks.json ~/.codex/hooks.json
+
+rm -rf home/

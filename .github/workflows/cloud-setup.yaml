@@ -1,0 +1,52 @@
+name: Cloud Setup
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'home/.hooks/**'
+      - 'home/.agents/**'
+      - 'home/.claude/**'
+      - 'home/.codex/**'
+      - 'home/AGENTS.md'
+      - 'scripts/cloud/**'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    permissions:
+      contents: read  # required by actions/checkout to fetch repository code
+      pages: write  # required by actions/deploy-pages to publish to GitHub Pages
+      id-token: write  # required by actions/deploy-pages for OIDC-based deployment verification
+    environment:
+      name: github-pages
+    steps:
+      - name: Get code
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      # cloud-setup tarball を作成して _site/ に配置
+      - name: Build tarball
+        run: |
+          mkdir _site
+          tar czf _site/cloud-setup.tar.gz \
+            home/.hooks/ \
+            home/AGENTS.md \
+            home/.claude/settings.json \
+            home/.codex/hooks.json
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
