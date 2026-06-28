@@ -25,6 +25,17 @@ description: >-
 
 変更をステージしてコミットし、リモートへ push する。
 
+`git push` が `could not read Username for 'https://github.com': Device not configured` で失敗した場合:
+
+- `gh auth status` で GitHub CLI の認証状態を確認する
+- remote URL が `https://github.com/...` なら、永続設定を変更せずに次を試す
+
+```sh
+git -c credential.helper='!gh auth git-credential' push -u origin <branch>
+```
+
+`gh auth setup-git` は Git 設定を永続変更するため使わない。ユーザー認証や外部サービス状態に触れる操作を支援エージェントが実行できない repo では、同じコマンドをユーザーに渡す。
+
 ## 2. PR 作成（必要な場合のみ）
 
 既存の OPEN な PR がない場合、PR を作成する。
