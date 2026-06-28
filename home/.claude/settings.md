@@ -49,7 +49,7 @@ Agent Teams はタスクに応じて Claude が自動提案するか、明示的
 ### attribution
 
 ```jsonc
-"attribution": { "commit": "", "pr": "" }  // PR・コミットの Claude Code フッター非表示
+"attribution": { "commit": "", "pr": "", "sessionUrl": false }  // PR・コミット・セッション URL の Claude Code フッター非表示
 ```
 
 ### permissions
