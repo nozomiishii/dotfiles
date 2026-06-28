@@ -14,6 +14,10 @@
 ## 実装
 - 設計ドキュメント・brainstormingの成果はGitHub issueにまとめる。
 
+## Lint
+- lint rule の無効化・緩和は、必ず相談してから行う。
+  - rule を off にする、error を warn に下げる、disable コメントで抑制する、いずれも対象。
+
 ## PR
 - プロジェクトで指定がない場合、PR本文は日本語で書く。
 
