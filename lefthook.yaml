@@ -46,3 +46,9 @@ pre-commit:
     - name: settings-sync-check
       glob: 'home/.claude/settings.{json,md}'
       run: git diff --cached --name-only | bash scripts/check-settings-sync.sh
+    - name: block-superpowers-specs
+      run: |
+        if git diff --cached --diff-filter=d --name-only | grep -q '^docs/superpowers/specs/'; then
+          echo "docs/superpowers/specs/ へのコミットは禁止。設計は GitHub issue にまとめる" >&2
+          exit 1
+        fi
