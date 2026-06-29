@@ -31,14 +31,34 @@ ls "$BRAIN/.routines/"
 
 既存ファイルを 1〜2 件 Read して、frontmatter（name, repos, schedule, model）と prompt 本文のパターンを掴む。
 
-### ユーザーと対話して prompt を設計する
+### ユーザーと対話して routine を設計する
 
-- 対象 repo
-- 実行スケジュール（cron 式 + JST 表記）
-- model（opus-4-6 / opus-4-7 / sonnet-4-6）
-- prompt の目的と内容
+`$ARGUMENTS` があればそこから読み取り、不足分だけ 1 つずつ聞く。
 
-`$ARGUMENTS` があればそこから読み取り、不足分だけ聞く。
+#### 目的のすり合わせ
+
+- この routine で何を達成したいか
+- 手動で今やっている作業の自動化か、新しい情報収集か
+- 成果物は何か（GitHub issue、PR、Slack 通知、レポート等）
+- 成功・失敗の判断基準
+
+#### 設計の検討
+
+- 対象 repo と、routine がアクセスする外部リソース
+- 実行頻度の妥当性（daily / weekly / monthly、曜日・時刻）
+- model の選定（調査・要約中心なら sonnet、判断・分析が必要なら opus）
+- 既存 routine と責務が被らないか（`.routines/` の一覧を見て確認）
+- エラー時の振る舞い（部分的な結果で続行するか、止めるか）
+
+#### prompt の構成を決める
+
+既存 routine の共通パターンを踏まえて構成を提案する:
+- 前提（実行環境、認証状態、repo の状態）
+- タスク（具体的な手順）
+- 出力フォーマット（issue / comment のテンプレート）
+- 制約（やらないこと、エラー時の挙動）
+
+ユーザーが納得するまで議論を続け、合意できてから `.routines/<name>.md` の作成に進む。
 
 ### `.routines/<name>.md` を作成する
 
