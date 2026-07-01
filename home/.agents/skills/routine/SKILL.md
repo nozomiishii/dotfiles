@@ -1,24 +1,25 @@
 ---
 name: routine
 description: >-
-  新しい Claude Code Routine を追加する。
-  .routines/<name>.md の作成 → brain repo に commit & push → /schedule で cloud に登録。
-  ユーザーが /routine と入力したとき、または「routine を追加したい」「定期実行を作りたい」と言ったときに使用する。
+  Claude Code Routine の追加・変更。
+  .routines/<name>.md の作成/編集 → brain repo に commit & push → /schedule で cloud trigger と同期。
+  ユーザーが /routine と入力したとき、「routine を追加したい」「定期実行を作りたい」と言ったとき、
+  または .routines/ の設定を変更したとき（model / schedule / repos の変更を含む）に使用する。
 argument-hint: <routine-name> <概要>
-disable-model-invocation: true
 ---
 
 # /routine
 
-新しい Claude Code Routine を git 管理で追加する。
+Claude Code Routine を git 管理で追加・変更する。
 
 ## 前提
 
-- routine prompt の正本は `nozomiishii/brain` repo の `.routines/<name>.md`
-- cloud UI の Instructions は stub（`.routines/<name>.md を Read し、その指示に従って実行せよ。`）
+- routine prompt の正本は `nozomiishii/brain` repo（`~/Code/nozomiishii/brain`）の `.routines/<name>.md`
+- cloud trigger の Instructions は stub（`.routines/<name>.md を Read し、その指示に従って実行せよ。`）
 - 全 routine に `nozomiishii/brain` repo をアタッチする
+- `.routines/` の frontmatter と cloud trigger は二重管理。片方を変えたら必ず両方更新する
 
-## 手順
+## 新規追加
 
 ### 既存 routine を参考にする
 
@@ -90,7 +91,7 @@ git -C "$BRAIN" push origin main
 
 worktree にいる場合は `git -C` で brain repo を直接操作する。
 
-### cloud UI に routine を登録する
+### cloud trigger を登録する
 
 `/schedule` を使って routine を作成する。対話的に以下を設定:
 
@@ -99,8 +100,30 @@ worktree にいる場合は `git -C` で brain repo を直接操作する。
 - schedule: frontmatter と同じ cron
 - model: frontmatter と同じ model
 
+## 変更・同期
+
+`.routines/` の frontmatter を変更した場合、cloud trigger も同期する。
+
+### 変更対象の検出
+
+```bash
+git diff origin/main...HEAD --name-only -- '.routines/'
+```
+
+diff がない場合（直接 frontmatter を変更する依頼の場合）は先にファイルを編集する。
+
+### cloud trigger との同期
+
+`schedule` skill の `RemoteTrigger` ツールで全 trigger を list し、変更ファイルの frontmatter `name` で照合する。差分がある frontmatter フィールドだけ update する:
+
+- `model` → `job_config.ccr.session_context.model`（frontmatter 値に `claude-` を prefix）
+- `schedule` → `cron_expression`
+
+update 時は `environment_id` を既存 trigger から取得して含める（API が要求するため）。照合できない routine はスキップし、ユーザーに報告する。
+
 ## 制約
 
-- routine prompt は brain repo `.routines/` が正本。cloud UI に prompt 本文を直接書かない
+- routine prompt は brain repo `.routines/` が正本。cloud trigger に prompt 本文を直接書かない
 - frontmatter の `repos` に `nozomiishii/brain` を必ず含める
 - cron は UTC で記述し、JST をコメントで添える
+- frontmatter を変更したら cloud trigger も必ず同期する
