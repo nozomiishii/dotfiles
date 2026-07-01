@@ -15,8 +15,8 @@ importers:
         specifier: 1.9.2
         version: 1.9.2(lefthook@2.1.9)
       '@nozomiishii/markdownlint-cli2-config':
-        specifier: 1.9.2
-        version: 1.9.2
+        specifier: 1.10.0
+        version: 1.10.0
       '@nozomiishii/postinstall':
         specifier: 1.9.2
         version: 1.9.2
@@ -150,8 +150,8 @@ packages:
     peerDependencies:
       lefthook: 2.1.9
 
-  '@nozomiishii/markdownlint-cli2-config@1.9.2':
-    resolution: {integrity: sha512-wntxeIcojia9sd6PPaAy9ydu4wgVkcZos6j5c04GsHqg5y0+Zq0EBdGz6f5EcaYrS9mLzmH47u4RNvU1C6XJgw==}
+  '@nozomiishii/markdownlint-cli2-config@1.10.0':
+    resolution: {integrity: sha512-qWpxUeFJ8mZ659yGxgEjMf9QnjXqhljsc6ycAP5P9Ls3l0Y2lE5OgllL/30PKI4DxorY9LidN74VcveUii6+bw==}
     hasBin: true
 
   '@nozomiishii/postinstall@1.9.2':
@@ -1063,7 +1063,7 @@ snapshots:
       git-harvest: 0.3.2
       lefthook: 2.1.9
 
-  '@nozomiishii/markdownlint-cli2-config@1.9.2':
+  '@nozomiishii/markdownlint-cli2-config@1.10.0':
     dependencies:
       markdownlint-cli2: 0.22.1
     transitivePeerDependencies:

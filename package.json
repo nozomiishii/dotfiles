@@ -29,7 +29,7 @@
   "devDependencies": {
     "@nozomiishii/commitlint-config": "1.9.2",
     "@nozomiishii/lefthook-config": "1.9.2",
-    "@nozomiishii/markdownlint-cli2-config": "1.9.2",
+    "@nozomiishii/markdownlint-cli2-config": "1.10.0",
     "@nozomiishii/postinstall": "1.9.2",
     "@nozomiishii/prettier-config": "1.9.2",
     "lefthook": "2.1.9",
