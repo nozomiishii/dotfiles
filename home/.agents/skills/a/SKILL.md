@@ -97,27 +97,25 @@ $ARGUMENTS
 
 Gemini はデフォルトで `Fast` モデルになっていることが多い。じっくり考えた回答が欲しいので **送信前に Pro へ切り替える**:
 
-1. 入力欄右下にあるモデルセレクタ（現在のモデル名 + ▼ が表示されているボタン）を `javascript_tool` で開く:
+1. モデルセレクタのトリガーボタンを `javascript_tool` で開く:
 
    ```js
-   const candidates = [...document.querySelectorAll('button')]
-     .filter(b => /^(Fast|Thinking|Pro)\s*$/.test(b.textContent.trim()) || b.getAttribute('aria-label')?.match(/Fast|Thinking|Pro/));
-   const opener = candidates[0];
-   if (!opener) throw new Error('Gemini model selector not found');
-   opener.click();
+   const trigger = document.querySelector('button[aria-label^="Open mode picker"]');
+   if (!trigger) throw new Error('Gemini model selector not found');
+   trigger.click();
    ```
 
-2. 少し待ってからメニュー内の `Pro` を選択:
+2. 少し待ってからメニュー内の Pro を選択。メニュー項目は `<gem-menu-item>` カスタム要素で、ラベルは `.label` span 内にバージョン番号付きで表示される（例: `"3.1 Pro"`）:
 
    ```js
    await new Promise(r => setTimeout(r, 300));
-   const items = [...document.querySelectorAll('[role="menuitemradio"], [role="menuitem"], button, li')];
-   const pro = items.find(el => /\bPro\b/.test(el.textContent) && /Advanced|3\.\d Pro/.test(el.textContent));
-   if (!pro) throw new Error('Pro option not found');
+   const items = [...document.querySelectorAll('gem-menu-item')];
+   const pro = items.find(item => /\bPro$/.test(item.querySelector('.label')?.textContent.trim() || ''));
+   if (!pro) throw new Error('Pro option not found in gem-menu-item');
    pro.click();
    ```
 
-3. 切替後、入力欄下部の表示が `Pro` になっているか `get_page_text` で軽く確認。なっていなければ手順 1〜2 をリトライ（最大 2 回）。
+3. 切替後、トリガーボタンの `aria-label` が `"Open mode picker, currently Pro"` 相当になっているか確認。なっていなければ手順 1〜2 をリトライ（最大 2 回）。
 
 4. その後、質問を入力 → 送信。
 
