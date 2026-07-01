@@ -12,7 +12,7 @@ echo '🤖 Codex'
 
 # https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started
 echo '- 🤖 Install Codex CLI'
-pnpm add -g @openai/codex
+npm install -g @openai/codex
 
 echo "- 🤖 codex $(codex --version)"
 
