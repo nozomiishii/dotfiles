@@ -47,7 +47,15 @@ frontmatter のスキーマは `scripts/schemas/main.ts` を読んで従う。
 
 ## ユーザー確認
 
-ノートを作成したら、コミットする前にユーザーに内容を確認してもらう。承認を得てから次へ進む。
+ノートを作成したら、コミットする前にユーザーに内容を確認してもらう。
+
+確認用にノートのファイルパスを出力する。スペース入りパスでもリンクが壊れないよう、`~` 展開したフルパスをそのまま出す:
+
+```
+~/Code/nozomiishii/brain/.claude/worktrees/<SLUG>/brain/main/<ノート名>.md
+```
+
+承認を得てから次へ進む。
 
 ## commit, push, PR
 
@@ -55,16 +63,19 @@ worktree 内で commit → push し、PR を作成する。複数ノートは 1 
 
 ```sh
 WT="$BRAIN/.claude/worktrees/$SLUG"
-git -C "$WT" add "brain/main/"
-git -C "$WT" commit -m "docs: add <topic> note"
+# 作成したファイルだけを個別に add する。
+# `git add "brain/main/"` はディレクトリ全体をステージするため、
+# 他の worktree や並行セッションが残したファイルまで巻き込む。
+git -C "$WT" add "brain/main/<slug-1>.md" "brain/main/<slug-2>.md"
+git -C "$WT" commit -m "chore: add <topic> note"
 git -C "$WT" push -u origin "$SLUG"
 BODY_FILE=$(mktemp) && cat > "$BODY_FILE" <<'EOF'
 （日本語の PR 本文）
 EOF
-gh pr create -R <brain owner/repo> --base main --head "$SLUG" --title "docs: add <topic> note" --body-file "$BODY_FILE"
+gh pr create -R <brain owner/repo> --base main --head "$SLUG" --title "chore: add <topic> note" --body-file "$BODY_FILE"
 ```
 
 - `--head` を必ず付ける（cwd が brain worktree ではない場合があるため）
-- PR タイトル: Conventional Commits、英語
+- `git add` はファイル単位で指定する。ディレクトリ指定やワイルドカードは禁止
 - PR 本文: 日本語
 - merge はユーザーが手動で行う。AI はマージしない
