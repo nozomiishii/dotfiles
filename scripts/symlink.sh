@@ -41,7 +41,7 @@ git restore home
 # plist が指すための入口を ~/.local/bin に張る (Darwin のみ)。新しい launchd 入口を
 # 増やす場合はこの配列に追加する。
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  LOCAL_BIN_SCRIPTS=(brew_update.sh claude_insights.sh)
+  LOCAL_BIN_SCRIPTS=(brew_update.sh)
   for script in "${LOCAL_BIN_SCRIPTS[@]}"; do
     ln -sfn "$SCRIPT_DIR/scripts/darwin/$script" "$HOME/.local/bin/$script"
   done
