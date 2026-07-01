@@ -33,19 +33,7 @@ git -C "$BRAIN" worktree add "$BRAIN/.claude/worktrees/$SLUG" -b "$SLUG" origin/
 
 選ばれたトピックごとに `brain/main/<slug>.md` に作成する。slug はトピック名から英小文字 kebab-case。
 
-ノートのスキーマ:
-
-```markdown
----
-tags:
-  - <内容に合ったタグ>
-created: <today YYYY-MM-DD>
----
-
-# <トピック名>
-
-（1 つの概念・知識を自己完結的に説明する本文）
-```
+frontmatter のスキーマは `scripts/schemas/main.ts` を読んで従う。
 
 ノートの要件:
 
@@ -56,6 +44,10 @@ created: <today YYYY-MM-DD>
 - コード例・図は必要に応じて含める
 - そのままブログに公開しても問題ない品質
 - 既存の brain vault のノートとつながりを意識する
+
+## ユーザー確認
+
+ノートを作成したら、コミットする前にユーザーに内容を確認してもらう。承認を得てから次へ進む。
 
 ## commit, push, PR
 
