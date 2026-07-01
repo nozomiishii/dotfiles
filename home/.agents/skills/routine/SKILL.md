@@ -15,7 +15,7 @@ Claude Code Routine を git 管理で追加・変更する。
 ## 前提
 
 - routine prompt の正本は `nozomiishii/brain` repo（`~/Code/nozomiishii/brain`）の `.routines/<name>.md`
-- cloud trigger の Instructions は stub（`.routines/<name>.md を Read し、その指示に従って実行せよ。`）
+- cloud trigger の Instructions は stub（`.routines/<name>.md を Read し、その指示に従って実行お願い。`）
 - 全 routine に `nozomiishii/brain` repo をアタッチする
 - `.routines/` の frontmatter と cloud trigger は二重管理。片方を変えたら必ず両方更新する
 
@@ -102,7 +102,7 @@ gh pr create -R nozomiishii/brain --base main --head "$SLUG" \
 
 `/schedule` を使って routine を作成する。対話的に以下を設定:
 
-- Instructions: `.routines/<name>.md を Read し、その指示に従って実行せよ。`
+- Instructions: `.routines/<name>.md を Read し、その指示に従って実行お願い。`
 - repos: 対象 repo + nozomiishii/brain
 - schedule: frontmatter と同じ cron
 - model: frontmatter と同じ model
