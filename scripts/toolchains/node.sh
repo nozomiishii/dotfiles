@@ -36,6 +36,7 @@ echo '- 🐉 Setup pnpm global'
     npm install -g typescript
     npm install -g typescript-language-server
     npm install -g @github/copilot
+    npm install -g @openai/codex
     npm install -g @antfu/ni
 )
 
