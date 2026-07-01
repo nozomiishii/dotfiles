@@ -2,7 +2,7 @@
 name: routine
 description: >-
   Claude Code Routine の追加・変更。
-  .routines/<name>.md の作成/編集 → brain repo に commit & push → /schedule で cloud trigger と同期。
+  .routines/<name>.md の作成/編集 → brain repo に PR 作成 → /schedule で cloud trigger と同期。
   ユーザーが /routine と入力したとき、「routine を追加したい」「定期実行を作りたい」と言ったとき、
   または .routines/ の設定を変更したとき（model / schedule / repos の変更を含む）に使用する。
 argument-hint: <routine-name> <概要>
@@ -77,19 +77,26 @@ model: <model>
 - `repos` には対象 repo と `nozomiishii/brain` の両方を含める
 - schedule の cron は UTC で書き、コメントに JST を添える
 
-### brain repo に commit & push
+### brain repo に PR 作成
 
 ```bash
 BRAIN="$HOME/Code/nozomiishii/brain"
-git -C "$BRAIN" checkout main
-git -C "$BRAIN" pull origin main
-# ファイルを配置した後
-git -C "$BRAIN" add ".routines/<name>.md"
-git -C "$BRAIN" commit -m "feat: add <name> routine prompt"
-git -C "$BRAIN" push origin main
+SLUG="routine-<name>"
+git -C "$BRAIN" fetch origin main --quiet
+git -C "$BRAIN" worktree add "$BRAIN/.claude/worktrees/$SLUG" -b "$SLUG" origin/main
 ```
 
-worktree にいる場合は `git -C` で brain repo を直接操作する。
+worktree 内にファイルを配置した後、commit → push → PR 作成:
+
+```bash
+WT="$BRAIN/.claude/worktrees/$SLUG"
+git -C "$WT" add ".routines/<name>.md"
+git -C "$WT" commit -m "feat: add <name> routine prompt"
+git -C "$WT" push -u origin "$SLUG"
+gh pr create -R nozomiishii/brain --base main --head "$SLUG" \
+  --title "feat: add <name> routine prompt" \
+  --body "（日本語の PR 本文）"
+```
 
 ### cloud trigger を登録する
 
