@@ -10,19 +10,10 @@ set -Ceuo pipefail
 
 echo "- 🧮 duti"
 
-# duti -s com.microsoft.VSCode yaml all
-# duti -s com.microsoft.VSCode json all
-# duti -s com.microsoft.VSCode css all
-# duti -s com.microsoft.VSCode markdown all
-# duti -s com.microsoft.VSCode sh all
-# duti -s com.microsoft.VSCode js all
-# duti -s com.microsoft.VSCode ts all
+# Cursor.app: com.todesktop.230313mzl4w4u92
+EDITOR_BUNDLE_ID="com.microsoft.VSCode"
 
-# Cursor.app
-# https://github.com/desktop/desktop/issues/17462
-CURSOR_BUNDLE_ID="com.todesktop.230313mzl4w4u92"
-
-cursor_extensions=(
+editor_extensions=(
   toml
   yaml
   yml
@@ -38,7 +29,7 @@ cursor_extensions=(
   pem
 )
 
-for ext in "${cursor_extensions[@]}"; do
-  duti -s "$CURSOR_BUNDLE_ID" "$ext" all
+for ext in "${editor_extensions[@]}"; do
+  duti -s "$EDITOR_BUNDLE_ID" "$ext" all
 done
 duti -s org.videolan.vlc mp4 all
