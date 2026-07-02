@@ -18,7 +18,7 @@ Claude Code Routine を git 管理で追加・変更する。
 - cloud trigger の Instructions は stub（`.routines/<name>.md を Read し、その指示に従って実行お願い。`）
 - 全 routine に `nozomiishii/brain` repo をアタッチする
 - `.routines/` の frontmatter と cloud trigger は二重管理。片方を変えたら必ず両方更新する
-- `.routines/` の frontmatter は brain repo の pre-commit（`scripts/lint-frontmatter.ts` + `scripts/schemas/claude/routines.ts`）で検証される。cron と JST コメントの整合も見られる
+- `.routines/` の frontmatter は brain repo の pre-commit（`scripts/lint-frontmatter.ts` + `scripts/schemas/claude/routines.ts`）で検証される。発火時刻の正しさは lint でなく trigger 登録・更新時の `next_run_at` 確認で担保する
 
 ## 新規追加
 
