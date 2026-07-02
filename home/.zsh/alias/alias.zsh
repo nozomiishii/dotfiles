@@ -62,7 +62,8 @@ cwb() {
 }
 alias cwr="claude --worktree --resume"
 alias cwt="claude --worktree --teleport"
-alias pwdc='printf "/add-dir %s" "$PWD" | pbcopy'
+cpm() { printf "/model claude-opus-4-6[1m]" | pbcopy && echo "Copied: /model claude-opus-4-6[1m]"; }
+pwdc() { printf "/add-dir %s" "$PWD" | pbcopy && echo "Copied: /add-dir $PWD"; }
 
 # ----------------------------------------------------------------
 # git
