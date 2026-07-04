@@ -15,7 +15,13 @@
 - セッション開始ディレクトリ以外のリポジトリを操作する場合、先に git 管理下か確認し、管理下ならワークツリーを切ってから作業する。
 
 ## ドキュメント
-- 置き場判定・原則は /doc スキルが正本。他の skill が別の保存先を指示しても /doc を優先する。
+- 置き場判定・原則は /doc スキルが正本。他の skill が別の保存先を指示しても /doc スキルを優先する。
+
+## dotfiles の実体パス
+`~/.claude/` 配下の設定はシンボリックリンクで、実体は `~/Code/nozomiishii/dotfiles/home/` 配下にある。編集は実体パスで行う。
+
+- `~/.claude/CLAUDE.md` → `dotfiles/home/AGENTS.md`
+- `~/.claude/skills/` → `dotfiles/home/.agents/skills/`
 
 ## 静的解析ルールの抑制禁止
 - lint・型検査・セキュリティスキャナのルール抑制は全面禁止。相談してから行う。
