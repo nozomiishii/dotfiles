@@ -1,9 +1,11 @@
 ---
 name: doc
 description: >-
-  会話の内容をどこに残すか判定し、保存まで実行する (issue / ADR / docs / brain ノート)。
+  ドキュメント・記録の運用の正本 (置き場判定・原則・ADR の作法)。
+  issue / ADR / docs / brain ノートに振り分けて保存まで実行する。
   ユーザーが /doc と入力したとき、「これ残しておきたい」「どこに書くべき?」と言ったとき、
-  または実装が完了して PR を作る前に残すべき仕様・判断がないか確認するときに使用する。
+  設計ドキュメント・仕様・README などドキュメントを書く・編集する前、
+  および実装が完了して PR を作る前の残し漏れ確認に使用する。
 ---
 
 # /doc
@@ -25,6 +27,8 @@ description: >-
 - なぜこうしたかの記録 (決着した判断) → 対象 repo の `docs/decisions/` に ADR
 - 今どうなってるかの事実 (仕様・手順) → 対象 repo の `docs/` (実装 PR に同梱)
 - repo に限らない学び → /note に委譲
+
+設計ドキュメント (spec) もこのフローに従い issue に書く。ファイルとして保存しない。他の skill が別の保存先 (superpowers brainstorming の docs/superpowers/specs 等) を指示していても、このフローを優先する。
 
 探すときの入口は 3 つ: repo のことは CLAUDE.md から docs/ へ、経緯は issue 検索と ADR、横断は brain vault。
 
