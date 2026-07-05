@@ -118,6 +118,28 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.hooks/session-env.sh",
+            "timeout": 300
+          }
+        ]
+      }
+    ],
+    "CwdChanged": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.hooks/session-env.sh",
+            "timeout": 300
+          }
+        ]
+      }
     ]
   },
   "worktree": {
