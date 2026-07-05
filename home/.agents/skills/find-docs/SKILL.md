@@ -32,11 +32,10 @@ Run the CLI through `nlx` so it works without a global Context7 install:
 nlx ctx7@latest <command>
 ```
 
-If `nlx` is unavailable, install `@antfu/ni` or use `pnpm dlx`:
+If `nlx` is unavailable, install `@antfu/ni`:
 
 ```bash
 npm install -g @antfu/ni
-pnpm dlx ctx7@latest <command>
 ```
 
 ## Workflow
@@ -152,8 +151,6 @@ If a command fails with a quota error ("Monthly quota reached" or "quota exceede
 3. If they cannot or choose not to authenticate, answer from training knowledge and clearly note it may be outdated
 
 Do not silently fall back to training data — always tell the user why Context7 was not used.
-
-If `nlx` fails because no package manager can be detected, use `pnpm dlx ctx7@latest ...` directly.
 
 ## Common Mistakes
 
