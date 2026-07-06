@@ -19,7 +19,7 @@ description: >-
 
 ## 手順
 
-### 1. 自分の surface を特定する
+### 自分の surface を特定する
 
 ```bash
 cmux identify
@@ -27,7 +27,7 @@ cmux identify
 
 `caller.surface_ref` が自分の surface。
 
-### 2. 送信先を決定する
+### 送信先を決定する
 
 引数に番号がある場合は `surface:<番号>` を送信先にする。
 
@@ -39,10 +39,10 @@ cmux list-panes
 cmux list-pane-surfaces --pane <pane_ref>
 ```
 
-- 自分以外の surface が **1 つだけ** → 確認なしでその surface に送る
-- **2 つ以上** → 一覧を提示してユーザーに選んでもらう
+- 自分以外の surface が 1 つだけ → 確認なしでその surface に送る
+- 2 つ以上 → 一覧を提示してユーザーに選んでもらう
 
-### 3. 送信先の状態を確認する
+### 送信先の状態を確認する
 
 ```bash
 cmux read-screen --surface <target_surface_ref> --lines 5
@@ -50,7 +50,7 @@ cmux read-screen --surface <target_surface_ref> --lines 5
 
 Claude Code のプロンプト（`❯` や `›`）が表示されていれば送信可能。
 
-### 4. コンテキストを一時ファイルに書き出す
+### コンテキストを一時ファイルに書き出す
 
 ```bash
 cat > "${TMPDIR:-/tmp}/cmux-context-$(date +%s).md" <<'CONTEXT'
@@ -58,10 +58,10 @@ cat > "${TMPDIR:-/tmp}/cmux-context-$(date +%s).md" <<'CONTEXT'
 CONTEXT
 ```
 
-### 5. 送信する
+### 送信する
 
 ```bash
 cmux send --surface <target_surface_ref> '隣のペインからコンテキストが届いています。次のファイルを読んでください: /path/to/file.md'
 ```
 
-**重要:** `\n` は Enter として送信される。ユーザーが「送って」と明示した場合のみ末尾に `\n` を付ける。確認が必要な場合は `\n` を付けずに送り、ユーザーに Enter を委ねる。
+`\n` は Enter として送信される。ユーザーが「送って」と明示した場合のみ末尾に `\n` を付ける。確認が必要な場合は `\n` を付けずに送り、ユーザーに Enter を委ねる。
