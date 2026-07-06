@@ -22,11 +22,11 @@ argument-hint: トピック名（任意）
 
 ## brain vault の worktree 作成
 
-/wt スキルで作る。REPO は `$HOME/Code/nozomiishii/brain`、SLUG は `note-<kebab-case-slug>`。
+/wt スキルで作る。REPO は `$HOME/Code/nozomiishii/brain`、branch 名は `note-<トピックの英訳 kebab-case>`。
 
 ## ノート作成
 
-選ばれたトピックごとに `brain/main/<slug>.md` に作成する。slug はトピック名から英小文字 kebab-case。
+選ばれたトピックごとに `brain/main/<ノート名>.md` に作成する。ノート名はトピック名そのままの日本語。スペースを含んでよく、ファイル名に使えない文字だけ置き換える。
 
 frontmatter のスキーマは `scripts/schemas/main.ts` を読んで従う。
 
@@ -83,7 +83,7 @@ WT="$BRAIN/.claude/worktrees/$SLUG"
 # 作成したファイルだけを個別に add する。
 # `git add "brain/main/"` はディレクトリ全体をステージするため、
 # 他の worktree や並行セッションが残したファイルまで巻き込む。
-git -C "$WT" add "brain/main/<slug-1>.md" "brain/main/<slug-2>.md"
+git -C "$WT" add "brain/main/<ノート名1>.md" "brain/main/<ノート名2>.md"
 git -C "$WT" commit -m "chore: add <topic> note"
 git -C "$WT" push -u origin "$SLUG"
 BODY_FILE=$(mktemp) && cat > "$BODY_FILE" <<'EOF'
