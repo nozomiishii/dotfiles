@@ -19,4 +19,22 @@ mkdir -p ~/.codex
 cp home/AGENTS.md ~/.codex/AGENTS.md
 cp home/.codex/hooks.json ~/.codex/hooks.json
 
+# direnv (session-env.sh hook が .envrc を評価するのに必要)
+if ! command -v direnv >/dev/null 2>&1; then
+  bin_path=/usr/local/bin
+  [ -w "$bin_path" ] || {
+    bin_path="$HOME/.local/bin"
+    mkdir -p "$bin_path"
+  }
+  curl -fsSL https://direnv.net/install.sh | bin_path="$bin_path" bash
+fi
+
+# direnv whitelist。cloud の checkout 配下だけを信頼する (作業中に clone した
+# 外部 repo の .envrc まで実行しないための信頼ゲート)。
+mkdir -p ~/.config/direnv
+cat >~/.config/direnv/direnv.toml <<EOF
+[whitelist]
+prefix = ["$PWD"]
+EOF
+
 rm -rf home/

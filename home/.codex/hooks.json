@@ -11,6 +11,17 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.hooks/session-env.sh",
+            "timeout": 300
+          }
+        ]
+      }
     ]
   }
 }
