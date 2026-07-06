@@ -29,7 +29,7 @@ font-family = "UDEV Gothic"
 font-feature = -calt, -liga, -dlig
 
 # Show "Quit Ghostty?" dialog
-confirm-close-surface = false
+# confirm-close-surface = false
 
 # Start Ghostty windows maximized
 maximize = true
