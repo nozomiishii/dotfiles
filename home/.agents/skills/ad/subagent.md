@@ -143,7 +143,7 @@ osascript -e 'tell application "Google Chrome" to activate'
 
 ## ポーリング
 
-各タブの状態を `running | needs-input | done | failed | timeout` の 5 状態で管理する。`done` か `failed` か `timeout` になったらそのタブのポーリング停止。`needs-input` でもポーリングは継続するが、エージェントは何もしない（ユーザー応答待ち）。
+各タブの状態を `running | needs-input | done | failed | timeout | skipped` の 6 状態で管理する。`done` か `failed` か `timeout` になったらそのタブのポーリング停止。`needs-input` でもポーリングは継続するが、エージェントは何もしない（ユーザー応答待ち）。ログイン要求・サブスクリプション要求でスキップしたタブは最初から `skipped` 固定で、ポーリング対象にしない。
 
 - `sleep 60`（60 秒待機）
 - 各タブで `javascript_tool` で状態判定（下記の判定ロジック）
@@ -230,10 +230,11 @@ osascript -e 'tell application "Google Chrome" to activate'
 | `done` | このタブのポーリング停止 |
 | `failed` | このタブのポーリング停止、失敗内容のスニペットを記録 |
 | `timeout` | このタブのポーリング停止、30 分経過時点の状態を記録 |
+| `skipped` | ポーリング対象外（ログイン・サブスク要求。完了報告にその旨を記載） |
 
 ## 完了報告
 
-全タブが `done` / `failed` / `timeout` のいずれかになったら、通知を出してから最終応答を返す:
+全タブが `done` / `failed` / `timeout` / `skipped` のいずれかになったら、通知を出してから最終応答を返す:
 
 ```bash
 osascript -e 'display notification "deep research が完了しました。タブを確認してください" with title "/ad" sound name "Glass"'

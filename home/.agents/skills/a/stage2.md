@@ -70,4 +70,4 @@
 
 - レートリミット・回答取得エラー → そのサイトはスキップして残り 2 社でレポートを作成、末尾に明記
 - 入力 URL が `null` のサイト → ポーリング・抽出をスキップし、レポートの「## タブ URL」では `n/a (Stage 1 で失敗)` と記載
-- Stage 1 の `error` に `"gemini fast fallback"` が含まれていた場合 → レポート末尾に「Gemini は Fast で回答（Pro 切替失敗）」と明記
+- この prompt に `gemini fast fallback` の記述があれば → レポート末尾に「Gemini は Fast で回答（Pro 切替失敗）」と明記
