@@ -10,6 +10,11 @@ set -Ceuo pipefail
 
 echo "- 🧮 duti"
 
+if [ "${CI:-false}" = "true" ]; then
+  echo "Running in CI environment, exiting script."
+  exit 0
+fi
+
 # Cursor.app: com.todesktop.230313mzl4w4u92
 EDITOR_BUNDLE_ID="com.microsoft.VSCode"
 
