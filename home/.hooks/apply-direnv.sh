@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# session-env.sh - エージェントのセッションで .envrc を評価する
+# apply-direnv.sh - エージェントのセッションで .envrc を評価する
 #
 # Claude Code / Codex の Bash tool は非対話シェルで、direnv の prompt hook が
 # 発火しない。このスクリプトを SessionStart / CwdChanged hook から呼び、
@@ -22,7 +22,7 @@ if [ -n "$root" ] && [ -f "$root/.envrc" ]; then
     # export bash は .envrc を評価する (副作用も走る) と同時に env の export 文を吐く。
     env_exports=$(direnv export bash) || env_exports=""
   else
-    echo "session-env: direnv not found; skipped $root/.envrc" >&2
+    echo "apply-direnv: direnv not found; skipped $root/.envrc" >&2
   fi
 fi
 
