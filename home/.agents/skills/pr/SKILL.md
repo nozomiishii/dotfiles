@@ -240,6 +240,10 @@ polling 例:
 ```bash
 # 初回 5s で素早く確認 → ~10 分まで 60s 間隔 → それ以降は 300s 間隔
 # nozomiishii 配下を実測すると 98 job 中 56% が timeout-minutes:10 のため、10 分で粒度を切り替える
+# zsh は配列 index が 1 始まりで ${intervals[0]} が空になり sleep が落ちるため、bash 明示で実行する。
+# script 内の single quote と衝突するので -c の文字列渡しではなく quoted heredoc で bash に渡す
+export OWNER NAME NUM
+bash <<'POLL'
 intervals=(5 60 60 60 60 60 60 60 60 60 60)
 deadline=$(( $(date +%s) + 60 * 60 ))
 i=0
@@ -279,6 +283,7 @@ while jq -e '
   i=$((i + 1))
   refresh_state
 done
+POLL
 # loop 抜け後の ${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json が次 iter の入力（「状態の収集」で再取得しない）
 ```
 
