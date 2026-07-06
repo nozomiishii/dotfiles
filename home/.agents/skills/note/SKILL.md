@@ -32,7 +32,7 @@ frontmatter のスキーマは `scripts/schemas/main.ts` を読んで従う。
 
 ノートの要件:
 
-- タグは内容に応じて適切なものを付ける（git, typescript, shell 等）
+- タグは既存ノートで使われているタグから選ぶ（git, typescript, shell 等）。合うものが無ければ新設する
 - session URL や出自情報は含めない
 - 見出しはトピックに応じて自然に。会話中のユーザーの疑問が核になるセクションは、その質問を簡潔にした疑問形にする（例: 「target って何？」「polyfill と構文変換は何が違う？」）
 - 関連する概念は `[[wiki-link]]` でつなぐ
