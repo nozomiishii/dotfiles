@@ -124,7 +124,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.hooks/session-env.sh",
+            "command": "bash ~/.hooks/apply-direnv.sh",
             "timeout": 300
           }
         ]
@@ -135,7 +135,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.hooks/session-env.sh",
+            "command": "bash ~/.hooks/apply-direnv.sh",
             "timeout": 300
           }
         ]

@@ -22,12 +22,7 @@ argument-hint: トピック名（任意）
 
 ## brain vault の worktree 作成
 
-```shell
-BRAIN="$HOME/Code/nozomiishii/brain"
-SLUG="note-<kebab-case-slug>"
-git -C "$BRAIN" fetch origin main --quiet
-git -C "$BRAIN" worktree add "$BRAIN/.claude/worktrees/$SLUG" -b "$SLUG" origin/main
-```
+/wt スキルで作る。REPO は `$HOME/Code/nozomiishii/brain`、SLUG は `note-<kebab-case-slug>`。
 
 ## ノート作成
 
