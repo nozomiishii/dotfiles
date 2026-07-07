@@ -118,28 +118,6 @@
           }
         ]
       }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.hooks/apply-direnv.sh",
-            "timeout": 300
-          }
-        ]
-      }
-    ],
-    "CwdChanged": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.hooks/apply-direnv.sh",
-            "timeout": 300
-          }
-        ]
-      }
     ]
   },
   "worktree": {
