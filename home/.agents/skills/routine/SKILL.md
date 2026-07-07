@@ -14,6 +14,7 @@ Claude Code Routine を git 管理で追加・変更する。
 
 ## 前提
 
+- Routines は Claude Code の定期実行機能 <https://code.claude.com/docs/ja/routines>
 - routine prompt の正本は `nozomiishii/brain` repo（`~/Code/nozomiishii/brain`）の `.routines/<name>.md`
 - cloud trigger の Instructions は stub（`.routines/<name>.md を Read し、その指示に従って実行お願い。`）
 - 全 routine に `nozomiishii/brain` repo をアタッチする
