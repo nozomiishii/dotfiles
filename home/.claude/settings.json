@@ -128,7 +128,6 @@
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
   },

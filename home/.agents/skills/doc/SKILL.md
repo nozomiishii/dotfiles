@@ -28,7 +28,7 @@ description: >-
 - 今どうなってるかの事実 (仕様・手順) → 対象 repo の `docs/` (実装 PR に同梱)
 - repo に限らない学び → /note に委譲
 
-設計ドキュメント (spec) もこのフローに従い issue に書く。ファイルとして保存しない。他の skill が別の保存先 (superpowers brainstorming の docs/superpowers/specs 等) を指示していても、このフローを優先する。
+設計ドキュメント (spec) もこのフローに従い issue に書く。ファイルとして保存しない。
 
 探すときの入口は 3 つ: repo のことは CLAUDE.md から docs/ へ、経緯は issue 検索と ADR、横断は brain vault。
 

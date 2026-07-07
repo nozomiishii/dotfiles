@@ -57,7 +57,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 プロジェクト数と変更の複雑さに応じて選ぶ:
 
 - 数件 or 変更が単純（1 ファイル sed 相当）: foreground で順に処理。`git -C <rootPath>` で操作する
-- 多数 or 変更にコンテキスト判断が要る（コミットメッセージ自動生成、conflict 解消、新規ファイル雛形作成など）: `superpowers:dispatching-parallel-agents` を使って各プロジェクトを別 Agent に dispatch する
+- 多数 or 変更にコンテキスト判断が要る（コミットメッセージ自動生成、conflict 解消、新規ファイル雛形作成など）: Agent tool で各プロジェクトを別 Agent に dispatch する
 
 各プロジェクトで実行する典型ステップ:
 
