@@ -28,7 +28,7 @@ argument-hint: トピック名（任意）
 
 選ばれたトピックごとに `brain/main/<ノート名>.md` に作成する。ノート名はトピック名そのままの日本語。スペースを含んでよく、ファイル名に使えない文字だけ置き換える。
 
-frontmatter のスキーマは `scripts/schemas/main.ts` を読んで従う。
+frontmatter のスキーマは `scripts/schemas/obsidian/main.ts` を読んで従う。
 
 ノートの要件:
 
