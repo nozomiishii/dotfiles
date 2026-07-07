@@ -19,7 +19,7 @@ mkdir -p ~/.codex
 cp home/AGENTS.md ~/.codex/AGENTS.md
 cp home/.codex/hooks.json ~/.codex/hooks.json
 
-# direnv (apply-direnv.sh hook が .envrc を評価するのに必要)
+# direnv (各 repo の .hooks/apply-direnv.sh hook が .envrc を評価するのに必要)
 if ! command -v direnv >/dev/null 2>&1; then
   bin_path=/usr/local/bin
   [ -w "$bin_path" ] || {
