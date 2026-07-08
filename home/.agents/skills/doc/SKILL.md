@@ -22,13 +22,14 @@ description: >-
 
 内容ごとに次で判定する。判定はこのスキルの内部ロジックで行い、ユーザーへの一問一答はしない。
 
-- まだやってない話 (思いつき・保留) → 対象 repo の issue
-- どう作るかの議論 (design doc) → 対象 repo の issue
+- まだやってない話 (思いつき・保留・未着手の計画) → 対象 repo の issue
+- 未着手の実装の design doc → 対象 repo の issue
+- 着手中の実装の design doc → 対象 repo の `docs/` (実装 PR で育てる)
 - なぜこうしたかの記録 (決着した判断) → 対象 repo の `docs/decisions/` に ADR
 - 今どうなってるかの事実 (仕様・手順) → 対象 repo の `docs/` (実装 PR に同梱)
 - repo に限らない学び → /note に委譲
 
-設計ドキュメント (spec) もこのフローに従い issue に書く。ファイルとして保存しない。
+design doc の置き場は着手で切り替わる。着手したら issue の内容を `docs/` のファイルへ移し、実装 PR で実装と一緒に育てる。issue には移した先のリンクだけ残し、実装 PR で close する (正本は 1 つ)。マージまでに「どう作るか」の記述を削り、今どうなってるかの Reference に仕上げる。経緯として残したい判断は ADR に書く。
 
 探すときの入口は 3 つ: repo のことは CLAUDE.md から docs/ へ、経緯は issue 検索と ADR、横断は brain vault。
 
@@ -77,6 +78,7 @@ Date: YYYY-MM-DD
 ## 実行: docs/ (仕様・手順)
 
 - Diátaxis でいう Reference (事実) と How-to (手順) だけを書く。経緯は issue と ADR に任せる
+- 着手中の design doc だけは例外として置いてよい。マージまでに Reference に仕上げる
 - 実装 PR に同梱する。docs 単独メンテの PR は作らない
 - ファイル名は内容がわかる日本語で付ける。ファイル名に使えない文字だけ置き換える
 - 手書きの index ファイルは作らない。内容がわかるファイル名が index の役割を果たす
@@ -92,4 +94,5 @@ Date: YYYY-MM-DD
 
 - 後で「なんでこうしたんだっけ」と聞きたくなる判断をしたか → ADR
 - 仕様・手順が変わったか → docs/ を同じ PR で更新
+- design doc に「どう作るか」の記述が残っていないか → 削って Reference に仕上げる。残したい判断は ADR
 - repo に限らない学びがあったか → /note
