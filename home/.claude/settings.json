@@ -173,11 +173,24 @@
         "~/Library/Application Support/cmux/cmux.sock"
       ],
       "allowLocalBinding": true,
-      "allowMachLookup": ["org.chromium.Chromium.MachPortRendezvousServer.*", "com.apple.trustd.agent"]
+      "allowMachLookup": [
+        "org.chromium.Chromium.MachPortRendezvousServer.*",
+        "com.apple.trustd.agent"
+      ]
     },
     "filesystem": {
-      "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"],
-      "denyRead": ["~/.ssh", "~/.aws/credentials", "~/.gnupg", "~/.netrc", "~/.config/op"]
+      "allowWrite": [
+        "/tmp",
+        "~/.npm",
+        "~/Library/pnpm/store"
+      ],
+      "denyRead": [
+        "~/.ssh",
+        "~/.aws/credentials",
+        "~/.gnupg",
+        "~/.netrc",
+        "~/.config/op"
+      ]
     },
     "excludedCommands": [
       "docker:*",
