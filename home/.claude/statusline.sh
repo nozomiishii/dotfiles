@@ -186,21 +186,51 @@ render_env_line() {
   join ' | ' "${parts[@]}"
 }
 
-# 3行目: 応答している dev サーバーの URL。スマホから打ち込めるよう LAN IP の URL も添える。
-# サーバーが立っていないときは行ごと出さない。ポートは使う開発サーバーに合わせて足す。
+# 3行目: このプロジェクトで起動している dev サーバーの URL。スマホから打ち込めるよう
+# LAN IP の URL も添える。サーバーが立っていないときは行ごと出さない。
+# ポート固定だと並行開発 (別 worktree のサーバーや vite の自動ポートずらし) で他の
+# サーバーを拾うため、プロセスの cwd が project_dir 配下にある LISTEN ポートだけを対象にする。
 render_dev_line() {
-  local ports=(5173 3000)
-  local lan_ip
+  # pid:port の一覧 (IPv4 / IPv6 の重複は sort -u で除去)
+  local listen
+  listen=$(lsof -nP -iTCP -sTCP:LISTEN -Fpn 2>/dev/null | awk '
+    /^p/ { pid = substr($0, 2) }
+    /^n/ { n = $0; sub(/^n.*:/, "", n); if (n ~ /^[0-9]+$/) print pid ":" n }
+  ' | sort -u)
+  [[ -z "$listen" ]] && return
+
+  # pid ごとの cwd を一括で引き、project_dir 配下の pid だけ残す
+  local pids project_pids=" " pid="" line proc_cwd
+  pids=$(cut -d: -f1 <<<"$listen" | sort -u | paste -sd, -)
+  while IFS= read -r line; do
+    case "$line" in
+      p*) pid="${line#p}" ;;
+      n*)
+        proc_cwd="${line#n}"
+        if [[ "$proc_cwd" == "$project_dir" || "$proc_cwd" == "$project_dir"/* ]]; then
+          project_pids+="${pid} "
+        fi
+        ;;
+    esac
+  done < <(lsof -a -p "$pids" -d cwd -Fpn 2>/dev/null)
+  [[ "$project_pids" == " " ]] && return
+
+  # 対象 pid のポートのうち HTTP が返るものだけ表示 (inspector 等のノイズ除け)。
+  # 応答しないポートは接続拒否で即返る。-m はハング対策
+  local lan_ip entry port seen=" " part parts=()
   lan_ip=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || true)
-  local parts=() port part
-  for port in "${ports[@]}"; do
-    # 応答しないポートは接続拒否で即返る。-m はハング対策
+  while IFS= read -r entry; do
+    pid="${entry%%:*}"
+    port="${entry##*:}"
+    [[ "$project_pids" == *" ${pid} "* ]] || continue
+    [[ "$seen" == *" ${port} "* ]] && continue
+    seen+="${port} "
     curl -sf -m 0.2 -o /dev/null "http://127.0.0.1:${port}/" || continue
     # 緑の ● = 稼働中ランプ。括弧内はスマホから打ち込む LAN IP の URL
     part="${green_bold}●${reset} http://localhost:${port}"
     [[ -n "$lan_ip" ]] && part+=" (http://${lan_ip}:${port})"
     parts+=("$part")
-  done
+  done <<<"$listen"
   ((${#parts[@]} == 0)) && return
   join ' | ' "${parts[@]}"
 }
