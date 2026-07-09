@@ -20,13 +20,25 @@ cp home/AGENTS.md ~/.codex/AGENTS.md
 cp home/.codex/hooks.json ~/.codex/hooks.json
 
 # direnv (各 repo の .hooks/apply-direnv.sh hook が .envrc を評価するのに必要)
+# 公式 install.sh は api.github.com を叩く。cloud の egress IP は共有のため未認証
+# rate limit (60 req/h) を使い切ると 403 で落ちる。release asset を直接取る。
 if ! command -v direnv >/dev/null 2>&1; then
   bin_path=/usr/local/bin
   [ -w "$bin_path" ] || {
     bin_path="$HOME/.local/bin"
     mkdir -p "$bin_path"
   }
-  curl -fsSL https://direnv.net/install.sh | bin_path="$bin_path" bash
+  case "$(uname -m)" in
+  x86_64) arch=amd64 ;;
+  aarch64 | arm64) arch=arm64 ;;
+  *)
+    echo "direnv: unsupported machine $(uname -m)" >&2
+    exit 1
+    ;;
+  esac
+  curl -fsSL -o "$bin_path/direnv" \
+    "https://github.com/direnv/direnv/releases/latest/download/direnv.linux-$arch"
+  chmod +x "$bin_path/direnv"
 fi
 
 # direnv whitelist。cloud の checkout 配下だけを信頼する (作業中に clone した
