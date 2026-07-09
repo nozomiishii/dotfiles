@@ -196,8 +196,9 @@ render_dev_line() {
   for port in "${ports[@]}"; do
     # 応答しないポートは接続拒否で即返る。-m はハング対策
     curl -sf -m 0.2 -o /dev/null "http://127.0.0.1:${port}/" || continue
-    part="${green_bold}dev${reset} http://localhost:${port}"
-    [[ -n "$lan_ip" ]] && part+=" ${gray}phone${reset} http://${lan_ip}:${port}"
+    # 緑の ● = 稼働中ランプ。括弧内はスマホから打ち込む LAN IP の URL
+    part="${green_bold}●${reset} http://localhost:${port}"
+    [[ -n "$lan_ip" ]] && part+=" (http://${lan_ip}:${port})"
     parts+=("$part")
   done
   ((${#parts[@]} == 0)) && return
