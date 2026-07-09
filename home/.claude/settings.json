@@ -129,7 +129,16 @@
   },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "sentry-mcp@sentry-mcp": true
+  },
+  "extraKnownMarketplaces": {
+    "sentry-mcp": {
+      "source": {
+        "source": "github",
+        "repo": "getsentry/sentry-mcp"
+      }
+    }
   },
   "language": "japanese",
   "sandbox": {
