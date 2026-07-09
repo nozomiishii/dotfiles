@@ -186,6 +186,24 @@ render_env_line() {
   join ' | ' "${parts[@]}"
 }
 
+# 3行目: 応答している dev サーバーの URL。スマホから打ち込めるよう LAN IP の URL も添える。
+# サーバーが立っていないときは行ごと出さない。ポートは使う開発サーバーに合わせて足す。
+render_dev_line() {
+  local ports=(5173 3000)
+  local lan_ip
+  lan_ip=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || true)
+  local parts=() port part
+  for port in "${ports[@]}"; do
+    # 応答しないポートは接続拒否で即返る。-m はハング対策
+    curl -sf -m 0.2 -o /dev/null "http://127.0.0.1:${port}/" || continue
+    part="${green_bold}dev${reset} http://localhost:${port}"
+    [[ -n "$lan_ip" ]] && part+=" ${gray}phone${reset} http://${lan_ip}:${port}"
+    parts+=("$part")
+  done
+  ((${#parts[@]} == 0)) && return
+  join ' | ' "${parts[@]}"
+}
+
 # --- output ---
 
 # project_dir (claude 起動時の固定 cwd) が消えた場合 (git worktree remove 等)
@@ -195,4 +213,10 @@ if [[ ! -d "$project_dir" ]]; then
   exit 0
 fi
 
-printf '%s\n%s' "$(render_top_line)" "$(render_env_line)"
+dev_line=$(render_dev_line)
+
+if [[ -n "$dev_line" ]]; then
+  printf '%s\n%s\n%s' "$(render_top_line)" "$(render_env_line)" "$dev_line"
+else
+  printf '%s\n%s' "$(render_top_line)" "$(render_env_line)"
+fi
