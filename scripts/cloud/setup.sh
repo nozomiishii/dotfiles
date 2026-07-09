@@ -26,7 +26,12 @@ if ! command -v direnv >/dev/null 2>&1; then
     bin_path="$HOME/.local/bin"
     mkdir -p "$bin_path"
   }
-  curl -fsSL https://direnv.net/install.sh | bin_path="$bin_path" bash
+  # install.sh 経由は api.github.com / direnv.net など多段の宛先を踏むため
+  # cloud の allowlist が確定しない。GitHub の latest リリース資産を直接取得し、
+  # 必要な宛先を github.com とそのアセット CDN だけに絞る。
+  curl -fsSL -o "$bin_path/direnv" \
+    "https://github.com/direnv/direnv/releases/latest/download/direnv.linux-amd64"
+  chmod +x "$bin_path/direnv"
 fi
 
 # direnv whitelist。cloud の checkout 配下だけを信頼する (作業中に clone した
