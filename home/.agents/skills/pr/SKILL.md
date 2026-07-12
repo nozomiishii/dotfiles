@@ -83,7 +83,7 @@ gh pr view <N> --json number,url,headRefName,state,mergeStateStatus,mergeable,re
 
 ## 状態の収集
 
-GraphQL 1 ショットで PR の完全な state を取得し、temp file (`${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`、owner / repo / PR 番号で名前空間を切って並列セッション + 異 repo 同 PR 番号での衝突回避) に保存して以降の判断で再利用する。本 iteration 内では再 fetch しない。
+GraphQL 1 ショットで PR の完全な state を取得し、temp file (`/tmp/claude-$(id -u)/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`、owner / repo / PR 番号で名前空間を切って並列セッション + 異 repo 同 PR 番号での衝突回避) に保存して以降の判断で再利用する。本 iteration 内では再 fetch しない。
 
 「状態の収集」を実行するタイミング:
 
@@ -93,10 +93,16 @@ GraphQL 1 ショットで PR の完全な state を取得し、temp file (`${TMP
 
 ```bash
 # $OWNER / $NAME / $NUM は「引数の解釈」でセット済み
-STATE_FILE="${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json"
+# TMPDIR は使わない: Claude Code の sandbox は Bash 呼び出しごとに TMPDIR を差し替えることが
+# あり、呼び出しをまたぐ state file の再利用が壊れる。uid で名前空間を切った固定パスに置く
+STATE_DIR="/tmp/claude-$(id -u)"
+mkdir -p -m 700 "$STATE_DIR"
+# 他ユーザーが先回りで同名 dir を作る squatting を弾く
+[ -O "$STATE_DIR" ] || { echo "ERROR: $STATE_DIR is not owned by me" >&2; exit 1; }
+STATE_FILE="$STATE_DIR/claude-pr-state-${OWNER}-${NAME}-${NUM}.json"
 # 事前 planted の symlink 経由でリダイレクト先を上書きされる TOCTOU 攻撃を弾く
 [ -L "$STATE_FILE" ] && { echo "ERROR: $STATE_FILE is a symlink, refusing to write" >&2; exit 1; }
-umask 077  # 他ユーザー read 不可で作成（/tmp 直叩きフォールバック時の保険）
+umask 077  # 他ユーザー read 不可で作成
 gh api graphql \
   -F owner="$OWNER" -F name="$NAME" -F number="$NUM" \
   -F query=@"$HOME/.agents/skills/pr/state-query.graphql" \
@@ -129,7 +135,7 @@ state から判断する典型項目:
 
 - GraphQL の connection cap: `contexts(first: 100)` / `reviewThreads(first: 50)` / `comments(last: 5)`。各 thread の comments は `last: 5` で末尾側を取っているので `nodes[-1]` が確実に「最新コメント」になる（`first: 20` だと 21 件以上の thread で「先頭 20 件の末尾」=「実質的な中央」を最新と誤認する罠があるため）。reviewThreads / contexts の上限を超えるほど長期化した PR が出たら pagination 対応を検討する
 - `StatusContext` (legacy CI integrations: Travis, AppVeyor 等) は `__typename` で分岐して失敗判定では無視している（`nozomiishii` 配下は全 GitHub Actions = `CheckRun`）。今後 legacy CI を入れる repo で `/pr` を回す場合はここの再検討が必要
-- state file の置き場所: `${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`。macOS では `$TMPDIR` が user-private な `/var/folders/<user>/.../T/` を指すので他ユーザーから読めない。Linux / WSL で `$TMPDIR` 未設定 → `/tmp` フォールバックの場合に備えて、書き込み前に symlink check で TOCTOU planted symlink を弾き、`umask 077` で perms 600 にして world-read を防ぐ。残存リスク: symlink check と redirect 間に共有 `/tmp` で攻撃者が swap する race window があるが、shell redirect の根源的制約なので mktemp に移行しない限り完全には潰せない（dotfiles ユースケースでは許容範囲と判断）
+- state file の置き場所: `/tmp/claude-$(id -u)/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`。`$TMPDIR` を使わないのは、Claude Code の sandbox が Bash 呼び出しごとに TMPDIR を差し替えることがあり (呼び出し限りの一時 dir を指す場合、終了時に中身ごと消える)、呼び出しをまたぐ state の再利用というこの skill の前提が壊れるため。共有 `/tmp` 直下に置くので、uid 名前空間の dir を `mkdir -p -m 700` で作り、`-O` の所有者確認で squatting を弾き、書き込み前の symlink check で TOCTOU planted symlink を弾き、`umask 077` で perms 600 にして world-read を防ぐ。残存リスク: symlink check と redirect 間に攻撃者が swap する race window があるが、shell redirect の根源的制約なので mktemp に移行しない限り完全には潰せない（dotfiles ユースケースでは許容範囲と判断）
 
 ## 修復（優先度順）
 
@@ -139,7 +145,7 @@ state から判断する典型項目:
 
 ### CI を直す
 
-`${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json` から失敗 run の ID を抽出してログ取得:
+state file から失敗 run の ID を抽出してログ取得:
 
 ```bash
 # statusCheckRollup が null（push 直後の race）でも落ちないように nodes[]? を使う。
@@ -151,7 +157,7 @@ jq -r '
            and (.conclusion | IN("FAILURE","TIMED_OUT","CANCELLED","STARTUP_FAILURE","ACTION_REQUIRED")))
   | .checkSuite.workflowRun.databaseId
   | select(. != null)
-' ${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json | sort -u | while read -r RUN_ID; do
+' "/tmp/claude-$(id -u)/claude-pr-state-${OWNER}-${NAME}-${NUM}.json" | sort -u | while read -r RUN_ID; do
   gh run view "$RUN_ID" --log-failed
 done
 ```
@@ -175,14 +181,14 @@ git push
 
 ### レビュー指摘に対応
 
-`${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json` の `reviewThreads` で `isResolved` が `false` の thread を順に確認する。GraphQL が確定状態を返すので、旧 REST `comments` + `in_reply_to_id` chain を辿る推測判定は不要。
+state file の `reviewThreads` で `isResolved` が `false` の thread を順に確認する。GraphQL が確定状態を返すので、旧 REST `comments` + `in_reply_to_id` chain を辿る推測判定は不要。
 
 ```bash
 jq -r '
   .reviewThreads.nodes[]
   | select(.isResolved | not)
   | "[\(.id)] \(.comments.nodes[0].path // "?"):\(.comments.nodes[0].line // 0) — \(.comments.nodes[-1].body | .[0:80])"
-' ${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json
+' "/tmp/claude-$(id -u)/claude-pr-state-${OWNER}-${NAME}-${NUM}.json"
 ```
 
 未解決 thread ごとに:
@@ -229,7 +235,7 @@ worktree でも動くよう `git checkout main` は使わない。
 
 ## ループ
 
-push の後は CI が走り直すので、graphql で state を取り直して `${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json` を更新する。polling 終了時の最終 state がそのまま次 iter の入力になるので、「状態の収集」で再取得しない。
+push の後は CI が走り直すので、graphql で state を取り直して state file を更新する。polling 終了時の最終 state がそのまま次 iter の入力になるので、「状態の収集」で再取得しない。
 
 ### CI 完了の待ち方
 
@@ -249,7 +255,10 @@ deadline=$(( $(date +%s) + 60 * 60 ))
 i=0
 
 refresh_state() {
-  local f="${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json"
+  local dir="/tmp/claude-$(id -u)"
+  mkdir -p -m 700 "$dir"
+  [ -O "$dir" ] || { echo "ERROR: $dir is not owned by me" >&2; return 1; }
+  local f="$dir/claude-pr-state-${OWNER}-${NAME}-${NUM}.json"
   [ -L "$f" ] && { echo "ERROR: $f is a symlink, refusing to write" >&2; return 1; }
   umask 077
   gh api graphql \
@@ -270,7 +279,7 @@ while jq -e '
   | ($r == null)
     or ($r.state == "EXPECTED") or ($r.state == "PENDING")
     or (.mergeable == "UNKNOWN")
-' ${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json >/dev/null 2>&1; do
+' "/tmp/claude-$(id -u)/claude-pr-state-${OWNER}-${NAME}-${NUM}.json" >/dev/null 2>&1; do
   if [ "$(date +%s)" -ge "$deadline" ]; then
     echo "CI polling exceeded 60 min" >&2
     break
@@ -284,7 +293,7 @@ while jq -e '
   refresh_state
 done
 POLL
-# loop 抜け後の ${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json が次 iter の入力（「状態の収集」で再取得しない）
+# loop 抜け後の state file が次 iter の入力（「状態の収集」で再取得しない）
 ```
 
 旧実装で警戒していた `gh pr checks --watch` 無限ループ問題（path-filter で skip された workflow を gh CLI が terminal と認識しないやつ）は、本実装が `statusCheckRollup.state` を直接見るので回避される。skip された workflow run は check が作られず rollup の集計対象から外れ、skip された個別 job は `conclusion: SKIPPED` で `COMPLETED` 扱いになるので、rollup state は最終的に `SUCCESS` / `FAILURE` / `ERROR` のいずれかに確実に落ちる。
@@ -312,7 +321,7 @@ POLL
 
 - マージは絶対に実行しない（`gh pr merge` / `gh api .../merge` 禁止）
 - 状態取得は「状態の収集」の GraphQL に一元化する: トラブルシューティング中でも `gh pr checks` / `gh pr view --json reviews,statusCheckRollup,...` / `gh api .../comments` を個別に呼ばない。3 calls 間の snapshot ズレと、resolved 判定の REST 推測ミスを避けるため
-- state file (`${TMPDIR:-/tmp}/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`) は明示削除しない: OS の `/tmp` 定期 purge に任せる。skill 終了時に `rm` を仕込まないことで、直後の手動デバッグ（`jq ... "${TMPDIR:-/tmp}/claude-pr-state-<OWNER>-<NAME>-<NUM>.json"` で覗く）の利便性を維持する。書き込み側のセキュリティガード（symlink check + `umask 077`）は「状態の収集」と `refresh_state` に組み込み済みなので、`/tmp` フォールバック環境でも TOCTOU planted symlink と world-read の主要経路は塞がれる
+- state file (`/tmp/claude-$(id -u)/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`) は明示削除しない: OS の `/tmp` 定期 purge に任せる。skill 終了時に `rm` を仕込まないことで、直後の手動デバッグ（`jq ... "/tmp/claude-$(id -u)/claude-pr-state-<OWNER>-<NAME>-<NUM>.json"` で覗く）の利便性を維持する。書き込み側のセキュリティガード（dir の `mkdir -p -m 700` + `-O` 所有者確認、file の symlink check + `umask 077`）は「状態の収集」と `refresh_state` に組み込み済みなので、共有 `/tmp` 直下でも squatting・TOCTOU planted symlink・world-read の主要経路は塞がれる
 - PR タイトル / コミットメッセージは英語 Conventional Commits 形式（小文字始まり、ASCII のみ、scope 無し、末尾スペース禁止）
 - PR 本文に追記する必要が出た場合は、本文部分は日本語のまま
 - `gh pr edit` で本文を更新するときは `--body-file` を使う（HEREDOC で `--body` 直渡しは command injection 検出に引っかかる）
