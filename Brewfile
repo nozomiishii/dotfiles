@@ -230,8 +230,8 @@ if OS.mac?
   # GIT client　https://fork.dev/
   cask "fork"
 
-  # OpenAI's official browser with ChatGPT built in https://chatgpt.com/atlas
-  cask "chatgpt-atlas"
+  # OpenAI's official ChatGPT desktop app https://chatgpt.com/
+  cask "chatgpt"
 
   # Web browser. https://www.google.com/chrome
   cask "google-chrome"
