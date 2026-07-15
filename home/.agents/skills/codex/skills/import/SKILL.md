@@ -1,12 +1,12 @@
 ---
-name: from-codex
+name: import
 description: >-
   Codex CLI / Codex App のセッション内容を現在の Claude Code セッションに引き継ぐ。
-  ユーザーが /from-codex と入力したとき、または「Codex でやっていた作業の続きをやって」
+  ユーザーが /codex:import と入力したとき、または「Codex でやっていた作業の続きをやって」
   「Codex セッションを引き継いで」と言ったときに使用する。
 ---
 
-# /from-codex
+# /codex:import
 
 Codex セッション (rollout JSONL) から依頼・作業内容・残タスクを抽出し、現状と突き合わせてから続きを再開する。openai-codex plugin の /codex:transfer (Claude Code → Codex) の逆方向。
 

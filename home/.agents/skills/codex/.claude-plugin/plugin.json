@@ -1,0 +1,4 @@
+{
+  "name": "codex",
+  "description": "Codex セッションを Claude Code 側で扱う個人スキル群。openai-codex plugin の逆方向を補完する。"
+}
