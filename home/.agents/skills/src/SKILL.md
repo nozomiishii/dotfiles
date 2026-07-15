@@ -6,6 +6,7 @@ disable-model-invocation: true
 allowed-tools:
   - WebSearch
   - WebFetch
+model: sonnet
 ---
 
 # /src

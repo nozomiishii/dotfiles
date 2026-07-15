@@ -2,6 +2,7 @@
 name: sync-settings-doc
 description: Claude Code の settings.json と settings.md をレビューして同期する
 disable-model-invocation: true
+model: sonnet
 ---
 
 # Settings Sync & Review
