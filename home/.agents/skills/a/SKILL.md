@@ -3,6 +3,7 @@ name: a
 description: ChatGPT・Claude・Geminiに同じ質問を並列投下して回答を比較
 argument-hint: <question>
 disable-model-invocation: true
+model: sonnet
 ---
 
 # /a wrapper

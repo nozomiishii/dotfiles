@@ -3,6 +3,7 @@ name: ad
 description: /a を deep research モードで実行する
 argument-hint: <question>
 disable-model-invocation: true
+model: sonnet
 ---
 
 # /ad wrapper

@@ -4,6 +4,7 @@ description: >-
   隣の cmux ペインにコンテキスト（テキスト情報）を送信する。
   ユーザーが「隣のペインに送って」「他のセッションに共有して」「/cmux-send」などと言ったときに使用する。
   引数の数字は surface ref の省略形（例: 1 = surface:1）。
+model: sonnet
 ---
 
 # cmux ペイン間コンテキスト送信
