@@ -34,6 +34,9 @@
 - 自分のプロジェクトの commit message は ASCII で書く。type は feat / fix / chore / revert と破壊的変更の `!` のみ。docs 相当も fix か chore にする。外部リポジトリはその規約に従う。
 - プロジェクトで指定がない場合、PR本文は日本語で書く。
 - PR に依頼と無関係な変更を混ぜない。
+  - `git add` はファイル名指定。`git add -A` / `git add .` は使わない。
+  - hook 失敗→再コミット時は `git status` で staging area を確認してからコミットする。
+  - PR 作成前に `git diff origin/main..HEAD --stat` で混入がないことを確認する。
 - レビューコメントへの対応はプッシュで終わらせず、必ず元コメントに返信する。
   - 対応した場合: どう対応したかとコミットの URL を返信する。
   - 対応しなかった場合: 議論の内容と対応しない旨を返信する。
