@@ -77,9 +77,6 @@ if OS.mac?
   # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
   cask "ghostty"
 
-  # Agent multiplexer that lives in your terminal https://herdr.dev/
-  brew "herdr"
-
   # Japanese programming font combining JetBrains Mono and BIZ UDGothic https://github.com/yuru7/udev-gothic
   cask "font-udev-gothic"
 
