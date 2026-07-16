@@ -26,6 +26,10 @@ model: sonnet
 
 把握した変更のうち関連するものだけをステージしてコミットし、リモートへ push する。無関係な変更を巻き込まない。
 
+## PR 作成前の diff 検証
+
+`git diff origin/main..HEAD --stat` で、意図したファイルだけが含まれているか確認する。無関係なファイルがあれば `git rebase origin/main` で起点を揃えてから進む。
+
 ## PR 作成（必要な場合のみ）
 
 既存の OPEN な PR がない場合、PR を作成する。

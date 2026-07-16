@@ -108,6 +108,8 @@ git commit -m "chore: remove <何を>"
 git push -u origin <branch>
 ```
 
+PR 作成前に `git diff origin/main..HEAD --stat` で無関係なファイルが混入していないか確認する。あれば `git rebase origin/main` で起点を揃える。
+
 PR 本文には archives 側の PR へのリンクを含める。
 
 両方の PR の URL をまとめて返す。
