@@ -27,7 +27,10 @@ description: >-
 - 着手中の実装の design doc → 対象 repo の `docs/` (実装 PR で育てる)
 - なぜこうしたかの記録 (決着した判断) → 対象 repo の `docs/decisions/` に ADR
 - 今どうなってるかの事実 (仕様・手順) → 対象 repo の `docs/` (実装 PR に同梱)
+- AI エージェントへの行動指針・フィードバック (呼称・進め方の好み・作業ルール) → CLAUDE.md (全 repo 共通は `dotfiles/home/AGENTS.md`、repo 固有は対象 repo の CLAUDE.md)
 - repo に限らない学び → /note に委譲
+
+auto memory は無効化している (`autoMemoryEnabled: false`)。memory に書きたくなる内容はこのフローで CLAUDE.md / issue / brain に振り分ける。
 
 design doc の置き場は着手で切り替わる。着手したら issue の内容を `docs/` のファイルへ移し、実装 PR で実装と一緒に育てる。issue には移した先のリンクだけ残し、実装 PR で close する (正本は 1 つ)。マージまでに「どう作るか」の記述を削り、今どうなってるかの Reference に仕上げる。経緯として残したい判断は ADR に書く。
 
