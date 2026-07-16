@@ -488,13 +488,6 @@
       "extends": "brew"
     },
     {
-      "icon": "opentofu",
-      "extensions": [".opentofu-version"],
-      "filename": true,
-      "format": "svg",
-      "extends": "opentofu"
-    },
-    {
       "icon": "swift",
       "extensions": ["Mintfile", ".swiftformat"],
       "filename": true,
