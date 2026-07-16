@@ -115,6 +115,16 @@
             "type": "command",
             "command": "bash ~/.hooks/block-op-cli.sh",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "bash ~/.hooks/block-main-head-rewrite.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "bash ~/.hooks/inspect-git-push.sh",
+            "timeout": 10
           }
         ]
       }
