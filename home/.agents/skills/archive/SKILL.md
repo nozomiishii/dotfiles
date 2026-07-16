@@ -98,4 +98,16 @@ PR 本文に含める情報:
 - アーカイブ元の repo とパス
 - 背景（削除理由、関連 PR/issue のリンク）。会話から読み取れる範囲で書く
 
-完了したら PR の URL を返す。
+## ソース repo からの削除
+
+archives への PR を作成したら、ソース repo 側でも対象ファイルを削除する PR を作成する。
+
+```bash
+git rm <対象ファイル>
+git commit -m "chore: remove <何を>"
+git push -u origin <branch>
+```
+
+PR 本文には archives 側の PR へのリンクを含める。
+
+両方の PR の URL をまとめて返す。
