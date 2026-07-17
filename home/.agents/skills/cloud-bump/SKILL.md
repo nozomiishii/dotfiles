@@ -1,7 +1,7 @@
 ---
 name: cloud-bump
 description: >-
-  claude.ai の cloud 環境の Setup script 欄の日付コメントを Claude in Chrome で更新し、
+  claude.ai の cloud 環境の Setup script 欄の日時コメントを Claude in Chrome で更新し、
   環境スナップショットの再構築を発火させる。
   ユーザーが /cloud-bump と入力したとき、または dotfiles の main にマージした変更が
   cloud 配信対象 (cloud-setup.yaml の paths) に触れていたときに使用する。
@@ -23,9 +23,9 @@ cloud 環境の setup script は毎セッション走らない。環境スナッ
 https://claude.ai/code を開き、対象環境の設定ダイアログの Setup script 欄を編集する。環境が複数あるときは、どれを bump するかユーザーに確認する。
 
 - 編集前に欄の現在値を読み取り、会話に控える
-- 変更は先頭の日付コメント行 `# bump YYYY-MM-DD` の追加・更新のみ。他の行に触れない
+- 変更は先頭の日時コメント行 `# bump YYYY-MM-DD HH:MM` の追加・更新のみ。他の行に触れない。再構築のトリガーは欄のテキストが変わることなので、同日に複数回 bump しても変化が出るよう時刻まで書く
 - 保存前に差分を提示して承認を得る
-- 操作に失敗したらリトライで粘らず、手動手順を案内して止まる: https://claude.ai/code で対象環境の設定を開き、日付コメントを手で書き換える
+- 操作に失敗したらリトライで粘らず、手動手順を案内して止まる: https://claude.ai/code で対象環境の設定を開き、日時コメントを手で書き換える
 
 Setup script が非 0 で終了する状態になると新規セッションが全て起動不能になる。欄を壊さないことを何より優先する。
 
