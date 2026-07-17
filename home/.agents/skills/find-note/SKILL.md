@@ -1,16 +1,17 @@
 ---
-name: recall
+name: find-note
 description: >-
   brain vault の知識ノートを検索し、過去の自分の記録から答えを引く。
-  ユーザーが /recall と入力したとき、「前にもやった気がする」「どこかに書いた気がする」
+  ユーザーが /find-note と入力したとき、「前にもやった気がする」「どこかに書いた気がする」
   「brain にあるかも」と言ったとき、またはエラー調査・ツールの設定・環境構築の相談で
   ユーザーが過去に同じ問題を踏んでいそうなときに使用する。
 argument-hint: 検索キーワード (任意)
+model: sonnet
 ---
 
-# /recall
+# /find-note
 
-brain vault の知識ノートを検索し、過去の記録から答えを引く。/note が書く側、/recall が読む側。
+brain vault の知識ノートを検索し、過去の記録から答えを引く。/note が書く側、/find-note が読む側。
 
 ## vault の場所
 
