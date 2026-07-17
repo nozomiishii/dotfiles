@@ -19,6 +19,11 @@ mkdir -p ~/.codex
 cp home/AGENTS.md ~/.codex/AGENTS.md
 cp home/.codex/hooks.json ~/.codex/hooks.json
 
+# Skills
+mkdir -p ~/.agents/skills ~/.claude/skills
+cp -R home/.agents/skills/. ~/.agents/skills/
+cp -R home/.agents/skills/. ~/.claude/skills/
+
 # direnv (各 repo の .hooks/apply-direnv.sh hook が .envrc を評価するのに必要)
 # 公式 install.sh は api.github.com を叩く。cloud の egress IP は共有のため未認証
 # rate limit (60 req/h) を使い切ると 403 で落ちる。release asset を直接取る。
