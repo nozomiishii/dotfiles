@@ -67,7 +67,8 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 - ブランチを切る: `git -C <rootPath> fetch origin main && git -C <rootPath> checkout -b <branch> origin/main`
 - 変更を適用する
 - commit & push（コミットメッセージは各 repo の commitlint ルールに従う）
-- ユーザーが PR まで欲しいと言った場合のみ、push 済みブランチから GitHub MCP の create_pull_request で PR を作成する。本文は日本語
+- ユーザーが PR まで欲しいと言った場合のみ、push 済みブランチから PR を作成する。本文は日本語で `--body-file` 渡し: `gh pr create --repo <owner>/<repo> --head <branch> --title "<type>: <subject>" --body-file <tmpfile>`
+- gh が無い cloud セッションでは、PR は GitHub MCP の create_pull_request で作る
 
 ## 結果を報告する
 

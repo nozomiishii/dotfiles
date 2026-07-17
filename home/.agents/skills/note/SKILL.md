@@ -86,9 +86,14 @@ WT="$BRAIN/.claude/worktrees/$SLUG"
 git -C "$WT" add "brain/main/<ノート名1>.md" "brain/main/<ノート名2>.md"
 git -C "$WT" commit -m "chore: add <topic> note"
 git -C "$WT" push -u origin "$SLUG"
+BODY_FILE=$(mktemp) && cat > "$BODY_FILE" <<'EOF'
+（日本語の PR 本文）
+EOF
+gh pr create -R <brain owner/repo> --base main --head "$SLUG" --title "chore: add <topic> note" --body-file "$BODY_FILE"
 ```
 
-- PR は GitHub MCP の create_pull_request で作る。base は main、head は `$SLUG`、title は commit message と同じ
+- `--head` を必ず付ける（cwd が brain worktree ではない場合があるため）
+- gh が無い cloud セッションでは、PR は GitHub MCP の create_pull_request で作る。base は main、head は `$SLUG`、title は commit message と同じ
 - `git add` はファイル単位で指定する。ディレクトリ指定やワイルドカードは禁止
 - PR 本文: 日本語
 - merge はユーザーが手動で行う。AI はマージしない
