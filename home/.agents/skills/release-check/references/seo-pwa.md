@@ -24,6 +24,7 @@ Next.js(App Router)での title / canonical / OGP / robots / アイコン / PWA 
 
 - robots.txt / manifest は app/robots.ts・app/manifest.ts のコード規約で書く(site.ts を参照できる)。robots は /api/ と OAuth コールバックを Disallow
 - OG 画像は ImageResponse で生成する。ファイル規約(opengraph-image.tsx)は alt / size 等の export が react-refresh/only-export-components 系 lint と衝突しうる。route handler(app/opengraph-image/route.tsx)にすると回避でき、og:image の寸法宣言は site.ts 側に持たせる
+- ImageResponse(satori)のデフォルトフォントは CJK を含まず、日本語を描くと豆腐になる。プレースホルダーの文言は Latin のみにし、日本語入りデザインはフォント埋め込みとセットで対応する
 - アイコンはブランド確定までプレースホルダーで良い: favicon.ico・icon.svg・apple-icon.png(Next が自動リンク)+ manifest 用 PNG(192 / 512、maskable はグリフを 0.7 倍にして safe zone 内に収める)
 - インデックスさせたくない公開前は robots の Disallow: / への一時変更を検討する
 
