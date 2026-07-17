@@ -34,6 +34,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 
 - `enabled: false` は対象外
 - `rootPath` の `~` は `$HOME` に展開する（`jq` 後に shell or 自前で展開）
+- projects.json が無い cloud セッションでは、add_repo で nozomiishii/workspaces をセッションに追加し、clone された projects.json を読む
 
 ## 対象リストを提示する
 
@@ -58,6 +59,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 
 - 数件 or 変更が単純（1 ファイル sed 相当）: foreground で順に処理。`git -C <rootPath>` で操作する
 - 多数 or 変更にコンテキスト判断が要る（コミットメッセージ自動生成、conflict 解消、新規ファイル雛形作成など）: Agent tool で各プロジェクトを別 Agent に dispatch する
+- rootPath が無い cloud セッションでは、`~/Code/<owner>/<repo>` の規約から owner/repo を導出して add_repo し、clone 先を rootPath として扱う
 
 各プロジェクトで実行する典型ステップ:
 
@@ -65,7 +67,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 - ブランチを切る: `git -C <rootPath> fetch origin main && git -C <rootPath> checkout -b <branch> origin/main`
 - 変更を適用する
 - commit & push（コミットメッセージは各 repo の commitlint ルールに従う）
-- ユーザーが PR まで欲しいと言った場合のみ、push 済みブランチから PR を作成する。本文は日本語で `--body-file` 渡し: `gh pr create --repo <owner>/<repo> --head <branch> --title "<type>: <subject>" --body-file <tmpfile>`
+- ユーザーが PR まで欲しいと言った場合のみ、push 済みブランチから GitHub MCP の create_pull_request で PR を作成する。本文は日本語
 
 ## 結果を報告する
 
@@ -89,3 +91,4 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 - git 操作は `cd <path> && git` でなく `git -C <path>` を使う（bare repository attack 防止の sandbox 制約）
 - worktree でも動くよう `git checkout main` は使わず `git fetch origin main && git checkout -b <branch> origin/main` を使う
 - 変更内容が repo によって意味的に違う場合（例: 各 repo の独自命名規則が絡む）は、ユーザーに「同じ変更でいいか / repo ごとに差分があるか」を確認してから進める
+- cloud セッションでは /broadcast の依頼を、必要な repo を add_repo で追加する明示的な依頼として扱う。承認プロンプトが出たらユーザーの承認を待ち、repo が揃うまで先の手順に進まない
