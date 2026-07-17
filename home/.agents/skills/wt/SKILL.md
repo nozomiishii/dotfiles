@@ -23,4 +23,6 @@ direnv exec "$WT" true
 
 - direnv exec が worktree の .envrc を評価し、依存 install まで済ませる。エージェントの非対話シェルでは direnv が自動発火しないため、作成直後の明示実行が必須。cd せず `git -C` で操作し続ける場合、これを飛ばすと lefthook 等が黙って壊れたまま気づけない
 - .envrc の無い repo でも direnv exec は無害に通る
+- clone 先が direnv の whitelist 外の場合は、direnv exec の前に `direnv allow "$WT"` を実行する
+- REPO が無い cloud セッションでは、AGENTS.md の「cloud セッション」規約で repo を用意し、clone 先を REPO とする
 - 後続の commit / push / PR の規約は呼び出し元 (スキルや会話) に従う
