@@ -81,7 +81,7 @@ Web サブスク(決済代行 + 無料枠 + クラウドにユーザーデータ
 - [ ] Cookie 属性。HttpOnly / Secure / SameSite、`__Host-` プレフィックス
 - [ ] サーバーサイドバリデーション。クライアント検証だけに頼らない
 - [ ] セキュリティヘッダー。HSTS / X-Frame-Options / X-Content-Type-Options / CSP。実装パターンと CSP の組み立ては [セキュリティヘッダー.md](references/セキュリティヘッダー.md)
-- [ ] API のレート制限
+- [ ] API のレート制限。DB を正本にする実装パターンは [rate-limit.md](references/rate-limit.md)
 - [ ] 更新・削除系 API の権限チェック棚卸し
 - [ ] オープンリダイレクト対策。ログイン後の遷移先を検証する
 - [ ] メールアドレス列挙防止。登録の有無で応答を変えない
