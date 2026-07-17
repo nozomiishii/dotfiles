@@ -43,6 +43,7 @@ jobs:
             home/.hooks/ \
             home/AGENTS.md \
             home/.claude/settings.json \
+            home/.agents/skills/ \
             home/.codex/hooks.json
 
       - name: Upload pages artifact
