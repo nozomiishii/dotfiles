@@ -19,6 +19,16 @@
 - 情報の正本は1つにし、新しく二重管理になる構成を提案しない。
 - 実装を変更したら、PR 本文・README・コメントも同じ内容に揃える。
 
+## cloud セッション
+
+Claude Code on the web など、ローカルの clone や gh が無いリモートセッションでの読み替え。
+
+- `~/Code/<owner>/<repo>` 配下のパスが無い場合、まずセッションに既にある clone（セッション起点の repo・追加済みの repo）を探して再利用する。
+- 既存の clone も無ければ、パスから `<owner>/<repo>` を導出して add_repo し、clone 先をそのパスの読み替えとして以降の手順を行う。
+- add_repo の実行は、承認プロンプトへのユーザーの承認をもって同意とする。否認された場合や承認を得られない場合（ヘッドレス実行等）は、その repo の作業を中断して報告する。一時ディレクトリなど代替の置き場へ進まない。
+- subagent からは add_repo の承認を得られない。repo は親セッションで揃えてから dispatch する。
+- gh が無い場合、GitHub 操作は GitHub MCP の同等ツールに読み替える。gh コマンドの引数をそのままパラメータに写す。gh が省略時に default branch へ解決する base などは、対象 repo の実際の default branch を指定する。
+
 ## dotfiles の実体パス
 `~/.claude/` 配下の設定はシンボリックリンクで、実体は `~/Code/nozomiishii/dotfiles/home/` 配下にある。編集は実体パスで行う。
 
