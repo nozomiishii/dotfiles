@@ -107,20 +107,7 @@
     "defaultMode": "auto"
   },
   "enabledMcpjsonServers": [],
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.hooks/block-op-cli.sh",
-            "timeout": 5
-          }
-        ]
-      }
-    ]
-  },
+  "hooks": {},
   "worktree": {
     "bgIsolation": "none"
   },
