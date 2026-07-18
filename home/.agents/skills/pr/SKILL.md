@@ -30,11 +30,7 @@ Claude Code on the web などの cloud セッションには gh CLI が無い。
 | 状態の収集（GraphQL 1 ショット） | `mcp__github__pull_request_read` の get / get_status / get_check_runs / get_review_comments をまとめて呼ぶ。同一 iteration 内で再取得しない |
 | CI ログ（`gh run view --log-failed`） | `mcp__github__get_job_logs` |
 | thread への返信（GraphQL mutation） | `mcp__github__add_reply_to_pull_request_comment` |
-| CI 完了の polling | polling しない。`subscribe_pr_activity` で PR を購読し、ターンを終えて webhook イベントで再開する |
-
-webhook で届くのはレビューコメントと CI 失敗のみ。CI 成功・新しい push・conflict 発生は届かない（[公式 docs](https://code.claude.com/docs/en/claude-code-on-the-web#auto-fix-pull-requests)）。CI が通ったかは `send_later` で再確認を仕込んでからターンを終えて検知する。目安は 10 分後、まだ pending なら再アームする。
-
-`subscribe_pr_activity` / `send_later` が承認エラーになる場合は、sleep での polling に落ちず、状況をユーザーに伝えて止まる。
+| CI 完了の待ち | 本文の「CI 完了の待ち方」と同じ |
 
 ## PR の特定と作業ディレクトリの準備
 
@@ -104,9 +100,8 @@ GraphQL 1 ショットで PR の完全な state を取得し、temp file (`/tmp/
 
 「状態の収集」を実行するタイミング:
 
-- ループ初回（最初の state 取得）
-- 直前 iter で push を行わず polling も走らなかったとき（例: レビュー指摘への回答 comment だけで終わった iter）。レビュアー側で thread が解決された可能性があるので fresh state を取り直す
-- それ以外（直前 iter で push → polling した）は「ループ」の polling 終了時の最終 state がそのまま次 iter の入力になるので、「状態の収集」はスキップ
+- ループ初回
+- webhook / `send_later` で再開したとき
 
 ```bash
 # $OWNER / $NAME / $NUM は「引数の解釈」でセット済み
@@ -252,75 +247,14 @@ worktree でも動くよう `git checkout main` は使わない。
 
 ## ループ
 
-push の後は CI が走り直すので、graphql で state を取り直して state file を更新する。polling 終了時の最終 state がそのまま次 iter の入力になるので、「状態の収集」で再取得しない。
-
 ### CI 完了の待ち方
 
-push 直後は workflow がまだ queue されていない。state を 2 段階 backoff で polling する。固定 20s だと長時間 workflow（例: `nozomiishii/dotfiles` の CI）で polling 回数が爆発する。
+push 後、`subscribe_pr_activity` で PR を購読し、`send_later` で再確認を仕込んでからターンを終える。
+webhook イベントまたは `send_later` のタイマーで再開し、「状態の収集」で fresh state を取り直して次の iteration に入る。
 
-polling 例:
+webhook で届くのはレビューコメントと CI 失敗のみ。CI 成功・新しい push・conflict 発生は届かない。`send_later` の目安は 10 分後、まだ pending なら再アームする。
 
-```bash
-# 初回 5s で素早く確認 → ~10 分まで 60s 間隔 → それ以降は 300s 間隔
-# nozomiishii 配下を実測すると 98 job 中 56% が timeout-minutes:10 のため、10 分で粒度を切り替える
-# zsh は配列 index が 1 始まりで ${intervals[0]} が空になり sleep が落ちるため、bash 明示で実行する。
-# script 内の single quote と衝突するので -c の文字列渡しではなく quoted heredoc で bash に渡す
-export OWNER NAME NUM
-bash <<'POLL'
-intervals=(5 60 60 60 60 60 60 60 60 60 60)
-deadline=$(( $(date +%s) + 60 * 60 ))
-i=0
-
-refresh_state() {
-  local dir="/tmp/claude-$(id -u)"
-  mkdir -p -m 700 "$dir"
-  [ -O "$dir" ] || { echo "ERROR: $dir is not owned by me" >&2; return 1; }
-  local f="$dir/claude-pr-state-${OWNER}-${NAME}-${NUM}.json"
-  [ -L "$f" ] && { echo "ERROR: $f is a symlink, refusing to write" >&2; return 1; }
-  umask 077
-  gh api graphql \
-    -F owner="$OWNER" -F name="$NAME" -F number="$NUM" \
-    -F query=@"$HOME/.agents/skills/pr/state-query.graphql" \
-    --jq '.data.repository.pullRequest' > "$f"
-}
-
-refresh_state
-# "まだ待つべき" 条件:
-#   - rollup 未生成 (push 直後で check が登録されていない)
-#   - rollup state が EXPECTED / PENDING
-#   - mergeable が UNKNOWN (GitHub 側がまだ mergeable を計算中)
-# rollup null チェックを入れないと check 未登録時に loop を抜けて誤完了判定する。
-# mergeable UNKNOWN を待つのは「抜ける条件」が mergeable: MERGEABLE を要求するため。
-while jq -e '
-  .commits.nodes[0].commit.statusCheckRollup as $r
-  | ($r == null)
-    or ($r.state == "EXPECTED") or ($r.state == "PENDING")
-    or (.mergeable == "UNKNOWN")
-' "/tmp/claude-$(id -u)/claude-pr-state-${OWNER}-${NAME}-${NUM}.json" >/dev/null 2>&1; do
-  if [ "$(date +%s)" -ge "$deadline" ]; then
-    echo "CI polling exceeded 60 min" >&2
-    break
-  fi
-  if [ "$i" -lt ${#intervals[@]} ]; then
-    sleep "${intervals[$i]}"
-  else
-    sleep 300
-  fi
-  i=$((i + 1))
-  refresh_state
-done
-POLL
-# loop 抜け後の state file が次 iter の入力（「状態の収集」で再取得しない）
-```
-
-旧実装で警戒していた `gh pr checks --watch` 無限ループ問題（path-filter で skip された workflow を gh CLI が terminal と認識しないやつ）は、本実装が `statusCheckRollup.state` を直接見るので回避される。skip された workflow run は check が作られず rollup の集計対象から外れ、skip された個別 job は `conclusion: SKIPPED` で `COMPLETED` 扱いになるので、rollup state は最終的に `SUCCESS` / `FAILURE` / `ERROR` のいずれかに確実に落ちる。
-
-スケジュール根拠:
-
-- `nozomiishii` 配下の workflow を実測すると 98 job のうち 92% が `timeout-minutes` 設定済み。そのうち 10 分が 56%（次点 5 分 27%、1 分 11%、上位 3 値で 94%）。10 分が dominant なのは reusable workflow（`actionlint` / `zizmor` / `secretlint` / `release-please`）が各 repo に広く展開されているため
-- → 10 分までは 1 分粒度で十分、10 分超は outlier 扱いで 5 分粒度に落として polling 回数を抑える
-- 一方 `nozomiishii/dotfiles` の `ci.yaml install` は 40 分の outlier（Brewfile / toolchain セットアップを fan-out）。60 min hard timeout で吸収
-- 固定 20s 比で 30 分待ちが ~90 calls → ~16 calls（約 1/6）
+`subscribe_pr_activity` / `send_later` が承認エラーになる場合は、sleep での polling に落ちず、状況をユーザーに伝えて止まる。
 
 ### 抜ける条件
 
@@ -338,7 +272,7 @@ POLL
 
 - マージは絶対に実行しない（`gh pr merge` / `gh api .../merge` 禁止）
 - 状態取得は「状態の収集」の GraphQL に一元化する: トラブルシューティング中でも `gh pr checks` / `gh pr view --json reviews,statusCheckRollup,...` / `gh api .../comments` を個別に呼ばない。3 calls 間の snapshot ズレと、resolved 判定の REST 推測ミスを避けるため。gh が無い cloud セッションは「cloud セッション」の対応表に従う
-- state file (`/tmp/claude-$(id -u)/claude-pr-state-${OWNER}-${NAME}-${NUM}.json`) は明示削除しない: OS の `/tmp` 定期 purge に任せる。skill 終了時に `rm` を仕込まないことで、直後の手動デバッグ（`jq ... "/tmp/claude-$(id -u)/claude-pr-state-<OWNER>-<NAME>-<NUM>.json"` で覗く）の利便性を維持する。書き込み側のセキュリティガード（dir の `mkdir -p -m 700` + `-O` 所有者確認、file の symlink check + `umask 077`）は「状態の収集」と `refresh_state` に組み込み済みなので、共有 `/tmp` 直下でも squatting・TOCTOU planted symlink・world-read の主要経路は塞がれる
+- state file は明示削除しない。OS の `/tmp` purge に任せる。セキュリティガードは「状態の収集」に組み込み済み
 - PR タイトル / コミットメッセージは英語 Conventional Commits 形式（小文字始まり、ASCII のみ、scope 無し、末尾スペース禁止）
 - PR 本文に追記する必要が出た場合は、本文部分は日本語のまま
 - `gh pr edit` で本文を更新するときは `--body-file` を使う（HEREDOC で `--body` 直渡しは command injection 検出に引っかかる）
