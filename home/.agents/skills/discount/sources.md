@@ -1,6 +1,6 @@
 # 特典・割引の一覧サイト
 
-/discount の「安い道の探索」で参照するカタログ。手入れの仕方は [SKILL.md](SKILL.md) の「一覧サイトの手入れ」。
+/discount の「安くする方法の探索」で参照するカタログ。手入れの仕方は [SKILL.md](SKILL.md) の「一覧サイトの手入れ」。
 
 - [GitHub Student Developer Pack](https://education.github.com/pack): 学生向け開発ツール特典の一覧
 - [Dev Starter Pack](https://devstarterpack.io/): スタートアップ・個人開発者向けの割引・特典の一覧
