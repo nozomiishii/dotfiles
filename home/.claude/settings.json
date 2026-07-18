@@ -107,7 +107,6 @@
     "defaultMode": "auto"
   },
   "enabledMcpjsonServers": [],
-  "hooks": {},
   "worktree": {
     "bgIsolation": "none"
   },
