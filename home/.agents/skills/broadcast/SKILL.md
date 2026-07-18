@@ -67,6 +67,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 
 - `git -C <rootPath> status --short` で clean か確認（dirty なら本人に判断を委ねる）
 - ブランチを切る: `git -C <rootPath> fetch origin main && git -C <rootPath> checkout -b <branch> origin/main`
+- `.hooks/setup.sh` がある repo では実行する（commit 時の lefthook 等が deps を要するため）: `[ -f <rootPath>/.hooks/setup.sh ] && (cd <rootPath> && bash .hooks/setup.sh)`
 - 変更を適用する
 - commit & push（コミットメッセージは各 repo の commitlint ルールに従う）
 - ユーザーが PR まで欲しいと言った場合のみ、push 済みブランチから PR を作成する。本文は日本語で `--body-file` 渡し: `gh pr create --repo <owner>/<repo> --head <branch> --title "<type>: <subject>" --body-file <tmpfile>`

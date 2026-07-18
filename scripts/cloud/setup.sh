@@ -5,10 +5,6 @@ set -euo pipefail
 
 curl -fsSL "https://nozomiishii.github.io/dotfiles/cloud-setup.tar.gz" | tar xz
 
-# Hooks
-mkdir -p ~/.hooks
-cp home/.hooks/* ~/.hooks/
-
 # Claude Code
 mkdir -p ~/.claude
 cp home/AGENTS.md ~/.claude/CLAUDE.md
@@ -24,7 +20,7 @@ mkdir -p ~/.agents/skills ~/.claude/skills
 cp -R home/.agents/skills/. ~/.agents/skills/
 cp -R home/.agents/skills/. ~/.claude/skills/
 
-# direnv (各 repo の .hooks/apply-direnv.sh hook が .envrc を評価するのに必要)
+# direnv (.envrc のある repo で `direnv exec . <コマンド>` を使うのに必要)
 # 公式 install.sh は api.github.com を叩く。cloud の egress IP は共有のため未認証
 # rate limit (60 req/h) を使い切ると 403 で落ちる。release asset を直接取る。
 if ! command -v direnv >/dev/null 2>&1; then
