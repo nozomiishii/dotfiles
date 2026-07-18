@@ -6,6 +6,7 @@ description: >-
   ユーザーが /cloud-bump と入力したとき、または dotfiles の main にマージした変更が
   cloud 配信対象 (cloud-setup.yaml の paths) に触れていたときに使用する。
 model: sonnet
+allowed-tools: mcp__claude-in-chrome__javascript_tool
 ---
 
 # /cloud-bump
@@ -17,6 +18,10 @@ cloud 環境の setup script は毎セッション走らない。環境スナッ
 対象は main にマージ済みの変更だけ。マージ前に bump すると古い main でスナップショットが焼き直されるだけになる。
 
 判定リストの正本は `.github/workflows/cloud-setup.yaml` の `paths`。スキルに書き写さず、workflow ファイルを読んで merge diff と突き合わせる。触れていなければ bump 不要と伝えて終わる。
+
+## 権限
+
+JS 実行の許可は frontmatter の allowed-tools で与える。settings.json に javascript_tool の常時 allow を置かない。許可はこのスキルを起動したターンだけ有効で、次のユーザーメッセージで消える ([skills.md](https://code.claude.com/docs/en/skills.md))。承認待ちでターンをまたいだら、POST の前にスキルを起動し直して許可を再適用する。ターン内の確認は AskUserQuestion を使うとターンをまたがない。
 
 ## init_script の更新 (内部 API)
 
