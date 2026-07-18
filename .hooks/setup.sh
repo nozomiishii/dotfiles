@@ -12,8 +12,6 @@
 # worktree の起点の鮮度もここでは扱わない。Claude Code v2.1.208+ が
 # origin/HEAD 起点で worktree を作り、必要な fetch も本体が行う。
 # https://code.claude.com/docs/en/worktrees#choose-the-base-branch
-#
-# 失敗してもセッションは止めない。
 set -uo pipefail
 
 root=$(git rev-parse --show-toplevel 2>/dev/null) || root=""
@@ -22,8 +20,7 @@ if [ -z "$root" ]; then
 fi
 cd "$root" || exit 0
 
-# commit 時の lefthook 等が node_modules/.bin を呼ぶため、
-# 入っていないと hook が黙って壊れる。
+# commit 時の lefthook 等が node_modules/.bin を呼ぶため。
 if [ ! -d node_modules ]; then
   pnpm install
 fi
