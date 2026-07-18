@@ -7,7 +7,6 @@ if [ -z "$root" ]; then
 fi
 cd "$root" || exit 0
 
-# commit 時の lefthook 等が node_modules/.bin を呼ぶため。
 if [ ! -d node_modules ]; then
   pnpm install
 fi
