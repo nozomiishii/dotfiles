@@ -2,8 +2,8 @@
 name: retro
 description: >-
   セッションのつまずき・引っかかりを検出し、業務改善につなげる。
-  このセッションでの対応を優先し、issue や spawn_task も選べる。
-  ユーザーが /retro と入力したときに使用する。
+  このセッションでの対応を優先し、issue や新しいタスクへの切り出しも選べる。
+  Claude Code で /retro、Codex で $retro と入力したときに使用する。
 ---
 
 # /retro
@@ -16,7 +16,7 @@ description: >-
 
 - 問題: 何が起きたか
 - 影響: どれくらい手間・時間がかかったか
-- 改善案: skill 化、CLAUDE.md 追記など、会話に即した手段
+- 改善案: skill 化、AGENTS.md 追記など、会話に即した手段
 
 ユーザーが対応したいものを選ぶ。候補がなければ「特になし」で終了。
 
@@ -26,11 +26,11 @@ description: >-
 
 ### このセッションで対応
 
-会話のコンテキストを活かしてその場で実装・修正する。CLAUDE.md 追記、skill の修正、設定変更など。
+会話のコンテキストを活かしてその場で実装・修正する。AGENTS.md 追記、skill の修正、設定変更など。AGENTS.md を変更するときは sibling の [doc SKILL.md](../doc/SKILL.md) を明示的に読み、その手順に従う。Claude Code を使う repo では CLAUDE.md の bridge も必ず確認する。
 
-### spawn_task
+### 新しいタスクへ切り出す
 
-会話コンテキストが不要な項目、またはコンテキストが逼迫しているときに使う。spawn_task のプロンプトにはファイルパスと十分な背景を含め、この会話なしで単独実行できるようにする。
+会話コンテキストが不要な項目、またはコンテキストが逼迫しているときに使う。ユーザーがこの方法を選んだら、Claude Code デスクトップでは `spawn_task`、Codex App では新しいタスクを作る機能を使う。CLI では sibling の [wt SKILL.md](../wt/SKILL.md) を明示的に読み、worktree を用意する。Claude Code は `claude --bg`、Codex は `codex exec --sandbox workspace-write -C` で実行する。プロンプトにはファイルパスと十分な背景を含め、この会話なしで単独実行できるようにする。
 
 ### issue
 
