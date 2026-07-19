@@ -70,10 +70,15 @@ grep -rl "<キーワード>" "$WT/brain/main/" | head -10
 
 ノートを作成したら、コミットする前にユーザーに内容を確認してもらう。
 
-確認用にノートのファイルパスを出力する。スペース入りパスでもリンクが壊れないよう、`$REPO` を展開したフルパスをそのまま出す:
+確認用に、作成したノートを cwd からの相対パスの Markdown リンクで出力する。アプリはこの形式だけをクリックで開ける。絶対パスや `$REPO` のままの文字列はリンクにならない。cwd は予測できないので相対パスを算出して組む:
 
-```
-$REPO/.claude/worktrees/<SLUG>/brain/main/<ノート名>.md
+```sh
+python3 - "$WT/brain/main/<ノート名>.md" <<'PY'
+import os, sys
+target = sys.argv[1]
+rel = os.path.relpath(target, os.getcwd()).replace(" ", "%20")
+print(f"[{os.path.basename(target)}]({rel})")
+PY
 ```
 
 承認を得てから次へ進む。
