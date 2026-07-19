@@ -3,7 +3,7 @@ name: doc
 description: >-
   ドキュメント・記録の運用の正本 (置き場判定・原則・ADR の作法)。
   issue / ADR / docs / brain ノートに振り分けて保存まで実行する。
-  ユーザーが /doc と入力したとき、「これ残しておきたい」「どこに書くべき?」と言ったとき、
+  Claude Code で /doc、Codex で $doc と入力したとき、「これ残しておきたい」「どこに書くべき?」と言ったとき、
   設計ドキュメント・仕様・README などドキュメントを書く・編集する前、
   および実装が完了して PR を作る前の残し漏れ確認に使用する。
 ---
@@ -27,14 +27,14 @@ description: >-
 - 着手中の実装の design doc → 対象 repo の `docs/` (実装 PR で育てる)
 - なぜこうしたかの記録 (決着した判断) → 対象 repo の `docs/decisions/` に ADR
 - 今どうなってるかの事実 (仕様・手順) → 対象 repo の `docs/` (実装 PR に同梱)
-- AI エージェントへの行動指針・フィードバック (呼称・進め方の好み・作業ルール) → CLAUDE.md (全 repo 共通は `dotfiles/home/AGENTS.md`、repo 固有は対象 repo の CLAUDE.md)
-- repo に限らない学び → /note に委譲
+- AI エージェントへの行動指針・フィードバック (呼称・進め方の好み・作業ルール) → AGENTS.md (全 repo 共通は `dotfiles/home/AGENTS.md`、repo 固有は対象 repo の `AGENTS.md`)。Claude Code に読ませる repo では `CLAUDE.md` から AGENTS.md を参照できる構成が必須。既存の `CLAUDE.md` が無ければ同じ内容を参照する symlink、既存内容があれば上書きせず `@AGENTS.md` import を使う
+- repo に限らない学び → sibling の [note SKILL.md](../note/SKILL.md) を明示的に読み、その手順へ委譲
 
-auto memory は無効化している (`autoMemoryEnabled: false`)。memory に書きたくなる内容はこのフローで CLAUDE.md / issue / brain に振り分ける。
+Claude Code の auto memory は無効化している (`autoMemoryEnabled: false`)。Codex の memory 状態は別設定なので、この値から推測しない。memory に永続化したくなる内容はこのフローで AGENTS.md / issue / brain に振り分ける。
 
 design doc の置き場は着手で切り替わる。着手したら issue の内容を `docs/` のファイルへ移し、実装 PR で実装と一緒に育てる。issue には移した先のリンクだけ残し、実装 PR で close する (正本は 1 つ)。マージまでに「どう作るか」の記述を削り、今どうなってるかの Reference に仕上げる。経緯として残したい判断は ADR に書く。
 
-探すときの入口は 3 つ: repo のことは CLAUDE.md から docs/ へ、経緯は issue 検索と ADR、横断は brain vault。
+探すときの入口は 3 つ: repo のことは AGENTS.md から docs/ へ、経緯は issue 検索と ADR、横断は brain vault。
 
 ## 候補の列挙と一括確認
 
@@ -76,7 +76,7 @@ Date: YYYY-MM-DD
 ## Consequences — 決定がもたらすもの
 ```
 
-実装 PR があればそこに同梱し、なければブランチを切って PR にする。セッション開始ディレクトリ以外の repo は /wt スキルで worktree を切ってから作業する。
+実装 PR があればそこに同梱し、なければブランチを切って PR にする。セッション開始ディレクトリ以外の repo は sibling の [wt SKILL.md](../wt/SKILL.md) を明示的に読み、worktree を切ってから作業する。
 
 ## 実行: docs/ (仕様・手順)
 
@@ -89,7 +89,7 @@ Date: YYYY-MM-DD
 
 ## 実行: brain ノート
 
-/note スキルに委譲する。
+note skill に委譲する。
 
 ## PR 作成前の確認
 
@@ -98,4 +98,4 @@ Date: YYYY-MM-DD
 - 後で「なんでこうしたんだっけ」と聞きたくなる判断をしたか → ADR
 - 仕様・手順が変わったか → docs/ を同じ PR で更新
 - design doc に「どう作るか」の記述が残っていないか → 削って Reference に仕上げる。残したい判断は ADR
-- repo に限らない学びがあったか → /note
+- repo に限らない学びがあったか → note skill

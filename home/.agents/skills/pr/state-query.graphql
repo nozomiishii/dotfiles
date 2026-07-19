@@ -4,6 +4,7 @@ query($owner: String!, $name: String!, $number: Int!) {
       number
       url
       headRefName
+      baseRefName
       state
       isDraft
       mergeable
@@ -44,6 +45,10 @@ query($owner: String!, $name: String!, $number: Int!) {
       }
 
       reviewThreads(first: 50) {
+        totalCount
+        pageInfo {
+          hasNextPage
+        }
         nodes {
           id
           isResolved
