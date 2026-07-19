@@ -181,6 +181,8 @@ state から判断する典型項目:
 
 ### CI を直す
 
+`mergeStateStatus` が `CLEAN` / `HAS_HOOKS` なら、GitHub の定義上 commit status は passing。`statusCheckRollup` に同じ SHA の古い失敗 run が残っていても CI 修復に入らず、「抜ける条件」で判断する。`BLOCKED` / `UNSTABLE` のときだけ、state file の失敗 run を修復対象として調べる。
+
 state file から失敗 run の ID を抽出してログ取得:
 
 ```bash
@@ -300,7 +302,7 @@ recurring follow-up が利用できないか承認エラーになる場合は、
 
 いずれかを満たしたら終了:
 
-- `mergeable: MERGEABLE`、`mergeStateStatus` が `CLEAN` / `HAS_HOOKS`、`statusCheckRollup` が `null` または state が `SUCCESS`、`reviewThreads.pageInfo.hasNextPage` が `false`、未解決 review thread が 0 件。rollup が `null` でも `CLEAN` / `HAS_HOOKS` が passing status を保証する
+- `mergeable: MERGEABLE`、`mergeStateStatus` が `CLEAN` / `HAS_HOOKS`、`reviewThreads.pageInfo.hasNextPage` が `false`、未解決 review thread が 0 件。`CLEAN` / `HAS_HOOKS` は GitHub の定義上 passing commit status を保証する。`statusCheckRollup` は同じ SHA の古い失敗 run を含む場合があるため、完了を拒否する条件にしない
 - 残った課題が「ユーザーの判断が必要なレビュー指摘」のみ
 - 同じ修正を 2 回試して同じ失敗が出た（ループ防止）
 
