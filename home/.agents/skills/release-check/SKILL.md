@@ -93,10 +93,13 @@ Web サブスク(決済代行 + 無料枠 + クラウドにユーザーデータ
 
 ## SEO とシェア
 
+実装パターン(PWA manifest 含む)は [SEO・OGP・PWA資産.md](references/SEO・OGP・PWA資産.md)。
+
 - [ ] title / meta description / canonical
 - [ ] OGP(og:title / og:description / og:url / og:image)と twitter:card
 - [ ] favicon / apple-touch-icon
 - [ ] robots.txt / sitemap、Search Console 登録
+- [ ] PWA manifest。アイコンはブランド確定までプレースホルダーで良い
 - [ ] サービス名の多言語チェック。他言語で変な意味にならないか
 
 ## 品質と複数環境
