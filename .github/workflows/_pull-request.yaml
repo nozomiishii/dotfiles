@@ -13,4 +13,4 @@ jobs:
   pull-request:
     permissions:
       pull-requests: write  # write: format revert PR titles, read: validate PR titles
-    uses: nozomiishii/workflows/.github/workflows/pull-request.yaml@587df5685b2ce224cfaf0dd6e42a11954f154d9f # v3.3.1
+    uses: nozomiishii/workflows/.github/workflows/pull-request.yaml@8712ffb685156b3b6f6ab6e510be6e087dae0f6c # v3.3.2
