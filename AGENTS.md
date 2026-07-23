@@ -6,12 +6,11 @@ macOS と Linux で開発環境のセットアップを自動化する dotfiles 
 
 - ユーザー名をハードコードしない。
   - dotfiles は複数の Mac で異なるユーザー名で運用されるため、`/Users/<name>/...` と直書きせず `$HOME` または `~` を使うこと。
-  - LaunchAgent plist で `$HOME` 展開が必要な場合は `bash -l -c 'exec "$HOME/..."'` を経由する（参考: [home/Library/LaunchAgents/local.brew-update.plist](home/Library/LaunchAgents/local.brew-update.plist)）
+  - LaunchAgent plist で `$HOME` 展開が必要な場合は `bash -l -c 'exec "$HOME/..."'` を経由する（参考: [home/Library/LaunchAgents/local.downloads-to-desktop.plist](home/Library/LaunchAgents/local.downloads-to-desktop.plist)）
 
 - repo の配置場所をハードコードしない。
   - 別マシンや別 worktree で repo の置き場が変わっても動く必要がある。`$HOME/dotfiles/...` のような repo 実体パスを外から名指ししない。
-  - launchd plist や VS Code 設定など外部ツールからは `$HOME/.local/bin/<name>.sh` 経由で呼ぶ。リンクは [scripts/symlink.sh](scripts/symlink.sh) が張る。
-  - スクリプト内で repo root が要る場合は `readlink -f "${BASH_SOURCE[0]}"` の自己参照で解決する。参考: [scripts/darwin/brew_update.sh](scripts/darwin/brew_update.sh)
+  - launchd plist や VS Code 設定など外部ツールからは `$HOME/.local/bin/<name>.sh` 経由で呼ぶ。実体は `home/.local/bin/` に置く。
 
 
 ## 設定の更新
@@ -35,4 +34,3 @@ macOS と Linux で開発環境のセットアップを自動化する dotfiles 
 
 - [statusline (`home/.claude/statusline.sh`) を修正・拡張する](docs/statusline.md)
 - [このdotfilesをforkして使う](docs/forking.md)
-
