@@ -5,6 +5,7 @@ description: >-
   環境スナップショットの再構築を発火させる。
   Claude Code で /cloud-bump、Codex で $cloud-bump と入力したとき、または dotfiles の main にマージした変更が
   cloud 配信対象 (cloud-setup.yaml の paths) に触れていたときに使用する。
+  dotfiles を変更する PR を作成するときも、マージ後の bump の要否判定と予告のために使用する。
 model: sonnet
 allowed-tools: mcp__claude-in-chrome__javascript_tool
 ---
@@ -15,9 +16,11 @@ cloud 環境の setup script は毎セッション走らない。環境スナッ
 
 ## 発火の判定
 
-対象は main にマージ済みの変更だけ。マージ前に bump すると古い main でスナップショットが焼き直されるだけになる。
+判定リストの正本は `.github/workflows/cloud-setup.yaml` の `paths`。スキルに書き写さず、workflow ファイルを読んで diff と突き合わせる。触れていなければ bump 不要と伝えて終わる。
 
-判定リストの正本は `.github/workflows/cloud-setup.yaml` の `paths`。スキルに書き写さず、workflow ファイルを読んで merge diff と突き合わせる。触れていなければ bump 不要と伝えて終わる。
+bump してよいのは main にマージ済みの変更だけ。マージ前に bump すると古い main でスナップショットが焼き直されるだけになる。
+
+cloud 配信対象に触れる PR を作成した時点では bump せず、マージ後に /cloud-bump の実行が必要なことを PR 作成の報告に書いて予告する。マージ後の bump は忘れられやすく、予告がないとユーザーはセッションを閉じてから気づけない。
 
 ## 権限
 
@@ -131,7 +134,7 @@ if (stripBump(updatedInit) !== stripBump(originalInit)) {
 
 const updated = {
   name: env.name,
-  description: env.description,
+  description: env.description ?? '',
   config: { ...env.config, init_script: updatedInit }
 };
 assertClaudeContext();
@@ -149,7 +152,7 @@ const after = await verifyResp.json();
 const beforeRest = { ...env.config }; delete beforeRest.init_script;
 const afterRest = { ...after.config }; delete afterRest.init_script;
 if (after.config.init_script !== updatedInit ||
-    after.name !== env.name || after.description !== env.description ||
+    after.name !== env.name || (after.description ?? '') !== (env.description ?? '') ||
     JSON.stringify(afterRest) !== JSON.stringify(beforeRest)) {
   throw new Error('POST verification mismatch');
 }
@@ -186,7 +189,7 @@ UI の「Setup script」は `config.init_script`、「Environment variables」�
 
 ### POST リクエストの必須フィールド
 
-`name`, `description`, `config` が必要。`description` を含む GET の既存値をそのまま返し、空文字列で上書きしない。
+`name`, `description`, `config` が必要。`description` は GET に既存値があればそのまま返し、既存の説明文を空文字列で上書きしない。GET に `description` が無い環境では空文字列で補う。実測では undefined は JSON.stringify で field ごと脱落して 400 (`description: Field required`)、null も 400、空文字列は成功する。
 
 ## エンドポイントの再発見
 
