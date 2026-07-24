@@ -10,7 +10,7 @@ description: >-
 
 # /doc
 
-記録の置き場を判定し、保存まで実行する。置き場判定の正本はこのスキル。設計の経緯は [nozomiishii/brain#268](https://github.com/nozomiishii/brain/issues/268)。
+記録の置き場を判定し、保存まで実行する。置き場判定の正本はこのスキル。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/記録の置き場判定は%20doc%20スキルを正本にする.md)、経緯は [nozomiishii/brain#268](https://github.com/nozomiishii/brain/issues/268)。
 
 ## 原則
 
