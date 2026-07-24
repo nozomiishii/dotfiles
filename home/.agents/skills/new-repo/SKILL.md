@@ -9,7 +9,7 @@ description: >-
 
 # /new-repo
 
-リポジトリの作成・設定・保護の正本は nozomiishii/infra の `stacks/github/main.tf`。GitHub を直接操作して作らない。設計の経緯は [dotfiles#1393](https://github.com/nozomiishii/dotfiles/issues/1393)。
+リポジトリの作成・設定・保護の正本は nozomiishii/infra の `stacks/github/main.tf`。GitHub を直接操作して作らない。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/新しいリポジトリ作成のフローは%20new-repo%20スキルを正本にする.md)、テスト記録は [dotfiles#1393](https://github.com/nozomiishii/dotfiles/issues/1393)。
 
 ## 禁止
 
@@ -26,10 +26,10 @@ description: >-
 
 ## 足場 (最初の PR)
 
-clone して次を揃え、1 つの PR にする。完成形の実例は nozomiishii/design#1。
+clone して次を揃え、1 つの PR にする。完成形の実例は直近に作られたリポジトリの足場 PR を参照する (2026-07 時点は [nozomiishii/design#1](https://github.com/nozomiishii/design/pull/1))。
 
 - configs 一式: `@nozomiishii/commitlint-config` `eslint-config` `lefthook-config` `postinstall` `prettier-config` `tsconfig` と各設定ファイル。`cspell-config` と `markdownlint-cli2-config` は非推奨のため導入しない。
-- 標準 workflow: `_pull-request.yaml` `_github-actions.yaml` `_secret-scan.yaml` を configs からコピーする。main の必須チェックが要求するため、無いと PR をマージできない。
+- 標準 workflow: `_pull-request.yaml` `_github-actions.yaml` `_secret-scan.yaml` を configs からコピーする。実体は [nozomiishii/workflows](https://github.com/nozomiishii/workflows) の reusable workflow を SHA pin で呼ぶ薄い caller。main の必須チェックが要求するため、無いと PR をマージできない。
 - `.github/renovate.json`: `{ "extends": ["github>nozomiishii/renovate"] }`
 - SessionStart hook: `.claude/settings.json` と `.hooks/setup.sh` (`pnpm install`)。
 - README.md と README.ja.md を同じ構成で作る。
