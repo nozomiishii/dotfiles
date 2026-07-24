@@ -24,9 +24,9 @@ description: >-
 - initial commit は auto_init が作る。メッセージは "Initial commit" 固定で Conventional Commits 外だが、release-please は非準拠コミットを無視するため実害はない。気になる場合は release-please の `bootstrap-sha` で収集範囲から外せる。
 - repo 固有の CI を必須チェックにする場合、workflow に集約 `required` job を作り、infra 側の `required_status_checks` に `<workflow> / required` で登録する。正本は infra の docs/required_status_checksの命名と最小構成.md。共通の必須チェック 3 つと GitGuardian はモジュールが自動で付ける。
 
-## 足場 (最初の PR)
+## 初期セットアップ (最初の PR)
 
-clone して次を揃え、1 つの PR にする。完成形の実例は直近に作られたリポジトリの足場 PR を参照する (2026-07 時点は [nozomiishii/design#1](https://github.com/nozomiishii/design/pull/1))。
+clone して次を揃え、1 つの PR にする。完成形の実例は直近に作られたリポジトリの初期セットアップ PR を参照する (2026-07 時点は [nozomiishii/design#1](https://github.com/nozomiishii/design/pull/1))。
 
 - configs 一式: `@nozomiishii/commitlint-config` `eslint-config` `lefthook-config` `postinstall` `prettier-config` `tsconfig` と各設定ファイル。`cspell-config` と `markdownlint-cli2-config` は非推奨のため導入しない。
 - 標準 workflow: `_pull-request.yaml` `_github-actions.yaml` `_secret-scan.yaml` を configs からコピーする。実体は [nozomiishii/workflows](https://github.com/nozomiishii/workflows) の reusable workflow を SHA pin で呼ぶ薄い caller。main の必須チェックが要求するため、無いと PR をマージできない。

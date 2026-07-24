@@ -10,7 +10,7 @@ Date: 2026-07-24
 ## Decision — 決めたこと
 
 - 新しいリポジトリ作成のフローの正本を new-repo スキルに置く
-- 役割分担: リポジトリの作成・設定・保護は nozomiishii/infra の `locals.repositories`、ローカル登録は nozomiishii/workspaces の `projects.json`、足場は configs 一式 + nozomiishii/workflows を呼ぶ標準 workflow
+- 役割分担: リポジトリの作成・設定・保護は nozomiishii/infra の `locals.repositories`、ローカル登録は nozomiishii/workspaces の `projects.json`、初期セットアップは configs 一式 + nozomiishii/workflows を呼ぶ標準 workflow
 - GitHub を直接操作する作成・設定変更(`gh repo create` / `gh repo edit` / ruleset API)は禁止として明文化する
 - ブートストラップは `auto_init` 前提(判断は [infra の ADR](https://github.com/nozomiishii/infra/blob/main/docs/decisions/リポジトリ作成時に%20auto_init%20で%20initial%20commit%20を作る.md))
 - `@nozomiishii/cspell-config` と `@nozomiishii/markdownlint-cli2-config` は非推奨のため新規リポジトリに導入しない
