@@ -121,7 +121,7 @@ Claude Code と branch 上の CLI は `gh pr checkout <N>` を使う。Codex App
 gh pr view --repo "$OWNER/$NAME" "$NUM" --json number,url,headRefName,baseRefName,state,mergeStateStatus,mergeable,reviewDecision
 ```
 
-- PR が見つからない（引数なしのとき）: 「PR が無いので先に ta skill でブランチを公開する必要がある」と返して止まる。ta skill を勝手に実行しない。
+- PR が見つからない（引数なしのとき）: 「PR が無いので先に tha skill でブランチを公開する必要がある」と返して止まる。tha skill を勝手に実行しない。
 - `state` が CLOSED / MERGED: その旨を伝えて止まる。
 
 ## 状態の収集
