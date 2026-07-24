@@ -8,7 +8,7 @@ description: >-
 
 # /skill
 
-スキルをドキュメントの TDD で作る。読者となる将来の agent が失敗するのを見てから書き、読ませて直るのを見てから確定する。設計の経緯は [dotfiles#1292](https://github.com/nozomiishii/dotfiles/issues/1292)。
+スキルをドキュメントの TDD で作る。読者となる将来の agent が失敗するのを見てから書き、読ませて直るのを見てから確定する。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/スキルはドキュメントの%20TDD%20で作る.md)、経緯は [dotfiles#1292](https://github.com/nozomiishii/dotfiles/issues/1292)。
 
 ## 絶対制約
 
