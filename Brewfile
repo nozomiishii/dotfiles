@@ -227,6 +227,9 @@ if OS.mac?
   # Collaborative interface design tool. https://www.figma.com
   cask "figma"
 
+  # Product development and issue tracking app https://linear.app/
+  cask "linear"
+
   # GIT client　https://fork.dev/
   cask "fork"
 
