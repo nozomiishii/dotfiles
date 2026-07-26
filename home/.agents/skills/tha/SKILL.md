@@ -11,6 +11,12 @@ model: sonnet
 
 `git status --short` と `git diff` で変更内容を把握し、以下を順番に実行する:
 
+## GitHub へのアクセス
+
+ブランチ判定での PR 検索、既存 PR の状態・head 情報の取得、新規 PR 作成、draft 判定、pr skill への引き継ぎ後の状態取得に GitHub CLI を使う。GitHub CLI が未導入、未認証、または実行に失敗した場合は、利用可能な GitHub connector / app を自分で検索し、該当する capability を使う。connector の機能名は固定しない。このフォールバックのためだけに GitHub CLI の導入や再認証をユーザーへ求めない。
+
+connector が対象 PR に必要な head repository identity または write capability を返せない場合は、fork かを推測せず停止する。local branch の作成、stage、commit、push は引き続き git で行い、connector に置き換えない。
+
 ## ブランチ判定
 
 現在のブランチを確認する:
@@ -32,10 +38,10 @@ base または head が外部 repo、もしくは所有者を判定できない�
 
 ## PR 作成（必要な場合のみ）
 
-既存の OPEN な PR がない場合、PR を作成する。
+既存の OPEN な PR がない場合、PR を作成する。GitHub CLI で作成できなければ「GitHub へのアクセス」の connector fallback を使う。
 
 ## PR の監視（pr skill へ引き継ぐ）
 
-PR 作成 / push 完了後、sibling の [pr SKILL.md](../pr/SKILL.md) を明示的に読み、その手順で CI 失敗・レビュー指摘・main との conflict を修復して mergeable まで持っていく。pr skill は explicit-only のため、catalog から暗黙に選ばせない。
+PR 作成 / push 完了後、sibling の [pr SKILL.md](../pr/SKILL.md) を明示的に読み、その手順で CI 失敗・レビュー指摘・main との conflict を修復して mergeable まで持っていく。GitHub CLI から connector へ fallback した場合は、PR 番号または URL と利用中の connector を引き継ぎ、pr skill の「gh CLI が無い環境」と同じ connector 手順を使う。pr skill は explicit-only のため、catalog から暗黙に選ばせない。
 
-ただし PR が draft の場合（`gh pr view --json isDraft` が `true`）はスキップする。draft は修正途中である前提なので、CI の失敗を勝手に直さない。
+ただし GitHub CLI または connector が返す PR metadata で draft の場合はスキップする。draft は修正途中である前提なので、CI の失敗を勝手に直さない。
