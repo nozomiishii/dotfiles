@@ -54,6 +54,10 @@ ls "$BRAIN/.routines/"
 
 routine name は `^[a-z0-9]+(?:-[a-z0-9]+)*$` に一致する値だけを受け付ける。file path、branch、title に入れる前に検証し、slash、`..`、空白、shell metacharacter を含む値は拒否する。
 
+name とファイル名を `<頻度>-<対象>` の形に揃える。頻度語は schedule の発火間隔から選ぶ。daily, weekly, biweekly, monthly, quarterly, biannual。
+
+頻度は省かない。当てはまる語が無い、既存語と紛らわしいと感じたときも、最も近い語を選ぶ。平日のみの毎日は daily、隔週は biweekly。既存 routine の name がこの形でない場合も、新しい name はこの形にする。
+
 #### 目的のすり合わせ
 
 - この routine で何を達成したいか
