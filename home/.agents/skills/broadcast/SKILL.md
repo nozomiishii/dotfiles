@@ -9,9 +9,7 @@ description: >-
 
 # /broadcast
 
-projects.json に列挙された `enabled: true` の全プロジェクト（それぞれ独立した repo）に対し、同じ変更（CODEOWNERS 追加、workflow 更新、設定ファイルの一括同期、依存パッケージのバージョン揃え、など）を横断で broadcast する。
-
-> Claude Code bundled の `/batch` との違い: `/batch` は 1 つの codebase を複数の独立ユニットに分解して各々を git worktree で並列実装する。broadcast skill は複数の別 repo に同一の変更を撒く。対象も粒度も別物。
+projects.json に列挙された `enabled: true` の全プロジェクト（それぞれ独立した repo）に対し、同じ変更（CODEOWNERS 追加、workflow 更新、設定ファイルの一括同期、依存パッケージのバージョン揃え、など）を横断で broadcast する。Claude Code bundled の `/batch`（1 つの codebase を複数ユニットに分解して worktree 並列実装）とは対象も粒度も別物。
 
 ユーザーが Claude Code で `/broadcast`、Codex で `$broadcast` を実行した時点で、横断変更の依頼とみなす。
 
@@ -54,7 +52,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 
 - 「対象ファイル有無」は変更内容に応じて事前 check した結果（例: CODEOWNERS 更新なら `.github/CODEOWNERS` の存在、workflow なら `.github/workflows/<name>.yaml` など）
 - 対象ファイルが無いプロジェクトは「新規作成するか / スキップするか」をユーザーに判断してもらう
-- ユーザーが OK を出したら次に進む。この承認は対象 repo への変更だけを許可し、setup script の実行承認を兼ねない
+- ユーザーが OK を出したら次に進む。この承認は対象 repo への変更だけを許可し、後述の setup script の実行承認を兼ねない
 - cloud セッションでは、OK の後に対象 repo を親セッションでまとめて追加し、対象ファイル有無の check はその後に行う。有無が未確認のまま提示する表にはその旨を記す。repo 追加機能が無ければ追加できない対象を skip として報告する
 
 ## 各プロジェクトで変更を適用する
@@ -97,7 +95,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 ## 制約
 
 - `projects.json` を編集しないこと。skill の責務は projects.json を「読む」ことだけで、プロジェクト一覧の追加/削除はユーザーが `nozomiishii/workspaces` repo で行う
-- PR のマージは絶対に実行しない（ta・pr skill の制約と同じ）
+- PR のマージは絶対に実行しない（tha・pr skill の制約と同じ）
 - git 操作は `cd <path> && git` でなく `git -C <path>` を使う（bare repository attack 防止の sandbox 制約）
 - worktree では main や別 branch に切り替えず、切り出し時に作成した task branch を使う
 - 変更内容が repo によって意味的に違う場合（例: 各 repo の独自命名規則が絡む）は、ユーザーに「同じ変更でいいか / repo ごとに差分があるか」を確認してから進める

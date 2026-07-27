@@ -60,7 +60,7 @@ Claude Code on the web など、ローカルの clone や gh が無いリモー�
 - テストの上に簡潔な日本語コメントを添える。
 - テストファイルはソースと同じディレクトリに配置する。
 - 1テストで検証する振る舞いは1つにする。
-- 各テストケースを自己完結させること。
+- 各テストケースを自己完結させる。
   - 共通処理でLifecycle Hooksは使わない。ヘルパー関数、`using` 、テスト内に閉じた[Test hooks](https://vitest.dev/api/hooks.html#test-hooks)で組む。
 - tautology testを避ける。実装をなぞる期待値ではなく、仕様から期待値を決める。
 

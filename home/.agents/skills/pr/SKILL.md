@@ -17,7 +17,7 @@ pr — Pull Request 当番。CI が落ちていたり、main が進んでいた�
 ## 絶対制約
 
 - マージは実行しない。`gh pr merge` / `gh api .../merge` を呼ばない。マージはユーザーが手動で行う
-- PR の状態取得は「状態の収集」の GraphQL 1 ショットに一元化する。`gh pr checks` / `gh pr view --json reviews,...` / `gh api .../comments` を個別に呼ばない。gh CLI が無い環境は「gh CLI が無い環境」の対応表に従う
+- PR の状態取得は「状態の収集」の GraphQL 1 ショットに一元化する。トラブルシューティング中でも `gh pr checks` / `gh pr view --json reviews,statusCheckRollup,...` / `gh api .../comments` を個別に呼ばない。3 calls 間の snapshot ズレと、resolved 判定を REST で推測するミスを防ぐため。gh CLI が無い環境は「gh CLI が無い環境」の対応表に従う
 - force-push は `--force-with-lease` のみ。`--force` は禁止
 
 ## gh CLI が無い環境
@@ -94,7 +94,13 @@ fi
 
 引数なしで open PR が見つからない場合は、branch 上でも detached HEAD でも PR 未検出として止まり、「PR の状態を確認」の PR 無し導線に従ってユーザーに案内する。detached HEAD で複数見つかる場合は候補 URL を列挙し、対象を 1 つだけユーザーに確認する。
 
-PR を特定したら `gh pr view --repo "$OWNER/$NAME" "$NUM" --json headRefName,baseRefName,headRepository,headRepositoryOwner` を 1 回実行し、`HEAD_REF`、`BASE_REF`、`HEAD_REPO_OWNER`、`HEAD_REPO_NAME` を取得する。branch 名は `git check-ref-format --branch`、head repo owner / name は「引数の解釈」と同じ allowlist で検証し、失敗したら fetch・checkout・rebase より前に停止する。URL / owner#N の target を cwd repo に解決しない。head repo が base repo と同じなら、target worktree の検証後に `PUSH_REMOTE_URL=$(git remote get-url origin)` を使う。fork では `gh config get git_protocol -h github.com` を確認し、`ssh` なら検証済みの owner / repo から `git@github.com:<head-owner>/<head-repo>.git`、それ以外は `https://github.com/<head-owner>/<head-repo>.git` を組み立てる。head repo が削除済み、または push 権限が無い場合は変更を始めずユーザーへ返す。
+PR を特定したら `gh pr view --repo "$OWNER/$NAME" "$NUM" --json headRefName,baseRefName,headRepository,headRepositoryOwner` を 1 回実行し、`HEAD_REF`、`BASE_REF`、`HEAD_REPO_OWNER`、`HEAD_REPO_NAME` を取得する。
+
+- branch 名は `git check-ref-format --branch`、head repo owner / name は「引数の解釈」と同じ allowlist で検証する。失敗したら fetch・checkout・rebase より前に停止する
+- URL / owner#N の target を cwd repo に解決しない
+- head repo が base repo と同じなら、「作業ディレクトリの決定」で作業先を確定した後に `PUSH_REMOTE_URL=$(git remote get-url origin)` を使う
+- fork では `gh config get git_protocol -h github.com` を確認し、`ssh` なら検証済みの owner / repo から `git@github.com:<head-owner>/<head-repo>.git`、それ以外は `https://github.com/<head-owner>/<head-repo>.git` を組み立てる
+- head repo が削除済み、または push 権限が無い場合は変更を始めずユーザーへ返す
 
 base または head repo が `nozomiishii` 所有ではない、もしくは外部 repo か判定できない場合は、変更・push・GitHub への返信より先に sibling の [oss SKILL.md](../oss/SKILL.md) を明示的に読み、その承認境界に従う。
 
@@ -120,11 +126,13 @@ Claude Code と branch 上の CLI は `gh pr checkout <N>` を使う。Codex App
 
 ### PR の状態を確認
 
+PR の存在と state の早期判定に使う 1 回だけの例外。以降の状態判断は「状態の収集」に一元化する。
+
 ```bash
 gh pr view --repo "$OWNER/$NAME" "$NUM" --json number,url,headRefName,baseRefName,state,mergeStateStatus,mergeable,reviewDecision
 ```
 
-- PR が見つからない（引数なしのとき）: 「PR が無いので先に tha skill でブランチを公開する必要がある」と返して止まる。tha skill を勝手に実行しない。
+- PR が見つからない（引数なしのとき）: 「PR が無いので先に [tha SKILL.md](../tha/SKILL.md) でブランチを公開する必要がある」と返して止まる。tha skill を勝手に実行しない。
 - `state` が CLOSED / MERGED: その旨を伝えて止まる。
 
 ## 状態の収集
@@ -144,7 +152,7 @@ chmod 700 "$STATE_DIR"
 STATE_FILE="$STATE_DIR/state.json"
 ```
 
-`STATE_DIR` は task の最初に一度だけ作る。recurring follow-up には `$OWNER`、`$NAME`、`$NUM`、`$STATE_DIR` を値ごと引き継ぐ。現在の SKILL.md から [scripts/query-state.sh](scripts/query-state.sh) を相対解決し、`OWNER`、`NAME`、`NUM`、`STATE_DIR` の順で引数に渡して Bash で実行する。script が sibling の [state-query.graphql](state-query.graphql) を自己解決し、同じディレクトリ内の一時ファイルから `state.json` へ atomic rename する。install 先の絶対パスを組み立てない。
+`STATE_DIR` は task の最初に一度だけ作る。recurring follow-up には `$OWNER`、`$NAME`、`$NUM`、`$STATE_DIR` を値ごと引き継ぐ。現在の SKILL.md から [scripts/query-state.sh](scripts/query-state.sh) を相対解決し、`OWNER`、`NAME`、`NUM`、`STATE_DIR` の順で引数に渡して Bash で実行する。script が [state-query.graphql](state-query.graphql) を自己解決し、同じディレクトリ内の一時ファイルから `state.json` へ atomic rename する。install 先の絶対パスを組み立てない。
 
 GraphQL クエリ本体は [state-query.graphql](state-query.graphql) に分離。取得する主な field:
 
@@ -163,12 +171,6 @@ state から判断する典型項目:
 | 未解決 review thread | `.reviewThreads.nodes[] \| select(.isResolved \| not)` |
 
 各 iteration で `.baseRefName` を `STATE_BASE_REF` として取り、`git check-ref-format --branch "$STATE_BASE_REF"` で再検証してから `BASE_REF="$STATE_BASE_REF"` に更新する。base branch が途中で変更されても、初回の値や `main` を使い続けない。値が空または不正なら停止する。
-
-旧 3 並列 calls (`gh pr checks` + `gh pr view --json` + `gh api .../comments`) に対する利点:
-
-- 3 calls の間に CI 状態が更新されることで起きる snapshot ズレが消える
-- `reviewThreads.isResolved` で「未解決か」が直接取れる（旧 REST `comments` + `in_reply_to_id` chain を辿る推測判定が不要）
-- 失敗 run の `databaseId` が直接拾えるので、「CI を直す」の `gh run view` に渡す ID 取得が独立 call なしで済む
 
 境界条件メモ:
 
@@ -220,11 +222,11 @@ git commit -m "fix: <英語小文字始まりで何を直したか>"
 git push "$PUSH_REMOTE_URL" "HEAD:refs/heads/$HEAD_REF"
 ```
 
-コミットメッセージはリポジトリの commitlint ルールに従う（Conventional Commits / 英語 / 小文字始まり / ASCII のみ）。
+コミットメッセージは末尾「制約」のコミットメッセージ規則に従う。
 
 ### レビュー指摘に対応
 
-state file の `reviewThreads` で `isResolved` が `false` の thread を順に確認する。GraphQL が確定状態を返すので、旧 REST `comments` + `in_reply_to_id` chain を辿る推測判定は不要。
+state file の `reviewThreads` で `isResolved` が `false` の thread を順に確認する。
 
 ```bash
 jq -r '
@@ -315,14 +317,13 @@ recurring follow-up が利用できないか承認エラーになる場合は、
 
 ## 制約
 
-- マージは絶対に実行しない（`gh pr merge` / `gh api .../merge` 禁止）
-- 状態取得は「状態の収集」の GraphQL に一元化する: トラブルシューティング中でも `gh pr checks` / `gh pr view --json reviews,statusCheckRollup,...` / `gh api .../comments` を個別に呼ばない。3 calls 間の snapshot ズレと、resolved 判定の REST 推測ミスを避けるため。gh CLI が無い環境は「gh CLI が無い環境」の対応表に従う
+冒頭の「絶対制約」に加えて:
+
 - state file は明示削除しない。OS の `/tmp` purge に任せる。セキュリティガードは「状態の収集」に組み込み済み
-- PR タイトル / コミットメッセージは英語 Conventional Commits 形式（小文字始まり、ASCII のみ、scope 無し、末尾スペース禁止）
+- コミットメッセージと PR タイトルは英語 Conventional Commits 形式（小文字始まり、ASCII のみ、scope 無し、末尾スペース禁止）。リポジトリの commitlint ルールがあればそれに従う
 - PR 本文に追記する必要が出た場合は、本文部分は日本語のまま
 - `gh pr edit` で本文を更新するときは `--body-file` を使う（HEREDOC で `--body` 直渡しは command injection 検出に引っかかる）
 - worktree で動くこと前提。base branch を checkout せず、検証済みの `$BASE_REF` を fetch して `git rebase "origin/$BASE_REF"` を使う
 - 複合 `cd <path> && git` は使わず `git -C <path>` を使う
-- force-push は `--force-with-lease` のみ。`--force` は禁止
 - レビュアー判断が必要そうな未解決コメントを勝手に「解決済み」にしない
 - main ブランチに直接コミットしない
