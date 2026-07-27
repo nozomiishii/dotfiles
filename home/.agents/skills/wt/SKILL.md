@@ -4,7 +4,7 @@ description: >-
   repo をまたぐタスクの切り出し方、セッションの作り直し方、git worktree を用意する手順。
   Claude Code で /wt、Codex で $wt と入力したとき、セッション開始ディレクトリ以外の repo を変更するとき、
   コンテキストが増えたセッションを作り直したいと言ったとき、
-  またはスキルや作業フローが作業用 worktree を必要とするときに使用する。
+  スキルや作業フローが作業用 worktree を必要とするとき、または作業済み worktree を片付けたいときに使用する。
 ---
 
 # /wt
@@ -46,3 +46,22 @@ fi
 - .envrc のある repo で env に依存するコマンドは `direnv exec "$WT" <コマンド>` で実行する。clone 先が direnv の whitelist 外の場合、所有 repo は内容確認後に `direnv allow "$WT"` を実行する。外部 repo の `direnv allow` は内容提示と明示承認後だけ実行する
 - REPO が無い cloud セッションでは、AGENTS.md の「cloud セッション」規約で repo を用意する。現在のホストに repo 追加機能が無ければ代替ディレクトリを推測せず、用意できないことを報告して止まる
 - 後続の commit / push / PR の規約は呼び出し元 (スキルや会話) に従う
+
+## worktree の cleanup
+
+このスキルの手動手順で作った worktree は、このスキルを cleanup の正本にする。PR 作成時点では merge 前なので削除せず、完了報告に PR URL、`WT`、`BRANCH`、cleanup 未完了であることを含める。
+
+同じ task で PR の `MERGED` を確認できたとき、または merge 後に cleanup を依頼されたときだけ削除する。削除前に次をすべて確認する。
+
+- canonical `WT` が canonical `$REPO/.claude/worktrees/` 配下に留まり、相対 path が空や `..` 始まりではない。`SLUG` に `/` がある場合は nested path になるため、直下だけに限定しない。`git -C "$REPO" worktree list --porcelain` に同じ canonical path がある
+- worktree の branch が対象 PR の head branch と一致し、GitHub の状態が `MERGED`
+- `git -C "$WT" status --porcelain` が空。dirty、未 merge、PR 不明なら削除せず停止する
+
+確認後、base worktree から実行する。
+
+```sh
+git -C "$REPO" worktree remove "$WT"
+git -C "$REPO" worktree prune
+```
+
+Codex App や Claude Code デスクトップが管理する worktree は手動削除しない。host の task cleanup に任せる。どちらが管理しているか不明なら削除せず、ユーザーに確認する。

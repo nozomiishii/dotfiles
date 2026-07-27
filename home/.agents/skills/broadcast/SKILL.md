@@ -74,8 +74,13 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 - setup 候補は、repo、検証対象 commit、blob OID、内容、実行 command を対象表とは別の setup 承認表で提示し、明示承認を得る。承認後も同じ commit と blob OID であることを再検証し、承認済み blob の bytes だけを検証済み repo root を cwd として実行する。worktree の同名 file を無条件に実行しない
 - 承認後に commit・blob OID・内容が変わった場合や、追加の setup が見つかった場合は実行せず、2 回目の承認を得る。過去の対象リストへの OK を setup の承認に流用しない
 - 変更を適用する
-- commit & push（コミットメッセージは各 repo の commitlint ルールに従う）
-- ユーザーが PR まで欲しいと言った場合のみ、push 済みブランチから PR を作成する。本文は日本語で `--body-file` 渡し: `gh pr create --repo <owner>/<repo> --head <branch> --title "<type>: <subject>" --body-file <tmpfile>`
+- `git status --short`、`git diff --stat`、`git diff --check` と、変更意図が分かる file-scoped diff を親へ返して停止する。commit・push はまだ行わない
+
+## 差分確認と公開
+
+各 repo の変更が揃ったら、repo ごとの diff summary と検証結果をまとめてユーザーに提示する。対象リストへの最初の OK を、実際の差分を公開する承認に流用しない。
+
+公開承認後だけ各 task に commit・push を再開させる。コミットメッセージは各 repo の commitlint ルールに従う。承認されなかった repo は変更を公開せず skip にする。ユーザーが PR まで欲しいと言った場合のみ、push 済みブランチから PR を作成する。本文は日本語で `--body-file` 渡し: `gh pr create --repo <owner>/<repo> --head <branch> --title "<type>: <subject>" --body-file <tmpfile>`
 
 ## 結果を報告する
 

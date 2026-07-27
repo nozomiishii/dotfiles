@@ -58,11 +58,19 @@ issue 作成は外向き操作なので、作成前に必ず承認を取る。
 承認後、対象 repo に issue を立てる:
 
 ```sh
-BODY_FILE=$(mktemp) && cat > "$BODY_FILE" <<'EOF'
+TITLE_FILE=$(mktemp)
+BODY_FILE=$(mktemp)
+cat > "$TITLE_FILE" <<'RETRO_TITLE_7D8A4F'
+<type>: <subject>
+RETRO_TITLE_7D8A4F
+cat > "$BODY_FILE" <<'RETRO_BODY_C2E91B'
 （日本語の issue 本文。session URL は書かない）
-EOF
-gh issue create -R <owner/repo> --title "<type>: <subject>" --body-file "$BODY_FILE"
+RETRO_BODY_C2E91B
+IFS= read -r TITLE < "$TITLE_FILE"
+gh issue create -R <owner/repo> --title "$TITLE" --body-file "$BODY_FILE"
 ```
+
+タイトルも本文もクォート付き heredoc へ書き、shell のコードではなくデータとして渡す。heredoc delimiter はタイトル用と本文用で分け、承認済み内容に同じ standalone line が無い文字列を選ぶ。衝突する場合は command を実行する前に別の delimiter へ変える。タイトルファイルが空でない 1 行だけであることを確認してから `gh` を呼ぶ。承認済みタイトルを command へ直接埋め込まない。
 
 ## session URL のセキュリティ
 

@@ -2,8 +2,9 @@
 name: watch
 description: >-
   外部バグの解消を検知できる形 (expiring TODO・追跡 Issue) で追跡を残す。
-  Issue 調査の結果、自分では修正できない外部バグの追跡が必要と判断した時、
-  または外部のバグ・依存の制約によるワークアラウンド・一時対応をコードに入れる時に使用する。
+  Claude Code で /watch、Codex で $watch と入力した時、Issue 調査で追跡が必要と判断した時、
+  または外部バグ・依存制約によるワークアラウンドや一時対応をコードに入れる時に使用する。
+argument-hint: "[Issue URL / owner/repo#number]（任意）"
 ---
 
 # /watch
@@ -54,32 +55,44 @@ lint にも Issue にもつながっていないコメントは放置される�
 
 ## 実行
 
-承認を得たら、以下を順に実行する:
+追跡対象は入力または Issue URL から `$OWNER`、`$REPO`、`$NUM` に分ける。owner と repo は英数字・`.`・`_`・`-`、`NUM` は正の整数だけを許可し、検証できなければ外部操作へ進まない。検証後に `UPSTREAM_URL="https://github.com/$OWNER/$REPO/issues/$NUM"` とする。
 
-- 対象 Issue をサブスクライブ: `gh api graphql -f query='mutation { updateSubscription(input: {subscribableId: "'$(gh issue view {number} --repo {owner}/{repo} --json id --jq .id)'", state: SUBSCRIBED}) { subscribable { viewerSubscription } } }'`
+承認を得たら、外部リポジトリへの書き込みより先に sibling の [oss SKILL.md](../oss/SKILL.md) を明示的に読み、その合意・下書き・承認ゲートに従う。サブスクライブも外部状態の変更なので例外にしない。
+
+ゲート通過後、以下を順に実行する:
+
+- 対象 Issue をサブスクライブ:
+
+  ```sh
+  TARGET_ID=$(gh issue view "$NUM" --repo "$OWNER/$REPO" --json id --jq .id)
+  gh api graphql \
+    -f query='mutation($id: ID!) { updateSubscription(input: {subscribableId: $id, state: SUBSCRIBED}) { subscribable { viewerSubscription } } }' \
+    -f id="$TARGET_ID"
+  ```
+
 - 作業中のリポジトリに `upstream-watch` ラベルがなければ作成: `gh label create upstream-watch --description "外部 Issue の追跡" --color "d4c5f9"`
 - 作業中のリポジトリに Issue を発行する。タイトルとボディは以下の形式:
 
-タイトル: `[upstream-watch] {対象リポジトリ}#{番号} の短い要約`
+タイトル: `[upstream-watch] $OWNER/$REPO#$NUM の短い要約`
 
 ボディ:
 
-```
+```markdown
 ## 追跡対象
 
-{対象 Issue の URL}
+$UPSTREAM_URL
 
 ## きっかけ
 
-{この追跡を始めた出来事。何をしていて、どういう問題に遭遇したか}
+この追跡を始めた出来事。何をしていて、どういう問題に遭遇したか。
 
 ## 自分への影響
 
-{この外部バグが自分の作業にどう影響しているか}
+この外部バグが自分の作業にどう影響しているか。
 
 ## 解消後のアクション
 
-{Issue が解消したら自分が取るべき具体的なアクション}
+Issue が解消したら自分が取るべき具体的なアクション。
 ```
 
 - Issue に `upstream-watch` ラベルを付ける
