@@ -62,7 +62,10 @@ elif [[ -z "$ARG" ]]; then
   OWNER=$(gh repo view --json owner --jq .owner.login)
   NAME=$(gh repo view --json name --jq .name)
   if git symbolic-ref -q HEAD >/dev/null; then
-    NUM=$(gh pr view --json number --jq .number)
+    if ! NUM=$(gh pr view --json number --jq .number); then
+      printf 'no open PR for branch %s\n' "$(git branch --show-current)" >&2
+      exit 1
+    fi
   else
     HEAD_SHA=$(git rev-parse HEAD)
     OPEN_PRS=$(gh api "repos/$OWNER/$NAME/commits/$HEAD_SHA/pulls" \
@@ -89,7 +92,7 @@ fi
 [[ "$NUM" =~ ^[1-9][0-9]*$ ]] || exit 2
 ```
 
-detached HEAD の commit に open PR が無い場合は PR 未検出として止まる。複数ある場合は候補 URL を列挙し、対象を 1 つだけユーザーに確認する。
+引数なしで open PR が見つからない場合は、branch 上でも detached HEAD でも PR 未検出として止まり、「PR の状態を確認」の PR 無し導線に従ってユーザーに案内する。detached HEAD で複数見つかる場合は候補 URL を列挙し、対象を 1 つだけユーザーに確認する。
 
 PR を特定したら `gh pr view --repo "$OWNER/$NAME" "$NUM" --json headRefName,baseRefName,headRepository,headRepositoryOwner` を 1 回実行し、`HEAD_REF`、`BASE_REF`、`HEAD_REPO_OWNER`、`HEAD_REPO_NAME` を取得する。branch 名は `git check-ref-format --branch`、head repo owner / name は「引数の解釈」と同じ allowlist で検証し、失敗したら fetch・checkout・rebase より前に停止する。URL / owner#N の target を cwd repo に解決しない。head repo が base repo と同じなら、target worktree の検証後に `PUSH_REMOTE_URL=$(git remote get-url origin)` を使う。fork では `gh config get git_protocol -h github.com` を確認し、`ssh` なら検証済みの owner / repo から `git@github.com:<head-owner>/<head-repo>.git`、それ以外は `https://github.com/<head-owner>/<head-repo>.git` を組み立てる。head repo が削除済み、または push 権限が無い場合は変更を始めずユーザーへ返す。
 
