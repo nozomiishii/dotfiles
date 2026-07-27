@@ -11,10 +11,11 @@ model: sonnet
 
 ## 現状の差分を把握する
 
-- 現在の task、ホストの project 一覧、既存 clone の順で、git remote が `nozomiishii/dotfiles` と一致する repo を探す。見つけた clone の `git rev-parse --show-toplevel` を dotfiles repo の root にする。現在の cwd を無条件に使わない
+- 現在の task、ホストの project 一覧、既存 clone の順で、git remote が `nozomiishii/dotfiles` と一致する repo を探す。見つけた clone の `git rev-parse --show-toplevel` を dotfiles repo の root `DOTFILES` にする。現在の cwd を無条件に使わない
 - clone が無ければ sibling の [wt SKILL.md](../wt/SKILL.md) を明示的に読み、その手順とホストの repo 追加機能で `nozomiishii/dotfiles` を用意する。利用できなければ配置場所を推測せず止まる
-- 正本の `home/.claude/settings.json` を読み込む
-- 正本の `home/.claude/settings.md` を読み込む
+- `DOTFILES` がセッション開始 repo でなければ、wt skill の方針で dotfiles の別 session / task に切り出し、その task branch の実際の worktree root を `WT` とする。セッション開始 repo なら現在の task root を `WT` とする。以降の読取・編集・検証・commit・PR は `$WT` だけで行う
+- 正本の `$WT/home/.claude/settings.json` を読み込む
+- 正本の `$WT/home/.claude/settings.md` を読み込む
 - 両者を比較して、settings.md に反映されていない差分を洗い出す
 - 新しく追加された allow/deny ルールがあれば、設定コメントと git 履歴から追加理由を確認する。根拠が無ければ不明とする
 
@@ -41,5 +42,7 @@ model: sonnet
 
 ## 反映する
 
-ユーザーの承認を得た変更を repo 内の `home/.claude/settings.json` と `home/.claude/settings.md` の両方に反映する。`~/.claude/` 側を直接編集しない。
+ユーザーの承認を得た変更を `$WT/home/.claude/settings.json` と `$WT/home/.claude/settings.md` の両方に反映する。`~/.claude/` 側を直接編集しない。
 settings.md の「最終更新」日付も更新する。
+
+反映後に両ファイルだけの diff と検証結果を確認する。dotfiles の `$WT` を操作する task で sibling の [tha SKILL.md](../tha/SKILL.md) を明示的に読み、承認された変更だけを stage、commit、push して PR を作る。ほかの変更を混ぜず、完了報告に PR の URL を含める。commit または PR 作成前に検証が失敗したら公開せず停止する。

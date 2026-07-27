@@ -81,6 +81,13 @@ SKILL.md を読ませた subagent に RED と同じタスクを投げ、意図�
 
 対象 surface を先に決める。Claude Code local・cloud、Codex CLI・App・IDE などを一括りにせず、配置と利用場面から実際の対象だけを選ぶ。
 
+### 暗黙呼び出しのゲート
+
+暗黙呼び出しを許すかは surface ごとに決める。Claude Code の `disable-model-invocation` と Codex の `agents/openai.yaml` にある `allow_implicit_invocation` は独立したゲートで、片方の設定はもう片方へ効かない。両 surface を明示呼び出し限定にする場合だけ両方を設定し、片方だけ限定する場合は対象 host のゲートだけを設定する。
+
+- Claude Code: [`disable-model-invocation: true`](https://code.claude.com/docs/en/slash-commands#control-who-invokes-a-skill)
+- Codex: [`policy.allow_implicit_invocation: false`](https://learn.chatgpt.com/docs/build-skills#optional-metadata)
+
 チェックリストを先に固定しない。検証のたびに、Agent Skills、Claude Code、Codex の公式ドキュメントの最新取得を試み、対象機能の記述を確認してから今回のチェックリストを作る。同じセッションで鮮度を検証済みの公式キャッシュは再利用してよい。Agent Skills を共通の基準、各ホストの文書をその surface の拡張として読み、基準と拡張の差だけで矛盾扱いしない。
 
 過去のチェックリストやモデルの記憶だけで判定しない。参照した URL、取得時刻、鮮度確認の結果、該当箇所、確認したホストとバージョンをテスト記録に残す。現在の公式情報を取得できない、同じ surface・バージョンの情報が解消不能に食い違う、対象機能が未記載の場合は未確認とする。編集内容は検証待ちとして引き渡せるが、両ホスト同等と判定しない。
