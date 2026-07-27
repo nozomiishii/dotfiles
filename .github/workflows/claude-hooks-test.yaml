@@ -1,0 +1,31 @@
+name: Claude hooks test
+
+on:
+  pull_request:
+    paths:
+      - "home/.claude/hooks/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    permissions:
+      contents: read # required by actions/checkout to fetch repository code
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Run hook tests
+        run: for t in home/.claude/hooks/*.test.sh; do bash "$t" || exit 1; done

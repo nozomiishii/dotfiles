@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-07-17
+最終更新: 2026-07-28
 
 ## 背景
 
@@ -141,11 +141,32 @@ Auto mode の利用可能条件: Max / Team / Enterprise / API プラン + 対�
 
 ### hooks
 
-グローバルの hooks は定義しない（キー自体を置かない）。
+グローバルの hooks は AGENTS.md ルールの決定的ガードのみ置く。スクリプトの実体は `~/.claude/hooks/`（正本は `home/.claude/hooks/`、テストは同ディレクトリの `*.test.sh`）。
+
+```jsonc
+"hooks": {
+  "PreToolUse": [
+    { "matcher": "Bash", "hooks": [{ "type": "command", "command": "bash ~/.claude/hooks/block-pr-merge.sh", "timeout": 5 }] },
+    { "matcher": "AskUserQuestion", "hooks": [{ "type": "command", "command": "bash ~/.claude/hooks/ask-one-question.sh", "timeout": 5 }] },
+    { "matcher": "Edit|Write", "hooks": [{ "type": "command", "command": "bash ~/.claude/hooks/block-lint-suppression.sh", "timeout": 10 }] }
+  ]
+}
+```
+
+- block-pr-merge: PR マージ操作（`gh pr merge`、REST の `pulls/*/merge`、graphql の merge 系 mutation）を deny。permissions.deny の `Bash(gh pr merge:*)` は先頭一致のため `cd x && gh pr merge` 等の複合・間接実行をすり抜ける。hook はコマンド全文をスキャンして塞ぐ（permissions.deny 側も defense-in-depth として残す）
+- ask-one-question: AskUserQuestion の questions が 2 件以上なら deny（AGENTS.md「質問は1つずつ」）。モデルが即座に 1 問へ絞ってリトライできるため deny
+- block-lint-suppression: Edit/Write で抑制コメント（eslint-disable / @ts-ignore / noqa 等）の出現数が編集前より増える場合に ask（AGENTS.md「静的解析ルールの抑制禁止」）。承認なしの抑制を止めつつ、ユーザー承認という正規の手続きを ask がそのまま表現する。`.md` 等ドキュメントでの言及は対象外
+- 既知の抜け道: Bash 経由の書き込み（`sed -i` 等）、lint 設定ファイルでの rule off、GitHub MCP ツール経由の merge は検知しない。hook はガードの一層で、AGENTS.md のルールが正本
+- settings と hook はセッション開始時にスナップショットされるため、変更は `make link` 後の新セッションから有効
+- `~/.claude/hooks/` は stow の folder-symlink になる。手でローカル限定ファイルを置くと repo working tree に書き込まれ、次回 `make link` が未コミット変更検出で中断する
+
+グローバルに置かないもの:
 
 - repo のセットアップ（deps install 等）は各 repo が持つ: `.claude/settings.json` の SessionStart hook が `.hooks/setup.sh` を呼び、Codex は `.codex/hooks.json` から同じスクリプトを呼ぶ（[dotfiles#1268](https://github.com/nozomiishii/dotfiles/issues/1268)）。セットアップ内容はパッケージマネージャ等 repo 固有のため正本を repo に置き、グローバルからの自動実行をやめることで、clone した他人の repo でスクリプトが意図せず発火することも構造的になくなる（repo に入る hook はその repo の PR レビューを通る）。worktree の起点の鮮度は Claude Code 本体が担う（v2.1.208+ で origin/HEAD 起点 + 自動 fetch）
 - `.envrc` の env（[infra](https://github.com/nozomiishii/infra) の `AWS_PROFILE` 等）は自動注入しない。env に依存するコマンドを `direnv exec . <コマンド>` で実行する運用（AGENTS.md の実装ルール）。hook の `CLAUDE_ENV_FILE` 注入は Codex に効かず蓄積バグもあり（[anthropics/claude-code#67067](https://github.com/anthropics/claude-code/issues/67067)）、shell rc 方式は Claude Code の shell snapshot が env を保存しない（PATH のみ）ため機能しない。direnv の whitelist / allow による信頼ゲートは `direnv exec` にも効く
-- hook で判断制御（allow/deny）を返す場合、旧フィールド `decision`/`reason` は deprecated。`hookSpecificOutput.permissionDecision` / `hookSpecificOutput.permissionDecisionReason` を使うこと
+- 外部 repo への gh 書き込みの /oss ガード・Draft PR ガード・direnv exec リマインドは将来候補（今回は見送り）
+
+hook で判断制御（allow/deny）を返す場合、旧フィールド `decision`/`reason` は deprecated。`hookSpecificOutput.permissionDecision` / `hookSpecificOutput.permissionDecisionReason` を使うこと（参考: [hooks リファレンス](https://code.claude.com/docs/en/hooks)）。
 
 ### worktree
 

@@ -41,6 +41,7 @@ jobs:
           tar czf _site/cloud-setup.tar.gz \
             home/AGENTS.md \
             home/.claude/settings.json \
+            home/.claude/hooks/ \
             home/.agents/skills/ \
             home/.codex/hooks.json
 

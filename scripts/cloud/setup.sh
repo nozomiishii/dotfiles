@@ -9,6 +9,7 @@ curl -fsSL "https://nozomiishii.github.io/dotfiles/cloud-setup.tar.gz" | tar xz
 mkdir -p ~/.claude
 cp home/AGENTS.md ~/.claude/CLAUDE.md
 jq 'del(.statusLine, .sandbox)' home/.claude/settings.json >~/.claude/settings.json
+cp -R home/.claude/hooks ~/.claude/hooks
 
 # Codex
 mkdir -p ~/.codex
