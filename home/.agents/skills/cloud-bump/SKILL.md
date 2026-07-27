@@ -24,8 +24,8 @@ cloud 配信対象に触れる PR を作成した時点では bump せず、マ�
 
 ## 権限
 
-- Claude Code: JS 実行の許可は frontmatter の allowed-tools で与える。settings.json に javascript_tool の常時 allow を置かない。許可はこのスキルを起動したターンだけ有効で、次のユーザーメッセージで消れる ([skills.md](https://code.claude.com/docs/en/skills.md))。承認待ちでターンをまたいだら、POST の前にスキルを起動し直して許可を再適用する
-- Codex: 最初に `$chrome:control-chrome` を読み、既存の Chrome セッションを選ぶ。本文の `javascript_tool`、`read_network_requests`、UI 操作を literal なツール名として呼ばず、browser-client の Playwright 評価・ネットワーク観察・クリックへ読み替える。最初に、page origin への GET と POST、ネットワーク観察を実行できる capability があるか確認する。capability が欠けていれば API 操作を試さず停止し、手動フォールバック URL を案内する。承認でターンをまたいだら `$cloud-bump` を再度読み、Chrome 接続と GET 結果を再確認してから POST する
+- Claude Code: JS 実行の許可は frontmatter の allowed-tools で与える。settings.json に javascript_tool の常時 allow を置かない。許可はこのスキルを起動したターンだけ有効で、次のユーザーメッセージで消える ([skills.md](https://code.claude.com/docs/en/skills.md))。承認待ちでターンをまたいだら、POST の前にスキルを起動し直して許可を再適用する
+- Codex: 最初に `$chrome:control-chrome` を読み、既存の Chrome セッションを選ぶ。本文の `javascript_tool` や UI 操作を literal なツール名として呼ばず、browser-client の Playwright 評価・ネットワーク観察・クリックへ読み替える。最初に、page origin への GET と POST、ネットワーク観察を実行できる capability があるか確認する。capability が欠けていれば API 操作を試さず停止し、「手順」末尾の手動フォールバック URL を案内する。承認でターンをまたいだら `$cloud-bump` を再度読み、Chrome 接続と GET 結果を再確認してから POST する
 
 どちらの環境でも POST 前の差分承認を省略しない。
 
@@ -39,7 +39,7 @@ claude.ai の未文書化 API で init_script を直接更新する。公式 API
 
 ### 手順
 
-Claude in Chrome で <https://claude.ai/code> を開き、JS でAPI を叩く。
+Claude in Chrome で <https://claude.ai/code> を開き、JS で API を叩く。
 
 GET で現在の環境設定を取得:
 
@@ -158,7 +158,6 @@ if (after.config.init_script !== updatedInit ||
 }
 ```
 
-- GET で現在の init_script を読み取り、会話に控える
 - 承認前 call は safe summary と snapshot digest を返す。承認後 call は context guard、endpoint、GET、更新、検証 GET を自己完結させる
 - 変更は先頭の日時コメント行 `# bump YYYY-MM-DD HH:MM` の追加・更新のみ。他の行に触れない。再構築のトリガーは欄のテキストが変わることなので、同日に複数回 bump しても変化が出るよう時刻まで書く
 - POST 前に差分を提示して承認を得る
