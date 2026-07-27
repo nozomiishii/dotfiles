@@ -98,6 +98,7 @@ Agent Teams はタスクに応じて Claude が自動提案するか、明示的
   // --- GitHub PR マージ保護（元の設定から保持） ---
   "Bash(gh pr merge:*)",
   "Bash(gh api repos/*/pulls/*/merge*)",
+  "mcp__github__merge_pull_request",  // GitHub MCP (user scope の github server) の merge tool
 
   // --- GitHub リポジトリ作成・削除保護（勝手な作成・削除を防止） ---
   "Bash(gh repo create:*)",
@@ -120,6 +121,13 @@ Agent Teams はタスクに応じて Claude が自動提案するか、明示的
 ```
 
 deny ルールの評価順序: deny → ask → allow で、最初にマッチしたルールが勝つ。そのため `Bash(git:*)` で git 全般を allow しつつ、`Bash(git push --force:*)` で force push だけ deny できる。`--force-with-lease` は allow に明示的に入れているため通る。
+
+`mcp__github__merge_pull_request` は、tha / pr skill が GitHub 操作に使う user scope の GitHub MCP server (server 名 `github`) の merge tool を封じる。server の登録は次のコマンドで行い、初回は対話セッションの `/mcp` で OAuth 認証する。remote server の header は toolset 単位の絞り込みしかできず merge tool だけを除外できないため、client 側の deny で防ぐ。
+
+```sh
+claude mcp add --transport http github https://api.githubcopilot.com/mcp/ --scope user \
+  --header "X-MCP-Toolsets: context,repos,pull_requests,actions"
+```
 
 #### permissions.defaultMode
 

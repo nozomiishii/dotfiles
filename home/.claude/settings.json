@@ -89,6 +89,7 @@
       "Bash(git push -f:*)",
       "Bash(gh pr merge:*)",
       "Bash(gh api repos/*/pulls/*/merge*)",
+      "mcp__github__merge_pull_request",
       "Bash(gh repo create:*)",
       "Bash(gh repo delete:*)",
       "Bash(sudo:*)",
