@@ -73,6 +73,15 @@ name とファイル名を `<頻度>-<対象>` の形に揃える。頻度語は
 - 既存 routine と責務が被らないか（`.routines/` の一覧を見て確認）
 - エラー時の振る舞い（部分的な結果で続行するか、止めるか）
 
+#### monthly の発火日を決める
+
+monthly は同じ日に 2 件以上重ねない。重ねるとその日のタスクが一度に膨らむ。
+
+- `.routines/monthly-*.md` を見て空いている最小の日を取る。ファイル名の 2 桁が JST の発火日
+- name とファイル名は `monthly-<2 桁の JST 発火日>-<内容>`
+- 発火は 05:00 JST に揃える。cron は `0 20 <JST の発火日 - 1> * *`
+- 使える日は JST 2〜28 日。1 日は UTC では前月末日にあたり、月末日が 28〜31 と変わるため cron で書けない。29〜31 日も無い月がある
+
 #### 型を決める
 
 routine を 4 つの型のどれかに分類する。型ごとの雛形が `.routines/_templates/<type>.md` にあり、frontmatter の `type` は使った雛形の名前になる。
@@ -163,6 +172,8 @@ diff がない場合（直接 frontmatter を変更する依頼の場合）は�
 
 update 時は `environment_id` を既存 trigger から取得して含める（API が要求するため）。照合できない routine はスキップし、ユーザーに報告する。
 
+`name` を変えた場合は照合キーが変わる。PR のリネーム検出で旧 name を特定し、旧 name の trigger を新 name へ update する。trigger の `name` と events の `.routines/<name>.md` の両方を書き換える。delete して作り直すと実行履歴が切れる。
+
 schedule を update した場合は、レスポンスの `next_run_at` を JST に換算し frontmatter の schedule コメントと並べて提示する（発火時刻の確認と同じ手順）。
 
 ## 整合性チェック
@@ -187,6 +198,7 @@ trigger 側で値が未設定の場合も差分として扱う。
 
 - routine prompt は brain repo `.routines/` が正本。cloud trigger に prompt 本文を直接書かない
 - frontmatter の `repos` に `nozomiishii/brain` を必ず含める
+- monthly の発火日は JST 2〜28 日から空き日を選び、name とファイル名の 2 桁に入れる
 - cron は UTC で記述し、JST をコメントで添える
 - frontmatter を変更したら main への merge 後に skill を再実行し、cloud trigger も必ず同期する
 - 整合性チェックを実行せずに終了しない。差分ゼロでも結果の表を提示する
