@@ -13,13 +13,15 @@ model: sonnet
 
 ## GitHub へのアクセス
 
-ブランチ判定での PR 検索、既存 PR の状態・head 情報の取得、新規 PR 作成、draft 判定、pr skill への引き継ぎ後の状態取得に GitHub CLI を使う。GitHub CLI が未導入、未認証、または実行に失敗した場合は、利用可能な GitHub connector / app を自分で検索し、該当する capability を使う。connector の機能名は固定しない。このフォールバックのためだけに GitHub CLI の導入や再認証をユーザーへ求めない。
+base branch の解決、ブランチ判定での PR 検索、既存 PR の状態・head 情報の取得、新規 PR 作成、draft 判定、pr skill への引き継ぎ後の状態取得は、利用可能な GitHub connector / app を自分で検索して行う。connector の機能名は固定しない。gh CLI が導入・認証済みでも GitHub 操作には使わない。connector 側の tool 単位の無効化（merge 禁止など）を唯一の適用点にするための一元化なので、gh への迂回はこの前提を壊す。
+
+connector が見つからない場合は GitHub 操作を始めず、GitHub connector / MCP の設定が必要なことをユーザーに伝えて停止する。gh CLI での代替や、gh の導入・再認証を代替案にしない。
 
 connector が対象 PR に必要な head repository identity または write capability を返せない場合は、fork かを推測せず停止する。local branch の作成、stage、commit、push は引き続き git で行い、connector に置き換えない。
 
 ## base branch の解決
 
-branch 判定より先に GitHub の repository metadata から default branch 名を `BASE_REF` として取得する。GitHub CLI では `gh repo view --json defaultBranchRef --jq .defaultBranchRef.name` を使い、CLI が使えない場合は connector から同じ metadata を取得する。`BASE_REF` が空、または `git check-ref-format --branch "$BASE_REF"` に失敗したら fetch や branch 作成へ進まない。
+branch 判定より先に、connector の repository metadata capability から default branch 名を `BASE_REF` として取得する。`BASE_REF` が空、または `git check-ref-format --branch "$BASE_REF"` に失敗したら fetch や branch 作成へ進まない。
 
 ## ブランチ判定
 
@@ -42,10 +44,10 @@ base または head が外部 repo、もしくは所有者を判定できない�
 
 ## PR 作成（必要な場合のみ）
 
-既存の OPEN な PR がない場合、PR を作成する。GitHub CLI で作成できなければ「GitHub へのアクセス」の connector fallback を使う。
+既存の OPEN な PR がない場合、connector の PR 作成 capability で PR を作成する。
 
 ## PR の監視（pr skill へ引き継ぐ）
 
-PR 作成 / push 完了後、sibling の [pr SKILL.md](../pr/SKILL.md) を明示的に読み、その手順で CI 失敗・レビュー指摘・base branch との conflict を修復して mergeable まで持っていく。GitHub CLI から connector へ fallback した場合は、PR 番号または URL と利用中の connector を引き継ぎ、pr skill の「gh CLI が無い環境」と同じ connector 手順を使う。pr skill は explicit-only のため、catalog から暗黙に選ばせない。
+PR 作成 / push 完了後、sibling の [pr SKILL.md](../pr/SKILL.md) を明示的に読み、その手順で CI 失敗・レビュー指摘・base branch との conflict を修復して mergeable まで持っていく。PR 番号または URL と利用中の connector を引き継ぎ、pr skill の「GitHub へのアクセス」と同じ connector 手順を使う。pr skill は explicit-only のため、catalog から暗黙に選ばせない。
 
-ただし GitHub CLI または connector が返す PR metadata で draft の場合はスキップする。draft は修正途中である前提なので、CI の失敗を勝手に直さない。
+ただし connector が返す PR metadata で draft の場合はスキップする。draft は修正途中である前提なので、CI の失敗を勝手に直さない。
