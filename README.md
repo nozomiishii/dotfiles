@@ -273,7 +273,7 @@ Finder Sidebar
 
 ### 🤖 Codex
 
-`~/.codex/config.toml` is not tracked by dotfiles. Codex auto-writes machine-local state into it (project `trust_level` with absolute paths, `model`, and more) that doesn't belong in version control. Following the [Codex configuration reference](https://developers.openai.com/codex/config-reference/#configtoml), set the TUI preference and block GitHub connector PR merges by hand. Restart Codex after saving:
+`~/.codex/config.toml` is not tracked by dotfiles. Until [openai/codex#14601](https://github.com/openai/codex/issues/14601) is resolved, Codex auto-writes machine-local state into this file (project `trust_level` with absolute paths, `model`, and more), making it unsuitable for version control. Following the [Codex configuration reference](https://developers.openai.com/codex/config-reference/#configtoml), set the TUI preference and block GitHub connector PR merges by hand. Restart Codex after saving:
 
 ```toml
 # ~/.codex/config.toml

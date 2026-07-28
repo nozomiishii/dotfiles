@@ -279,7 +279,7 @@ Finder Sidebar
 
 ### 🤖 Codex
 
-`~/.codex/config.toml` は dotfiles で管理しない。Codex が project の `trust_level`（絶対パス入り）や `model` などマシン固有の状態を自動追記し、version control に向かないため。[Codex の設定リファレンス](https://developers.openai.com/codex/config-reference/#configtoml)に従い、TUI 設定と GitHub connector の PR マージ禁止を手動で入れる。保存後は Codex を再起動する:
+`~/.codex/config.toml` は dotfiles で管理しない。Codex が project の `trust_level`（絶対パス入り）や `model` などマシン固有の状態を自動追記し、[openai/codex#14601](https://github.com/openai/codex/issues/14601) が解消されるまでは version control に向かないため。[Codex の設定リファレンス](https://developers.openai.com/codex/config-reference/#configtoml)に従い、TUI 設定と GitHub connector の PR マージ禁止を手動で入れる。保存後は Codex を再起動する:
 
 ```toml
 # ~/.codex/config.toml
