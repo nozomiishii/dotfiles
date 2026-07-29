@@ -42,7 +42,7 @@ description: >-
 
 ## GREEN: 最小限を書く
 
-観察された失敗だけに対処する。観察されていない失敗への対策は書かない。書き方は AGENTS.md の「AGENTS.md・CLAUDE.md・skill・docs・実装コメントなどの書き方」に従う。
+観察された失敗だけに対処する。観察されていない失敗への対策は書かない。書き方は sibling の [doc SKILL.md](../doc/SKILL.md) の「書き方」に従う。
 
 形式は失敗のタイプに合わせる:
 
