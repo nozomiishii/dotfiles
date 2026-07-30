@@ -50,12 +50,28 @@ request_admin_privileges() {
   (
     while true; do
       sleep 10
-      sudo -n true
+      # subshell は set -e を継承する。一時的な失敗で keepalive が静かに死ぬと
+      # 後半の sudo が tty で再プロンプトして無人実行が止まるため、失敗を握りつぶす
+      sudo -n true || true
       kill -0 "$$" || exit
     done
   ) 2>/dev/null &
 }
 
+# ~/Documents 初回アクセスの TCC ダイアログを、パスワード入力直後のユーザーが
+# まだ手元にいるタイミングに前倒しする。symlink.sh が ~/Documents/superwhisper を
+# 張る数十分後に出ると、無人実行がそこで止まる。
+request_documents_access() {
+  if [ "${CI:-false}" = "true" ]; then
+    return
+  fi
+
+  if ! ls "$HOME/Documents" > /dev/null 2>&1; then
+    echo "- 👨🏻‍🚀 Terminal needs access to ~/Documents." >&2
+    echo "  Allow it in System Settings > Privacy & Security > Files and Folders, then re-run." >&2
+    exit 1
+  fi
+}
 # ensure_xcode_clt はスクリプトに切り出さず、このファイルに置く。
 # repo の clone には git が必要で、素の Mac では git を使うのに Command Line Tools が要る。
 # つまり curl | bash 経路でこの処理が走る時点では、repo のスクリプトはまだ手元に存在しない。
@@ -120,6 +136,7 @@ echo -e "${reset}"
 
 if [[ "$OS_NAME" == "Darwin" ]]; then
   request_admin_privileges
+  request_documents_access
   ensure_xcode_clt
   clone_dotfiles_repo
   bash "$SCRIPT_DIR/scripts/nix.sh"
