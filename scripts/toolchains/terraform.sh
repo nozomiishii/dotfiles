@@ -20,6 +20,8 @@ tenv tg install latest-stable
 
 echo "- 🛰️ Terraform $(terraform -version)"
 
-# 補完は home/.zshrc で管理する (terraform -install-autocomplete は使わない)
+# terraform -install-autocomplete は使わない。~/.zshrc へ追記する方式で、symlink 先の
+# repo が dirty になり git pull --rebase と make link が止まる。補完自体も OpenTofu へ
+# 移行済みのため入れない
 
 echo "🛰️ Terraform setup is complete 🎉"
