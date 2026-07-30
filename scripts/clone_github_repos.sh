@@ -10,6 +10,16 @@ set -Ceuo pipefail
 
 echo -e "🦄 Initializing Cloning repositories... \n"
 
+# GitHub のホスト鍵を known_hosts に事前登録し、初回 SSH の対話確認 (yes) を無くす。
+# 鍵は TLS で保護された GitHub API から取得する
+# https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information
+if ! ssh-keygen -F github.com > /dev/null 2>&1; then
+  echo "🦄 Registering GitHub host keys in ~/.ssh/known_hosts"
+  mkdir -p "$HOME/.ssh"
+  chmod 700 "$HOME/.ssh"
+  curl -fsSL https://api.github.com/meta | jq -r '.ssh_keys[] | "github.com \(.)"' >> "$HOME/.ssh/known_hosts"
+fi
+
 repos=(
   nozomiishii/dev
   nozomiishii/nozomiishii
