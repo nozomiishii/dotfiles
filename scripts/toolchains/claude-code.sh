@@ -14,6 +14,9 @@ echo '🤖 Claude Code'
 echo '- 🤖 Install Claude Code'
 curl -fsSL https://claude.ai/install.sh | bash
 
+# インストーラの導入先 ~/.local/bin は非対話 shell の PATH に無い
+export PATH="$HOME/.local/bin:$PATH"
+
 echo "- 🤖 claude $(claude --version)"
 
 echo "🤖 Claude Code setup is complete 🎉"

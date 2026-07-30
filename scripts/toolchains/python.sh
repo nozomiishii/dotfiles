@@ -16,6 +16,9 @@ echo '- 🐍 Install uv'
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# インストーラの導入先 ~/.local/bin は非対話 shell の PATH に無い
+export PATH="$HOME/.local/bin:$PATH"
+
 echo "- 🐍 uv: $(uv self version)"
 
 echo "🐍 Python setup is complete 🎉"
