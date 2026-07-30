@@ -37,11 +37,4 @@ editor_extensions=(
 for ext in "${editor_extensions[@]}"; do
   duti -s "$EDITOR_BUNDLE_ID" "$ext" all
 done
-
-# VLC は Brewfile.optional のみのため、素の install.sh では未インストール。
-# 未インストールの bundle id を duti に渡すと exit 2 で全体が止まる。
-if [ -d "/Applications/VLC.app" ]; then
-  duti -s org.videolan.vlc mp4 all
-else
-  echo "- 🧮 VLC not installed. Skipping mp4 handler"
-fi
+duti -s org.videolan.vlc mp4 all

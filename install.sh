@@ -73,9 +73,9 @@ request_documents_access() {
   fi
 }
 
-# ensure_xcode_clt is kept in this file (not extracted to a script) because
-# git needs the Command Line Tools before the repository can be cloned, so on
-# the curl | bash path no repo script exists yet when this must run.
+# ensure_xcode_clt はスクリプトに切り出さず、このファイルに置く。
+# repo の clone には git が必要で、素の Mac では git を使うのに Command Line Tools が要る。
+# つまり curl | bash 経路でこの処理が走る時点では、repo のスクリプトはまだ手元に存在しない。
 # @See
 # https://gist.github.com/mokagio/b974620ee8dcf5c0671f
 # http://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
