@@ -68,9 +68,14 @@ if [[ -n "$GHOSTTY_RESOURCES_DIR" ]]; then
 fi
 
 # pm - VS Code Project Manager CLI
+# pm は dotfiles 管理外のため、未導入のマシン (セットアップ直後) でも zsh が
+# 起動できるようガードする
 export PM_CONFIG="$HOME/Code/nozomiishii/workspaces/projects.json"
 export PATH="${XDG_BIN_HOME:-$HOME/.local/bin}:$PATH"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh"
+pm_zsh_path="${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh"
+# shellcheck source=/dev/null
+[[ -r "$pm_zsh_path" ]] && source "$pm_zsh_path"
+unset pm_zsh_path
 # Option+j (ESC+j / ∆)
 bindkey -s '^[j' 'pm^M'
 bindkey -s '∆' 'pm^M'
