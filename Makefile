@@ -6,7 +6,7 @@ help: ## Show this help
 
 .PHONY: homebrew
 homebrew: ## Install/update Homebrew packages
-	HOMEBREW_BUNDLE_INCLUDE_OPTIONAL=1 bash ./scripts/homebrew.sh
+	bash ./scripts/homebrew.sh
 
 .PHONY: macos
 macos: ## Configure macOS settings

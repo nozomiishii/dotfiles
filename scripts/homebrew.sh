@@ -69,11 +69,6 @@ fi
 
 trust_brew_bundle_formulae
 
-bundle_brewfile_paths=("$SCRIPT_DIR/Brewfile")
-if [[ "$OS_NAME" == "Darwin" && "${HOMEBREW_BUNDLE_INCLUDE_OPTIONAL:-false}" == "1" ]]; then
-  bundle_brewfile_paths+=("$SCRIPT_DIR/Brewfile.optional")
-fi
-
 max_attempts="${BREW_BUNDLE_MAX_ATTEMPTS:-5}"
 attempt=1
 backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
@@ -82,11 +77,11 @@ backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
 # install と cleanup は一体にする（分けると node 等の依存を巻き添え削除するため）。
 while [ "$attempt" -le "$max_attempts" ]; do
   echo "brew bundle attempt ${attempt}/${max_attempts}"
-  if cat "${bundle_brewfile_paths[@]}" | HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" HOMEBREW_BUNDLE_CLEANUP_NO_MAS=1 brew bundle \
+  if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" brew bundle \
     --verbose \
     --cleanup \
     --force \
-    --file=-; then
+    --file="$SCRIPT_DIR/Brewfile"; then
     echo "brew bundle succeeded"
     break
   fi

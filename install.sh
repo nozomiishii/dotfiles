@@ -72,7 +72,6 @@ request_documents_access() {
     exit 1
   fi
 }
-
 # ensure_xcode_clt はスクリプトに切り出さず、このファイルに置く。
 # repo の clone には git が必要で、素の Mac では git を使うのに Command Line Tools が要る。
 # つまり curl | bash 経路でこの処理が走る時点では、repo のスクリプトはまだ手元に存在しない。

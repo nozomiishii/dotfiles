@@ -481,13 +481,6 @@
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.associations.files": [
     {
-      "icon": "brew",
-      "extensions": ["Brewfile.optional"],
-      "filename": true,
-      "format": "svg",
-      "extends": "brew"
-    },
-    {
       "icon": "swift",
       "extensions": ["Mintfile", ".swiftformat"],
       "filename": true,
@@ -604,15 +597,7 @@
     "**/.gitea/workflows/*.yml",
     "**/.gitea/workflows/*.yaml",
     "**/.forgejo/workflows/*.yml",
-    "**/.forgejo/workflows/*.yaml",
-    "**/docker-compose.yml",
-    "**/docker-compose.yaml",
-    "**/docker-compose.*.yml",
-    "**/docker-compose.*.yaml",
-    "**/compose.yml",
-    "**/compose.yaml",
-    "**/compose.*.yml",
-    "**/compose.*.yaml"
+    "**/.forgejo/workflows/*.yaml"
   ],
   "workbench.preferredDarkColorTheme": "Monokai Pro"
 

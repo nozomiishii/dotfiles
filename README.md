@@ -35,8 +35,6 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
 ``` -->
 
-</details>
-
 ## Development
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nozomiishii/dotfiles)
@@ -72,7 +70,7 @@ Turn On and Follow the guide
 ```
 
 Sign in your iCloud and App Store, when you get to the home screen.
-(to get apps using mas command)
+(to install apps from the App Store manually)
 
 💡 Can you not use your personal apple ID on your company computer?
 Install xcode manually from the App Store.
@@ -136,7 +134,8 @@ curl -fsSL https://dotfiles.nozo.sh | bash
    ```
 
 4. **Clone private repositories after reboot**  
-   After authenticating with GitHub, clone your private repos:
+   After authenticating with GitHub, clone your private repos.
+   Choose SSH as the protocol in `gh auth login` — `make repo` clones over SSH:
 
    ```shell
    gh auth login
@@ -484,6 +483,18 @@ Clean unused homebrew dependencies up, and upgrade them
 
 ```shell
 make homebrew
+```
+
+Relink dotfiles after editing files under `home/`
+
+```shell
+make link
+```
+
+Reapply macOS system settings
+
+```shell
+make macos
 ```
 
 ### Dev

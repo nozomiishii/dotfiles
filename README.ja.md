@@ -35,14 +35,6 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
 ``` -->
 
-<!-- これにするのが目標
-
-```shell
-curl -L dot.nozomiishii.dev | sh
-``` -->
-
-</details>
-
 ## 開発
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nozomiishii/dotfiles)
@@ -78,7 +70,7 @@ curl -L dot.nozomiishii.dev | sh
 ```
 
 ホーム画面が表示されたら、iCloud と App Store にサインインしてください。
-（mas コマンドでアプリを取得するために必要です）
+（App Store からアプリを手動でインストールするために必要です）
 
 💡 会社の PC で個人の Apple ID が使えない場合は、
 App Store から Xcode を手動でインストールしてください。
@@ -142,7 +134,8 @@ curl -fsSL https://dotfiles.nozo.sh | bash
    ```
 
 4. プライベートリポジトリのクローン  
-   再起動が終わったら GitHub で認証して、プライベートリポジトリをクローンしましょう：
+   再起動が終わったら GitHub で認証して、プライベートリポジトリをクローンしましょう。
+   make repo は SSH URL で clone するため、`gh auth login` では認証方式に SSH を選んでください：
 
    ```shell
    gh auth login
@@ -489,6 +482,18 @@ fork して自分用に使う場合、書き換えが必要な箇所を [docs/fo
 
 ```shell
 make homebrew
+```
+
+`home/` 配下のファイルを編集したら symlink を張り直しましょう
+
+```shell
+make link
+```
+
+macOS のシステム設定を再適用するには
+
+```shell
+make macos
 ```
 
 ### 開発
