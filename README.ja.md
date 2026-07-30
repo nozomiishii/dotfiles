@@ -142,7 +142,7 @@ curl -fsSL https://dotfiles.nozo.sh | bash
    make repo
    ```
 
-   初回の SSH 接続では `Are you sure you want to continue connecting?` と聞かれます。fingerprint を [GitHub 公式のホスト鍵一覧](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)と照合して `yes` と答えてください。これで保存されるのは GitHub 側の公開ホスト鍵（`~/.ssh/known_hosts`）だけで、秘密鍵がマシンに保存されるわけではありません。
+   make repo は GitHub の公開ホスト鍵を [GitHub meta API](https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information) から取得して `~/.ssh/known_hosts` に事前登録するため、`Are you sure you want to continue connecting?` の確認は表示されません。手動の SSH 接続でこの確認が出た場合は、fingerprint を [GitHub 公式のホスト鍵一覧](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)と照合して `yes` と答えてください。保存されるのは接続先の公開ホスト鍵だけで、秘密鍵がマシンに保存されるわけではありません。
 
 <a id="install-manually"></a>
 
