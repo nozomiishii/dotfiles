@@ -283,7 +283,6 @@ if OS.mac?
     cask "telegram"
 
     # VPN client for secure internet access and private browsing https://nordvpn.com/
-    # mas "nordvpn", id: 905953485
     cask "nordvpn"
   end
 end

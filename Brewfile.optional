@@ -52,22 +52,5 @@ cask "anki"
 # Generic machine emulator and virtualizer https://www.qemu.org/
 brew "qemu"
 
-# ----------------------------------------------------------------
-# Mas
-#
-# Search `mas search <app_name>`
-# info   `mas info <app_id>`
-# ----------------------------------------------------------------
-# Simple command line interface for the Mac App Store. https://github.com/mas-cli/mas
-brew "mas"
-
-# Apple's integrated development environment for macOS. https://developer.apple.com/xcode/
-# Disabled: current Xcode is not installed via MAS (no _MASReceipt), so `mas upgrade`
-# fails with "Failed to copy receipt" on every run. Update Xcode manually for now.
-# mas "Xcode", id: 497799835
-
-# Interface for reading and syncing eBooks. https://www.amazon.com/gp/digital/fiona/kcp-landing-page
-mas "Kindle", id: 302584613
-
-# New communication app which allows you to make FREE voice calls and send FREE messages https://apps.apple.com/app/line/id539883307
-mas "LINE", id: 539883307
+# Mac App Store アプリは mas で管理しない。App Store から手動でインストールする。
+# 理由: docs/decisions/Mac App Store アプリは mas で管理しない.md
