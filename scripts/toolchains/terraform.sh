@@ -20,7 +20,5 @@ tenv tg install latest-stable
 
 echo "- 🛰️ Terraform $(terraform -version)"
 
-echo '- 🛰️ Install Terraform autocomplete'
-terraform -install-autocomplete
 
 echo "🛰️ Terraform setup is complete 🎉"
