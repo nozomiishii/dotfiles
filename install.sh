@@ -56,6 +56,35 @@ request_admin_privileges() {
   ) 2>/dev/null &
 }
 
+# ensure_xcode_clt はスクリプトに切り出さず、このファイルに置く。
+# repo の clone には git が必要で、素の Mac では git を使うのに Command Line Tools が要る。
+# つまり curl | bash 経路でこの処理が走る時点では、repo のスクリプトはまだ手元に存在しない。
+# @See
+# https://gist.github.com/mokagio/b974620ee8dcf5c0671f
+# http://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
+ensure_xcode_clt() {
+  echo "- 👨🏻‍🚀 Checking Xcode CLI tools..."
+
+  if xcode-select -p &>/dev/null; then
+    echo "- 👨🏻‍🚀 Xcode CLI tools are already installed"
+    return
+  fi
+
+  echo "- 👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
+  TEMP_FILE="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
+  touch "${TEMP_FILE}"
+
+  CLI_TOOLS=$(softwareupdate -l |
+    grep "\*.*Command Line" |
+    tail -n 1 | sed 's/^[^C]* //')
+
+  echo "- 👨🏻‍🚀 Installing: ${CLI_TOOLS}"
+  softwareupdate -i "${CLI_TOOLS}" --verbose
+
+  rm "${TEMP_FILE}"
+  echo "- 👨🏻‍🚀 Xcode CLI tools are ready to go 🎉"
+}
+
 clone_dotfiles_repo() {
   if [[ -n "${BASH_SOURCE[0]:-}" ]]; then
     SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -91,9 +120,9 @@ echo -e "${reset}"
 
 if [[ "$OS_NAME" == "Darwin" ]]; then
   request_admin_privileges
+  ensure_xcode_clt
   clone_dotfiles_repo
   bash "$SCRIPT_DIR/scripts/nix.sh"
-  bash "$SCRIPT_DIR/scripts/darwin/xcode.sh"
   bash "$SCRIPT_DIR/scripts/homebrew.sh"
   eval "$(/opt/homebrew/bin/brew shellenv)"
   bash "$SCRIPT_DIR/scripts/symlink.sh"
