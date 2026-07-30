@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-07-17
+最終更新: 2026-07-30
 
 ## 背景
 
@@ -181,7 +181,9 @@ Auto mode の利用可能条件: Max / Team / Enterprise / API プラン + 対�
 "enabledPlugins": {
   "swift-lsp@claude-plugins-official": true,
   "typescript-lsp@claude-plugins-official": true,
-  "sentry-mcp@sentry-mcp": true
+  "sentry-mcp@sentry-mcp": true,
+  "codex@openai-codex": true,
+  "frontend-design@claude-plugins-official": true
 }
 ```
 
@@ -192,12 +194,15 @@ Auto mode の利用可能条件: Max / Team / Enterprise / API プラン + 対�
 - swift-lsp — Swift 用 LSP プラグイン。`/usr/bin/sourcekit-lsp`（Xcode CLT 同梱）を Claude Code に配線し、Brooklyn 等の Swift プロジェクトで go-to-definition / references / diagnostics を有効化する。
 - typescript-lsp — TypeScript / JavaScript 用 LSP プラグイン。`typescript-language-server` バイナリ（`scripts/toolchains/node.sh` で npm global インストール）を Claude Code に配線し、`.ts/.tsx/.js/.jsx/.mts/.cts/.mjs/.cjs` で go-to-definition / references / diagnostics を有効化する。
 - sentry-mcp — Sentry 公式の MCP プラグイン。Claude Code から Sentry の issue・エラーイベントを参照できる。取得元は下の extraKnownMarketplaces で解決する。
+- codex — OpenAI 公式の Codex プラグイン。/codex:* スキルでレビュー・診断・タスク委譲を Codex に投げられる。取得元は下の extraKnownMarketplaces で解決する。
+- frontend-design — Anthropic 公式のフロントエンドデザインプラグイン。新規 UI 構築時にテンプレ的でない見た目を作るための指針スキルを提供する。
 
 ### extraKnownMarketplaces
 
 ```jsonc
 "extraKnownMarketplaces": {
-  "sentry-mcp": { "source": { "source": "github", "repo": "getsentry/sentry-mcp" } }  // sentry-mcp プラグインの取得元
+  "sentry-mcp": { "source": { "source": "github", "repo": "getsentry/sentry-mcp" } },  // sentry-mcp プラグインの取得元
+  "openai-codex": { "source": { "source": "github", "repo": "openai/codex-plugin-cc" } }  // codex プラグインの取得元
 }
 ```
 
