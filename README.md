@@ -142,6 +142,8 @@ curl -fsSL https://dotfiles.nozo.sh | bash
    make repo
    ```
 
+   The first SSH connection asks `Are you sure you want to continue connecting?`. Verify the fingerprint against [GitHub's SSH key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints) and answer `yes`. This only records GitHub's public host key in `~/.ssh/known_hosts` — it does not save any private key on the machine.
+
 <a id="install-manually"></a>
 
 <details>
