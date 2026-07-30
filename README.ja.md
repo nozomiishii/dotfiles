@@ -78,7 +78,7 @@ curl -L dot.nozomiishii.dev | sh
 ```
 
 ホーム画面が表示されたら、iCloud と App Store にサインインしてください。
-（mas コマンドでアプリを取得するために必要です）
+（App Store からアプリを手動でインストールするために必要です）
 
 💡 会社の PC で個人の Apple ID が使えない場合は、
 App Store から Xcode を手動でインストールしてください。
