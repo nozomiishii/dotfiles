@@ -104,6 +104,7 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
   bash "$SCRIPT_DIR/scripts/nvim.sh"
   bash "$SCRIPT_DIR/scripts/default_apps.sh"
   bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
@@ -122,6 +123,7 @@ if [[ "$OS_NAME" == "Linux" ]]; then
   bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
+  bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
 fi
 
 echo -e "${yellow}"

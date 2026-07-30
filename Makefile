@@ -25,6 +25,7 @@ toolchains: ## Set up language toolchains
 	bash ./scripts/toolchains/python.sh
 	bash ./scripts/toolchains/ruby.sh
 	bash ./scripts/toolchains/rust.sh
+	bash ./scripts/toolchains/pm.sh
 
 .PHONY: repo
 repo: ## Clone GitHub repositories
