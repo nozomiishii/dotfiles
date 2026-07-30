@@ -26,7 +26,6 @@ macOS と Linux で開発環境のセットアップを自動化する dotfiles 
 
 ## Homebrew パッケージ
 - [Brewfile](Brewfile)
-- [Brewfile.optional](Brewfile.optional)
 
 ## 詳細ドキュメント
 

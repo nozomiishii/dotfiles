@@ -10,7 +10,6 @@
 - homebrew が常に latest をとってきてるせいで`make homebrew`でなんも変更入れてないのに
 - node 環境じゃなくても動くようにする。postinstall が落ちる
   - image かえる
-- Brewfile を重要と後からインストールでいいやつに分ける
 - markdownlint 差し替える
 - ts で設定書いてバイナリで実行できるようにする。もしくは install.sh を適切に分割する
 - toolchain の整理
