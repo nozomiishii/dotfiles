@@ -14,12 +14,13 @@ Web サービス・モバイルアプリを一般公開する前の共通チェ�
 
 ## 公開準備の開始ゲート
 
-公開準備の最初に、次の 2 項目を確認して issue の先頭に置く。
+公開準備の最初に、次の項目を確認して issue の先頭に置く。
 
 - [ ] アプリ／サービスの正式名を決定する。候補ごとに多言語で不適切な意味にならないか、対応するドメインを取得できるか確認する
 - [ ] 本番ドメインを取得する
+- [ ] ストア向け app ID / Bundle ID を確認する。正式名が未決定の仮置きは `dev.nozomiishii.<repo 名>` とし、dance なら `dev.nozomiishii.dance` を使う。`dev` は `nozomiishii.dev` 由来の固定 prefix で、開発環境を表す末尾 suffix ではない
 
-どちらかが未決定なら、全項目の調査と issue 本文の作成は続けるが、ゲートは未通過と明記する。ブランド、app ID、OAuth callback、メール送信ドメイン、公開 URL、本番 routing の作業を後続に置き、ゲートを通過するまで着手しない。実装済みの機能が多いことを、名称とドメインを後回しにする理由にしない。
+正式名か本番ドメインが未決定なら、全項目の調査と issue 本文の作成は続けるが、ゲートは未通過と明記する。ブランド、OAuth callback、メール送信ドメイン、公開 URL、本番 routing の作業を後続に置き、ゲートを通過するまで着手しない。app ID / Bundle ID は上の規則で仮置きしてローカル build と検証を進めてよい。App Store Connect へ最初の build を upload した後は変更できず、app record を削除しても再利用できないため、upload 前に現在値をユーザーへ提示して確定する。[Apple の変更手順](https://developer.apple.com/documentation/xcode/changing-the-bundle-identifier)を参照する。実装済みの機能が多いことを、名称とドメインを後回しにする理由にしない。
 
 ## 進め方
 
