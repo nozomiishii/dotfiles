@@ -142,6 +142,8 @@ curl -fsSL https://dotfiles.nozo.sh | bash
    make repo
    ```
 
+   初回の SSH 接続では `Are you sure you want to continue connecting?` と聞かれます。fingerprint を [GitHub 公式のホスト鍵一覧](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)と照合して `yes` と答えてください。これで保存されるのは GitHub 側の公開ホスト鍵（`~/.ssh/known_hosts`）だけで、秘密鍵がマシンに保存されるわけではありません。
+
 <a id="install-manually"></a>
 
 <details>
