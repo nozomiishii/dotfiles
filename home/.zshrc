@@ -89,3 +89,11 @@ fi
 if command -v rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
+
+# Terraform
+# terraform -install-autocomplete は ~/.zshrc へ追記する方式で、symlink 先の repo が
+# dirty になり git pull --rebase と make link が止まるため、補完はここで管理する
+if command -v terraform >/dev/null; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C terraform terraform
+fi

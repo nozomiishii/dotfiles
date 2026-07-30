@@ -20,7 +20,6 @@ tenv tg install latest-stable
 
 echo "- 🛰️ Terraform $(terraform -version)"
 
-echo '- 🛰️ Install Terraform autocomplete'
-terraform -install-autocomplete
+# 補完は home/.zshrc で管理する (terraform -install-autocomplete は使わない)
 
 echo "🛰️ Terraform setup is complete 🎉"
