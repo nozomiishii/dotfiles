@@ -135,10 +135,10 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 4. プライベートリポジトリのクローン  
    再起動が終わったら GitHub で認証して、プライベートリポジトリをクローンしましょう。
-   make repo は SSH URL で clone するため、`gh auth login` では認証方式に SSH を選んでください：
+   フラグで SSH プロトコルを固定し（make repo は SSH URL で clone）、SSH 鍵の生成をスキップし（鍵は 1Password SSH agent 管理）、watch スキルが使う notifications スコープを追加しています。トークンはブラウザ認証で発行され macOS の Keychain に保存されます：
 
    ```shell
-   gh auth login
+   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications
    make repo
    ```
 
@@ -540,7 +540,8 @@ for x in {1..10}; do time zsh -i -c exit; done
 
 2: 後片付け
 
-- GitHub / GitLab に登録した SSH キーを削除してください
+- SSH 鍵は 1Password SSH agent 管理でこのマシンには置いていないため、削除する鍵はありません
+- （任意）[GitHub Settings > Applications](https://github.com/settings/apps/authorizations) で GitHub CLI の認可を失効できます。全マシンの gh トークンが無効になる点に注意してください
 
 3: iCloud からサインアウト
 
