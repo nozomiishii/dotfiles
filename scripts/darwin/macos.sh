@@ -86,14 +86,19 @@ defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool fa
 # ----------------------------------------------------------------
 echo "- 🕹 Menu bar" # killall SystemUIServer
 
-# This setting configures the time and date format for the menubar digital clock
-defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM  h:mm a"
+# Menu bar clock: 曜日 + AM/PM を表示、日付はスペースに余裕がある時だけ
+# (旧 DateFormat キーは現行 macOS では読まれない)
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
+defaults write com.apple.menuextra.clock ShowAMPM -bool true
+defaults write com.apple.menuextra.clock ShowDate -int 0
 
 # Time format 12 hour time: AM/PM
 defaults write NSGlobalDomain AppleICUForce12HourTime -bool true
 
-# Configure the menu bar Items
-defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
+# Show Time Machine in the menu bar
+# (System Settings > Control Center の Show in Menu Bar トグルが書くキー。
+#  旧 menuExtras 配列は現行 macOS では読まれない)
+defaults write com.apple.systemuiserver "NSStatusItem VisibleCC com.apple.menuextra.TimeMachine" -bool true
 
 # Not Share Do Not Disturb status across devicess
 defaults write com.apple.donotdisturbd disableCloudSync -bool true
@@ -210,7 +215,9 @@ defaults write com.apple.dock expose-group-apps -bool true
 echo "- 👮 Security & Privacy"
 
 # Turn on Firewall
-sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+# (alf plist への直接書き込みは現行 macOS では反映されず、実際には無効のままだった。
+#  socketfilterfw が現行のインターフェース)
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 
 # ----------------------------------------------------------------
 # Keyboard
@@ -403,7 +410,8 @@ killall Dock
 killall Finder
 killall SystemUIServer
 # cfprefsd helps an app or the system to read or write to preference files.
-sudo killall cfprefsd
-sudo killall corebrightnessd
+# killall は対象プロセスが居ないと exit 1 になり set -e で終盤に死ぬため握りつぶす
+sudo killall cfprefsd || true
+sudo killall corebrightnessd || true
 
 echo "💻 MacOS setup is complete 🎉"
