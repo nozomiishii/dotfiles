@@ -68,6 +68,9 @@ if OS.mac?
   # Tool to generate documentation from Terraform modules https://terraform-docs.io/
   brew "terraform-docs"
 
+  # Convert HCL to JSON. Used by scripts/clone_github_repos.sh https://github.com/tmccombs/hcl2json
+  brew "hcl2json"
+
   # Password manager that keeps all passwords secure behind one password. https://1password.com
   cask "1Password"
 
