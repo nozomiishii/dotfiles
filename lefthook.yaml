@@ -27,7 +27,7 @@ post-merge:
       files: git diff-tree -r --name-only --no-commit-id --diff-filter=AD ORIG_HEAD HEAD
       run: make link
     - name: homebrew
-      glob: '{Brewfile,Brewfile.optional}'
+      glob: 'Brewfile'
       interactive: true
       run: make homebrew
 
