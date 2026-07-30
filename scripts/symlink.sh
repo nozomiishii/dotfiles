@@ -27,10 +27,24 @@ if ! git diff --quiet -- home || ! git diff --quiet --cached -- home; then
   exit 1
 fi
 
-# ~/.local/bin を実 dir として先に用意してから stow を走らせる。tree folding で
-# ~/.local/bin が repo 配下への folder-symlink に畳まれると、あとで張る ln -sfn の
-# 書き込み先が repo working tree に入って次回 make link が止まる。
-mkdir -p "$HOME/.local/bin"
+# 外部ツールが実行時に書き込むディレクトリは、実 dir として先に用意してから
+# stow を走らせる。まっさらなアカウントでは tree folding で repo 配下への
+# folder-symlink に畳まれ、ssh-keygen の秘密鍵・Claude Code / Codex / VS Code の
+# ランタイム状態・サードパーティの LaunchAgent が repo working tree に書き込まれて
+# しまう。~/.local/bin は、あとで張る ln -sfn の書き込み先になるため同様。
+runtime_dirs=(
+  "$HOME/.claude"
+  "$HOME/.codex"
+  "$HOME/.config"
+  "$HOME/.local/bin"
+  "$HOME/.ssh"
+  "$HOME/Documents/superwhisper/modes"
+  "$HOME/Library/Application Support/Code/User"
+  "$HOME/Library/Developer/Xcode/UserData"
+  "$HOME/Library/LaunchAgents"
+)
+mkdir -p "${runtime_dirs[@]}"
+chmod 700 "$HOME/.ssh"
 
 # repo を常に正とする。衝突する実体ファイルは --adopt で stow が吸収し（削除しない）、
 # 直後に git restore で repo 版へ戻す。home/ は上のチェックでクリーンなので、
