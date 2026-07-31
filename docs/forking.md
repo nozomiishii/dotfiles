@@ -17,7 +17,7 @@ repo の置き場所自体は配置非依存にしてあるので([#1057](https:
 | ファイル | 内容 |
 | --- | --- |
 | [`install.sh`](../install.sh) | `DOTFILES_REPO` を自分の fork URL に。`DOTFILES_DIR` は env override 可能なので、`DOTFILES_DIR=... curl ... \| bash` で別パスにも置ける |
-| [`scripts/clone_github_repos.sh`](../scripts/clone_github_repos.sh) | `make repo` の clone 一覧の正本は `INFRA_REPO` の GitHub Stack (`stacks/github/main.tf`)。`INFRA_REPO` と `extra_repos` を自分のものに差し替える |
+| [`Makefile`](../Makefile) | `repo` ターゲットは `nozomiishii/infra` から clone スクリプトを `gh api` で取得して実行する (clone 一覧の正本は infra の GitHub Stack)。取得元 repo を自分のものに差し替える |
 | [`.github/CODEOWNERS`](../.github/CODEOWNERS) | `@nozomiishii` |
 | [`Brewfile`](../Brewfile) | `tap "nozomiishii/tap"` と `cask "nozomiishii/tap/brooklyn"` の個人 tap / cask |
 | [`scripts/homebrew.sh`](../scripts/homebrew.sh) | `trust_brew_bundle_formulae` が `brew trust` する tap 一覧（`nozomiishii/tap/brooklyn` を含む） |
