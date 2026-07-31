@@ -135,10 +135,10 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 4. **Clone private repositories after reboot**  
    After authenticating with GitHub, clone your private repos.
-   The flags pin the SSH protocol (`make repo` clones over SSH), skip SSH key generation (keys live in the 1Password SSH agent), and add the `notifications` scope used by the watch skill. The token is issued via the browser and stored in the macOS Keychain:
+   The flags pin the SSH protocol (`make repo` clones over SSH), skip SSH key generation (keys live in the 1Password SSH agent), and add the `notifications` scope used by the watch skill plus the `workflow` scope for updating GitHub Actions workflow files (neither is in gh's default scopes). The token is issued via the browser and stored in the macOS Keychain:
 
    ```shell
-   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications
+   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
    make repo
    ```
 

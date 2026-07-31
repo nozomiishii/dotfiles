@@ -200,7 +200,7 @@ printf '%s\n' \
   "" \
   "📦 After restarting, clone your private repositories:" \
   "" \
-  "    1. gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications" \
+  "    1. gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow" \
   "    2. make repo" \
   "" \
   ""
