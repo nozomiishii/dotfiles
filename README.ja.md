@@ -135,10 +135,10 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 4. プライベートリポジトリのクローン  
    再起動が終わったら GitHub で認証して、プライベートリポジトリをクローンしましょう。
-   フラグで SSH プロトコルを固定し（make repo は SSH URL で clone）、SSH 鍵の生成をスキップし（鍵は 1Password SSH agent 管理）、watch スキルが使う notifications スコープを追加しています。トークンはブラウザ認証で発行され macOS の Keychain に保存されます：
+   フラグで SSH プロトコルを固定し（make repo は SSH URL で clone）、SSH 鍵の生成をスキップし（鍵は 1Password SSH agent 管理）、watch スキルが使う notifications と GitHub Actions の workflow ファイル更新に要る workflow のスコープを追加しています（どちらも gh のデフォルトスコープに含まれません）。トークンはブラウザ認証で発行され macOS の Keychain に保存されます：
 
    ```shell
-   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications
+   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
    make repo
    ```
 
