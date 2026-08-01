@@ -42,6 +42,7 @@ curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
 ## Outline
 
 - [📦 New Macbook? Awesome!!](#new-macbook?)
+  - [Before installation](#before-installation)
   - [Install](#install)
   - [Install Manually](#install-manually)
   - [App preferences](#app-preferences)
@@ -94,6 +95,56 @@ Install xcode manually from the App Store.
 
 - Login
 
+The [Brewfile](Brewfile) intentionally does not manage Mac App Store apps. Install the apps used on the previous Mac manually:
+
+- 1Password for Safari
+- AdBlock Pro
+- Jump Desktop
+- Kindle
+- LINE
+- Obsidian Web Clipper
+- Remote Desktop
+- Video Speed Controller
+- Xcode
+
+See [Why Mac App Store apps are not managed with mas](docs/decisions/Mac%20App%20Store%20アプリは%20mas%20で管理しない.md) for the cleanup behavior this avoids.
+
+<a id="before-installation"></a>
+
+## Before installation
+
+### Review the settings changed by the installer
+
+The installer makes the following changes. Back up any existing settings first if Migration Assistant or iCloud has already restored them.
+
+- [symlink.sh](scripts/symlink.sh) replaces conflicting dotfiles with the repository versions.
+- [homebrew.sh](scripts/homebrew.sh) removes Homebrew formulae and casks not listed in the Brewfile.
+- [macos.sh](scripts/darwin/macos.sh) clears the Dock, disables sleep on AC power, uses Cloudflare DNS, turns on the firewall, and enables Remote Login (SSH).
+- Whenever Downloads changes, the [Downloads LaunchAgent](home/.local/lib/downloads-to-desktop.applescript) moves every non-hidden item that is not a partial browser download to the Desktop and replaces items with the same name.
+
+### Install the Xcode Command Line Tools
+
+Use Apple's supported installer before running the dotfiles installer. See [Installing the command-line tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools).
+
+```shell
+xcode-select --install
+```
+
+Wait for the installation dialog to finish, then confirm that the active developer directory is available.
+
+```shell
+xcode-select -p
+```
+
+### Install Xcode
+
+Install the full Xcode app from the App Store before running the dotfiles installer. Select it as the active developer directory and install its first-launch components. See [Configuring command-line tools settings](https://developer.apple.com/documentation/xcode/configuring-command-line-tools-settings) and [Downloading and installing additional Xcode components](https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components).
+
+```shell
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -runFirstLaunch
+```
+
 <a id="install"></a>
 
 ## Install
@@ -116,46 +167,58 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 ### After installation
 
-1. **Reboot**  
-   Run `sudo reboot` to apply the settings.
+#### Reboot
 
-2. **Retry Homebrew if needed**
-   Re-run the unified Homebrew installer if a package download was interrupted:
+Run `sudo reboot` to apply the settings.
 
-   ```shell
-   make homebrew
-   ```
+#### Retry Homebrew if needed
 
-3. **(Optional) Always-on power settings**  
-   To disable sleep and use Wake on LAN etc. ([always_on.sh](scripts/darwin/always_on.sh)):
+Re-run the unified Homebrew installer if a package download was interrupted:
 
-   ```shell
-   make always-on
-   ```
+```shell
+make -C "$HOME/Code/nozomiishii/dotfiles" homebrew
+```
 
-4. **Clone private repositories after reboot**  
-   After authenticating with GitHub, clone your private repos.
-   The flags pin the SSH protocol (`make repo` clones over SSH), skip SSH key generation (keys live in the 1Password SSH agent), and add the `notifications` scope used by the watch skill plus the `workflow` scope for updating GitHub Actions workflow files (neither is in gh's default scopes). The token is issued via the browser and stored in the macOS Keychain:
+#### Optional always-on settings
 
-   ```shell
-   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
-   make repo
-   ```
+[always_on.sh](scripts/darwin/always_on.sh) disables sleep, the screen saver, and the password requirement after the screen saver, and enables Wake on LAN. Run it only when all of those changes are wanted.
 
-   `make repo` pre-registers GitHub's public host keys in `~/.ssh/known_hosts` (fetched from the [GitHub meta API](https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information)), so the `Are you sure you want to continue connecting?` prompt does not appear. If a manual SSH connection ever shows it, verify the fingerprint against [GitHub's SSH key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints) and answer `yes` — it only records the server's public host key, never a private key.
+```shell
+make -C "$HOME/Code/nozomiishii/dotfiles" always-on
+```
+
+<a id="1password-github"></a>
+
+#### Set up 1Password for GitHub SSH
+
+- Sign in to and unlock the 1Password desktop app.
+- Open Settings > Developer and turn on `Use the SSH agent` and `Integrate with 1Password CLI`. See [1Password SSH Agent](https://www.1password.dev/ssh/agent/) and [1Password CLI app integration](https://www.1password.dev/cli/app-integration/).
+- Recreate the selectors needed from the previous Mac in `~/.config/1Password/ssh/agent.toml`. This file is local to each Mac and is not synced by 1Password. See [SSH agent configuration](https://www.1password.dev/ssh/agent/config).
+- Confirm that GitHub can use a key from the agent:
+
+```shell
+ssh -T git@github.com
+```
+
+On the first connection, verify the fingerprint against [GitHub's SSH key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints) before accepting it. Confirm that the output includes `Hi nozomiishii!`. GitHub does not provide shell access, so this successful test normally exits with status 1.
+
+#### Authenticate with GitHub and clone private repositories
+
+The flags pin the SSH protocol, skip SSH key generation because keys live in the 1Password SSH Agent, and add the `notifications` scope used by the watch skill plus the `workflow` scope for updating GitHub Actions workflow files. Neither scope is included by default. The token is issued through the browser and stored in the macOS Keychain.
+
+```shell
+gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
+make -C "$HOME/Code/nozomiishii/dotfiles" repo
+```
+
+`make repo` pre-registers GitHub's public host keys in `~/.ssh/known_hosts`, fetched from the [GitHub meta API](https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information). It records only the server's public host key, never a private key.
 
 <a id="install-manually"></a>
 
 <details>
 <summary>Install Manually</summary>
 
-### Install xcode-select
-
-```shell
-xcode-select --install
-```
-
-xcode-select: this command-line Tools are required for Git and Homebrew
+Complete the [Before installation](#before-installation) steps first.
 
 ### Come to this page
 
@@ -167,6 +230,7 @@ open https://nozomiishii.dev/dotfiles
 
 ```shell
 git clone https://github.com/nozomiishii/dotfiles.git ~/Code/nozomiishii/dotfiles
+cd "$HOME/Code/nozomiishii/dotfiles"
 ```
 
 ### Install
@@ -195,9 +259,7 @@ Then follow the [After installation](#after-installation) steps above.
   Check "Touch ID"
 - Preferences > General > Keyboard shortcuts >  
   Autofill: `⌥⇧X`
-- Preferences > Developer > Check "Use the SSH agent"
-- Preferences > Developer > Check "Integrate with 1Password CLI"
-  - [Turn on the 1Password desktop app integration](https://developer.1password.com/docs/cli/get-started/#step-2-turn-on-the-1password-desktop-app-integration)
+- Complete the [1Password setup for GitHub SSH](#1password-github) before cloning private repositories.
 
 ### 🌏 Chrome
 
@@ -291,13 +353,11 @@ enabled = false
 
 ### 😼 SSH & Git
 
-- [Run gh auth login](https://cli.github.com/manual/)
+- Complete the [1Password and GitHub SSH setup](#1password-github).
 
 ### 🦄 Clone repositories
 
-```shell
-make repo
-```
+The clone command is included in the [1Password and GitHub SSH setup](#1password-github).
 
 ### 🐘 TablePlus
 

@@ -14,7 +14,7 @@ echo '🐉 Node'
 echo '- 🐉 Install Node with fnm🚀'
 
 brew install fnm
-eval "$(fnm env)"
+eval "$(fnm env --shell bash)"
 
 echo "- ⚡️ fnm $(fnm --version)"
 fnm install --lts
@@ -24,9 +24,9 @@ echo '- 🐉 Setup corepack'
 corepack enable pnpm yarn npm
 
 echo '- 🐉 Install Bun'
-curl -fsSL https://bun.sh/install | bash
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+curl -fsSL https://bun.sh/install | bash
 echo "- 🐉 bun $(bun --version)"
 
 echo '- 🐉 Setup pnpm global'

@@ -42,6 +42,7 @@ curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
 ## 目次
 
 - [📦 New Macbook? Awesome!!](#new-macbook?)
+  - [インストール前](#before-installation)
   - [Install](#install)
   - [Install Manually](#install-manually)
   - [App preferences](#app-preferences)
@@ -94,6 +95,56 @@ App Store から Xcode を手動でインストールしてください。
 
 - ログイン
 
+[Brewfile](Brewfile) は Mac App Store アプリを管理しません。以前の Mac で使っていた次のアプリは手動でインストールしてください。
+
+- 1Password for Safari
+- AdBlock Pro
+- Jump Desktop
+- Kindle
+- LINE
+- Obsidian Web Clipper
+- Remote Desktop
+- Video Speed Controller
+- Xcode
+
+この方針で回避している cleanup の挙動は、[Mac App Store アプリは mas で管理しない](docs/decisions/Mac%20App%20Store%20アプリは%20mas%20で管理しない.md)を参照してください。
+
+<a id="before-installation"></a>
+
+## インストール前
+
+### インストーラーが変更する設定を確認する
+
+インストーラーは次の変更を行います。Migration Assistant や iCloud で設定が復元済みなら、先にバックアップしてください。
+
+- [symlink.sh](scripts/symlink.sh) は衝突する dotfiles をリポジトリ版に置き換えます。
+- [homebrew.sh](scripts/homebrew.sh) は Brewfile にない Homebrew formula と cask を削除します。
+- [macos.sh](scripts/darwin/macos.sh) は Dock の中身を消去し、電源接続中のスリープを無効化し、Cloudflare DNS・ファイアウォール・リモートログイン（SSH）を有効化します。
+- [Downloads LaunchAgent](home/.local/lib/downloads-to-desktop.applescript) は Downloads が変更されるたびに、非表示ではなくブラウザのダウンロード途中でもない項目をすべてデスクトップへ移動し、同名の項目を置き換えます。
+
+### Xcode Command Line Tools をインストールする
+
+dotfiles のインストーラーより先に Apple 公式の手順でインストールします。[Installing the command-line tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools)
+
+```shell
+xcode-select --install
+```
+
+表示されるダイアログが完了した後、開発者ディレクトリが取得できることを確認します。
+
+```shell
+xcode-select -p
+```
+
+### Xcode をインストールする
+
+dotfiles のインストーラーを実行する前に、App Store から完全版の Xcode をインストールします。開発者ディレクトリに指定し、初回起動コンポーネントをインストールしてください。[Configuring command-line tools settings](https://developer.apple.com/documentation/xcode/configuring-command-line-tools-settings)、[Downloading and installing additional Xcode components](https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components)
+
+```shell
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -runFirstLaunch
+```
+
 <a id="install"></a>
 
 ## Install
@@ -116,46 +167,58 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 ### インストール後の作業
 
-1. 再起動  
-   設定を反映するために `sudo reboot` を実行してください。
+#### 再起動
 
-2. Homebrew が中断された場合
-   パッケージのダウンロードが途中で失敗した場合は、共通の Homebrew インストーラーを再実行してください：
+設定を反映するために `sudo reboot` を実行してください。
 
-   ```shell
-   make homebrew
-   ```
+#### Homebrew が中断された場合
 
-3. （任意）常時起動設定  
-   スリープを無効にして Wake on LAN などを使いたい方向けです（[always_on.sh](scripts/darwin/always_on.sh)）：
+パッケージのダウンロードが途中で失敗した場合は、共通の Homebrew インストーラーを再実行してください。
 
-   ```shell
-   make always-on
-   ```
+```shell
+make -C "$HOME/Code/nozomiishii/dotfiles" homebrew
+```
 
-4. プライベートリポジトリのクローン  
-   再起動が終わったら GitHub で認証して、プライベートリポジトリをクローンしましょう。
-   フラグで SSH プロトコルを固定し（make repo は SSH URL で clone）、SSH 鍵の生成をスキップし（鍵は 1Password SSH agent 管理）、watch スキルが使う notifications と GitHub Actions の workflow ファイル更新に要る workflow のスコープを追加しています（どちらも gh のデフォルトスコープに含まれません）。トークンはブラウザ認証で発行され macOS の Keychain に保存されます：
+#### 任意の常時起動設定
 
-   ```shell
-   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
-   make repo
-   ```
+[always_on.sh](scripts/darwin/always_on.sh) はスリープ・スクリーンセーバ・スクリーンセーバ後のパスワード要求を無効化し、Wake on LAN を有効化します。すべての変更を行いたい場合だけ実行してください。
 
-   make repo は GitHub の公開ホスト鍵を [GitHub meta API](https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information) から取得して `~/.ssh/known_hosts` に事前登録するため、`Are you sure you want to continue connecting?` の確認は表示されません。手動の SSH 接続でこの確認が出た場合は、fingerprint を [GitHub 公式のホスト鍵一覧](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)と照合して `yes` と答えてください。保存されるのは接続先の公開ホスト鍵だけで、秘密鍵がマシンに保存されるわけではありません。
+```shell
+make -C "$HOME/Code/nozomiishii/dotfiles" always-on
+```
+
+<a id="1password-github"></a>
+
+#### GitHub SSH 用に 1Password を設定する
+
+- 1Password デスクトップアプリにサインインし、ロックを解除します。
+- Settings > Developer で `Use the SSH agent` と `Integrate with 1Password CLI` を有効化します。[1Password SSH Agent](https://www.1password.dev/ssh/agent/)、[1Password CLI app integration](https://www.1password.dev/cli/app-integration/)
+- `~/.config/1Password/ssh/agent.toml` に、以前の Mac で必要だった selector を再作成します。このファイルは Mac ごとのローカル設定で、1Password では同期されません。[SSH agent configuration](https://www.1password.dev/ssh/agent/config)
+- GitHub が Agent の鍵を使えることを確認します。
+
+```shell
+ssh -T git@github.com
+```
+
+初回接続時は、承認する前に fingerprint を [GitHub 公式の SSH ホスト鍵一覧](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)と照合してください。出力に `Hi nozomiishii!` が含まれることを確認します。GitHub は shell access を提供しないため、認証成功時も通常は exit status 1 になります。
+
+#### GitHub で認証し、プライベートリポジトリをクローンする
+
+フラグで SSH プロトコルを固定し、SSH 鍵の生成をスキップします。鍵は 1Password SSH Agent が管理します。watch スキルが使う `notifications` と GitHub Actions の workflow ファイル更新に必要な `workflow` のスコープを追加します。どちらも gh のデフォルトスコープに含まれません。トークンはブラウザ認証で発行され、macOS の Keychain に保存されます。
+
+```shell
+gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
+make -C "$HOME/Code/nozomiishii/dotfiles" repo
+```
+
+`make repo` は GitHub の公開ホスト鍵を [GitHub meta API](https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information) から取得して `~/.ssh/known_hosts` に事前登録します。保存されるのは接続先の公開ホスト鍵だけで、秘密鍵は保存しません。
 
 <a id="install-manually"></a>
 
 <details>
 <summary>手動でインストール</summary>
 
-### xcode-select をインストール
-
-```shell
-xcode-select --install
-```
-
-xcode-select: Git と Homebrew を使うために必要なコマンドラインツールです。
+最初に[インストール前](#before-installation)の手順を完了させてください。
 
 ### このページを開く
 
@@ -167,6 +230,7 @@ open https://nozomiishii.dev/dotfiles
 
 ```shell
 git clone https://github.com/nozomiishii/dotfiles.git ~/Code/nozomiishii/dotfiles
+cd "$HOME/Code/nozomiishii/dotfiles"
 ```
 
 ### Install
@@ -195,9 +259,7 @@ sudo reboot
   「Touch ID」にチェックを入れてください
 - Preferences > General > Keyboard shortcuts >  
   自動入力のショートカット: `⌥⇧X`
-- Preferences > Developer > 「Use the SSH agent」にチェック
-- Preferences > Developer > 「Integrate with 1Password CLI」にチェック
-  - [Turn on the 1Password desktop app integration](https://developer.1password.com/docs/cli/get-started/#step-2-turn-on-the-1password-desktop-app-integration)
+- プライベートリポジトリをクローンする前に、[GitHub SSH 用の 1Password 設定](#1password-github)を完了させてください。
 
 ### 🌏 Chrome
 
@@ -291,13 +353,11 @@ enabled = false
 
 ### 😼 SSH & Git
 
-- [Run gh auth login](https://cli.github.com/manual/)
+- [1Password と GitHub SSH の設定](#1password-github)を完了させてください。
 
 ### 🦄 Clone repositories
 
-```shell
-make repo
-```
+クローンコマンドは [1Password と GitHub SSH の設定](#1password-github)にまとめています。
 
 ### 🐘 TablePlus
 
