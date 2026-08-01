@@ -73,7 +73,7 @@ Sign in your iCloud and App Store, when you get to the home screen.
 (to install apps from the App Store manually)
 
 💡 Can you not use your personal apple ID on your company computer?
-Install xcode manually from the App Store.
+Install Xcode manually from the App Store if you need it.
 
 ### 🍎 Apple ID
 
@@ -93,6 +93,16 @@ Install xcode manually from the App Store.
 ```
 
 - Login
+
+- 1Password for Safari
+- AdBlock Pro
+- Jump Desktop
+- Kindle
+- LINE
+- Obsidian Web Clipper
+- Remote Desktop
+- Video Speed Controller
+- Xcode (only for Apple platform development)
 
 <a id="install"></a>
 
@@ -116,46 +126,41 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 ### After installation
 
-1. **Reboot**  
-   Run `sudo reboot` to apply the settings.
+```shell
+sudo reboot
+```
 
-2. **Retry Homebrew if needed**
-   Re-run the unified Homebrew installer if a package download was interrupted:
+#### Retry Homebrew if needed
 
-   ```shell
-   make homebrew
-   ```
+```shell
+make -C "$HOME/Code/nozomiishii/dotfiles" homebrew
+```
 
-3. **(Optional) Always-on power settings**  
-   To disable sleep and use Wake on LAN etc. ([always_on.sh](scripts/darwin/always_on.sh)):
+#### Optional always-on settings
 
-   ```shell
-   make always-on
-   ```
+```shell
+make -C "$HOME/Code/nozomiishii/dotfiles" always-on
+```
 
-4. **Clone private repositories after reboot**  
-   After authenticating with GitHub, clone your private repos.
-   The flags pin the SSH protocol (`make repo` clones over SSH), skip SSH key generation (keys live in the 1Password SSH agent), and add the `notifications` scope used by the watch skill plus the `workflow` scope for updating GitHub Actions workflow files (neither is in gh's default scopes). The token is issued via the browser and stored in the macOS Keychain:
+#### GitHub
 
-   ```shell
-   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
-   make repo
-   ```
+- [Set up 1Password](#1password-github)
 
-   `make repo` pre-registers GitHub's public host keys in `~/.ssh/known_hosts` (fetched from the [GitHub meta API](https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information)), so the `Are you sure you want to continue connecting?` prompt does not appear. If a manual SSH connection ever shows it, verify the fingerprint against [GitHub's SSH key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints) and answer `yes` — it only records the server's public host key, never a private key.
+```shell
+gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
+make -C "$HOME/Code/nozomiishii/dotfiles" repo
+```
 
 <a id="install-manually"></a>
 
 <details>
 <summary>Install Manually</summary>
 
-### Install xcode-select
+### Xcode Command Line Tools
 
 ```shell
 xcode-select --install
 ```
-
-xcode-select: this command-line Tools are required for Git and Homebrew
 
 ### Come to this page
 
@@ -167,6 +172,7 @@ open https://nozomiishii.dev/dotfiles
 
 ```shell
 git clone https://github.com/nozomiishii/dotfiles.git ~/Code/nozomiishii/dotfiles
+cd "$HOME/Code/nozomiishii/dotfiles"
 ```
 
 ### Install
@@ -189,54 +195,25 @@ Then follow the [After installation](#after-installation) steps above.
 
 ## App preferences
 
+<a id="1password-github"></a>
+
 ### 🔑 1Password
 
+- Sign in and unlock
 - Preferences > Security > Unlock using >  
   Check "Touch ID"
 - Preferences > General > Keyboard shortcuts >  
   Autofill: `⌥⇧X`
-- Preferences > Developer > Check "Use the SSH agent"
-- Preferences > Developer > Check "Integrate with 1Password CLI"
-  - [Turn on the 1Password desktop app integration](https://developer.1password.com/docs/cli/get-started/#step-2-turn-on-the-1password-desktop-app-integration)
+- Settings > Developer > `Use the SSH agent`
+- Settings > Developer > `Integrate with 1Password CLI`
+- Restore `~/.config/1Password/ssh/agent.toml`
 
 ### 🌏 Chrome
 
-- Sign in
+- Profile > `Sign in to Chrome`
+- Settings > You and Google > account name > `Choose what to save` > turn on `Extensions`
 - Change Chrome to the Default Browser
 - Log in 1PasswordX
-- (Optional)
-
-  - [Gmail notification](https://support.google.com/mail/answer/1075549?hl=en&co=GENIE.Platform%3DDesktop)
-  - [Show working hours on your calendar](https://support.google.com/a/users/answer/9308669)
-  - [Send email to Slack](https://slack.com/help/articles/206819278-Send-emails-to-Slack#:~:text=address%20to%20confirm.-,Use%20an%20email%20add%2Don,-Gmail)
-
-  - Extensions
-    - [1Password](https://chromewebstore.google.com/detail/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
-      - Shortcut
-        - Activate the extension: `⇧⌘X`
-    - [Adblock for YouTube](https://chromewebstore.google.com/detail/cmedhionkhpnakcndndgjdbohmhepckk)
-    - [Responsive Viewer](https://chromewebstore.google.com/detail/inmopeiepgfljkpkidclfgbgbmfcennb)
-    - [Fonts Ninja](https://chromewebstore.google.com/detail/eljapbgkmlngdpckoiiibecpemleclhh)
-    - [DeepL](https://chromewebstore.google.com/detail/cofdbpoegempjloogbagkncekinflcnj)
-    - [Video Speed Controller](https://chromewebstore.google.com/detail/nffaoalbilbmmfgbnbgppjihopabppdk)
-    - [Youtube Transcript Extractor](https://chromewebstore.google.com/detail/lclpibfglbkghjkdmpjkgehcnadcffdl)
-    - [Gossip Site Blocker](https://chromewebstore.google.com/detail/mjojhcmecfehllhcjcbhkkpohadogplk)
-    - [GoFullPage](https://chromewebstore.google.com/detail/fdpohaocaechififmbbbbbknoalclacl)
-    - [Amazing Searcher](https://chromewebstore.google.com/detail/poheekmlppakdboaalpmhfpbmnefeokj)
-    - [GraphQL Network Inspector](https://chromewebstore.google.com/detail/ndlbedplllcgconngcnfmkadhokfaaln)
-    - [Tweak New Twitter](https://chromewebstore.google.com/detail/kpmjjdhbcfebfjgdnpjagcndoelnidfj)
-    - [I don't care about cookies](https://chromewebstore.google.com/detail/fihnjjcciajhdojfnbdddfaoknhalnja)
-    - [Youtube filter](https://chromewebstore.google.com/detail/dfbfdjepofdfhdddfdggabjjndhiggji)
-    - [Screenshot YouTube](https://chromewebstore.google.com/detail/gjoijpfmdhbjkkgnmahganhoinjjpohk)
-    - [Requestly](https://chromewebstore.google.com/detail/mdnleldcmiljblolnjhpnblkcekpdkpa)
-    - [Linkumori (URLs Cleaner)](https://chromewebstore.google.com/detail/jchobbjgibcahbheicfocecmhocglkco)
-      - Automatically removes tracking query parameters from URLs
-    - [Amazon URL Shortener](https://chromewebstore.google.com/detail/bonkcfmjkpdnieejahndognlbogaikdg)
-      - Shortens Amazon product URLs
-    - [Speechify Text to Speech Voice Reader](https://chromewebstore.google.com/detail/ljflmlehinmoeknoonhibbjpldiijjmm)
-      - Shortcut
-        - Activate the extension: `⌃Q`
-        - Play/Pause: `⌃Space`
 
 ### ☁️ google-drive
 
@@ -259,17 +236,11 @@ Finder Sidebar
 
 ### 🚁 Raycast
 
-- needs: Finder setup
-
 - Sign in
 
 ### 🐟 VSCode
 
-- User Icon > Setting sync > Login >  
-  Select "Marge"  
-  ⚠️ Do NOT Select "Replace"
-- ⇧ + ⌘ + P > Open command pallet >  
-  Icons: Activate VSCode Icons
+- User Icon > Settings Sync > Login > `Merge`
 - Add MonokaiPro License
 
 ### 🤖 Codex
@@ -287,16 +258,6 @@ enabled = false
 
 [apps.github.tools."github.enable_auto_merge"]
 enabled = false
-```
-
-### 😼 SSH & Git
-
-- [Run gh auth login](https://cli.github.com/manual/)
-
-### 🦄 Clone repositories
-
-```shell
-make repo
 ```
 
 ### 🐘 TablePlus
@@ -398,6 +359,11 @@ make repo
   Monokai Pro Theme
 
 ### 🍎 Xcode
+
+```shell
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -runFirstLaunch
+```
 
 - Add Account
 - Preferences > Themes >  

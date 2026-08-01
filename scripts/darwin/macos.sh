@@ -324,9 +324,10 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -
 echo "- 🖥 Display"
 
 # Nightshift https://github.com/smudge/nightlight
-brew install smudge/smudge/nightlight
-nightlight on
-nightlight schedule 7:00 6:59
+if command -v nightlight >/dev/null 2>&1; then
+  nightlight on
+  nightlight schedule 7:00 6:59
+fi
 
 # Sidecar Settings
 defaults write com.apple.sidecar.display doubleTapEnabled -bool true

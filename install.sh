@@ -75,9 +75,7 @@ request_documents_access() {
 # ensure_xcode_clt はスクリプトに切り出さず、このファイルに置く。
 # repo の clone には git が必要で、素の Mac では git を使うのに Command Line Tools が要る。
 # つまり curl | bash 経路でこの処理が走る時点では、repo のスクリプトはまだ手元に存在しない。
-# @See
-# https://gist.github.com/mokagio/b974620ee8dcf5c0671f
-# http://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
+# @See https://developer.apple.com/documentation/xcode/installing-the-command-line-tools
 ensure_xcode_clt() {
   echo "- 👨🏻‍🚀 Checking Xcode CLI tools..."
 
@@ -86,19 +84,14 @@ ensure_xcode_clt() {
     return
   fi
 
-  echo "- 👨🏻‍🚀 Xcode CLI tools not found. Installing them..."
-  TEMP_FILE="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
-  touch "${TEMP_FILE}"
-
-  CLI_TOOLS=$(softwareupdate -l |
-    grep "\*.*Command Line" |
-    tail -n 1 | sed 's/^[^C]* //')
-
-  echo "- 👨🏻‍🚀 Installing: ${CLI_TOOLS}"
-  softwareupdate -i "${CLI_TOOLS}" --verbose
-
-  rm "${TEMP_FILE}"
-  echo "- 👨🏻‍🚀 Xcode CLI tools are ready to go 🎉"
+  echo "- 👨🏻‍🚀 Xcode CLI tools not found. Opening Apple's installer..."
+  if xcode-select --install; then
+    echo "- 👨🏻‍🚀 The Xcode CLI tools installation was requested."
+  else
+    echo "⚠️ Could not open the Xcode CLI tools installer. It may already be open." >&2
+  fi
+  echo "Complete the installation, then re-run this dotfiles installer." >&2
+  exit 1
 }
 
 clone_dotfiles_repo() {
@@ -135,9 +128,9 @@ printf '%s\n' \
 echo -e "${reset}"
 
 if [[ "$OS_NAME" == "Darwin" ]]; then
+  ensure_xcode_clt
   request_admin_privileges
   request_documents_access
-  ensure_xcode_clt
   clone_dotfiles_repo
   bash "$SCRIPT_DIR/scripts/nix.sh"
   bash "$SCRIPT_DIR/scripts/homebrew.sh"
@@ -151,7 +144,6 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
-  bash "$SCRIPT_DIR/scripts/nvim.sh"
   bash "$SCRIPT_DIR/scripts/default_apps.sh"
   bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
 fi
@@ -197,13 +189,13 @@ printf '%s\n' \
   "📦 If Homebrew was interrupted:" \
   "" \
   "    run:" \
-  "      make homebrew" \
+  "      make -C \"$SCRIPT_DIR\" homebrew" \
   "" \
   "" \
-  "📦 After restarting, clone your private repositories:" \
+  "📦 After restarting, complete the remaining setup:" \
   "" \
-  "    1. gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow" \
-  "    2. make repo" \
+  "    Follow the \"After installation\" section in:" \
+  "      $SCRIPT_DIR/README.md" \
   "" \
   ""
 echo -e "${reset}"

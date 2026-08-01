@@ -73,7 +73,7 @@ curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
 （App Store からアプリを手動でインストールするために必要です）
 
 💡 会社の PC で個人の Apple ID が使えない場合は、
-App Store から Xcode を手動でインストールしてください。
+必要なら App Store から Xcode を手動でインストールしてください。
 
 ### 🍎 Apple ID
 
@@ -93,6 +93,16 @@ App Store から Xcode を手動でインストールしてください。
 ```
 
 - ログイン
+
+- 1Password for Safari
+- AdBlock Pro
+- Jump Desktop
+- Kindle
+- LINE
+- Obsidian Web Clipper
+- Remote Desktop
+- Video Speed Controller
+- Xcode（Apple プラットフォーム向けアプリを開発する場合のみ）
 
 <a id="install"></a>
 
@@ -116,46 +126,41 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 ### インストール後の作業
 
-1. 再起動  
-   設定を反映するために `sudo reboot` を実行してください。
+```shell
+sudo reboot
+```
 
-2. Homebrew が中断された場合
-   パッケージのダウンロードが途中で失敗した場合は、共通の Homebrew インストーラーを再実行してください：
+#### Homebrew が中断された場合
 
-   ```shell
-   make homebrew
-   ```
+```shell
+make -C "$HOME/Code/nozomiishii/dotfiles" homebrew
+```
 
-3. （任意）常時起動設定  
-   スリープを無効にして Wake on LAN などを使いたい方向けです（[always_on.sh](scripts/darwin/always_on.sh)）：
+#### 任意の常時起動設定
 
-   ```shell
-   make always-on
-   ```
+```shell
+make -C "$HOME/Code/nozomiishii/dotfiles" always-on
+```
 
-4. プライベートリポジトリのクローン  
-   再起動が終わったら GitHub で認証して、プライベートリポジトリをクローンしましょう。
-   フラグで SSH プロトコルを固定し（make repo は SSH URL で clone）、SSH 鍵の生成をスキップし（鍵は 1Password SSH agent 管理）、watch スキルが使う notifications と GitHub Actions の workflow ファイル更新に要る workflow のスコープを追加しています（どちらも gh のデフォルトスコープに含まれません）。トークンはブラウザ認証で発行され macOS の Keychain に保存されます：
+#### GitHub
 
-   ```shell
-   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
-   make repo
-   ```
+- [1Password を設定する](#1password-github)
 
-   make repo は GitHub の公開ホスト鍵を [GitHub meta API](https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information) から取得して `~/.ssh/known_hosts` に事前登録するため、`Are you sure you want to continue connecting?` の確認は表示されません。手動の SSH 接続でこの確認が出た場合は、fingerprint を [GitHub 公式のホスト鍵一覧](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints)と照合して `yes` と答えてください。保存されるのは接続先の公開ホスト鍵だけで、秘密鍵がマシンに保存されるわけではありません。
+```shell
+gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
+make -C "$HOME/Code/nozomiishii/dotfiles" repo
+```
 
 <a id="install-manually"></a>
 
 <details>
 <summary>手動でインストール</summary>
 
-### xcode-select をインストール
+### Xcode Command Line Tools
 
 ```shell
 xcode-select --install
 ```
-
-xcode-select: Git と Homebrew を使うために必要なコマンドラインツールです。
 
 ### このページを開く
 
@@ -167,6 +172,7 @@ open https://nozomiishii.dev/dotfiles
 
 ```shell
 git clone https://github.com/nozomiishii/dotfiles.git ~/Code/nozomiishii/dotfiles
+cd "$HOME/Code/nozomiishii/dotfiles"
 ```
 
 ### Install
@@ -189,54 +195,25 @@ sudo reboot
 
 ## アプリの設定
 
+<a id="1password-github"></a>
+
 ### 🔑 1Password
 
+- サインインしてロックを解除
 - Preferences > Security > Unlock using >  
   「Touch ID」にチェックを入れてください
 - Preferences > General > Keyboard shortcuts >  
   自動入力のショートカット: `⌥⇧X`
-- Preferences > Developer > 「Use the SSH agent」にチェック
-- Preferences > Developer > 「Integrate with 1Password CLI」にチェック
-  - [Turn on the 1Password desktop app integration](https://developer.1password.com/docs/cli/get-started/#step-2-turn-on-the-1password-desktop-app-integration)
+- Settings > Developer > `Use the SSH agent`
+- Settings > Developer > `Integrate with 1Password CLI`
+- `~/.config/1Password/ssh/agent.toml` を復元
 
 ### 🌏 Chrome
 
-- サインインしてください
+- 右上のプロフィール > `Chrome にログイン`
+- Settings > You and Google > アカウント名 > `保存する内容を選択` > `拡張機能`を有効化
 - Chrome をデフォルトブラウザに設定
 - 1PasswordX にログイン
-- （お好みで）
-
-  - [Gmail notification](https://support.google.com/mail/answer/1075549?hl=ja&co=GENIE.Platform%3DDesktop)
-  - [Show working hours on your calendar](https://support.google.com/a/users/answer/9308669)
-  - [Send email to Slack](https://slack.com/help/articles/206819278-Send-emails-to-Slack#:~:text=address%20to%20confirm.-,Use%20an%20email%20add%2Don,-Gmail)
-
-  - Extensions
-    - [1Password](https://chromewebstore.google.com/detail/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
-      - Shortcut
-        - Activate the extension: `⇧⌘X`
-    - [Adblock for YouTube](https://chromewebstore.google.com/detail/cmedhionkhpnakcndndgjdbohmhepckk)
-    - [Responsive Viewer](https://chromewebstore.google.com/detail/inmopeiepgfljkpkidclfgbgbmfcennb)
-    - [Fonts Ninja](https://chromewebstore.google.com/detail/eljapbgkmlngdpckoiiibecpemleclhh)
-    - [DeepL](https://chromewebstore.google.com/detail/cofdbpoegempjloogbagkncekinflcnj)
-    - [Video Speed Controller](https://chromewebstore.google.com/detail/nffaoalbilbmmfgbnbgppjihopabppdk)
-    - [Youtube Transcript Extractor](https://chromewebstore.google.com/detail/lclpibfglbkghjkdmpjkgehcnadcffdl)
-    - [Gossip Site Blocker](https://chromewebstore.google.com/detail/mjojhcmecfehllhcjcbhkkpohadogplk)
-    - [GoFullPage](https://chromewebstore.google.com/detail/fdpohaocaechififmbbbbbknoalclacl)
-    - [Amazing Searcher](https://chromewebstore.google.com/detail/poheekmlppakdboaalpmhfpbmnefeokj)
-    - [GraphQL Network Inspector](https://chromewebstore.google.com/detail/ndlbedplllcgconngcnfmkadhokfaaln)
-    - [Tweak New Twitter](https://chromewebstore.google.com/detail/kpmjjdhbcfebfjgdnpjagcndoelnidfj)
-    - [I don't care about cookies](https://chromewebstore.google.com/detail/fihnjjcciajhdojfnbdddfaoknhalnja)
-    - [Youtube filter](https://chromewebstore.google.com/detail/dfbfdjepofdfhdddfdggabjjndhiggji)
-    - [Screenshot YouTube](https://chromewebstore.google.com/detail/gjoijpfmdhbjkkgnmahganhoinjjpohk)
-    - [Requestly](https://chromewebstore.google.com/detail/mdnleldcmiljblolnjhpnblkcekpdkpa)
-    - [Linkumori (URLs Cleaner)](https://chromewebstore.google.com/detail/jchobbjgibcahbheicfocecmhocglkco)
-      - URL のクエリパラメータを自動削除
-    - [Amazon URL Shortener](https://chromewebstore.google.com/detail/bonkcfmjkpdnieejahndognlbogaikdg)
-      - amazon の URL 短くしてくれる
-    - [Speechify Text to Speech Voice Reader](https://chromewebstore.google.com/detail/ljflmlehinmoeknoonhibbjpldiijjmm)
-      - Shortcut
-        - Activate the extension: `⌃Q`
-        - Play/Pause: `⌃Space`
 
 ### ☁️ Google Drive
 
@@ -259,17 +236,11 @@ Finder Sidebar
 
 ### 🚁 Raycast
 
-- 先に Finder のセットアップを済ませてください
-
 - サインイン
 
 ### 🐟 VSCode
 
-- User Icon > Setting sync > Login >  
-  「Marge」を選択してください  
-  ⚠️ 「Replace」は選ばないようにしましょう
-- ⇧ + ⌘ + P > Open command pallet >  
-  Icons: VSCode Icons を有効化
+- User Icon > Settings Sync > Login > `Merge`
 - MonokaiPro のライセンスを追加してください
 
 ### 🤖 Codex
@@ -287,16 +258,6 @@ enabled = false
 
 [apps.github.tools."github.enable_auto_merge"]
 enabled = false
-```
-
-### 😼 SSH & Git
-
-- [Run gh auth login](https://cli.github.com/manual/)
-
-### 🦄 Clone repositories
-
-```shell
-make repo
 ```
 
 ### 🐘 TablePlus
@@ -397,6 +358,11 @@ make repo
   Monokai Pro Theme をインストール
 
 ### 🍎 Xcode
+
+```shell
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -runFirstLaunch
+```
 
 - アカウントを追加
 - Preferences > Themes >  

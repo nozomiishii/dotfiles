@@ -161,9 +161,6 @@ if OS.mac?
   # Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
   brew "jq"
 
-  # Ambitious Vim-fork focused on extensibility and agility https://neovim.io/
-  brew "neovim"
-
   # Object-relational database system https://www.postgresql.org/
   brew "postgresql@17"
 
