@@ -28,7 +28,7 @@ toolchains: ## Set up language toolchains
 
 .PHONY: repo
 repo: ## Clone GitHub repositories
-	bash ./scripts/clone_github_repos.sh
+	gh api repos/nozomiishii/infra/contents/scripts/clone_github_repos.sh -H "Accept: application/vnd.github.raw" | bash
 
 .PHONY: link
 link: ## Symlink dotfiles to home directory
