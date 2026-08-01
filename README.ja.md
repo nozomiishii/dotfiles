@@ -74,7 +74,7 @@ curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
 （App Store からアプリを手動でインストールするために必要です）
 
 💡 会社の PC で個人の Apple ID が使えない場合は、
-App Store から Xcode を手動でインストールしてください。
+必要なら App Store から Xcode を手動でインストールしてください。
 
 ### 🍎 Apple ID
 
@@ -105,7 +105,7 @@ App Store から Xcode を手動でインストールしてください。
 - Obsidian Web Clipper
 - Remote Desktop
 - Video Speed Controller
-- Xcode
+- Xcode（Apple プラットフォーム向けアプリを開発する場合のみ）
 
 この方針で回避している cleanup の挙動は、[Mac App Store アプリは mas で管理しない](docs/decisions/Mac%20App%20Store%20アプリは%20mas%20で管理しない.md)を参照してください。
 
@@ -124,7 +124,7 @@ App Store から Xcode を手動でインストールしてください。
 
 ### Xcode Command Line Tools をインストールする
 
-dotfiles のインストーラーより先に Apple 公式の手順でインストールします。[Installing the command-line tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools)
+dotfiles のインストーラーは Git を使うために Apple の開発者向けコマンドラインツールを必要としますが、それ以外の目的で完全版の Xcode を要求しません。Xcode にも同じツールが含まれるため、Xcode が有効なら単体の Command Line Tools を別に入れる必要はありません。どちらも有効でない場合、インストーラーは Apple 公式の Command Line Tools インストーラーを開いて停止します。インストールを完了してから dotfiles のインストーラーを再実行してください。単体パッケージを事前に導入しておくこともできます。[Installing the command-line tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools)
 
 ```shell
 xcode-select --install
@@ -134,15 +134,6 @@ xcode-select --install
 
 ```shell
 xcode-select -p
-```
-
-### Xcode をインストールする
-
-dotfiles のインストーラーを実行する前に、App Store から完全版の Xcode をインストールします。開発者ディレクトリに指定し、初回起動コンポーネントをインストールしてください。[Configuring command-line tools settings](https://developer.apple.com/documentation/xcode/configuring-command-line-tools-settings)、[Downloading and installing additional Xcode components](https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components)
-
-```shell
-sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-sudo xcodebuild -runFirstLaunch
 ```
 
 <a id="install"></a>
@@ -457,6 +448,13 @@ enabled = false
   Monokai Pro Theme をインストール
 
 ### 🍎 Xcode
+
+完全版の Xcode は任意です。Apple プラットフォーム向けアプリを開発する場合は、App Store から Xcode をインストールし、開発者ディレクトリに指定して初回起動コンポーネントをインストールしてください。[Configuring command-line tools settings](https://developer.apple.com/documentation/xcode/configuring-command-line-tools-settings)、[Downloading and installing additional Xcode components](https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components)
+
+```shell
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -runFirstLaunch
+```
 
 - アカウントを追加
 - Preferences > Themes >  

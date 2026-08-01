@@ -74,7 +74,7 @@ Sign in your iCloud and App Store, when you get to the home screen.
 (to install apps from the App Store manually)
 
 💡 Can you not use your personal apple ID on your company computer?
-Install xcode manually from the App Store.
+Install Xcode manually from the App Store if you need it.
 
 ### 🍎 Apple ID
 
@@ -105,7 +105,7 @@ The [Brewfile](Brewfile) intentionally does not manage Mac App Store apps. Insta
 - Obsidian Web Clipper
 - Remote Desktop
 - Video Speed Controller
-- Xcode
+- Xcode (only for Apple platform development)
 
 See [Why Mac App Store apps are not managed with mas](docs/decisions/Mac%20App%20Store%20アプリは%20mas%20で管理しない.md) for the cleanup behavior this avoids.
 
@@ -124,7 +124,7 @@ The installer makes the following changes. Back up any existing settings first i
 
 ### Install the Xcode Command Line Tools
 
-Use Apple's supported installer before running the dotfiles installer. See [Installing the command-line tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools).
+The dotfiles installer needs Apple's developer command-line tools to use Git, but it doesn't otherwise require the full Xcode app. Xcode includes these tools, so you don't need to install the standalone package separately if Xcode is already active. If neither is active, the installer opens Apple's supported Command Line Tools installer and stops. Complete the installation, then rerun the dotfiles installer. You can also install the package in advance. See [Installing the command-line tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools).
 
 ```shell
 xcode-select --install
@@ -134,15 +134,6 @@ Wait for the installation dialog to finish, then confirm that the active develop
 
 ```shell
 xcode-select -p
-```
-
-### Install Xcode
-
-Install the full Xcode app from the App Store before running the dotfiles installer. Select it as the active developer directory and install its first-launch components. See [Configuring command-line tools settings](https://developer.apple.com/documentation/xcode/configuring-command-line-tools-settings) and [Downloading and installing additional Xcode components](https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components).
-
-```shell
-sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-sudo xcodebuild -runFirstLaunch
 ```
 
 <a id="install"></a>
@@ -458,6 +449,13 @@ The clone command is included in the [1Password and GitHub SSH setup](#1password
   Monokai Pro Theme
 
 ### 🍎 Xcode
+
+The full Xcode app is optional. If you develop apps for Apple platforms, install Xcode from the App Store, select it as the active developer directory, and install its first-launch components. See [Configuring command-line tools settings](https://developer.apple.com/documentation/xcode/configuring-command-line-tools-settings) and [Downloading and installing additional Xcode components](https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components).
+
+```shell
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -runFirstLaunch
+```
 
 - Add Account
 - Preferences > Themes >  
