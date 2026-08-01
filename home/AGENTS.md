@@ -51,7 +51,7 @@ Claude Code on the web など、ローカルの clone や gh が無いリモー�
 - PR に依頼と無関係な変更を混ぜない。
 - レビュー指摘は実装する前にコードベースで検証し、間違った指摘には根拠をつけて押し返す。不明点が複数あるときは全て確認してから着手する。
 - レビュー対応はプッシュで終わらせず、元コメントに返信する。対応したら内容とコミット URL、対応しないなら議論の内容と理由を書く。
-- GitHub review thread の Resolve / Unresolve はユーザー本人だけが行う。エージェントは明示依頼があっても、`resolveReviewThread`、GitHub connector の resolve tool、同等 API など解決状態を変える操作を実行せず、既に解決済みの thread も unresolve しない。修正・検証・元コメントへの返信まで行い、thread は未解決のまま「ユーザーの確認待ち」と報告する。
+- GitHub review thread の Resolve / Unresolve はユーザー本人だけが行う。
 
 ## デバッグ
 - fix の前に原因を調査する。エラーの再現、最近の変更確認、コンポーネント境界へのログ追加を先行し、仮説は1つずつ検証する。
