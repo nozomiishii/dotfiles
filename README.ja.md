@@ -210,42 +210,10 @@ sudo reboot
 
 ### 🌏 Chrome
 
-- サインインしてください
+- 右上のプロフィール > `Chrome にログイン`
+- Settings > You and Google > アカウント名 > `保存する内容を選択` > `拡張機能`を有効化
 - Chrome をデフォルトブラウザに設定
 - 1PasswordX にログイン
-- （お好みで）
-
-  - [Gmail notification](https://support.google.com/mail/answer/1075549?hl=ja&co=GENIE.Platform%3DDesktop)
-  - [Show working hours on your calendar](https://support.google.com/a/users/answer/9308669)
-  - [Send email to Slack](https://slack.com/help/articles/206819278-Send-emails-to-Slack#:~:text=address%20to%20confirm.-,Use%20an%20email%20add%2Don,-Gmail)
-
-  - Extensions
-    - [1Password](https://chromewebstore.google.com/detail/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
-      - Shortcut
-        - Activate the extension: `⇧⌘X`
-    - [Adblock for YouTube](https://chromewebstore.google.com/detail/cmedhionkhpnakcndndgjdbohmhepckk)
-    - [Responsive Viewer](https://chromewebstore.google.com/detail/inmopeiepgfljkpkidclfgbgbmfcennb)
-    - [Fonts Ninja](https://chromewebstore.google.com/detail/eljapbgkmlngdpckoiiibecpemleclhh)
-    - [DeepL](https://chromewebstore.google.com/detail/cofdbpoegempjloogbagkncekinflcnj)
-    - [Video Speed Controller](https://chromewebstore.google.com/detail/nffaoalbilbmmfgbnbgppjihopabppdk)
-    - [Youtube Transcript Extractor](https://chromewebstore.google.com/detail/lclpibfglbkghjkdmpjkgehcnadcffdl)
-    - [Gossip Site Blocker](https://chromewebstore.google.com/detail/mjojhcmecfehllhcjcbhkkpohadogplk)
-    - [GoFullPage](https://chromewebstore.google.com/detail/fdpohaocaechififmbbbbbknoalclacl)
-    - [Amazing Searcher](https://chromewebstore.google.com/detail/poheekmlppakdboaalpmhfpbmnefeokj)
-    - [GraphQL Network Inspector](https://chromewebstore.google.com/detail/ndlbedplllcgconngcnfmkadhokfaaln)
-    - [Tweak New Twitter](https://chromewebstore.google.com/detail/kpmjjdhbcfebfjgdnpjagcndoelnidfj)
-    - [I don't care about cookies](https://chromewebstore.google.com/detail/fihnjjcciajhdojfnbdddfaoknhalnja)
-    - [Youtube filter](https://chromewebstore.google.com/detail/dfbfdjepofdfhdddfdggabjjndhiggji)
-    - [Screenshot YouTube](https://chromewebstore.google.com/detail/gjoijpfmdhbjkkgnmahganhoinjjpohk)
-    - [Requestly](https://chromewebstore.google.com/detail/mdnleldcmiljblolnjhpnblkcekpdkpa)
-    - [Linkumori (URLs Cleaner)](https://chromewebstore.google.com/detail/jchobbjgibcahbheicfocecmhocglkco)
-      - URL のクエリパラメータを自動削除
-    - [Amazon URL Shortener](https://chromewebstore.google.com/detail/bonkcfmjkpdnieejahndognlbogaikdg)
-      - amazon の URL 短くしてくれる
-    - [Speechify Text to Speech Voice Reader](https://chromewebstore.google.com/detail/ljflmlehinmoeknoonhibbjpldiijjmm)
-      - Shortcut
-        - Activate the extension: `⌃Q`
-        - Play/Pause: `⌃Space`
 
 ### ☁️ Google Drive
 
@@ -268,17 +236,11 @@ Finder Sidebar
 
 ### 🚁 Raycast
 
-- 先に Finder のセットアップを済ませてください
-
 - サインイン
 
 ### 🐟 VSCode
 
-- User Icon > Setting sync > Login >  
-  「Marge」を選択してください  
-  ⚠️ 「Replace」は選ばないようにしましょう
-- ⇧ + ⌘ + P > Open command pallet >  
-  Icons: VSCode Icons を有効化
+- User Icon > Settings Sync > Login > `Merge`
 - MonokaiPro のライセンスを追加してください
 
 ### 🤖 Codex
@@ -296,16 +258,6 @@ enabled = false
 
 [apps.github.tools."github.enable_auto_merge"]
 enabled = false
-```
-
-### 😼 SSH & Git
-
-- [1Password を設定する](#1password-github)
-
-### 🦄 Clone repositories
-
-```shell
-make -C "$HOME/Code/nozomiishii/dotfiles" repo
 ```
 
 ### 🐘 TablePlus
