@@ -325,14 +325,8 @@ echo "- 🖥 Display"
 
 # Nightshift https://github.com/smudge/nightlight
 if command -v nightlight >/dev/null 2>&1; then
-  if ! nightlight on; then
-    echo "⚠️ Failed to enable Night Shift. Configure it manually in System Settings." >&2
-  fi
-  if ! nightlight schedule 7:00 6:59; then
-    echo "⚠️ Failed to configure the Night Shift schedule. Configure it manually in System Settings." >&2
-  fi
-else
-  echo "⚠️ nightlight is not installed. Configure Night Shift manually in System Settings." >&2
+  nightlight on
+  nightlight schedule 7:00 6:59
 fi
 
 # Sidecar Settings
