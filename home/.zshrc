@@ -68,9 +68,15 @@ if [[ -n "$GHOSTTY_RESOURCES_DIR" ]]; then
 fi
 
 # pm - VS Code Project Manager CLI
+# 未導入のマシンでも zsh が起動できるようガードする。source の行は pm installer が
+# 追記済み判定に使うマーカーなので、この文字列のまま変えない
+# https://github.com/nozomiishii/pm/blob/main/install.sh
 export PM_CONFIG="$HOME/Code/nozomiishii/workspaces/projects.json"
 export PATH="${XDG_BIN_HOME:-$HOME/.local/bin}:$PATH"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh"
+if [[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh" ]]; then
+  # shellcheck source=/dev/null
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/pm/pm.zsh"
+fi
 # Option+j (ESC+j / ∆)
 bindkey -s '^[j' 'pm^M'
 bindkey -s '∆' 'pm^M'

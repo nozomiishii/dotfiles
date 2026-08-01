@@ -9,20 +9,20 @@ importers:
   .:
     devDependencies:
       '@nozomiishii/commitlint-config':
-        specifier: 1.12.0
-        version: 1.12.0(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@7.0.2)
+        specifier: 1.13.0
+        version: 1.13.0(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@7.0.2)
       '@nozomiishii/lefthook-config':
-        specifier: 1.12.0
-        version: 1.12.0(lefthook@2.1.10)
+        specifier: 1.13.0
+        version: 1.13.0(lefthook@2.1.10)
       '@nozomiishii/markdownlint-cli2-config':
-        specifier: 1.12.0
-        version: 1.12.0
+        specifier: 1.13.0
+        version: 1.13.0
       '@nozomiishii/postinstall':
-        specifier: 1.12.0
-        version: 1.12.0
+        specifier: 1.13.0
+        version: 1.13.0
       '@nozomiishii/prettier-config':
-        specifier: 1.12.0
-        version: 1.12.0(prettier@3.9.6)
+        specifier: 1.13.0
+        version: 1.13.0(prettier@3.9.6)
       lefthook:
         specifier: 2.1.10
         version: 2.1.10
@@ -30,8 +30,8 @@ importers:
         specifier: 0.23.2
         version: 0.23.2
       node:
-        specifier: runtime:24.18.0
-        version: runtime:24.18.0
+        specifier: runtime:24.18.1
+        version: runtime:24.18.1
 
 packages:
 
@@ -140,26 +140,26 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nozomiishii/commitlint-config@1.12.0':
-    resolution: {integrity: sha512-HO65dsCzLwfYyluep3D34C58ZMw0+9aFqM1GuW9iWtHLVe77bvEIHJmxejFhNCaiv75jOSV+uCpkld3EiYXfAQ==}
+  '@nozomiishii/commitlint-config@1.13.0':
+    resolution: {integrity: sha512-VrpX1xAcZzLHXMaPd6S9E3rg4ykJFMOPT6v4kdRFKr2oYIRvJ1pt10sQactLWko4SiM7MDlRuCEhnTt5yeKj9Q==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@1.12.0':
-    resolution: {integrity: sha512-sYXnHz15IUUf0FllsTg3ag0K4AyURXDatj+Y1f3K8aU5fMsT+kEQcjO0umTBHnfIuSJlFhEG/ePhOjEVusbItQ==}
+  '@nozomiishii/lefthook-config@1.13.0':
+    resolution: {integrity: sha512-dPt0319uKzxlajlNrAZhI0HqCwNNp8wUiMEf9H2hpNrHWVVKeeshAJD4UrMS8hU02oGRhNcs2MKG5SzqRoQfFQ==}
     hasBin: true
     peerDependencies:
       lefthook: 2.1.10
 
-  '@nozomiishii/markdownlint-cli2-config@1.12.0':
-    resolution: {integrity: sha512-QLsnAdBqL7Hfr1+u5aNRNo4XweJ1qMe9EiQY1iLUenDYrd6gHWvTZbPvePwurHTk3swpBwLvmhIw6Xi1RT+a9Q==}
+  '@nozomiishii/markdownlint-cli2-config@1.13.0':
+    resolution: {integrity: sha512-PyU3nvzIKCRdmpuZo6MjN+s34XDrLeTSjdIK8OqYePWI4JwDT1C9LHperPiYqxLaSAe+/FTVaypiEKp4PyNnJQ==}
     hasBin: true
 
-  '@nozomiishii/postinstall@1.12.0':
-    resolution: {integrity: sha512-Hpgfp+F1a9UtFAO7O5M+6not13xBz6UqSkYE+YUeV0y3Si0vw2FxAZfNAvnGWVy4qUNx5izHsdIByDLBOFgUCA==}
+  '@nozomiishii/postinstall@1.13.0':
+    resolution: {integrity: sha512-c063gyIsBWL+nYw4NnzH7X34/naIotEi2ITdgr8pMMIPXNBx7ZND6ijyP97h4u4rY3mKYR9jxQ0EDAQ84ptzKQ==}
     hasBin: true
 
-  '@nozomiishii/prettier-config@1.12.0':
-    resolution: {integrity: sha512-0KG3LjjKqa1SHvdZvcxvfNvtrLBhYtE5E9qZmNm2P33ou+LdpZLcW/sX0OFt63f3xBOSrMyEctLKNr+uz9uVlQ==}
+  '@nozomiishii/prettier-config@1.13.0':
+    resolution: {integrity: sha512-a3X8ZKBwZuMx42O/5K0lHM93y5/vyIcQ4aIHraTKv9Z7L9NLBEpZtOBwQghFVKQloUMjzotTO3K/EeqZJCJSjw==}
     hasBin: true
     peerDependencies:
       prettier: 3.9.6
@@ -458,8 +458,8 @@ packages:
       picomatch:
         optional: true
 
-  figlet@1.11.3:
-    resolution: {integrity: sha512-7+OS4S6VjQXI2XRvfZlOdHhItd25lI0NgrR1j5UHfuyZfmMh44v65tMQUlb2bSriYGPCHAtGhuY5u23vqelvmg==}
+  figlet@1.11.4:
+    resolution: {integrity: sha512-ZU41480OncL+NVLQrT0GVnbO0COL24sLSrzksioDgunmdJNYEUxhJJZ4Y3x1csN8XXqN5OcCZTLG8lKdquNyfQ==}
     engines: {node: '>= 17.0.0'}
     hasBin: true
 
@@ -489,10 +489,6 @@ packages:
 
   global-directory@5.0.0:
     resolution: {integrity: sha512-1pgFdhK3J2LeM+dVf2Pd424yHx2ou338lC0ErNP2hPx4j8eW1Sp0XqSjNxtk6Tc4Kr5wlWtSvz8cn2yb7/SG/w==}
-    engines: {node: '>=20'}
-
-  globby@16.2.1:
-    resolution: {integrity: sha512-JmsqJalahxxgW8V2ecSQ2G7UjPlI9cpKdrkG9KoNiXhd/YslXOTEB0cViENWUznuovIuNT+FkMbraDGjr4FCUg==}
     engines: {node: '>=20'}
 
   globby@16.2.2:
@@ -555,10 +551,6 @@ packages:
 
   js-yaml@4.3.0:
     resolution: {integrity: sha512-1td788aAnnZ5qs7V2QIRl1owjtYpbKt749Y3xauqQgwIIGF/xXWz1wMTEBx5O3LK3lXLVuqXPdPxj2BoFHaW9Q==}
-    hasBin: true
-
-  js-yaml@5.2.1:
-    resolution: {integrity: sha512-zfLtNfQqxVqq3uaTqSkh4x4hZw3KHobGUA0fJUj4wawW8bsQLTVqpHdXSIzidh7o+4lEW36tANuAGdaFx6Zgnw==}
     hasBin: true
 
   js-yaml@5.2.2:
@@ -650,11 +642,6 @@ packages:
     resolution: {integrity: sha512-VVDGKsq9sgzu378swJ0fcHfSicUnMxnL8gnLm/Q4J/xsNJ4e5bA6lvAz7PCzIl0/No0lHyaWdqVD2jotxOSFMQ==}
     peerDependencies:
       markdownlint-cli2: '>=0.0.4'
-
-  markdownlint-cli2@0.23.1:
-    resolution: {integrity: sha512-20JPI5W+HpV1OA+pUM712wgvL4GzYNUvbmhLU8KlEYJ1kCDx4soZ4/Xqd+WkLrPTOKMAn8SfO3zYFrK8GLlwQg==}
-    engines: {node: '>=22'}
-    hasBin: true
 
   markdownlint-cli2@0.23.2:
     resolution: {integrity: sha512-eUhcnkSpzURo/o4htSqc7LPDszgOOTknhU4eY/sPHvMCLxnTCYscv1gw1/js/idmaZPisv9ECVEIORcllqjTUw==}
@@ -754,7 +741,7 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  node@runtime:24.18.0:
+  node@runtime:24.18.1:
     resolution:
       type: variations
       variants:
@@ -762,9 +749,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-ZGOiNzn2sjAOvsXM1gJ14TjjhY/Br8bo+bxOT2pLdvo=
+            integrity: sha256-PHYkDAe58DV0pc+O2LoZ6NuJJxlDgXsaS5TeQ8l6nmY=
             type: binary
-            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-aix-ppc64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.1/node-v24.18.1-aix-ppc64.tar.gz
           targets:
             - cpu: ppc64
               os: aix
@@ -772,9 +759,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-4al+FMmcgD6WxzOUAyguoFpJnDL42D3v6e9exm+XntE=
+            integrity: sha256-6wL3+rltPWfeQMXshWYJb8tMICZyh4doOuWpfrYSuUE=
             type: binary
-            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-darwin-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.1/node-v24.18.1-darwin-arm64.tar.gz
           targets:
             - cpu: arm64
               os: darwin
@@ -782,9 +769,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-39Db0+chUDQ033tyBecZ9hs6OjGyvPlym4uR/qJA8IA=
+            integrity: sha256-b7IPzqy7FXwvlYJbgN9KRUoPbYHNzXu4HurpFH4Oduw=
             type: binary
-            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-darwin-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.1/node-v24.18.1-darwin-x64.tar.gz
           targets:
             - cpu: x64
               os: darwin
@@ -792,9 +779,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-a0SEwhkCdBdd+aqPKOLXWKgZyxwf5qtIHi+VtGOrhQg=
+            integrity: sha256-3yJFVaCDuRjkYmDMlpg4UBufmocUDBGV5blZe1bV2uI=
             type: binary
-            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.1/node-v24.18.1-linux-arm64.tar.gz
           targets:
             - cpu: arm64
               os: linux
@@ -802,9 +789,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-/hM4ly95KDxrwh5h2/RXa76MBa3tKZnUHIZDrTAmUUI=
+            integrity: sha256-SoxiCbo6WuqExAIB2JZiTtcGuXmabcVMvZZUM6Npo9A=
             type: binary
-            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-ppc64le.tar.gz
+            url: https://nodejs.org/download/release/v24.18.1/node-v24.18.1-linux-ppc64le.tar.gz
           targets:
             - cpu: ppc64le
               os: linux
@@ -812,9 +799,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-Nx68E5RfwWlJPnUvLdr6+rbs2My0Ubz/RuCfacXdjHo=
+            integrity: sha256-Yq2FDv76mrQqPpAdjg3obXG/nIoMOJ2r7SSPHslZDFo=
             type: binary
-            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-s390x.tar.gz
+            url: https://nodejs.org/download/release/v24.18.1/node-v24.18.1-linux-s390x.tar.gz
           targets:
             - cpu: s390x
               os: linux
@@ -822,9 +809,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-eDEwmElj23upy9AQierywu+wVcfBaTyUMXS5Z7MFDLg=
+            integrity: sha256-n162rCGEWmbEk8kaJTsdoy/WhOiem3IC1JNpgjNr5Mo=
             type: binary
-            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.1/node-v24.18.1-linux-x64.tar.gz
           targets:
             - cpu: x64
               os: linux
@@ -832,10 +819,10 @@ packages:
             archive: zip
             bin:
               node: node.exe
-            integrity: sha256-8nRmmtuTsf0Pv48h/QeGCencyEMz1PJxjS3eP5oWGgE=
-            prefix: node-v24.18.0-win-arm64
+            integrity: sha256-/7x9PhuvaAT3Qx/5Txm5qIWmUFaMk+pMyxuwA49q+CU=
+            prefix: node-v24.18.1-win-arm64
             type: binary
-            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-win-arm64.zip
+            url: https://nodejs.org/download/release/v24.18.1/node-v24.18.1-win-arm64.zip
           targets:
             - cpu: arm64
               os: win32
@@ -843,10 +830,10 @@ packages:
             archive: zip
             bin:
               node: node.exe
-            integrity: sha256-CuaEBrQtdyVmHal5sUA+yZJtogXGdwgn8zqsnY8m6CE=
-            prefix: node-v24.18.0-win-x64
+            integrity: sha256-7Fa4SnVRiTqyMk69/cSrl0pjtHgRYmALaKEpPMPlN2U=
+            prefix: node-v24.18.1-win-x64
             type: binary
-            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-win-x64.zip
+            url: https://nodejs.org/download/release/v24.18.1/node-v24.18.1-win-x64.zip
           targets:
             - cpu: x64
               os: win32
@@ -854,9 +841,9 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-scbC3DG0bdj7IyL0/nWwfndcUSC8NyUd7uoo9SnUVns=
+            integrity: sha256-rhtkV+24df2YEws3yFPlGlOsDMQIUOzM1JC2HFo1WPo=
             type: binary
-            url: https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-arm64-musl.tar.gz
+            url: https://unofficial-builds.nodejs.org/download/release/v24.18.1/node-v24.18.1-linux-arm64-musl.tar.gz
           targets:
             - cpu: arm64
               os: linux
@@ -865,14 +852,14 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-6lhAmRHhQexrGdkXjvotkYWhMpUAWxy/VSGzFX7tHZU=
+            integrity: sha256-aWl5yu+SUFrXVmo2dMqak9hVjigvNOeJkYHAMhghrl8=
             type: binary
-            url: https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64-musl.tar.gz
+            url: https://unofficial-builds.nodejs.org/download/release/v24.18.1/node-v24.18.1-linux-x64-musl.tar.gz
           targets:
             - cpu: x64
               os: linux
               libc: musl
-    version: 24.18.0
+    version: 24.18.1
     hasBin: true
 
   parent-module@1.0.1:
@@ -1158,7 +1145,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nozomiishii/commitlint-config@1.12.0(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@7.0.2)':
+  '@nozomiishii/commitlint-config@1.13.0(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@7.0.2)':
     dependencies:
       '@commitlint/cli': 21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@7.0.2)
       '@commitlint/config-conventional': 21.2.0
@@ -1169,23 +1156,23 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@1.12.0(lefthook@2.1.10)':
+  '@nozomiishii/lefthook-config@1.13.0(lefthook@2.1.10)':
     dependencies:
       git-harvest: 0.3.4
       lefthook: 2.1.10
 
-  '@nozomiishii/markdownlint-cli2-config@1.12.0':
+  '@nozomiishii/markdownlint-cli2-config@1.13.0':
     dependencies:
-      markdownlint-cli2: 0.23.1
+      markdownlint-cli2: 0.23.2
     transitivePeerDependencies:
       - supports-color
 
-  '@nozomiishii/postinstall@1.12.0':
+  '@nozomiishii/postinstall@1.13.0':
     dependencies:
-      figlet: 1.11.3
+      figlet: 1.11.4
       zx: 8.8.5
 
-  '@nozomiishii/prettier-config@1.12.0(prettier@3.9.6)':
+  '@nozomiishii/prettier-config@1.13.0(prettier@3.9.6)':
     dependencies:
       prettier: 3.9.6
       prettier-plugin-packagejson: 3.0.2(prettier@3.9.6)
@@ -1390,7 +1377,7 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.5
 
-  figlet@1.11.3:
+  figlet@1.11.4:
     dependencies:
       commander: 14.0.3
 
@@ -1413,15 +1400,6 @@ snapshots:
   global-directory@5.0.0:
     dependencies:
       ini: 6.0.0
-
-  globby@16.2.1:
-    dependencies:
-      '@sindresorhus/merge-streams': 4.0.0
-      fast-glob: 3.3.3
-      ignore: 7.0.6
-      is-path-inside: 4.0.0
-      slash: 5.1.0
-      unicorn-magic: 0.4.0
 
   globby@16.2.2:
     dependencies:
@@ -1471,10 +1449,6 @@ snapshots:
   js-tokens@4.0.0: {}
 
   js-yaml@4.3.0:
-    dependencies:
-      argparse: 2.0.1
-
-  js-yaml@5.2.1:
     dependencies:
       argparse: 2.0.1
 
@@ -1552,27 +1526,9 @@ snapshots:
       punycode.js: 2.3.1
       uc.micro: 2.1.0
 
-  markdownlint-cli2-formatter-default@0.0.6(markdownlint-cli2@0.23.1):
-    dependencies:
-      markdownlint-cli2: 0.23.1
-
   markdownlint-cli2-formatter-default@0.0.6(markdownlint-cli2@0.23.2):
     dependencies:
       markdownlint-cli2: 0.23.2
-
-  markdownlint-cli2@0.23.1:
-    dependencies:
-      globby: 16.2.1
-      js-yaml: 5.2.1
-      jsonc-parser: 3.3.1
-      jsonpointer: 5.0.1
-      markdown-it: 14.3.0
-      markdownlint: 0.41.1
-      markdownlint-cli2-formatter-default: 0.0.6(markdownlint-cli2@0.23.1)
-      micromatch: 4.0.8
-      smol-toml: 1.7.0
-    transitivePeerDependencies:
-      - supports-color
 
   markdownlint-cli2@0.23.2:
     dependencies:
@@ -1785,7 +1741,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  node@runtime:24.18.0: {}
+  node@runtime:24.18.1: {}
 
   parent-module@1.0.1:
     dependencies:

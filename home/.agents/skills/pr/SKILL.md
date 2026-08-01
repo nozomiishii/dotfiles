@@ -17,15 +17,15 @@ pr — Pull Request 当番。CI が落ちていたり、main が進んでいた�
 ## 絶対制約
 
 - マージは実行しない。merge 系の tool / capability を呼ばず、local で base branch へ merge して push するなど他の手段でもマージしない。マージはユーザーが手動で行う
-- GitHub の読み書きは「GitHub へのアクセス」の connector に限る。gh CLI が使える環境でも GitHub 操作に gh を使わない
+- GitHub の読み書きは「GitHub へのアクセス」の backend 選択（connector 優先、不通時は gh CLI fallback）に一元化する
 - PR の状態取得は「状態の収集」の同一 iteration 一括取得に一元化する。トラブルシューティング中でも同じ iteration 内で個別に再取得しない。分割再取得による snapshot ズレを防ぐため
 - force-push は `--force-with-lease` のみ。`--force` は禁止
 
 ## GitHub へのアクセス
 
-GitHub の読み書き（PR の特定・状態取得・CI ログ・レビュー返信・PR 本文更新）は、利用可能な GitHub connector / app を自分で検索して行う。Claude Code の GitHub MCP 名や Codex の GitHub app 名を固定しない。gh CLI が導入・認証済みでも GitHub 操作には使わない。connector 側の tool 単位の無効化（merge 禁止など）を唯一の適用点にするための一元化なので、gh への迂回はこの前提を壊す。
+GitHub の読み書き（PR の特定・状態取得・CI ログ・レビュー返信・PR 本文更新）は、利用可能な GitHub connector / app を自分で検索して行う。Claude Code の GitHub MCP 名や Codex の GitHub app 名を固定しない。connector が使える間は、gh CLI が導入・認証済みでも GitHub 操作には使わない。
 
-connector が見つからない場合は GitHub 操作を始めず、GitHub connector / MCP の設定が必要なことをユーザーに伝えて停止する。gh CLI での代替や、gh の導入・再認証を代替案にしない。
+connector が見つからない・認証切れ・接続失敗の場合は、認証済みの gh CLI に fallback して同じ操作を行う。fallback したことと理由を報告に含める。fallback 中も絶対制約の merge 禁止はそのまま適用される（`gh pr merge`、merge endpoint への `gh api` は実行しない。Claude Code では gh 側の permissions deny でも封じられている）。gh も未認証なら GitHub 操作を始めず、必要な設定をユーザーに伝えて停止する。
 
 local repo の操作（branch 作成、stage、commit、fetch、rebase、push）は引き続き git で行い、connector に置き換えない。
 

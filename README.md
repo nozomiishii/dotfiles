@@ -135,14 +135,14 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 4. **Clone private repositories after reboot**  
    After authenticating with GitHub, clone your private repos.
-   The flags pin the SSH protocol (`make repo` clones over SSH), skip SSH key generation (keys live in the 1Password SSH agent), and add the `notifications` scope used by the watch skill. The token is issued via the browser and stored in the macOS Keychain:
+   The flags pin the SSH protocol (`make repo` clones over SSH), skip SSH key generation (keys live in the 1Password SSH agent), and add the `notifications` scope used by the watch skill plus the `workflow` scope for updating GitHub Actions workflow files (neither is in gh's default scopes). The token is issued via the browser and stored in the macOS Keychain:
 
    ```shell
-   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications
+   gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
    make repo
    ```
 
-   The first SSH connection asks `Are you sure you want to continue connecting?`. Verify the fingerprint against [GitHub's SSH key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints) and answer `yes`. This only records GitHub's public host key in `~/.ssh/known_hosts` — it does not save any private key on the machine.
+   `make repo` pre-registers GitHub's public host keys in `~/.ssh/known_hosts` (fetched from the [GitHub meta API](https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information)), so the `Are you sure you want to continue connecting?` prompt does not appear. If a manual SSH connection ever shows it, verify the fingerprint against [GitHub's SSH key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints) and answer `yes` — it only records the server's public host key, never a private key.
 
 <a id="install-manually"></a>
 
