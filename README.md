@@ -42,7 +42,6 @@ curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
 ## Outline
 
 - [📦 New Macbook? Awesome!!](#new-macbook?)
-  - [Before installation](#before-installation)
   - [Install](#install)
   - [Install Manually](#install-manually)
   - [App preferences](#app-preferences)
@@ -95,8 +94,6 @@ Install Xcode manually from the App Store if you need it.
 
 - Login
 
-The [Brewfile](Brewfile) intentionally does not manage Mac App Store apps. Install the apps used on the previous Mac manually:
-
 - 1Password for Safari
 - AdBlock Pro
 - Jump Desktop
@@ -106,35 +103,6 @@ The [Brewfile](Brewfile) intentionally does not manage Mac App Store apps. Insta
 - Remote Desktop
 - Video Speed Controller
 - Xcode (only for Apple platform development)
-
-See [Why Mac App Store apps are not managed with mas](docs/decisions/Mac%20App%20Store%20アプリは%20mas%20で管理しない.md) for the cleanup behavior this avoids.
-
-<a id="before-installation"></a>
-
-## Before installation
-
-### Review the settings changed by the installer
-
-The installer makes the following changes. Back up any existing settings first if Migration Assistant or iCloud has already restored them.
-
-- [symlink.sh](scripts/symlink.sh) replaces conflicting dotfiles with the repository versions.
-- [homebrew.sh](scripts/homebrew.sh) removes Homebrew formulae and casks not listed in the Brewfile.
-- [macos.sh](scripts/darwin/macos.sh) clears the Dock, disables sleep on AC power, uses Cloudflare DNS, turns on the firewall, and enables Remote Login (SSH).
-- Whenever Downloads changes, the [Downloads LaunchAgent](home/.local/lib/downloads-to-desktop.applescript) moves every non-hidden item that is not a partial browser download to the Desktop and replaces items with the same name.
-
-### Install the Xcode Command Line Tools
-
-The dotfiles installer needs Apple's developer command-line tools to use Git, but it doesn't otherwise require the full Xcode app. Xcode includes these tools, so you don't need to install the standalone package separately if Xcode is already active. If neither is active, the installer opens Apple's supported Command Line Tools installer and stops. Complete the installation, then rerun the dotfiles installer. You can also install the package in advance. See [Installing the command-line tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools).
-
-```shell
-xcode-select --install
-```
-
-Wait for the installation dialog to finish, then confirm that the active developer directory is available.
-
-```shell
-xcode-select -p
-```
 
 <a id="install"></a>
 
@@ -158,13 +126,11 @@ curl -fsSL https://dotfiles.nozo.sh | bash
 
 ### After installation
 
-#### Reboot
-
-Run `sudo reboot` to apply the settings.
+```shell
+sudo reboot
+```
 
 #### Retry Homebrew if needed
-
-Re-run the unified Homebrew installer if a package download was interrupted:
 
 ```shell
 make -C "$HOME/Code/nozomiishii/dotfiles" homebrew
@@ -172,44 +138,29 @@ make -C "$HOME/Code/nozomiishii/dotfiles" homebrew
 
 #### Optional always-on settings
 
-[always_on.sh](scripts/darwin/always_on.sh) disables sleep, the screen saver, and the password requirement after the screen saver, and enables Wake on LAN. Run it only when all of those changes are wanted.
-
 ```shell
 make -C "$HOME/Code/nozomiishii/dotfiles" always-on
 ```
 
-<a id="1password-github"></a>
+#### GitHub
 
-#### Set up 1Password for GitHub SSH
-
-- Sign in to and unlock the 1Password desktop app.
-- Open Settings > Developer and turn on `Use the SSH agent` and `Integrate with 1Password CLI`. See [1Password SSH Agent](https://www.1password.dev/ssh/agent/) and [1Password CLI app integration](https://www.1password.dev/cli/app-integration/).
-- Recreate the selectors needed from the previous Mac in `~/.config/1Password/ssh/agent.toml`. This file is local to each Mac and is not synced by 1Password. See [SSH agent configuration](https://www.1password.dev/ssh/agent/config).
-- Confirm that GitHub can use a key from the agent:
-
-```shell
-ssh -T git@github.com
-```
-
-On the first connection, verify the fingerprint against [GitHub's SSH key fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints) before accepting it. Confirm that the output includes `Hi nozomiishii!`. GitHub does not provide shell access, so this successful test normally exits with status 1.
-
-#### Authenticate with GitHub and clone private repositories
-
-The flags pin the SSH protocol, skip SSH key generation because keys live in the 1Password SSH Agent, and add the `notifications` scope used by the watch skill plus the `workflow` scope for updating GitHub Actions workflow files. Neither scope is included by default. The token is issued through the browser and stored in the macOS Keychain.
+- [Set up 1Password](#1password-github)
 
 ```shell
 gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
 make -C "$HOME/Code/nozomiishii/dotfiles" repo
 ```
 
-`make repo` pre-registers GitHub's public host keys in `~/.ssh/known_hosts`, fetched from the [GitHub meta API](https://docs.github.com/en/rest/meta/meta#get-apiversion-meta-information). It records only the server's public host key, never a private key.
-
 <a id="install-manually"></a>
 
 <details>
 <summary>Install Manually</summary>
 
-Complete the [Before installation](#before-installation) steps first.
+### Xcode Command Line Tools
+
+```shell
+xcode-select --install
+```
 
 ### Come to this page
 
@@ -244,13 +195,18 @@ Then follow the [After installation](#after-installation) steps above.
 
 ## App preferences
 
+<a id="1password-github"></a>
+
 ### 🔑 1Password
 
+- Sign in and unlock
 - Preferences > Security > Unlock using >  
   Check "Touch ID"
 - Preferences > General > Keyboard shortcuts >  
   Autofill: `⌥⇧X`
-- Complete the [1Password setup for GitHub SSH](#1password-github) before cloning private repositories.
+- Settings > Developer > `Use the SSH agent`
+- Settings > Developer > `Integrate with 1Password CLI`
+- Restore `~/.config/1Password/ssh/agent.toml`
 
 ### 🌏 Chrome
 
@@ -344,11 +300,13 @@ enabled = false
 
 ### 😼 SSH & Git
 
-- Complete the [1Password and GitHub SSH setup](#1password-github).
+- [Set up 1Password](#1password-github)
 
 ### 🦄 Clone repositories
 
-The clone command is included in the [1Password and GitHub SSH setup](#1password-github).
+```shell
+make -C "$HOME/Code/nozomiishii/dotfiles" repo
+```
 
 ### 🐘 TablePlus
 
@@ -449,8 +407,6 @@ The clone command is included in the [1Password and GitHub SSH setup](#1password
   Monokai Pro Theme
 
 ### 🍎 Xcode
-
-The full Xcode app is optional. If you develop apps for Apple platforms, install Xcode from the App Store, select it as the active developer directory, and install its first-launch components. See [Configuring command-line tools settings](https://developer.apple.com/documentation/xcode/configuring-command-line-tools-settings) and [Downloading and installing additional Xcode components](https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components).
 
 ```shell
 sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
