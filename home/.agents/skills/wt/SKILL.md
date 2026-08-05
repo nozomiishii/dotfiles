@@ -28,6 +28,14 @@ repo をまたぐタスクは、同一セッションで worktree を切るよ�
 - 続きは同じブランチ・同じ worktree と会話履歴を開き直す: Claude Code デスクトップは worktree 選択で既存を選ぶ、CLI は `claude --resume <session-id>` を使う。`claude --worktree <名前>` は新しい session を作る操作なので会話再開には使わない。Codex App は元の task を再開し、Codex CLI は `codex resume -C <worktree のパス> <session-id>` を使う。`codex -C` だけでは新規 session になり履歴を引き継がない
 - 背景・残作業・ブランチ名は新セッションの最初のメッセージに書いて渡す
 
+## cloud セッションからローカルへ引き継ぐ
+
+cloud セッションからは、ブラウザ操作・ローカル認証・host 固有ツールなどローカルの capability に到達できない。ローカルでしか実行できないと分かった時点で、代替手段を探さず引き継ぎ prompt を出して停止する。
+
+- 作業途中の変更は commit して push してから引き継ぐ。cloud のコンテナは回収されるため、push していない作業は引き継げない
+- 引き継ぎ prompt は sibling の [task SKILL.md](../task/SKILL.md) の「切り出す内容」に従って自己完結で書き、そのまま貼れる 1 つのコードブロックで出す
+- ローカルで実行するスキルやコマンド、実行する surface (Claude Code デスクトップ / CLI)、対象 repo と branch を明記する
+
 ## 同一セッションで worktree を切る
 
 REPO は対象 repo のルート。SLUG はブランチ名で、呼び出し元の規約に従う (無ければ作業内容の kebab-case)。

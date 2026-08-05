@@ -30,6 +30,7 @@ Claude Code on the web など、ローカルの clone や gh が無いリモー�
 - add_repo の実行は、承認プロンプトへのユーザーの承認をもって同意とする。承認を得られなければその repo の作業を中断して報告し、一時ディレクトリなど代替の置き場へ進まない。
 - subagent からは add_repo の承認を得られない。repo は親セッションで揃えてから dispatch する。
 - gh が無ければ GitHub 操作は GitHub MCP の同等ツールに読み替え、gh コマンドの引数をそのままパラメータに写す。gh が省略時に default branch へ解決する base などは、対象 repo の実際の default branch を指定する。
+- ローカルでしか実行できない作業 (ブラウザ操作、ローカル認証、host 固有ツール) に当たったら、口頭の案内で終わらせず /wt スキルの手順で引き継ぎ prompt を出して停止する。
 
 ## dotfiles の実体パス
 `~/.claude/` 配下の設定はシンボリックリンクで、実体は `~/Code/nozomiishii/dotfiles/home/` 配下にある。編集は実体パスで行う。
