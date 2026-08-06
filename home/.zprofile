@@ -40,9 +40,6 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 # OrbStack
 export DOCKER_HOST="unix:///Users/$USER/.orbstack/run/docker.sock"
 
-# Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
-
 # Added by Obsidian
 export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
 
