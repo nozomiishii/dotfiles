@@ -166,8 +166,7 @@
         "*.cloudflare.com"
       ],
       "allowUnixSockets": [
-        "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock",
-        "~/Library/Application Support/cmux/cmux.sock"
+        "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
       ],
       "allowLocalBinding": true,
       "allowMachLookup": [

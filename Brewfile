@@ -39,9 +39,9 @@ cask "jump-desktop-connect"
 brew "fzf"
 
 # ----------------------------------------------------------------
-# macOS-only packages
+# macOS local packages
 # ----------------------------------------------------------------
-if OS.mac?
+if OS.mac? && !ENV["CI"]
   # Apple Brooklyn event inspired screen saver for Apple Silicon https://github.com/nozomiishii/Brooklyn
   tap "nozomiishii/tap"
   cask "nozomiishii/tap/brooklyn"
@@ -58,21 +58,11 @@ if OS.mac?
   # GitHub command-line tool. https://github.com/cli/cli
   brew "gh"
 
-  # Send macOS notifications from the command line https://github.com/julienXX/terminal-notifier
-  brew "terminal-notifier"
-
-  # ----------------------------------------------------------------
   # OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager https://tofuutils.github.io/tenv/
   brew "tenv"
 
-  # Tool to generate documentation from Terraform modules https://terraform-docs.io/
-  brew "terraform-docs"
-
   # Password manager that keeps all passwords secure behind one password. https://1password.com
   cask "1Password"
-
-  # Ghostty-based terminal with vertical tabs and notifications for AI coding agents
-  # cask "manaflow-ai/cmux/cmux"
 
   # Terminal emulator that uses platform-native UI and GPU acceleration https://ghostty.org/
   cask "ghostty"
@@ -185,9 +175,6 @@ if OS.mac?
   # File change monitor used by the Downloads -> Desktop LaunchAgent https://github.com/emcrisostomo/fswatch
   brew "fswatch"
 
-  # Dependency manager for Cocoa projects https://cocoapods.org/
-  brew "cocoapods"
-
   # Generate your Xcode project from a spec file and your folder structure https://github.com/yonaskolb/XcodeGen
   brew "xcodegen"
 
@@ -226,9 +213,6 @@ if OS.mac?
 
   # Product development and issue tracking app https://linear.app/
   cask "linear"
-
-  # GIT client　https://fork.dev/
-  cask "fork"
 
   # OpenAI's official ChatGPT desktop app https://chatgpt.com/
   cask "chatgpt"
@@ -272,59 +256,41 @@ if OS.mac?
   # Mozilla Firefox https://www.mozilla.org/firefox
   cask "firefox"
 
-  unless ENV["CI"]
-    # AI Coding Agent IDE https://antigravity.google/
-    cask "antigravity"
+  # Messaging app with a focus on speed and security https://macos.telegram.org/
+  cask "telegram"
 
-    # Messaging app with a focus on speed and security https://macos.telegram.org/
-    cask "telegram"
+  # VPN client for secure internet access and private browsing https://nordvpn.com/
+  cask "nordvpn"
 
-    # VPN client for secure internet access and private browsing https://nordvpn.com/
-    cask "nordvpn"
+  # Video communication and virtual meeting platform https://www.zoom.us/
+  cask "zoom"
 
-    # App to write, plan, collaborate, and get organized. https://www.notion.so
-    cask "notion"
+  # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
+  cask "ledger-wallet"
 
-    # Video communication and virtual meeting platform https://www.zoom.us/
-    cask "zoom"
+  # Music streaming service. https://www.spotify.com
+  cask "spotify"
 
-    # Wallet desktop application to maintain multiple cryptocurrencies https://www.ledgerwallet.com/live
-    cask "ledger-wallet"
+  # Virtual machines UI using QEMU https://getutm.app/
+  cask "utm"
 
-    # Music streaming service. https://www.spotify.com
-    cask "spotify"
+  # Tools for building Android applications https://developer.android.com/studio
+  cask "android-studio"
 
-    # Virtual machines UI using QEMU https://getutm.app/
-    cask "utm"
+  # Free and open-source 3D creation suite. https://www.blender.org
+  cask "blender"
 
-    # Tools for building Android applications https://developer.android.com/studio
-    cask "android-studio"
+  # Instant messaging application focusing on security https://signal.org/
+  cask "signal"
 
-    # Free and open-source 3D creation suite. https://www.blender.org
-    cask "blender"
+  # Multimedia player. https://www.videolan.org/vlc
+  cask "vlc"
 
-    # Virtual video-calling space https://gather.town/
-    cask "gather"
+  # Virtualization tool https://github.com/insidegui/VirtualBuddy
+  cask "VirtualBuddy"
 
-    # Instant messaging application focusing on security https://signal.org/
-    cask "signal"
-
-    # Multimedia player. https://www.videolan.org/vlc
-    cask "vlc"
-
-    # Virtualization tool https://github.com/insidegui/VirtualBuddy
-    cask "VirtualBuddy"
-
-    # Open-source software for live streaming and screen recording https://obsproject.com/
-    cask "obs"
-
-    # Memory training application https://apps.ankiweb.net/
-    cask "anki"
-
-    # OS作成の勉強用
-    # Generic machine emulator and virtualizer https://www.qemu.org/
-    brew "qemu"
-  end
+  # Open-source software for live streaming and screen recording https://obsproject.com/
+  cask "obs"
 end
 
 # Mac App Store アプリは mas で管理しない。App Store から手動でインストールする。

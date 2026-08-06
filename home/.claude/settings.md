@@ -172,7 +172,7 @@ Auto mode の利用可能条件: Max / Team / Enterprise / API プラン + 対�
 ### statusLine
 
 ```jsonc
-"statusLine": { "type": "command", "command": "~/.claude/statusline.sh" }  // model / worktree / diff / context% / cmux surface / cursor リンクを表示
+"statusLine": { "type": "command", "command": "~/.claude/statusline.sh" }  // model / worktree / diff / context% / cursor リンクを表示
 ```
 
 ### enabledPlugins
@@ -260,8 +260,7 @@ sandbox は OS カーネルレベルでファイルシステムとネットワ�
 ```jsonc
 "network": {
   "allowUnixSockets": [
-    "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock", // 1Password SSH Agent（git push/pull 用）。op CLI 用ソケット（s.sock 等）は意図的に未許可 — prompt injection で op コマンドを悪用されるリスクを防ぐため
-    "~/Library/Application Support/cmux/cmux.sock"  // cmux IPC（ペイン間通信）
+    "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" // 1Password SSH Agent（git push/pull 用）。op CLI 用ソケット（s.sock 等）は意図的に未許可 — prompt injection で op コマンドを悪用されるリスクを防ぐため
   ],
   "allowLocalBinding": true, // dev server のポートバインド許可
   "allowMachLookup": [

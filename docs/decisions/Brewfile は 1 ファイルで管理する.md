@@ -10,11 +10,12 @@ Brewfile と Brewfile.optional の 2 ファイル構成では、cleanup の「�
 ## Decision — 決めたこと
 
 - Brewfile.optional の内容を Brewfile に統合し、`HOMEBREW_BUNDLE_INCLUDE_OPTIONAL` を廃止する
-- 移した cask と qemu は `unless ENV["CI"]` ブロックに置き、CI に大きなアプリを入れない従来挙動を保つ
+- macOS ローカル向けパッケージは `if OS.mac? && !ENV["CI"]` に置き、CI（Linux / macOS runner）では入れない
 - TODO にあった「重要と後からインストールで分ける」案は採用しない
 
 ## Consequences — 決定がもたらすもの
 
 - install.sh と `make homebrew` の適用内容が一致し、どの経路でも巻き添え削除が起きない
 - 初回の install.sh は旧 optional 分 (Blender・Android Studio 等) も入れるため時間が延びる
+- CI が入れるのはブロック外の共通 CLI のみ。macOS 向けパッケージの検証はローカルに任せる
 - 分割を再導入する場合はこの ADR を supersede し、cleanup の残すリストを常に全ファイルの連結にする設計を用意する

@@ -50,12 +50,6 @@ five_hour_resets_at="${fields[6]:-}"
 seven_day_resets_at="${fields[7]:-}"
 effort_level="${fields[8]:-}"
 
-# cmux が無い環境では fork ごと省略
-surface_ref=""
-# if command -v cmux >/dev/null 2>&1; then
-#   surface_ref=$(cmux identify 2>/dev/null | jq -r '.caller.surface_ref // empty' 2>/dev/null || true)
-# fi
-
 # --- helpers ---
 
 join() {
@@ -181,7 +175,6 @@ render_env_line() {
     w_remaining=$(format_remaining "$seven_day_resets_at")
     parts+=("${yellow}w ${seven_day_pct}% (${w_remaining})${reset}")
   fi
-  [[ -n "$surface_ref" ]] && parts+=("${blue_bold}${surface_ref}${reset}")
   parts+=("${gray}$(build_editor_link)${reset}")
   join ' | ' "${parts[@]}"
 }
