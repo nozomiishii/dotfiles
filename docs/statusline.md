@@ -30,7 +30,7 @@ Before:
 
 ```
 dotfiles[shiny-munching-rose] git:(main) !1
-Opus 4.7 | 12% | surface:63 | [editor]
+Opus 4.7 | 12% | [editor]
 ```
 
 After:
@@ -38,7 +38,7 @@ After:
 ```
 cursor://file/Users/nozomiishii/dotfiles/.claude/worktrees/shiny-munching-rose
 dotfiles[shiny-munching-rose] git:(main) !1
-Opus 4.7 | 12% | surface:63
+Opus 4.7 | 12%
 ```
 ````
 
