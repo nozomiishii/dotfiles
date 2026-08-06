@@ -26,6 +26,10 @@
 ## Agents設定
 - 必ずclaude code、codexどちらでも同じ挙動になるように作る。
 
+## ユーザープロフィール
+
+ユーザー本人や開発環境の情報が必要なときは `~/Code/nozomiishii/brain/brain/PROFILE.md` を参照する。
+
 ## 外部リポジトリ
 - 外部リポジトリを変更する操作は /oss スキルを使用する
 
