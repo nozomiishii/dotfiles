@@ -183,7 +183,8 @@ Auto mode の利用可能条件: Max / Team / Enterprise / API プラン + 対�
   "typescript-lsp@claude-plugins-official": true,
   "sentry-mcp@sentry-mcp": true,
   "codex@openai-codex": true,
-  "frontend-design@claude-plugins-official": true
+  "frontend-design@claude-plugins-official": true,
+  "security-guidance@claude-plugins-official": true
 }
 ```
 
@@ -196,6 +197,24 @@ Auto mode の利用可能条件: Max / Team / Enterprise / API プラン + 対�
 - sentry-mcp — Sentry 公式の MCP プラグイン。Claude Code から Sentry の issue・エラーイベントを参照できる。取得元は下の extraKnownMarketplaces で解決する。
 - codex — OpenAI 公式の Codex プラグイン。/codex:* スキルでレビュー・診断・タスク委譲を Codex に投げられる。取得元は下の extraKnownMarketplaces で解決する。
 - frontend-design — Anthropic 公式のフロントエンドデザインプラグイン。新規 UI 構築時にテンプレ的でない見た目を作るための指針スキルを提供する。
+- security-guidance — Anthropic 公式のセキュリティレビュープラグイン。Claude が書いたコードを 3 層でレビューし、指摘をそのセッション内で修正させる。呼び出すコマンドはなく、有効化するだけで自動で走る。
+
+security-guidance の 3 層は、それぞれ深さとコストが違う（[公式ドキュメント](https://code.claude.com/docs/en/security-guidance)）。
+
+| 層 | 発火 | 内容 | 無効化 |
+| :--- | :--- | :--- | :--- |
+| per-edit | Edit / Write / NotebookEdit の直後 | `eval(` / `pickle` / `dangerouslySetInnerHTML` / `.github/workflows/` 配下の編集などを文字列マッチ。モデル呼び出しなしで追加コストゼロ | `ENABLE_PATTERN_RULES=0` |
+| end-of-turn | Stop | そのターンの working tree の diff を別 Claude に投げ、認可バイパス・injection・SSRF・弱い暗号などをレビュー。バックグラウンド実行で応答は遅延しない | `ENABLE_STOP_REVIEW=0` |
+| commit / push | Claude が Bash tool で `git commit` / `git push` した直後 | 呼び出し元やサニタイザまで読む agentic レビュー。false positive を抑える | `ENABLE_COMMIT_REVIEW=0` |
+
+運用上の注意:
+
+- model-backed の 2 層（end-of-turn / commit）は通常の Claude リクエストと同じく使用量を消費する。デフォルトは Opus 4.7 で、`SECURITY_REVIEW_MODEL`（end-of-turn）と `SG_AGENTIC_MODEL`（commit）で変更できる。全部止めるなら `ENABLE_CODE_SECURITY_REVIEW=0`、プラグインごと止めるなら `SECURITY_GUIDANCE_DISABLE=1`
+- どの層も write や commit をブロックしない。指摘は Claude への指示として渡るだけなので、CI の静的解析や PR の Code Review を置き換えるものではない
+- agentic な commit レビューには Python 3.10 以上が要る（プラグインは `python3.13`〜`python3.10` を優先し、無ければ `python3` にフォールバック）。初回起動時に `~/.claude/security/` へ venv を作り Claude Agent SDK を pip install する。Python が 3.10 未満だと commit レビューは single-shot にフォールバックする
+- end-of-turn と commit の 2 層は git の状態を diff するため、git リポジトリ外では無言でスキップされる。per-edit はどこでも動く
+- 動かないときは `~/.claude/security/log.txt` を見る
+- プロジェクト固有のレビュー観点は `.claude/claude-security-guidance.md`、独自の文字列マッチルールは `.claude/security-patterns.yaml` で追加できる（どちらも追加のみで、組み込みルールは消せない）
 
 ### extraKnownMarketplaces
 
