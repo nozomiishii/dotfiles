@@ -16,6 +16,10 @@ macos: ## Configure macOS settings
 always-on: ## Configure always-on services
 	bash ./scripts/darwin/always_on.sh
 
+.PHONY: github-runner
+github-runner: ## Set up GitHub Actions self-hosted runners
+	bash ./scripts/darwin/github_runner.sh
+
 .PHONY: toolchains
 toolchains: ## Set up language toolchains
 	bash ./scripts/toolchains/terraform.sh

@@ -33,3 +33,4 @@ macOS と Linux で開発環境のセットアップを自動化する dotfiles 
 
 - [statusline (`home/.claude/statusline.sh`) を修正・拡張する](docs/statusline.md)
 - [このdotfilesをforkして使う](docs/forking.md)
+- [GitHub Actions self-hosted runner を構築・運用する](docs/github-runner.md)
