@@ -2,7 +2,7 @@
 name: import
 description: >-
   Codex CLI / Codex App のセッション内容を現在の Claude Code セッションに引き継ぐ。
-  Claude Code でユーザーが /codex:import と入力したとき、または「Codex でやっていた作業の続きをやって」
+  「Codex でやっていた作業の続きをやって」
   「Codex セッションを引き継いで」と言ったときに使用する。
 ---
 

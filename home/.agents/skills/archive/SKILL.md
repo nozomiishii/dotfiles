@@ -2,7 +2,7 @@
 name: archive
 description: >-
   使わなくなったファイルを nozomiishii/archives リポジトリに退避する PR を作成する。
-  Claude Code で /archive、Codex で $archive と入力したとき、または「アーカイブして」「archives に退避して」と言ったときに使用する。
+  「アーカイブして」「archives に退避して」と言ったときに使用する。
 model: sonnet
 ---
 

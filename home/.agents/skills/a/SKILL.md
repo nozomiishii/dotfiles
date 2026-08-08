@@ -1,6 +1,6 @@
 ---
 name: a
-description: ChatGPT・Claude・Gemini に同じ質問を並列投下して回答を比較する。Claude Code では /a、Codex では $a で明示的に呼び出す。
+description: ChatGPT・Claude・Gemini に同じ質問を並列投下して回答を比較する。
 argument-hint: <question>
 disable-model-invocation: true
 model: sonnet

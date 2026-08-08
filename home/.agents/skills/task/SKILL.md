@@ -1,8 +1,6 @@
 ---
 name: task
-description: >-
-  現在の話題を別の新しいセッションへ切り出す。
-  Claude Code で /task、Codex で $task と明示入力したときだけ使用する。
+description: 現在の話題を別の新しいセッションへ切り出す。
 argument-hint: "[切り出す内容]"
 disable-model-invocation: true
 ---

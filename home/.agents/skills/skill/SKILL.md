@@ -2,7 +2,7 @@
 name: skill
 description: >-
   スキル (SKILL.md) の新規作成・編集の進め方の正本。
-  ユーザーが Claude Code で /skill、Codex で $skill と入力したとき、またはスキルの追加・変更を依頼したとき、
+  スキルの追加・変更を依頼されたとき、
   または home/.agents/skills/ 配下の SKILL.md を変更する前に使用する。
 ---
 

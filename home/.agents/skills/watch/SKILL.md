@@ -2,7 +2,7 @@
 name: watch
 description: >-
   外部バグの解消を検知できる形 (expiring TODO・追跡 Issue) で追跡を残す。
-  Claude Code で /watch、Codex で $watch と入力した時、Issue 調査で追跡が必要と判断した時、
+  Issue 調査で追跡が必要と判断した時、
   または外部バグ・依存制約によるワークアラウンドや一時対応をコードに入れる時に使用する。
 argument-hint: "[Issue URL / owner/repo#number]（任意）"
 ---

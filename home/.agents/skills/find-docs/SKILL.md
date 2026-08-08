@@ -2,7 +2,7 @@
 name: find-docs
 description: >-
   外部技術の最新の公式ドキュメント、API、設定、CLI、コード例を確認する。
-  Claude Code で /find-docs、Codex で $find-docs と入力したとき、またはライブラリ、SDK、
+  ライブラリ、SDK、
   API、言語、クラウドサービスの仕様確認・実装・デバッグで現在の一次情報が必要なときに使用する。
   技術動向を広く調べて解説すること自体が目的なら q skill を使う。
 ---
