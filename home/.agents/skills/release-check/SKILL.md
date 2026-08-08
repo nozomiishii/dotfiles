@@ -3,7 +3,7 @@ name: release-check
 description: >-
   アプリの一般公開・ストア公開に向けた共通チェックリストの正本。
   対象 repo を調査して現在地と突き合わせ、固有の公開準備チェックリストを issue に起こす。
-  Claude Code で /release-check、Codex で $release-check と入力したとき、または「公開準備」「リリース準備」
+  「公開準備」「リリース準備」
   「ストアに出す準備」を始めると言ったときに使用する。
 ---
 

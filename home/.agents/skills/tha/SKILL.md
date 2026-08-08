@@ -1,8 +1,6 @@
 ---
 name: tha
-description: >-
-  会話やプランの内容をもとに、ブランチ作成・コミット・プッシュ・PR 作成を一括実行する。
-  Claude Code で /tha、Codex で $tha と入力したときに使用する。
+description: 会話やプランの内容をもとに、ブランチ作成・コミット・プッシュ・PR 作成を一括実行する。
 disable-model-invocation: true
 model: sonnet
 ---

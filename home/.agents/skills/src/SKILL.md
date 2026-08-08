@@ -1,6 +1,6 @@
 ---
 name: src
-description: 直近の話題について、公式ドキュメント URL と日本語ブログを提案する。Claude Code では /src、Codex では $src で明示的に呼び出す。
+description: 直近の話題について、公式ドキュメント URL と日本語ブログを提案する。
 argument-hint: "[note]"
 disable-model-invocation: true
 allowed-tools:

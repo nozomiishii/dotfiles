@@ -3,7 +3,7 @@ name: cloud-bump
 description: >-
   claude.ai の cloud 環境の init_script を内部 API で更新し、
   環境スナップショットの再構築を発火させる。
-  Claude Code で /cloud-bump、Codex で $cloud-bump と入力したとき、または dotfiles の main にマージした変更が
+  dotfiles の main にマージした変更が
   cloud 配信対象 (cloud-setup.yaml の paths) に触れていたときに使用する。
   dotfiles を変更する PR を作成するときも、マージ後の bump の要否判定と予告のために使用する。
 model: sonnet

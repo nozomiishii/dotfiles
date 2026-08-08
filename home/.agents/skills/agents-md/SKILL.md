@@ -2,7 +2,6 @@
 name: agents-md
 description: >-
   グローバル指示ファイル AGENTS.md とスキル群の定期メンテナンスの正本。
-  Claude Code で /agents-md、Codex で $agents-md と入力したとき、または
   「AGENTS.md をメンテしたい」「ルールを整理したい」「指示ファイルが肥大化してきた」
   と言ったときに使用する。
 ---

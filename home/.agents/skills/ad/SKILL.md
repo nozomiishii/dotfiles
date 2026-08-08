@@ -1,6 +1,6 @@
 ---
 name: ad
-description: a skill を deep research モードで実行する。Claude Code では /ad、Codex では $ad で明示的に呼び出す。
+description: a skill を deep research モードで実行する。
 argument-hint: <question>
 disable-model-invocation: true
 model: sonnet

@@ -2,7 +2,7 @@
 name: pr
 description: >-
   現在のブランチに紐づく PR の CI 失敗・レビュー指摘・main との conflict を修復し、
-  mergeable な状態まで持っていく。Claude Code で /pr、Codex で $pr と入力したときに使用する。
+  mergeable な状態まで持っていく。
 disable-model-invocation: true
 ---
 

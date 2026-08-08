@@ -2,7 +2,7 @@
 name: oss
 description: >-
   外部リポジトリへの投稿（issue / PR / コメント）を安全に進める。
-  Claude Code で /oss、Codex で $oss と入力したとき、または外部リポジトリに対して
+  外部リポジトリに対して
   gh issue create / gh pr create / gh api による書き込みを実行する前に使用する。
 argument-hint: "[リポジトリ名 / やりたいこと]（任意）"
 ---

@@ -1,6 +1,6 @@
 ---
 name: sync-settings-doc
-description: Claude Code の settings.json と settings.md をレビューして同期する。Claude Code では /sync-settings-doc、Codex では $sync-settings-doc で明示的に呼び出す。
+description: Claude Code の settings.json と settings.md をレビューして同期する。
 disable-model-invocation: true
 model: sonnet
 ---
