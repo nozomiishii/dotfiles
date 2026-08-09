@@ -3,7 +3,7 @@ name: broadcast
 description: >-
   projects.json で管理されている複数の独立 repo に、同じ変更を横断適用（broadcast）する。
   「workspaces のプロジェクト全部に〜したい」「横断で〜入れたい」と言ったときに使用する。
-  第 1 引数が既存ディレクトリならその配下の projects.json を、それ以外は nozomiishii/workspaces clone の projects.json を対象にする。
+  第 1 引数が既存ディレクトリならその配下の projects.json を、それ以外は nozomiishii/infra clone の projects.json を対象にする。
   Claude Code bundled の /batch（1 つの repo を複数ユニットに分解して worktree 並列実行）とは別物。こちらは N 個の repo への同一変更 broadcast。
 ---
 
@@ -20,7 +20,7 @@ projects.json に列挙された `enabled: true` の全プロジェクト（そ�
 ```
 
 - 第 1 引数が既存ディレクトリ → そこを `<projects-json-dir>` として `<dir>/projects.json` を読む
-- 第 1 引数がディレクトリでない → 全引数を指示として扱い、git remote が `nozomiishii/workspaces` を指す clone を現在の task、ホストの project 一覧、既存の local clone の順で探して `<projects-json-dir>` にする
+- 第 1 引数がディレクトリでない → 全引数を指示として扱い、git remote が `nozomiishii/infra` を指す clone を現在の task、ホストの project 一覧、既存の local clone の順で探して `<projects-json-dir>` にする
 - 第 1 引数がパスの形なのにローカルに無い場合（cloud セッション等）→ デフォルトに切り替えず、どの projects.json を使うかユーザーに確認して止まる
 - 指示部分が空のとき → ユーザーに「何を適用するか」を聞いて止まる（projects.json の一覧だけ読み込んで提示してよい）
 
@@ -35,7 +35,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 - `rootPath` は文字列型に限定し、NUL・改行などの control character を拒否する。先頭の `~/` だけを literal に `$HOME/` へ置換する。`eval`、`source`、`bash -c`、shell の再評価は禁止。置換後が絶対 path でなければ除外する
 - `rootPath` は projects.json 由来の信頼できない入力として扱う。展開後に `realpath` で正規化し、symlink を含む path、存在しない directory、`git -C <path> rev-parse --show-toplevel` が同じ realpath を返さない entry を除外する。`home` のような repo 内 subdirectory と `Desktop` のような非 repo は変更対象にせず、skip 理由を報告する
 - 各 repo の `remote.origin.url` から owner / repo を取り、`nozomiishii/<正規化した rootPath の basename>` と一致することを確認する。`name` は絵文字を含む表示名なので identity 判定に使わない。projects.json だけを信頼して command を実行しない
-- デフォルトの projects.json が無い cloud セッションでは、ホストに repo 追加機能があれば nozomiishii/workspaces を追加し、PROJECTS_JSON を clone 先のパスに読み替える。機能が無ければ対象を推測せず停止する。読めるのは push 済みの版である旨を対象リストの提示に添える
+- デフォルトの projects.json が無い cloud セッションでは、ホストに repo 追加機能があれば nozomiishii/infra を追加し、PROJECTS_JSON を clone 先のパスに読み替える。機能が無ければ対象を推測せず停止する。読めるのは push 済みの版である旨を対象リストの提示に添える
 
 ## 対象リストを提示する
 
@@ -99,7 +99,7 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 
 ## 制約
 
-- `projects.json` を編集しないこと。skill の責務は projects.json を「読む」ことだけで、プロジェクト一覧の追加/削除はユーザーが `nozomiishii/workspaces` repo で行う
+- `projects.json` を編集しないこと。skill の責務は projects.json を「読む」ことだけで、プロジェクト一覧の追加/削除はユーザーが `nozomiishii/infra` repo で行う
 - PR のマージは絶対に実行しない（tha・pr skill の制約と同じ）
 - git 操作は `cd <path> && git` でなく `git -C <path>` を使う（bare repository attack 防止の sandbox 制約）
 - worktree では main や別 branch に切り替えず、切り出し時に作成した task branch を使う
