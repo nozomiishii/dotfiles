@@ -370,7 +370,6 @@ mkdir -p "$HOME/Library/Application Support/Cursor/User/"
 
 ln -sf "$HOME/Library/Application Support/Code/User/keybindings.json" "$HOME/Library/Application Support/Cursor/User/"
 ln -sf "$HOME/Library/Application Support/Code/User/settings.json" "$HOME/Library/Application Support/Cursor/User/"
-ln -sf "$HOME/Library/Application Support/Code/User/projects.json" "$HOME/Library/Application Support/Cursor/User/"
 
 snippets_dir="$HOME/Library/Application Support/Cursor/User/snippets"
 if [ -d "$snippets_dir" ]; then
@@ -386,7 +385,6 @@ mkdir -p "$HOME/Library/Application Support/Antigravity/User/"
 
 ln -sf "$HOME/Library/Application Support/Code/User/keybindings.json" "$HOME/Library/Application Support/Antigravity/User/"
 ln -sf "$HOME/Library/Application Support/Code/User/settings.json" "$HOME/Library/Application Support/Antigravity/User/"
-ln -sf "$HOME/Library/Application Support/Code/User/projects.json" "$HOME/Library/Application Support/Antigravity/User/"
 
 snippets_dir="$HOME/Library/Application Support/Antigravity/User/snippets"
 if [ -d "$snippets_dir" ]; then
