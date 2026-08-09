@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Raycast 設定を export し、origin/main 基点の専用ブランチで PR を作ってブラウザで開く。
-# ターミナルから実行する（alias: rbk）。
+# Raycast 設定を export し、origin/main 基点の専用ブランチで PR を作る。
+# ターミナルから実行する（alias: rbk）ほか、/raycast-backup skill からも呼ばれる。
+# TTY 実行時だけ PR をブラウザで開く。
 #
 # 前提（初回のみ）:
 #   - Raycast でこのコマンドの外部起動確認を「Always Run Command」で抑制済み。
@@ -122,4 +123,5 @@ url="$(cd "$wt" && gh pr create --base main --title "chore: update Raycast confi
 pr_created=1
 
 echo "PR: $url"
-if [ -n "$url" ]; then open "$url"; fi
+# 対話ターミナル (TTY) から実行したときだけブラウザで開く。agent 実行ではリンク提示に留める。
+if [ -n "$url" ] && [ -t 1 ]; then open "$url"; fi
