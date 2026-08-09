@@ -599,7 +599,10 @@
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml"
   ],
-  "workbench.preferredDarkColorTheme": "Monokai Pro"
+  "workbench.preferredDarkColorTheme": "Monokai Pro",
+  "extensions.supportAgentsWindow": {
+    "monokai.theme-monokai-pro-vscode": true
+  }
 
   ///////////////////////////////////////////////////////////////////
 }
