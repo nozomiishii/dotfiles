@@ -31,6 +31,8 @@ cloud 配信対象に触れる PR を作成した時点では bump せず、マ�
 
 Claude Code / Codex とも、`claude.ai/code` を開いた tab ID と bootstrap URL を最初に固定する。全 read、network 観察、fetch、click の直前に、固定した tab ID・`https://claude.ai` origin・`/code` で始まる path が一致することを確認する。不一致なら環境設定を送受信せず停止する。
 
+Claude Code で承認を求めるときは、環境名・snapshot digest・現在の bump 行・proposedBumpLine を提示した上で、AskUserQuestion で「承認して POST する」「キャンセル」の選択肢を出す。テキスト返信を待つ承認にしない。差分を質問文にも直前のメッセージにも示さないまま選択肢だけを出さない。「承認して POST する」が選ばれたときだけ POST に進む。回答は同一ターンに返るため allowed-tools の許可は有効のまま使える。回答が得られないままターンをまたいだ場合は、「権限」の規則どおりスキルを起動し直して許可を再適用し、承認後の fresh GET の digest 照合を経てから POST する。
+
 Codex で承認を求めるときは、ユーザーへ「`$cloud-bump 承認` と返信してください」と案内して turn を終える。次の発話で skill を明示的に再起動し、Chrome 接続と GET 結果が承認前と一致することを確認してから POST する。単なる「承認します」という返信を、skill を再読せずに処理しない。
 
 ## init_script の更新 (内部 API)
