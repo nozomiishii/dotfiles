@@ -8,7 +8,7 @@ description: >-
 
 # /raycast-backup
 
-エクスポートから PR 作成までは [raycast_backup.sh](../../../.config/raycast/scripts/raycast_backup.sh) が正本。手順を再発明せず、このスクリプトを 1 回実行する。過去に skill → CLI 化 → skill 復帰の経緯があり ([dotfiles#999](https://github.com/nozomiishii/dotfiles/pull/999), [#1004](https://github.com/nozomiishii/dotfiles/pull/1004), [#1010](https://github.com/nozomiishii/dotfiles/pull/1010))、alias `rbk` とこの skill は同じスクリプトを共有する。
+エクスポートから PR 作成までは [raycast_backup.sh](../../../.config/raycast/scripts/raycast_backup.sh) が正本。手順を再発明せず、このスクリプトを 1 回実行する。alias `rbk` とこの skill は同じスクリプトを共有する。
 
 ## 前提
 
@@ -39,3 +39,7 @@ description: >-
 
 - osascript の error 1002 は実行元アプリに Accessibility 権限がないのが原因。System Settings > Privacy & Security > Accessibility で実行元 (Claude Code / ターミナル) への付与をユーザーに依頼して停止する
 - `no new .rayconfig produced` は保存ダイアログ操作の delay 不足が疑い。再実行は 1 回まで。それでも失敗したらターミナルでの `rbk` 実行を提案して停止する
+
+## 経緯
+
+設計判断を調べるときだけ参照する。skill → CLI 化 → skill 復帰の履歴は [dotfiles#999](https://github.com/nozomiishii/dotfiles/pull/999), [#1004](https://github.com/nozomiishii/dotfiles/pull/1004), [#1010](https://github.com/nozomiishii/dotfiles/pull/1010)。
