@@ -33,9 +33,9 @@ clone して次を揃え、1 つの PR にする。完成形の実例は直近�
 - SessionStart hook: `.claude/settings.json` と `.hooks/setup.sh` (`pnpm install`)。
 - README.md と README.ja.md を同じ構成で作る。
 
-## 登録 (workspaces)
+## 登録 (infra)
 
-- nozomiishii/workspaces の `projects.json` にエントリを追加する PR を作る。別 repo の変更なので /wt の切り出しに従う。
+- ローカル登録も infra が正本。`stacks/github/main.tf` の `locals.repositories` と repo 直下の `projects.json` は、リポジトリ作成と同じ 1 つの PR で両方更新する。
 
 ## リリースフロー
 

@@ -22,7 +22,7 @@
   // ----------------------------------------------------------------
   // vscode project manager
   // ----------------------------------------------------------------
-  "projectManager.projectsLocation": "~/Code/nozomiishii/workspaces",
+  "projectManager.projectsLocation": "~/Code/nozomiishii/infra",
   "projectManager.sortList": "Saved",
 
   // ----------------------------------------------------------------
