@@ -25,3 +25,4 @@ description: >-
 - 各テストケースを自己完結させる。
   - 共通処理で Lifecycle Hooks は使わない。ヘルパー関数、`using`、テスト内に閉じた [Test hooks](https://vitest.dev/api/hooks.html#test-hooks) で組む。
 - tautology test を避ける。実装をなぞる期待値ではなく、仕様から期待値を決める。
+- 会話コンテキストに引っ張られたダミー値を入れない。
