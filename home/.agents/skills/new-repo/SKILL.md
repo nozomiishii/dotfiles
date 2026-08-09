@@ -35,7 +35,7 @@ clone して次を揃え、1 つの PR にする。完成形の実例は直近�
 
 ## 登録 (infra)
 
-- ローカル登録も infra が正本。`stacks/github/main.tf` の `locals.repositories` と repo 直下の `projects.json` は、リポジトリ作成と同じ 1 つの PR で両方更新する。
+- ローカル登録も infra が正本。infra の `stacks/github/main.tf` の `locals.repositories` と、infra 直下の `projects.json` を、リポジトリ作成と同じ 1 つの PR で両方更新する。新しく作る repo 側には `projects.json` を置かない。
 
 ## リリースフロー
 
