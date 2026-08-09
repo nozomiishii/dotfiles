@@ -26,7 +26,7 @@ description: >-
 
 ### このセッションで対応
 
-会話のコンテキストを活かしてその場で実装・修正する。AGENTS.md 追記、skill の修正、設定変更など。AGENTS.md を変更するときは sibling の [doc SKILL.md](../doc/SKILL.md) を明示的に読み、その手順に従う。Claude Code を使う repo では CLAUDE.md の bridge も必ず確認する。
+会話のコンテキストを活かしてその場で実装・修正する。AGENTS.md 追記、skill の修正、設定変更など。AGENTS.md を変更するときは sibling の [doc SKILL.md](../doc/SKILL.md) を明示的に読み、その判定と文章ガイドラインに従う。Claude Code を使う repo では CLAUDE.md の bridge も必ず確認する。
 
 ### 新しいタスクへ切り出す
 
