@@ -11,7 +11,7 @@ model: sonnet
 
 # /find-note
 
-brain vault の知識ノートを検索し、過去の記録から答えを引く。note skill が書く側、find-note skill が読む側。
+brain vault の知識ノートを検索し、過去の記録から答えを引く。doc skill が書く側、find-note skill が読む側。
 
 ## vault の場所
 

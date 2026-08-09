@@ -51,7 +51,7 @@ grep -ril "<キーワード>" "$BRAIN/brain/main/"
 
 ## ノート起票
 
-brain の main/ に「<ツール名> 導入検討」ノートを作る。sibling の [note SKILL.md](../note/SKILL.md) を明示的に読み、worktree・frontmatter・PR の作法に従う。
+brain の main/ に「<ツール名> 導入検討」ノートを作る。sibling の [doc SKILL.md](../doc/SKILL.md) を明示的に読み、その原則と書き方に従う。分類・frontmatter・取り込みの作法は brain repo の指示ファイルに従う。
 
 構成:
 
