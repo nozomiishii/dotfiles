@@ -8,7 +8,7 @@ description: >-
 
 # /skill
 
-スキルをドキュメントの TDD で作る。読者となる将来の agent が失敗するのを見てから書き、読ませて直るのを見てから確定する。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/スキルはドキュメントの%20TDD%20で作る.md)、経緯は [dotfiles#1292](https://github.com/nozomiishii/dotfiles/issues/1292)。
+スキルをドキュメントの TDD で作る。読者となる将来の agent が失敗するのを見てから書き、読ませて直るのを見てから確定する。
 
 ## 絶対制約
 
@@ -115,3 +115,7 @@ SKILL.md を読ませた subagent に RED と同じタスクを投げ、意図�
 - スキルの変更を PR にするときは、cloud-bump スキルに従いマージ後の bump の要否を判定し、PR 作成の報告で予告する
 - 静的合格を含む場合は静的同等・実動未確認と報告する。両ホストで実動同等と報告できるのは、対象 surface がすべて実動合格した場合だけ
 - 3 回直しても同じ失敗が出るときは、文書でなく設計を疑いユーザーに相談する
+
+## 経緯
+
+設計判断を調べるときだけ参照する。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/スキルはドキュメントの%20TDD%20で作る.md)、経緯は [dotfiles#1292](https://github.com/nozomiishii/dotfiles/issues/1292)。
