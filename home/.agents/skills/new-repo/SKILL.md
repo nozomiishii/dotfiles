@@ -8,7 +8,7 @@ description: >-
 
 # /new-repo
 
-リポジトリの作成・設定・保護の正本は nozomiishii/infra の `stacks/github/main.tf`。GitHub を直接操作して作らない。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/新しいリポジトリ作成のフローは%20new-repo%20スキルを正本にする.md)、テスト記録は [dotfiles#1393](https://github.com/nozomiishii/dotfiles/issues/1393)。
+リポジトリの作成・設定・保護の正本は nozomiishii/infra の `stacks/github/main.tf`。GitHub を直接操作して作らない。
 
 ## 禁止
 
@@ -40,3 +40,7 @@ clone して次を揃え、1 つの PR にする。完成形の実例は直近�
 ## リリースフロー
 
 - npm 配布するリポジトリは configs と同型の release-please 構成 (`.github/.release-please-config.json` + release.yaml) を後続 PR で入れる。
+
+## 経緯
+
+設計判断を調べるときだけ参照する。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/新しいリポジトリ作成のフローは%20new-repo%20スキルを正本にする.md)、テスト記録は [dotfiles#1393](https://github.com/nozomiishii/dotfiles/issues/1393)。

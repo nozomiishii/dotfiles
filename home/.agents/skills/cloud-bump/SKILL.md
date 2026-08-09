@@ -12,7 +12,7 @@ allowed-tools: mcp__claude-in-chrome__javascript_tool
 
 # /cloud-bump
 
-cloud 環境の setup script は毎セッション走らない。再構築のトリガーは Setup script 欄の変更・allowed network hosts の変更・約 7 日のキャッシュ失効だけで ([Environment caching](https://code.claude.com/docs/en/claude-code-on-the-web#environment-caching))、main にマージしても bump しない限り新規セッションは最大 7 日前のスナップショットで起動する。「マージされたので自動で反映済み」は誤り。設計の経緯は [dotfiles#1347](https://github.com/nozomiishii/dotfiles/issues/1347)。
+cloud 環境の setup script は毎セッション走らない。再構築のトリガーは Setup script 欄の変更・allowed network hosts の変更・約 7 日のキャッシュ失効だけで ([Environment caching](https://code.claude.com/docs/en/claude-code-on-the-web#environment-caching))、main にマージしても bump しない限り新規セッションは最大 7 日前のスナップショットで起動する。「マージされたので自動で反映済み」は誤り。
 
 ## 発火の判定
 
@@ -51,3 +51,7 @@ init_script が非 0 で終了する状態になると新規セッションが�
 ## 反映範囲
 
 再構築が効くのは bump 後に開始した新規セッションだけ。実行中・再開セッションには効かない。
+
+## 経緯
+
+設計判断を調べるときだけ参照する。設計の経緯は [dotfiles#1347](https://github.com/nozomiishii/dotfiles/issues/1347)。

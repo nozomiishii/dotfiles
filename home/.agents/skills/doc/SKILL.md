@@ -10,7 +10,7 @@ description: >-
 
 # /doc
 
-記録の置き場を判定し、保存まで実行する。置き場判定の正本はこのスキル。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/記録の置き場判定は%20doc%20スキルを正本にする.md)、経緯は [nozomiishii/brain#268](https://github.com/nozomiishii/brain/issues/268)。
+記録の置き場を判定し、保存まで実行する。置き場判定の正本はこのスキル。
 
 保存までの段取り (branch・worktree・PR・重複確認) はこのスキルでは定めない。対象 repo の指示ファイルと既存ファイルの形式に合わせて、その場で判断する。
 
@@ -61,3 +61,7 @@ design doc の置き場は着手で切り替わる。着手したら issue の�
 | --- | ---- | ------ | ---------- |
 
 承認で実行する。「2 と 4 だけ」のような番号での取捨選択、修正指示 (「これは issue でなく ADR」等) があれば反映して実行する。issue 作成・PR は外向き操作なので、承認前に実行しない。
+
+## 経緯
+
+設計判断を調べるときだけ参照する。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/記録の置き場判定は%20doc%20スキルを正本にする.md)、経緯は [nozomiishii/brain#268](https://github.com/nozomiishii/brain/issues/268)。
