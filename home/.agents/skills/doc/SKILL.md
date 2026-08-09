@@ -12,7 +12,7 @@ description: >-
 
 記録の置き場を判定し、保存まで実行する。置き場判定の正本はこのスキル。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/記録の置き場判定は%20doc%20スキルを正本にする.md)、経緯は [nozomiishii/brain#268](https://github.com/nozomiishii/brain/issues/268)。
 
-保存までの段取り (branch・worktree・PR・重複確認) はこのスキルでは定めない。対象 repo の指示ファイルと既存ファイルの形式に合わせて、その場で判断する。issue 作成や PR などの外向き操作は、実行前にユーザーの承認を得る。
+保存までの段取り (branch・worktree・PR・重複確認) はこのスキルでは定めない。対象 repo の指示ファイルと既存ファイルの形式に合わせて、その場で判断する。
 
 ## 文章ガイドライン
 
@@ -52,3 +52,12 @@ AGENTS.md・CLAUDE.md・skill・docs・brain ノートに共通。
 design doc の置き場は着手で切り替わる。着手したら issue の内容を `docs/` のファイルへ移し、実装 PR で実装と一緒に育てる。issue には移した先のリンクだけ残し、実装 PR で close する (正本は 1 つ)。
 
 探すときの入口は 3 つ: repo のことは AGENTS.md から docs/ へ、経緯は issue 検索と ADR、横断は brain vault。
+
+## 候補の列挙と一括確認
+
+会話から残す候補を列挙し、判定結果を表で 1 回だけ提示する。候補には番号を振り、「番号で指定してください」と添える。
+
+| # | 内容 | 置き場 | アクション |
+| --- | ---- | ------ | ---------- |
+
+承認で実行する。「2 と 4 だけ」のような番号での取捨選択、修正指示 (「これは issue でなく ADR」等) があれば反映して実行する。issue 作成・PR は外向き操作なので、承認前に実行しない。
