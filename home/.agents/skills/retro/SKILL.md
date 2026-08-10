@@ -49,7 +49,7 @@ description: >-
 issue 本文をドラフトしてユーザーに提示する。
 issue 作成は外向き操作なので、作成前に必ず承認を取る。
 
-- issue タイトル: Conventional Commits（英語）
+- issue タイトル: 内容を表す日本語。Conventional Commits 形式 (`feat:` 等の type prefix) は使わない。一覧で PR と見分けがつかなくなるため
 - issue 本文: 日本語
 - セッション内容は要約して本文に書く
 
@@ -61,7 +61,7 @@ issue 作成は外向き操作なので、作成前に必ず承認を取る。
 TITLE_FILE=$(mktemp)
 BODY_FILE=$(mktemp)
 cat > "$TITLE_FILE" <<'RETRO_TITLE_7D8A4F'
-<type>: <subject>
+<内容を表す日本語タイトル>
 RETRO_TITLE_7D8A4F
 cat > "$BODY_FILE" <<'RETRO_BODY_C2E91B'
 （日本語の issue 本文。session URL は書かない）
