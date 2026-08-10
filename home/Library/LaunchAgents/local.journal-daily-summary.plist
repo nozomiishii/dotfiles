@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.journal-daily-summary</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-l</string>
+    <string>-c</string>
+    <!-- node を Homebrew/バージョンマネージャの PATH で解決し、$HOME を bash 展開で解決するためログインシェルで起動 -->
+    <string>cd "$HOME/Code/nozomiishii/brain" &amp;&amp; exec node --import tsx scripts/journal-daily-summary.ts</string>
+  </array>
+
+  <!-- 毎日 19:30 JST に発火 (20:00 のジャーナルタイム前に振り返り材料を揃える) -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>19</integer>
+    <key>Minute</key>
+    <integer>30</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/journal-daily-summary.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/journal-daily-summary.log</string>
+</dict>
+</plist>
