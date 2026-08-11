@@ -10,8 +10,10 @@
     <string>/bin/bash</string>
     <string>-l</string>
     <string>-c</string>
-    <!-- node を Homebrew/バージョンマネージャの PATH で解決し、$HOME を bash 展開で解決するためログインシェルで起動 -->
-    <string>cd "$HOME/Code/nozomiishii/brain" &amp;&amp; exec node --import tsx scripts/journal-daily-summary.ts</string>
+    <!-- claude CLI を PATH で解決し、$HOME を bash 展開で解決するためログインシェルで起動。
+         収集・要約の手順は brain の .agents/skills/journal-summary/SKILL.md が正本で、
+         launchd はヘッドレスの claude にスキルを実行させる薄いトリガー -->
+    <string>cd "$HOME/Code/nozomiishii/brain" &amp;&amp; exec claude -p "/journal-summary" --permission-mode bypassPermissions --model sonnet</string>
   </array>
 
   <!-- 毎日 19:30 JST に発火 (20:00 のジャーナルタイム前に振り返り材料を揃える) -->
