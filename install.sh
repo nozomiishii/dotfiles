@@ -22,6 +22,9 @@ DOTFILES_REPO="https://github.com/nozomiishii/dotfiles.git"
 DOTFILES_DIR="${DOTFILES_DIR:-$HOME/Code/nozomiishii/dotfiles}"
 OS_NAME="$(uname -s)"
 
+# この placeholder があると softwareupdate -l が CLT をアップデート対象として列挙する
+CLT_PLACEHOLDER="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
+
 # ----------------------------------------------------------------
 # utils
 # ----------------------------------------------------------------
@@ -43,7 +46,9 @@ request_admin_privileges() {
   SUDOERS_FILE="/etc/sudoers.d/temp_dotfiles_installer"
   sudo sh -c "echo 'Defaults timestamp_timeout=120' > ${SUDOERS_FILE}"
   sudo chmod 0440 "${SUDOERS_FILE}"
-  trap 'sudo rm -f "${SUDOERS_FILE}"' EXIT
+  # bash の EXIT trap は 1 本のみ。placeholder の掃除もここに集約する
+  # (ensure_xcode_clt で trap を新設すると sudoers の掃除を上書きして壊す)
+  trap 'sudo rm -f "${SUDOERS_FILE}" "${CLT_PLACEHOLDER}"' EXIT
 
   sudo -v
 
@@ -75,7 +80,12 @@ request_documents_access() {
 # ensure_xcode_clt はスクリプトに切り出さず、このファイルに置く。
 # repo の clone には git が必要で、素の Mac では git を使うのに Command Line Tools が要る。
 # つまり curl | bash 経路でこの処理が走る時点では、repo のスクリプトはまだ手元に存在しない。
+#
+# Homebrew install.sh と同じ softwareupdate ヘッドレス方式でインストールし、
+# curl | bash 一発で最後まで走り切れるようにする。失敗時だけ GUI インストーラーに
+# フォールバックして再実行を促す。
 # @See https://developer.apple.com/documentation/xcode/installing-the-command-line-tools
+# @See https://github.com/Homebrew/install/blob/master/install.sh
 ensure_xcode_clt() {
   echo "- 👨🏻‍🚀 Checking Xcode CLI tools..."
 
@@ -84,7 +94,41 @@ ensure_xcode_clt() {
     return
   fi
 
-  echo "- 👨🏻‍🚀 Xcode CLI tools not found. Opening Apple's installer..."
+  echo "- 👨🏻‍🚀 Xcode CLI tools not found. Installing them (this may take a while)..."
+  # 前回の中断で root 所有の残骸が残っていても上書きできるよう sudo で作る
+  sudo touch "${CLT_PLACEHOLDER}"
+
+  # ラベル例: "Command Line Tools for Xcode-16.4"
+  # ラベルが見つからないと grep が非ゼロ終了し pipefail でパイプ全体が失敗するため、
+  # || true で空文字に落として下のフォールバック判定に委ねる
+  local clt_label
+  clt_label="$(softwareupdate -l 2> /dev/null \
+    | grep -B 1 -E 'Command Line Tools' \
+    | awk -F'*' '/^ *\*/ {print $2}' \
+    | sed -e 's/^ *Label: //' -e 's/^ *//' \
+    | sort -V \
+    | tail -n 1 \
+    || true)"
+
+  if [ -n "${clt_label}" ]; then
+    echo "- 👨🏻‍🚀 Installing: ${clt_label}"
+    # 失敗しても set -e で即死させず、下の検証とフォールバックに進める
+    sudo softwareupdate -i "${clt_label}" --verbose || true
+  fi
+
+  sudo rm -f "${CLT_PLACEHOLDER}"
+
+  # インストール失敗時はディレクトリが無く、無条件に switch すると set -e で死ぬ
+  if [ -d /Library/Developer/CommandLineTools ]; then
+    sudo xcode-select --switch /Library/Developer/CommandLineTools
+  fi
+
+  if xcode-select -p &>/dev/null; then
+    echo "- 👨🏻‍🚀 Xcode CLI tools are ready to go 🎉"
+    return
+  fi
+
+  echo "⚠️ Automatic installation failed. Opening Apple's installer instead..." >&2
   if xcode-select --install; then
     echo "- 👨🏻‍🚀 The Xcode CLI tools installation was requested."
   else
@@ -128,9 +172,12 @@ printf '%s\n' \
 echo -e "${reset}"
 
 if [[ "$OS_NAME" == "Darwin" ]]; then
-  ensure_xcode_clt
+  # 人間の操作 (パスワード入力・TCC ダイアログ) を先頭に集約する。
+  # ensure_xcode_clt は sudo を使い、CLT のダウンロードに数十分かかることがあるため、
+  # sudoers + keepalive を先に確立してからヘッドレスで走らせる
   request_admin_privileges
   request_documents_access
+  ensure_xcode_clt
   clone_dotfiles_repo
   bash "$SCRIPT_DIR/scripts/nix.sh"
   bash "$SCRIPT_DIR/scripts/homebrew.sh"
