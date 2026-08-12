@@ -29,6 +29,43 @@ fix_brew_link_conflicts() {
   done
 }
 
+# cask の配布元は Homebrew の CDN ではなくベンダー各社のサーバーで、formula より
+# 到達に失敗しやすい (例: appcleaner の配布元が DNS フィルタに誤分類されて
+# 0.0.0.0 に解決された #1538)。brew bundle は fetch を全件まとめて実行し、1 件
+# でも失敗すると install フェーズに一切進まない (Library/Homebrew/bundle/installer.rb
+# の "Failed to fetch" → return false) ため、cask を一括 fetch に混ぜると 1 つの
+# 配布元の問題で全パッケージが巻き添えになる。そこで cask は bundle に任せず
+# 最初から 1 件ずつ入れて、失敗をその cask だけに閉じ込める。
+# 既に入っている cask は飛ばすので再実行は差分だけになる。更新は冒頭の
+# brew upgrade が formula と cask の両方を対象にしている。
+# cask は macOS 専用。Lister は Skipper を通さない (Library/Homebrew/bundle/lister.rb)
+# ため `brew bundle list --cask` は Linux でも Brewfile の cask を返してしまうので、
+# 呼び出し元で OS を見てから呼ぶ。
+install_casks_individually() {
+  local brewfile="$1"
+  local failed=()
+  local installed name
+
+  installed="$(brew list --cask 2>/dev/null || true)"
+
+  while IFS= read -r name; do
+    [ -n "$name" ] || continue
+    # tap 付きで宣言した cask も bundle list は短い名前で返すが、念のため揃える
+    if grep -Fxq "${name##*/}" <<<"$installed"; then
+      continue
+    fi
+    brew install --cask "$name" || failed+=("cask $name")
+  done < <(brew bundle list --file="$brewfile" --cask)
+
+  # bash 3.2 では set -u 下の "${failed[@]}" が空配列で unbound variable になる。
+  # 件数でガードしてから展開する。
+  if [ "${#failed[@]}" -gt 0 ]; then
+    echo "⚠️  インストールに失敗した cask:" >&2
+    printf '  - %s\n' "${failed[@]}" >&2
+    return 1
+  fi
+}
+
 trust_brew_bundle_formulae() {
   if ! brew help trust >/dev/null 2>&1; then
     return 0
@@ -73,11 +110,22 @@ max_attempts="${BREW_BUNDLE_MAX_ATTEMPTS:-5}"
 attempt=1
 backoff_base="${BREW_BUNDLE_BACKOFF_SEC:-20}"
 
+# cask を bundle の一括 fetch から外す (インストールは後段で 1 件ずつ)。
+# HOMEBREW_BUNDLE_CASK_SKIP は install にだけ効き、cleanup は Brewfile 全体から
+# 残すものを決める (Library/Homebrew/bundle/subcommand/cleanup.rb) ため、
+# skip した cask が cleanup に消されることはない。
+cask_skip=""
+if [[ "$OS_NAME" == "Darwin" ]]; then
+  cask_skip="$(brew bundle list --file="$SCRIPT_DIR/Brewfile" --cask | tr '\n' ' ')"
+fi
+
 # Brewfile を正にする（入れて、Brewfile にないものを削除。App Store は対象外）。
 # install と cleanup は一体にする（分けると node 等の依存を巻き添え削除するため）。
 while [ "$attempt" -le "$max_attempts" ]; do
   echo "brew bundle attempt ${attempt}/${max_attempts}"
-  if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" brew bundle \
+  if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" \
+    HOMEBREW_BUNDLE_CASK_SKIP="$cask_skip" \
+    brew bundle \
     --verbose \
     --cleanup \
     --force \
@@ -96,5 +144,17 @@ while [ "$attempt" -le "$max_attempts" ]; do
   attempt="$((attempt + 1))"
 done
 
+# cask はここで 1 件ずつ入れる。1 件の失敗で他の cask を止めない。
+install_failed=0
+if [[ "$OS_NAME" == "Darwin" ]]; then
+  install_casks_individually "$SCRIPT_DIR/Brewfile" || install_failed=1
+fi
+
 # 古いバージョン・キャッシュを削除してディスクを空ける
 brew cleanup --verbose
+
+# 入れられる cask は入れ切った上で、残った失敗は呼び出し元に伝える。
+# make homebrew 単体実行と lefthook の post-merge で失敗を検知できる状態を保つ。
+if [ "$install_failed" -ne 0 ]; then
+  exit 1
+fi
