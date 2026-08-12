@@ -23,20 +23,26 @@ git remote が `nozomiishii/brain` を指す clone を、現在の task、ホス
 
 - 内容の grep を主にする。ファイル名の一致だけでは拾えない。Terraform で探すと OpenTofu ノートの本文にだけ書いてある、のような表記ゆれが普通にある
 - 検索語は 1 語に決め打ちせず、日本語と英語、ツールの別名、エラーメッセージの断片を並べて試す
-- ヒットしたらファイル本文を読み、要点と、現在のホストで開けるノートへの Markdown リンクを報告する
+- ヒットしたらファイル本文を読み、要点と、Obsidian で開くノートへの Markdown リンクを報告する
 
-Claude Code では cwd 相対のリンクを使う。cwd は予測できないので、ノート1件ごとにこう作る:
+リンク先には `obsid.net` の HTTPS 中継 URL を使う。vault 名と vault ルートからのノート相対パスを別々に URL エンコードし、`file` から末尾の `.md` を外す。ノート1件ごとにこう作る:
 
 ```sh
-python3 - "<ノートの絶対パス>" <<'PY'
-import os, sys
-target = sys.argv[1]
-rel = os.path.relpath(target, os.getcwd()).replace(" ", "%20")
-print(f"[{os.path.basename(target)}]({rel})")
+python3 - "<vault ルートの絶対パス>" "<ノートの絶対パス>" <<'PY'
+import sys
+from pathlib import Path
+from urllib.parse import quote, urlencode
+
+vault_root = Path(sys.argv[1]).resolve()
+target = Path(sys.argv[2]).resolve()
+relative = target.relative_to(vault_root).with_suffix("").as_posix()
+query = urlencode(
+    {"vault": vault_root.name, "file": relative},
+    quote_via=quote,
+)
+print(f"[{relative}（Obsidian で開く）](https://obsid.net/?{query})")
 PY
 ```
-
-Codex では現在の response rules に従う。通常は `$HOME` などを展開した絶対パスを Markdown リンクの target にする。スペースを含む target は山括弧で囲む。
 
 ## 調べる順番
 
