@@ -244,9 +244,6 @@ if OS.mac? && !ENV["CI"]
   # Write, edit, and chat about your code with AI https://cursor.sh/
   cask "cursor"
 
-  # FreeMacSoft AppCleaner https://freemacsoft.net/appcleaner/
-  cask "appcleaner"
-
   # Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
   cask "bleunlock"
 
