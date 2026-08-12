@@ -19,6 +19,7 @@ Date: 2026-08-12
 ## Consequences — 決定がもたらすもの
 
 - 素の Mac でも curl 1 回でセットアップが完走する。GUI ダイアログの承諾クリックと再実行が不要になる
+- CI の素の Mac 相当環境 (CLT と Xcode を削除した macos-latest) で、ヘッドレスインストールが 3 分強で完走することを実機確認済み ([run 31592485654](https://github.com/nozomiishii/dotfiles/actions/runs/31592485654))
 - #1464 が意図した「CLT が無くて exit するとき sudo を無駄に聞かない」性質は失われるが、exit するのはヘッドレス失敗の稀なケースだけなので許容する
 - ラベル抽出は softwareupdate -l の出力フォーマットに依存する。フォーマットが変わって取れなくなっても GUI フォールバックで従来の挙動に戻るだけで、インストール自体は塞がらない
 - placeholder の掃除は request_admin_privileges の EXIT trap に集約している。bash の EXIT trap は 1 本しか持てないため、trap を増やすときは既存 trap に追記する
