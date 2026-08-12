@@ -31,6 +31,37 @@ CLT_PLACEHOLDER="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 yellow='\033[1;33m'
 reset='\033[0m'
 
+# アプリのインストールなど一部のステップが落ちても、残りのステップは走らせて
+# セットアップを最後まで進める。1 つの配布元が落ちただけで symlink や toolchain の
+# セットアップまで巻き添えで止まるのを防ぐ。
+# 失敗は握りつぶさず FAILED_STEPS に積み、最後にまとめて報告して非ゼロで終了する。
+FAILED_STEPS=()
+
+run_step() {
+  local label="$1"
+  shift
+
+  if "$@"; then
+    return 0
+  fi
+
+  echo -e "⚠️  ${label} failed — continuing with the remaining steps" >&2
+  FAILED_STEPS+=("$label")
+  return 0
+}
+
+# homebrew.sh が失敗して brew が無い状態でも、後続ステップに進めるようにする。
+load_brew_shellenv() {
+  local brew_bin="$1"
+
+  if [ ! -x "$brew_bin" ]; then
+    echo -e "⚠️  ${brew_bin} not found — skipping shellenv" >&2
+    return 0
+  fi
+
+  eval "$("$brew_bin" shellenv)"
+}
+
 # request_admin_privileges is kept in this file (not extracted to a script)
 # because it manages main-process state: it sets an EXIT trap and starts a
 # background sudo keepalive. Running it in a subshell would not affect the
@@ -179,36 +210,59 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   request_documents_access
   ensure_xcode_clt
   clone_dotfiles_repo
-  bash "$SCRIPT_DIR/scripts/nix.sh"
-  bash "$SCRIPT_DIR/scripts/homebrew.sh"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  bash "$SCRIPT_DIR/scripts/symlink.sh"
-  bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/node.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/python.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
-  bash "$SCRIPT_DIR/scripts/default_apps.sh"
-  bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
+  run_step "nix.sh" bash "$SCRIPT_DIR/scripts/nix.sh"
+  run_step "homebrew.sh" bash "$SCRIPT_DIR/scripts/homebrew.sh"
+  load_brew_shellenv /opt/homebrew/bin/brew
+  run_step "symlink.sh" bash "$SCRIPT_DIR/scripts/symlink.sh"
+  run_step "darwin/macos.sh" bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
+  run_step "toolchains/node.sh" bash "$SCRIPT_DIR/scripts/toolchains/node.sh"
+  run_step "toolchains/python.sh" bash "$SCRIPT_DIR/scripts/toolchains/python.sh"
+  run_step "toolchains/ruby.sh" bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
+  run_step "toolchains/rust.sh" bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
+  run_step "toolchains/terraform.sh" bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
+  run_step "toolchains/claude-code.sh" bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
+  run_step "toolchains/pm.sh" bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
+  run_step "default_apps.sh" bash "$SCRIPT_DIR/scripts/default_apps.sh"
+  run_step "darwin/open_config_apps.sh" bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
 fi
 
 if [[ "$OS_NAME" == "Linux" ]]; then
   clone_dotfiles_repo
-  bash "$SCRIPT_DIR/scripts/nix.sh"
-  bash "$SCRIPT_DIR/scripts/zsh.sh"
-  bash "$SCRIPT_DIR/scripts/homebrew.sh"
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  bash "$SCRIPT_DIR/scripts/symlink.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/node.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/python.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
+  run_step "nix.sh" bash "$SCRIPT_DIR/scripts/nix.sh"
+  run_step "zsh.sh" bash "$SCRIPT_DIR/scripts/zsh.sh"
+  run_step "homebrew.sh" bash "$SCRIPT_DIR/scripts/homebrew.sh"
+  load_brew_shellenv /home/linuxbrew/.linuxbrew/bin/brew
+  run_step "symlink.sh" bash "$SCRIPT_DIR/scripts/symlink.sh"
+  run_step "toolchains/node.sh" bash "$SCRIPT_DIR/scripts/toolchains/node.sh"
+  run_step "toolchains/python.sh" bash "$SCRIPT_DIR/scripts/toolchains/python.sh"
+  run_step "toolchains/ruby.sh" bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
+  run_step "toolchains/rust.sh" bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
+  run_step "toolchains/terraform.sh" bash "$SCRIPT_DIR/scripts/toolchains/terraform.sh"
+  run_step "toolchains/claude-code.sh" bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
+  run_step "toolchains/pm.sh" bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
+fi
+
+# 失敗したステップがあっても最後までは実行している。ここで初めて非ゼロを返す。
+# bash 3.2 では set -u 下の "${FAILED_STEPS[@]}" が空配列で unbound variable に
+# なるため、件数でガードしてから展開する。
+if [ "${#FAILED_STEPS[@]}" -gt 0 ]; then
+  echo -e "${yellow}"
+  printf '%s\n' \
+    "" \
+    "⚠️  セットアップは最後まで実行しましたが、失敗したステップがあります:" \
+    ""
+  printf '      - %s\n' "${FAILED_STEPS[@]}"
+  printf '%s\n' \
+    "" \
+    "    ログを確認して、個別に再実行してください:" \
+    "      bash $SCRIPT_DIR/scripts/<script>" \
+    "" \
+    "    Homebrew だけ入れ直す場合:" \
+    "      make -C \"$SCRIPT_DIR\" homebrew" \
+    "" \
+    ""
+  echo -e "${reset}"
+  exit 1
 fi
 
 echo -e "${yellow}"
