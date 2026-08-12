@@ -63,9 +63,15 @@ load_brew_shellenv() {
 }
 
 # request_admin_privileges is kept in this file (not extracted to a script)
-# because it manages main-process state: it sets an EXIT trap and starts a
-# background sudo keepalive. Running it in a subshell would not affect the
-# current process, so it must remain here.
+# because it manages main-process state: it sets an EXIT trap. Running it in
+# a subshell would not affect the current process, so it must remain here.
+#
+# timestamp_timeout + keepalive (sudo -n true) の延命方式は使わない。
+# brew は起動するたびに `sudo --reset-timestamp` で sudo の認証キャッシュを
+# 破棄するため (Library/Homebrew/brew.sh)、homebrew.sh 以降の sudo が tty で
+# 再プロンプトしてしまう。そこでインストール中だけ NOPASSWD を付与し、
+# 終了時に EXIT trap で取り除く。
+# @See https://github.com/Homebrew/brew/commit/2adf25dcaf
 request_admin_privileges() {
   if [ "${CI:-false}" = "true" ]; then
     return
@@ -75,23 +81,20 @@ request_admin_privileges() {
   sudo -v
 
   SUDOERS_FILE="/etc/sudoers.d/temp_dotfiles_installer"
-  sudo sh -c "echo 'Defaults timestamp_timeout=120' > ${SUDOERS_FILE}"
-  sudo chmod 0440 "${SUDOERS_FILE}"
   # bash の EXIT trap は 1 本のみ。placeholder の掃除もここに集約する
   # (ensure_xcode_clt で trap を新設すると sudoers の掃除を上書きして壊す)
-  trap 'sudo rm -f "${SUDOERS_FILE}" "${CLT_PLACEHOLDER}"' EXIT
+  trap 'sudo rm -f "${SUDOERS_FILE}" "${SUDOERS_FILE}.tmp" "${CLT_PLACEHOLDER}"' EXIT
 
-  sudo -v
-
-  (
-    while true; do
-      sleep 10
-      # subshell は set -e を継承する。一時的な失敗で keepalive が静かに死ぬと
-      # 後半の sudo が tty で再プロンプトして無人実行が止まるため、失敗を握りつぶす
-      sudo -n true || true
-      kill -0 "$$" || exit
-    done
-  ) 2>/dev/null &
+  # 壊れた sudoers.d ファイルは sudo 自体を使用不能にするため、反映前に検証する。
+  # includedir は '.' を含むファイル名を無視するので、.tmp のまま検証してから mv する
+  sudo sh -c "echo '$(id -un) ALL=(ALL) NOPASSWD: ALL' > ${SUDOERS_FILE}.tmp"
+  sudo chmod 0440 "${SUDOERS_FILE}.tmp"
+  if ! sudo visudo -c -f "${SUDOERS_FILE}.tmp" > /dev/null; then
+    sudo rm -f "${SUDOERS_FILE}.tmp"
+    echo "⚠️ Failed to validate ${SUDOERS_FILE}.tmp — aborting so sudo stays usable" >&2
+    exit 1
+  fi
+  sudo mv "${SUDOERS_FILE}.tmp" "${SUDOERS_FILE}"
 }
 
 # ~/Documents 初回アクセスの TCC ダイアログを、パスワード入力直後のユーザーが
@@ -205,7 +208,7 @@ echo -e "${reset}"
 if [[ "$OS_NAME" == "Darwin" ]]; then
   # 人間の操作 (パスワード入力・TCC ダイアログ) を先頭に集約する。
   # ensure_xcode_clt は sudo を使い、CLT のダウンロードに数十分かかることがあるため、
-  # sudoers + keepalive を先に確立してからヘッドレスで走らせる
+  # NOPASSWD sudoers を先に確立してからヘッドレスで走らせる
   request_admin_privileges
   request_documents_access
   ensure_xcode_clt
