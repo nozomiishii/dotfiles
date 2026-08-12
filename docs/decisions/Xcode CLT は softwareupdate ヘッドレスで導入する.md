@@ -14,7 +14,7 @@ Date: 2026-08-12
 - Homebrew install.sh と同じ sudo 付き softwareupdate ヘッドレス方式で CLT をインストールし、curl 1 回で最後まで走り切らせる
   - placeholder ファイル `/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress` を置いて `softwareupdate -l` に CLT を列挙させ、ラベルを `softwareupdate -i` に渡す
 - ラベル取得やインストールに失敗したときだけ、従来どおり `xcode-select --install` で GUI を開いて exit 1 し、再実行を促す
-- Darwin の呼び出し順は request_admin_privileges → request_documents_access → ensure_xcode_clt とし、人間の操作 (パスワード入力・TCC ダイアログ) を先頭に集約する。CLT の長いダウンロード中は sudo keepalive が効いているので、以降は無人で走る
+- Darwin の呼び出し順は request_admin_privileges → request_documents_access → ensure_xcode_clt とし、人間の操作 (パスワード入力・TCC ダイアログ) を先頭に集約する。CLT の長いダウンロード中もインストール中限定の NOPASSWD sudoers が効いているので、以降は無人で走る
 
 ## Consequences — 決定がもたらすもの
 
