@@ -319,6 +319,14 @@ defaults write NSGlobalDomain com.apple.trackpad.forceClick -bool false
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -int 0
 
 # ----------------------------------------------------------------
+# Mouse
+# ----------------------------------------------------------------
+echo "- 🖱 Mouse"
+
+# Tracking Speed => 0: Slow 3: Fast
+defaults write NSGlobalDomain com.apple.mouse.scaling -float 3
+
+# ----------------------------------------------------------------
 # Display
 # ----------------------------------------------------------------
 echo "- 🖥 Display"
