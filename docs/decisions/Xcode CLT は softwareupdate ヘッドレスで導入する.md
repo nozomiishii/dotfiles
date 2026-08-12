@@ -7,7 +7,7 @@ Date: 2026-08-12
 
 素の Mac で `curl -fsSL https://dotfiles.nozo.sh | bash` を叩くと、Xcode Command Line Tools (CLT) が無い場合に Apple の GUI インストーラーを開いて exit 1 し、CLT インストール完了後にもう一度 curl を叩く 2 段階インストールになっていた。CLT のダウンロードは数時間かかることがあり、その完了を見張って再実行する手間が大きい。
 
-経緯は 2 転している。[#1440](https://github.com/nozomiishii/dotfiles/pull/1440) までは softwareupdate で CLI から直接インストールする方式だったが、sudo なしで `softwareupdate -i` を実行する弱点があった。[#1464](https://github.com/nozomiishii/dotfiles/pull/1464) で「GUI を開いて exit 1 し、再実行を促す」方式に置き換えたことで、この 2 段階が生まれた。
+経緯は 2 転している。[#1440](https://github.com/nozomiishii/dotfiles/pull/1440) までは softwareupdate で CLI から直接インストールする方式だった (sudo なしで `softwareupdate -i` を実行する弱点があった)。[#1464](https://github.com/nozomiishii/dotfiles/pull/1464) は新しい Mac へ導入する前に敵対的レビューで直せる箇所を直す依頼から生まれた PR で、softwareupdate 方式が実機で壊れた記録はない。実動検証できない headless インストールより Apple 公式の `xcode-select --install` を開いて安全に終了する方が確実、という安全側の設計判断で置き換えられ、この 2 段階が生まれた (当時の Codex セッションの記録より)。
 
 ## Decision — 決めたこと
 
