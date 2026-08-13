@@ -13,13 +13,25 @@
 #               code in the pipeline, or zero if all commands succeed
 set -Ceuo pipefail
 
-# actions/runner の osx-arm64 リリース。SHA-256 はリリースノート記載の値。
-# 初回配置用で、以後は runner が自動更新するため人手で追従し続ける必要はない。
-# https://github.com/actions/runner/releases
-RUNNER_VERSION="2.336.0"
-RUNNER_SHA256="8e8839c49b7060b6b2154f4931f815df330c27f167d53ef2239ee3dfce28b079"
 # インスタンス一覧は launchd.sh と home/Library/LaunchAgents/ の plist にも対応がある
 INSTANCES=(runner1 runner2)
+
+# 配置するバイナリは、公式の手動セットアップ手順と同じく、その時点の最新リリースを使う。
+# 配置後は runner が自動更新するため、版を固定して追従し続ける意味が薄い。
+# SHA-256 はリリースノート記載の値で、転送破損の検知用。
+# https://github.com/actions/runner/releases
+resolve_latest_release() {
+  # 取得済みなら再利用 (2 インスタンス目で API を叩き直さない)
+  [ -n "${RUNNER_VERSION:-}" ] && return 0
+  local release_json
+  release_json="$(curl -fsSL https://api.github.com/repos/actions/runner/releases/latest)"
+  RUNNER_VERSION="$(printf '%s' "$release_json" | jq -r '.tag_name // "" | ltrimstr("v")')"
+  RUNNER_SHA256="$(printf '%s' "$release_json" | jq -r '.body // ""' | grep -oE 'BEGIN SHA osx-arm64 -->[a-f0-9]{64}' | grep -oE '[a-f0-9]{64}')"
+  if [ -z "$RUNNER_VERSION" ] || [ -z "$RUNNER_SHA256" ]; then
+    echo "ERROR: failed to resolve the latest actions/runner release" >&2
+    return 1
+  fi
+}
 
 echo "🏃 Setting up GitHub Actions self-hosted runners..."
 
@@ -39,6 +51,7 @@ for instance in "${INSTANCES[@]}"; do
     continue
   fi
 
+  resolve_latest_release
   echo "- ${instance}: downloading actions-runner v${RUNNER_VERSION} (osx-arm64)"
   tmp_dir="$(mktemp -d)"
   tarball="${tmp_dir}/actions-runner.tar.gz"
