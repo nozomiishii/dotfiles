@@ -3,7 +3,7 @@
 # runner バイナリの配置と、設定ファイル雛形の作成を行う。どちらも初回だけの関心で、
 # 以後バイナリは run.sh の自動更新に任せる。
 #
-# 鍵の登録は github_runner_key.sh、launchd への登録は github_runner_launchd.sh が担う。
+# 鍵の登録は key.sh、launchd への登録は launchd.sh が担う。
 # 3 本まとめて実行するときは `make github-runner`。
 
 # -C          : Prevent overwriting files with output redirection
@@ -18,7 +18,7 @@ set -Ceuo pipefail
 # https://github.com/actions/runner/releases
 RUNNER_VERSION="2.336.0"
 RUNNER_SHA256="8e8839c49b7060b6b2154f4931f815df330c27f167d53ef2239ee3dfce28b079"
-# インスタンス一覧は github_runner_launchd.sh と home/Library/LaunchAgents/ の plist にも対応がある
+# インスタンス一覧は launchd.sh と home/Library/LaunchAgents/ の plist にも対応がある
 INSTANCES=(runner1 runner2)
 
 echo "🏃 Setting up GitHub Actions self-hosted runners..."

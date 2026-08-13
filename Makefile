@@ -18,17 +18,17 @@ always-on: ## Configure always-on services
 
 .PHONY: github-runner
 github-runner: ## Set up GitHub Actions self-hosted runners
-	bash ./scripts/darwin/github_runner_setup.sh
-	bash ./scripts/darwin/github_runner_key.sh
-	bash ./scripts/darwin/github_runner_launchd.sh
+	bash ./scripts/darwin/github_runner/setup.sh
+	bash ./scripts/darwin/github_runner/key.sh
+	bash ./scripts/darwin/github_runner/launchd.sh
 
 .PHONY: github-runner-key
 github-runner-key: ## Register/rotate the GitHub App private key
-	bash ./scripts/darwin/github_runner_key.sh
+	bash ./scripts/darwin/github_runner/key.sh
 
 .PHONY: github-runner-launchd
 github-runner-launchd: ## Register runner LaunchAgents
-	bash ./scripts/darwin/github_runner_launchd.sh
+	bash ./scripts/darwin/github_runner/launchd.sh
 
 .PHONY: toolchains
 toolchains: ## Set up language toolchains
