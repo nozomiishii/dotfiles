@@ -12,7 +12,7 @@ Mac mini 1 台に ephemeral runner を 2 インスタンス。担当 repo は co
 | --- | --- |
 | 常駐ラッパー | [home/.local/bin/github-runner.sh](../home/.local/bin/github-runner.sh) |
 | LaunchAgent (KeepAlive) | [home/Library/LaunchAgents/](../home/Library/LaunchAgents/) の `local.github-runner.<instance>.plist` |
-| セットアップ (`make github-runner`) | [scripts/darwin/github_runner.sh](../scripts/darwin/github_runner.sh) |
+| セットアップ (`make github-runner`) | [scripts/darwin/](../scripts/darwin/) の `github_runner_{setup,key,launchd}.sh` |
 | repo 名・Client ID・installation ID (git 管理外) | `~/.config/github-runner/<instance>.conf` |
 | GitHub App private key | macOS Keychain |
 | runner 本体 (git 管理外) | `~/actions-runner/<instance>/` |
@@ -37,8 +37,8 @@ workflow 側の `runs-on` 切り替えは対象 repo の作業で本書の範囲
 
 ## Phase C: Mac mini セットアップ
 
-- dotfiles 適用後、`make github-runner` を実行する。バイナリ配置・conf 雛形の作成・Keychain 登録 (対話) が走る
-- `~/.config/github-runner/*.conf` に Phase A の値を記入し、`make github-runner` を再実行して launchd に登録する
+- dotfiles 適用後、`make github-runner` を実行する。バイナリ配置と conf 雛形 (setup) → Keychain 登録の対話 (key) → launchd 登録 (launchd) が順に走る
+- `~/.config/github-runner/*.conf` に Phase A の値を記入し、`make github-runner-launchd` で launchd に登録する
 - 各 repo の Settings > Actions > Runners で Idle を確認し、
   `runs-on: [self-hosted, macOS, ARM64]` の workflow で動作確認する。ログは `/tmp/github-runner.<instance>.log`
 
@@ -49,3 +49,6 @@ workflow 側の `runs-on` 切り替えは対象 repo の作業で本書の範囲
 - ラベルは `self-hosted` / `macOS` / `ARM64` が自動付与。1 検証 run の実測は約 3 分
 - runner バイナリは `run.sh` 起動時に自動更新される。作り直すときは launchd を bootout して
   `~/actions-runner/<instance>/` を消し、`make github-runner` を再実行する
+- 鍵のローテーションとマシン移行は、App の設定ページで private key を再生成し、
+  旧鍵の Keychain item を削除して `make github-runner-key` で登録し直す。
+  鍵はバックアップしない (再生成しても Client ID と installation ID は変わらない)
