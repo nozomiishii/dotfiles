@@ -12,7 +12,7 @@ Mac mini 1 台に ephemeral runner を 2 インスタンス。担当 repo は co
 | --- | --- |
 | 常駐ラッパー | [home/.local/bin/github-runner.sh](../home/.local/bin/github-runner.sh) |
 | LaunchAgent (KeepAlive) | [home/Library/LaunchAgents/](../home/Library/LaunchAgents/) の `local.github-runner.<instance>.plist` |
-| セットアップ (`make github-runner`) | [scripts/darwin/github_runner/](../scripts/darwin/github_runner/) の `setup.sh` / `key.sh` / `launchd.sh` |
+| セットアップ (`make github-runner`) | [scripts/darwin/github_runner/](../scripts/darwin/github_runner/) の `setup_arm64.sh` / `key.sh` / `launchd.sh` |
 | repo 名・Client ID・installation ID (git 管理外) | `~/.config/github-runner/<instance>.conf` |
 | GitHub App private key | macOS Keychain |
 | runner 本体 (git 管理外) | `~/actions-runner/<instance>/` |

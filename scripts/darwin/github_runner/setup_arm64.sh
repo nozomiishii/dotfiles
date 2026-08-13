@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-# GitHub Actions self-hosted runner の初回セットアップ (Apple Silicon Mac 専用)。
+# GitHub Actions self-hosted runner の初回セットアップ。
+# osx-arm64 バイナリを配置する Apple Silicon 専用スクリプト (今の運用対象は Mac mini だけ)。
 # runner バイナリの配置と、設定ファイル雛形の作成を行う。どちらも初回だけの関心で、
 # 以後バイナリは run.sh の自動更新に任せる。
 #
 # 鍵の登録は key.sh、launchd への登録は launchd.sh が担う。
 # 3 本まとめて実行するときは `make github-runner`。
+# Intel Mac は対象外。必要になったら setup_x64.sh を並べる想定。
 
 # -C          : Prevent overwriting files with output redirection
 # -e          : Exit the script if any command returns a non-zero status
@@ -34,11 +36,6 @@ resolve_latest_release() {
 }
 
 echo "🏃 Setting up GitHub Actions self-hosted runners..."
-
-if [ "$(uname -m)" != "arm64" ]; then
-  echo "ERROR: this script downloads the osx-arm64 runner and supports Apple Silicon only" >&2
-  exit 1
-fi
 
 # ----------------------------------------------------------------
 # Runner binary

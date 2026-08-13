@@ -4,7 +4,7 @@
 # 鍵はバックアップせず、マシンごとに App の設定ページで再生成して登録し直す運用
 # (再生成しても Client ID と installation ID は変わらない)。
 #
-# バイナリ配置は setup.sh、launchd への登録は launchd.sh が担う。
+# バイナリ配置は setup_arm64.sh、launchd への登録は launchd.sh が担う。
 
 # -C          : Prevent overwriting files with output redirection
 # -e          : Exit the script if any command returns a non-zero status

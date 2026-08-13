@@ -18,7 +18,7 @@ always-on: ## Configure always-on services
 
 .PHONY: github-runner
 github-runner: ## Set up GitHub Actions self-hosted runners
-	bash ./scripts/darwin/github_runner/setup.sh
+	bash ./scripts/darwin/github_runner/setup_arm64.sh
 	bash ./scripts/darwin/github_runner/key.sh
 	bash ./scripts/darwin/github_runner/launchd.sh
 

@@ -3,7 +3,7 @@
 # conf を記入したあとや plist を変更したあとに単独で実行する。
 #
 # 前提: make link 済み (plist と github-runner.sh のシンボリックリンクが必要)。
-# バイナリ配置は setup.sh、鍵の登録は key.sh が担う。
+# バイナリ配置は setup_arm64.sh、鍵の登録は key.sh が担う。
 
 # -C          : Prevent overwriting files with output redirection
 # -e          : Exit the script if any command returns a non-zero status
@@ -12,7 +12,7 @@
 #               code in the pipeline, or zero if all commands succeed
 set -Ceuo pipefail
 
-# インスタンス一覧は setup.sh と home/Library/LaunchAgents/ の plist にも対応がある
+# インスタンス一覧は setup_arm64.sh と home/Library/LaunchAgents/ の plist にも対応がある
 INSTANCES=(runner1 runner2)
 
 echo "🚀 Registering runner LaunchAgents..."
