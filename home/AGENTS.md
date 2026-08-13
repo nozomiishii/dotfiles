@@ -31,7 +31,8 @@
 ユーザー本人や開発環境の情報が必要なときは `~/Code/nozomiishii/brain/brain/PROFILE.md` を参照する。
 
 ## 外部リポジトリ
-- 外部リポジトリを変更する操作は /oss スキルを使用する
+- push 権限のないリポジトリを変更する操作は /oss スキルを使用する
+  - 判定に迷ったら `gh repo view <repo> --json viewerPermission` で確認する
 
 ## ドキュメント作成
 - /doc スキルを使用する
