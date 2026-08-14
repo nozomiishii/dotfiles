@@ -145,6 +145,9 @@ if OS.mac? && !ENV["CI"]
   # GNU grep, egrep and fgrep https://www.gnu.org/software/grep/
   brew "grep"
 
+  # Convert HCL to JSON https://github.com/tmccombs/hcl2json
+  brew "hcl2json"
+
   # Command-line benchmarking tool https://github.com/sharkdp/hyperfine
   brew "hyperfine"
 
