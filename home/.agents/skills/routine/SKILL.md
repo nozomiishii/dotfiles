@@ -1,9 +1,9 @@
 ---
 name: routine
 description: >-
-  Claude Code Routine の追加・変更。
-  .routines/NAME.md の作成・編集 → brain repo に PR 作成 → Claude Code の cloud trigger と同期。
-  「routine を追加したい」「定期実行を作りたい」と言ったとき、または .routines/ の設定変更時に使用する。
+  Claude Code Routine (定期実行) を git 管理で追加・変更する。
+  「routine を追加したい」「定期実行を作りたい」と言ったとき、
+  または .routines/ の設定変更・cloud trigger との同期のときに使用する。
 argument-hint: <routine-name> <概要>
 ---
 
