@@ -1,9 +1,10 @@
 ---
 name: oss
 description: >-
-  外部リポジトリへの投稿（issue / PR / コメント）を安全に進める。
-  外部リポジトリに対して
-  gh issue create / gh pr create / gh api による書き込みを実行する前に使用する。
+  外部リポジトリへの投稿・変更を安全に進める。
+  自分と所属 Organization の管理外のリポジトリ (fork 元・upstream・他者の repo) への
+  書き込み操作 — issue / PR / コメントの作成・編集・クローズ、レビュー投稿、git push など — を
+  実行する前に使用する。
 argument-hint: "[リポジトリ名 / やりたいこと]（任意）"
 ---
 

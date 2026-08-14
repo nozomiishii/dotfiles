@@ -31,8 +31,7 @@
 ユーザー本人や開発環境の情報が必要なときは `~/Code/nozomiishii/brain/brain/PROFILE.md` を参照する。
 
 ## 外部リポジトリ
-- push 権限のないリポジトリを変更する操作は /oss スキルを使用する
-  - 判定に迷ったら `gh repo view <repo> --json viewerPermission` で確認する
+- 管理外 (自分と所属 Organization 以外) のリポジトリへの書き込みは /oss スキルを使用する
 
 ## 静的解析ルールの抑制禁止
 - lint・型検査・セキュリティスキャナのルール抑制は禁止。まずコードを直す。
