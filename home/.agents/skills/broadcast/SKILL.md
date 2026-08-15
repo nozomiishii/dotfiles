@@ -3,8 +3,7 @@ name: broadcast
 description: >-
   projects.json で管理されている複数の独立 repo に、同じ変更を横断適用（broadcast）する。
   「workspaces のプロジェクト全部に〜したい」「横断で〜入れたい」と言ったときに使用する。
-  第 1 引数が既存ディレクトリならその配下の projects.json を、それ以外は nozomiishii/infra clone の projects.json を対象にする。
-  Claude Code bundled の /batch（1 つの repo を複数ユニットに分解して worktree 並列実行）とは別物。こちらは N 個の repo への同一変更 broadcast。
+  1 つの repo を複数ユニットに分解して並列実行する Claude Code bundled の /batch とは別物。
 ---
 
 # /broadcast

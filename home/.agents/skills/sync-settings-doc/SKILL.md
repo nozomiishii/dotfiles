@@ -1,6 +1,6 @@
 ---
 name: sync-settings-doc
-description: Claude Code の settings.json と settings.md をレビューして同期する。
+description: dotfiles の home/.claude/ にある settings.json と settings.md をレビューして同期し、PR を作成する。
 disable-model-invocation: true
 model: sonnet
 ---

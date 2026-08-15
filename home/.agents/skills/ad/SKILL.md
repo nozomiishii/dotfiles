@@ -1,6 +1,6 @@
 ---
 name: ad
-description: a skill を deep research モードで実行する。
+description: ChatGPT・Claude・Gemini に同じ質問を deep research で並列投下し、回答を読むための各社タブ URL 一覧を提示する。
 argument-hint: <question>
 disable-model-invocation: true
 model: sonnet

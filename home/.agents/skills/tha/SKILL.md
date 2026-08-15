@@ -1,6 +1,6 @@
 ---
 name: tha
-description: 会話やプランの内容をもとに、ブランチ作成・コミット・プッシュ・PR 作成を一括実行する。
+description: 会話やプランの内容をもとに、ブランチ作成・コミット・プッシュ・PR 作成を一括実行し、pr skill に引き継いで mergeable まで持っていく。
 disable-model-invocation: true
 model: sonnet
 ---
