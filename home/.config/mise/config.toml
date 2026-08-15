@@ -1,0 +1,5 @@
+# グローバルツールの宣言 (mise.sh の `mise install` が導入する)。
+# 版は完全固定。Renovate の mise manager がこのファイルを追従して自動更新する。
+# https://mise.jdx.dev/configuration.html
+[tools]
+uv = "0.12.5"
