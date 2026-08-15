@@ -19,7 +19,6 @@ always-on: ## Configure always-on services
 .PHONY: toolchains
 toolchains: ## Set up language toolchains
 	bash ./scripts/toolchains/mise.sh
-	bash ./scripts/toolchains/terraform.sh
 	bash ./scripts/toolchains/claude-code.sh
 	bash ./scripts/toolchains/node.sh
 	bash ./scripts/toolchains/python.sh
