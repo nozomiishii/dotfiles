@@ -48,10 +48,7 @@ export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
 # shellcheck disable=SC1090
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
-# mise shims - .zshrc を読まない IDE や非対話シェルに mise 管理ツールを見せる。
-# 対話シェルでは .zshrc の mise activate が優先され、shims はフォールバックになる。
-# ~/.local/bin の PATH 追加は .zshrc なので、ここではフルパスで呼ぶ
-# https://mise.jdx.dev/ide-integration.html
+# mise shims - .zshrc を読まない IDE や非対話シェル向け https://mise.jdx.dev/ide-integration.html
 if [[ -x "$HOME/.local/bin/mise" ]]; then
   eval "$("$HOME/.local/bin/mise" activate zsh --shims)"
 fi
