@@ -93,3 +93,8 @@ fi
 if command -v rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
+
+# mise
+if command -v mise >/dev/null; then
+  eval "$(mise activate zsh)"
+fi
