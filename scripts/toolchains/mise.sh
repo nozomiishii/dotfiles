@@ -19,4 +19,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 echo "- 👨‍🍳 mise $(mise --version)"
 
+# グローバルツールは stow 済みの ~/.config/mise/config.toml で宣言する
+echo '- 👨‍🍳 Install global tools'
+mise install
+
 echo "👨‍🍳 mise setup is complete 🎉"

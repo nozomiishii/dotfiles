@@ -1,0 +1,3 @@
+# https://mise.jdx.dev/configuration.html
+[tools]
+uv = "0.12.5"
