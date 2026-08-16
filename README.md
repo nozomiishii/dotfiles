@@ -237,9 +237,3 @@ for x in {1..10}; do time zsh -i -c exit; done
 ### Dotfiles managed with
 
 - [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
-
-## License
-
-MIT License
-
-© 2021 Nozomi Ishii
