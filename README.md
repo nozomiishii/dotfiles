@@ -20,254 +20,51 @@ English | [日本語](README.ja.md)
 </div>
 <br>
 
-## Gist
-
-Busy? Just run command below;)
-
-```shell
-curl -fsSL https://dotfiles.nozo.sh | bash
-```
-
-<!-- <details>
-<summary>with full version of Brewfile</summary>
-
-```shell
-curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
-``` -->
-
-## Development
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nozomiishii/dotfiles)
-
-## Outline
-
-- [📦 New Macbook? Awesome!!](#new-macbook?)
-  - [Install](#install)
-  - [Install Manually](#install-manually)
-  - [App preferences](#app-preferences)
-- [👨🏻‍🍳 Customize](#customize)
-- [🍴 Forking](#forking)
-- [👨🏻‍🏭 Maintenance & Dev](#maintenance&dev)
-- [🔫 Troubleshooting](#troubleshooting)
-- [👼 Reinstall macOS](#reinstall-macos)
-- [🙌 References](#references)
-
-<a id="new-macbook?"></a>
-
 ## 📦 New Macbook? Awesome
 
-Turn On and Follow the guide
-
-- Full Name: Nozomi Ishii
-- Account name: nozomiishii
-
-⚠️ Skip the AppleID sign in until the home screen. it takes time. ⚠️
-
-### Open Apple ID with Spotlight
-
-```txt
-  ⌘ + space Apple ID
-```
-
-Sign in your iCloud and App Store, when you get to the home screen.
-(to install apps from the App Store manually)
-
-💡 Can you not use your personal apple ID on your company computer?
-Install Xcode manually from the App Store if you need it.
-
-### 🍎 Apple ID
-
-- Edit your profile photo
-
-- **☁️ iCloud**
-
-  - Photos
-  - iCloud Drive
-  - Find My Mac
-  - Stocks
-
-### 🍏 App Store
-
-```txt
-  ⌘ + space App Store
-```
-
-- Login
-
-- 1Password for Safari
-- AdBlock Pro
-- Jump Desktop
-- Kindle
-- LINE
-- Obsidian Web Clipper
-- Remote Desktop
-- Video Speed Controller
-- Xcode (only for Apple platform development)
-
-<a id="install"></a>
-
-## Install
-
-Wait about 3 hours(Go grab some food and take a nap 🍕😪)
-
-### Open Terminal with Spotlight
-
-```txt
-  ⌘ + space Terminal
-```
+### Install
 
 ```shell
 curl -fsSL https://dotfiles.nozo.sh | bash
 ```
 
--fsSL: -L follows the dotfiles.nozo.sh redirect, -f aborts on HTTP errors (so a broken response is never piped to bash), -sS hide progress but still show errors.
+## After installation
 
-<a id="after-installation"></a>
-
-### After installation
+Restart
 
 ```shell
 sudo reboot
 ```
 
-#### Retry Homebrew if needed
+## Required app setup
 
-```shell
-make -C "$HOME/Code/nozomiishii/dotfiles" homebrew
-```
+- Raycast
+  - Just get ⌘ space working for now. Want movement to be smooth first. Login etc. later.
 
-#### Optional always-on settings
+- 1password
+  - Preferences > General > Keyboard shortcuts > show password: ⌥⌘X
 
-```shell
-make -C "$HOME/Code/nozomiishii/dotfiles" always-on
-```
+- Chrome
+- ChatGPT
+- Claude Code
+- Jump Desktop
 
-#### GitHub
-
-- [Set up 1Password](#1password-github)
+- Github login and download repositories
 
 ```shell
 gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
 make -C "$HOME/Code/nozomiishii/dotfiles" repo
 ```
 
-<a id="install-manually"></a>
+## Other app setup
 
-<details>
-<summary>Install Manually</summary>
+### 💻 System Preferences
 
-### Xcode Command Line Tools
-
-```shell
-xcode-select --install
-```
-
-### Come to this page
-
-```shell
-open https://nozomiishii.dev/dotfiles
-```
-
-### Clone
-
-```shell
-git clone https://github.com/nozomiishii/dotfiles.git ~/Code/nozomiishii/dotfiles
-cd "$HOME/Code/nozomiishii/dotfiles"
-```
-
-### Install
-
-```shell
-./install.sh
-```
-
-### 🛋 Restart
-
-```shell
-sudo reboot
-```
-
-Then follow the [After installation](#after-installation) steps above.
-
-</details>
-
-<a id="app-preferences"></a>
-
-## App preferences
-
-<a id="1password-github"></a>
-
-### 🔑 1Password
-
-- Sign in and unlock
-- Preferences > Security > Unlock using >  
-  Check "Touch ID"
-- Preferences > General > Keyboard shortcuts >  
-  Autofill: `⌥⇧X`
-- Settings > Developer > `Use the SSH agent`
-- Settings > Developer > `Integrate with 1Password CLI`
-- Restore `~/.config/1Password/ssh/agent.toml`
-
-### 🌏 Chrome
-
-- Profile > `Sign in to Chrome`
-- Settings > You and Google > account name > `Choose what to save` > turn on `Extensions`
-- Change Chrome to the Default Browser
-- Log in 1PasswordX
-
-### ☁️ google-drive
-
-- Sign in and Sync
-
-### 🗂 Finder
-
-- Rearrange the order of the sidebar
-
-```txt
-Finder Sidebar
- ┣ 📂Favorites
- ┃ ┣ 🌏Google Drive(My Drive)
- ┃ ┣ 🏠$USER
- ┃ ┣ 🧙🏿‍♂️dotfiles
- ┃ ┣ 🍎Applications
- ┃ ┗ 📖Desktop
- ┗ 📂Locations
-```
-
-### 🚁 Raycast
-
-- Sign in
-
-### 🐟 VSCode
-
-- User Icon > Settings Sync > Login > `Merge`
-- Add MonokaiPro License
-
-### 🤖 Codex
-
-`~/.codex/config.toml` is not tracked by dotfiles. Until [openai/codex#14601](https://github.com/openai/codex/issues/14601) is resolved, Codex auto-writes machine-local state into this file (project `trust_level` with absolute paths, `model`, and more), making it unsuitable for version control. Following the [Codex configuration reference](https://developers.openai.com/codex/config-reference/#configtoml), set the TUI preference and block GitHub connector PR merges by hand. Restart Codex after saving:
-
-```toml
-# ~/.codex/config.toml
-[tui]
-alternate_screen = "always"
-
-# Merge PRs manually; do not let the agent perform merges
-[apps.github.tools."github.merge_pull_request"]
-enabled = false
-
-[apps.github.tools."github.enable_auto_merge"]
-enabled = false
-```
-
-### 🐘 TablePlus
-
-- TablePlus >  
-  Register license
-
-### 🐔 Slack
-
-- Sign in
+- Screen Saver settings
+- Security & Privacy
+  - FileVault  
+    Click the lock to make changes > Turn on
+- Time Machine settings
 
 ### 🫐 BLEUnlock
 
@@ -277,67 +74,6 @@ enabled = false
 - Check 'Pause "Now Playing" while Locked'
 - Check 'Use Screensaver to Lock'
 - Check 'Launch at Login'
-
-### 💻 System Preferences
-
-- **🌃 Desktop & Screen Saver**
-
-  - **Desktop**  
-    Select your favorite image
-  - **Screen Saver**  
-    Select "Brooklyn" (might need go Preferences > Security & Privacy > General >  
-    On the bottom side, select "Open Anyway")
-
-- **🌐 Language & Region**
-
-  - Add Japanese
-
-- **🛎 Notifications & Focus**
-
-  - Notifications
-
-    - **Calendar, Notion, Slack**  
-      Alert style: Alerts  
-      Show in Notification Centre  
-      Play sound for notification
-    - **Xcode**  
-      Banners
-
-  - Focus
-    - Uncheck "Share Focus Status"
-
-- **👤 Users & Groups**
-
-  - **Current User**  
-    Edit Profile photo
-
-- **🧚🏻‍♀️ Accessibility**
-
-  - **Spoken Content**  
-    Select and Download "Siri Voice 1(United Kingdom)"  
-    Adjust Speaking Rate
-
-- **👮🏻 Security & Privacy**
-
-  - **FileVault**  
-    Click the lock to make changes >  
-    Turn on
-
-- **⌨️ Keyboard**
-
-  - Candidate window
-    - Font size: 14
-    - Uncheck: Full-width numeral characters
-
-- **🖥 Displays**
-
-  - **Arrangement**  
-    Change "iPad display on left"
-
-### 📅 Calendar
-
-- Add Accounts
-- Add Calendar on Widgets
 
 ### 🐵 Blender
 
@@ -360,21 +96,11 @@ enabled = false
 
 ### 🍎 Xcode
 
-```shell
-sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-sudo xcodebuild -runFirstLaunch
-```
-
 - Add Account
 - Preferences > Themes >  
   Monokai Pro
 - Preferences > Navigation >  
   Command-click on Code: Jumps to definition
-
-### ⏱ Setup Time machine
-
-- Menu bar > Time machine >  
-  Backup
 
 <a id="customize"></a>
 
@@ -431,50 +157,6 @@ open ~/Library/Preferences/.GlobalPreferences.plist
   ln -nfs <New_linking_file> <Existing_linked_files>
   # example
   ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
-```
-
-<a id="forking"></a>
-
-## 🍴 Forking
-
-This repo is tuned for [nozomiishii](https://github.com/nozomiishii)'s personal setup, so the GitHub username, email, fixed paths, personal Homebrew tap, and scoped npm packages are hard-coded throughout.
-
-If you fork it, see [docs/forking.md](docs/forking.md) for the list of places to update.
-
-<a id="maintenance&dev"></a>
-
-## 👨🏻‍🏭 Maintenance & Dev
-
-### Maintenance
-
-Clean unused homebrew dependencies up, and upgrade them
-
-```shell
-make homebrew
-```
-
-Relink dotfiles after editing files under `home/`
-
-```shell
-make link
-```
-
-Reapply macOS system settings
-
-```shell
-make macos
-```
-
-### Dev
-
-```shell
-pnpm install
-```
-
-To use @prettier/ruby
-
-```shell
-gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 ```
 
 ## Check the performance of zsh
