@@ -393,10 +393,11 @@
   // ----------------------------------------------------------------
   // Ruby
   // ----------------------------------------------------------------
+  // rufo.exe は既定値の "rufo" のまま PATH から解決させる。
+  // .zprofile の mise activate --shims が ~/.local/share/mise/shims を PATH に入れる。
   "[ruby]": {
     "editor.defaultFormatter": "jnbt.vscode-rufo"
   },
-  "rufo.exe": "/Users/nozomiishii/.rbenv/shims/rufo",
 
   // ----------------------------------------------------------------
   // yaml

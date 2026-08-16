@@ -88,21 +88,6 @@ if OS.mac? && !ENV["CI"]
   # Bash Automated Testing System https://github.com/bats-core/bats-core
   brew "bats-core"
 
-  # ----------------------------------------------------------------
-  # Ruby
-  # ----------------------------------------------------------------
-  # Ruby version manager https://github.com/rbenv/rbenv#readme
-  brew "rbenv"
-
-  # Install various Ruby versions and implementations https://github.com/rbenv/ruby-build
-  brew "ruby-build"
-
-  # Cryptography and SSL/TLS Toolkit https://openssl.org/
-  brew "openssl"
-
-  # YAML Parser https://github.com/yaml/libyaml
-  brew "libyaml"
-
   # Dependency manager that installs and runs Swift command-line tool packages https://github.com/yonaskolb/Mint
   brew "mint"
 
