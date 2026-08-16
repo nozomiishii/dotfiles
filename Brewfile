@@ -58,9 +58,6 @@ if OS.mac? && !ENV["CI"]
   # GitHub command-line tool. https://github.com/cli/cli
   brew "gh"
 
-  # OpenTofu / Terraform / Terragrunt / Terramate / Atmos version manager https://tofuutils.github.io/tenv/
-  brew "tenv"
-
   # Password manager that keeps all passwords secure behind one password. https://1password.com
   cask "1Password"
 
