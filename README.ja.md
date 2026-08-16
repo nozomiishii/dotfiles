@@ -20,323 +20,60 @@
 </div>
 <br>
 
-## Gist
-
-忙しい？下のコマンドをそのまま実行してね;)
-
-```shell
-curl -fsSL https://dotfiles.nozo.sh | bash
-```
-
-<!-- <details>
-<summary>with full version of Brewfile</summary>
-
-```shell
-curl -fsSL https://dotfiles.nozo.sh | bash -s -- --full
-``` -->
-
-## 開発
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nozomiishii/dotfiles)
-
-## 目次
-
-- [📦 New Macbook? Awesome!!](#new-macbook?)
-  - [Install](#install)
-  - [Install Manually](#install-manually)
-  - [App preferences](#app-preferences)
-- [👨🏻‍🍳 Customize](#customize)
-- [🍴 Fork して使う](#forking)
-- [👨🏻‍🏭 Maintenance & Dev](#maintenance&dev)
-- [🔫 Troubleshooting](#troubleshooting)
-- [👼 Reinstall macOS](#reinstall-macos)
-- [🙌 References](#references)
-
-<a id="new-macbook?"></a>
-
 ## 📦 New Macbook? Awesome
 
-電源を入れたら、画面のガイドに沿って進めていきましょう
-
-- Full Name: Nozomi Ishii
-- Account name: nozomiishii
-
-⚠️ Apple ID のサインインはホーム画面が表示されるまでスキップしてください。少し時間がかかります。⚠️
-
-### SpotlightでApple IDを開く
-
-```txt
-  ⌘ + space Apple ID
-```
-
-ホーム画面が表示されたら、iCloud と App Store にサインインしてください。
-（App Store からアプリを手動でインストールするために必要です）
-
-💡 会社の PC で個人の Apple ID が使えない場合は、
-必要なら App Store から Xcode を手動でインストールしてください。
-
-### 🍎 Apple ID
-
-- プロフィール写真を設定しましょう
-
-- ☁️ iCloud
-
-  - Photos
-  - iCloud Drive
-  - Find My Mac
-  - Stocks
-
-### 🍏 App Store
-
-```txt
-  ⌘ + space App Store
-```
-
-- ログイン
-
-- 1Password for Safari
-- AdBlock Pro
-- Jump Desktop
-- Kindle
-- LINE
-- Obsidian Web Clipper
-- Remote Desktop
-- Video Speed Controller
-- Xcode（Apple プラットフォーム向けアプリを開発する場合のみ）
-
-<a id="install"></a>
-
-## Install
-
-だいたい 3 時間ほどかかります（ごはんを食べて、ひと眠りしましょう 🍕😪）
-
-### SpotlightでTerminalを開く
-
-```txt
-  ⌘ + space Terminal
-```
+### Install
 
 ```shell
 curl -fsSL https://dotfiles.nozo.sh | bash
 ```
 
--fsSL: -L は dotfiles.nozo.sh のリダイレクトを追跡, -f は HTTP エラーで中断 (壊れた応答を bash に渡さない), -sS は進捗を隠しつつエラーは表示。
+## インストール後の作業
 
-<a id="after-installation"></a>
-
-### インストール後の作業
+再起動
 
 ```shell
 sudo reboot
 ```
 
-#### Homebrew が中断された場合
+## 必須アプリの設定
 
-```shell
-make -C "$HOME/Code/nozomiishii/dotfiles" homebrew
-```
+- Raycast
+  - ⌘ spaceができるようにだけしとく。とりあえず移動をスムーズにしたい。ログインとかは別途する。
 
-#### 任意の常時起動設定
+- 1password
+  - Preferences > General > Keyboard shortcuts > show password: ⌥⌘X
 
-```shell
-make -C "$HOME/Code/nozomiishii/dotfiles" always-on
-```
+- Chrome
+- ChatGPT
+- Claude Code
+- Jump Desktop
 
-#### GitHub
-
-- [1Password を設定する](#1password-github)
+- Github loginとレポジトリダウンロード
 
 ```shell
 gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
 make -C "$HOME/Code/nozomiishii/dotfiles" repo
 ```
 
-<a id="install-manually"></a>
+## その他アプリの設定
 
-<details>
-<summary>手動でインストール</summary>
+### 💻 システム設定
 
-### Xcode Command Line Tools
-
-```shell
-xcode-select --install
-```
-
-### このページを開く
-
-```shell
-open https://nozomiishii.dev/dotfiles
-```
-
-### Clone
-
-```shell
-git clone https://github.com/nozomiishii/dotfiles.git ~/Code/nozomiishii/dotfiles
-cd "$HOME/Code/nozomiishii/dotfiles"
-```
-
-### Install
-
-```shell
-./install.sh
-```
-
-### 🛋 再起動
-
-```shell
-sudo reboot
-```
-
-その後、上の[インストール後の作業](#after-installation)の手順に進んでください。
-
-</details>
-
-<a id="app-preferences"></a>
-
-## アプリの設定
-
-<a id="1password-github"></a>
-
-### 🔑 1Password
-
-- サインインしてロックを解除
-- Preferences > Security > Unlock using >  
-  「Touch ID」にチェックを入れてください
-- Preferences > General > Keyboard shortcuts >  
-  自動入力のショートカット: `⌥⇧X`
-- Settings > Developer > `Use the SSH agent`
-- Settings > Developer > `Integrate with 1Password CLI`
-- `~/.config/1Password/ssh/agent.toml` を復元
-
-### 🌏 Chrome
-
-- 右上のプロフィール > `Chrome にログイン`
-- Settings > You and Google > アカウント名 > `保存する内容を選択` > `拡張機能`を有効化
-- Chrome をデフォルトブラウザに設定
-- 1PasswordX にログイン
-
-### ☁️ Google Drive
-
-- サインインして同期してください
-
-### 🗂 Finder
-
-- サイドバーの順序をお好みで並べ替えましょう
-
-```txt
-Finder Sidebar
- ┣ 📂Favorites
- ┃ ┣ 🌏Google Drive(My Drive)
- ┃ ┣ 🏠$USER
- ┃ ┣ 🧙🏿‍♂️dotfiles
- ┃ ┣ 🍎Applications
- ┃ ┗ 📖Desktop
- ┗ 📂Locations
-```
-
-### 🚁 Raycast
-
-- サインイン
-
-### 🐟 VSCode
-
-- User Icon > Settings Sync > Login > `Merge`
-- MonokaiPro のライセンスを追加してください
-
-### 🤖 Codex
-
-`~/.codex/config.toml` は dotfiles で管理しない。Codex が project の `trust_level`（絶対パス入り）や `model` などマシン固有の状態を自動追記し、[openai/codex#14601](https://github.com/openai/codex/issues/14601) が解消されるまでは version control に向かないため。[Codex の設定リファレンス](https://developers.openai.com/codex/config-reference/#configtoml)に従い、TUI 設定と GitHub connector の PR マージ禁止を手動で入れる。保存後は Codex を再起動する:
-
-```toml
-# ~/.codex/config.toml
-[tui]
-alternate_screen = "always"
-
-# PR のマージは手動で行い、agent に実行させない
-[apps.github.tools."github.merge_pull_request"]
-enabled = false
-
-[apps.github.tools."github.enable_auto_merge"]
-enabled = false
-```
-
-### 🐘 TablePlus
-
-- TablePlus >  
-  ライセンスを登録してください
-
-### 🐔 Slack
-
-- サインインしてください
+- スクリーンセーバーの設定
+- セキュリティとプライバシー
+  - FileVault  
+    鍵アイコンをクリックして変更を許可 > オン
+- Time Machineの設定
 
 ### 🫐 BLEUnlock
 
-- Device: お使いのデバイスを選択
+- Device: デバイスを選択
 - Unlock RSSI: -60dBm
 - Lock RSSI: -75dBm
 - 「Pause "Now Playing" while Locked」にチェック
 - 「Use Screensaver to Lock」にチェック
 - 「Launch at Login」にチェック
-
-### 💻 システム設定
-
-- 🌃 デスクトップとスクリーンセーバ
-
-  - デスクトップ  
-    お好きな画像を選んでください
-  - スクリーンセーバ  
-    「Brooklyn」を選択します（Security & Privacy > General で「このまま開く」が必要な場合があります）
-
-- 🌐 言語と地域
-
-  - 日本語を追加してください
-
-- 🛎 通知と集中モード
-
-  - 通知
-
-    - Calendar, Notion, Slack  
-      通知スタイル: 通知（Alerts）  
-      通知センターに表示  
-      通知音を鳴らす
-    - Xcode  
-      バナー
-
-  - 集中モード
-    - 「集中モード状況を共有」のチェックを外してください
-
-- 👤 ユーザとグループ
-
-  - 現在のユーザ  
-    プロフィール写真を設定しましょう
-
-- 🧚🏻‍♀️ アクセシビリティ
-
-  - 読み上げコンテンツ  
-    「Siri Voice 1(United Kingdom)」を選択してダウンロードしてください  
-    読み上げ速度もお好みで調整できます
-
-- 👮🏻 セキュリティとプライバシー
-
-  - FileVault  
-    鍵アイコンをクリックして変更を許可 >  
-    オンにしてください
-
-- ⌨️ キーボード
-
-  - 候補ウィンドウ
-    - フォントサイズ: 14
-    - 「全角数字」のチェックを外してください
-
-- 🖥 ディスプレイ
-
-  - 配置  
-    iPad のディスプレイを左側に変更します
-
-### 📅 カレンダー
-
-- アカウントを追加してください
-- ウィジェットにカレンダーを追加しましょう
 
 ### 🐵 Blender
 
@@ -359,21 +96,11 @@ enabled = false
 
 ### 🍎 Xcode
 
-```shell
-sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-sudo xcodebuild -runFirstLaunch
-```
-
 - アカウントを追加
 - Preferences > Themes >  
   Monokai Pro を選択
 - Preferences > Navigation >  
   Command-click on Code: Jumps to definition に変更
-
-### ⏱ Time Machine のセットアップ
-
-- メニューバー > Time Machine >  
-  バックアップを開始しましょう
 
 <a id="customize"></a>
 
@@ -430,50 +157,6 @@ open ~/Library/Preferences/.GlobalPreferences.plist
   ln -nfs <New_linking_file> <Existing_linked_files>
   # example
   ln -nfs "$HOME/Google Drive/Settings/dotfiles/zshrc" "$HOME/.zshrc"
-```
-
-<a id="forking"></a>
-
-## 🍴 Fork して使う
-
-このdotfilesは [nozomiishii](https://github.com/nozomiishii) の個人運用に最適化されており、GitHub アカウント名・メール・固定パス・個人 Homebrew tap・scoped npm package などが各所に直書きされている。
-
-fork して自分用に使う場合、書き換えが必要な箇所を [docs/forking.md](docs/forking.md) にまとめている。
-
-<a id="maintenance&dev"></a>
-
-## 👨🏻‍🏭 メンテナンス & 開発
-
-### メンテナンス
-
-使わなくなった Homebrew の依存パッケージを整理して、最新にアップグレードしましょう
-
-```shell
-make homebrew
-```
-
-`home/` 配下のファイルを編集したら symlink を張り直しましょう
-
-```shell
-make link
-```
-
-macOS のシステム設定を再適用するには
-
-```shell
-make macos
-```
-
-### 開発
-
-```shell
-pnpm install
-```
-
-@prettier/ruby を使うには
-
-```shell
-gem install bundler prettier_print syntax_tree syntax_tree-haml syntax_tree-rbs
 ```
 
 ## zsh のパフォーマンスを確認
@@ -553,9 +236,3 @@ for x in {1..10}; do time zsh -i -c exit; done
 ### dotfiles を管理しているもの
 
 - [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle)
-
-## ライセンス
-
-MIT License
-
-© 2021 Nozomi Ishii
