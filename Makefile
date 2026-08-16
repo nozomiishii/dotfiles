@@ -20,7 +20,6 @@ always-on: ## Configure always-on services
 toolchains: ## Set up language toolchains
 	bash ./scripts/toolchains/mise.sh
 	bash ./scripts/toolchains/claude-code.sh
-	bash ./scripts/toolchains/node.sh
 	bash ./scripts/toolchains/ruby.sh
 	bash ./scripts/toolchains/rust.sh
 	bash ./scripts/toolchains/pm.sh

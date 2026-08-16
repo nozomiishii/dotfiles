@@ -107,12 +107,6 @@ if OS.mac? && !ENV["CI"]
   brew "mint"
 
   # ----------------------------------------------------------------
-  # Node
-  # ----------------------------------------------------------------
-  # Fast Node Manager https://github.com/Schniz/fnm
-  brew "fnm"
-
-  # ----------------------------------------------------------------
   # Go
   # ----------------------------------------------------------------
   # Open source programming language to build simple/reliable/efficient software https://go.dev/

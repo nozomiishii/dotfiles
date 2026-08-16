@@ -84,11 +84,6 @@ if command -v direnv >/dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-# Node(fnm)
-if command -v fnm >/dev/null; then
-  eval "$(fnm env --use-on-cd --shell zsh)"
-fi
-
 # Ruby
 if command -v rbenv >/dev/null; then
   eval "$(rbenv init -)"
