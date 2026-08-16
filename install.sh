@@ -189,7 +189,6 @@ if [[ "$OS_NAME" == "Darwin" ]]; then
   bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/mise.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
   bash "$SCRIPT_DIR/scripts/default_apps.sh"
@@ -205,7 +204,6 @@ if [[ "$OS_NAME" == "Linux" ]]; then
   bash "$SCRIPT_DIR/scripts/symlink.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/mise.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/ruby.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/rust.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
   bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
 fi
