@@ -13,13 +13,6 @@
   "workbench.panel.defaultLocation": "right",
 
   // ----------------------------------------------------------------
-  // dotfiles
-  // ----------------------------------------------------------------
-  "dotfiles.repository": "nozomiishii/dotfiles",
-  "dotfiles.targetPath": "~/Code/nozomiishii/dotfiles",
-  "dotfiles.installCommand": "install.sh",
-
-  // ----------------------------------------------------------------
   // vscode project manager
   // ----------------------------------------------------------------
   "projectManager.projectsLocation": "~/Code/nozomiishii/infra",

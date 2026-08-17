@@ -1,6 +1,6 @@
 # Repository Guidelines
 
-macOS と Linux で開発環境のセットアップを自動化する dotfiles リポジトリ。`home/` 内の dotfiles は [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html) で `~` にシンボリックリンクされる。
+macOS の開発環境セットアップを自動化する dotfiles リポジトリ。`home/` 内の dotfiles は [GNU Stow](https://www.gnu.org/software/stow/manual/stow.html) で `~` にシンボリックリンクされる。
 
 ## 設定の更新
 - `~/` 配下のファイルを新規作成・編集する前に、まず `home/` に対応するソースがないか確認し、あればそちらを編集すること

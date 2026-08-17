@@ -14,13 +14,17 @@
 #               - Uncomment this option to debug the script.
 set -Ceuo pipefail
 
+if [[ "$(uname -s)" != "Darwin" ]]; then
+  echo "Error: This dotfiles installer supports macOS only." >&2
+  exit 1
+fi
+
 # Ensure UTF-8 encoding for special characters
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
 DOTFILES_REPO="https://github.com/nozomiishii/dotfiles.git"
 DOTFILES_DIR="${DOTFILES_DIR:-$HOME/Code/nozomiishii/dotfiles}"
-OS_NAME="$(uname -s)"
 
 # この placeholder があると softwareupdate -l が CLT をアップデート対象として列挙する
 CLT_PLACEHOLDER="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
@@ -174,37 +178,23 @@ printf '%s\n' \
   ""
 echo -e "${reset}"
 
-if [[ "$OS_NAME" == "Darwin" ]]; then
-  # 人間の操作 (パスワード入力・TCC ダイアログ) を先頭に集約する。
-  # ensure_xcode_clt は sudo を使い、CLT のダウンロードに数十分かかることがあるため、
-  # NOPASSWD sudoers を先に確立してからヘッドレスで走らせる
-  request_admin_privileges
-  request_documents_access
-  ensure_xcode_clt
-  clone_dotfiles_repo
-  bash "$SCRIPT_DIR/scripts/nix.sh"
-  bash "$SCRIPT_DIR/scripts/homebrew.sh"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  bash "$SCRIPT_DIR/scripts/symlink.sh"
-  bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/mise.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
-  bash "$SCRIPT_DIR/scripts/default_apps.sh"
-  bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
-fi
-
-if [[ "$OS_NAME" == "Linux" ]]; then
-  clone_dotfiles_repo
-  bash "$SCRIPT_DIR/scripts/nix.sh"
-  bash "$SCRIPT_DIR/scripts/zsh.sh"
-  bash "$SCRIPT_DIR/scripts/homebrew.sh"
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  bash "$SCRIPT_DIR/scripts/symlink.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/mise.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
-  bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
-fi
+# 人間の操作 (パスワード入力・TCC ダイアログ) を先頭に集約する。
+# ensure_xcode_clt は sudo を使い、CLT のダウンロードに数十分かかることがあるため、
+# NOPASSWD sudoers を先に確立してからヘッドレスで走らせる
+request_admin_privileges
+request_documents_access
+ensure_xcode_clt
+clone_dotfiles_repo
+bash "$SCRIPT_DIR/scripts/nix.sh"
+bash "$SCRIPT_DIR/scripts/homebrew.sh"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+bash "$SCRIPT_DIR/scripts/symlink.sh"
+bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
+bash "$SCRIPT_DIR/scripts/toolchains/mise.sh"
+bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
+bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
+bash "$SCRIPT_DIR/scripts/default_apps.sh"
+bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
 
 echo -e "${yellow}"
 printf '%s\n' \
