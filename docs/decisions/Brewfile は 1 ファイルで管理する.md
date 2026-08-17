@@ -10,7 +10,7 @@ Brewfile と Brewfile.optional の 2 ファイル構成では、cleanup の「�
 ## Decision — 決めたこと
 
 - Brewfile.optional の内容を Brewfile に統合し、`HOMEBREW_BUNDLE_INCLUDE_OPTIONAL` を廃止する
-- macOS ローカル向けパッケージは `if OS.mac? && !ENV["CI"]` に置き、CI（Linux / macOS runner）では入れない
+- macOS ローカル向けパッケージは `if OS.mac? && !ENV["CI"]` に置き、CI では入れない
 - TODO にあった「重要と後からインストールで分ける」案は採用しない
 
 ## Consequences — 決定がもたらすもの

@@ -1,15 +1,5 @@
-OS_NAME="$(uname -s)"
-
 # Homebrew
-homebrew() {
-  if [[ "$OS_NAME" == "Darwin" ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
-  if [[ "$OS_NAME" == "Linux" ]]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  fi
-}
-homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # lang
 export LANG="en_US.UTF-8"

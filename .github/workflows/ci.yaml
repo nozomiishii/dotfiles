@@ -30,13 +30,10 @@ permissions: {}
 
 jobs:
   install:
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
     timeout-minutes: 40
     permissions:
       contents: read  # required by actions/checkout to fetch repository code
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest]
 
     steps:
       - name: Get code

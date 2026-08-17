@@ -8,8 +8,12 @@
 # -x          : (Optional) Enable command tracing for easier debugging
 set -Ceuo pipefail
 
+if [[ "$(uname -s)" != "Darwin" ]]; then
+  echo "Error: scripts/homebrew.sh supports macOS only." >&2
+  exit 1
+fi
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-OS_NAME="$(uname -s)"
 
 # CI 環境でのみ brew link の競合を修復する。
 # GitHub Actions の macOS ランナーはイメージビルド時に Homebrew パッケージを
@@ -42,30 +46,17 @@ trust_brew_bundle_formulae() {
     nozomiishii/tap/brooklyn
 }
 
-if [[ "$OS_NAME" == "Darwin" ]]; then
-  if ! command -v brew >/dev/null 2>&1; then
-    echo -e "🍺 Installing Homebrew for Apple Silicon"
-    sudo softwareupdate --install-rosetta --agree-to-license
-    NONINTERACTIVE=1 \
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  else
-    echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
-    brew update --force --quiet
-    brew upgrade --quiet || { fix_brew_link_conflicts && brew upgrade --quiet; }
-  fi
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [[ "${OS_NAME}" == "Linux" ]]; then
-  if ! command -v brew >/dev/null 2>&1; then
-    echo -e "🍺 Installing Homebrew for ${OS_NAME}"
-    NONINTERACTIVE=1 \
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  else
-    echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
-    brew update --force --quiet
-    brew upgrade --quiet || { fix_brew_link_conflicts && brew upgrade --quiet; }
-  fi
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if ! command -v brew >/dev/null 2>&1; then
+  echo -e "🍺 Installing Homebrew for Apple Silicon"
+  sudo softwareupdate --install-rosetta --agree-to-license
+  NONINTERACTIVE=1 \
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo -e "🍺 Homebrew already installed — updating Homebrew and installed packages"
+  brew update --force --quiet
+  brew upgrade --quiet || { fix_brew_link_conflicts && brew upgrade --quiet; }
 fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 trust_brew_bundle_formulae
 
