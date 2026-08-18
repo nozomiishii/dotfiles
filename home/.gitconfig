@@ -4,8 +4,6 @@ email = nozomiishii.jp@gmail.com
 signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDF31h4ogJY+JRiI+k0+aLoO/OTnEI1FCmyvA1LWXOqB
 
 [core]
-# dev container内にnvim入れて初回起動遅くなるの懸念
-# editor = nvim
 # ファイル名の大文字小文字を区別
 ignorecase = false
 # 日本語ファイル表示 (非 ASCII ファイル名をエスケープせず生表示)
@@ -79,7 +77,3 @@ program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 # 全 commit を自動署名
 gpgsign = true
-
-[alias]
-# git-harvest コマンドへのショートカット
-harvest = !git-harvest
