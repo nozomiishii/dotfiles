@@ -85,6 +85,12 @@ if command -v direnv >/dev/null; then
 fi
 
 # mise
+# activate が設定するのは env と PATH だけ。補完は別途読み込む必要がある。
+# 生成される補完スクリプトは末尾で compdef を呼ぶので、compinit 済みならここで source すれば効く。
+# 補完の実行には usage CLI が要る (~/.config/mise/config.toml で導入)。
+# https://mise.jdx.dev/installing-mise.html#autocompletion
 if command -v mise >/dev/null; then
   eval "$(mise activate zsh)"
+  # shellcheck source=/dev/null
+  source <(mise completion zsh)
 fi
