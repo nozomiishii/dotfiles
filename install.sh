@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 
-# -C          : Prevent overwriting existing files when redirecting output.
-#               - Helps to avoid accidentally overwriting files when using
-#                 redirection operators like > or >> in the script.
-# -e          : Exit the script if any command returns a non-zero status.
-#               - Ensures the script stops on the first error encountered.
-# -u          : Exit the script if an undefined variable is used.
-#               - Prevents running commands with unintended variables.
-# -o pipefail : Change pipeline exit status to the last non-zero exit code
-#               in the pipeline, or zero if all commands succeed.
-#               - Ensures proper error handling in pipelines.
-# -x          : (Optional) Enable command tracing for easier debugging.
-#               - Uncomment this option to debug the script.
+# エラー・未定義変数・パイプラインの失敗で終了し、リダイレクトによる上書きを防ぐ
 set -Ceuo pipefail
 
 if [[ "$(uname -s)" != "Darwin" ]]; then
