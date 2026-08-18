@@ -12,10 +12,6 @@ homebrew: ## Install/update Homebrew packages
 macos: ## Configure macOS settings
 	bash ./scripts/darwin/macos.sh
 
-.PHONY: always-on
-always-on: ## Configure always-on services
-	bash ./scripts/darwin/always_on.sh
-
 .PHONY: toolchains
 toolchains: ## Set up language toolchains
 	bash ./scripts/toolchains/mise.sh
