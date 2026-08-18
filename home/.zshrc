@@ -87,4 +87,7 @@ fi
 # mise
 if command -v mise >/dev/null; then
   eval "$(mise activate zsh)"
+  # https://mise.jdx.dev/installing-mise.html#autocompletion
+  # shellcheck source=/dev/null
+  source <(mise completion zsh)
 fi
