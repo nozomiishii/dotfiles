@@ -12,8 +12,7 @@ ruby = "4.0.6"
 "npm:@antfu/ni" = "30.5.0"
 # Brewfile のフォーマッタ。VS Code の ruby 拡張が Brewfile を Ruby 扱いにするため必要
 "gem:rufo" = "0.18.2"
-# mise の zsh 補完が内部で呼ぶ CLI。無いとタブを押した時点でエラーになる
-# https://mise.jdx.dev/installing-mise.html#autocompletion
+# mise の zsh 補完用
 usage = "5.1.0"
 
 # precompiled バイナリだけを使い、ruby-build でのソースビルドには落とさない。
