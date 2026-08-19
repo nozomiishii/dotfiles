@@ -58,6 +58,9 @@ if OS.mac? && !ENV["CI"]
   # GitHub command-line tool. https://github.com/cli/cli
   brew "gh"
 
+  # Send clickable macOS notifications from the command line https://github.com/julienXX/terminal-notifier
+  brew "terminal-notifier"
+
   # Password manager that keeps all passwords secure behind one password. https://1password.com
   cask "1Password"
 
@@ -148,7 +151,7 @@ if OS.mac? && !ENV["CI"]
   # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
   brew "smudge/smudge/nightlight"
 
-  # File change monitor used by the Downloads -> Desktop LaunchAgent https://github.com/emcrisostomo/fswatch
+  # File change monitor used by local LaunchAgents https://github.com/emcrisostomo/fswatch
   brew "fswatch"
 
   # Generate your Xcode project from a spec file and your folder structure https://github.com/yonaskolb/XcodeGen

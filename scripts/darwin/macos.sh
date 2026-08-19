@@ -288,6 +288,16 @@ launchctl bootout "gui/$UID" "$local_d2d_plist" 2>/dev/null || true
 launchctl bootstrap "gui/$UID" "$local_d2d_plist"
 
 # ----------------------------------------------------------------
+# Raycast backup
+# ----------------------------------------------------------------
+# 手動 export を fswatch で検知し、dotfiles 更新 PR と結果通知を作る
+echo "- 💾 Raycast backup"
+
+local_raycast_backup_plist="$HOME/Library/LaunchAgents/local.raycast-backup.plist"
+launchctl bootout "gui/$UID" "$local_raycast_backup_plist" 2>/dev/null || true
+launchctl bootstrap "gui/$UID" "$local_raycast_backup_plist"
+
+# ----------------------------------------------------------------
 # Network
 # ----------------------------------------------------------------
 echo "- 📡 Network"
