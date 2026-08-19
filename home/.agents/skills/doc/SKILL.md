@@ -16,7 +16,7 @@ description: >-
 
 ## 文章ガイドライン
 
-AGENTS.md・CLAUDE.md・skill・docs・brain ノートに共通。
+AGENTS.md・CLAUDE.md・skill・docs・brain ノート・コード内コメント・PR / issue 本文に共通。
 
 - 読み手は未来の自分と AI エージェント。文章の完成度より、鮮度と見つけやすさを優先する
 - 書く・編集する前に[エンジニア特有の言い回しに染まらないための言葉遣いメモ](https://github.com/nozomiishii/brain/blob/main/brain/main/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E7%89%B9%E6%9C%89%E3%81%AE%E8%A8%80%E3%81%84%E5%9B%9E%E3%81%97%E3%81%AB%E6%9F%93%E3%81%BE%E3%82%89%E3%81%AA%E3%81%84%E3%81%9F%E3%82%81%E3%81%AE%E8%A8%80%E8%91%89%E9%81%A3%E3%81%84%E3%83%A1%E3%83%A2.md)を読み、避けたい表現を使わない
