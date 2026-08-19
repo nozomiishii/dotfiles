@@ -1,18 +1,43 @@
+---
+status: accepted
+date: 2026-07-24
+---
+
 # スキルはドキュメントの TDD で作る
 
-Status: accepted
-Date: 2026-07-24
+## 背景と課題
 
-## Context — 判断を迫られた状況
+superpowers plugin を削除した際、14 スキル中 13 個は built-in 機能・自作スキル・AGENTS.md ルールでカバーできたが、writing-skills の方法論だけは CLAUDE.md では表現しきれなかった。議論の経緯は [#1292](https://github.com/nozomiishii/dotfiles/issues/1292)。
 
-superpowers plugin を削除した際、14 スキル中 13 個は built-in 機能・自作スキル・AGENTS.md ルールでカバーできたが、writing-skills の方法論だけは CLAUDE.md では表現しきれなかった。superpowers 版は英語・太字・手順番号で書かれており、文書規約ともそのままでは合わない。議論の経緯は [#1292](https://github.com/nozomiishii/dotfiles/issues/1292)。
+## 検討した選択肢
 
-## Decision — 決めたこと
+- CLAUDE.md のルールで代替する: 14 スキル中 13 個はこれで足りた。writing-skills の方法論は表現しきれない
+- superpowers 版をそのまま残す: 英語・太字・手順番号で書かれており、文書規約とそのままでは合わない
+- 方法論だけを抽出して自作スキルにする: 文書規約に沿った形で書き直せる
 
-- スキル(SKILL.md)の新規作成・編集はドキュメントの TDD で行う。スキルなしで subagent が失敗するのを見てから書き(RED)、失敗に対する最小限を書き(GREEN)、読ませて直るのを確認してから確定する(REFACTOR)
-- superpowers からは方法論だけを抽出し、AGENTS.md の文書規約(日本語・太字なし・手順番号なし)に沿った自作スキル /skill として再構築する
+## 決定
 
-## Consequences — 決定がもたらすもの
+スキル (SKILL.md) の新規作成・編集はドキュメントの TDD で行う。
 
-- 1 行の編集でもテストを経ずにスキルを確定できない。書くコストは上がるが、読まれないスキル・効かないスキルを作るコストが消える
+```text
+RED       スキルなしで subagent が失敗するのを見る
+GREEN     失敗に対する最小限を書く
+REFACTOR  読ませて直るのを確認して確定する
+```
+
+superpowers からは方法論だけを抽出し、AGENTS.md の文書規約 (日本語・太字なし・手順番号なし) に沿った自作スキル /skill として再構築する。
+
+## 結果
+
+### 良くなったこと
+
+- 読まれないスキル・効かないスキルを作るコストが消える
 - 手順の正本は skill スキルが持つ
+
+### 引き受けたコスト
+
+- 1 行の編集でもテストを経ずにスキルを確定できない。書くコストは上がる
+
+### 保留した論点
+
+なし
