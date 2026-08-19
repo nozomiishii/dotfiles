@@ -402,6 +402,11 @@
   "redhat.telemetry.enabled": true,
 
   // ----------------------------------------------------------------
+  // mise
+  // ----------------------------------------------------------------
+  "mise.binPath": "~/.local/bin/mise",
+
+  // ----------------------------------------------------------------
   // Extensions
   // ----------------------------------------------------------------
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
