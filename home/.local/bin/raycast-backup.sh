@@ -3,8 +3,10 @@
 # 常駐 watcher のため errexit は付けず、1 回の失敗で止めない (PR 作成側は set -Ceu)。
 set -uo pipefail
 
-export_dir="${RAYCAST_EXPORT_DIR:-$HOME/.config/raycast/backup}"
+# バックアップの置き場。repo 相対 (worktree でのコミット先) と、stow で ~ に現れる
+# 絶対パス (Raycast export の監視先) の 2 形態で使う。
 backup_rel="home/.config/raycast/backup"
+export_dir="${RAYCAST_EXPORT_DIR:-$HOME/${backup_rel#home/}}"
 fixed_name="Raycast.rayconfig"
 seen_files=$'\n'
 
