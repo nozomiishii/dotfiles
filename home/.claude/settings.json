@@ -108,6 +108,19 @@
     "defaultMode": "auto"
   },
   "enabledMcpjsonServers": [],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.local/bin/pr-title-guard.sh"
+          }
+        ]
+      }
+    ]
+  },
   "worktree": {
     "bgIsolation": "none"
   },
