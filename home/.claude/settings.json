@@ -115,7 +115,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.local/bin/pr-title-guard.sh"
+            "command": "~/.agents/hooks/pr-title-guard.mjs"
           }
         ]
       }

@@ -15,14 +15,9 @@ mkdir -p ~/.codex
 cp home/AGENTS.md ~/.codex/AGENTS.md
 cp home/.codex/hooks.json ~/.codex/hooks.json
 
-# hooks から呼ぶスクリプト (Claude Code / Codex の PreToolUse が同じ実体を指す)
-mkdir -p ~/.local/bin
-cp home/.local/bin/pr-title-guard.sh ~/.local/bin/pr-title-guard.sh
-chmod +x ~/.local/bin/pr-title-guard.sh
-
-# Skills
-mkdir -p ~/.agents/skills ~/.claude/skills
-cp -R home/.agents/skills/. ~/.agents/skills/
+# Agents (skills / hooks)。tar が実行権限を保つので chmod は不要。
+mkdir -p ~/.agents ~/.claude/skills
+cp -R home/.agents/. ~/.agents/
 cp -R home/.agents/skills/. ~/.claude/skills/
 
 # direnv (.envrc のある repo で `direnv exec . <コマンド>` を使うのに必要)

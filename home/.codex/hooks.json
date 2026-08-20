@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"$HOME/.local/bin/pr-title-guard.sh\"",
+            "command": "\"$HOME/.agents/hooks/pr-title-guard.mjs\"",
             "statusMessage": "Checking PR title"
           }
         ]
