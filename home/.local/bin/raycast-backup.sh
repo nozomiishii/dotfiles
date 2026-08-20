@@ -3,10 +3,7 @@
 # 常駐 watcher のため errexit は付けず、1 回の失敗で止めない (PR 作成側は set -Ceu)。
 set -uo pipefail
 
-# バックアップの置き場。repo 相対 (worktree でのコミット先) と、stow で ~ に現れる
-# 絶対パス (Raycast export の監視先) の 2 形態で使う。
 backup_rel="home/.config/raycast/backup"
-export_dir="${RAYCAST_EXPORT_DIR:-$HOME/${backup_rel#home/}}"
 fixed_name="Raycast.rayconfig"
 seen_files=$'\n'
 
@@ -18,6 +15,9 @@ while [ -L "$src" ]; do
   [ "${src#/}" = "$src" ] && src="$dir/$src"
 done
 repo_root="$(cd -P "$(dirname "$src")/../../.." && pwd)"
+
+# export の保存先 = repo 内のバックアップディレクトリ。ここを監視する。
+export_dir="${RAYCAST_EXPORT_DIR:-$repo_root/$backup_rel}"
 
 notify() {
   local status="$1" message="$2" url="${3:-}" sound="Basso"
@@ -129,7 +129,7 @@ handle_export() {
   local candidate="$1" name="${1##*/}" identity dev inode file_key result url
 
   # 対象は export 先ディレクトリ直下の *.rayconfig のみ。
-  # 固定名は stow でリンクされたバックアップ実体なので、再処理しない。
+  # 固定名はコミット済みバックアップの実体なので、再処理しない (git pull での更新を含む)。
   [ "${candidate%/*}" = "${export_dir%/}" ] || return 0
   case "$name" in *.rayconfig) ;; *) return 0 ;; esac
   [ "$name" != "$fixed_name" ] || return 0
