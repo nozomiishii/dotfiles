@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.raycast-backup</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-l</string>
+    <string>-c</string>
+    <!-- Homebrew PATH と $HOME をログインシェルで解決する -->
+    <string>exec "$HOME/.local/bin/raycast-backup.sh"</string>
+  </array>
+
+  <!-- ログイン時に監視を開始し、fswatch が異常終了した場合だけ再起動する -->
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <dict>
+    <!-- 依存不足など終了コード0の設定エラーは通知後に再起動しない -->
+    <key>SuccessfulExit</key>
+    <false/>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/raycast-backup.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/raycast-backup.log</string>
+</dict>
+</plist>
