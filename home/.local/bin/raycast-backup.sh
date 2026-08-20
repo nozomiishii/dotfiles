@@ -3,6 +3,8 @@
 # 常駐 watcher のため errexit は付けず、1 回の失敗で止めない (PR 作成側は set -Ceu)。
 set -uo pipefail
 
+# export の受け口。処理後に消える一時置き場で、コミット済みの実体は置かない。
+export_dir="${RAYCAST_EXPORT_DIR:-$HOME/Desktop}"
 backup_rel="home/.config/raycast/backup"
 fixed_name="Raycast.rayconfig"
 seen_files=$'\n'
@@ -15,9 +17,6 @@ while [ -L "$src" ]; do
   [ "${src#/}" = "$src" ] && src="$dir/$src"
 done
 repo_root="$(cd -P "$(dirname "$src")/../../.." && pwd)"
-
-# export の保存先 = repo 内のバックアップディレクトリ。ここを監視する。
-export_dir="${RAYCAST_EXPORT_DIR:-$repo_root/$backup_rel}"
 
 notify() {
   local status="$1" message="$2" url="${3:-}" sound="Basso"
@@ -128,8 +127,8 @@ create_pr() (
 handle_export() {
   local candidate="$1" name="${1##*/}" identity dev inode file_key result url
 
-  # 対象は export 先ディレクトリ直下の *.rayconfig のみ。
-  # 固定名はコミット済みバックアップの実体なので、再処理しない (git pull での更新を含む)。
+  # 対象は受け口ディレクトリ直下の *.rayconfig のみ。
+  # 固定名は repo にコミット済みの実体。監視先が実体と同居しても再処理しない。
   [ "${candidate%/*}" = "${export_dir%/}" ] || return 0
   case "$name" in *.rayconfig) ;; *) return 0 ;; esac
   [ "$name" != "$fixed_name" ] || return 0
@@ -174,7 +173,7 @@ for command_name in fswatch terminal-notifier gh git; do
 done
 
 mkdir -p "$export_dir"
-fswatch -r -0 --event Created --event MovedTo --event Renamed "$export_dir" |
+fswatch -0 --event Created --event MovedTo --event Renamed "$export_dir" |
   while IFS= read -r -d '' event_path; do
     handle_export "$event_path"
   done
