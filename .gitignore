@@ -30,3 +30,8 @@ home/.codex/config.toml
 
 # SuperWhisper regenerates this on launch — let the app own it
 home/Documents/superwhisper/modes/default.json
+
+# Raycast は extensions/ ai/ などをランタイムに作る。管理対象は backup と scripts だけ
+home/.config/raycast/*
+!home/.config/raycast/backup/
+!home/.config/raycast/scripts/
