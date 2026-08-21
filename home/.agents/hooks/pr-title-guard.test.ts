@@ -47,12 +47,12 @@ describe("extractTitle", () => {
 
   // = で繋ぐ形式も gh が受け付ける
   test("reads --title= form", () => {
-    expect(extractTitle("gh pr create --title=chore:add-x")).toBe("chore:add-x");
+    expect(extractTitle('gh pr create --title="chore: add x"')).toBe("chore: add x");
   });
 
-  // クォート無しの値は次の空白までが値
-  test("reads an unquoted value", () => {
-    expect(extractTitle("gh pr create --title chore:add-x --body b")).toBe("chore:add-x");
+  // PR タイトルは空白を含むため必ずクォートされる。クォート無しは拾わず CI に委ねる
+  test("returns null for an unquoted value", () => {
+    expect(extractTitle("gh pr create --title chore:add-x")).toBeNull();
   });
 
   // 他のフラグが先に来てもタイトルを取り違えない

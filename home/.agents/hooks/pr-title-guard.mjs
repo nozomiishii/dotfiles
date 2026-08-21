@@ -21,21 +21,14 @@ export function isPrTitleCommand(command) {
   return PR_TITLE_COMMAND.test(command);
 }
 
-/** --title=<v> / --title <v> / -t <v> の値を、クォートを解いて取り出す。 */
+/**
+ * gh に渡されたタイトルを取り出す。PR タイトルは空白を含むため必ずクォートされる。
+ * クォート無しの値は拾わず素通りさせ、後段の CI に委ねる。
+ */
 export function extractTitle(command) {
-  const assigned = command.match(/--title=(.+)/);
-  if (assigned) return unquote(assigned[1]);
-
-  // --template の中の -t を短縮形と読まないよう、フラグの前後を区切りで固定する。
-  const flagged = command.match(/(?:^|\s)(?:--title|-t)\s+(.+)/);
-  if (!flagged) return null;
-  return unquote(flagged[1]);
-}
-
-/** 先頭がクォートならその閉じまで、そうでなければ次の空白までを値とする。 */
-function unquote(value) {
-  const quoted = value.match(/^(["'])([\s\S]*?)\1/);
-  return quoted ? quoted[2] : value.split(/\s/)[0];
+  // --template の中の -t を短縮形と読まないよう、-t の前後を区切りで固定する。
+  const matched = command.match(/(?:--title[= ]|(?:^|\s)-t )\s*(["'])([\s\S]*?)\1/);
+  return matched ? matched[2] : null;
 }
 
 function isExecutable(path) {
