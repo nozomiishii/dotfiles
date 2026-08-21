@@ -41,7 +41,7 @@ jobs:
           tar czf _site/cloud-setup.tar.gz \
             home/AGENTS.md \
             home/.claude/settings.json \
-            home/.agents/skills/ \
+            home/.agents/ \
             home/.codex/hooks.json
 
       - name: Upload pages artifact

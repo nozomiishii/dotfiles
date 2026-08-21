@@ -15,9 +15,9 @@ mkdir -p ~/.codex
 cp home/AGENTS.md ~/.codex/AGENTS.md
 cp home/.codex/hooks.json ~/.codex/hooks.json
 
-# Skills
-mkdir -p ~/.agents/skills ~/.claude/skills
-cp -R home/.agents/skills/. ~/.agents/skills/
+# Agents (skills / hooks)
+mkdir -p ~/.agents ~/.claude/skills
+cp -R home/.agents/. ~/.agents/
 cp -R home/.agents/skills/. ~/.claude/skills/
 
 # direnv (.envrc のある repo で `direnv exec . <コマンド>` を使うのに必要)

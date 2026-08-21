@@ -53,7 +53,7 @@
 ## コミットと PR
 - 指定がなければ、PR 本文は日本語で書く。
 - 明示的な指定なしに Draft PR を作らない。
-- 指定がなければ、PR タイトルは、commitlintに従う。
+- 指定がなければ、PR タイトルは repo の commitlint 設定に従う。
 - PR に依頼と無関係な変更を混ぜない。
 - merge手順が発生する場合、GitHub Stacked PRを使う。
 
