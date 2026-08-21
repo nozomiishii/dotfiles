@@ -31,6 +31,7 @@ runtime_dirs=(
   "$HOME/.claude"
   "$HOME/.codex"
   "$HOME/.config"
+  "$HOME/.config/raycast"
   "$HOME/.local/bin"
   "$HOME/.ssh"
   "$HOME/Documents/superwhisper/modes"
