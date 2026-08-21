@@ -15,7 +15,7 @@ mkdir -p ~/.codex
 cp home/AGENTS.md ~/.codex/AGENTS.md
 cp home/.codex/hooks.json ~/.codex/hooks.json
 
-# Agents (skills / hooks)。tar が実行権限を保つので chmod は不要。
+# Agents (skills / hooks)
 mkdir -p ~/.agents ~/.claude/skills
 cp -R home/.agents/. ~/.agents/
 cp -R home/.agents/skills/. ~/.claude/skills/
