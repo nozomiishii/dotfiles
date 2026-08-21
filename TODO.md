@@ -1,18 +1,6 @@
 # TODO
 
-- ghq 入れる
-  - https://zenn.dev/mozumasu/articles/mozumasu-lazy-git#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%81%AB%E3%82%B5%E3%82%AF%E3%83%83%E3%81%A8%E7%A7%BB%E5%8B%95(ghq%2C-fzf)
-- codespace で 1password が動く
-- dev container での認証保持。毎回認証したくない
-  - gh
-  - 1password
-  - claude
 - homebrew が常に latest をとってきてるせいで`make homebrew`でなんも変更入れてないのに
 - node 環境じゃなくても動くようにする。postinstall が落ちる
   - image かえる
 - markdownlint 差し替える
-- ts で設定書いてバイナリで実行できるようにする。もしくは install.sh を適切に分割する
-- toolchain の整理
-  - 各 Dockerfile 用意しておくとかでいい気がしてる
-- Planを元にPRを作成する。
-　- PR名はConventional Commitsに作成し、英語で作成する。
