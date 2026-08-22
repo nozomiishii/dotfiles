@@ -44,7 +44,7 @@ brew "fzf"
 if OS.mac? && !ENV["CI"]
   # Apple Brooklyn event inspired screen saver for Apple Silicon https://github.com/nozomiishii/Brooklyn
   tap "nozomiishii/tap"
-  cask "nozomiishii/tap/brooklyn"
+  cask "nozomiishii/tap/brooklyn", trusted: true
 
   # ----------------------------------------------------------------
   # FIXME: 以下も入れたいけど, dev containerに入れようとするとエラーになる
@@ -149,7 +149,7 @@ if OS.mac? && !ENV["CI"]
   brew "duti"
 
   # A CLI for configuring 'Night Shift' on macOS https://github.com/smudge/nightlight
-  brew "smudge/smudge/nightlight"
+  brew "smudge/smudge/nightlight", trusted: true
 
   # File change monitor used by local LaunchAgents https://github.com/emcrisostomo/fswatch
   brew "fswatch"
@@ -167,7 +167,7 @@ if OS.mac? && !ENV["CI"]
   brew "grpcurl"
 
   # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
-  brew "stripe/stripe-cli/stripe"
+  brew "stripe/stripe-cli/stripe", trusted: true
 
   # Official Amazon AWS command-line interface https://aws.amazon.com/cli/
   brew "awscli"
@@ -216,6 +216,9 @@ if OS.mac? && !ENV["CI"]
 
   # Native GUI tool for relational databases https://tableplus.com/
   cask "tableplus"
+
+  # SSH client https://www.termius.com/
+  cask "termius"
 
   # Open-source code editor. https://code.visualstudio.com
   cask "visual-studio-code"
