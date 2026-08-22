@@ -1,0 +1,5 @@
+# devcontainer のビルドに要るのは mise の宣言だけ。
+# context へ repo 全体 (node_modules / home / .git) を送らないよう、全部落としてから戻す
+*
+!mise.toml
+!mise.lock

@@ -14,7 +14,8 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "yes | pnpm install",
+  // イメージに焼いた mise.toml より workspace 側が新しいときはここで入れ直す
+  "postCreateCommand": "mise install && yes | pnpm install",
 
   // Configure tool-specific properties.
   "customizations": {
