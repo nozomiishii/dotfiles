@@ -48,6 +48,14 @@ autoSetupRemote = true
 # (background fetch で lease が失効するパターンを reflog で塞ぐ)
 useForceIfIncludes = true
 
+[credential "https://github.com"]
+helper =
+helper = !gh auth git-credential
+
+[credential "https://gist.github.com"]
+helper =
+helper = !gh auth git-credential
+
 [merge]
 # fast-forward 可能な merge のみ許可 (手動 merge で commit を作らない安全弁)
 ff = only
