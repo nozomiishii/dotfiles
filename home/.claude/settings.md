@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-07-30
+最終更新: 2026-08-23
 
 ## 背景
 
@@ -12,36 +12,15 @@ Claude Code にはローカル実行（CLI）とクラウド実行（Web）の2�
 
 ## 設定の全体構成
 
-### autoMemoryEnabled
-
-```jsonc
-"autoMemoryEnabled": false  // auto memory を無効化（デフォルトは true）
-```
-
-auto memory は `~/.claude/projects/<project>/memory/` に保存されるためマシン間で共有されず、内容も CLAUDE.md や /doc スキルの保存先と重複する。記録は /doc スキルの判定フローで CLAUDE.md / issue / brain に振り分ける。
-
-### cleanupPeriodDays
-
-```jsonc
-"cleanupPeriodDays": 180  // セッション履歴を 180 日保持（デフォルトは 30 日）
-```
-
 ### env
 
 ```jsonc
 "env": {
-  "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",  // セッション品質サーベイのみ無効化
-  "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"  // Agent Teams を有効化
+  "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"  // セッション品質サーベイのみ無効化
 }
 ```
 
 セッション品質サーベイをオフにする。テレメトリ（Statsig）やエラーログ（Sentry）は無効化しない。
-
-`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` は Claude Code の Agent Teams 機能を有効化する。複数の Claude Code instance が teammate として協調動作し、共有 task list・直接 messaging で並列作業できるようになる。この変数がないと teammate の spawn 自体が無効になり、prompt で頼んでも動かない。
-
-Agent Teams はタスクに応じて Claude が自動提案するか、明示的に「spawn 3 teammates to ...」と指示して起動する。single session より token 消費が大幅に増えるため、並列探索で価値が出るタスクで使う。実験的機能。
-
-参考: https://code.claude.com/docs/ja/agent-teams
 
 以前は `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: "1"` で一括無効化していたが、この環境変数は Remote Control（`/remote-control`）の eligibility check もブロックしてしまうため廃止した。同様に `DISABLE_TELEMETRY` も Remote Control をブロックする。Remote Control と競合する環境変数の一覧：
 
@@ -329,37 +308,6 @@ sandbox のデフォルトではカレントディレクトリとサブディレ
 
 `alwaysThinkingEnabled` は思考トークン（アウトプットトークンとして課金）が追加されるため、単純なタスクには過剰な場合もある。セッション内で `Option+T` や `/effort` でいつでも調整可能。
 
-### effortLevel
-
-```jsonc
-"effortLevel": "xhigh"  // Opus 4.7 の推奨デフォルト
-```
-
-adaptive reasoning の持続レベル。モデル別にサポートされる level が異なる:
-
-| Model                   | Levels                                  |
-| :---------------------- | :-------------------------------------- |
-| Opus 4.7                | `low`, `medium`, `high`, `xhigh`, `max` |
-| Opus 4.6 / Sonnet 4.6   | `low`, `medium`, `high`, `max`          |
-
-`low` / `medium` / `high` / `xhigh` はセッションを跨いで永続化される。`max` は現在セッション限定（`CLAUDE_CODE_EFFORT_LEVEL` 環境変数経由を除く）。未サポートの level を指定した場合、そのモデルがサポートする一つ下の level にフォールバックする（例: `xhigh` は Opus 4.6 では `high` として動作）。
-
-Opus 4.7 の Claude Code デフォルトは全プラン `xhigh` で、公式も「ほとんどのコーディング・エージェントタスクで最高の結果」と推奨している。この設定も `xhigh` に揃え、`max` の overthinking リスクを避けつつ `high` より深く推論させる。軽いタスクでは過剰なので、セッション内で `/effort medium` や `/model` の effort スライダーでいつでも下げられる。
-
-Opus 4.7 は常に adaptive reasoning で動作し、`CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` や `MAX_THINKING_TOKENS` による fixed thinking budget は無効（Opus 4.6 / Sonnet 4.6 のみ適用可能）。
-
-### ultracode
-
-```jsonc
-"ultracode": false  // 有効化すると xhigh 推論 + workflow 自動オーケストレーションを常時 ON
-```
-
-`xhigh` の推論に加えて、実質的なタスクごとに Workflow tool（複数サブエージェントの fan-out）を自動で組ませる。起動時に読まれ、`effortLevel` より優先される（有効なら effort は `xhigh` 相当に解決される）。要件は Workflow が有効かつ xhigh 対応モデル（Opus 4.6 / 4.7 / 4.8, Sonnet 4.6）。
-
-本体スキーマ上は session-scoped で、UI（`/effort ultracode`）でトグルしても永続化されない。settings.json にこのキーを置いた場合のみ、新規セッションが常時 ultracode で起動する。`max` と同じく `effortLevel` の enum には入らない別キーである点に注意。
-
-週ごとの使用量を使い切れるか検証する実験で 2026-05-31 に一時有効化したが、体感レイテンシが日常使いに見合わず 2026-06-01 に `false` へ戻した。常用は token 消費が大きく、Workflow が発火したタスクで一気に消費する。daily default は `xhigh`。再実験するなら `true` に戻すだけでよい。公式ドキュメントには未記載だが Claude Code 本体が読み取る設定キー。
-
 ### tui
 
 ```jsonc
@@ -369,6 +317,14 @@ Opus 4.7 は常に adaptive reasoning で動作し、`CLAUDE_CODE_DISABLE_ADAPTI
 Claude Code 2.1.110 で追加された TUI レンダラの選択。`"default"` は通常の inline レンダリング、`"fullscreen"` は alt screen バッファを使ったちらつきの少ない描画。`fullscreen` モードでのみ `/focus` が有効になる。セッション内では `/tui default` / `/tui fullscreen` で切り替え可能。
 
 旧来の `CLAUDE_CODE_NO_FLICKER=1` 環境変数の置き換え。`/tui` 実行時に `CLAUDE_CODE_NO_FLICKER` は明示的に unset されるため、env var は将来的に廃止される見込み。settings の `tui` キーが env var より優先される。
+
+### autoMemoryEnabled
+
+```jsonc
+"autoMemoryEnabled": false  // auto memory を無効化（デフォルトは true）
+```
+
+auto memory は `~/.claude/projects/<project>/memory/` に保存されるためマシン間で共有されず、内容も CLAUDE.md や /doc スキルの保存先と重複する。記録は /doc スキルの判定フローで CLAUDE.md / issue / brain に振り分ける。
 
 ### skipWorkflowUsageWarning
 
@@ -392,21 +348,6 @@ Claude Code 2.1.51 で追加。通常は毎セッション `/remote-control` を
 
 参考: https://docs.anthropic.com/en/docs/claude-code/remote-control
 
-### agentPushNotifEnabled
-
-```jsonc
-"agentPushNotifEnabled": true  // 長時間タスク完了・判断待ちで Claude モバイルアプリへプッシュ通知
-```
-
-Claude Code 2.1.110 で追加された「Push when Claude decides」機能。Remote Control が active なセッションで、長時間実行タスクの完了時や判断待ちのタイミングで Claude がモバイルアプリへ push 通知を送ることを許可する。プロンプトで明示的に「完了したら通知して」と依頼することも可能。
-
-前提条件:
-
-- Remote Control が active（`remoteControlAtStartup: true` または手動で `/remote-control` 済み）
-- Claude モバイルアプリがインストール・ログイン済み、OS の通知許可が有効
-
-`remoteControlAtStartup` とペアで有効化する運用を想定している。Remote Control が無効なら通知は飛ばないため、単独で `true` にしても効果がない。
-
 ### skipAutoPermissionPrompt
 
 ```jsonc
@@ -416,14 +357,6 @@ Claude Code 2.1.110 で追加された「Push when Claude decides」機能。Rem
 `defaultMode: "auto"` でセッションを開始したときに表示される「Auto mode を有効にしますか？」の確認プロンプトをスキップする。sandbox を常時有効にしている前提で、auto mode を毎回無言で起動したいための設定。
 
 `permissions.skipDangerousModePermissionPrompt`（bypass permissions 用）と対になる auto mode 版。公式ドキュメントでは明示的に記載されていないが Claude Code 本体が読み取る設定キーとして実装されている。将来挙動が変わる可能性があるため、新しいセッションで確認プロンプトが戻ったらこの記述を見直す。
-
-### model
-
-```jsonc
-"model": "claude-opus-4-6[1m]"  // デフォルトモデルを Opus 4.6（1M コンテキスト版）に固定
-```
-
-セッション開始時のデフォルトモデル。`[1m]` suffix は対応モデルで 1M トークンのコンテキストウィンドウを有効化する指定子。長い対話・大量のコード読み込みで context limit に達しにくくする狙い。
 
 ## 使い方
 
