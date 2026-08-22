@@ -1,1 +1,10 @@
-{ "extends": ["github>nozomiishii/renovate"] }
+{
+  "extends": [
+    "github>nozomiishii/renovate",
+
+    // Dockerfile の `# renovate: ...` annotation 付き `_VERSION` 変数を追従。
+    // .devcontainer/Dockerfile の MISE_VERSION で使用。
+    // https://docs.renovatebot.com/presets-customManagers/#custommanagersdockerfileversions
+    "customManagers:dockerfileVersions"
+  ]
+}

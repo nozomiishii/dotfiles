@@ -3,8 +3,9 @@ services:
     image: ghcr.io/nozomiishii/dotfiles-devcontainer:latest
     # fallback
     build:
-      context: .
-      dockerfile: Dockerfile
+      # mise.toml / mise.lock を COPY するので context は repo root
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
 
     volumes:
       - ../..:/workspaces:cached
