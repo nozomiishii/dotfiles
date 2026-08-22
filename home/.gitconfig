@@ -49,8 +49,6 @@ autoSetupRemote = true
 useForceIfIncludes = true
 
 [credential "https://github.com"]
-# HTTPS push の認証情報を gh 経由で取る (system gitconfig の osxkeychain は取得時にハングする)
-# 空の helper = で下位の設定ファイルが積んだ helper をリセットしてから gh を指定
 helper =
 helper = !gh auth git-credential
 
