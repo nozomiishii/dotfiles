@@ -1,9 +1,6 @@
 {
-  "autoMemoryEnabled": false,
-  "cleanupPeriodDays": 180,
   "env": {
-    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
   },
   "attribution": {
     "commit": "",
@@ -213,12 +210,9 @@
   },
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
-  "effortLevel": "xhigh",
-  "ultracode": false,
   "tui": "fullscreen",
+  "autoMemoryEnabled": false,
   "skipWorkflowUsageWarning": true,
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "model": "claude-opus-4-6[1m]"
+  "skipAutoPermissionPrompt": true
 }
