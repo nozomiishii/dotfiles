@@ -5,12 +5,6 @@
 #   Place all GUI applications together in /Applications.
 cask_args appdir: "/Applications"
 
-# ----------------------------------------------------------------
-# Tap Trust
-# ----------------------------------------------------------------
-# trusted: true は非公式 tap の package を trust する。
-# 理由: docs/decisions/tap trust は Brewfile にパッケージ単位で書く.md
-
 # Organize software neatly under a single directory tree (e.g. /usr/local) https://www.gnu.org/software/stow/
 brew "stow"
 
