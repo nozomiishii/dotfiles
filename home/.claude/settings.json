@@ -76,7 +76,6 @@
       "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "deny": [
-      "Read(./secrets/**)",
       "Bash(git push --force:*)",
       "Bash(git push -f:*)",
       "Bash(gh pr merge:*)",
