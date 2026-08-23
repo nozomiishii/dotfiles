@@ -24,6 +24,8 @@ Codex から実行する場合も管理対象は Claude Code Routine。Codex の
 
 ## trigger 操作の選択
 
+routine の削除だけは API に無い。削除は [Routine 管理画面](https://claude.ai/code/routines) でユーザーに操作してもらう。作成・更新・connector の変更・一時停止・即時実行は API で完結する。
+
 - Claude Code: `schedule` skill と RemoteTrigger を使う
 - Codex: `$chrome:control-chrome` を読み、認証済み Chrome で [Claude Code の Routine 管理画面](https://claude.ai/code/routines)を開く。browser-client に network log と API request の capability があれば、UI 操作より先に list / create / update の endpoint と request schema を確認して同じ API を呼ぶ。現在の接続でそれらが利用できない場合は endpoint を推測せず、認証済み UI で同じ項目を操作する
 
@@ -149,7 +151,7 @@ cloud trigger を create / update する前に、brain repo で `git fetch origi
 - model: frontmatter と同じ model
 - connectors: frontmatter と同じ connector
 
-trigger を新規作成すると、アカウントで有効な connector がすべて自動で付く。connector が付いた routine は実行中にその全ツールを無確認で使えるため、作成直後に [Routine 管理画面](https://claude.ai/code/routines) の Edit を開き、frontmatter の `connectors` と一致させる。API では connector を変更・削除できない。
+trigger を新規作成すると、アカウントで有効な connector がすべて自動で付く。connector が付いた routine は実行中にその全ツールを無確認で使えるため、作成直後に frontmatter の `connectors` と一致させる。全部外すなら `clear_mcp_connections: true`、一部だけ残すなら `mcp_connections` に残す分を並べて update する。
 
 ### 発火時刻の確認
 
@@ -173,10 +175,10 @@ diff がない場合（直接 frontmatter を変更する依頼の場合）は�
 
 - `model` → `job_config.ccr.session_context.model`（frontmatter 値に `claude-` を prefix）
 - `schedule` → `cron_expression`
-- `connectors` → `mcp_connections`。API では変更できないため [Routine 管理画面](https://claude.ai/code/routines) の Edit で操作する
+- `connectors` → `mcp_connections`。全部外すなら `clear_mcp_connections: true`、一部だけ残すなら `mcp_connections` に残す分を並べる
 - `type` → 同期しない（`.routines/` ローカル専用のフィールド）
 
-update 時は `environment_id` を既存 trigger から取得して含める（API が要求するため）。照合できない routine はスキップし、ユーザーに報告する。
+update は変更するフィールドだけを送る。`enabled` / `cron_expression` / `name` / `mcp_connections` / `clear_mcp_connections` はトップレベルにあるため、これだけ送れば `job_config` は元のまま残る。`model` を変える場合は `job_config` を送ることになり、その中で指定しなかった `events` / `session_context.sources` が消えるため、`environment_id`・`events`・`session_context` を既存 trigger の `get` から取得して丸ごと含める。照合できない routine はスキップし、ユーザーに報告する。
 
 `name` を変えた場合は照合キーが変わる。PR のリネーム検出で旧 name を特定し、旧 name の trigger を新 name へ update する。trigger の `name` と events の `.routines/<name>.md` の両方を書き換える。delete して作り直すと実行履歴が切れる。
 
@@ -206,6 +208,7 @@ trigger 側で値が未設定の場合も差分として扱う。
 - routine prompt は brain repo `.routines/` が正本。cloud trigger に prompt 本文を直接書かない
 - frontmatter の `repos` に `nozomiishii/brain` を必ず含める
 - trigger の connector は frontmatter の `connectors` に揃える。新規作成では自動で付くため必ず確認する
+- 削除するつもりの routine を先に無効化しない。`enabled: false` にすると [Routine 管理画面](https://claude.ai/code/routines) の一覧・検索・個別ページのすべてから消え、管理画面からの削除ができなくなる
 - monthly の発火日は JST 2〜28 日から空き日を選び、name とファイル名の 2 桁に入れる
 - cron は UTC で記述し、JST をコメントで添える
 - frontmatter を変更したら main への merge 後に skill を再実行し、cloud trigger も必ず同期する
