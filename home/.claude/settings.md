@@ -65,10 +65,8 @@ Claude Code にはローカル実行（CLI）とクラウド実行（Web）の2�
 
 ```jsonc
 "deny": [
-  // --- .env 保護（元の設定から保持） ---
-  "Read(**/.env)", "Read(**/.env.*)",
-  "Edit(**/.env)", "Edit(**/.env.*)",
-  "Bash(*.env*)",
+  // --- secrets ディレクトリ保護 ---
+  "Read(./secrets/**)",
 
   // --- git force push 制御 ---
   "Bash(git push --force:*)",  // 危険：リモート履歴を破壊
@@ -98,6 +96,8 @@ Claude Code にはローカル実行（CLI）とクラウド実行（Web）の2�
   "Bash(host:*)"
 ]
 ```
+
+dotenv ファイルの deny ルールは置いていない。この環境の dotenv は 1Password の `op://` 参照だけを持ち、実シークレットを含まないため。特に `Bash(*.env*)` は Bash コマンド文字列全体に対するグロブで、`runner.environment` や `process.env` を含むだけのコマンドまで拒否してしまうので戻さないこと。
 
 deny ルールの評価順序: deny → ask → allow で、最初にマッチしたルールが勝つ。そのため `Bash(git:*)` で git 全般を allow しつつ、`Bash(git push --force:*)` で force push だけ deny できる。`--force-with-lease` は allow に明示的に入れているため通る。
 
