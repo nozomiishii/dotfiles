@@ -12,13 +12,13 @@ on:
       - main
     paths:
       - 'install.sh'
-      - 'Makefile'
+      - 'mise.toml'
       - 'Brewfile'
       - 'scripts/**'
   pull_request:
     paths:
       - 'install.sh'
-      - 'Makefile'
+      - 'mise.toml'
       - 'Brewfile'
       - 'scripts/**'
 

@@ -10,7 +10,7 @@ date: 2026-07-31
 Brewfile と Brewfile.optional の 2 ファイル構成では、cleanup の「残すリスト」が実行経路で食い違う。
 
 ```text
-make homebrew
+mise run homebrew
   → Brewfile + Brewfile.optional を適用。残すリストは両方
 
 素の install.sh
@@ -36,7 +36,7 @@ macOS ローカル向けパッケージは `if OS.mac? && !ENV["CI"]` に置き�
 
 ### 良くなったこと
 
-- install.sh と `make homebrew` の適用内容が一致し、どの経路でも巻き添え削除が起きない
+- install.sh と `mise run homebrew` の適用内容が一致し、どの経路でも巻き添え削除が起きない
 
 ### 引き受けたコスト
 

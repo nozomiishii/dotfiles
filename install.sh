@@ -210,7 +210,7 @@ printf '%s\n' \
   "📦 If Homebrew was interrupted:" \
   "" \
   "    run:" \
-  "      make -C \"$SCRIPT_DIR\" homebrew" \
+  "      mise --cd \"$SCRIPT_DIR\" run homebrew" \
   "" \
   "" \
   "📦 After restarting, complete the remaining setup:" \

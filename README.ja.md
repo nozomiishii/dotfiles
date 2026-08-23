@@ -53,7 +53,7 @@ sudo reboot
 
 ```shell
 gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
-make -C "$HOME/Code/nozomiishii/dotfiles" repo
+mise --cd "$HOME/Code/nozomiishii/dotfiles" run repo
 ```
 
 ## その他アプリの設定
