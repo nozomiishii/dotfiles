@@ -14,7 +14,6 @@ ruby = "4.0.6"
 # mise の zsh 補完用
 usage = "5.1.0"
 
-# mise 自体を 7d ごとにチェックして自動更新する
 [settings]
 auto_update = true
 
