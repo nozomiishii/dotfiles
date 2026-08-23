@@ -76,12 +76,6 @@
       "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "deny": [
-      "Read(**/.env)",
-      "Read(**/.env.*)",
-      "Edit(**/.env)",
-      "Edit(**/.env.*)",
-      "Read(./secrets/**)",
-      "Bash(*.env*)",
       "Bash(git push --force:*)",
       "Bash(git push -f:*)",
       "Bash(gh pr merge:*)",
