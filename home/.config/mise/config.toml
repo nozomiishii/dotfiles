@@ -6,7 +6,7 @@ pnpm = "11.22.0"
 uv = "0.12.5"
 rust = { version = "1.98.0", components = ["rust-analyzer"] }
 ruby = "4.0.6"
-"npm:typescript-language-server" = "5.3.0"
+"npm:typescript-language-server" = "6.0.0"
 "npm:@devcontainers/cli" = "0.88.0"
 "npm:@antfu/ni" = "30.5.0"
 # Brewfile のフォーマット用
