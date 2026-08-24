@@ -18,17 +18,6 @@ fi
 # [dotfiles] を含む repo config を明示的に信頼する (新規マシンと mise.toml 更新後の再確認を無人化)
 mise trust ./mise.toml
 
-# stow 時代の tree folding (ディレクトリごと symlink) を実ディレクトリに戻す。
-# folded link 越しでは repo の実体ファイルが「衝突する実ファイル」として見え、
-# --force が repo 側を上書きしてしまうため、apply 前に必ず除去する。リンクの削除
-# なのでデータは失われない。移行完了後は何もしないループになる。
-while IFS= read -r dir; do
-  target="$HOME/${dir#home/}"
-  if [ -L "$target" ] && [[ "$(readlink -f "$target")" == "$SCRIPT_DIR/home/"* ]]; then
-    rm "$target"
-  fi
-done < <(find home -mindepth 1 -type d)
-
 # repo を常に正とする。衝突する実ファイルは --force で repo へのリンクに置き換える
 # (旧 stow --adopt + git restore と同じ結果)。source 削除で宙吊りになったリンクの
 # 掃除も apply が state を見て行う
