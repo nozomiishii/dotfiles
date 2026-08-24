@@ -9,7 +9,7 @@ Claude Code の statusline を編集するときの手順。
 
 ```text
 ~/.claude/statusline.sh
-  └─ Stow リンク → main repo の home/.claude/statusline.sh   ← Claude が読むのはここ
+  └─ dotfiles リンク → main repo の home/.claude/statusline.sh   ← Claude が読むのはここ
 
 worktree の home/.claude/statusline.sh                       ← Claude からは見えない
 ```

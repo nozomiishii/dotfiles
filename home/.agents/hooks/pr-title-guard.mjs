@@ -74,7 +74,7 @@ async function main() {
   return 2;
 }
 
-// stow のシンボリックリンク越しに呼ばれるため、実体パスで直接実行かを判定する。
+// dotfiles のシンボリックリンク越しに呼ばれるため、実体パスで直接実行かを判定する。
 const entry = process.argv[1];
 if (entry && realpathSync(entry) === realpathSync(fileURLToPath(import.meta.url))) {
   process.exitCode = await main();

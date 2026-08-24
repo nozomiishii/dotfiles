@@ -5,6 +5,9 @@ pnpm = "11.22.0"
 [settings]
 lockfile = true
 
+[dotfiles]
+"~" = { source = "home", mode = "symlink-each", exclude = [".DS_Store"] }
+
 [tasks.homebrew]
 description = "Install/update Homebrew packages"
 run = "bash ./scripts/homebrew.sh"

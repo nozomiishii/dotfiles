@@ -9,7 +9,7 @@ backup_rel="home/.config/raycast/backup"
 fixed_name="Raycast.rayconfig"
 seen_files=$'\n'
 
-# stow のリンクを辿り、repo の配置場所に依存せず実体を特定する。
+# dotfiles のリンクを辿り、repo の配置場所に依存せず実体を特定する。
 src="${BASH_SOURCE[0]}"
 while [ -L "$src" ]; do
   dir="$(cd -P "$(dirname "$src")" && pwd)"

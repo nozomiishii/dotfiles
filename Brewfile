@@ -5,9 +5,6 @@
 #   Place all GUI applications together in /Applications.
 cask_args appdir: "/Applications"
 
-# Organize software neatly under a single directory tree (e.g. /usr/local) https://www.gnu.org/software/stow/
-brew "stow"
-
 # ----------------------------------------------------------------
 # Prompt
 # ----------------------------------------------------------------
