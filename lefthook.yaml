@@ -20,10 +20,10 @@ post-merge:
   jobs:
     - name: symlink
       glob: 'home/**'
-      # Only re-stow when a path is added or removed under home/. Edits to
+      # Only re-link when a path is added or removed under home/. Edits to
       # existing files don't need re-linking — the symlink already points at
-      # them. Deletions still trigger mise run link so stow can clean up the
-      # dangling symlink.
+      # them. Deletions still trigger mise run link so the apply can clean up
+      # the dangling symlink from its recorded state.
       files: git diff-tree -r --name-only --no-commit-id --diff-filter=AD ORIG_HEAD HEAD
       run: mise run link
     - name: homebrew
