@@ -33,5 +33,3 @@ done < <(find home -mindepth 1 -type d)
 # (旧 stow --adopt + git restore と同じ結果)。source 削除で宙吊りになったリンクの
 # 掃除も apply が state を見て行う
 mise bootstrap dotfiles apply --yes --force
-
-chmod 700 "$HOME/.ssh"
