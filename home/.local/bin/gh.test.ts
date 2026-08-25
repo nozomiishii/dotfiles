@@ -33,10 +33,10 @@ function writeExecutable(path: string, body: string): void {
  * 本物の gh と nozo-commitlint はスタブに差し替え、シムの委譲と exit code だけを見る。
  */
 function withWorkspace(
-  options: { linter?: boolean; realGh?: boolean } = {},
+  options: { linter?: boolean; realGh?: boolean; globalLinter?: boolean } = {},
   run: (workspace: Workspace) => void,
 ): void {
-  const { linter = true, realGh = true } = options;
+  const { linter = true, realGh = true, globalLinter = false } = options;
   const root = mkdtempSync(join(tmpdir(), "gh-shim-"));
   try {
     const repo = join(root, "repo");
@@ -57,6 +57,13 @@ function withWorkspace(
           'echo "GH_SHIM_CHECKED=${GH_SHIM_CHECKED-unset}"',
           "exit ${GH_FAKE_EXIT:-0}",
         ].join("\n"),
+      );
+    }
+    if (globalLinter) {
+      // PATH 上のグローバル nozo-commitlint。repo 内のものと区別するため常に落とす。
+      writeExecutable(
+        join(realGhDir, "nozo-commitlint"),
+        ["#!/bin/sh", "read -r subject", 'echo "global linter: $subject" >&2', "exit 1"].join("\n"),
       );
     }
     if (linter) {
@@ -134,10 +141,28 @@ describe("PR タイトルの検証", () => {
     });
   });
 
-  // commitlint を持たない repo は判定材料が無いので素通りする
-  test("passes through when the repo has no linter", () => {
+  // repo にも PATH にも linter が無ければ判定材料が無いので素通りする
+  test("passes through when no linter is available", () => {
     withWorkspace({ linter: false }, ({ run }) => {
       const result = run(["pr", "create", "--title", "add login form"]);
+      expect(result.exitCode).toBe(0);
+      expect(result.stdout).toContain(REAL_GH_MARKER);
+    });
+  });
+
+  // repo が linter を持たなくても、PATH にあれば検証する
+  test("falls back to a linter on PATH", () => {
+    withWorkspace({ linter: false, globalLinter: true }, ({ run }) => {
+      const result = run(["pr", "create", "--title", "add login form"]);
+      expect(result.exitCode).toBe(2);
+      expect(result.stderr).toContain("global linter");
+    });
+  });
+
+  // repo が linter を持つときは、そちらを PATH より優先する
+  test("prefers the linter in the repo over the one on PATH", () => {
+    withWorkspace({ globalLinter: true }, ({ run }) => {
+      const result = run(["pr", "create", "--title", "feat: add login form"]);
       expect(result.exitCode).toBe(0);
       expect(result.stdout).toContain(REAL_GH_MARKER);
     });

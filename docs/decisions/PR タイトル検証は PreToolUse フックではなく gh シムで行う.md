@@ -47,7 +47,7 @@ gh 本体にコマンド前後のフックは無く、シェルの外側でラ�
 
 cloud には mise が無いので、setup script が書き込めるディレクトリへシムを複製する。
 
-判定ルールは持たず lefthook の commit-msg と同じ nozo-commitlint に流す方針は変えない。
+判定ルールは持たず lefthook の commit-msg と同じ nozo-commitlint に流す方針は変えない。repo に入っていればそれを使い、無ければ PATH のものに落とす。nozo-commitlint は同梱 config で動くようになったので、package manager を持たない repo でも検証が届く。
 
 ## 結果
 
@@ -65,6 +65,7 @@ cloud には mise が無いので、setup script が書き込めるディレク�
 - 検証が届く範囲は gh の呼び方に依る。サブコマンドの前に `--repo` 以外のフラグを置いた形、alias や extension 経由、タイトルを対話で入れる形は素通りする
 - `.bash_profile` を dotfiles が持つことになり、既に実体を置いている Mac では上書きされる。login bash は `.bash_profile` があると `.profile` を読まなくなる
 - シムが壊れて gh 自体が使えなくなったら、`rm ~/.local/bin/gh` で外してから revert する
+- nozo-commitlint をグローバルに入れると、自分の規約を持たない repo にも同梱ルールが当たる。他人の repo で規約が違えば正当なタイトルが止まる。急ぎの回避は `GH_SHIM_CHECKED=1`
 
 ### 保留した論点
 

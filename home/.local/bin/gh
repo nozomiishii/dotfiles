@@ -80,10 +80,12 @@ if [ -z "${GH_SHIM_CHECKED:-}" ] && [ "$subcommand" = pr ] &&
     i=$((i + 1))
   done
 
+  # repo に入っていればそれを使い、無ければ PATH のものに落とす。
+  # どちらも無ければ判定材料がないので素通りする。入れ忘れは CI 側で落ちる。
   repo_root="$(git rev-parse --show-toplevel 2>/dev/null || true)"
   linter="$repo_root/node_modules/.bin/nozo-commitlint"
-  # commitlint を持たない repo には判定材料がないので素通りする。入れ忘れは CI 側で落ちる。
-  if [ -n "$title" ] && [ -n "$repo_root" ] && [ -x "$linter" ]; then
+  [ -n "$repo_root" ] && [ -x "$linter" ] || linter="$(command -v nozo-commitlint || true)"
+  if [ -n "$title" ] && [ -n "$linter" ]; then
     if ! detail="$(printf '%s\n' "$title" | "$linter" 2>&1)"; then
       printf 'PR タイトルが repo の commitlint 設定に違反しています。\n\n%s\n' "$detail" >&2
       exit 2
