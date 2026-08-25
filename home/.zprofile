@@ -42,3 +42,7 @@ source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 if [[ -x "$HOME/.local/bin/mise" ]]; then
   eval "$("$HOME/.local/bin/mise" activate zsh --shims)"
 fi
+
+# gh シムを mise のツールシムより先に解決させるため、mise の後に前置する。
+# 既出でも前置し直す。重複を避けると後方の既出が残り、mise のツールシムに負ける
+export PATH="$HOME/.local/bin:$PATH"

@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+# gh に渡る PR タイトルを repo の commitlint 設定で検証してから、本物の gh に委譲する。
+# 判定ルールは持たず lefthook の commit-msg と同じ nozo-commitlint に流すため、
+# 正本は repo の commitlint 設定 1 箇所だけになる。
+set -euo pipefail
+
+# PATH 上には mise のツールシムなど gh が複数並ぶ。自分自身に exec し返さないよう、
+# 実体が自分と一致するものは飛ばし、自分より後ろの最初の gh を委譲先にする。
+# PATH に自分が居ない直接実行では、自分以外の最初の gh に落とす。
+# 判定に外部コマンドを使うと、PATH が痩せた環境で全件不一致になり自分に exec し返す。
+self="${BASH_SOURCE[0]}"
+real_gh=""
+first_other=""
+seen_self=false
+while IFS= read -r candidate; do
+  if [ "$candidate" -ef "$self" ]; then
+    seen_self=true
+    continue
+  fi
+  [ -n "$first_other" ] || first_other="$candidate"
+  if $seen_self; then
+    real_gh="$candidate"
+    break
+  fi
+done < <(type -aP gh)
+[ -n "$real_gh" ] || real_gh="$first_other"
+
+if [ -z "$real_gh" ]; then
+  printf 'gh shim: 委譲先の gh が PATH に見つかりません\n' >&2
+  exit 127
+fi
+
+args=("$@")
+
+# サブコマンドの前に置けるフラグは --repo だけ通し、他のフラグ先行形は対象外にする。
+subcommand=""
+action=""
+i=0
+while [ "$i" -lt "${#args[@]}" ]; do
+  case "${args[i]}" in
+  -R | --repo)
+    i=$((i + 2))
+    continue
+    ;;
+  --repo=*) ;;
+  -*) break ;;
+  *)
+    if [ -z "$subcommand" ]; then
+      subcommand="${args[i]}"
+    else
+      action="${args[i]}"
+      break
+    fi
+    ;;
+  esac
+  i=$((i + 1))
+done
+
+if [ -z "${GH_SHIM_CHECKED:-}" ] && [ "$subcommand" = pr ] &&
+  { [ "$action" = create ] || [ "$action" = edit ]; }; then
+  export GH_SHIM_CHECKED=1
+
+  title=""
+  while [ "$i" -lt "${#args[@]}" ]; do
+    case "${args[i]}" in
+    --title | -t)
+      i=$((i + 1))
+      title="${args[i]-}"
+      ;;
+    --title=*) title="${args[i]#--title=}" ;;
+    -t?*) title="${args[i]#-t}" ;;
+    --*=*) ;;
+    # 値を取るフラグは値ごと飛ばす。飛ばさないと値に含まれる -t や --title= を拾う
+    --body | --body-file | --base | --head | --label | --assignee | --reviewer | \
+      --milestone | --project | --template | --repo | --add-* | --remove-* | \
+      -b | -F | -B | -H | -l | -a | -r | -m | -p | -T | -R)
+      i=$((i + 1))
+      ;;
+    esac
+    i=$((i + 1))
+  done
+
+  repo_root="$(git rev-parse --show-toplevel 2>/dev/null || true)"
+  linter="$repo_root/node_modules/.bin/nozo-commitlint"
+  # commitlint を持たない repo には判定材料がないので素通りする。入れ忘れは CI 側で落ちる。
+  if [ -n "$title" ] && [ -n "$repo_root" ] && [ -x "$linter" ]; then
+    if ! detail="$(printf '%s\n' "$title" | "$linter" 2>&1)"; then
+      printf 'PR タイトルが repo の commitlint 設定に違反しています。\n\n%s\n' "$detail" >&2
+      exit 2
+    fi
+  fi
+fi
+
+exec "$real_gh" "$@"

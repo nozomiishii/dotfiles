@@ -7,7 +7,7 @@ on:
     paths:
       - 'home/.agents/**'
       - 'home/.claude/**'
-      - 'home/.codex/**'
+      - 'home/.local/bin/gh'
       - 'home/AGENTS.md'
       - 'scripts/cloud/**'
   workflow_dispatch:
@@ -42,7 +42,7 @@ jobs:
             home/AGENTS.md \
             home/.claude/settings.json \
             home/.agents/ \
-            home/.codex/hooks.json
+            home/.local/bin/gh
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0

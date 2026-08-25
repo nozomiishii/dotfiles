@@ -13,12 +13,30 @@ jq 'del(.statusLine, .sandbox)' home/.claude/settings.json >~/.claude/settings.j
 # Codex
 mkdir -p ~/.codex
 cp home/AGENTS.md ~/.codex/AGENTS.md
-cp home/.codex/hooks.json ~/.codex/hooks.json
 
-# Agents (skills / hooks)
+# Agents (skills)
 mkdir -p ~/.agents ~/.claude/skills
 cp -R home/.agents/. ~/.agents/
 cp -R home/.agents/skills/. ~/.claude/skills/
+
+# gh シム (PR タイトルを repo の commitlint 設定で検証する)
+real_gh="$(command -v gh || true)"
+shim_dir="$HOME/.local/bin"
+# 実体 gh と同じディレクトリに置くと本物を潰し、委譲先を失って gh が全滅する
+if [ -n "$real_gh" ] && [ "$shim_dir/gh" != "$real_gh" ]; then
+  mkdir -p "$shim_dir"
+  cp home/.local/bin/gh "$shim_dir/gh"
+  chmod +x "$shim_dir/gh"
+
+  # cloud のシェルは PATH を継承しないので、実体 gh より先に来るよう rc に前置を足す
+  path_line="export PATH=\"\$HOME/.local/bin:\$PATH\""
+  for rc in "$HOME/.profile" "$HOME/.bashrc" "$HOME/.bash_profile"; do
+    if [ "$rc" = "$HOME/.bash_profile" ] && [ ! -f "$rc" ]; then
+      continue
+    fi
+    grep -qsF "$path_line" "$rc" || printf '%s\n' "$path_line" >>"$rc"
+  done
+fi
 
 # direnv (.envrc のある repo で `direnv exec . <コマンド>` を使うのに必要)
 # 公式 install.sh は api.github.com を叩く。cloud の egress IP は共有のため未認証
