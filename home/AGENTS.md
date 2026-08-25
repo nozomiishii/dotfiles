@@ -37,11 +37,7 @@
 - 外部サービスの自動化は、UI 操作より先にエンドポイントを探す。ネットワークログや DevTools で内部 API を特定し、API 経由で操作する。
 
 ## シークレット
-- シークレットの実体は 1Password にだけ置く。他の場所に平文で保存しない。
-- git 管理するのは `op://vault/item/field` の参照だけ。実体を commit しない。
 - GitHub に登録する secret は `OP_SERVICE_ACCOUNT_TOKEN` だけにする。他のシークレットを GitHub Secrets に置かない。
-- 解決は CI では [1password/load-secrets-action](https://github.com/1Password/load-secrets-action)、ローカルでは `op run` で行う。
-- シークレットでなくても repo に残したくない値 (宛先アドレスなど) は、同じ経路で 1Password から読む。
 
 ## Agents設定
 - 必ずclaude code、codexどちらでも同じ挙動になるように作る。
