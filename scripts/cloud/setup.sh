@@ -13,9 +13,8 @@ jq 'del(.statusLine, .sandbox)' home/.claude/settings.json >~/.claude/settings.j
 # Codex
 mkdir -p ~/.codex
 cp home/AGENTS.md ~/.codex/AGENTS.md
-cp home/.codex/hooks.json ~/.codex/hooks.json
 
-# Agents (skills / hooks)
+# Agents (skills)
 mkdir -p ~/.agents ~/.claude/skills
 cp -R home/.agents/. ~/.agents/
 cp -R home/.agents/skills/. ~/.claude/skills/

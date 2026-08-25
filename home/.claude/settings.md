@@ -127,18 +127,9 @@ Auto mode の利用可能条件: Max / Team / Enterprise / API プラン + 対�
 
 ### hooks
 
-```jsonc
-"hooks": {
-  // gh に渡る PR タイトルを repo の commitlint 設定で検証する
-  "PreToolUse": [{ "matcher": "Bash", "hooks": [{ "type": "command", "command": "~/.agents/hooks/pr-title-guard.mjs" }] }]
-}
-```
+グローバルの hooks は持たない。キー自体を置かない。
 
-グローバルの hooks は PR タイトル検証だけに限定する。
-
-- `pr-title-guard.mjs` は `gh pr create` / `gh pr edit` に渡る `--title` を repo の `node_modules/.bin/nozo-commitlint` に流し、違反なら exit 2 で差し戻す。判定ルールを持たず lefthook の commit-msg と同じ CLI を呼ぶため、正本は repo の commitlint 設定 1 箇所だけになる。commitlint を持たない repo では素通りし、入れ忘れは CI 側が落ちて気づく。Codex も `.codex/hooks.json` から同じスクリプトを呼ぶ（`hook_event_name` / `tool_name` / `tool_input.command` / `cwd` は Claude Code と同一構造で、`tool_name` は両者とも `Bash`）。ただし Codex には hook trust があり、hooks.json を変更するたびに対話セッションでの再承認が要る
-- hook 本体は shell ではなく Node で書く。全シェル呼び出しで発火するため起動コストが効き、payload の読み取りに jq を 2 回起動する shell 版は 1 回あたり約 91ms、`JSON.parse` で済む Node 版は約 36ms だった（5 回計測 × 2 回）。bun もほぼ同等だが、cloud の setup script が bun を入れないため Node を使う
-- hook の置き場は `home/.agents/hooks/`。skills と同じく Claude Code と Codex の両方から使う実体で、cloud 配信は既存の `home/.agents/**` が丸ごと拾うため、hook が増えても `cloud-setup.yaml` を触らなくて済む。[AGENTS.md](https://agents.md/) の仕様に hooks の規定は無く、標準の置き場は存在しない
+- PR タイトルの検証は CI に任せる。判断の記録は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/PR%20タイトルの事前検証は手元に持たず%20CI%20に任せる.md) にある
 - repo のセットアップ（deps install 等）は各 repo が持つ: `.claude/settings.json` の SessionStart hook が `.hooks/setup.sh` を呼び、Codex は `.codex/hooks.json` から同じスクリプトを呼ぶ（[dotfiles#1268](https://github.com/nozomiishii/dotfiles/issues/1268)）。セットアップ内容はパッケージマネージャ等 repo 固有のため正本を repo に置き、グローバルからの自動実行をやめることで、clone した他人の repo でスクリプトが意図せず発火することも構造的になくなる（repo に入る hook はその repo の PR レビューを通る）。worktree の起点の鮮度は Claude Code 本体が担う（v2.1.208+ で origin/HEAD 起点 + 自動 fetch）
 - `.envrc` の env（[infra](https://github.com/nozomiishii/infra) の `AWS_PROFILE` 等）は自動注入しない。env に依存するコマンドを `direnv exec . <コマンド>` で実行する運用（AGENTS.md の実装ルール）。hook の `CLAUDE_ENV_FILE` 注入は Codex に効かず蓄積バグもあり（[anthropics/claude-code#67067](https://github.com/anthropics/claude-code/issues/67067)）、shell rc 方式は Claude Code の shell snapshot が env を保存しない（PATH のみ）ため機能しない。direnv の whitelist / allow による信頼ゲートは `direnv exec` にも効く
 - hook で判断制御（allow/deny）を返す場合、旧フィールド `decision`/`reason` は deprecated。`hookSpecificOutput.permissionDecision` / `hookSpecificOutput.permissionDecisionReason` を使うこと
