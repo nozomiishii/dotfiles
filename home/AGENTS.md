@@ -36,6 +36,9 @@
 - MCPツールが利用できる場合、CLIよりMCPツールを使う。
 - 外部サービスの自動化は、UI 操作より先にエンドポイントを探す。ネットワークログや DevTools で内部 API を特定し、API 経由で操作する。
 
+## シークレット
+- GitHub に登録する secret は `OP_SERVICE_ACCOUNT_TOKEN` だけにする。他のシークレットを GitHub Secrets に置かない。
+
 ## Agents設定
 - 必ずclaude code、codexどちらでも同じ挙動になるように作る。
 
