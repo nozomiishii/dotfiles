@@ -106,9 +106,6 @@ if OS.mac? && !ENV["CI"]
   # Cat(1) clone with syntax highlighting and Git integration. https://github.com/sharkdp/bat
   brew "bat"
 
-  # Load/unload environment variables based on $PWD https://direnv.net/
-  brew "direnv"
-
   # Modern replacement for ls. https://github.com/eza-community/eza
   brew "eza"
 

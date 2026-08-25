@@ -40,6 +40,8 @@ worktree に node_modules が無い
 - 必ず direnv を通す。direnv 不在時はフォールバックせず警告して止める
 - 冪等な install 系はどこで走ってもよく、git 状態を変える系 (ff-only merge) は linked worktree のときだけ実行する
 
+direnv の 2 項目は[env の評価を mise に任せる決定](env%20の評価は%20direnv%20をやめて%20mise%20に任せる.md)で差し替えた。
+
 ## 結果
 
 ### 良くなったこと

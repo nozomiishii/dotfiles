@@ -250,7 +250,6 @@
     "**/zshenv": true,
     "**/*.zsh-theme": true,
     "**/.tmux.conf": true,
-    "**/.envrc": true,
     "**/.hushlogin": true
   },
 
