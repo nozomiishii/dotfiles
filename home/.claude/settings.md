@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-08-23
+最終更新: 2026-08-26
 
 ## 背景
 
@@ -224,6 +224,16 @@ enabledPlugins の `<plugin>@<marketplace>` は marketplace 名の参照だけ�
 ```
 
 Claude Code の UI（メニュー・プロンプト・ヘルプ）は英語のまま、Claude の応答テキストだけ日本語になる。以前は グローバル `CLAUDE.md` の「日本語で応答する」というプロンプト指示で対応していたが、専用設定キーへ移した。プロンプト指示と違い context を消費せず、他指示との競合で揺れない。`CLAUDE.md` 側は日本語の書き方ルールに専念させる役割分担。
+
+### outputStyle
+
+```jsonc
+"outputStyle": "Concise"  // 応答スタイルを Concise に固定
+```
+
+組み込みスタイルは `default` / `Concise` / `Proactive` / `Explanatory` / `Learning` の 5 つ。`Concise` は結論から書き、前置きと実況を省くスタイルで、作業の徹底度そのものは変えない。グローバル `CLAUDE.md` のコミュニケーション規約と同じ方向なので、プロンプト指示に頼らず設定側で固定する。セッション内では `/output-style` で切り替えられる。
+
+参考: https://code.claude.com/docs/en/output-styles
 
 ### sandbox
 
