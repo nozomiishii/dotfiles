@@ -6,7 +6,13 @@ pnpm = "11.22.0"
 lockfile = true
 
 [dotfiles]
-"~" = { source = "home", mode = "symlink-each", exclude = [".DS_Store"] }
+"~" = { source = "home", mode = "symlink-each", exclude = [
+  ".DS_Store",
+  ".agents/skills",
+] }
+# Codex は個別の SKILL.md ではなく、skill ディレクトリの symlink のみをサポートする。
+# https://developers.openai.com/codex/skills#where-codex-loads-local-skills
+"~/.agents/skills" = { source = "home/.agents/skills", mode = "symlink" }
 
 [tasks.homebrew]
 description = "Install/update Homebrew packages"
