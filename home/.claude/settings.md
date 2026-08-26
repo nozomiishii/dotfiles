@@ -286,11 +286,13 @@ sandbox は OS カーネルレベルでファイルシステムとネットワ�
     "~/.netrc",            // 認証情報
     "~/.config/op"         // 1Password CLI 設定（デバイスID、アカウント情報）
   ],
-  "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm/store"]
+  "allowWrite": ["/tmp", "~/.npm", "~/Library/pnpm", "~/Library/Caches/pnpm"]
 }
 ```
 
 sandbox のデフォルトではカレントディレクトリとサブディレクトリのみ書き込み可能で、読み取りはシステム全体。ここでは読み取りすら不要な機密ファイルを明示的にブロックしている。sandbox のバイパス事例（パストリックによる脱出等）も報告されているため、二重防御として設定。
+
+`~/Library/pnpm` は store 本体ではなく親ディレクトリを許可している。pnpm は `storeDir` が未指定のとき、pnpm home の直下に一時ディレクトリを作ってハードリンクできるか試し、失敗するとプロジェクト直下の `.pnpm-store` に store を作る。`~/Library/pnpm/store` だけを許可すると、この判定が通らず sandbox 内の install だけが別の store を掘る。結果として `.modules.yaml` に記録された store と食い違い、次の install が node_modules の purge を要求して非 TTY で止まる。この挙動は [pnpm#13525](https://github.com/pnpm/pnpm/issues/13525) で意図通りと結論が出ており、pnpm 側は変わらない。`~/Library/Caches/pnpm` は cacheDir で、同じ理由で書けないとメタデータのキャッシュが効かない。
 
 `~/.config/gh/hosts.yml` は denyRead に置いていない。gh のトークンは macOS Keychain (keyring) に保存され、hosts.yml には `git_protocol` と user 名しか入らないため機密がない。加えて `gh`・`git` は excludedCommands で sandbox 外で動くため、sandbox 内から hosts.yml を読めても GitHub 操作の認証には影響しない。sandbox 内のコマンドが GitHub 操作で hosts.yml を参照しても止まらないよう、読み取りを許可している。
 
