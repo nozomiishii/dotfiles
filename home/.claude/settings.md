@@ -1,6 +1,6 @@
 # ~/.claude/settings.json リファレンス
 
-最終更新: 2026-08-26
+最終更新: 2026-08-28
 
 ## 背景
 
@@ -133,20 +133,6 @@ Auto mode の利用可能条件: Max / Team / Enterprise / API プラン + 対�
 - repo のセットアップ（deps install 等）は各 repo が持つ: `.claude/settings.json` の SessionStart hook が `.hooks/setup.sh` を呼び、Codex は `.codex/hooks.json` から同じスクリプトを呼ぶ（[dotfiles#1268](https://github.com/nozomiishii/dotfiles/issues/1268)）。セットアップ内容はパッケージマネージャ等 repo 固有のため正本を repo に置き、グローバルからの自動実行をやめることで、clone した他人の repo でスクリプトが意図せず発火することも構造的になくなる（repo に入る hook はその repo の PR レビューを通る）。worktree の起点の鮮度は Claude Code 本体が担う（v2.1.208+ で origin/HEAD 起点 + 自動 fetch）
 - repo 固有の env（[infra](https://github.com/nozomiishii/infra) の `AWS_PROFILE` 等）は hook で注入しない。`CLAUDE_ENV_FILE` 注入は Codex に効かず[蓄積バグ](https://github.com/anthropics/claude-code/issues/67067)もあり、shell rc 方式は Claude Code の shell snapshot が PATH しか保存しないため機能しない。env の正本は各 repo の `mise.toml` の `[env]`
 - hook で判断制御（allow/deny）を返す場合、旧フィールド `decision`/`reason` は deprecated。`hookSpecificOutput.permissionDecision` / `hookSpecificOutput.permissionDecisionReason` を使うこと
-
-### worktree
-
-```jsonc
-"worktree": {
-  "bgIsolation": "none"  // background セッション（claude --bg / /bg）を worktree 隔離せず本体で動かす
-}
-```
-
-`worktree.bgIsolation` は background セッションのファイル隔離モード（このリポジトリ単位）。Claude Code 本体のスキーマでは `"worktree"` がデフォルトで、background セッションがメイン checkout に Edit/Write しようとすると `EnterWorktree` を呼ぶまでブロックし、初回編集時に `.claude/worktrees/<id>` へ自動隔離する。`"none"` にすると background ジョブがワーキングコピーを直接編集できる。foreground セッションや `claude --worktree` 起動には影響しない（あれは起動時点で worktree を作る別経路）。
-
-`"none"` を選んだ理由は、worktree のセットアップ（各 repo の `.hooks/setup.sh`）が `SessionStart` hook 頼みのため。`SessionStart` の source は `startup` / `resume` / `clear` / `compact` の 4 つだけで `worktree` は存在せず、background セッションが稼働中に `EnterWorktree` で遅延的に worktree へ移っても `SessionStart` は再発火しない。つまりデフォルトの `"worktree"` だと、新規 worktree に `node_modules` が無いまま整わない可能性がある（`EnterWorktree` は `CwdChanged` も発火しないという報告があり保険にならない: [anthropics/claude-code#61802](https://github.com/anthropics/claude-code/issues/61802)）。`"none"` にすれば background は常に本体（起動時に SessionStart hook が整えた状態）で動くため、この問題が起きない。
-
-トレードオフは、複数の background セッションを同じファイルに並列で走らせると衝突すること。並列編集を多用する運用に変える場合はデフォルトの `"worktree"` に戻し、代わりに `WorktreeCreate` hook 等で全 worktree 作成経路に deps install を配線する必要がある。
 
 ### statusLine
 
