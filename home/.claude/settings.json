@@ -99,9 +99,6 @@
     "defaultMode": "auto"
   },
   "enabledMcpjsonServers": [],
-  "worktree": {
-    "bgIsolation": "none"
-  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
