@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/devcontainers/base:bookworm@sha256:73d85a96694a2cadca1ba3
 
 # node と pnpm の版は mise.toml / mise.lock だけが持つ。この Dockerfile には書かない
 # renovate: datasource=github-releases depName=jdx/mise
-ARG MISE_VERSION=v2026.8.12
+ARG MISE_VERSION=v2026.8.13
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
