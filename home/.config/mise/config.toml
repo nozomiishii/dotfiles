@@ -1,6 +1,6 @@
 # https://mise.jdx.dev/configuration.html
 [tools]
-node = "24.19.0"
+node = "24.20.0"
 bun = "1.4.0"
 pnpm = "11.24.0"
 uv = "0.12.6"
