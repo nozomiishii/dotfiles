@@ -23,9 +23,6 @@ brew "starship"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature https://zellij.dev/
 brew "zellij"
 
-# Command-line helper for the 1Password password manager https://developer.1password.com/docs/cli
-cask "1password-cli"
-
 # Smarter Dockerfile linter to validate best practices https://github.com/hadolint/hadolint
 brew "hadolint"
 
