@@ -66,6 +66,40 @@ alias cwt="claude --worktree --teleport"
 cpm() { printf "/model claude-opus-4-6[1m]" | pbcopy && echo "Copied: /model claude-opus-4-6[1m]"; }
 pwdc() { printf "/add-dir %s" "$PWD" | pbcopy && echo "Copied: /add-dir $PWD"; }
 
+# ~/Code/nozomiishii の全 repo で Remote Control サーバーを起動する。スマホの Code タブから繋ぐ用。
+# 各 repo で 1 回は対話で claude を起動し、workspace trust を承認しておく
+# https://code.claude.com/docs/en/remote-control#requirements
+crc() {
+  local dir name pidfile
+  for dir in "$HOME/Code/nozomiishii"/*(/N); do
+    [[ -e $dir/.git ]] || continue
+    name=${dir:t}
+    pidfile="/tmp/claude-rc-$name.pid"
+
+    if [[ -r $pidfile ]] && kill -0 "$(<"$pidfile")" 2>/dev/null; then
+      echo "skip  $name"
+      continue
+    fi
+
+    # nohup でターミナルを閉じても落ちないようにする。再起動・ログアウトでは消える
+    (
+      cd "$dir" || exit
+      nohup claude remote-control --name "$name" >"/tmp/claude-rc-$name.log" 2>&1 </dev/null &
+      printf '%s\n' "$!" >"$pidfile"
+    )
+    echo "start $name"
+  done
+}
+
+# crc で起動したサーバーを全部止める
+crc!() {
+  local pidfile
+  for pidfile in /tmp/claude-rc-*.pid(N); do
+    kill "$(<"$pidfile")" 2>/dev/null
+    rm -f "$pidfile"
+  done
+}
+
 # ----------------------------------------------------------------
 # git
 # ----------------------------------------------------------------
