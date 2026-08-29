@@ -12,7 +12,7 @@ ruby = "4.0.6"
 # Brewfile のフォーマット用
 "gem:rufo" = "0.18.2"
 # mise の zsh 補完用
-usage = "6.4.0"
+usage = "6.4.1"
 
 [settings]
 auto_update = true
