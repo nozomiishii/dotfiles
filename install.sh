@@ -60,7 +60,7 @@ request_admin_privileges() {
 }
 
 # ~/Documents 初回アクセスの TCC ダイアログを、パスワード入力直後のユーザーが
-# まだ手元にいるタイミングに前倒しする。symlink.sh が ~/Documents/superwhisper を
+# まだ手元にいるタイミングに前倒しする。mise.sh が ~/Documents/superwhisper を
 # 張る数十分後に出ると、無人実行がそこで止まる。
 request_documents_access() {
   if [ "${CI:-false}" = "true" ]; then
@@ -177,9 +177,10 @@ clone_dotfiles_repo
 bash "$SCRIPT_DIR/scripts/nix.sh"
 bash "$SCRIPT_DIR/scripts/homebrew.sh"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-bash "$SCRIPT_DIR/scripts/symlink.sh"
-bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
+# macos.sh は LaunchAgent plist など home/ からリンクされるファイルを使うため、
+# リンクを張る mise.sh より後に置く
 bash "$SCRIPT_DIR/scripts/toolchains/mise.sh"
+bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
 bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
 bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
 bash "$SCRIPT_DIR/scripts/default_apps.sh"

@@ -24,8 +24,10 @@ run = "bash ./scripts/darwin/macos.sh"
 
 [tasks.toolchains]
 description = "Set up language toolchains"
+# mise.sh は install.sh 専用。理由は
+# docs/decisions/dotfiles のリンクは mise の task に一本化する.md
 run = [
-  "bash ./scripts/toolchains/mise.sh",
+  "mise install",
   "bash ./scripts/toolchains/claude-code.sh",
   "bash ./scripts/toolchains/pm.sh",
 ]
@@ -36,4 +38,17 @@ run = 'gh api repos/nozomiishii/infra/contents/scripts/clone_github_repos.sh -H 
 
 [tasks.link]
 description = "Symlink dotfiles to home directory"
-run = "bash ./scripts/symlink.sh"
+# 設計の理由は docs/decisions/dotfiles のリンクは mise の task に一本化する.md
+run = '''
+set -Ceuo pipefail
+
+# worktree から呼ばれても本体の home/ を張る
+if ! common="$(git rev-parse --path-format=absolute --git-common-dir 2> /dev/null)"; then
+  echo "⚠️ git repo の中で実行すること" >&2
+  exit 1
+fi
+
+echo "🔗 dotfiles link"
+# --force で repo を正とする
+mise -C "${common%/.git}" bootstrap dotfiles apply --yes --force
+'''
