@@ -66,17 +66,37 @@ alias cwt="claude --worktree --teleport"
 cpm() { printf "/model claude-opus-4-6[1m]" | pbcopy && echo "Copied: /model claude-opus-4-6[1m]"; }
 pwdc() { printf "/add-dir %s" "$PWD" | pbcopy && echo "Copied: /add-dir $PWD"; }
 
+# 状態ファイルの置き場。誰でも書ける /tmp に置くと pid ファイルを差し替えられ、
+# crc! が任意のプロセスを kill しうる
+_crc_state() {
+  local dir="${XDG_STATE_HOME:-$HOME/.local/state}/claude-rc"
+  mkdir -m 700 -p "$dir" || return 1
+  printf '%s\n' "$dir"
+}
+
+# pid ファイルから生きている claude の pid を返す
+_crc_pid() {
+  local pid
+  [[ -r $1 ]] || return 1
+  pid=$(<"$1")
+  # 数値以外と、pid 再利用で別プロセスになったものを弾く
+  [[ $pid == <-> ]] || return 1
+  [[ $(ps -o comm= -p "$pid" 2>/dev/null) == *claude* ]] || return 1
+  printf '%s\n' "$pid"
+}
+
 # ~/Code/nozomiishii の全 repo で Remote Control サーバーを起動する。スマホの Code タブから繋ぐ用。
 # 各 repo で 1 回は対話で claude を起動し、workspace trust を承認しておく
 # https://code.claude.com/docs/en/remote-control#requirements
 crc() {
-  local dir name pidfile
+  local state dir name
+  state=$(_crc_state) || return 1
+
   for dir in "$HOME/Code/nozomiishii"/*(/N); do
     [[ -e $dir/.git ]] || continue
     name=${dir:t}
-    pidfile="/tmp/claude-rc-$name.pid"
 
-    if [[ -r $pidfile ]] && kill -0 "$(<"$pidfile")" 2>/dev/null; then
+    if _crc_pid "$state/$name.pid" >/dev/null; then
       echo "skip  $name"
       continue
     fi
@@ -84,8 +104,8 @@ crc() {
     # nohup でターミナルを閉じても落ちないようにする。再起動・ログアウトでは消える
     (
       cd "$dir" || exit
-      nohup claude remote-control --name "$name" >"/tmp/claude-rc-$name.log" 2>&1 </dev/null &
-      printf '%s\n' "$!" >"$pidfile"
+      nohup claude remote-control --name "$name" >"$state/$name.log" 2>&1 </dev/null &
+      printf '%s\n' "$!" >"$state/$name.pid"
     )
     echo "start $name"
   done
@@ -93,9 +113,11 @@ crc() {
 
 # crc で起動したサーバーを全部止める
 crc!() {
-  local pidfile
-  for pidfile in /tmp/claude-rc-*.pid(N); do
-    kill "$(<"$pidfile")" 2>/dev/null
+  local state pidfile pid
+  state=$(_crc_state) || return 1
+
+  for pidfile in "$state"/*.pid(N); do
+    pid=$(_crc_pid "$pidfile") && kill "$pid"
     rm -f "$pidfile"
   done
 }
