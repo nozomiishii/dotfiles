@@ -38,7 +38,6 @@ run = 'gh api repos/nozomiishii/infra/contents/scripts/clone_github_repos.sh -H 
 
 [tasks.link]
 description = "Symlink dotfiles to home directory"
-# 設計の理由は docs/decisions/dotfiles のリンクは mise の task に一本化する.md
 run = '''
 set -Ceuo pipefail
 
@@ -46,6 +45,5 @@ set -Ceuo pipefail
 common="$(git rev-parse --path-format=absolute --git-common-dir)"
 
 echo "🔗 dotfiles link"
-# --force で repo を正とする
 mise -C "${common%/.git}" bootstrap dotfiles apply --yes --force
 '''
