@@ -24,7 +24,7 @@ Codex から実行する場合も管理対象は Claude Code Routine。Codex の
 
 ## trigger 操作の選択
 
-routine の削除だけは API に無い。削除は [Routine 管理画面](https://claude.ai/code/routines) でユーザーに操作してもらう。作成・更新・connector の変更・一時停止・即時実行は API で完結する。
+routine の削除だけは API に無い。削除は [Routine 管理画面](https://claude.ai/code/routines) でユーザーに操作してもらう。アプリ内ではリンクが開かないことがあるため、管理画面を案内するときはリンクの提示で終えず、ホストのブラウザツール (Claude Code なら Browser) で <https://claude.ai/code/routines> を開き、ブラウザツールが無いホストでは URL をそのまま示す。作成・更新・connector の変更・一時停止・即時実行は API で完結する。
 
 - Claude Code: `schedule` skill と RemoteTrigger を使う
 - Codex: `$chrome:control-chrome` を読み、認証済み Chrome で [Claude Code の Routine 管理画面](https://claude.ai/code/routines)を開く。browser-client に network log と API request の capability があれば、UI 操作より先に list / create / update の endpoint と request schema を確認して同じ API を呼ぶ。現在の接続でそれらが利用できない場合は endpoint を推測せず、認証済み UI で同じ項目を操作する
