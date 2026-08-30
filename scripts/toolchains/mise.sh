@@ -22,27 +22,6 @@ mise trust "$DOTFILES_DIR/mise.toml"
 # リンクに repo の [tools] は要らない。ここで入れるとネットワーク待ちが増える
 MISE_TASK_RUN_AUTO_INSTALL=0 mise -C "$DOTFILES_DIR" run link
 
-# グローバルツールはリンク済みの ~/.config/mise/config.toml で宣言する。
-# install.sh ではこの後に macos.sh が控えているため、一時的な失敗で巻き添えに
-# しないようリトライする
-echo '- 👨‍🍳 Install global tools'
-max_attempts="${MISE_INSTALL_MAX_ATTEMPTS:-3}"
-attempt=1
-backoff_base="${MISE_INSTALL_BACKOFF_SEC:-20}"
-
-while [ "$attempt" -le "$max_attempts" ]; do
-  echo "mise install attempt ${attempt}/${max_attempts}"
-  if mise install; then
-    echo "mise install succeeded"
-    break
-  fi
-  if [ "$attempt" -eq "$max_attempts" ]; then
-    echo "mise install failed after ${max_attempts} attempts"
-    exit 1
-  fi
-
-  sleep "$((backoff_base * attempt))"
-  attempt="$((attempt + 1))"
-done
-
+# グローバルツールの導入は mise run toolchains が担う。install.sh では macos.sh の
+# 後ろに置き、ツールの取得に失敗しても macOS 設定を巻き添えにしない
 echo "👨‍🍳 mise setup is complete 🎉"

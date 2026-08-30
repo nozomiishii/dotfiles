@@ -181,8 +181,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # リンクを張る mise.sh より後に置く
 bash "$SCRIPT_DIR/scripts/toolchains/mise.sh"
 bash "$SCRIPT_DIR/scripts/darwin/macos.sh"
-bash "$SCRIPT_DIR/scripts/toolchains/claude-code.sh"
-bash "$SCRIPT_DIR/scripts/toolchains/pm.sh"
+# mise.sh の PATH 追加はサブシェル限りなので、ここで改めて通す
+export PATH="$HOME/.local/bin:$PATH"
+mise -C "$SCRIPT_DIR" run toolchains
 bash "$SCRIPT_DIR/scripts/default_apps.sh"
 bash "$SCRIPT_DIR/scripts/darwin/open_config_apps.sh"
 

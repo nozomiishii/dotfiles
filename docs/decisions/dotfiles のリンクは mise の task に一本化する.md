@@ -25,7 +25,7 @@ install.sh には順序制約がある。
 
 ## 決定
 
-`scripts/toolchains/mise.sh` が mise の導入、リンク、グローバルツールの導入を順に行う。install.sh では macos.sh より前に置く。
+`scripts/toolchains/mise.sh` が mise の導入とリンクを行う。install.sh では macos.sh より前に置く。
 
 リンク操作の定義は `mise.toml` の `[tasks.link]` 1 箇所とし、mise.sh からもこの task を通す。同じ操作が 2 箇所に別スペルで残ると、片方だけ直す事故が起きる。
 
@@ -35,7 +35,7 @@ install.sh には順序制約がある。
 
 `[tasks.toolchains]` からは mise.sh を外し、代わりに `mise install` を直接並べる。mise.sh を残すとツール更新のつもりで叩いた `mise run toolchains` が毎回 `--force` でリンクを張り直し、`~` の実ファイルを確認なしに上書きする。mise 本体の更新は `~/.config/mise/config.toml` の `auto_update` が担う。
 
-`mise install` にはリトライを付ける。install.sh でこの後に macos.sh が控えるため、ネットワークの一時的な失敗で macos.sh まで巻き添えにしない。
+install.sh は macos.sh の後に `mise run toolchains` を呼ぶ。`macos.sh` は mise が入れるツールを 1 つも使わないので、ツールの取得に失敗したときに macOS 設定まで未適用にする理由がない。
 
 ## 結果
 
