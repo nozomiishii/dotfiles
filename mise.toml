@@ -43,10 +43,7 @@ run = '''
 set -Ceuo pipefail
 
 # worktree から呼ばれても本体の home/ を張る
-if ! common="$(git rev-parse --path-format=absolute --git-common-dir 2> /dev/null)"; then
-  echo "⚠️ git repo の中で実行すること" >&2
-  exit 1
-fi
+common="$(git rev-parse --path-format=absolute --git-common-dir)"
 
 echo "🔗 dotfiles link"
 # --force で repo を正とする
