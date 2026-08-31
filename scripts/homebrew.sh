@@ -38,7 +38,8 @@ trust_brew_bundle_formulae() {
     smudge/smudge/nightlight \
     stripe/stripe-cli/stripe
   brew trust --cask \
-    nozomiishii/tap/brooklyn
+    nozomiishii/tap/brooklyn \
+    stablyai/orca/orca
 }
 
 if ! command -v brew >/dev/null 2>&1; then

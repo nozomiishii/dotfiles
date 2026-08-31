@@ -220,6 +220,9 @@ if OS.mac? && !ENV["CI"]
   # Write, edit, and chat about your code with AI https://cursor.sh/
   cask "cursor"
 
+  # IDE for orchestrating AI coding agents across terminals and worktrees https://www.onorca.dev/
+  cask "stablyai/orca/orca", trusted: true
+
   # Lock/unlock Apple computers using the proximity of a bluetooth low energy device https://github.com/ts1/BLEUnlock
   cask "bleunlock"
 
