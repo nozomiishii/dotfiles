@@ -16,6 +16,10 @@ go = "1.27.0"
 # mise の zsh 補完用
 usage = "6.4.1"
 
+[bootstrap.packages]
+# Apple Brooklyn event inspired screen saver for Apple Silicon https://github.com/nozomiishii/Brooklyn
+"brew-cask:nozomiishii/tap/brooklyn" = { os = "macos" }
+
 [settings]
 auto_update = true
 

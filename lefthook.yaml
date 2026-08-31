@@ -27,9 +27,11 @@ post-merge:
       files: git diff-tree -r --name-only --no-commit-id --diff-filter=AD ORIG_HEAD HEAD
       run: mise run link
     - name: homebrew
-      glob: 'Brewfile'
+      glob: '{Brewfile,home/.config/mise/config.toml}'
       interactive: true
-      run: mise run homebrew
+      # homebrew → packages の直列。理由は
+      # docs/decisions/brooklyn は Brewfile ではなく mise bootstrap.packages で管理する.md
+      run: mise run homebrew && mise run packages
 
 pre-push:
   parallel: true

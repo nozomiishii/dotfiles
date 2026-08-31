@@ -38,7 +38,6 @@ trust_brew_bundle_formulae() {
     smudge/smudge/nightlight \
     stripe/stripe-cli/stripe
   brew trust --cask \
-    nozomiishii/tap/brooklyn \
     stablyai/orca/orca
 }
 
