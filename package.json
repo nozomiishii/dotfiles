@@ -30,7 +30,7 @@
     "@nozomiishii/markdownlint-cli2-config": "2.3.1",
     "@nozomiishii/postinstall": "2.3.1",
     "@nozomiishii/prettier-config": "2.3.1",
-    "lefthook": "2.1.10",
+    "lefthook": "2.1.12",
     "markdownlint-cli2": "0.23.2"
   },
   "devEngines": {
