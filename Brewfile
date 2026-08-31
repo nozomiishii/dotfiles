@@ -86,15 +86,6 @@ if OS.mac? && !ENV["CI"]
   brew "mint"
 
   # ----------------------------------------------------------------
-  # Go
-  # ----------------------------------------------------------------
-  # Open source programming language to build simple/reliable/efficient software https://go.dev/
-  brew "go"
-
-  # Go Language's command-line interface for database migrations https://pressly.github.io/goose/
-  brew "goose"
-
-  # ----------------------------------------------------------------
   # Brew
   # ----------------------------------------------------------------
   # Run your GitHub Actions locally https://github.com/nektos/act
