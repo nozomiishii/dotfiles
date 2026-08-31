@@ -15,12 +15,14 @@ on:
       - 'mise.toml'
       - 'Brewfile'
       - 'scripts/**'
+      - 'home/.config/mise/config.toml'
   pull_request:
     paths:
       - 'install.sh'
       - 'mise.toml'
       - 'Brewfile'
       - 'scripts/**'
+      - 'home/.config/mise/config.toml'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

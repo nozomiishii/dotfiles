@@ -18,6 +18,13 @@ lockfile = true
 description = "Install/update Homebrew packages"
 run = "bash ./scripts/homebrew.sh"
 
+[tasks.packages]
+description = "Install/upgrade mise-managed system packages"
+run = [
+  "mise bootstrap packages apply --yes",
+  "mise bootstrap packages upgrade --yes",
+]
+
 [tasks.macos]
 description = "Configure macOS settings"
 run = "bash ./scripts/darwin/macos.sh"
@@ -30,6 +37,7 @@ run = [
   "mise install",
   "bash ./scripts/toolchains/claude-code.sh",
   "bash ./scripts/toolchains/pm.sh",
+  "mise run packages",
 ]
 
 [tasks.repo]
