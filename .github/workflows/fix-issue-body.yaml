@@ -1,0 +1,113 @@
+name: Fix issue body
+
+on:
+  issues:
+    types: [opened, edited]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Issue number to repair
+        required: true
+        type: string
+  pull_request:
+    paths:
+      - scripts/fix-issue-body*
+      - .github/workflows/fix-issue-body.yaml
+
+concurrency:
+  # 同じ issue への修復を直列化する。pending が新しい run に置き換えられても、
+  # 走る run が本文を取り直して判定し直すので結果は変わらない。
+  # issue 番号を持たない pull_request のテストは ref で分ける。
+  group: ${{ github.workflow }}-${{ github.event.issue.number || inputs.issue_number || github.ref }}
+  cancel-in-progress: false
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  fix:
+    # issues イベントはここで第三者の issue を落とす。workflow_dispatch は
+    # issue の payload を持たないので、author の確認は run step 側で行う。
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'issues' && github.event.issue.user.login == github.repository_owner)
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    permissions:
+      contents: read # required by actions/checkout to fetch repository code
+      issues: write # required by gh issue edit to rewrite the body and attach the label
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Repair the collapsed body
+        # issue 由来の値は env 経由でだけ渡す。${{ }} で run に展開すると、
+        # issue に書かれた内容がそのままシェルに解釈される。
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+          LABEL: auto-format-fixed
+        run: |
+          # 手動実行は任意の issue 番号を指定できるので、経路によらずここでも
+          # author を確かめる。owner 以外が立てた issue は書き換えない。
+          author=$(gh issue view "$ISSUE_NUMBER" --repo "$REPO" --json author -q .author.login)
+
+          if [ "$author" != "$REPO_OWNER" ]; then
+            echo "Issue #$ISSUE_NUMBER was opened by $author, not $REPO_OWNER. Nothing to do."
+            exit 0
+          fi
+
+          # body は author を確かめた後に取り直す。event payload の body でなく
+          # API から読むのは、edited が届くまでに routine 自身が修復していたら
+          # その最新の本文を判定に掛けるため。
+          gh issue view "$ISSUE_NUMBER" \
+            --repo "$REPO" \
+            --json body \
+            -q .body \
+            > "$RUNNER_TEMP/body.md"
+
+          # 0 は修復した、1 は修復不要、2 以上は想定外の失敗
+          status=0
+          bash scripts/fix-issue-body.sh < "$RUNNER_TEMP/body.md" > "$RUNNER_TEMP/fixed.md" || status=$?
+
+          if [ "$status" -eq 1 ]; then
+            echo "Body is not collapsed into one line. Nothing to fix."
+            exit 0
+          fi
+
+          if [ "$status" -ne 0 ]; then
+            echo "fix-issue-body.sh exited with $status. Leaving the issue untouched." >&2
+            exit "$status"
+          fi
+
+          # 発動を観測できるようにする label。repo に無ければ作る。
+          gh label create "$LABEL" \
+            --repo "$REPO" \
+            --description "Collapsed issue body repaired by the Fix issue body workflow" \
+            --color d4c5f9 \
+            || true
+
+          gh issue edit "$ISSUE_NUMBER" \
+            --repo "$REPO" \
+            --body-file "$RUNNER_TEMP/fixed.md" \
+            --add-label "$LABEL"
+
+  test:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    permissions:
+      contents: read # required by actions/checkout to fetch repository code
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Run fix-issue-body tests
+        run: bash scripts/fix-issue-body.test.sh
