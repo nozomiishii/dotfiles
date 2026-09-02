@@ -346,6 +346,16 @@ Claude Code 2.1.51 で追加。通常は毎セッション `/remote-control` を
 
 `permissions.skipDangerousModePermissionPrompt`（bypass permissions 用）と対になる auto mode 版。公式ドキュメントでは明示的に記載されていないが Claude Code 本体が読み取る設定キーとして実装されている。将来挙動が変わる可能性があるため、新しいセッションで確認プロンプトが戻ったらこの記述を見直す。
 
+### agentPushNotifEnabled
+
+```jsonc
+"agentPushNotifEnabled": true  // 長時間タスク完了時などにスマホへプッシュ通知を送る
+```
+
+Remote Control 接続中に、Claude が送る価値があると判断したタイミング（長時間タスクの完了など）でスマホへプッシュする。`/config` では Push when Claude decides と表示される。`remoteControlAtStartup: true` と組み合わせ、外出先で完了を知る用途。
+
+参考: https://code.claude.com/docs/en/remote-control#mobile-push-notifications
+
 ## 使い方
 
 ```bash

@@ -125,8 +125,8 @@
       }
     }
   },
-  "language": "japanese",
   "outputStyle": "Concise",
+  "language": "japanese",
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
@@ -194,5 +194,6 @@
   "autoMemoryEnabled": false,
   "skipWorkflowUsageWarning": true,
   "remoteControlAtStartup": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "agentPushNotifEnabled": true
 }

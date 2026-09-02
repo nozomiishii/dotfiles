@@ -600,7 +600,8 @@
   "workbench.preferredDarkColorTheme": "Monokai Pro",
   "extensions.supportAgentsWindow": {
     "monokai.theme-monokai-pro-vscode": true
-  }
+  },
+  "sherlock.userId": "5da7b1c9-93e9-4d3f-8fbd-eee5091b83ef"
 
   ///////////////////////////////////////////////////////////////////
 }
