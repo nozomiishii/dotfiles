@@ -34,7 +34,6 @@ AGENTS.md の各ルールに順に問う。
 
 破られた実績のあるルールは、文面の言い換えでなく仕組みを変える。
 
-- 公式に有効とされる強調 (IMPORTANT など) を付ける ([best practices](https://code.claude.com/docs/en/best-practices))。効果が薄れるため同時に 2-3 個まで
 - ツール呼び出しを経由する違反は、PreToolUse hook の deny で機械的に止める ([Claude Code](https://code.claude.com/docs/en/hooks) / [Codex](https://learn.chatgpt.com/docs/hooks))
 - それでも守られないなら、常時ルールとして適切かを疑い、スキル退避や削除を検討する
 
