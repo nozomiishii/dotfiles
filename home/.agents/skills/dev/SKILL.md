@@ -38,7 +38,7 @@ description: >-
 
 ## プラン
 
-- 実装を始める前にプランを固める。Claude Code では plan mode に入る。Codex ではユーザーが承認するまで編集系のツールを使わない
+- 実装を始める前にプランを固める。plan mode には入らない。ユーザーが承認するまで編集系のツールを使わない
 - わからない点や、決め方が分かれる仕様は、推測で埋めずに 1 問ずつユーザーに聞く
 - 話に上がった外部技術は [find-docs](../find-docs/SKILL.md) で一次情報を確認する
 - 2-3 案を比較し、各案にトレードオフを添えて、推奨する案と理由を示す
@@ -59,4 +59,4 @@ description: >-
 
 ## 経緯
 
-設計判断を調べるときだけ参照する。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/開発フローは%20dev%20スキルを正本にする.md)。
+設計判断を調べるときだけ参照する。[開発フローを dev スキルに一本化した経緯](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/開発フローは%20dev%20スキルを正本にする.md)と、[plan mode に入らない理由](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/dev%20のプランは%20plan%20mode%20に入らず進める.md)は ADR にある。
