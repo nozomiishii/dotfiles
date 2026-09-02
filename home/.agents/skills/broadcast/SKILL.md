@@ -62,7 +62,6 @@ jq -r '.[] | select(.enabled == true) | "\(.name)\t\(.rootPath)"' "$PROJECTS_JSO
 - Codex App: 各 repo の新しい Worktree task に dispatch する
 - CLI: 各 repo の worktree を用意し、Claude Code は `claude --bg`、Codex は `codex exec --sandbox workspace-write -C` で dispatch する
 - 現在 repo 内の単純な変更だけは foreground で処理してよい
-- cloud セッションでは AGENTS.md の「cloud セッション」規約で repo を用意し、clone 先を rootPath として扱う
 
 各プロジェクトで実行する典型ステップ:
 
