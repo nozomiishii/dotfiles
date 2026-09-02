@@ -45,7 +45,6 @@ AGENTS.md の各ルールに順に問う。
 - 「2 と 4 だけ」のような番号での取捨選択、修正指示を反映して実行する
 - スキルの新規作成・編集を伴う候補は、sibling の [skill SKILL.md](../skill/SKILL.md) に従う
 - 反映後、移した各ルールが正本 1 箇所にだけあることを grep で確認し、前後の行数を報告する
-- PR を作成し、sibling の [cloud-bump SKILL.md](../cloud-bump/SKILL.md) でマージ後の bump 要否を判定して予告する
 
 ## 実行の目安
 
