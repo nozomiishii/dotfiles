@@ -14,7 +14,7 @@ go = "1.27.0"
 # Brewfile のフォーマット用
 "gem:rufo" = "0.18.2"
 # mise の zsh 補完用
-usage = "6.6.0"
+usage = "6.6.1"
 
 [bootstrap.packages]
 # Apple Brooklyn event inspired screen saver for Apple Silicon https://github.com/nozomiishii/Brooklyn
