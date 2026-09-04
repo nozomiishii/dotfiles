@@ -3,7 +3,7 @@
 node = "24.20.0"
 bun = "1.4.0"
 pnpm = "11.25.0"
-uv = "0.12.8"
+uv = "0.12.9"
 "op" = "2.39.0"
 rust = { version = "1.98.0", components = ["rust-analyzer"] }
 ruby = "4.0.6"
