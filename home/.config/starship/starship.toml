@@ -6,6 +6,8 @@
 add_newline = false
 
 format = """
+$username\
+$hostname\
 $directory\
 $git_branch\
 $git_state\
@@ -15,6 +17,16 @@ $cmd_duration\
 $line_break\
 $character
 """
+
+
+# username と hostname は SSH 先でだけ表示する (ssh_only は既定値)
+[username]
+format = '[$user](bold yellow)@'
+
+
+[hostname]
+ssh_only = true
+format = '[$hostname](bold yellow) '
 
 
 [character]
