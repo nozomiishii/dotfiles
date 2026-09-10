@@ -49,6 +49,9 @@ sudo reboot
 - Claude Code
 - Jump Desktop
 
+- portless
+  - Follow the [setup steps for the background proxy](docs/portless.md).
+
 - Github login and download repositories
 
 ```shell

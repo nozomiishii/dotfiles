@@ -11,6 +11,8 @@ go = "1.27.1"
 "npm:typescript-language-server" = "6.0.0"
 "npm:@devcontainers/cli" = "0.89.0"
 "npm:@antfu/ni" = "30.5.0"
+# worktree ごとの .localhost URL を割り当てる dev サーバーの proxy。常駐 proxy の登録は https://github.com/nozomiishii/dotfiles/blob/main/docs/portless.md
+"npm:portless" = "0.15.6"
 # Brewfile のフォーマット用
 "gem:rufo" = "0.18.2"
 # mise の zsh 補完用
