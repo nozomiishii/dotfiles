@@ -112,8 +112,8 @@ AccessDenied: arn:aws:iam::123456789012:role/log-copy is not authorized to perfo
 - 必ずclaude code、codexどちらでも同じ挙動になるように作る。
 
 ## モデルの使い分け
-- セッションが Fable で動いているときは、Fable をユーザーとのやりとり、委譲した作業の監視、判断に使う。実行作業は `model` を指定したサブエージェントへ委譲する。
-- 委譲先の `model` は opus を既定にする。難しい設計・検証・レビューは fable、機械的で単純な作業は sonnet を指定する。
+- セッションが Fable または Astra で動いているときは、そのモデルをユーザーとのやりとり、委譲した作業の監視、判断に使う。実行作業は `model` を指定したサブエージェントへ委譲する。
+- 委譲先の既定は Claude Code では opus、Codex では sol。機械的で単純な作業は Claude Code では sonnet、Codex では luna。
 - モデル名を指定できないホストでは読み替えず、その環境の既定モデルのサブエージェントを使う。
 
 ## ユーザープロフィール
