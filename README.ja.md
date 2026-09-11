@@ -49,9 +49,6 @@ sudo reboot
 - Claude Code
 - Jump Desktop
 
-- portless
-  - 常駐 proxy の[登録手順](docs/portless.md)に従う。
-
 - Github loginとレポジトリダウンロード
 
 ```shell
