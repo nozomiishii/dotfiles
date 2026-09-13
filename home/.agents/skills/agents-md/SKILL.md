@@ -8,7 +8,7 @@ description: >-
 
 # /agents-md
 
-`dotfiles/home/AGENTS.md` (`~/.claude/CLAUDE.md` の実体) とスキル群を手入れし、短く・具体的・矛盾なしに保つ。指示ファイルはコンテキストであって強制設定ではなく、長くなるほど遵守率が下がる ([Claude Code memory](https://code.claude.com/docs/en/memory))。dotfiles 以外で始まったセッションから発動した場合は、sibling の [wt SKILL.md](../wt/SKILL.md) に従って dotfiles の作業環境を用意する。
+`dotfiles/home/AGENTS.md` (`~/.claude/CLAUDE.md` の実体) とスキル群を手入れし、短く・具体的・矛盾なしに保つ。指示ファイルはコンテキストであって強制設定ではなく、長くなるほど遵守率が下がる ([Claude Code memory](https://code.claude.com/docs/en/memory))。dotfiles 以外で始まったセッションから発動した場合は、dotfiles の作業環境を用意する。
 
 ## 絶対制約
 

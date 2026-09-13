@@ -29,7 +29,7 @@ description: >-
 
 ### 新しいタスクへ切り出す
 
-会話コンテキストが不要な項目、またはコンテキストが逼迫しているときに使う。ユーザーがこの方法を選んだら、Claude Code デスクトップでは `spawn_task`、Codex App では新しいタスクを作る機能を使う。CLI では sibling の [wt SKILL.md](../wt/SKILL.md) を明示的に読み、worktree を用意する。Claude Code は `claude --bg`、Codex は `codex exec --sandbox workspace-write -C` で実行する。プロンプトにはファイルパスと十分な背景を含め、この会話なしで単独実行できるようにする。
+会話コンテキストが不要な項目、またはコンテキストが逼迫しているときに使う。ユーザーがこの方法を選んだら、Claude Code デスクトップでは `spawn_task`、Codex App では新しいタスクを作る機能を使う。CLI では worktree を用意する。Claude Code は `claude --bg`、Codex は `codex exec --sandbox workspace-write -C` で実行する。プロンプトにはファイルパスと十分な背景を含め、この会話なしで単独実行できるようにする。
 
 ### issue
 

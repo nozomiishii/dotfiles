@@ -43,11 +43,11 @@ REPO=$(gh repo view "$REMOTE" --json name --jq .name)
 
 ## archives repo の準備
 
-セッション開始 repo とは別 repo なので、sibling の [wt SKILL.md](../wt/SKILL.md) を明示的に読み、その方針で `nozomiishii/archives` の別 session / task に切り出す。Codex App では archives project の新しい Worktree task、CLI では既存 clone の worktree とバックグラウンド実行を使う。
+セッション開始 repo とは別 repo なので、`nozomiishii/archives` の別 session / task に切り出す。Codex App では archives project の新しい Worktree task、CLI では既存 clone の worktree とバックグラウンド実行を使う。
 
 元の task では、既存 clone の場所をホストの project 一覧または git remote から探して切り出し先を作る。配置場所を `$HOME/Code/...` に固定しない。clone が無い場合はホストの repo 追加機能を使い、利用できなければ clone 先をユーザーに確認する。
 
-切り出し先では cwd が `nozomiishii/archives` の worktree であることを git remote で確認し、`ARCHIVES=$(git rev-parse --show-toplevel)` とする。base clone を再探索しない。branch は wt skill が作成または復元したものをそのまま使う。
+切り出し先では cwd が `nozomiishii/archives` の worktree であることを git remote で確認し、`ARCHIVES=$(git rev-parse --show-toplevel)` とする。base clone を再探索しない。branch は切り出し先が作成または復元したものをそのまま使う。
 
 最新の main を取得する。worktree 内で main に切り替えない。
 
@@ -110,7 +110,7 @@ PR 本文に含める情報:
 
 archives への PR を作成したら、ソース repo 側でも対象ファイルを削除する PR を作成する。
 
-ソース repo がセッション開始 repo なら元の session / task で行う。別 repo なら sibling の [wt SKILL.md](../wt/SKILL.md) の方針で source repo の別 session / task を用意する。archives repo 用 task や別 repo 起点の session から直接変更しない。source repo の task branch にある実際の worktree root を `SOURCE_WT`、branch 名を `SOURCE_BRANCH` とする。
+ソース repo がセッション開始 repo なら元の session / task で行う。別 repo なら source repo の別 session / task を用意する。archives repo 用 task や別 repo 起点の session から直接変更しない。source repo の task branch にある実際の worktree root を `SOURCE_WT`、branch 名を `SOURCE_BRANCH` とする。
 
 ```bash
 git -C "$SOURCE_WT" rm -- <対象ファイル>
