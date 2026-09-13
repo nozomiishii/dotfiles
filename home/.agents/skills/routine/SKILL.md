@@ -41,7 +41,7 @@ UI fallback は `name`、`instructions`、`repos`、`schedule`、`model` と、�
 
 brain repo の `.routines/` を確認し、frontmatter の構造と prompt の書き方を把握する。
 
-git remote が `nozomiishii/brain` を指す clone をホストの project 一覧または既存の local clone から探し、その絶対パスを `BRAIN` とする。sibling の [wt SKILL.md](../wt/SKILL.md) を明示的に読む。clone が見つからなければ、その repo 準備手順を使う。
+git remote が `nozomiishii/brain` を指す clone をホストの project 一覧または既存の local clone から探し、その絶対パスを `BRAIN` とする。clone が見つからなければ、その repo 準備手順を使う。
 
 ```bash
 ls "$BRAIN/.routines/"
