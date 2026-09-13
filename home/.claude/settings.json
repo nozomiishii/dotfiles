@@ -117,15 +117,8 @@
         "source": "github",
         "repo": "getsentry/sentry-mcp"
       }
-    },
-    "openai-codex": {
-      "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
-      }
     }
   },
-  "outputStyle": "Concise",
   "language": "japanese",
   "sandbox": {
     "enabled": true,
