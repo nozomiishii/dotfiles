@@ -184,7 +184,6 @@
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
   "tui": "fullscreen",
-  "autoMemoryEnabled": false,
   "skipWorkflowUsageWarning": true,
   "remoteControlAtStartup": true,
   "skipAutoPermissionPrompt": true,
