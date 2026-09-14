@@ -39,9 +39,6 @@
 - 委譲先の既定は Claude Code では opus、Codex では sol。機械的で単純な作業は Claude Code では sonnet、Codex では luna。
 - モデル名を指定できないホストでは読み替えず、その環境の既定モデルのサブエージェントを使う。
 
-## 外部リポジトリ
-- 管理外 (自分と所属 Organization 以外) のリポジトリへの書き込みは /oss スキルを使用する
-
 ## 静的解析・lint エラーの対応
 - disable コメント・ignore 設定・severity 引き下げなど、lint・型検査・セキュリティスキャナのルール抑制は承認なしにしない。自律判断の例外はない。
 - エラーは次の順で直す。
@@ -53,12 +50,18 @@
 ## 文章
 - markdown・コード内コメント・PR / issue 本文を書く・編集する前は /doc スキルを使用する
 
+## 外部リポジトリ
+- 管理外 (自分と所属 Organization 以外) のリポジトリへの書き込みは /oss スキルを使用する
+
 ## コミットと PR
 - 指定がなければ、PR 本文は日本語で書く。
 - 明示的な指定なしに Draft PR を作らない。
 - 指定がなければ、PR タイトルは repo の commitlint 設定に従う。
 - PR に依頼と無関係な変更を混ぜない。
 - merge手順が発生する場合、GitHub Stacked PRを使う。
+
+## Issue
+- タイトルは指定がなければcommitlintに従わない。分類はLabelsで表現する。
 
 ## PR のレビューコメントの対応
 - 修正指示: 修正・検証・push まで行い、thread に対応内容と commit hash を返信する。
