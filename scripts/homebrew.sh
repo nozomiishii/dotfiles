@@ -65,7 +65,7 @@ while [ "$attempt" -le "$max_attempts" ]; do
   echo "brew bundle attempt ${attempt}/${max_attempts}"
   if HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}" brew bundle \
     --verbose \
-    --cleanup \
+    --force-cleanup \
     --force \
     --file="$SCRIPT_DIR/Brewfile"; then
     echo "brew bundle succeeded"
