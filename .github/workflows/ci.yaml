@@ -10,35 +10,74 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "install.sh"
-      - "mise.toml"
-      - "Brewfile"
-      - "scripts/**"
-      - "home/.config/mise/config.toml"
   pull_request:
-    paths:
-      - "install.sh"
-      - "mise.toml"
-      - "Brewfile"
-      - "scripts/**"
-      - "home/.config/mise/config.toml"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  # main の push で、前の run の install を打ち切らないよう PR だけにする
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions: {}
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
+  changes:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    permissions:
+      contents: read # required by actions/checkout to fetch repository code
+      pull-requests: read # required by dorny/paths-filter to read PR diff
+    outputs:
+      install: ${{ steps.changes.outputs.install }}
+    steps:
+      - name: Get code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
+        id: changes
+        with:
+          filters: |
+            install:
+              - "install.sh"
+              - "mise.toml"
+              - "Brewfile"
+              - "scripts/**"
+              - "home/.config/mise/config.toml"
+
+  format:
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    permissions:
+      contents: read # required by actions/checkout to fetch repository code
+    steps:
+      - name: Get code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup tools
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Format check
+        run: pnpm format
+
   install:
+    needs: changes
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || needs.changes.outputs.install == 'true'
     runs-on: macos-latest
     timeout-minutes: 40
     permissions:
       contents: read # required by actions/checkout to fetch repository code
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     steps:
       - name: Get code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -52,3 +91,17 @@ jobs:
       - name: Run install (from URL)
         if: github.event_name != 'pull_request'
         run: curl -L https://nozomiishii.dev/dotfiles/install | bash
+
+  required:
+    # name 変更時は infra 側の required_status_checks も更新する
+    name: CI / required
+    needs: [changes, format, install]
+    if: always()
+    runs-on: ubuntu-slim
+    timeout-minutes: 1
+    steps:
+      - name: Fail if any required job failed or was cancelled
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: |
+          echo "A required job failed or was cancelled"
+          exit 1
