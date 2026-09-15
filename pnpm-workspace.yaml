@@ -12,7 +12,6 @@ allowBuilds:
 publicHoistPattern:
   - "@types/*"
   - "*eslint*"
-  - "*prettier*"
 
 # 自前パッケージは待たず即取り込みたいので除外する。
 minimumReleaseAgeExclude:

@@ -6,43 +6,44 @@
   "bugs": {
     "url": "https://github.com/nozomiishii/dotfiles/issues"
   },
+  "license": "MIT",
+  "author": "Nozomi Ishii",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nozomiishii/dotfiles.git"
   },
-  "license": "MIT",
-  "author": "Nozomi Ishii",
   "type": "module",
   "main": "install.sh",
   "scripts": {
-    "format": "pnpm prettier . --check",
-    "format:fix": "pnpm prettier . --write",
-    "postinstall": "postinstall",
+    "format": "pnpm oxfmt . --check",
+    "format:fix": "pnpm oxfmt .",
     "lint": "pnpm markdownlint",
     "lint:fix": "pnpm markdownlint:fix",
     "markdownlint": "npx -y markdownlint-cli2@latest '**/*.md' '#node_modules'",
     "markdownlint:fix": "npx -y markdownlint-cli2-fix@latest '**/*.md' '#node_modules'",
-    "prettier": "prettier --ignore-unknown --cache"
+    "oxfmt": "oxfmt",
+    "postinstall": "postinstall"
   },
   "devDependencies": {
     "@nozomiishii/commitlint-config": "2.7.0",
     "@nozomiishii/lefthook-config": "2.7.0",
     "@nozomiishii/markdownlint-cli2-config": "2.7.0",
+    "@nozomiishii/oxfmt-config": "2.7.0",
     "@nozomiishii/postinstall": "2.7.0",
-    "@nozomiishii/prettier-config": "2.7.0",
     "lefthook": "2.1.12",
-    "markdownlint-cli2": "0.23.2"
+    "markdownlint-cli2": "0.23.2",
+    "oxfmt": "0.67.0"
   },
   "devEngines": {
-    "runtime": {
-      "name": "node",
-      "version": "24.21.0",
-      "onFail": "download"
-    },
     "packageManager": {
       "name": "pnpm",
       "version": "12.4.1",
       "onFail": "error"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "24.21.0",
+      "onFail": "download"
     }
   }
 }

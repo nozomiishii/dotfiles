@@ -11,18 +11,18 @@ on:
     branches:
       - main
     paths:
-      - 'install.sh'
-      - 'mise.toml'
-      - 'Brewfile'
-      - 'scripts/**'
-      - 'home/.config/mise/config.toml'
+      - "install.sh"
+      - "mise.toml"
+      - "Brewfile"
+      - "scripts/**"
+      - "home/.config/mise/config.toml"
   pull_request:
     paths:
-      - 'install.sh'
-      - 'mise.toml'
-      - 'Brewfile'
-      - 'scripts/**'
-      - 'home/.config/mise/config.toml'
+      - "install.sh"
+      - "mise.toml"
+      - "Brewfile"
+      - "scripts/**"
+      - "home/.config/mise/config.toml"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -35,7 +35,7 @@ jobs:
     runs-on: macos-latest
     timeout-minutes: 40
     permissions:
-      contents: read  # required by actions/checkout to fetch repository code
+      contents: read # required by actions/checkout to fetch repository code
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

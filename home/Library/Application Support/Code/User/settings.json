@@ -56,6 +56,9 @@
 
   "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
+  "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][yaml][css][html]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
+  },
 
   // ----------------------------------------------------------------
   // Editor
@@ -296,41 +299,21 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "tailwindCSS.experimental.classRegex": [["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"]],
+  "tailwindCSS.experimental.classRegex": [
+    ["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"]
+  ],
 
   // ----------------------------------------------------------------
   // typescript
   // ----------------------------------------------------------------
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.preferGoToSourceDefinition": true,
 
   // ----------------------------------------------------------------
   // javascript
   // ----------------------------------------------------------------
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.preferGoToSourceDefinition": true,
-
-  // ----------------------------------------------------------------
-  // json
-  // ----------------------------------------------------------------
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
 
   // ----------------------------------------------------------------
   // ESlint
@@ -492,7 +475,12 @@
   // ----------------------------------------------------------------
   "vitest.enable": true,
   "vitest.commandLine": "npx vitest --watch",
-  "vitest.exclude": ["**/e2e/**", "**/node_modules/**", "**/dist/**", "**/.{idea,git,cache,output,temp}/**"],
+  "vitest.exclude": [
+    "**/e2e/**",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/.{idea,git,cache,output,temp}/**"
+  ],
 
   // ----------------------------------------------------------------
   // Playwright

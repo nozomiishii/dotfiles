@@ -6,10 +6,7 @@ pnpm = "12.4.1"
 lockfile = true
 
 [dotfiles]
-"~" = { source = "home", mode = "symlink-each", exclude = [
-  ".DS_Store",
-  ".agents/skills",
-] }
+"~" = { source = "home", mode = "symlink-each", exclude = [".DS_Store", ".agents/skills"] }
 # Codex は個別の SKILL.md ではなく、skill ディレクトリの symlink のみをサポートする。
 # https://developers.openai.com/codex/skills#where-codex-loads-local-skills
 "~/.agents/skills" = { source = "home/.agents/skills", mode = "symlink" }
@@ -20,10 +17,7 @@ run = "bash ./scripts/homebrew.sh"
 
 [tasks.packages]
 description = "Install/upgrade mise-managed system packages"
-run = [
-  "mise bootstrap packages apply --yes",
-  "mise bootstrap packages upgrade --yes",
-]
+run = ["mise bootstrap packages apply --yes", "mise bootstrap packages upgrade --yes"]
 
 [tasks.macos]
 description = "Configure macOS settings"

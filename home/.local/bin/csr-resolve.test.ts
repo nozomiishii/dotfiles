@@ -1,5 +1,14 @@
 import { describe, expect, test } from "bun:test";
-import { collectMessages, formatPreview, formatRow, messageText, lineageReps, repoOf, type Msg, type Sess } from "./csr-resolve.ts";
+import {
+  collectMessages,
+  formatPreview,
+  formatRow,
+  messageText,
+  lineageReps,
+  repoOf,
+  type Msg,
+  type Sess,
+} from "./csr-resolve.ts";
 
 describe("messageText", () => {
   test("string content はそのまま trim", () => {
@@ -7,13 +16,18 @@ describe("messageText", () => {
   });
   test("text ブロックを連結", () => {
     expect(
-      messageText({ message: { content: [{ type: "text", text: "a" }, { type: "text", text: "b" }] } }),
+      messageText({
+        message: {
+          content: [
+            { type: "text", text: "a" },
+            { type: "text", text: "b" },
+          ],
+        },
+      }),
     ).toBe("a\nb");
   });
   test("tool_result は除外して空", () => {
-    expect(
-      messageText({ message: { content: [{ type: "tool_result", content: "x" }] } }),
-    ).toBe("");
+    expect(messageText({ message: { content: [{ type: "tool_result", content: "x" }] } })).toBe("");
   });
   test("thinking / tool_use は除外し text だけ残す", () => {
     expect(
@@ -102,9 +116,22 @@ describe("formatRow", () => {
 
 describe("collectMessages", () => {
   const jsonl = [
-    JSON.stringify({ type: "user", cwd: "/r/.claude/worktrees/s", timestamp: "2026-05-22T01:00:00Z", message: { content: "first" } }),
-    JSON.stringify({ type: "assistant", timestamp: "2026-05-22T02:00:00Z", message: { content: [{ type: "text", text: "reply" }] } }),
-    JSON.stringify({ type: "user", timestamp: "2026-05-22T03:00:00Z", message: { content: [{ type: "tool_result", content: "ignored" }] } }),
+    JSON.stringify({
+      type: "user",
+      cwd: "/r/.claude/worktrees/s",
+      timestamp: "2026-05-22T01:00:00Z",
+      message: { content: "first" },
+    }),
+    JSON.stringify({
+      type: "assistant",
+      timestamp: "2026-05-22T02:00:00Z",
+      message: { content: [{ type: "text", text: "reply" }] },
+    }),
+    JSON.stringify({
+      type: "user",
+      timestamp: "2026-05-22T03:00:00Z",
+      message: { content: [{ type: "tool_result", content: "ignored" }] },
+    }),
     "null",
     JSON.stringify({ type: "summary", summary: "x" }),
   ].join("\n");
@@ -135,7 +162,10 @@ describe("formatPreview", () => {
     expect(out).not.toContain("m0\n");
   });
   test("role ラベルが付く", () => {
-    const out = formatPreview("HEAD", [{ role: "user", text: "hi" }, { role: "assistant", text: "yo" }]);
+    const out = formatPreview("HEAD", [
+      { role: "user", text: "hi" },
+      { role: "assistant", text: "yo" },
+    ]);
     expect(out).toContain("👤 hi");
     expect(out).toContain("🤖 yo");
   });

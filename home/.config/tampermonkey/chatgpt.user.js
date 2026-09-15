@@ -10,12 +10,12 @@
 // ==/UserScript==
 
 (function () {
-  'use strict';
+  "use strict";
 
-  document.querySelector('body').addEventListener(
-    'keydown',
+  document.querySelector("body").addEventListener(
+    "keydown",
     (e) => {
-      if (e.code === 'Enter' && !e.metaKey) {
+      if (e.code === "Enter" && !e.metaKey) {
         e.stopPropagation();
       }
     },

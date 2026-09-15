@@ -62,7 +62,12 @@ export function collectMessages(text: string): { cwd: string; lastTs: string; me
 }
 
 // 末尾 tail 件を 👤/🤖 ラベル付きで整形。長い本文は cap で切り詰める。
-export function formatPreview(header: string, messages: Msg[], tail = PREVIEW_TAIL, cap = MSG_CAP): string {
+export function formatPreview(
+  header: string,
+  messages: Msg[],
+  tail = PREVIEW_TAIL,
+  cap = MSG_CAP,
+): string {
   const body = messages
     .slice(-tail)
     .map((m) => {
@@ -116,7 +121,10 @@ function findCandidates(arg: string): { cands: Sess[]; error?: { msg: string; co
   const urlLike = /^(https?:\/\/|session_)/.test(arg) || arg.includes("claude.ai/code/");
   const sid = urlLike ? (arg.match(/session_[A-Za-z0-9]+/)?.[0] ?? null) : null;
   if (urlLike && !sid) {
-    return { cands: [], error: { msg: `csr: URL に session id が見つかりません: ${arg}`, code: 2 } };
+    return {
+      cands: [],
+      error: { msg: `csr: URL に session id が見つかりません: ${arg}`, code: 2 },
+    };
   }
 
   const matched: Sess[] = [];
@@ -149,7 +157,8 @@ function findCandidates(arg: string): { cands: Sess[]; error?: { msg: string; co
 
       // 構造化フィールドでの確定マッチ。url は session id を完全一致で照合。
       if (sid) {
-        if (typeof d.url === "string" && d.url.match(/session_[A-Za-z0-9]+/)?.[0] === sid) hit = true;
+        if (typeof d.url === "string" && d.url.match(/session_[A-Za-z0-9]+/)?.[0] === sid)
+          hit = true;
       } else if (d.gitBranch === arg) {
         hit = true;
       }
