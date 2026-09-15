@@ -170,7 +170,9 @@
   "Logger": {
     "prefix": "lgr",
     "scope": "typescript",
-    "body": ["private readonly logger = new Logger(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.name);"],
+    "body": [
+      "private readonly logger = new Logger(${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.name);",
+    ],
     "description": "Logger",
   },
   "comment block": {
@@ -250,7 +252,6 @@
     ],
     "description": "Typescript React Functional Component",
   },
-
 
   // ----------------------------------------------------------------
   // React Native
@@ -410,7 +411,11 @@
   "PrismaClient": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "prefix": "pc",
-    "body": ["import { PrismaClient } from '@prisma/client';", "", "const prisma = new PrismaClient();"],
+    "body": [
+      "import { PrismaClient } from '@prisma/client';",
+      "",
+      "const prisma = new PrismaClient();",
+    ],
     "description": "PrismaClient",
   },
   "prisma.$transaction": {

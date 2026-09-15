@@ -1,1 +1,1 @@
-export default { extends: ['@nozomiishii'] };
+export default { extends: ["@nozomiishii"] };

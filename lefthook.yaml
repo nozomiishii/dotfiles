@@ -19,7 +19,7 @@ post-merge:
   files: git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD
   jobs:
     - name: symlink
-      glob: 'home/**'
+      glob: "home/**"
       # Only re-link when a path is added or removed under home/. Edits to
       # existing files don't need re-linking — the symlink already points at
       # them. Deletions still trigger mise run link so the apply can clean up
@@ -27,7 +27,7 @@ post-merge:
       files: git diff-tree -r --name-only --no-commit-id --diff-filter=AD ORIG_HEAD HEAD
       run: mise run link
     - name: homebrew
-      glob: '{Brewfile,home/.config/mise/config.toml}'
+      glob: "{Brewfile,home/.config/mise/config.toml}"
       interactive: true
       # homebrew → packages の直列。理由は
       # docs/decisions/brooklyn は Brewfile ではなく mise bootstrap.packages で管理する.md
@@ -43,5 +43,5 @@ pre-commit:
   parallel: true
   jobs:
     - name: readme-sync-check
-      glob: '{README.md,README.ja.md}'
+      glob: "{README.md,README.ja.md}"
       run: git diff --cached --name-only | bash scripts/check-readme-sync.sh

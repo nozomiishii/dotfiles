@@ -3,8 +3,8 @@ name: README sync check
 on:
   pull_request:
     paths:
-      - 'README.md'
-      - 'README.ja.md'
+      - "README.md"
+      - "README.ja.md"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -21,8 +21,8 @@ jobs:
     runs-on: ubuntu-slim
     timeout-minutes: 5
     permissions:
-      contents: read  # required by actions/checkout to fetch repository code
-      pull-requests: read  # required by gh pr diff to list PR files via the GitHub API
+      contents: read # required by actions/checkout to fetch repository code
+      pull-requests: read # required by gh pr diff to list PR files via the GitHub API
     steps:
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -39,4 +39,3 @@ jobs:
             --repo "$REPO" \
             --name-only \
           | bash scripts/check-readme-sync.sh
-

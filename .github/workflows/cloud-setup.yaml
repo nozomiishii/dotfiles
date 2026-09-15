@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths:
-      - 'home/.agents/**'
-      - 'home/.claude/**'
-      - 'home/AGENTS.md'
-      - 'scripts/cloud/**'
+      - "home/.agents/**"
+      - "home/.claude/**"
+      - "home/AGENTS.md"
+      - "scripts/cloud/**"
   workflow_dispatch:
 
 concurrency:
@@ -22,9 +22,9 @@ jobs:
     runs-on: ubuntu-slim
     timeout-minutes: 5
     permissions:
-      contents: read  # required by actions/checkout to fetch repository code
-      pages: write  # required by actions/deploy-pages to publish to GitHub Pages
-      id-token: write  # required by actions/deploy-pages for OIDC-based deployment verification
+      contents: read # required by actions/checkout to fetch repository code
+      pages: write # required by actions/deploy-pages to publish to GitHub Pages
+      id-token: write # required by actions/deploy-pages for OIDC-based deployment verification
     environment:
       name: github-pages
     steps:

@@ -15,8 +15,10 @@ function overrideExtensionConfig() {
     // ---------------------------------------------------------
     // Speechify
     // ---------------------------------------------------------
-    const nudge = document.getElementById('speechify-listening-nudge');
-    const button = nudge ? nudge.shadowRoot.querySelector('button[aria-label="Speechify nudge dismiss"]') : null;
+    const nudge = document.getElementById("speechify-listening-nudge");
+    const button = nudge
+      ? nudge.shadowRoot.querySelector('button[aria-label="Speechify nudge dismiss"]')
+      : null;
 
     if (button) {
       button.click();
@@ -26,23 +28,23 @@ function overrideExtensionConfig() {
 
     if (nudges.length > 0) {
       nudges.forEach(function (element) {
-        element.style.pointerEvents = 'none';
+        element.style.pointerEvents = "none";
       });
     }
 
     // ---------------------------------------------------------
     // ads
     // ---------------------------------------------------------
-    const ads = document.getElementById('carbonads');
+    const ads = document.getElementById("carbonads");
 
     if (ads) {
-      ads.style.display = 'none';
+      ads.style.display = "none";
     }
   }, 1000);
 }
 
 (function () {
-  'use strict';
+  "use strict";
 
   // 現在のURLを保存
   let lastUrl = window.location.href;
@@ -50,7 +52,7 @@ function overrideExtensionConfig() {
   // 監視器のインスタンスを作成してURL変更の監視
   const observer = new MutationObserver((mutationsList) => {
     for (const mutation of mutationsList) {
-      if (mutation.type === 'childList' && window.location.href !== lastUrl) {
+      if (mutation.type === "childList" && window.location.href !== lastUrl) {
         lastUrl = window.location.href;
         overrideExtensionConfig();
       }
