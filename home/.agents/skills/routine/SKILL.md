@@ -1,215 +1,132 @@
 ---
 name: routine
 description: >-
-  Claude Code Routine (定期実行) を git 管理で追加・変更する。
-  「routine を追加したい」「定期実行を作りたい」と言ったとき、
-  または .routines/ の設定変更・cloud trigger との同期のときに使用する。
+  Claude Code Routine を追加・変更するとき、または .routines/ と cloud trigger を同期するときに使用する。
 argument-hint: <routine-name> <概要>
 ---
 
 # /routine
 
-Claude Code Routine を git 管理で追加・変更する。
+Claude Code Routine を git 管理で追加・変更する。Codex から実行する場合も、管理対象を Codex の scheduled task や automation に置き換えない。
 
-Codex から実行する場合も管理対象は Claude Code Routine。Codex の Scheduled task や automation へ置き換えない。cron、Claude model 名、RemoteTrigger のデータモデルを Codex automation の値へ変換しない。
+## 正本と同期の境界
 
-## 前提
+- prompt の正本は `nozomiishii/brain` の `.routines/<name>.md`
+- cloud trigger の Instructions は `.routines/<name>.md を Read し、その指示に従って実行お願い。` だけにする
+- 全 routine に `nozomiishii/brain` と対象リポジトリを関連付ける
+- `.routines/` の frontmatter を先に main へ反映し、反映後の別の実行で cloud trigger を同期する
+- frontmatter の変更と trigger の変更を同じ実行で続けて行わない
+- Codex から Claude Code Routine を読み書きできない場合は停止する。片側だけ更新せず、Codex の automation で代替しない
 
-- Routines は Claude Code の定期実行機能 <https://code.claude.com/docs/ja/routines>
-- routine prompt の正本は `nozomiishii/brain` repo の `.routines/<name>.md`。repo の配置場所は固定しない
-- cloud trigger の Instructions は stub（`.routines/<name>.md を Read し、その指示に従って実行お願い。`）
-- 全 routine に `nozomiishii/brain` repo をアタッチする
-- `.routines/` の frontmatter と cloud trigger は二重管理。frontmatter を先に main へ merge し、merge 後の再実行で trigger を同期する
-- `.routines/` の frontmatter は brain repo の pre-commit（`scripts/lint-frontmatter.ts` + `scripts/schemas/claude/routines.ts`）で検証される。発火時刻の正しさは lint でなく trigger 登録・更新時の `next_run_at` 確認で担保する
+既存 routine を変更する前に、name、Instructions、repos、schedule、model、connectors、正確な次回実行時刻を取得する。新規作成では、登録後に同じ項目を取得して検証できることをファイル変更前に確認する。いずれかを満たせない場合は、frontmatter と trigger の両方を変更しない。
 
-## trigger 操作の選択
+削除は [Routine 管理画面](https://claude.ai/code/routines)でユーザーに行ってもらう。
 
-routine の削除だけは API に無い。削除は [Routine 管理画面](https://claude.ai/code/routines) でユーザーに操作してもらう。アプリ内ではリンクが開かないことがあるため、管理画面を案内するときはリンクの提示で終えず、ホストのブラウザツール (Claude Code なら Browser) で <https://claude.ai/code/routines> を開き、ブラウザツールが無いホストでは URL をそのまま示す。作成・更新・connector の変更・一時停止・即時実行は API で完結する。
+## 新規 routine を設計する
 
-- Claude Code: `schedule` skill と RemoteTrigger を使う
-- Codex: `$chrome:control-chrome` を読み、認証済み Chrome で [Claude Code の Routine 管理画面](https://claude.ai/code/routines)を開く。browser-client に network log と API request の capability があれば、UI 操作より先に list / create / update の endpoint と request schema を確認して同じ API を呼ぶ。現在の接続でそれらが利用できない場合は endpoint を推測せず、認証済み UI で同じ項目を操作する
+brain リポジトリは配置場所で決めず、remote identity で特定する。見つからない場合は利用可能なリポジトリ準備機能を使う。既存の `.routines/` と同じ型のファイルを 1〜2 件読み、frontmatter と prompt の形式を確認する。
 
-Codex は Routine 管理画面を開いた tab ID と bootstrap URL を固定する。全 read、API request、click、input の直前に、固定した tab ID・`https://claude.ai` origin・`/code/routines` で始まる path が一致することを確認する。不一致なら trigger 情報を送受信せず停止する。
+依頼から読み取れない項目だけをユーザーに確認する。
 
-Codex から Claude Code 側の trigger を読めない場合は、Codex automation で代替せず停止する。`.routines/` と trigger の二重管理を片側だけ更新しない。
+- 達成したいこと
+- 手作業の自動化か、新しい情報の収集か
+- 成果物
+- 成功と失敗の基準
+- 対象リポジトリと外部リソース
+- 頻度、曜日、時刻
+- 既存 routine との責務の重複
+- connector の要否
+- エラー時に続行するか停止するか
 
-UI fallback は `name`、`instructions`、`repos`、`schedule`、`model` と、更新後の正確な `next_run_at` をすべて取得できる場合だけ使う。model または raw `next_run_at` が UI に無い場合は、brain repo や trigger を変更する前に停止し、Claude Code で `/routine` を実行する必要があると報告する。相対表示の「tomorrow at 5:00 AM」を raw `next_run_at` の代わりにしない。
+時刻の指定がなければ 05:00 JST とする。この既定値は質問せず、完了報告に記載する。
 
-## 新規追加
+routine name は `^[a-z0-9]+(?:-[a-z0-9]+)*$` に一致する `<頻度>-<対象>` とする。頻度は `daily`、`weekly`、`biweekly`、`monthly`、`quarterly`、`biannual` から選ぶ。
 
-### 既存 routine を参考にする
+monthly は次を満たす日を選ぶ。
 
-brain repo の `.routines/` を確認し、frontmatter の構造と prompt の書き方を把握する。
+- JST 2〜28 日のうち、既存の monthly routine と重ならない最小の日
+- name とファイル名は `monthly-<2桁の日>-<対象>`
+- 発火時刻は 05:00 JST
 
-git remote が `nozomiishii/brain` を指す clone をホストの project 一覧または既存の local clone から探し、その絶対パスを `BRAIN` とする。clone が見つからなければ、その repo 準備手順を使う。
+routine は `.routines/_templates/` にある次の型から選ぶ。
 
-```bash
-ls "$BRAIN/.routines/"
-```
+| 型       | 用途                     | prompt に含める条件                                                |
+| -------- | ------------------------ | ------------------------------------------------------------------ |
+| news     | 定期的な情報収集         | 収集期間、TL;DR、前回 Issue                                        |
+| watch    | 条件成立までの監視       | ベースライン、判定基準、検出時の印、達成後に停止を提案する終了条件 |
+| audit    | 自分のリソースの定点監査 | 対象選定、過去の判断との照合、却下または保留した内容の再提案禁止   |
+| reminder | 手作業の催促             | 手順、完了ログ                                                     |
 
-既存ファイルを 1〜2 件読み、frontmatter（name, type, repos, schedule, model）と prompt 本文のパターンを掴む。
+prompt には前提、タスク、出力形式、制約を含める。ユーザーと内容が合意できてからファイルを作る。
 
-### ユーザーと対話して routine を設計する
+## `.routines/<name>.md` を作る
 
-スキルを呼び出した発話に指定があればそこから読み取り、不足分だけ 1 つずつ聞く。
+選んだ型の template を使い、placeholder を残さない。
 
-routine name は `^[a-z0-9]+(?:-[a-z0-9]+)*$` に一致する値だけを受け付ける。file path、branch、title に入れる前に検証し、slash、`..`、空白、shell metacharacter を含む値は拒否する。
+- `repos` に対象リポジトリと `nozomiishii/brain` を含める
+- `connectors` は必要なものだけにする。不要なら空にする
+- cron は UTC で記述し、JST の実行時刻をコメントで添える
+- frontmatter の `type` は使った template 名と一致させる
+- template の必須 section を削る場合は理由をユーザーと合意する
 
-name とファイル名を `<頻度>-<対象>` の形に揃える。頻度語は schedule の発火間隔から選ぶ。daily, weekly, biweekly, monthly, quarterly, biannual。
+brain リポジトリ専用の作業場所で変更し、commit、push、PR 作成まで行う。PR のタイトルは `feat: add <name> routine prompt`、本文は日本語にする。PR はマージしない。
 
-頻度は省かない。当てはまる語が無い、既存語と紛らわしいと感じたときも、最も近い語を選ぶ。平日のみの毎日は daily、隔週は biweekly。既存 routine の name がこの形でない場合も、新しい name はこの形にする。
+PR URL と、main への反映後に同期を再実行する必要があることを報告して終了する。未反映の内容に対して trigger を作成または更新しない。
 
-#### 目的のすり合わせ
+## trigger 操作前に検証する
 
-- この routine で何を達成したいか
-- 手動で今やっている作業の自動化か、新しい情報収集か
-- 成果物は何か（GitHub issue、PR、Slack 通知、レポート等）
-- 成功・失敗の判断基準
+新規作成、変更、同期のいずれでも、trigger を変更する前に次を確認する。
 
-#### 設計の検討
+- 比較対象が最新の main である
+- `.routines/<name>.md` が main に反映済みである
+- main の内容が今回ユーザーと合意した内容と完全に一致する
+- ローカルブランチまたは open PR にだけ変更がある場合は停止する
 
-- 対象 repo と、routine がアクセスする外部リソース
-- 実行頻度の妥当性（daily / weekly / monthly、曜日・時刻）
-- 発火時刻はユーザーの指定がなければ 05:00 JST（cron は前日 20:00 UTC）にする。既定を使ったときは時刻をユーザーへの質問・確認事項にせず、完了報告に発火時刻を書くだけでよい
-- model の選定（調査・要約中心なら sonnet、判断・分析が必要なら opus）
-- 既存 routine と責務が被らないか（`.routines/` の一覧を見て確認）
-- connector の要否。既定は無し。prompt の手順が MCP ツールを必要とするときだけ足す
-- エラー時の振る舞い（部分的な結果で続行するか、止めるか）
+## cloud trigger を作成する
 
-#### monthly の発火日を決める
+検証を通過した別の実行で、frontmatter と一致する trigger を作る。
 
-monthly は同じ日に 2 件以上重ねない。重ねるとその日のタスクが一度に膨らむ。
+- name
+- Instructions の stub
+- 対象リポジトリと `nozomiishii/brain`
+- schedule
+- model
+- connectors
 
-- `.routines/monthly-*.md` を見て空いている最小の日を取る。ファイル名の 2 桁が JST の発火日
-- name とファイル名は `monthly-<2 桁の JST 発火日>-<内容>`
-- 発火は 05:00 JST に揃える。cron は `0 20 <JST の発火日 - 1> * *`
-- 使える日は JST 2〜28 日。1 日は UTC では前月末日にあたり、月末日が 28〜31 と変わるため cron で書けない。29〜31 日も無い月がある
+作成直後に connector を確認し、frontmatter に無い connector をすべて外す。
 
-#### 型を決める
+作成結果に含まれる正確な次回実行時刻を JST に変換し、frontmatter の schedule コメントと並べて示す。意図した曜日と時刻に一致しない場合は schedule を直す。
 
-routine を 4 つの型のどれかに分類する。型ごとの雛形が `.routines/_templates/<type>.md` にあり、frontmatter の `type` は使った雛形の名前になる。
+## 変更を同期する
 
-- news: 定期的な情報収集。収集期間フィルタ、TL;DR、前回 issue へのリンク
-- watch: 条件検出まで見張る。ベースライン、判定基準、検出時フラグ、終了条件（目的達成を検出したら issue で routine の停止を提案する）
-- audit: 自リソースの定点監査。対象選定ロジック、過去の意思決定との照合（却下・保留済みの再提案禁止）
-- reminder: 手動作業の催促。手順チェックリスト、完了ログ
+frontmatter を変更した場合は、変更 PR を作って終了する。main への反映後、別の実行で trigger を同期する。
 
-#### prompt の構成を決める
+main にある全 routine と全 trigger を name で照合し、差がある項目だけを更新する。照合できない routine は更新せず報告する。name を変更した場合は変更履歴から旧 name を特定する。旧 name を特定できない場合も、その routine を更新しない。
 
-既存 routine の共通パターンを踏まえて構成を提案する:
-- 前提（実行環境、認証状態、repo の状態）
-- タスク（具体的な手順）
-- 出力フォーマット（issue / comment のテンプレート）
-- 制約（やらないこと、エラー時の挙動）
+- `model` は trigger の model と一致させる
+- `schedule` は trigger の schedule と一致させる
+- `connectors` は trigger の connector と一致させ、余分な connector を外す
+- `type` はローカルだけの情報として同期しない
 
-ユーザーが納得するまで議論を続け、合意できてから `.routines/<name>.md` の作成に進む。
+model を変更するときは、既存 trigger の実行内容、対象リポジトリ、環境など、変更対象でない構成をすべて保持する。現在の構成を完全に取得できない routine は更新せず報告する。
 
-### `.routines/<name>.md` を作成する
+name を変更するときは既存 trigger を更新し、実行履歴を保つ。trigger の name と Instructions が参照するファイル名を両方変更する。新しい trigger への置き換えで履歴を切らない。
 
-`.routines/_templates/<type>.md` をコピーし、`<...>` の placeholder と各セクションを埋める。
+schedule を変更した場合は、更新結果の正確な次回実行時刻を JST に変換し、frontmatter の schedule コメントと並べて示す。
 
-- `repos` には対象 repo と `nozomiishii/brain` の両方を含める
-- `connectors` には使う connector 名だけを書く。使わないなら `[]`
-- schedule の cron は UTC で書き、コメントに JST を添える（20:00 UTC = 翌日 05:00 JST。日またぎで曜日・日付がずれる点に注意）
-- 雛形にないセクションの追加は自由。雛形の必須セクションを削る場合は理由をユーザーと合意する
+## 整合性を確認する
 
-### brain repo に PR 作成
+すべての経路で、終了前に `.routines/` の全 frontmatter と全 trigger を照合する。
 
-wt skill で brain repo の worktree を作る。REPO は特定済みの `BRAIN`。Claude Code の branch 名は `routine-<name>`、Codex は `codex/routine-<name>-<task suffix>`。作成結果の絶対パスを `WT`、実際の branch 名を `BRANCH` として保持し、ホスト固有の配置場所から再構築しない。
+| 項目       | 一致条件                                                    |
+| ---------- | ----------------------------------------------------------- |
+| name       | trigger 名と frontmatter の name                            |
+| schedule   | trigger の schedule と frontmatter の cron                  |
+| model      | 表記の違いを考慮した trigger と frontmatter の model        |
+| repos      | trigger と frontmatter の repos                             |
+| connectors | trigger と frontmatter の connectors                        |
+| prompt     | Instructions が正しい `.routines/<name>.md` を参照する stub |
 
-worktree 内にファイルを配置した後、commit → push → PR 作成:
+未設定の値も差分として扱う。routine ごとの結果を表で示し、差分があれば修正するかユーザーに確認する。差分がなくても表を示す。
 
-```bash
-git -C "$WT" add ".routines/<name>.md"
-git -C "$WT" commit -m "feat: add <name> routine prompt"
-git -C "$WT" push -u origin "$BRANCH"
-BODY_FILE=$(mktemp "${TMPDIR:-/tmp}/routine-pr.XXXXXX")
-chmod 600 "$BODY_FILE"
-trap 'rm -f -- "$BODY_FILE"' EXIT
-printf '%s\n' '（日本語の PR 本文）' > "$BODY_FILE"
-PR_URL=$(gh pr create -R nozomiishii/brain --base main --head "$BRANCH" \
-  --title "feat: add <name> routine prompt" \
-  --body-file "$BODY_FILE")
-printf '%s\n' "$PR_URL"
-```
-
-PR URL と、merge 後に Claude Code では `/routine <name> sync`、Codex では `$routine <name> sync` を再実行することを報告して、ここで終了する。未merge の `.routines/<name>.md` に対する trigger の create / update は停止する。
-
-## trigger mutation の共通ゲート
-
-cloud trigger を create / update する前に、brain repo で `git fetch origin main` を実行する。同期対象の `.routines/<name>.md` が `origin/main` に merge済みであり、今回ユーザーと合意した内容と byte-for-byte で一致することを `git show "origin/main:.routines/<name>.md"` と `cmp` で確認する。
-
-ローカル branch または open PR にだけ変更がある未merge状態なら、trigger 操作前に停止する。PR URL と merge 後の再実行方法を報告する。PR の作成と trigger mutation を同じ実行で連続して行わない。
-
-### merge 後に cloud trigger を登録する
-
-共通ゲートを通過した再実行でだけ、「trigger 操作の選択」で選んだ手段を使って routine を作成する。以下を設定:
-
-- Instructions: `.routines/<name>.md を Read し、その指示に従って実行お願い。`
-- repos: 対象 repo + nozomiishii/brain
-- schedule: frontmatter と同じ cron
-- model: frontmatter と同じ model
-- connectors: frontmatter と同じ connector
-
-trigger を新規作成すると、アカウントで有効な connector がすべて自動で付く。connector が付いた routine は実行中にその全ツールを無確認で使えるため、作成直後に frontmatter の `connectors` と一致させる。全部外すなら `clear_mcp_connections: true`、一部だけ残すなら `mcp_connections` に残す分を並べて update する。
-
-### 発火時刻の確認
-
-登録・更新のレスポンスには `next_run_at`（UTC）が含まれる。JST に換算し、frontmatter の schedule コメントと並べて提示する。ユーザーが「意図した曜日・時刻に発火する」ことを確認して完了とする。ずれていたら cron を直してやり直す。
-
-## 変更・同期
-
-`.routines/` の frontmatter を変更した場合、変更 PR を作って終了する。main への merge 後に skill を再実行し、共通ゲートを通過してから cloud trigger を同期する。
-
-### 変更対象の検出
-
-```bash
-git diff origin/main...HEAD --name-only -- '.routines/'
-```
-
-diff がない場合（直接 frontmatter を変更する依頼の場合）は先にファイルを編集する。diff ができたら commit・push・PR 作成まで進め、trigger は変更せず終了する。
-
-### cloud trigger との同期
-
-共通ゲートを通過した再実行で、「trigger 操作の選択」で選んだ手段で全 trigger を list し、`origin/main` の frontmatter `name` で照合する。差分がある frontmatter フィールドだけ update する:
-
-- `model` → `job_config.ccr.session_context.model`（frontmatter 値に `claude-` を prefix）
-- `schedule` → `cron_expression`
-- `connectors` → `mcp_connections`。全部外すなら `clear_mcp_connections: true`、一部だけ残すなら `mcp_connections` に残す分を並べる
-- `type` → 同期しない（`.routines/` ローカル専用のフィールド）
-
-update は変更するフィールドだけを送る。`enabled` / `cron_expression` / `name` / `mcp_connections` / `clear_mcp_connections` はトップレベルにあるため、これだけ送れば `job_config` は元のまま残る。`model` を変える場合は `job_config` を送ることになり、その中で指定しなかった `events` / `session_context.sources` が消えるため、`environment_id`・`events`・`session_context` を既存 trigger の `get` から取得して丸ごと含める。照合できない routine はスキップし、ユーザーに報告する。
-
-`name` を変えた場合は照合キーが変わる。PR のリネーム検出で旧 name を特定し、旧 name の trigger を新 name へ update する。trigger の `name` と events の `.routines/<name>.md` の両方を書き換える。delete して作り直すと実行履歴が切れる。
-
-schedule を update した場合は、レスポンスの `next_run_at` を JST に換算し frontmatter の schedule コメントと並べて提示する（発火時刻の確認と同じ手順）。
-
-## 整合性チェック
-
-新規追加・変更・同期のどの経路でも、終了前に必ず実行する。結果は差分ゼロでも表で提示する。表を出さずに終了していたらチェック漏れ。
-
-「trigger 操作の選択」で選んだ手段で全 trigger を list し、`.routines/` の全 frontmatter と突き合わせる。
-
-検証項目:
-
-- `name`: trigger 名が frontmatter の `name` と一致するか。照合キーのため、不一致だと以後の同期で照合できない
-- `schedule`: frontmatter の cron と trigger の `cron_expression` が一致するか
-- `model`: frontmatter の model と trigger の `session_context.model` が一致するか（`claude-` prefix を考慮）
-- `repos`: frontmatter の repos と trigger の `sources` が一致するか
-- `connectors`: frontmatter の connectors と trigger の `mcp_connections` が一致するか
-- `prompt`: trigger の events に `.routines/<name>.md を Read し、その指示に従って実行お願い。` が設定されているか
-
-trigger 側で値が未設定の場合も差分として扱う。
-
-結果は routine × 検証項目の表で提示する。差分があれば修正するか確認する。
-
-## 制約
-
-- routine prompt は brain repo `.routines/` が正本。cloud trigger に prompt 本文を直接書かない
-- frontmatter の `repos` に `nozomiishii/brain` を必ず含める
-- trigger の connector は frontmatter の `connectors` に揃える。新規作成では自動で付くため必ず確認する
-- 削除するつもりの routine を先に無効化しない。`enabled: false` にすると [Routine 管理画面](https://claude.ai/code/routines) の一覧・検索・個別ページのすべてから消え、管理画面からの削除ができなくなる
-- monthly の発火日は JST 2〜28 日から空き日を選び、name とファイル名の 2 桁に入れる
-- cron は UTC で記述し、JST をコメントで添える
-- frontmatter を変更したら main への merge 後に skill を再実行し、cloud trigger も必ず同期する
-- 整合性チェックを実行せずに終了しない。差分ゼロでも結果の表を提示する
+削除予定の routine を先に無効化しない。管理画面から見えなくなり削除できなくなる。

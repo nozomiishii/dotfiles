@@ -1,99 +1,75 @@
 ---
 name: watch
 description: >-
-  外部バグの解消を検知できる形 (expiring TODO・追跡 Issue) で追跡を残す。
-  Issue 調査で追跡が必要と判断した時、
-  または外部バグ・依存制約によるワークアラウンドや一時対応をコードに入れる時に使用する。
+  外部 Issue の調査で継続追跡が必要になったとき、または外部バグや依存制約の一時対応をコードへ入れるときに使用する。
 argument-hint: "[Issue URL / owner/repo#number]（任意）"
 ---
 
 # /watch
 
-自分では直せない外部のバグに当たった時に、解消を機械が検知できる形で追跡を残す。
+自分では直せない外部の問題を、解消を検知できる形で追跡する。
 
 ## 発動条件
 
-以下のどちらかで発動する。
+次のいずれかで発動する。
 
-- Issue 調査の結果報告に、次をすべて満たす外部 Issue が含まれる
-  - Open である
-  - 自分の作業に影響がある
-  - 自分では修正できない（他者のリポジトリ、上流のバグ等）
-- 外部のバグや依存の制約によるワークアラウンド・一時対応をコードに入れる
+- 調査した外部 Issue が open で、自分の作業に影響し、自分では修正できない
+- 外部バグや依存制約による workaround または一時対応をコードへ入れる
 
-時間がない・「余計なことはするな」と指示された・もう回避コードは書き終えた、を発動を省く理由にしない。
-expiring TODO はコメント 1 行、追跡 Issue は報告に提案を 1 文添えるだけで、実行はユーザー承認後になる。
-後回しにした追跡は戻ってこない。
+時間がないことや、回避コードを書き終えたことを理由に追跡を省かない。
 
-## 追跡方法の振り分け
+## 追跡方法を決める
 
-解消条件が依存のバージョンで表せて、対象 repo で
-[unicorn/expiring-todo-comments](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/expiring-todo-comments.md)
-が有効な場合、追跡 Issue を作らずコードに expiring TODO を書く。renovate がそのバージョンに
-更新した時に lint が発火し、ワークアラウンドの削除を強制する。
+解消条件を依存バージョンで表せ、対象リポジトリで `unicorn/expiring-todo-comments` が有効な場合は expiring TODO を使う。依存更新時の lint で workaround の削除を要求できる形にする。
 
 ```tsx
 // TODO [storybook@>=10.5.0]: parameters.htmlLang に移行してこの workaround を削除する
 // https://github.com/storybookjs/storybook/pull/35321
 ```
 
-それ以外（修正がいつ・どのバージョンで入るか不明、lint が無効な repo）は、以下の提案と実行に進む。
-ワークアラウンドをコードに入れた場合は、コードのコメントに発行した追跡 Issue の URL を書く。
+修正時期やバージョンが不明な場合、または lint が無効な場合は追跡 Issue を使う。workaround をコードへ入れた場合は、コメントに追跡 Issue の URL を含める。
 
-どちらの場合も、「直ったら戻す」と文章のコメントだけ残して終えない。
-lint にも Issue にもつながっていないコメントは放置される。
+どちらの場合も、機械的な検知先に結び付かないコメントだけで終えない。
 
-## 提案
+## 提案する
 
-ユーザーに「この Issue を追跡しますか？」と確認する。承認なしに次に進まない。
+追跡 Issue を使う場合は、実行前に次を示し、「この Issue を追跡しますか？」とユーザーに確認する。
 
-提案時に以下を提示する:
+- 追跡対象の Issue
+- 自分の作業への影響
+- 解消後に取るアクション
 
-- 追跡対象の Issue リンク
-- 追跡する理由（自分への影響）
-- Issue が解消したら自分が取るべきアクション
+承認後、外部リポジトリの購読状態を変更する前に sibling の [oss SKILL.md](../oss/SKILL.md) を読み、その合意、下書き、承認の境界に従う。
 
-## 実行
+## 追跡を作る
 
-追跡対象は入力または Issue URL から `$OWNER`、`$REPO`、`$NUM` に分ける。owner と repo は英数字・`.`・`_`・`-`、`NUM` は正の整数だけを許可し、検証できなければ外部操作へ進まない。検証後に `UPSTREAM_URL="https://github.com/$OWNER/$REPO/issues/$NUM"` とする。
+入力から owner、repo、Issue 番号を取り出す。owner と repo は英数字、`.`、`_`、`-` のみ、Issue 番号は正の整数に限定する。検証できなければ外部状態を変更しない。
 
-承認を得たら、外部リポジトリへの書き込みより先に sibling の [oss SKILL.md](../oss/SKILL.md) を明示的に読み、その合意・下書き・承認ゲートに従う。サブスクライブも外部状態の変更なので例外にしない。
+承認後に次を達成する。
 
-ゲート通過後、以下を順に実行する:
+- 外部 Issue を購読する
+- 作業中のリポジトリに `upstream-watch` ラベルを用意する。説明は「外部 Issue の追跡」、色は `d4c5f9` とする
+- 作業中のリポジトリに追跡 Issue を作り、`upstream-watch` ラベルを付ける
+- workaround がある場合は、そのコメントから追跡 Issue へ到達できるようにする
 
-- 対象 Issue をサブスクライブ:
-
-  ```sh
-  TARGET_ID=$(gh issue view "$NUM" --repo "$OWNER/$REPO" --json id --jq .id)
-  gh api graphql \
-    -f query='mutation($id: ID!) { updateSubscription(input: {subscribableId: $id, state: SUBSCRIBED}) { subscribable { viewerSubscription } } }' \
-    -f id="$TARGET_ID"
-  ```
-
-- 作業中のリポジトリに `upstream-watch` ラベルがなければ作成: `gh label create upstream-watch --description "外部 Issue の追跡" --color "d4c5f9"`
-- 作業中のリポジトリに Issue を発行する。タイトルとボディは以下の形式:
-
-タイトル: `[upstream-watch] $OWNER/$REPO#$NUM の短い要約`
-
-ボディ:
+追跡 Issue のタイトルは `[upstream-watch] <owner>/<repo>#<number> の短い要約` とする。本文は次の形にする。
 
 ```markdown
 ## 追跡対象
 
-$UPSTREAM_URL
+<外部 Issue の URL>
 
 ## きっかけ
 
-この追跡を始めた出来事。何をしていて、どういう問題に遭遇したか。
+<何をしていて、どの問題に遭遇したか>
 
 ## 自分への影響
 
-この外部バグが自分の作業にどう影響しているか。
+<外部の問題が自分の作業へ与えている影響>
 
 ## 解消後のアクション
 
-Issue が解消したら自分が取るべき具体的なアクション。
+<Issue が解消した後に行う具体的な作業>
 ```
 
-- Issue に `upstream-watch` ラベルを付ける
-- 発行した Issue の URL を報告する
+作成した追跡 Issue の URL を報告する。
