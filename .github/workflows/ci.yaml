@@ -84,13 +84,9 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Run install (PR branch)
+      - name: Run install
         if: github.event_name == 'pull_request'
         run: bash ./install.sh
-
-      - name: Run install (from URL)
-        if: github.event_name != 'pull_request'
-        run: curl -L https://nozomiishii.dev/dotfiles/install | bash
 
   required:
     # name 変更時は infra 側の required_status_checks も更新する
