@@ -495,4 +495,4 @@ function gmm() {
     echo "No stash found, skipping git stash pop."
   fi
 }
-alias gd='hunk diff'
+alias gdd='hunk diff'
