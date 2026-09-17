@@ -495,7 +495,4 @@ function gmm() {
     echo "No stash found, skipping git stash pop."
   fi
 }
-
-# Review diffs in hunk (https://hunk.dev/) instead of git + delta (core.pager).
-# Unlike git diff, hunk diff includes untracked files.
 alias gd='hunk diff'
