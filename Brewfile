@@ -102,6 +102,9 @@ if OS.mac? && !ENV["CI"]
   # GNU grep, egrep and fgrep https://www.gnu.org/software/grep/
   brew "grep"
 
+  # Review-first terminal diff viewer for agent-authored changesets https://hunk.dev/
+  brew "hunk"
+
   # Command-line benchmarking tool https://github.com/sharkdp/hyperfine
   brew "hyperfine"
 
