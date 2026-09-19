@@ -167,20 +167,20 @@ importers:
   .:
     devDependencies:
       '@nozomiishii/commitlint-config':
-        specifier: 2.7.0
-        version: 2.7.0(@types/node@26.5.1)(conventional-commits-parser@7.1.2)(typescript@7.0.2)
+        specifier: 2.7.1
+        version: 2.7.1(@types/node@26.5.1)(conventional-commits-parser@7.1.2)(typescript@7.0.2)
       '@nozomiishii/lefthook-config':
-        specifier: 2.7.0
-        version: 2.7.0(lefthook@2.1.14)
+        specifier: 2.7.1
+        version: 2.7.1(lefthook@2.1.14)
       '@nozomiishii/markdownlint-cli2-config':
-        specifier: 2.7.0
-        version: 2.7.0
+        specifier: 2.7.1
+        version: 2.7.1
       '@nozomiishii/oxfmt-config':
-        specifier: 2.7.0
-        version: 2.7.0(oxfmt@0.68.0)
+        specifier: 2.7.1
+        version: 2.7.1(oxfmt@0.68.0)
       '@nozomiishii/postinstall':
-        specifier: 2.7.0
-        version: 2.7.0
+        specifier: 2.7.1
+        version: 2.7.1
       lefthook:
         specifier: 2.1.14
         version: 2.1.14
@@ -301,28 +301,28 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nozomiishii/commitlint-config@2.7.0':
-    resolution: {integrity: sha512-CFh8WxELRIZGqtGvNaWUIeyrsRzQ0gEaj2yhzQSpsC7z7jM6FeFqEkZQhqIZ9JaivsIGzZWv2fiEAV2ypnDCIw==}
+  '@nozomiishii/commitlint-config@2.7.1':
+    resolution: {integrity: sha512-DOG5Q+rMCkbc/GXXXx/t0s79WJog3sxKAnzzJWM50sqQvN6bilf7oqTBFQ+NsF90LIYyh0aDnXuI/Z/Z/OOgRw==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@2.7.0':
-    resolution: {integrity: sha512-1IxHW4VKav2LK7iJYmi0ukOvdrc6Y909yOnGXqmALYFTg3U2d9kob+Zl5Efok+E8+RgMW6gWf1PHAvlAJE88Ug==}
-    hasBin: true
-    peerDependencies:
-      lefthook: 2.1.12
-
-  '@nozomiishii/markdownlint-cli2-config@2.7.0':
-    resolution: {integrity: sha512-gix8yiKTofPt74QCFTeYztqAf4fOSh10ZOkwZoPbkZVhLFHF/vUDG+126SmWPUrc5qkap3nniZrntiO94FPBdQ==}
-    hasBin: true
-
-  '@nozomiishii/oxfmt-config@2.7.0':
-    resolution: {integrity: sha512-hlAOqnTw/YwCtCRaSzB9rOlPxRWHe8J0FNUb1rHj2ZJNf2iAR26JQK69pcWTT5sy2A2yo57cnysT/44mp8tFtA==}
+  '@nozomiishii/lefthook-config@2.7.1':
+    resolution: {integrity: sha512-e7/YLuN1ngNkcJ9zEXrV8+YFDQS5ZPcciIl2PbKEvOq+AKZypzbVwJ+eHYQT4uenZ/IxWUgC0pgg4VybeJMqrw==}
     hasBin: true
     peerDependencies:
-      oxfmt: 0.67.0
+      lefthook: 2.1.14
 
-  '@nozomiishii/postinstall@2.7.0':
-    resolution: {integrity: sha512-63NuKTk2zXOA2c8mF4GbyjOMJqlXljzfoBVnH/UkC7aTAU5ANuS5pCBIy5AgADF1h3Iq1zucnOCFnhzm7oZSTw==}
+  '@nozomiishii/markdownlint-cli2-config@2.7.1':
+    resolution: {integrity: sha512-xBmkU2JynxJ4z2+ruyGyWIMzbErhhh1uE75H4HYtYUyyOU6vxGQvtT4ccBRelZjcMNOYYK+Z2gOyHWQ3/JdiBw==}
+    hasBin: true
+
+  '@nozomiishii/oxfmt-config@2.7.1':
+    resolution: {integrity: sha512-0OmNp98Y3Ne42KNkoSpK8Jq6iZtiRiX88wo1BSp1uSP0sf7wupRto8+mSusVwWMLMu2nCzgHUNJX6KEenC/L7g==}
+    hasBin: true
+    peerDependencies:
+      oxfmt: 0.68.0
+
+  '@nozomiishii/postinstall@2.7.1':
+    resolution: {integrity: sha512-L/axQ4G0uCn46X+Hw1Jg6oJzP1lSaIfiSiWIMSshtaW+BDNzjSJuZzp6xtUY0R6+LCP/wNUBMuK6GA1Ne09g/w==}
     hasBin: true
 
   '@oxfmt/binding-android-arm-eabi@0.68.0':
@@ -1410,7 +1410,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.3
 
-  '@nozomiishii/commitlint-config@2.7.0(@types/node@26.5.1)(conventional-commits-parser@7.1.2)(typescript@7.0.2)':
+  '@nozomiishii/commitlint-config@2.7.1(@types/node@26.5.1)(conventional-commits-parser@7.1.2)(typescript@7.0.2)':
     dependencies:
       '@commitlint/cli': 21.2.2(@types/node@26.5.1)(conventional-commits-parser@7.1.2)(typescript@7.0.2)
       '@commitlint/config-conventional': 21.2.2
@@ -1421,22 +1421,22 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@2.7.0(lefthook@2.1.14)':
+  '@nozomiishii/lefthook-config@2.7.1(lefthook@2.1.14)':
     dependencies:
       git-harvest: 0.3.5
       lefthook: 2.1.14
 
-  '@nozomiishii/markdownlint-cli2-config@2.7.0':
+  '@nozomiishii/markdownlint-cli2-config@2.7.1':
     dependencies:
       markdownlint-cli2: 0.23.2
     transitivePeerDependencies:
       - supports-color
 
-  '@nozomiishii/oxfmt-config@2.7.0(oxfmt@0.68.0)':
+  '@nozomiishii/oxfmt-config@2.7.1(oxfmt@0.68.0)':
     dependencies:
       oxfmt: 0.68.0
 
-  '@nozomiishii/postinstall@2.7.0':
+  '@nozomiishii/postinstall@2.7.1':
     dependencies:
       figlet: 1.11.4
       zx: 8.8.5
