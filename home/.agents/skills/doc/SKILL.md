@@ -99,7 +99,7 @@ repo と issue / PR に保存する文章すべてに共通。markdown もコー
 - 着手中の実装の design doc → 対象 repo の `docs/` (実装 PR で育てる)
 - なぜこうしたかの記録 (決着した判断) → 対象 repo の `docs/decisions/` に ADR
 - 今どうなってるかの事実 (仕様・手順) → 対象 repo の `docs/` (実装 PR に同梱)
-- AI エージェントへの行動指針・フィードバック (呼称・進め方の好み・作業ルール) → AGENTS.md (全 repo 共通は `dotfiles/home/AGENTS.md`、repo 固有は対象 repo の `AGENTS.md`)。`CLAUDE.md`・`.claude/CLAUDE.md`・`CLAUDE.local.md` は置かない。あると AGENTS.md が読まれない
+- AI エージェントへの行動指針・フィードバック (呼称・進め方の好み・作業ルール) → AGENTS.md (全 repo 共通は `dotfiles/home/AGENTS.md`、repo 固有は対象 repo の `AGENTS.md`)。repo とその祖先ディレクトリには `CLAUDE.md`・`.claude/CLAUDE.md`・`CLAUDE.local.md` を置かない。1 つでもあると AGENTS.md が読まれない。user memory の `~/.claude/CLAUDE.md` はこの抑制に関係しない
 - repo に限らない学び → nozomiishii/brain の知識ノート。分類・frontmatter・取り込みの作法は brain repo の指示ファイルに従う
 
 design doc の置き場は着手で切り替わる。着手したら issue の内容を `docs/` のファイルへ移し、実装 PR で実装と一緒に育てる。issue には移した先のリンクだけ残し、実装 PR で close する (正本は 1 つ)。
