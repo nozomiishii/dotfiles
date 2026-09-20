@@ -1,5 +1,7 @@
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+# 自前で更新する cask (Chrome 等) を brew upgrade の対象から外す。scripts/homebrew.sh にも同じ設定がある
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 
 # lang
 export LANG="en_US.UTF-8"
