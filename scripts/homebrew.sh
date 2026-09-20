@@ -14,6 +14,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # .zprofile を読まない launchd / git hook からも呼ばれるので、ここでも設定する。
 export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 
+# Homebrew 7 から upgrade / install の前に [y/n] の確認が出る。無人で走らせるので止める。
+export HOMEBREW_NO_ASK=1
+
 # CI 環境でのみ brew link の競合を修復する。
 # GitHub Actions の macOS ランナーはイメージビルド時に Homebrew パッケージを
 # プリインストールしているが、その後 Homebrew リポジトリに新バージョンが
