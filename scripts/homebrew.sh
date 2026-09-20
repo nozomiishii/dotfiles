@@ -10,6 +10,10 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
+# 自前で更新する cask を upgrade の対象から外す。起動中の Chrome が入れ直されて壊れるため。
+# .zprofile を読まない launchd / git hook からも呼ばれるので、ここでも設定する。
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
+
 # CI 環境でのみ brew link の競合を修復する。
 # GitHub Actions の macOS ランナーはイメージビルド時に Homebrew パッケージを
 # プリインストールしているが、その後 Homebrew リポジトリに新バージョンが
