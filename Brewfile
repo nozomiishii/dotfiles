@@ -23,6 +23,9 @@ brew "starship"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature https://zellij.dev/
 brew "zellij"
 
+# Agent multiplexer that lives in your terminal https://herdr.dev
+brew "herdr"
+
 # Smarter Dockerfile linter to validate best practices https://github.com/hadolint/hadolint
 brew "hadolint"
 
