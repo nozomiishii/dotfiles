@@ -7,36 +7,19 @@ description: >-
 
 # /archive
 
-自分が管理するリポジトリで不要になったファイルを `nozomiishii/archives` に退避する PR と、元のリポジトリから削除する PR を作る。
+自分が管理する repo で不要になったファイルを `nozomiishii/archives` へ退避する PR と、元の repo から削除する PR を作る。どちらもマージせず、両方の PR の URL をまとめて報告する。
 
-## 対象を確定する
+## 対象
 
-会話または引数から、対象ファイルと元のリポジトリを分けて確定する。
+会話または引数から、対象ファイルと元の repo を確定する。repo は remote の owner と name で識別し、ディレクトリ名から推測しない。特定できなければユーザーに確認する。
 
-- 対象は元のリポジトリからの相対パスに限定する。空のパス、`..`、制御文字を含むパスは扱わない
-- リポジトリの識別には remote の owner と name を使う。現在の作業場所やディレクトリ名だけで推測しない
-- 候補が複数ある、または特定できない場合はユーザーに確認する
-- clean な tracked file は、検証した index または HEAD の内容を使う
-- dirty な tracked file は staged、unstaged、削除を区別して差分を示す。index、HEAD、worktree のどの版を退避するかユーザーに確認し、選択前にコピーしない。worktree 版は untracked file と同じ境界を検証する
-- 削除済みの tracked file は、検証した参照先の内容を使う
-- untracked file は、リポジトリ内にあり symlink を経由しない通常ファイルだけを扱う
-- symlink、submodule、device などの特殊な対象は処理を止め、扱いをユーザーに確認する。リンク先をたどってリポジトリ外を読まない
+- 未 commit の変更があるファイルは、どの版を退避するかユーザーに確認してからコピーする
+- 対象は repo 内の通常ファイルに限る。symlink、submodule、特殊ファイルは止まって確認し、リンク先をたどって repo の外を読まない
+- secret、credential、個人情報が疑われる内容があれば、コピー前に止まって確認する
 
-全ファイルを secret、credential、個人情報について検査する。疑わしい内容があれば、別のリポジトリへコピーする前に停止してユーザーに確認する。
+## 配置
 
-## archives リポジトリを準備する
-
-`nozomiishii/archives` は元のリポジトリと別の作業単位に切り出す。配置場所を固定せず、remote identity が一致する作業場所を使う。見つからない場合は利用可能なリポジトリ準備機能を使い、それも無ければ配置先をユーザーに確認する。
-
-作業開始前に次を満たすことを確認する。
-
-- 作業場所の remote identity が `nozomiishii/archives` と一致する
-- 最新の main を比較元として取得している
-- main へ切り替えず、作成済みの作業ブランチを使う
-
-## 配置する
-
-`<repo-dir>/<元のディレクトリ構造>` に、元のパスとファイル名を保って配置する。`nozomiishii` 配下のリポジトリは repo 名を `<repo-dir>` にし、それ以外は `<owner>/<repo>` にする。
+`<repo-dir>/<元のディレクトリ構造>` に、元のパスとファイル名を保って置く。`<repo-dir>` は `nozomiishii` 配下なら repo 名、それ以外は `<owner>/<repo>` にする。同名ファイルがあれば上書きせず確認する。配置先やその親が symlink なら止まる。
 
 ```text
 archives/
@@ -46,16 +29,8 @@ archives/
     src/legacy.ts
 ```
 
-同名ファイルが存在する場合は上書きせず、ユーザーに確認する。書き込み前に、既存の親要素が symlink でなく、実体が archives リポジトリ内に収まることを確認する。配置先が symlink または特殊な対象なら停止する。
+## PR
 
-複数ファイルは 1 つの PR にまとめる。コミットと PR のタイトルは `chore: archive <何を> from <repo>` とし、PR 本文に次を含める。
+複数ファイルは 1 つの PR にまとめる。commit と PR のタイトルは `chore: archive <何を> from <repo>`。PR 本文には元の repo とパス、削除理由、関連する PR または Issue を書く。
 
-- 元のリポジトリとパス
-- 削除理由
-- 関連する PR または Issue
-
-## 元のリポジトリから削除する
-
-archives 側の PR を作成した後、元のリポジトリ専用の作業場所で対象ファイルを削除する PR を作る。別のリポジトリ用の作業場所から変更しない。PR 本文には archives 側の PR を含める。
-
-両方の PR の URL をまとめて報告する。PR はマージしない。
+archives 側の PR を先に作り、削除側の PR 本文に archives 側の PR を載せる。2 つの repo は別々の作業場所で変更する。
