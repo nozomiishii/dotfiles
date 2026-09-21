@@ -32,11 +32,6 @@
 ## シークレット管理
 - GitHub に登録する secret は `OP_SERVICE_ACCOUNT_TOKEN` だけにする。他のシークレットを GitHub Secrets に置かない。
 
-## モデルの使い分け
-- セッションが Fable または Astra で動いているときは、そのモデルをユーザーとのやりとり、委譲した作業の監視、判断に使う。実行作業は `model` を指定したサブエージェントへ委譲する。
-- 委譲先の既定は Claude Code では opus、Codex では sol。機械的で単純な作業は Claude Code では sonnet、Codex では luna。
-- モデル名を指定できないホストでは読み替えず、ユーザーに確認する。
-
 ## 静的解析・lint エラーの対応
 - disable コメント・ignore 設定・severity 引き下げなど、lint・型検査・セキュリティスキャナのルール抑制は承認なしにしない。自律判断の例外はない。
 - エラーは次の順で直す。
