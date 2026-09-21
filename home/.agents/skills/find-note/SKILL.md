@@ -21,28 +21,11 @@ git remote が `nozomiishii/brain` を指す clone を、現在の task、ホス
 
 ノートは日本語タイトルがそのままファイル名。frontmatter に tags と aliases があり、本文は `[[wiki-link]]` で相互リンクされる。
 
-- 内容の grep を主にする。ファイル名の一致だけでは拾えない。Terraform で探すと OpenTofu ノートの本文にだけ書いてある、のような表記ゆれが普通にある
-- 検索語は 1 語に決め打ちせず、日本語と英語、ツールの別名、エラーメッセージの断片を並べて試す
-- ヒットしたらファイル本文を読み、要点と、Obsidian で開くノートへの Markdown リンクを報告する
+- 内容の grep を主にする。ファイル名の一致だけでは拾えない。Terraform で探すと OpenTofu ノートの本文にだけ書いてある、のような表記ゆれがある
+- 検索語は日本語と英語、ツールの別名、エラーメッセージの断片を試す
+- ヒットしたノートは本文を読み、要点と Obsidian で開くリンクを報告する
 
-リンク先には `obsid.net` の HTTPS 中継 URL を使う。vault 名と vault ルートからのノート相対パスを別々に URL エンコードし、`file` から末尾の `.md` を外す。ノート1件ごとにこう作る:
-
-```sh
-python3 - "<vault ルートの絶対パス>" "<ノートの絶対パス>" <<'PY'
-import sys
-from pathlib import Path
-from urllib.parse import quote, urlencode
-
-vault_root = Path(sys.argv[1]).resolve()
-target = Path(sys.argv[2]).resolve()
-relative = target.relative_to(vault_root).with_suffix("").as_posix()
-query = urlencode(
-    {"vault": vault_root.name, "file": relative},
-    quote_via=quote,
-)
-print(f"[{relative}（Obsidian で開く）](https://obsid.net/?{query})")
-PY
-```
+リンクは `https://obsid.net/?vault=<vault 名>&file=<ノートのパス>` の形。ノートのパスは vault ルートからの相対パスで、末尾の `.md` を外す。`vault` と `file` の値は別々に URL エンコードする。リンクテキストはエンコードせず `<ノートのパス>（Obsidian で開く）` にする。
 
 ## 調べる順番
 
