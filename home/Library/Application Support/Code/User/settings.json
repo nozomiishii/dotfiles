@@ -41,12 +41,12 @@
     "**/node_modules": true,
     "**/.next": true,
     "**/target": true,
-    "**/submodules": true
+    "**/submodules": true,
   },
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "maximized",
   "editor.unicodeHighlight.allowedLocales": {
-    "ja": true
+    "ja": true,
   },
   "git.autofetch": true,
   "git.autoStash": true,
@@ -57,7 +57,7 @@
   "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
   "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][yaml][css][html]": {
-    "editor.defaultFormatter": "oxc.oxc-vscode"
+    "editor.defaultFormatter": "oxc.oxc-vscode",
   },
 
   // ----------------------------------------------------------------
@@ -131,7 +131,7 @@
     "editorInlayHint.foreground": "#727072",
 
     // Find and replace
-    "editor.findMatchHighlightBorder": "#939293"
+    "editor.findMatchHighlightBorder": "#939293",
   },
 
   // ----------------------------------------------------------------
@@ -165,7 +165,7 @@
   // Properties
   // ----------------------------------------------------------------
   "[properties]": {
-    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
   },
 
   // ----------------------------------------------------------------
@@ -174,7 +174,7 @@
   "docker.enableDockerComposeLanguageService": true,
   "vs-kubernetes": {
     "vscode-kubernetes.minikube-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
-    "vscode-kubernetes.kubectl-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/kubectl/kubectl"
+    "vscode-kubernetes.kubectl-path.mac": "/Users/nozomiishii/.vs-kubernetes/tools/kubectl/kubectl",
   },
   // "[dockerfile]": {
   //   "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
@@ -190,7 +190,7 @@
   // ----------------------------------------------------------------
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "terraform.experimentalFeatures.validateOnSave": true,
 
@@ -203,16 +203,16 @@
       {
         "match": "\\.hcl$",
         "cmd": "terragrunt hcl fmt --file ${file}",
-        "autoShowOutputPanel": "error"
-      }
-    ]
+        "autoShowOutputPanel": "error",
+      },
+    ],
   },
 
   // ----------------------------------------------------------------
   // Prisma
   // ----------------------------------------------------------------
   "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
+    "editor.defaultFormatter": "Prisma.prisma",
   },
   "prisma.showPrismaDataPlatformNotification": false,
 
@@ -222,20 +222,20 @@
   "[shellscript]": {
     "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.shellcheck": "explicit"
-    }
+      "source.fixAll.shellcheck": "explicit",
+    },
   },
   "[bats]": {
     "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.shellcheck": "explicit"
-    }
+      "source.fixAll.shellcheck": "explicit",
+    },
   },
   "[ignore]": {
-    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
   },
   "[dotenv]": {
-    "editor.defaultFormatter": "dotenv.dotenv-vscode"
+    "editor.defaultFormatter": "dotenv.dotenv-vscode",
   },
   "shellcheck.ignorePatterns": {
     "**/*.xonshrc": true,
@@ -253,14 +253,14 @@
     "**/zshenv": true,
     "**/*.zsh-theme": true,
     "**/.tmux.conf": true,
-    "**/.hushlogin": true
+    "**/.hushlogin": true,
   },
 
   // ----------------------------------------------------------------
   // Rust
   // ----------------------------------------------------------------
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
   },
   "rust-analyzer.checkOnSave.command": "clippy",
 
@@ -268,7 +268,7 @@
   // Toml
   // ----------------------------------------------------------------
   "[toml]": {
-    "editor.defaultFormatter": "tamasfe.even-better-toml"
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
   },
   "evenBetterToml.schema.links": true,
 
@@ -278,7 +278,7 @@
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "strict",
   "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff"
+    "editor.defaultFormatter": "charliermarsh.ruff",
   },
 
   // ----------------------------------------------------------------
@@ -289,18 +289,18 @@
       "at-rule-no-unknown": [
         true,
         {
-          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"]
-        }
+          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen", "layer"],
+        },
       ],
       "declaration-block-trailing-semicolon": null,
-      "no-descending-specificity": null
-    }
+      "no-descending-specificity": null,
+    },
   },
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
   "tailwindCSS.experimental.classRegex": [
-    ["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"]
+    ["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"],
   ],
 
   // ----------------------------------------------------------------
@@ -331,14 +331,14 @@
   // ----------------------------------------------------------------
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.fixAll.markdownlint": "explicit"
+    "source.fixAll.markdownlint": "explicit",
   },
 
   // ----------------------------------------------------------------
   // sqlfluff
   // ----------------------------------------------------------------
   "[sql]": {
-    "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
+    "editor.defaultFormatter": "dorzey.vscode-sqlfluff",
   },
   "sqlfluff.dialect": "postgres",
   "sqlfluff.format.enabled": true,
@@ -371,7 +371,7 @@
   // rufo.exe は既定値の "rufo" のまま PATH から解決させる。
   // .zprofile の mise activate --shims が ~/.local/share/mise/shims を PATH に入れる。
   "[ruby]": {
-    "editor.defaultFormatter": "jnbt.vscode-rufo"
+    "editor.defaultFormatter": "jnbt.vscode-rufo",
   },
 
   // ----------------------------------------------------------------
@@ -379,7 +379,7 @@
   // ----------------------------------------------------------------
   "[yaml]": {
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
   },
   "redhat.telemetry.enabled": true,
 
@@ -431,7 +431,7 @@
   // GitLens
   // ----------------------------------------------------------------
   "gitlens.views.scm.grouped.views": {
-    "stashes": false
+    "stashes": false,
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
@@ -448,7 +448,7 @@
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
+    "typescript": "typescriptreact",
   },
   // ----------------------------------------------------------------
   // Github pull requests
@@ -466,8 +466,8 @@
       "extensions": ["Mintfile", ".swiftformat"],
       "filename": true,
       "format": "svg",
-      "extends": "swift"
-    }
+      "extends": "swift",
+    },
   ],
 
   // ----------------------------------------------------------------
@@ -479,7 +479,7 @@
     "**/e2e/**",
     "**/node_modules/**",
     "**/dist/**",
-    "**/.{idea,git,cache,output,temp}/**"
+    "**/.{idea,git,cache,output,temp}/**",
   ],
 
   // ----------------------------------------------------------------
@@ -514,7 +514,7 @@
     "python",
     "rust",
     "softwareTerms",
-    "typescript"
+    "typescript",
   ],
   "cSpell.userWords": ["nozomiishii"],
 
@@ -536,9 +536,9 @@
     "commands": [
       {
         "name": "$(pencil) obsidian",
-        "command": "open \"obsidian://adv-uri?vault=brain&filepath=$(echo '${file}' | sed 's|.*/brain/||')\""
-      }
-    ]
+        "command": "open \"obsidian://adv-uri?vault=brain&filepath=$(echo '${file}' | sed 's|.*/brain/||')\"",
+      },
+    ],
   },
 
   // ----------------------------------------------------------------
@@ -551,14 +551,14 @@
   // ----------------------------------------------------------------
   "command-runner.commands": {
     "📃 Open in Obsidian": "open \"obsidian://adv-uri?vault=brain&filepath=$(echo '${file}' | sed 's|.*/brain/||')\"",
-    "🎭 Open Trace viewer": "pnpx playwright show-trace ${selectedFile}"
+    "🎭 Open Trace viewer": "pnpx playwright show-trace ${selectedFile}",
   },
 
   // ----------------------------------------------------------------
   // なんかこれ消しても消しても勝手に出てくる
   // ----------------------------------------------------------------
   "editor.tokenColorCustomizations": {
-    "textMateRules": []
+    "textMateRules": [],
   },
 
   // ----------------------------------------------------------------
@@ -575,7 +575,7 @@
   "files.associations": {
     "*.ejs": "html",
     "flake.lock": "json",
-    ".env*": "dotenv"
+    ".env*": "dotenv",
   },
   "yaml.disableSchemaDetection": [
     "**/.github/workflows/*.yml",
@@ -583,13 +583,13 @@
     "**/.gitea/workflows/*.yml",
     "**/.gitea/workflows/*.yaml",
     "**/.forgejo/workflows/*.yml",
-    "**/.forgejo/workflows/*.yaml"
+    "**/.forgejo/workflows/*.yaml",
   ],
   "workbench.preferredDarkColorTheme": "Monokai Pro",
   "extensions.supportAgentsWindow": {
-    "monokai.theme-monokai-pro-vscode": true
+    "monokai.theme-monokai-pro-vscode": true,
   },
-  "sherlock.userId": "5da7b1c9-93e9-4d3f-8fbd-eee5091b83ef"
+  "sherlock.userId": "5da7b1c9-93e9-4d3f-8fbd-eee5091b83ef",
 
   ///////////////////////////////////////////////////////////////////
 }
