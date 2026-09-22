@@ -25,11 +25,11 @@
     "postinstall": "postinstall"
   },
   "devDependencies": {
-    "@nozomiishii/commitlint-config": "2.7.1",
-    "@nozomiishii/lefthook-config": "2.7.1",
-    "@nozomiishii/markdownlint-cli2-config": "2.7.1",
-    "@nozomiishii/oxfmt-config": "2.7.1",
-    "@nozomiishii/postinstall": "2.7.1",
+    "@nozomiishii/commitlint-config": "2.7.2",
+    "@nozomiishii/lefthook-config": "2.7.2",
+    "@nozomiishii/markdownlint-cli2-config": "2.7.2",
+    "@nozomiishii/oxfmt-config": "2.7.2",
+    "@nozomiishii/postinstall": "2.7.2",
     "lefthook": "2.1.14",
     "markdownlint-cli2": "0.23.2",
     "oxfmt": "0.68.0"
