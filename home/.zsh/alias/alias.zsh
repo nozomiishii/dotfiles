@@ -68,7 +68,6 @@ cwb() {
 }
 alias cwr="claude --worktree --resume"
 alias cwt="claude --worktree --teleport"
-cpm() { printf "/model claude-opus-4-6[1m]" | pbcopy && echo "Copied: /model claude-opus-4-6[1m]"; }
 pwdc() { printf "/add-dir %s" "$PWD" | pbcopy && echo "Copied: /add-dir $PWD"; }
 
 # 状態ファイルの置き場。誰でも書ける /tmp に置くと pid ファイルを差し替えられ、
