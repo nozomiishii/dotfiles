@@ -1,7 +1,6 @@
 {
   "env": {
-    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "opus"
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
   },
   "attribution": {
     "commit": "",
@@ -44,8 +43,7 @@
       "Bash(dig:*)",
       "Bash(nslookup:*)",
       "Bash(host:*)"
-    ],
-    "defaultMode": "auto"
+    ]
   },
   "enabledMcpjsonServers": [],
   "statusLine": {
@@ -137,6 +135,5 @@
   "tui": "fullscreen",
   "skipWorkflowUsageWarning": true,
   "remoteControlAtStartup": true,
-  "skipAutoPermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "skipAutoPermissionPrompt": true
 }
