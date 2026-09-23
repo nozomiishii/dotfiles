@@ -131,7 +131,6 @@
     ]
   },
   "spinnerTipsEnabled": false,
-  "alwaysThinkingEnabled": true,
   "tui": "fullscreen",
   "skipWorkflowUsageWarning": true,
   "remoteControlAtStartup": true,
