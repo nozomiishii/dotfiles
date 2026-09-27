@@ -36,7 +36,7 @@ clone して次を揃え、1 つの PR にする。完成形の実例は直近�
 - configs 一式: `@nozomiishii/commitlint-config` `eslint-config` `lefthook-config` `oxfmt-config` `postinstall` `tsconfig` と各設定ファイル。`cspell-config` と `markdownlint-cli2-config` は非推奨のため導入しない。
 - 標準 workflow: `_pull-request.yaml` `_github-actions.yaml` `_secret-scan.yaml` を configs からコピーする。実体は [nozomiishii/workflows](https://github.com/nozomiishii/workflows) の reusable workflow を SHA pin で呼ぶ薄い caller。main の必須チェックが要求するため、無いと PR をマージできない。
 - `.github/renovate.json`: `{ "extends": ["github>nozomiishii/renovate"] }`
-- SessionStart hook: `.claude/settings.json` と `.hooks/setup.sh` (`pnpm install`)。
+- SessionStart hook: `.claude/settings.json` と `.hooks/setup.sh`。setup.sh は dotfiles の [.hooks/setup.sh](https://github.com/nozomiishii/dotfiles/blob/main/.hooks/setup.sh) を写す。
 - README.md と README.ja.md を同じ構成で作る。
 
 ## 登録 (infra)
