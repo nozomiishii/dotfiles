@@ -16,6 +16,12 @@ description: >-
   - 「既存 repo と同じ設定を gh で再現すれば結果は同じ」→ 同じに見えるだけで tfstate と HCL に存在しない。以後の plan に現れず、管理から外れ続ける。
   - 「ruleset を最後に付ければ main への初回 push が通る」→ 順序の工夫は不要。`auto_init = true` が作成時に initial commit を作るので、main は最初から存在し保護も同時に付く。
 
+## サインインの選定・設定
+
+- Google / Apple サインインを検討する場合、必要な情報を一度に 1 つずつインタビューし、採用する方式と設定内容をユーザーと決める。
+- 管理画面の設定は、ユーザーが見えるブラウザでエージェントが行う。本人の操作が必要なところだけユーザーへ渡す。
+- 資格情報を安全に保存し、アプリでサインインできる状態まで確認する。
+
 ## リポジトリ作成 (infra)
 
 - `stacks/github/main.tf` の `locals.repositories` にエントリを追加して PR を作る。visibility と description をここで決める。visibility はユーザーに確認する。公開なら GitHub Actions が無料になる。
