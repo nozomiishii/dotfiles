@@ -16,6 +16,8 @@ disable-model-invocation: true
 - URL がなければ、現在のセッションが対象にしている PR を使う
 - 対象を特定できなければ、ユーザーに PR URL を確認する
 
+base と head のどちらかがユーザーおよび所属 Organization の管理外の repo なら、対応を始める前に sibling の [oss SKILL.md](../oss/SKILL.md) を読み、その承認境界に従う。所有者を判定できないときも同じ。
+
 ## 対応
 
 CI の失敗やコンフリクトは原因を調べて直し、必要な検証を行って commit、push する。
