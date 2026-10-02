@@ -124,5 +124,6 @@
   "tui": "fullscreen",
   "skipWorkflowUsageWarning": true,
   "remoteControlAtStartup": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "switchModelsOnFlag": false
 }
