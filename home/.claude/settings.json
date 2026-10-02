@@ -57,8 +57,8 @@
     "superpowers@claude-plugins-official": true,
     "ponytail@ponytail": true
   },
-  "language": "japanese",
   "outputStyle": "Concise",
+  "language": "japanese",
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
