@@ -7,7 +7,7 @@ date: 2026-10-03
 
 ## 背景と課題
 
-`dev` repo の `apps/home` に [Better Auth を移す作業](https://github.com/nozomiishii/dev/issues/3215)で、Worker の secret が増えた。`dev` vault の既存の item は流儀がそろっていなかった。
+`dev` repo の `apps/home` に [Better Auth を移す作業](https://github.com/nozomiishii/dev/issues/3215)で、Worker に secret を足すことになった。`dev` vault の既存の item は流儀がそろっていなかった。
 
 - `cloudflare`: field は `credential` と `account-id`
 - `storybook`: field は環境変数名
@@ -30,7 +30,7 @@ date: 2026-10-03
 | 選択肢 | 評価 |
 | --- | --- |
 | 発行元の画面で付けた鍵の名前に合わせる | アプリをまたぐ鍵にも付けられる |
-| 使う範囲 `<app>-<env>` | Cloudflare の API token のようにアプリをまたぐ鍵は、値を分けないので section が要らない。範囲の名前で足りる |
+| 使う範囲 `<app>-<env>` | アプリをまたぐ鍵には範囲の名前を付けにくい |
 
 ### 全環境で同じ値の置き方
 
@@ -43,7 +43,7 @@ date: 2026-10-03
 
 | 選択肢 | 評価 |
 | --- | --- |
-| 環境ごとに vault を分ける (`op://$APP_ENV/...`) | 1Password 公式が[例に挙げている形](https://www.1password.dev/cli/secrets-environment-variables)。service account が読める vault は[作成後に変えられない](https://www.1password.dev/service-accounts/manage-service-accounts)ので、GitHub に 2 本目の token が要る |
+| 環境ごとに vault を分ける (`op://$APP_ENV/...`) | 1Password 公式が[例に挙げている形](https://www.1password.dev/cli/secrets-environment-variables)。service account が読める vault は[作成後に変えられない](https://www.1password.dev/service-accounts/manage-service-accounts)。分けるには GitHub に 2 本目の token が要る |
 | 1 つの vault の中を section で分ける | token は 1 本のまま |
 
 ## 決定
@@ -63,7 +63,9 @@ date: 2026-10-03
 
 ### section の名前
 
-使う範囲 `<app>-<env>` にする。後から section で分けても、移し忘れた参照が黙って別の値を読むことはない。同じ label の field が並ぶと、section を書かない参照は op がエラーで止めると [1Password 社員が回答している](https://www.1password.community/developers-69/how-to-specify-password-that-is-not-in-section-11038)。
+使う範囲 `<app>-<env>` にする。section は値を分ける必要が出たときだけ作る。Cloudflare の API token のようにアプリをまたぐ鍵は値を分けないので section が要らず、範囲の名前で足りる。
+
+後から section で分けても、移し忘れた参照が黙って別の値を読むことはない。同じ label の field が 1 つの item に 2 つ以上あると、section を書かない参照は op がエラーで止めると [1Password 社員が回答している](https://www.1password.community/developers-69/how-to-specify-password-that-is-not-in-section-11038)。
 
 ### 全環境で同じ値の置き方
 
@@ -84,7 +86,7 @@ date: 2026-10-03
 ### 引き受けたコスト
 
 - infra・release の vault と item の流儀がそろわない
-- 全環境で同じ値は、ローテーションのたびに全部の section を直す
+- 全環境で同じ値は section の数だけ書くので、ローテーションの直し漏れが section の単位で残る
 - PR の CI が使う service account から本番の値も読める
 
 ### 保留した論点
