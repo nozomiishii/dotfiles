@@ -29,6 +29,12 @@
 
 ## シークレット管理
 - GitHub に登録する secret は `OP_SERVICE_ACCOUNT_TOKEN` だけにする。他のシークレットを GitHub Secrets に置かない。
+- 1Password の参照 `op://<vault>/<item>/<section>/<field>` は、区切りごとに次で決める。
+  - vault は、使う repo が 1 つなら repo 名、2 つ以上なら用途名
+  - item は発行元のサービス名
+  - field 名は環境変数名
+  - アプリや環境で値を分ける必要が出たら section を使う。名前は `<app>-<env>`
+  - ブラウザに配る値は 1Password に入れない
 
 ## 静的解析・lint エラーの対応
 - disable コメント・ignore 設定・severity 引き下げなど、lint・型検査・セキュリティスキャナのルール抑制は承認なしにしない。自律判断の例外はない。
