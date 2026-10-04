@@ -30,7 +30,7 @@
     "@nozomiishii/markdownlint-cli2-config": "2.7.2",
     "@nozomiishii/oxfmt-config": "2.7.2",
     "@nozomiishii/postinstall": "2.7.2",
-    "lefthook": "2.1.14",
+    "lefthook": "2.1.16",
     "markdownlint-cli2": "0.23.3",
     "oxfmt": "0.70.0"
   },
