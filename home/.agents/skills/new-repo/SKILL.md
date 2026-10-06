@@ -8,13 +8,12 @@ description: >-
 
 # /new-repo
 
-リポジトリの作成・設定・保護の正本は nozomiishii/infra の `stacks/github/main.tf`。GitHub を直接操作して作らない。
+リポジトリの作成・設定・保護の正本は nozomiishii/infra の `iac/stacks/github/main.tf`。GitHub を直接操作して作らない。
 
 ## 禁止
 
 - `gh repo create`、`gh repo edit`、ruleset API による作成・設定変更。既存 repo の設定を `gh repo view` や API で観察して手動複製するのも同じ扱い。
   - 「既存 repo と同じ設定を gh で再現すれば結果は同じ」→ 同じに見えるだけで tfstate と HCL に存在しない。以後の plan に現れず、管理から外れ続ける。
-  - 「ruleset を最後に付ければ main への初回 push が通る」→ 順序の工夫は不要。`auto_init = true` が作成時に initial commit を作るので、main は最初から存在し保護も同時に付く。
 
 ## サインインの選定・設定
 
@@ -24,24 +23,24 @@ description: >-
 
 ## リポジトリ作成 (infra)
 
-- `stacks/github/main.tf` の `locals.repositories` にエントリを追加して PR を作る。visibility と description をここで決める。visibility はユーザーに確認する。公開なら GitHub Actions が無料になる。
+- `iac/stacks/github/main.tf` の `locals.repositories` にエントリを追加して PR を作る。visibility と description をここで決める。visibility はユーザーに確認する。公開なら GitHub Actions が無料になる。
 - plan / apply は infra の AGENTS.md の実行境界に従う。apply はユーザーが行う。
-- initial commit は auto_init が作る。メッセージは "Initial commit" 固定で Conventional Commits 外だが、release-please は非準拠コミットを無視するため実害はない。気になる場合は release-please の `bootstrap-sha` で収集範囲から外せる。
-- repo 固有の CI を必須チェックにする場合、workflow に集約 `required` job を作り、infra 側の `required_status_checks` に `<workflow> / required` で登録する。正本は infra の docs/required_status_checksの命名と最小構成.md。共通の必須チェック 3 つと GitGuardian はモジュールが自動で付ける。
+- `auto_init = false` で作り、GitHub の README と `Initial commit` を生成しない。手元のコミット履歴を取り込み、main 保護まで適用して完了とする。認証と作成の順序は [infra の運用](https://github.com/nozomiishii/infra/blob/main/docs/運用.md#新しい-repo-を追加する)に従う。
+- repo 固有の CI を必須チェックにする場合、workflow に集約 `required` job を作り、infra 側の `required_status_checks` に `<workflow> / required` で登録する。正本は infra の docs/required_status_checksの命名と最小構成.md。共通チェックの `recommended / required` は infra が付ける。
 
-## 初期セットアップ (最初の PR)
+## 初期セットアップ
 
-clone して次を揃え、1 つの PR にする。完成形の実例は直近に作られたリポジトリの初期セットアップ PR を参照する。
+初回に取り込むコミットには次を揃える。初回取り込み後の変更は PR にする。
 
 - configs 一式: `@nozomiishii/commitlint-config` `eslint-config` `lefthook-config` `oxfmt-config` `postinstall` `tsconfig` と各設定ファイル。`cspell-config` と `markdownlint-cli2-config` は非推奨のため導入しない。
-- 標準 workflow: `_pull-request.yaml` `_github-actions.yaml` `_secret-scan.yaml` を configs からコピーする。実体は [nozomiishii/workflows](https://github.com/nozomiishii/workflows) の reusable workflow を SHA pin で呼ぶ薄い caller。main の必須チェックが要求するため、無いと PR をマージできない。
+- 標準 workflow: `_recommended.yaml` を configs からコピーする。実体は [nozomiishii/workflows](https://github.com/nozomiishii/workflows) の reusable workflow を SHA pin で呼ぶ薄い caller。main の必須チェックが要求するため、無いと PR をマージできない。
 - `.github/renovate.json`: `{ "extends": ["github>nozomiishii/renovate"] }`
 - SessionStart hook: Claude Code 用の `.claude/settings.json` と Codex 用の `.codex/hooks.json` から `.hooks/setup.sh` を呼ぶ。3 つとも [dotfiles](https://github.com/nozomiishii/dotfiles) の同じパスのファイルを写す。
 - README.md と README.ja.md を同じ構成で作る。
 
 ## 登録 (infra)
 
-- ローカル登録も infra が正本。infra の `stacks/github/main.tf` の `locals.repositories` と、infra 直下の `projects.json` を、リポジトリ作成と同じ 1 つの PR で両方更新する。新しく作る repo 側には `projects.json` を置かない。
+- ローカル登録も infra が正本。infra の `iac/stacks/github/main.tf` の `locals.repositories` と、infra 直下の `projects.json` を、リポジトリ作成と同じ 1 つの PR で両方更新する。新しく作る repo 側には `projects.json` を置かない。
 
 ## リリースフロー
 
