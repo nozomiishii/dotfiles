@@ -57,6 +57,7 @@ csr() {
 # mvmv: 動画を yt-dlp で Google Drive の My Drive/MV に保存する。
 # GoogleDrive-<メールアドレス> の部分は Mac ごとに違うので glob で探す。
 mvmv() {
+  # -a で配列にする。見つかったパスを 1 つずつ要素に持ち、件数を数える
   local -a dirs=(~/Library/CloudStorage/GoogleDrive-*/"My Drive"/MV(N-/))
   if (( ${#dirs} != 1 )); then
     echo "mvmv: My Drive/MV が 1 つに定まりません (${#dirs} 件)" >&2
