@@ -144,6 +144,9 @@ if OS.mac? && !ENV["CI"]
   # Play, record, convert, and stream audio and video https://ffmpeg.org/
   brew "ffmpeg"
 
+  # Feature-rich command-line audio/video downloader https://github.com/yt-dlp/yt-dlp
+  brew "yt-dlp"
+
   # Command-line JSON processing tool https://github.com/antonmedv/fx
   brew "fx"
 
