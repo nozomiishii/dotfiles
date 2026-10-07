@@ -66,11 +66,15 @@ brain リポジトリで PR を作る。新規追加のタイトルは `feat: ad
 
 ## cloud trigger
 
+repos は trigger の `session_context.sources` に入れる。cloud session で使える trigger 用の MCP ツールは sources を設定できないため、trigger の作成・更新に使わない。代わりに Claude Code の RemoteTrigger を使い、使えなければ trigger を触らず報告する。
+
+`job_config` を送る update は job_config を丸ごと置き換え、送らなかった events・sources・model を消す。`job_config` を送るときは、既存 trigger の job_config 全体のうち変更する値だけを差し替えて送る。
+
 frontmatter と一致する trigger を作成・更新したら、frontmatter に無い connector をすべて外す。正確な次回実行時刻を JST に変換し、frontmatter の schedule コメントと並べて示す。意図した曜日と時刻に一致しない場合は schedule を直す。
 
 同期では main の全 routine と全 trigger を name で照合し、差がある項目だけ更新する。照合できない routine は更新せず報告する。`type` はローカルだけの情報として同期しない。
 
-name を変更した routine は、変更履歴から旧 name を特定して既存 trigger と照合する。特定できなければ trigger を触らず報告する。既存 trigger を更新して実行履歴を保ち、新しい trigger への置き換えで履歴を切らない。model を変更するときは、対象リポジトリや環境など変更対象でない構成をすべて保持する。
+name を変更した routine は、変更履歴から旧 name を特定して既存 trigger と照合する。特定できなければ trigger を触らず報告する。既存 trigger を更新して実行履歴を保ち、新しい trigger への置き換えで履歴を切らない。
 
 ## 整合性を確認する
 
@@ -81,7 +85,7 @@ name を変更した routine は、変更履歴から旧 name を特定して既
 | name       | trigger 名と frontmatter の name                            |
 | schedule   | trigger の schedule と frontmatter の cron                  |
 | model      | 表記の違いを考慮した trigger と frontmatter の model        |
-| repos      | trigger と frontmatter の repos                             |
+| repos      | trigger の sources と frontmatter の repos                  |
 | connectors | trigger と frontmatter の connectors                        |
 | prompt     | Instructions が正しい `.routines/<name>.md` を参照する stub |
 
