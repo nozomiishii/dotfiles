@@ -27,6 +27,9 @@ description: >-
 - plan / apply は infra の AGENTS.md の実行境界に従う。apply はユーザーが行う。
 - `auto_init = false` で作り、GitHub の README と `Initial commit` を生成しない。手元のコミット履歴を取り込み、main 保護まで適用して完了とする。認証と作成の順序は [infra の運用](https://github.com/nozomiishii/infra/blob/main/docs/運用.md#新しい-repo-を追加する)に従う。
 - repo 固有の CI を必須チェックにする場合、workflow に集約 `required` job を作り、infra 側の `required_status_checks` に `<workflow> / required` で登録する。正本は infra の docs/required_status_checksの命名と最小構成.md。共通チェックの `recommended / required` は infra が付ける。
+- private repo の CI は自宅 Mac mini の self-hosted runner で動く。runner に拾わせる次の手作業をユーザーに伝える。正本は infra の [runner の運用](https://github.com/nozomiishii/infra/blob/main/docs/github-runner.md#repo-を足す外す)。
+  - repo の作成後、runner の fine-grained PAT の Repository access に追加する
+  - infra の PR の merge 後、Mac mini で `mise run github-runner-update` を実行する
 
 ## 初期セットアップ
 
@@ -34,6 +37,7 @@ description: >-
 
 - configs 一式: `@nozomiishii/commitlint-config` `eslint-config` `lefthook-config` `oxfmt-config` `postinstall` `tsconfig` と各設定ファイル。`cspell-config` と `markdownlint-cli2-config` は非推奨のため導入しない。
 - 標準 workflow: `_recommended.yaml` を configs からコピーする。実体は [nozomiishii/workflows](https://github.com/nozomiishii/workflows) の reusable workflow を SHA pin で呼ぶ薄い caller。main の必須チェックが要求するため、無いと PR をマージできない。
+  - private では無料枠に収めるため、`_recommended.yaml` から `with: runs-on: self-hosted` を渡す。repo 固有の workflow も `runs-on: self-hosted` にする。
 - `.github/renovate.json`: `{ "extends": ["github>nozomiishii/renovate"] }`
 - SessionStart hook: Claude Code 用の `.claude/settings.json` と Codex 用の `.codex/hooks.json` から `.hooks/setup.sh` を呼ぶ。3 つとも [dotfiles](https://github.com/nozomiishii/dotfiles) の同じパスのファイルを写す。
 - README.md と README.ja.md を同じ構成で作る。
