@@ -6,17 +6,10 @@ pnpm = "12.8.2"
 lockfile = true
 
 [dotfiles]
-"~" = { source = "home", mode = "symlink-each", exclude = [
-  ".DS_Store",
-  ".agents/skills",
-  ".config/gh/config.yaml",
-] }
+"~" = { source = "home", mode = "symlink-each", exclude = [".DS_Store", ".agents/skills"] }
 # Codex は個別の SKILL.md ではなく、skill ディレクトリの symlink のみをサポートする。
 # https://developers.openai.com/codex/skills#where-codex-loads-local-skills
 "~/.agents/skills" = { source = "home/.agents/skills", mode = "symlink" }
-# gh は config.yml という名前しか読まず、repo では .yml を lefthook が弾く。.yaml で持ち、名前を変えて張る。
-# https://github.com/cli/go-gh/blob/b7798dc6fcd12434da38002e12840701a010aa5d/pkg/config/config.go#L227-L229
-"~/.config/gh/config.yml" = { source = "home/.config/gh/config.yaml", mode = "symlink" }
 
 [tasks.homebrew]
 description = "Install/update Homebrew packages"

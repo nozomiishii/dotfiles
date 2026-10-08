@@ -56,6 +56,10 @@ helper = !gh auth git-credential
 helper =
 helper = !gh auth git-credential
 
+[alias]
+# 上の credential helper が使う gh の認証を作る。素の gh auth login だと notifications と workflow のスコープが落ちる
+login = !gh auth login --hostname github.com --git-protocol ssh --skip-ssh-key --web --scopes notifications,workflow
+
 [merge]
 # fast-forward 可能な merge のみ許可 (手動 merge で commit を作らない安全弁)
 ff = only

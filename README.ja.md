@@ -52,7 +52,7 @@ sudo reboot
 - Github loginとレポジトリダウンロード
 
 ```shell
-gh login
+git login
 mise --cd "$HOME/Code/nozomiishii/dotfiles" run repo
 ```
 
