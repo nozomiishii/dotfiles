@@ -52,7 +52,8 @@ description: >-
 
 ## スタイリング
 
-- Tailwind CSS を使う repo では、props で見た目を切り替えるコンポーネントを [tailwind-variants](https://www.tailwind-variants.org/) で書く。tailwind-variants は必要になるまで入れない。
+- CSS でスタイルを当てる repo は、既定で Tailwind CSS を使う。スタイルはできるだけ Tailwind CSS で書く。
+  - size や color などの見た目を props で切り替えるコンポーネントは [tailwind-variants](https://www.tailwind-variants.org/) で書く。tailwind-variants は初期セットアップでは入れず、該当するコンポーネントを初めて書くときに入れる。
 
 ## 経緯
 
