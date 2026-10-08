@@ -10,5 +10,7 @@ export default defineConfig({
     ...nozomiishii.ignorePatterns,
     // superwhisper アプリが mode の保存時に独自の形式で書き直すため
     "home/Documents/superwhisper/**",
+    // gh が保存時に独自の形式 (4 スペースインデント) で書き直すため
+    "home/.config/gh/config.yaml",
   ],
 });
