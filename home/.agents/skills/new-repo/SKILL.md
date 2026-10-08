@@ -50,6 +50,11 @@ description: >-
 
 - npm 配布するリポジトリは configs と同型の release-please 構成 (`.github/.release-please-config.json` + release.yaml) を後続 PR で入れる。
 
+## スタイリング
+
+- CSS でスタイルを当てる repo は、既定で Tailwind CSS を使う。
+  - size や color などの見た目を props で切り替えるコンポーネントは [tailwind-variants](https://www.tailwind-variants.org/) で書く。tailwind-variants は初期セットアップでは入れず、該当するコンポーネントを初めて書くときに入れる。
+
 ## 経緯
 
 設計判断を調べるときだけ参照する。設計の判断は [ADR](https://github.com/nozomiishii/dotfiles/blob/main/docs/decisions/新しいリポジトリ作成のフローは%20new-repo%20スキルを正本にする.md)、テスト記録は [dotfiles#1393](https://github.com/nozomiishii/dotfiles/issues/1393)。
