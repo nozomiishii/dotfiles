@@ -396,7 +396,9 @@ ln -sf "$HOME/Library/Application Support/Code/User/snippets" "$snippets_dir"
 echo '- 🪟 window'
 
 # Disable relaunch apps on login
-defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
+# (「ウィンドウを再度開く」をオフにしても、バッテリー切れなどで正常に終了しなかった後は前回のアプリが全部起動する。
+#  旧 LoginwindowLaunchesRelaunchApps キーは現行 macOS では読まれない)
+defaults write com.apple.loginwindow TALBlockSavingAndLaunch -bool true
 
 # ----------------------------------------------------------------
 # Killall
