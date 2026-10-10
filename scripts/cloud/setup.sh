@@ -18,4 +18,12 @@ mkdir -p ~/.agents ~/.claude/skills
 cp -R home/.agents/. ~/.agents/
 cp -R home/.agents/skills/. ~/.claude/skills/
 
+# mise
+if ! command -v mise >/dev/null 2>&1; then
+  tag=$(curl -fsSLo /dev/null -w '%{url_effective}' https://github.com/jdx/mise/releases/latest)
+  tag=${tag##*/}
+  curl -fsSLo /usr/local/bin/mise "https://github.com/jdx/mise/releases/download/$tag/mise-$tag-linux-x64"
+  chmod +x /usr/local/bin/mise
+fi
+
 rm -rf home/
