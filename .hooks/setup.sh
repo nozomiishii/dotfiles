@@ -5,4 +5,4 @@ set -uo pipefail
 exec >&2
 
 mise install
-pnpm install
+mise exec -- pnpm install
