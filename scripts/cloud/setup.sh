@@ -18,4 +18,9 @@ mkdir -p ~/.agents ~/.claude/skills
 cp -R home/.agents/. ~/.agents/
 cp -R home/.agents/skills/. ~/.claude/skills/
 
+# mise
+if ! command -v mise >/dev/null 2>&1; then
+  curl -fsSL https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh
+fi
+
 rm -rf home/
