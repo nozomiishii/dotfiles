@@ -5,7 +5,7 @@
   {
     "key": "shift+cmd+\\",
     "command": "workbench.action.splitEditorDown",
-    "when": "textInputFocus"
+    "when": "textInputFocus",
   },
 
   // ----------------------------------------------------------------
@@ -13,11 +13,11 @@
   // ----------------------------------------------------------------
   {
     "key": "cmd+[",
-    "command": "workbench.action.navigateBack"
+    "command": "workbench.action.navigateBack",
   },
   {
     "key": "cmd+]",
-    "command": "workbench.action.navigateForward"
+    "command": "workbench.action.navigateForward",
   },
 
   // ----------------------------------------------------------------
@@ -26,45 +26,45 @@
   {
     "key": "alt+cmd+1",
     "command": "md-shortcut.toggleTitleH1",
-    "when": "editorTextFocus && editorLangId == 'markdown'"
+    "when": "editorTextFocus && editorLangId == 'markdown'",
   },
   {
     "key": "alt+cmd+2",
     "command": "md-shortcut.toggleTitleH2",
-    "when": "editorTextFocus && editorLangId == 'markdown'"
+    "when": "editorTextFocus && editorLangId == 'markdown'",
   },
   {
     "key": "alt+cmd+3",
     "command": "md-shortcut.toggleTitleH3",
-    "when": "editorTextFocus && editorLangId == 'markdown'"
+    "when": "editorTextFocus && editorLangId == 'markdown'",
   },
   {
     "key": "alt+cmd+4",
     "command": "md-shortcut.toggleCheckboxes",
-    "when": "editorTextFocus && editorLangId == 'markdown'"
+    "when": "editorTextFocus && editorLangId == 'markdown'",
   },
   {
     "key": "alt+cmd+5",
     "command": "md-shortcut.toggleBullets",
-    "when": "editorTextFocus && editorLangId == 'markdown'"
+    "when": "editorTextFocus && editorLangId == 'markdown'",
   },
   {
     "key": "alt+cmd+6",
     "command": "md-shortcut.toggleNumbers",
-    "when": "editorTextFocus && editorLangId == 'markdown'"
+    "when": "editorTextFocus && editorLangId == 'markdown'",
   },
   {
     "key": "alt+cmd+8",
     "command": "md-shortcut.toggleCodeBlock",
-    "when": "editorTextFocus && editorLangId == 'markdown'"
+    "when": "editorTextFocus && editorLangId == 'markdown'",
   },
   {
     "key": "alt+cmd+9",
     "command": "editor.action.insertSnippet",
     "when": "editorTextFocus && editorLangId == 'markdown'",
     "args": {
-      "snippet": "[$TM_SELECTED_TEXT]($TM_SELECTED_TEXT)$0"
-    }
+      "snippet": "[$TM_SELECTED_TEXT]($TM_SELECTED_TEXT)$0",
+    },
   },
 
   // ----------------------------------------------------------------
@@ -72,7 +72,7 @@
   // ----------------------------------------------------------------
   {
     "key": "alt+cmd+w",
-    "command": "workbench.action.closeEditorsInGroup"
+    "command": "workbench.action.closeEditorsInGroup",
   },
 
   // ----------------------------------------------------------------
@@ -80,7 +80,7 @@
   // ----------------------------------------------------------------
   {
     "key": "shift+cmd+r",
-    "command": "workbench.action.reloadWindow"
+    "command": "workbench.action.reloadWindow",
   },
 
   // ----------------------------------------------------------------
@@ -89,11 +89,11 @@
   // focusが当たってる場所で新規ファイル作成に変更
   {
     "key": "cmd+n",
-    "command": "-workbench.action.files.newUntitledFile"
+    "command": "-workbench.action.files.newUntitledFile",
   },
   {
     "key": "cmd+n",
-    "command": "explorer.newFile"
+    "command": "explorer.newFile",
   },
 
   // ----------------------------------------------------------------
@@ -103,59 +103,59 @@
   {
     "key": "cmd+j",
     "command": "-workbench.action.togglePanel",
-    "when": "!isAuxiliaryWindowFocusedContext"
+    "when": "!isAuxiliaryWindowFocusedContext",
   },
 
   // Terminal起動してなかったら新しく起動する
   {
     "key": "alt+cmd+j",
     "command": "workbench.action.terminal.new",
-    "when": "!terminal.active"
+    "when": "!terminal.active",
   },
 
   // Terminal表示
   {
     "key": "alt+cmd+j",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "when": "terminal.active",
   },
 
   // Terminal最大化
   {
     "key": "alt+j",
     "command": "workbench.action.toggleMaximizedPanel",
-    "when": "terminal.active"
+    "when": "terminal.active",
   },
 
   // Terminalアプリで開き直す
   {
     "key": "shift+cmd+j",
-    "command": "workbench.action.terminal.openNativeConsole"
+    "command": "workbench.action.terminal.openNativeConsole",
   },
 
   // Terminalの新規タブ作成
   {
     "key": "cmd+t",
     "command": "workbench.action.terminal.new",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile",
   },
 
   // Terminalのタブを閉じる
   {
     "key": "cmd+w",
     "command": "workbench.action.terminal.kill",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile",
   },
 
   // Terminalでctrl+rを有効化
   {
     "key": "ctrl+r",
     "command": "workbench.action.openRecent",
-    "when": "!terminalFocus"
+    "when": "!terminalFocus",
   },
   {
     "key": "ctrl+r",
-    "command": "-workbench.action.openRecent"
+    "command": "-workbench.action.openRecent",
   },
 
   // undo
@@ -163,7 +163,7 @@
     "key": "cmd+z",
     "command": "workbench.action.terminal.sendSequence",
     "args": { "text": "\u001f" },
-    "when": "terminalFocus"
+    "when": "terminalFocus",
   },
 
   // ----------------------------------------------------------------
@@ -172,7 +172,7 @@
   // Zellijを閉じるhotkeyとconflict
   {
     "key": "ctrl+q",
-    "command": "-workbench.action.quickOpenView"
+    "command": "-workbench.action.quickOpenView",
   },
 
   // ----------------------------------------------------------------
@@ -182,13 +182,13 @@
     "key": "ctrl+c",
     "command": "editor.action.insertSnippet",
     "args": { "name": "pretty console log" },
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly",
   },
   {
     "key": "ctrl+shift+c",
     "command": "editor.action.insertSnippet",
     "args": { "name": "pretty console check" },
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly",
   },
 
   // ----------------------------------------------------------------
@@ -199,8 +199,8 @@
     "command": "editor.action.insertSnippet",
     "when": "editorTextFocus && editorHasSelection",
     "args": {
-      "snippet": "{t('${TM_SELECTED_TEXT}')}"
-    }
+      "snippet": "{t('${TM_SELECTED_TEXT}')}",
+    },
   },
 
   // ----------------------------------------------------------------
@@ -209,7 +209,7 @@
   {
     "key": "alt+cmd+w",
     "command": "composer.clearComposerTabs",
-    "when": "composerFocused"
+    "when": "composerFocused",
   },
 
   // ----------------------------------------------------------------
@@ -218,7 +218,7 @@
   // "ctrl+shift+r"はRun Commandで使いたいため
   {
     "key": "ctrl+shift+r",
-    "command": "-git-worktree-manager.searchAllWorktree"
+    "command": "-git-worktree-manager.searchAllWorktree",
   },
 
   // ----------------------------------------------------------------
@@ -228,8 +228,8 @@
     "key": "shift+enter",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "text": "\u001b\r"
+      "text": "\u001b\r",
     },
-    "when": "terminalFocus"
-  }
+    "when": "terminalFocus",
+  },
 ]

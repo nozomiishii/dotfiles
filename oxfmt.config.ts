@@ -10,5 +10,8 @@ export default defineConfig({
     ...nozomiishii.ignorePatterns,
     // superwhisper アプリが mode の保存時に独自の形式で書き直すため
     "home/Documents/superwhisper/**",
+    // エディタの UI から開くと oxc は jsonc として末尾カンマを付け、CLI は json として外すため
+    "home/Library/Application Support/Code/User/settings.json",
+    "home/Library/Application Support/Code/User/keybindings.json",
   ],
 });
