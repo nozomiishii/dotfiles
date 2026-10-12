@@ -23,7 +23,12 @@ Claude Code Routine を git 管理で追加・変更し、`.routines/` の front
 
 ## 削除
 
-trigger の削除は [Routine 管理画面](https://claude.ai/code/routines)でユーザーに行ってもらう。削除予定の routine を先に無効化しない。管理画面から見えなくなり削除できなくなる。trigger が消えた後、`.routines/<name>.md` を削除する PR を作る。
+RemoteTrigger と `/schedule` には routine を削除する手段が無い[^cli-routine-delete-unsupported]。削除のたびに、このセッションの RemoteTrigger か `/schedule` で routine 本体を削除できるようになったかを確かめる。管理画面・Desktop・cloud session の削除機能、Desktop の scheduled task、trigger の取り外しは判定に使わない。
+
+- 削除できる: 対象の name と ID をユーザーに示し、承認を得てから削除する。nozomiishii/dotfiles でこの節を書き換える PR も作る
+- 削除できない: [Routine 管理画面](https://claude.ai/code/routines)でユーザーに削除してもらう。削除予定の routine を先に無効化しない。管理画面から見えなくなり削除できなくなる
+
+削除は 2 回の実行に分けない。trigger が消えた後、`.routines/<name>.md` を削除する PR を作る。この PR のマージ前は、その routine を整合性確認の差分にしない。
 
 ## 新規 routine を設計する
 
@@ -90,3 +95,5 @@ name を変更した routine は、変更履歴から旧 name を特定して既
 | prompt     | Instructions が正しい `.routines/<name>.md` を参照する stub |
 
 未設定の値も差分として扱う。routine ごとの結果を表で示し、差分があれば修正するかユーザーに確認する。差分がなくても表を示す。
+
+[^cli-routine-delete-unsupported]: 2026-10-12 に[公式ドキュメント](https://code.claude.com/docs/en/routines#manage-routines-from-the-cli)と changelog で確認。
