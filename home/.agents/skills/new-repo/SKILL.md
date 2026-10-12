@@ -20,6 +20,7 @@ description: >-
 - Google / Apple サインインを検討する場合、必要な情報を一度に 1 つずつインタビューし、採用する方式と設定内容をユーザーと決める。
 - 管理画面の設定は、ユーザーが見えるブラウザでエージェントが行う。本人の操作が必要なところだけユーザーへ渡す。
 - 資格情報を安全に保存し、アプリでサインインできる状態まで確認する。
+- Better Auth の secret の値をユーザーに作ってもらうときは、[Better Auth の CLI の Secret](https://better-auth.com/docs/concepts/cli#secret) を作り方として添える。
 
 ## リポジトリ作成 (infra)
 
