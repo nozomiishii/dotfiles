@@ -79,11 +79,7 @@ description: >-
 - AI エージェントへの行動指針・フィードバック (呼称・進め方の好み・作業ルール) → AGENTS.md (全 repo 共通は `dotfiles/home/AGENTS.md`、repo 固有は対象 repo の `AGENTS.md`)。repo とその祖先ディレクトリには `CLAUDE.md`・`.claude/CLAUDE.md`・`CLAUDE.local.md` を置かない。1 つでもあると AGENTS.md が読まれない
 - repo に限らない学び → nozomiishii/brain の知識ノート。分類・frontmatter・取り込みの作法は brain repo の指示ファイルに従う
 
-Superpowers の spec と plan は実装中だけ使う作業メモにする。
-
-- 着手前に issue があれば、その内容を spec と plan に移す。issue は実装 PR で close する
-- 決めたことは実装 PR に ADR として入れる
-- spec と plan は実装 PR の merge 前に消す
+実装が終わるまでの設計書と計画は issue に書く。
 
 探すときの入口は 3 つ: repo のことは AGENTS.md から docs/ へ、経緯は issue 検索と ADR、横断は brain vault。
 
