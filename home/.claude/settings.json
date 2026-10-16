@@ -57,7 +57,8 @@
     "frontend-design@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "revenuecat@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -73,6 +74,12 @@
         "url": "https://github.com/dietrichgebert/ponytail.git"
       },
       "autoUpdate": true
+    },
+    "RevenueCat": {
+      "source": {
+        "source": "github",
+        "repo": "RevenueCat/ai-toolkit"
+      }
     }
   },
   "outputStyle": "Concise",
