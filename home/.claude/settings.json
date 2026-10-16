@@ -55,21 +55,13 @@
     "codex@openai-codex": true,
     "frontend-design@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
-    "ponytail@ponytail": true
+    "superpowers@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
-      },
-      "autoUpdate": true
-    },
-    "ponytail": {
-      "source": {
-        "source": "git",
-        "url": "https://github.com/dietrichgebert/ponytail.git"
       },
       "autoUpdate": true
     }
