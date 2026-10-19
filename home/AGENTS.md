@@ -83,6 +83,7 @@
 - 指定がなければ、PR タイトルは repo の commitlint 設定に従う。
 - PR に依頼と無関係な変更を混ぜない。
 - merge手順が発生する場合、GitHub Stacked PRを使う。
+- PR を作ったら、そのセッションの Auto-fix をオンにする。
 
 ## Issue
 
