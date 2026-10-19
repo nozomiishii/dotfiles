@@ -26,7 +26,7 @@ Claude Code Routine を git 管理で追加・変更し、`.routines/` の front
 RemoteTrigger と `/schedule` には routine を削除する手段が無い[^cli-routine-delete-unsupported]。削除のたびに、このセッションの RemoteTrigger か `/schedule` で routine 本体を削除できるようになったかを確かめる。管理画面・Desktop・cloud session の削除機能、Desktop の scheduled task、trigger の取り外しは判定に使わない。
 
 - 削除できる: 対象の name と ID をユーザーに示し、承認を得てから削除する。nozomiishii/dotfiles でこの節を書き換える PR も作る
-- 削除できない: [Routine 管理画面](https://claude.ai/code/routines)でユーザーに削除してもらう。削除予定の routine を先に無効化しない。管理画面から見えなくなり削除できなくなる
+- 削除できない: [Routine 管理画面](https://claude.ai/code/routines)でユーザーに削除してもらう。削除予定の routine を先に無効化しない。無効化すると管理画面から見えなくなる。無効化済みのものは Desktop の Scheduled tasks 一覧でユーザーに削除してもらう[^disabled-delete-desktop]
 
 削除は 2 回の実行に分けない。trigger が消えた後、`.routines/<name>.md` を削除する PR を作る。この PR のマージ前は、その routine を整合性確認の差分にしない。
 
@@ -73,9 +73,13 @@ brain リポジトリで PR を作る。新規追加のタイトルは `feat: ad
 
 repos は trigger の `session_context.sources` に入れる。cloud session で使える trigger 用の MCP ツールは sources を設定できないため、trigger の作成・更新に使わない。代わりに Claude Code の RemoteTrigger を使い、使えなければ trigger を触らず報告する。
 
+その MCP ツールで作った trigger は `created_via` が `meta_mcp` になり、Desktop の Scheduled tasks 一覧で既定では隠れる。`created_via` は update で変わらない[^created-via-hidden]。RemoteTrigger で作り直すのは、実行履歴が切れることを伝えたうえでユーザーが求めたときだけにする。旧 trigger は「削除」の節に従って消し、`.routines/` は変えない。RemoteTrigger の create は notifications を付けないため、notifications は旧 trigger から写す。
+
 `job_config` を送る update は job_config を丸ごと置き換え、送らなかった events・sources・model を消す。`job_config` を送るときは、既存 trigger の job_config 全体のうち変更する値だけを差し替えて送る。
 
-frontmatter と一致する trigger を作成・更新したら、frontmatter に無い connector をすべて外す。正確な次回実行時刻を JST に変換し、frontmatter の schedule コメントと並べて示す。意図した曜日と時刻に一致しない場合は schedule を直す。
+frontmatter と一致する trigger を作成・更新したら、frontmatter に無い connector をすべて外す。RemoteTrigger の create はアカウントの connector を全部付ける。frontmatter の connectors が空なら `clear_mcp_connections` で外す。`mcp_connections` に空配列を送っても外れない。
+
+正確な次回実行時刻を JST に変換し、frontmatter の schedule コメントと並べて示す。意図した曜日と時刻に一致しない場合は schedule を直す。
 
 同期では main の全 routine と全 trigger を name で照合し、差がある項目だけ更新する。照合できない routine は更新せず報告する。`type` はローカルだけの情報として同期しない。
 
@@ -97,3 +101,5 @@ name を変更した routine は、変更履歴から旧 name を特定して既
 未設定の値も差分として扱う。routine ごとの結果を表で示し、差分があれば修正するかユーザーに確認する。差分がなくても表を示す。
 
 [^cli-routine-delete-unsupported]: 2026-10-12 に[公式ドキュメント](https://code.claude.com/docs/en/routines#manage-routines-from-the-cli)と changelog で確認。
+[^created-via-hidden]: 2026-10-19 に RemoteTrigger の get・update と Desktop の Scheduled tasks 一覧で確認。公式ドキュメントに記載は無い。
+[^disabled-delete-desktop]: 2026-10-19 に、無効化した 6 件を Desktop の Scheduled tasks 一覧から削除し、RemoteTrigger の get が 404 になることを確認。
