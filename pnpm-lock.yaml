@@ -167,20 +167,20 @@ importers:
   .:
     devDependencies:
       '@nozomiishii/commitlint-config':
-        specifier: 2.7.2
-        version: 2.7.2(conventional-commits-parser@7.1.3)
+        specifier: 2.8.0
+        version: 2.8.0(conventional-commits-parser@7.1.3)
       '@nozomiishii/lefthook-config':
-        specifier: 2.7.2
-        version: 2.7.2(lefthook@2.2.2)
+        specifier: 2.8.0
+        version: 2.8.0(lefthook@2.2.2)
       '@nozomiishii/markdownlint-cli2-config':
-        specifier: 2.7.2
-        version: 2.7.2
+        specifier: 2.8.0
+        version: 2.8.0
       '@nozomiishii/oxfmt-config':
-        specifier: 2.7.2
-        version: 2.7.2(oxfmt@0.73.0)
+        specifier: 2.8.0
+        version: 2.8.0(oxfmt@0.73.0)
       '@nozomiishii/postinstall':
-        specifier: 2.7.2
-        version: 2.7.2
+        specifier: 2.8.0
+        version: 2.8.0
       lefthook:
         specifier: 2.2.2
         version: 2.2.2
@@ -204,13 +204,13 @@ packages:
     resolution: {integrity: sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==}
     engines: {node: '>=6.9.0'}
 
-  '@commitlint/cli@21.2.2':
-    resolution: {integrity: sha512-a+6hQxIxnpdvSvS2apvttPNbEliYsVC3PqFYDiiB2kjbwIsQsj1urvQ4Tkf70pKYozPalKAuRQmm/GHwndduqA==}
+  '@commitlint/cli@21.2.3':
+    resolution: {integrity: sha512-5yOX6IRjcrIReCxpyAd04hgI/yhUMpVBJ/ouwFV0wk9yx5+fYRDWZWJ5h55Tbedgfol+5m2mU5nqzbB8g3v0vQ==}
     engines: {node: '>=22.12.0'}
     hasBin: true
 
-  '@commitlint/config-conventional@21.2.2':
-    resolution: {integrity: sha512-NxA37SZviusFUEYOQZ5hNnZ1h7O/KiemPkxjOlpzKJNnWxThiwc6/SaZhaPa8fyLvfRBAywhQhJJk8XESHWlpQ==}
+  '@commitlint/config-conventional@21.2.3':
+    resolution: {integrity: sha512-EP2n5DN2GwRWNVrLX0Jx3mpQlW5PfFi9HnD9OJ8hN/H0xFqpCFyHeGDhg+0P8/21iMMcdkcQgbNqmVklebqYsQ==}
     engines: {node: '>=22.12.0'}
 
   '@commitlint/config-validator@21.2.3':
@@ -269,10 +269,6 @@ packages:
     resolution: {integrity: sha512-Y5gmQ+KxzqCrBFJfLvFEPvvwD3LDiNZoTT2yeFBm96M8qhmqSzQc5DvX3rheAaAMjyIvMXOCLS/mWfdpONsjyQ==}
     engines: {node: '>=22.12.0'}
 
-  '@commitlint/types@21.2.0':
-    resolution: {integrity: sha512-7zVFCDB2reMvJH5dmbKnOQPjZEvjdJTH8jc0U/PIPU1r3/+vf5pD1HlfitV2MWsWXrvu7u39iY1lyLUPOaN0Gw==}
-    engines: {node: '>=22.12.0'}
-
   '@commitlint/types@21.2.3':
     resolution: {integrity: sha512-sGEA473TlCvhCGNoTBY9OXZVWdscIXdGt0dm8EpB+2MRfmt8LNh/X56P/T3nCtEB+eH5qGEa3odphSAoUxSfSQ==}
     engines: {node: '>=22.12.0'}
@@ -305,28 +301,28 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nozomiishii/commitlint-config@2.7.2':
-    resolution: {integrity: sha512-VqchNr2iytdAxw3bhvTRUh0QEn0pQT2O1bgRvRh4ljDqFbMz8Ts2kwzknmIfJmsuQWk7cbm1wlm/osnQ6BsPGg==}
+  '@nozomiishii/commitlint-config@2.8.0':
+    resolution: {integrity: sha512-NsSzMRCCxXC6aG4zD5Nvc8hssAAgt+AadY3DfmPzk402HNLlB+X59rGayK+2hMzh0u3o6PYRTw/DKauV9peOxg==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@2.7.2':
-    resolution: {integrity: sha512-yVBfLAIYg5aSf+cygDSoyY8kn/C56Y69OH+28dD8/i+WvSyXk4HeGGovSdwjZ8XtwXtNgLrF/VRWPkEwivuGsQ==}
-    hasBin: true
-    peerDependencies:
-      lefthook: 2.1.14
-
-  '@nozomiishii/markdownlint-cli2-config@2.7.2':
-    resolution: {integrity: sha512-dKzvs4u0Lctssl0VCjpBEFXVP7X+Sum5btJic0VdMENW35dNma5ThwjjKlBDPNrUgcTszqTTOq1fQgZ1uMRl+w==}
-    hasBin: true
-
-  '@nozomiishii/oxfmt-config@2.7.2':
-    resolution: {integrity: sha512-ZkbaILsr0eNUKUqO3ZuAc56wuEkM1i2xhlN36Q4Xw29cj0R6UsEg1UDxjWRDUnNDIf5yimOh2S8kN9W88Rq7cg==}
+  '@nozomiishii/lefthook-config@2.8.0':
+    resolution: {integrity: sha512-+Pf0nFbq1GWzIf4LpUSnPMioK8xykhJheTO4OqxlXSbQx/sjKsR8TRo9c5MQc8ketAVh7SLApLtnWb579/VLcQ==}
     hasBin: true
     peerDependencies:
-      oxfmt: 0.68.0
+      lefthook: 2.2.2
 
-  '@nozomiishii/postinstall@2.7.2':
-    resolution: {integrity: sha512-xU/k63WjZOHA9jnyQIRN2NBWDskAtANEcQYfp2CXuBhd8Vum47msjOkB2IcvZte1pOzOr34GV5Q+KmIdsLPXaQ==}
+  '@nozomiishii/markdownlint-cli2-config@2.8.0':
+    resolution: {integrity: sha512-NVkGlD4GARH4MmlE+9B2mzglDqGQVXh4+QhtAtNc22fWt82lBED9QMzHuYDrMT9MGtN1oHpv3gJCRyJj9dcNWA==}
+    hasBin: true
+
+  '@nozomiishii/oxfmt-config@2.8.0':
+    resolution: {integrity: sha512-912WbAfhIfcyL4ZIIdJZKHAxh1LSTxfUWIfstfKXwbJAMWlUIN/mfbiciiMx9dcw6Dqg095WJqxHHOXjXHrqBA==}
+    hasBin: true
+    peerDependencies:
+      oxfmt: 0.73.0
+
+  '@nozomiishii/postinstall@2.8.0':
+    resolution: {integrity: sha512-lBu1K4vJe3og2iab0/DXS3keT5Ivpctk/6hRUO8HbP5NwZRrrwKPMv8hYQS75EY+5jMxGA59XI2c+rfNfIy70Q==}
     hasBin: true
 
   '@oxfmt/binding-android-arm-eabi@0.73.0':
@@ -569,10 +565,6 @@ packages:
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
 
-  entities@4.5.0:
-    resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
-    engines: {node: '>=0.12'}
-
   entities@8.1.0:
     resolution: {integrity: sha512-kxL7msIffSuh9aaFAMD7rxAIuTRMAHMeBtgHW2yUdWw732ZNh4MehkF2gdjvtdmikkaIP9bFDDJOPlsvm7avrA==}
     engines: {node: '>=20.19.0'}
@@ -604,8 +596,8 @@ packages:
   fastq@1.20.3:
     resolution: {integrity: sha512-XKv5nnLs6nLF71NgiKJLIZFLkPyIEuOselLG7ujZnGrRfQK8HpvY+WqKhAJUAdLomwVHErVS4LfxFlPq0/FTAw==}
 
-  figlet@1.11.4:
-    resolution: {integrity: sha512-ZU41480OncL+NVLQrT0GVnbO0COL24sLSrzksioDgunmdJNYEUxhJJZ4Y3x1csN8XXqN5OcCZTLG8lKdquNyfQ==}
+  figlet@1.12.0:
+    resolution: {integrity: sha512-Ith3WsUi0N/EqGt+0/F6XnWhT04sohhH2tT0Dq7GdUmWbMTIoCbg2Jq9qKggmTO62ST5kRCfB311EmIMbizGyA==}
     engines: {node: '>= 17.0.0'}
     hasBin: true
 
@@ -621,8 +613,8 @@ packages:
     resolution: {integrity: sha512-XjH1AECxf0giL2V1aU8vKyRR2ppRUb5c0EvT7zuJTokQ74bNo52zOtghqdWIqrhUD79fo3x0WfKZdOqxF6LG1Q==}
     engines: {node: '>=18'}
 
-  git-harvest@0.3.5:
-    resolution: {integrity: sha512-9BgynGdC1xL/YhvlsSmm0GgqIsVxHPzD+6/RyzGt/Bn5nUYIyPbRjogaCOOmjWzO2N/32eYMXoVHycAtVYQ26A==}
+  git-harvest@0.3.6:
+    resolution: {integrity: sha512-Nq5zdqVdwfbOa2bV03/2t5KczxAqeRN7O9LdrhVE+AEjZU9Pjq7rMLwwrnfVqRexffozH1BOlXZGP9KA2BhGdA==}
     hasBin: true
 
   glob-parent@5.1.2:
@@ -631,10 +623,6 @@ packages:
 
   global-directory@5.0.0:
     resolution: {integrity: sha512-1pgFdhK3J2LeM+dVf2Pd424yHx2ou338lC0ErNP2hPx4j8eW1Sp0XqSjNxtk6Tc4Kr5wlWtSvz8cn2yb7/SG/w==}
-    engines: {node: '>=20'}
-
-  globby@16.2.2:
-    resolution: {integrity: sha512-NLvV9ubZ6NDsJaOpKPy3cQeJpKi9DcWiyCiFUpJPA0YihRqiE6RWaLUmgNNPr8MgPpLZjnBjSmou7uZBRJv9wA==}
     engines: {node: '>=20'}
 
   globby@16.2.4:
@@ -697,10 +685,6 @@ packages:
 
   js-yaml@4.3.2:
     resolution: {integrity: sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA==}
-    hasBin: true
-
-  js-yaml@5.2.2:
-    resolution: {integrity: sha512-dayzUzKkJ1MkuUtZglSebU43utNXH0OWQByK9rKOOuYIO8M5TV1y+n8ALMdG0rdzBnfNkOmZEqrURepb0ejqBw==}
     hasBin: true
 
   js-yaml@5.4.1:
@@ -786,15 +770,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  linkify-it@5.0.2:
-    resolution: {integrity: sha512-ONTm2jCMAVZjgQa/Fy1kScXsuOoF5NPTsoFBdE1KVIZ2vAh/r9+Bqo+0jINCBYnavTPQZz38QzFTme79ENoN3Q==}
-
   linkify-it@6.1.0:
     resolution: {integrity: sha512-wJ/TwpSDTLepCrQoYWYIExIKg5Zchex2Nn5yk2mFnB+6PtdkHtyLx742md9csRjjOnGkKIS/RrbY7l8D6gT9Vw==}
-
-  markdown-it@14.3.0:
-    resolution: {integrity: sha512-RCEsPjR+sr0x+AuYp601tKTkgFG4YEPLCzHST3cQ/fhlJkqAkz1L2/Qbp1j9qw5SBwQHFBoW8+hoN5xssOF0Tw==}
-    hasBin: true
 
   markdown-it@15.0.1:
     resolution: {integrity: sha512-9/7gE95FNPkfUWrjJIoHZza2iLmuJlPD0UNMxPi7bxUrbCR525YZY0r+zyfes0dZI5ZZ/uNIXUJca0pJvtw41g==}
@@ -804,11 +781,6 @@ packages:
     resolution: {integrity: sha512-VVDGKsq9sgzu378swJ0fcHfSicUnMxnL8gnLm/Q4J/xsNJ4e5bA6lvAz7PCzIl0/No0lHyaWdqVD2jotxOSFMQ==}
     peerDependencies:
       markdownlint-cli2: '>=0.0.4'
-
-  markdownlint-cli2@0.23.2:
-    resolution: {integrity: sha512-eUhcnkSpzURo/o4htSqc7LPDszgOOTknhU4eY/sPHvMCLxnTCYscv1gw1/js/idmaZPisv9ECVEIORcllqjTUw==}
-    engines: {node: '>=22'}
-    hasBin: true
 
   markdownlint-cli2@0.23.3:
     resolution: {integrity: sha512-xAr5o/TGpC3v6lE6cKIW4b5eOFRrRX5u7Vtjae9ix3RALv8nNOd94XMkD/1OXXBtpMcJ4uQGbpSo3hv5UqS4uQ==}
@@ -1109,10 +1081,6 @@ packages:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
 
-  smol-toml@1.7.0:
-    resolution: {integrity: sha512-aqVvWoyO21L23mb+drl4RmMXbf6N7FdHjAhTRA9ZBL7apWBgfWC16KjrASI+1p9GAroljyMHj6fK67i0UiTNvQ==}
-    engines: {node: '>= 18'}
-
   smol-toml@1.8.0:
     resolution: {integrity: sha512-kCZr2V3ch9i00x8zXRhjUNVcjG9ijES5dDudkXvUVCT5QlJNQWElSJdZqyPemffHoLNUYwOcou0Fy+ojN0uHSQ==}
     engines: {node: '>= 18'}
@@ -1144,9 +1112,6 @@ packages:
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
-
-  uc.micro@2.1.0:
-    resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
   uc.micro@3.0.0:
     resolution: {integrity: sha512-U3PppEkleoTnIfi8BozMx3yju3qc/L6SwqWo2Sw+54PX+PX0q9I+r1Um5HCmqD7n9VDX5/v3vQH/AjA6deDdtw==}
@@ -1190,14 +1155,14 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.29.7': {}
 
-  '@commitlint/cli@21.2.2(conventional-commits-parser@7.1.3)':
+  '@commitlint/cli@21.2.3(conventional-commits-parser@7.1.3)':
     dependencies:
-      '@commitlint/config-conventional': 21.2.2
+      '@commitlint/config-conventional': 21.2.3
       '@commitlint/format': 21.2.3
       '@commitlint/lint': 21.2.4
       '@commitlint/load': 21.2.4
       '@commitlint/read': 21.2.3(conventional-commits-parser@7.1.3)
-      '@commitlint/types': 21.2.0
+      '@commitlint/types': 21.2.3
       tinyexec: 1.3.1
       yargs: 18.2.0
     transitivePeerDependencies:
@@ -1205,9 +1170,9 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@commitlint/config-conventional@21.2.2':
+  '@commitlint/config-conventional@21.2.3':
     dependencies:
-      '@commitlint/types': 21.2.0
+      '@commitlint/types': 21.2.3
       conventional-changelog-conventionalcommits: 10.4.1
 
   '@commitlint/config-validator@21.2.3':
@@ -1292,11 +1257,6 @@ snapshots:
     dependencies:
       escalade: 3.2.0
 
-  '@commitlint/types@21.2.0':
-    dependencies:
-      conventional-commits-parser: 7.1.3
-      picocolors: 1.1.1
-
   '@commitlint/types@21.2.3':
     dependencies:
       conventional-commits-parser: 7.1.3
@@ -1324,34 +1284,34 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.3
 
-  '@nozomiishii/commitlint-config@2.7.2(conventional-commits-parser@7.1.3)':
+  '@nozomiishii/commitlint-config@2.8.0(conventional-commits-parser@7.1.3)':
     dependencies:
-      '@commitlint/cli': 21.2.2(conventional-commits-parser@7.1.3)
-      '@commitlint/config-conventional': 21.2.2
-      '@commitlint/types': 21.2.0
+      '@commitlint/cli': 21.2.3(conventional-commits-parser@7.1.3)
+      '@commitlint/config-conventional': 21.2.3
+      '@commitlint/types': 21.2.3
     transitivePeerDependencies:
       - conventional-commits-filter
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@2.7.2(lefthook@2.2.2)':
+  '@nozomiishii/lefthook-config@2.8.0(lefthook@2.2.2)':
     dependencies:
-      git-harvest: 0.3.5
+      git-harvest: 0.3.6
       lefthook: 2.2.2
 
-  '@nozomiishii/markdownlint-cli2-config@2.7.2':
+  '@nozomiishii/markdownlint-cli2-config@2.8.0':
     dependencies:
-      markdownlint-cli2: 0.23.2
+      markdownlint-cli2: 0.23.3
     transitivePeerDependencies:
       - supports-color
 
-  '@nozomiishii/oxfmt-config@2.7.2(oxfmt@0.73.0)':
+  '@nozomiishii/oxfmt-config@2.8.0(oxfmt@0.73.0)':
     dependencies:
       oxfmt: 0.73.0
 
-  '@nozomiishii/postinstall@2.7.2':
+  '@nozomiishii/postinstall@2.8.0':
     dependencies:
-      figlet: 1.11.4
+      figlet: 1.12.0
       zx: 8.8.5
 
   '@oxfmt/binding-android-arm-eabi@0.73.0':
@@ -1504,8 +1464,6 @@ snapshots:
 
   emoji-regex@10.6.0: {}
 
-  entities@4.5.0: {}
-
   entities@8.1.0: {}
 
   env-paths@2.2.1: {}
@@ -1534,7 +1492,7 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
-  figlet@1.11.4:
+  figlet@1.12.0:
     dependencies:
       commander: 14.0.3
 
@@ -1546,7 +1504,7 @@ snapshots:
 
   get-east-asian-width@1.7.0: {}
 
-  git-harvest@0.3.5: {}
+  git-harvest@0.3.6: {}
 
   glob-parent@5.1.2:
     dependencies:
@@ -1555,15 +1513,6 @@ snapshots:
   global-directory@5.0.0:
     dependencies:
       ini: 6.0.0
-
-  globby@16.2.2:
-    dependencies:
-      '@sindresorhus/merge-streams': 4.0.0
-      fast-glob: 3.3.3
-      ignore: 7.0.12
-      is-path-inside: 4.0.0
-      slash: 5.1.0
-      unicorn-magic: 0.4.1
 
   globby@16.2.4:
     dependencies:
@@ -1614,10 +1563,6 @@ snapshots:
   js-tokens@4.0.0: {}
 
   js-yaml@4.3.2:
-    dependencies:
-      argparse: 2.0.1
-
-  js-yaml@5.2.2:
     dependencies:
       argparse: 2.0.1
 
@@ -1686,22 +1631,9 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  linkify-it@5.0.2:
-    dependencies:
-      uc.micro: 2.1.0
-
   linkify-it@6.1.0:
     dependencies:
       uc.micro: 3.0.0
-
-  markdown-it@14.3.0:
-    dependencies:
-      argparse: 2.0.1
-      entities: 4.5.0
-      linkify-it: 5.0.2
-      mdurl: 2.1.0
-      punycode.js: 2.3.1
-      uc.micro: 2.1.0
 
   markdown-it@15.0.1:
     dependencies:
@@ -1712,27 +1644,9 @@ snapshots:
       punycode.js: 2.3.1
       uc.micro: 3.0.0
 
-  markdownlint-cli2-formatter-default@0.0.6(markdownlint-cli2@0.23.2):
-    dependencies:
-      markdownlint-cli2: 0.23.2
-
   markdownlint-cli2-formatter-default@0.0.6(markdownlint-cli2@0.23.3):
     dependencies:
       markdownlint-cli2: 0.23.3
-
-  markdownlint-cli2@0.23.2:
-    dependencies:
-      globby: 16.2.2
-      js-yaml: 5.2.2
-      jsonc-parser: 3.3.1
-      jsonpointer: 5.0.1
-      markdown-it: 14.3.0
-      markdownlint: 0.41.1
-      markdownlint-cli2-formatter-default: 0.0.6(markdownlint-cli2@0.23.2)
-      micromatch: 4.0.8
-      smol-toml: 1.7.0
-    transitivePeerDependencies:
-      - supports-color
 
   markdownlint-cli2@0.23.3:
     dependencies:
@@ -2016,8 +1930,6 @@ snapshots:
 
   slash@5.1.0: {}
 
-  smol-toml@1.7.0: {}
-
   smol-toml@1.8.0: {}
 
   string-width@7.2.0:
@@ -2047,8 +1959,6 @@ snapshots:
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
-
-  uc.micro@2.1.0: {}
 
   uc.micro@3.0.0: {}
 
