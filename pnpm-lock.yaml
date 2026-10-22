@@ -167,20 +167,20 @@ importers:
   .:
     devDependencies:
       '@nozomiishii/commitlint-config':
-        specifier: 2.8.0
-        version: 2.8.0(conventional-commits-parser@7.1.3)
+        specifier: 2.8.1
+        version: 2.8.1(conventional-commits-parser@7.1.3)
       '@nozomiishii/lefthook-config':
-        specifier: 2.8.0
-        version: 2.8.0(lefthook@2.2.2)
+        specifier: 2.8.1
+        version: 2.8.1(lefthook@2.2.2)
       '@nozomiishii/markdownlint-cli2-config':
-        specifier: 2.8.0
-        version: 2.8.0
+        specifier: 2.8.1
+        version: 2.8.1
       '@nozomiishii/oxfmt-config':
-        specifier: 2.8.0
-        version: 2.8.0(oxfmt@0.73.0)
+        specifier: 2.8.1
+        version: 2.8.1(oxfmt@0.73.0)
       '@nozomiishii/postinstall':
-        specifier: 2.8.0
-        version: 2.8.0
+        specifier: 2.8.1
+        version: 2.8.1
       lefthook:
         specifier: 2.2.2
         version: 2.2.2
@@ -301,28 +301,28 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nozomiishii/commitlint-config@2.8.0':
-    resolution: {integrity: sha512-NsSzMRCCxXC6aG4zD5Nvc8hssAAgt+AadY3DfmPzk402HNLlB+X59rGayK+2hMzh0u3o6PYRTw/DKauV9peOxg==}
+  '@nozomiishii/commitlint-config@2.8.1':
+    resolution: {integrity: sha512-/F05zFhadhdhybwgD2CbIv1mfUZ3W+Iyg2SQa/2ITbhkzcAIS8690aqc8c0dAJoT0kk5i48NJYqqYm8KgfT+kw==}
     hasBin: true
 
-  '@nozomiishii/lefthook-config@2.8.0':
-    resolution: {integrity: sha512-+Pf0nFbq1GWzIf4LpUSnPMioK8xykhJheTO4OqxlXSbQx/sjKsR8TRo9c5MQc8ketAVh7SLApLtnWb579/VLcQ==}
+  '@nozomiishii/lefthook-config@2.8.1':
+    resolution: {integrity: sha512-t4EZLtfsfvm0OEgbDI+cEK3lK2rUVRBMwn44OdcxHXsjL1nWMWgMeD3r0pAPFfORt4DIgKLKNf4AMAa503aWPA==}
     hasBin: true
     peerDependencies:
       lefthook: 2.2.2
 
-  '@nozomiishii/markdownlint-cli2-config@2.8.0':
-    resolution: {integrity: sha512-NVkGlD4GARH4MmlE+9B2mzglDqGQVXh4+QhtAtNc22fWt82lBED9QMzHuYDrMT9MGtN1oHpv3gJCRyJj9dcNWA==}
+  '@nozomiishii/markdownlint-cli2-config@2.8.1':
+    resolution: {integrity: sha512-mgaB6jO+QjpvIqYHgHVMB9jSwUwwY9MH3E7h0QT5EImpA6NCHSfDrfjWlbogD9yeLInAQVQlEnD2KvCP/md9JQ==}
     hasBin: true
 
-  '@nozomiishii/oxfmt-config@2.8.0':
-    resolution: {integrity: sha512-912WbAfhIfcyL4ZIIdJZKHAxh1LSTxfUWIfstfKXwbJAMWlUIN/mfbiciiMx9dcw6Dqg095WJqxHHOXjXHrqBA==}
+  '@nozomiishii/oxfmt-config@2.8.1':
+    resolution: {integrity: sha512-JlWbR48clm726oTq/slXB7NJ3E5zed6E4Iul4O0rv0UtNxQ7I2OsXXoOLnSO16+C5BjB3/w+MtARIGD0+RpLCg==}
     hasBin: true
     peerDependencies:
       oxfmt: 0.73.0
 
-  '@nozomiishii/postinstall@2.8.0':
-    resolution: {integrity: sha512-lBu1K4vJe3og2iab0/DXS3keT5Ivpctk/6hRUO8HbP5NwZRrrwKPMv8hYQS75EY+5jMxGA59XI2c+rfNfIy70Q==}
+  '@nozomiishii/postinstall@2.8.1':
+    resolution: {integrity: sha512-eiC/kDh87FFpFKCaUHRlcLyz5ks5B+5QmuGBuV5zjsbYbxxMqi844zUTau8nMqa7/7wfuyHJ/IEui2iV/S/wZg==}
     hasBin: true
 
   '@oxfmt/binding-android-arm-eabi@0.73.0':
@@ -1284,7 +1284,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.3
 
-  '@nozomiishii/commitlint-config@2.8.0(conventional-commits-parser@7.1.3)':
+  '@nozomiishii/commitlint-config@2.8.1(conventional-commits-parser@7.1.3)':
     dependencies:
       '@commitlint/cli': 21.2.3(conventional-commits-parser@7.1.3)
       '@commitlint/config-conventional': 21.2.3
@@ -1294,22 +1294,22 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@nozomiishii/lefthook-config@2.8.0(lefthook@2.2.2)':
+  '@nozomiishii/lefthook-config@2.8.1(lefthook@2.2.2)':
     dependencies:
       git-harvest: 0.3.6
       lefthook: 2.2.2
 
-  '@nozomiishii/markdownlint-cli2-config@2.8.0':
+  '@nozomiishii/markdownlint-cli2-config@2.8.1':
     dependencies:
       markdownlint-cli2: 0.23.3
     transitivePeerDependencies:
       - supports-color
 
-  '@nozomiishii/oxfmt-config@2.8.0(oxfmt@0.73.0)':
+  '@nozomiishii/oxfmt-config@2.8.1(oxfmt@0.73.0)':
     dependencies:
       oxfmt: 0.73.0
 
-  '@nozomiishii/postinstall@2.8.0':
+  '@nozomiishii/postinstall@2.8.1':
     dependencies:
       figlet: 1.12.0
       zx: 8.8.5
