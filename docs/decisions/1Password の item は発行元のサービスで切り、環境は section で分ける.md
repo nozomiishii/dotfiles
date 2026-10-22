@@ -54,12 +54,11 @@ date: 2026-10-03
 
 次の vault は、鍵 1 つごとの item と組み込みの field を使う今の形のまま変えない。
 
-- `nozomiishii-release`: 複数 repo の release が共有する用途名の vault
 - `cloudflare-access`: infra が作った Access の service token を置く用途名の vault
 
 ### item の切り方
 
-発行元のサービスごとに item を 1 つ作る。鍵 1 つごとの item は infra・release とそろうが、item を複製して値を変えないまま使い回す事故を重く見て採らない。
+発行元のサービスごとに item を 1 つ作る。鍵 1 つごとの item は infra とそろうが、item を複製して値を変えないまま使い回す事故を重く見て採らない。
 
 ### section の名前
 
@@ -85,7 +84,7 @@ date: 2026-10-03
 
 ### 引き受けたコスト
 
-- infra・release の vault と item の流儀がそろわない
+- infra の vault と item の流儀がそろわない
 - 全環境で同じ値は section の数だけ書くので、ローテーションの直し漏れが section の単位で残る
 - PR の CI が使う service account から本番の値も読める
 
