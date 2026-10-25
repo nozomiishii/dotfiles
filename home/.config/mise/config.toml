@@ -6,7 +6,7 @@ pnpm = "12.15.0"
 uv = "0.13.5"
 "op" = "2.41.0"
 rust = { version = "1.99.1", components = ["rust-analyzer"] }
-ruby = "4.0.7"
+ruby = "4.0.8"
 go = "1.27.3"
 "npm:typescript-language-server" = "6.0.2"
 "npm:@devcontainers/cli" = "0.89.0"
