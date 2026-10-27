@@ -1,9 +1,11 @@
 ---
-status: accepted
+status: superseded by [開発フローは Superpowers に任せる](<開発フローは Superpowers に任せる.md>)
 date: 2026-09-02
 ---
 
 # dev のプランは plan mode に入らず進める
+
+> 前提の dev スキルを削除し、開発フローを Superpowers に任せたため差し替えた。
 
 ## 背景と課題
 
