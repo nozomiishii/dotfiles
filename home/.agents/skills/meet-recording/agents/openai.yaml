@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meet録画"
+  short_description: "Google Meetの映像と相手・自分の音声をMacに保存する"
+  default_prompt: "$meet-recording これから始まるMeetを録音して。"
