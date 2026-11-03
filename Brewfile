@@ -183,6 +183,9 @@ if OS.mac? && !ENV["CI"]
   # OpenAI's official ChatGPT desktop app https://chatgpt.com/
   cask "chatgpt"
 
+  # xAI's AI teammates that work across your apps and tools https://x.ai/bot
+  cask "grok-bot"
+
   # Web browser. https://www.google.com/chrome
   cask "google-chrome"
 
