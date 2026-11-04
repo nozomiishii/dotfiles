@@ -2,7 +2,6 @@
 name: broadcast
 description: >-
   nozomiishii/infra の projects.json で管理されている複数の独立したリポジトリへ同じ変更を横断適用するときに使用する。
-  「ブロードキャストして」「infra のリポジトリ全部に変更したい」と言ったときに使用する。
 ---
 
 # /broadcast
