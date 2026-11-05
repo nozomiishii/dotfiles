@@ -71,19 +71,32 @@ brain リポジトリで PR を作る。新規追加のタイトルは `feat: ad
 
 ## cloud trigger
 
-repos は trigger の `session_context.sources` に入れる。cloud session で使える trigger 用の MCP ツールは sources を設定できないため、trigger の作成・更新に使わない。代わりに Claude Code の RemoteTrigger を使い、使えなければ trigger を触らず報告する。
+trigger の作成・更新には Claude Code の RemoteTrigger を使う。cloud session で使える trigger 用の MCP ツールは `session_context.sources` を設定できないため使わない。RemoteTrigger が使えなければ trigger を触らず報告する。
 
-その MCP ツールで作った trigger は `created_via` が `meta_mcp` になり、Desktop の Scheduled tasks 一覧で既定では隠れる。`created_via` は update で変わらない[^created-via-hidden]。RemoteTrigger で作り直すのは、実行履歴が切れることを伝えたうえでユーザーが求めたときだけにする。旧 trigger は「削除」の節に従って消し、`.routines/` は変えない。RemoteTrigger の create は notifications を付けないため、notifications は旧 trigger から写す。
+同期の対象と範囲は次のとおり。
 
-`job_config` を送る update は job_config を丸ごと置き換え、送らなかった events・sources・model を消す。`job_config` を送るときは、既存 trigger の job_config 全体のうち変更する値だけを差し替えて送る。
+- main の全 routine と全 trigger を name で対応付け、差がある項目だけを変える
+- 対応付けられない routine は変えず報告する
+- name を変更した routine は、変更履歴から特定した旧 name で既存 trigger に対応付け、既存 trigger の更新で実行履歴を保つ。旧 name を特定できなければ trigger を触らず報告する
+- `type` はローカルだけの情報として同期しない
 
-frontmatter と一致する trigger を作成・更新したら、frontmatter に無い connector をすべて外す。RemoteTrigger の create はアカウントの connector を全部付ける。frontmatter の connectors が空なら `clear_mcp_connections` で外す。`mcp_connections` に空配列を送っても外れない。
+同期後の trigger は次を満たす。
 
-正確な次回実行時刻を JST に変換し、frontmatter の schedule コメントと並べて示す。意図した曜日と時刻に一致しない場合は schedule を直す。
+- `session_context.sources` が frontmatter の repos と一致する
+- connector が frontmatter の connectors と一致し、frontmatter に無い connector が残っていない
+  - RemoteTrigger の create はアカウントの connector を全部付ける
+  - `mcp_connections` に空配列を送っても外れない。connectors が空のときは `clear_mcp_connections` で外す
+- 既存の job_config のうち変更していない値が、すべて既存のまま残っている
+  - `job_config` を送る update は job_config を丸ごと置き換え、送らなかった値を消す
+- 次回実行時刻を JST に直した値が、意図した曜日と時刻に一致する。一致しなければ schedule を直す
 
-同期では main の全 routine と全 trigger を name で照合し、差がある項目だけ更新する。照合できない routine は更新せず報告する。`type` はローカルだけの情報として同期しない。
+trigger 用の MCP ツールで作った trigger は `created_via` が `meta_mcp` になり、Desktop の Scheduled tasks 一覧で既定では隠れる。`created_via` は update で変わらない[^created-via-hidden]。RemoteTrigger での作り直しは、実行履歴が切れることを伝えたうえでユーザーが求めたときだけにする。作り直した trigger は次を満たす。
 
-name を変更した routine は、変更履歴から旧 name を特定して既存 trigger と照合する。特定できなければ trigger を触らず報告する。既存 trigger を更新して実行履歴を保ち、新しい trigger への置き換えで履歴を切らない。
+- notifications が旧 trigger と同じ。RemoteTrigger の create は notifications を付けない
+- 旧 trigger は「削除」の節に従って消えている
+- `.routines/` は変わっていない
+
+出力には、正確な次回実行時刻の JST を frontmatter の schedule コメントと並べて示す。
 
 ## 整合性を確認する
 
