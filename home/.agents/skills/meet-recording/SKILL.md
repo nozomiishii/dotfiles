@@ -7,12 +7,12 @@ description: MacでGoogle Meetを録画するときや、このスキルで始�
 
 本人が参加するMeetの映像・相手の音声・自分のマイクを、同じMacのOBSでローカル動画に残す。「録音して」も映像付きの録画として扱う。
 
-操作には[OBS公式API](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md)と[obsws-python](https://github.com/aatikturk/obsws-python)を使う。依存関係は[requirements.txt](requirements.txt)にある。
+操作は、実行環境の標準機能から[OBS公式API](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md)へ直接接続して行う。
 
 ## 境界
 
 - 依頼された会議だけを対象にし、対象を特定できないときは録画を始めない。
-- 接続先は同じMacに限定する。認証情報は接続にのみ使い、SDKログを含む出力へ出さない。
+- 接続先は同じMacに限定する。認証情報は接続にのみ使い、チャットやログへ出さない。
 - 保存先は同じMacに限定し、他用途のOBS設定と保存済みの録画を保つ。
 - 別用途の録画を変更・停止しない。このスキルで開始したと確認できる録画だけを、停止依頼に応じて止める。
 
