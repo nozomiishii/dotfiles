@@ -24,28 +24,30 @@ description: >-
 
 ## リポジトリ作成 (infra)
 
-- `iac/stacks/github/main.tf` の `locals.repositories` にエントリを追加して PR を作る。visibility と description をここで決める。visibility はユーザーに確認する。公開なら GitHub Actions が無料になる。
+完了は、新しい repo が infra の `iac/stacks/github/main.tf` の `locals.repositories` の定義どおり GitHub に作られ、手元のコミット履歴と main 保護が反映された状態。
+
+- infra への変更は PR で入れる。visibility と description はこの PR で決める。visibility はユーザーに確認する。公開なら GitHub Actions が無料になる。
 - plan / apply は infra の AGENTS.md の実行境界に従う。apply はユーザーが行う。
-- `auto_init = false` で作り、GitHub の README と `Initial commit` を生成しない。手元のコミット履歴を取り込み、main 保護まで適用して完了とする。認証と作成の順序は [infra の運用](https://github.com/nozomiishii/infra/blob/main/docs/運用.md#新しい-repo-を追加する)に従う。
-- repo 固有の CI を必須チェックにする場合、workflow に集約 `required` job を作り、infra 側の `required_status_checks` に `<workflow> / required` で登録する。正本は infra の docs/required_status_checksの命名と最小構成.md。共通チェックの `recommended / required` は infra が付ける。
-- private repo の CI は自宅 Mac mini の self-hosted runner で動く。runner に拾わせる次の手作業をユーザーに伝える。正本は infra の [runner の運用](https://github.com/nozomiishii/infra/blob/main/docs/github-runner.md#repo-を足す外す)。
-  - repo の作成後、runner の fine-grained PAT の Repository access に追加する
-  - infra の PR の merge 後、Mac mini で `mise run github-runner-update` を実行する
+- `auto_init` は false にし、GitHub の README と `Initial commit` を生成させない。認証と作成の順序は [infra の運用](https://github.com/nozomiishii/infra/blob/main/docs/運用.md#新しい-repo-を追加する)に従う。
+- repo 固有の CI を必須チェックにするときは、workflow に集約 `required` job を持たせ、infra の `required_status_checks` に `<workflow> / required` の名前で登録された状態にする。正本は infra の docs/required_status_checksの命名と最小構成.md。共通チェックの `recommended / required` は infra が付ける。
+- private repo の CI は自宅 Mac mini の self-hosted runner で動く。runner が新しい repo の job を拾うには、ユーザーの手作業が要る。次の条件を[runner の運用](https://github.com/nozomiishii/infra/blob/main/docs/github-runner.md#repo-を足す外す)と一緒にユーザーに伝える。
+  - 作成された repo が、runner の fine-grained PAT の Repository access に含まれている
+  - infra の PR の merge 後、Mac mini に新しい repo 用の runner が登録されている
 
 ## 初期セットアップ
 
 初回に取り込むコミットには次を揃える。初回取り込み後の変更は PR にする。
 
 - configs 一式: `@nozomiishii/commitlint-config` `eslint-config` `lefthook-config` `oxfmt-config` `postinstall` `tsconfig` と各設定ファイル。`cspell-config` と `markdownlint-cli2-config` は非推奨のため導入しない。
-- 標準 workflow: `_recommended.yaml` を configs からコピーする。実体は [nozomiishii/workflows](https://github.com/nozomiishii/workflows) の reusable workflow を SHA pin で呼ぶ薄い caller。main の必須チェックが要求するため、無いと PR をマージできない。
-  - private では無料枠に収めるため、`_recommended.yaml` から `with: runs-on: self-hosted` を渡す。repo 固有の workflow も `runs-on: self-hosted` にする。
+- 標準 workflow: configs と同じ `_recommended.yaml`。実体は [nozomiishii/workflows](https://github.com/nozomiishii/workflows) の reusable workflow を SHA pin で呼ぶ薄い caller。main の必須チェックが要求するため、無いと PR をマージできない。
+  - private では無料枠に収めるため、`_recommended.yaml` は `with: runs-on: self-hosted` を渡す。repo 固有の workflow も `runs-on: self-hosted` にする。
 - `.github/renovate.json`: `{ "extends": ["github>nozomiishii/renovate"] }`
-- SessionStart hook: Claude Code 用の `.claude/settings.json` と Codex 用の `.codex/hooks.json` から `.hooks/setup.sh` を呼ぶ。3 つとも [dotfiles](https://github.com/nozomiishii/dotfiles) の同じパスのファイルを写す。
-- README.md と README.ja.md を同じ構成で作る。
+- SessionStart hook: Claude Code 用の `.claude/settings.json` と Codex 用の `.codex/hooks.json` が `.hooks/setup.sh` を呼ぶ。3 つとも [dotfiles](https://github.com/nozomiishii/dotfiles) の同じパスのファイルと同じ内容にする。
+- README.md と README.ja.md。2 つは同じ構成にする。
 
 ## 登録 (infra)
 
-- ローカル登録も infra が正本。infra の `iac/stacks/github/main.tf` の `locals.repositories` と、infra 直下の `projects.json` を、リポジトリ作成と同じ 1 つの PR で両方更新する。新しく作る repo 側には `projects.json` を置かない。
+- ローカル登録も infra が正本。infra 直下の `projects.json` への登録は、`locals.repositories` への定義と同じ 1 つの PR に含める。新しく作る repo 側には `projects.json` を置かない。
 
 ## リリースフロー
 
