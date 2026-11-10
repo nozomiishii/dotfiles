@@ -2,7 +2,6 @@
 name: archive
 description: >-
   自分が管理するリポジトリで使わなくなったファイルを nozomiishii/archives リポジトリへ退避するときに使用する。
-  「アーカイブして」「archives に退避して」と言ったときに使用する。
 ---
 
 # /archive
