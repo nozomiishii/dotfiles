@@ -564,7 +564,7 @@
   // ----------------------------------------------------------------
   // Cursor
   // ----------------------------------------------------------------
-  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.composer.shouldChimeAfterChatFinishes": false,
   "cursor.composer.usageSummaryDisplay": "always",
 
   // ----------------------------------------------------------------
