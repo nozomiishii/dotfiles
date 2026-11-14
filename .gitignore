@@ -17,6 +17,8 @@ lefthook-local.yaml
 **/.claude/settings.local.json
 **/.claude/worktrees/
 home/.agents/skills/synced/
+# Installed from home/skills-lock.json by the skills CLI
+home/.agents/skills/yomiyasu/
 
 
 # Logs

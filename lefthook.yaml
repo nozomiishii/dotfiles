@@ -32,6 +32,10 @@ post-merge:
       # homebrew → packages の直列。理由は
       # docs/decisions/brooklyn は Brewfile ではなく mise bootstrap.packages で管理する.md
       run: mise run homebrew && mise run packages
+    - name: skills
+      glob: "{home/skills-lock.json,mise.toml}"
+      # 追跡しない yomiyasu を lock から戻す。Node が要るので link には置かない。
+      run: mise run skills
 
 pre-push:
   parallel: true
