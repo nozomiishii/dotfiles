@@ -23,5 +23,6 @@ mise trust "$DOTFILES_DIR/mise.toml"
 MISE_TASK_RUN_AUTO_INSTALL=0 mise -C "$DOTFILES_DIR" run link
 
 # グローバルツールの導入は mise run toolchains が担う。install.sh では macos.sh の
-# 後ろに置き、ツールの取得に失敗しても macOS 設定を巻き添えにしない
+# 後ろに置き、ツールの取得に失敗しても macOS 設定を巻き添えにしない。
+# skills も toolchains の mise install の直後に置く。この link の時点では Node が無い。
 echo "👨‍🍳 mise setup is complete 🎉"

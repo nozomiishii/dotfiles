@@ -8,7 +8,10 @@ on:
       - "home/.agents/**"
       - "home/.claude/**"
       - "home/AGENTS.md"
+      - "home/skills-lock.json"
+      - "mise.toml"
       - "scripts/cloud/**"
+      - ".github/workflows/cloud-setup.yaml"
   workflow_dispatch:
 
 concurrency:
@@ -20,7 +23,7 @@ permissions: {}
 jobs:
   deploy:
     runs-on: ubuntu-slim
-    timeout-minutes: 5
+    timeout-minutes: 10
     permissions:
       contents: read # required by actions/checkout to fetch repository code
       pages: write # required by actions/deploy-pages to publish to GitHub Pages
@@ -32,6 +35,13 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+
+      - name: Setup tools
+        uses: jdx/mise-action@f5be966e4a917d54244728e6a5fdcd1d93a35e6c # v5.2.6
+
+      # git に無い yomiyasu を lock から戻してから tarball に含める
+      - name: Install skills
+        run: cd home && skills install --frozen-lockfile
 
       # cloud-setup tarball を作成して _site/ に配置
       - name: Build tarball

@@ -88,10 +88,35 @@ jobs:
         if: github.event_name == 'pull_request'
         run: bash ./install.sh
 
+  skills:
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    permissions:
+      contents: read # required by actions/checkout to fetch repository code
+    steps:
+      - name: Get code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup tools
+        uses: jdx/mise-action@f5be966e4a917d54244728e6a5fdcd1d93a35e6c # v5.2.6
+
+      - name: Restore skills from the lock
+        run: |
+          cd home
+          skills install --frozen-lockfile -a claude-code -a codex -a cursor
+          test -L .claude/skills
+          test "$(readlink .claude/skills)" = "../.agents/skills"
+          test ! -L .agents/skills/yomiyasu
+          test -f .claude/skills/yomiyasu/SKILL.md
+          test -f .agents/skills/doc/SKILL.md
+          grep -q yomiyasu .agents/skills/doc/SKILL.md
+
   required:
     # name 変更時は infra 側の required_status_checks も更新する
     name: CI / required
-    needs: [changes, format, install]
+    needs: [changes, format, install, skills]
     if: always()
     runs-on: ubuntu-slim
     timeout-minutes: 1

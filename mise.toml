@@ -1,12 +1,19 @@
 [tools]
 node = "26.13.0"
 pnpm = "12.18.0"
+# 版を上げたら docs/カスタマイズ.md の手順で home/skills-lock.json を作り直す。
+# 1.8.1 より新しい CLI は lock に commit を書き、復元はその commit を使う。
+"npm:skills" = "1.8.1"
 
 [settings]
 lockfile = true
 
 [dotfiles]
-"~" = { source = "home", mode = "symlink-each", exclude = [".DS_Store", ".agents/skills"] }
+"~" = { source = "home", mode = "symlink-each", exclude = [
+  ".DS_Store",
+  ".agents/skills",
+  "skills-lock.json",
+] }
 # Codex は個別の SKILL.md ではなく、skill ディレクトリの symlink のみをサポートする。
 # https://developers.openai.com/codex/skills#where-codex-loads-local-skills
 "~/.agents/skills" = { source = "home/.agents/skills", mode = "symlink" }
@@ -23,12 +30,26 @@ run = ["mise bootstrap packages apply --yes", "mise bootstrap packages upgrade -
 description = "Configure macOS settings"
 run = "bash ./scripts/darwin/macos.sh"
 
+[tasks.skills]
+description = "Install skills pinned in home/skills-lock.json"
+# mise は task を sh で実行する。pipefail は dash に無いので付けない。
+run = '''
+set -Ceu
+
+# worktree から呼ばれても本体の home/ に入れる。理由は link と同じ。
+common="$(git rev-parse --path-format=absolute --git-common-dir)"
+cd "${common%/.git}/home"
+skills install --frozen-lockfile -a claude-code -a codex -a cursor
+'''
+
 [tasks.toolchains]
 description = "Set up language toolchains"
 # mise.sh は install.sh 専用。理由は
 # docs/decisions/dotfiles のリンクは mise の task に一本化する.md
+# skills は Node が要る。link は Node の前に走るので、mise install の直後に置く。
 run = [
   "mise install",
+  "mise run skills",
   "bash ./scripts/toolchains/claude-code.sh",
   "bash ./scripts/toolchains/pm.sh",
   "mise run packages",

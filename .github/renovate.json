@@ -1,1 +1,24 @@
-{ "extends": ["github>nozomiishii/renovate"] }
+{
+  "extends": ["github>nozomiishii/renovate"],
+  "customManagers": [
+    {
+      "description": "Track the skill tag in home/skills-lock.json. computedHash stays stale until skills add is re-run, so do not automerge.",
+      "customType": "regex",
+      "managerFilePatterns": ["/(^|/)home/skills-lock\\.json$/"],
+      "matchStrings": [
+        "\"source\"\\s*:\\s*\"(?<depName>[^\"]+)\"[\\s\\S]*?\"ref\"\\s*:\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "datasourceTemplate": "github-tags",
+      "versioningTemplate": "semver"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Skill lock bumps need a regenerated computedHash before merge.",
+      "matchManagers": ["custom.regex"],
+      "matchDepNames": ["nanaism/yomiyasu"],
+      "matchFileNames": ["home/skills-lock.json"],
+      "automerge": false
+    }
+  ]
+}
