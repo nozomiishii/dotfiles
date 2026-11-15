@@ -5,7 +5,7 @@ bun = "1.4.4"
 pnpm = "12.18.0"
 uv = "0.13.8"
 "op" = "2.42.0"
-rust = { version = "1.99.1", components = ["rust-analyzer"] }
+rust = { version = "1.100.0", components = ["rust-analyzer"] }
 ruby = "4.0.9"
 go = "1.27.4"
 "npm:typescript-language-server" = "6.0.3"
