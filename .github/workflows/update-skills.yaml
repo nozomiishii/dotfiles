@@ -31,9 +31,6 @@ jobs:
       - name: Update the skills lockfile
         run: mise run skills-update
 
-      - name: Restore the locked skills
-        run: mise run skills
-
       - name: Open or refresh the update PR
         env:
           GH_TOKEN: ${{ github.token }}

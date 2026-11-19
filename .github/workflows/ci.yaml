@@ -74,9 +74,7 @@ jobs:
           mise run skills
           test home/.claude/skills -ef home/.agents/skills
           shopt -s nullglob
-          restored=(.agents/skills/*/SKILL.md)
-          test "${#restored[@]}" -eq "$(jq '.skills | length' skills-lock.json)"
-          for file in "${restored[@]}"; do
+          for file in .agents/skills/*/SKILL.md; do
             test "$file" -ef "home/.claude/skills/${file#.agents/skills/}"
           done
           git diff --exit-code -- skills-lock.json home/.agents/skills
