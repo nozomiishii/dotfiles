@@ -1,0 +1,62 @@
+name: Update agent skills
+
+on:
+  schedule:
+    - cron: "17 16 * * 0"
+  workflow_dispatch:
+
+concurrency:
+  group: update-agent-skills
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  update:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    permissions:
+      contents: write # create the update branch and commit the lockfile
+      pull-requests: write # open the update PR
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: jdx/mise-action@b44d12e7d0d8ee7461bb893e1b1993500433185b # v5.2.7
+
+      - name: Update the skills lockfile
+        run: mise run skills-update
+
+      - name: Restore the locked skills
+        run: mise run skills
+
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          branch=chore/update-agent-skills
+          ref="refs/heads/$branch"
+          pr=$(gh pr list --base "$GITHUB_REF_NAME" --head "$branch" --json number,isCrossRepository \
+            --jq '[.[] | select(.isCrossRepository == false)][0].number // empty')
+          if git diff --quiet -- skills-lock.json; then
+            if [[ -n "$pr" ]]; then gh pr close "$pr"; fi
+            exit 0
+          fi
+
+          title="chore: update agent skills"
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit --only -m "$title" -- skills-lock.json
+          gh auth setup-git
+          old=$(git ls-remote --heads origin "$ref" | cut -f1)
+          if [[ -n "$old" ]]; then git fetch --no-tags --depth=1 origin "$old"; fi
+          if [[ -z "$old" ]] || ! git diff --quiet "$old" HEAD; then
+            git push --force-with-lease="$ref:$old" origin "HEAD:$ref"
+          fi
+
+          if [[ -z "$pr" ]]; then
+            gh pr create --base "$GITHUB_REF_NAME" --head "$branch" --title "$title" \
+              --body '外部スキルの更新を skills-lock.json に反映しました。'
+          fi

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "skills": {
+    "yomiyasu": {
+      "source": "nanaism/yomiyasu",
+      "ref": "v3.2.0",
+      "commit": "3042154ee537c1b7093eefed00a97b40aae9446d",
+      "sourceType": "github",
+      "skillPath": "skills/yomiyasu/SKILL.md",
+      "computedHash": "17141ed2f68ccaa4fa96040b4c9bd1eeb8a0331d4628464694a8c880af98a67a"
+    }
+  }
+}

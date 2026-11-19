@@ -18,6 +18,9 @@ post-merge:
   # Feed the merge diff to jobs so their glob can actually skip when unrelated.
   files: git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD
   jobs:
+    - name: skills
+      glob: "skills-lock.json"
+      run: mise run skills
     - name: symlink
       glob: "home/**"
       # Only re-link when a path is added or removed under home/. Edits to

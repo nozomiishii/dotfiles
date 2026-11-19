@@ -8,6 +8,10 @@ on:
       - "home/.agents/**"
       - "home/.claude/**"
       - "home/AGENTS.md"
+      - "skills-lock.json"
+      - "mise.toml"
+      - "mise.lock"
+      - "scripts/install-skills.mjs"
       - "scripts/cloud/**"
   workflow_dispatch:
 
@@ -33,14 +37,20 @@ jobs:
         with:
           persist-credentials: false
 
-      # cloud-setup tarball を作成して _site/ に配置
+      - name: Setup tools
+        uses: jdx/mise-action@b44d12e7d0d8ee7461bb893e1b1993500433185b # v5.2.7
+
+      - name: Install skill dependencies
+        run: mise run skills
+
       - name: Build tarball
         run: |
-          mkdir _site
+          mkdir -p _site bundle/home/.agents/skills
+          cp -RH home/.agents/skills/* bundle/home/.agents/skills/
           tar czf _site/cloud-setup.tar.gz \
             home/AGENTS.md \
             home/.claude/settings.json \
-            home/.agents/
+            -C bundle home/.agents/
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
