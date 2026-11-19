@@ -59,20 +59,6 @@ request_admin_privileges() {
   sudo mv "${SUDOERS_FILE}.tmp" "${SUDOERS_FILE}"
 }
 
-# ~/Documents 初回アクセスの TCC ダイアログを、パスワード入力直後のユーザーが
-# まだ手元にいるタイミングに前倒しする。mise.sh が ~/Documents/superwhisper を
-# 張る数十分後に出ると、無人実行がそこで止まる。
-request_documents_access() {
-  if [ "${CI:-false}" = "true" ]; then
-    return
-  fi
-
-  if ! ls "$HOME/Documents" > /dev/null 2>&1; then
-    echo "- 👨🏻‍🚀 Terminal needs access to ~/Documents." >&2
-    echo "  Allow it in System Settings > Privacy & Security > Files and Folders, then re-run." >&2
-    exit 1
-  fi
-}
 # ensure_xcode_clt はスクリプトに切り出さず、このファイルに置く。
 # repo の clone には git が必要で、素の Mac では git を使うのに Command Line Tools が要る。
 # つまり curl | bash 経路でこの処理が走る時点では、repo のスクリプトはまだ手元に存在しない。
@@ -167,11 +153,10 @@ printf '%s\n' \
   ""
 echo -e "${reset}"
 
-# 人間の操作 (パスワード入力・TCC ダイアログ) を先頭に集約する。
+# 人間の操作 (パスワード入力) を先頭に集約する。
 # ensure_xcode_clt は sudo を使い、CLT のダウンロードに数十分かかることがあるため、
 # NOPASSWD sudoers を先に確立してからヘッドレスで走らせる
 request_admin_privileges
-request_documents_access
 ensure_xcode_clt
 clone_dotfiles_repo
 bash "$SCRIPT_DIR/scripts/nix.sh"
