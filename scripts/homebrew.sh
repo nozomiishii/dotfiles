@@ -44,8 +44,6 @@ trust_brew_bundle_formulae() {
   brew trust --formula \
     smudge/smudge/nightlight \
     stripe/stripe-cli/stripe
-  brew trust --cask \
-    stablyai/orca/orca
 }
 
 if ! command -v brew >/dev/null 2>&1; then
