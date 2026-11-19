@@ -31,18 +31,18 @@
     "@nozomiishii/oxfmt-config": "2.8.1",
     "@nozomiishii/postinstall": "2.8.1",
     "lefthook": "2.2.2",
-    "markdownlint-cli2": "0.24.0",
-    "oxfmt": "0.76.0"
+    "markdownlint-cli2": "0.24.1",
+    "oxfmt": "0.78.0"
   },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "12.18.0",
+      "version": "12.20.0",
       "onFail": "download"
     },
     "runtime": {
       "name": "node",
-      "version": "26.13.0",
+      "version": "26.13.1",
       "onFail": "download"
     }
   }
