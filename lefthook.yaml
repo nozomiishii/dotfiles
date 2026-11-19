@@ -19,7 +19,7 @@ post-merge:
   files: git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD
   jobs:
     - name: skills
-      glob: "skills-lock.json"
+      glob: "{skills-lock.json,mise.toml,mise.lock,scripts/install-skills.sh}"
       run: mise run skills
     - name: symlink
       glob: "home/**"
