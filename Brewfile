@@ -165,6 +165,9 @@ if OS.mac? && !ENV["CI"]
   # Anthropic's official Claude AI desktop app https://www.anthropic.com/
   cask "claude"
 
+  # Google's desktop app for managing coding agents https://antigravity.google/
+  cask "antigravity"
+
   # Extensible coding agent for the terminal https://x.ai/build
   cask "grok-build"
 
