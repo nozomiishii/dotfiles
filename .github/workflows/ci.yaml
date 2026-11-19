@@ -32,7 +32,6 @@ jobs:
       pull-requests: read # required by dorny/paths-filter to read PR diff
     outputs:
       install: ${{ steps.changes.outputs.install }}
-      skills: ${{ steps.changes.outputs.skills }}
     steps:
       - name: Get code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -49,14 +48,8 @@ jobs:
               - "Brewfile"
               - "scripts/**"
               - "home/.config/mise/config.toml"
-            skills:
-              - "skills-lock.json"
-              - "mise.toml"
-              - "scripts/install-skills.mjs"
-              - "home/.agents/skills/**"
 
   format:
-    needs: changes
     runs-on: ubuntu-slim
     timeout-minutes: 10
     permissions:
@@ -77,7 +70,6 @@ jobs:
         run: pnpm format
 
       - name: Restore locked agent skills
-        if: needs.changes.outputs.skills == 'true'
         run: mise run skills
 
   install:

@@ -43,7 +43,7 @@ run = 'gh api repos/nozomiishii/infra/contents/scripts/clone_github_repos.sh -H 
 
 [tasks.skills]
 description = "Restore external agent skills from skills-lock.json"
-run = "node scripts/install-skills.mjs"
+run = "bash scripts/install-skills.sh"
 
 [tasks.skills-update]
 description = "Update locked agent skills to their upstream releases"

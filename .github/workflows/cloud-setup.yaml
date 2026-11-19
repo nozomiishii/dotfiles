@@ -11,7 +11,7 @@ on:
       - "skills-lock.json"
       - "mise.toml"
       - "mise.lock"
-      - "scripts/install-skills.mjs"
+      - "scripts/install-skills.sh"
       - "scripts/cloud/**"
   workflow_dispatch:
 
