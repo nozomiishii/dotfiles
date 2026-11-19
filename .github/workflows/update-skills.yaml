@@ -38,14 +38,14 @@ jobs:
           branch=chore/update-agent-skills
           pr=$(gh pr list --base "$GITHUB_REF_NAME" --head "$branch" --json number,isCrossRepository \
             --jq '[.[] | select(.isCrossRepository == false)][0].number // empty')
-          if git diff --quiet -- skills-lock.json; then
+          if git diff --quiet -- external-skills/skills-lock.json; then
             if [[ -n "$pr" ]]; then gh pr close "$pr"; fi
             exit 0
           fi
 
           title="chore: update agent skills"
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-            commit --only -m "$title" -- skills-lock.json
+            commit --only -m "$title" -- external-skills/skills-lock.json
           if ! git diff --quiet "origin/$branch" HEAD 2>/dev/null; then
             gh auth setup-git
             git push --force-with-lease origin "HEAD:refs/heads/$branch"

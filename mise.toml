@@ -43,10 +43,15 @@ run = 'gh api repos/nozomiishii/infra/contents/scripts/clone_github_repos.sh -H 
 
 [tasks.skills]
 description = "Restore external agent skills from skills-lock.json"
-run = "bash scripts/install-skills.sh"
+dir = "external-skills"
+run = '''
+if jq -e '.skills == {}' skills-lock.json >/dev/null; then exit 0; fi
+skills install --frozen-lockfile --agent codex
+'''
 
 [tasks.skills-update]
 description = "Update project skills from their tracked branches"
+dir = "external-skills"
 run = "skills update --project --yes"
 
 [tasks.link]

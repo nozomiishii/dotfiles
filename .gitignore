@@ -17,8 +17,7 @@ lefthook-local.yaml
 **/.claude/settings.local.json
 **/.claude/worktrees/
 /.agents/skills/
-/home/.agents/skills/*
-!/home/.agents/skills/*/
+/external-skills/.agents/
 home/.agents/skills/synced/
 
 

@@ -74,10 +74,10 @@ jobs:
           mise run skills
           test home/.claude/skills -ef home/.agents/skills
           shopt -s nullglob
-          for file in .agents/skills/*/SKILL.md; do
-            test "$file" -ef "home/.claude/skills/${file#.agents/skills/}"
+          for skill in external-skills/.agents/skills/* home/.agents/skills/*; do
+            test "$skill/SKILL.md" -ef "home/.claude/skills/${skill##*/}/SKILL.md"
           done
-          git diff --exit-code -- skills-lock.json home/.agents/skills
+          git diff --exit-code -- external-skills/skills-lock.json home/.agents/skills
 
   install:
     needs: changes

@@ -8,10 +8,9 @@ on:
       - "home/.agents/**"
       - "home/.claude/**"
       - "home/AGENTS.md"
-      - "skills-lock.json"
+      - "external-skills/skills-lock.json"
       - "mise.toml"
       - "mise.lock"
-      - "scripts/install-skills.sh"
       - "scripts/cloud/**"
       - ".github/workflows/cloud-setup.yaml"
   workflow_dispatch:
