@@ -13,10 +13,15 @@ jq 'del(.statusLine, .sandbox)' home/.claude/settings.json >~/.claude/settings.j
 mkdir -p ~/.codex
 cp home/AGENTS.md ~/.codex/AGENTS.md
 
+# Antigravity
+mkdir -p ~/.gemini/config/rules
+cp home/AGENTS.md ~/.gemini/config/rules/AGENTS.md
+
 # Agents (skills)
-mkdir -p ~/.agents ~/.claude/skills
+mkdir -p ~/.agents ~/.claude/skills ~/.gemini/config/skills
 cp -R home/.agents/. ~/.agents/
 cp -R home/.agents/skills/. ~/.claude/skills/
+cp -R home/.agents/skills/. ~/.gemini/config/skills/
 
 # mise
 if ! command -v mise >/dev/null 2>&1; then
