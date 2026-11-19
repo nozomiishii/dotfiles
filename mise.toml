@@ -1,6 +1,5 @@
 [tools]
 node = "26.13.1"
-"npm:skills" = "1.9.0"
 pnpm = "12.20.0"
 
 [settings]
@@ -30,8 +29,6 @@ description = "Set up language toolchains"
 # docs/decisions/dotfiles のリンクは mise の task に一本化する.md
 run = [
   "mise install",
-  "pnpm install --frozen-lockfile",
-  "mise run skills",
   "bash ./scripts/toolchains/claude-code.sh",
   "bash ./scripts/toolchains/pm.sh",
   "mise run packages",
@@ -40,19 +37,6 @@ run = [
 [tasks.repo]
 description = "Clone GitHub repositories"
 run = 'gh api repos/nozomiishii/infra/contents/scripts/clone_github_repos.sh -H "Accept: application/vnd.github.raw" | bash'
-
-[tasks.skills]
-description = "Restore external agent skills from skills-lock.json"
-dir = "external-skills"
-run = '''
-if jq -e '.skills == {}' skills-lock.json >/dev/null; then exit 0; fi
-skills install --frozen-lockfile --agent codex
-'''
-
-[tasks.skills-update]
-description = "Update project skills from their tracked branches"
-dir = "external-skills"
-run = "skills update --project --yes"
 
 [tasks.link]
 description = "Symlink dotfiles to home directory"

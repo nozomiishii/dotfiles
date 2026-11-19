@@ -69,16 +69,6 @@ jobs:
       - name: Format check
         run: pnpm format
 
-      - name: Restore locked agent skills
-        run: |
-          mise run skills
-          test home/.claude/skills -ef home/.agents/skills
-          shopt -s nullglob
-          for skill in external-skills/.agents/skills/* home/.agents/skills/*; do
-            test "$skill/SKILL.md" -ef "home/.claude/skills/${skill##*/}/SKILL.md"
-          done
-          git diff --exit-code -- external-skills/skills-lock.json home/.agents/skills
-
   install:
     needs: changes
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || needs.changes.outputs.install == 'true'

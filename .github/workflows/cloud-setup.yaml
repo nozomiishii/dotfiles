@@ -8,11 +8,7 @@ on:
       - "home/.agents/**"
       - "home/.claude/**"
       - "home/AGENTS.md"
-      - "external-skills/skills-lock.json"
-      - "mise.toml"
-      - "mise.lock"
       - "scripts/cloud/**"
-      - ".github/workflows/cloud-setup.yaml"
   workflow_dispatch:
 
 concurrency:
@@ -24,7 +20,7 @@ permissions: {}
 jobs:
   deploy:
     runs-on: ubuntu-slim
-    timeout-minutes: 10
+    timeout-minutes: 5
     permissions:
       contents: read # required by actions/checkout to fetch repository code
       pages: write # required by actions/deploy-pages to publish to GitHub Pages
@@ -37,20 +33,14 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup tools
-        uses: jdx/mise-action@b44d12e7d0d8ee7461bb893e1b1993500433185b # v5.2.7
-
-      - name: Install skill dependencies
-        run: mise run skills
-
+      # cloud-setup tarball を作成して _site/ に配置
       - name: Build tarball
         run: |
-          mkdir -p _site bundle/home/.agents/skills
-          cp -RH home/.agents/skills/* bundle/home/.agents/skills/
+          mkdir _site
           tar czf _site/cloud-setup.tar.gz \
             home/AGENTS.md \
             home/.claude/settings.json \
-            -C bundle home/.agents/
+            home/.agents/
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
