@@ -1,6 +1,6 @@
 [tools]
-node = "26.13.0"
-pnpm = "12.18.0"
+node = "26.13.1"
+pnpm = "12.20.0"
 # 版を上げたら docs/カスタマイズ.md の手順で home/skills-lock.json を作り直す。
 # 1.8.1 より新しい CLI は lock に commit を書き、復元はその commit を使う。
 "npm:skills" = "1.8.1"
