@@ -5,8 +5,9 @@ stable='^v?[0-9]+\.[0-9]+\.[0-9]+$'
 
 latest_stable_tag() {
   git ls-remote --tags --refs "$1" | cut -f2 | jq -Rrn --arg current "$2" --arg stable "$stable" '
-    [inputs | ltrimstr("refs/tags/") | select(test($stable))] + [$current]
-    | max_by(ltrimstr("v") | split(".") | map(tonumber))'
+    def version: ltrimstr("v") | split(".") | map(tonumber);
+    reduce (inputs | ltrimstr("refs/tags/") | select(test($stable))) as $tag
+      ($current; if ($tag | version) > version then $tag else . end)'
 }
 
 jq -r '.skills | to_entries[] | .key as $name | .value | [
