@@ -39,12 +39,6 @@ brew "fzf"
 # macOS local packages
 # ----------------------------------------------------------------
 if OS.mac? && !ENV["CI"]
-  # ----------------------------------------------------------------
-  # FIXME: 以下も入れたいけど, dev containerに入れようとするとエラーになる
-  # ----------------------------------------------------------------
-  # CLI: Easiest, most secure way to use WireGuard and 2FA https://tailscale.com
-  # brew "tailscale"
-
   # GUI: Mesh VPN based on WireGuard https://tailscale.com/
   cask "tailscale-app"
 
@@ -108,9 +102,6 @@ if OS.mac? && !ENV["CI"]
   # Review-first terminal diff viewer for agent-authored changesets https://hunk.dev/
   brew "hunk"
 
-  # Command-line benchmarking tool https://github.com/sharkdp/hyperfine
-  brew "hyperfine"
-
   # Lightweight and flexible command-line JSON processor https://stedolan.github.io/jq/
   brew "jq"
 
@@ -122,12 +113,6 @@ if OS.mac? && !ENV["CI"]
 
   # Persistent key-value database, with built-in net interface https://redis.io/
   brew "redis"
-
-  # Search tool like grep and The Silver Searcher https://github.com/BurntSushi/ripgrep
-  brew "ripgrep"
-
-  # Intuitive find & replace CLI https://github.com/chmln/sd
-  brew "sd"
 
   # Dependencies app.sh | Select default apps for documents and URL schemes on macOS https://github.com/moretension/duti/
   brew "duti"
@@ -146,12 +131,6 @@ if OS.mac? && !ENV["CI"]
 
   # Feature-rich command-line audio/video downloader https://github.com/yt-dlp/yt-dlp
   brew "yt-dlp"
-
-  # Command-line JSON processing tool https://github.com/antonmedv/fx
-  brew "fx"
-
-  # Like cURL, but for gRPC https://github.com/fullstorydev/grpcurl
-  brew "grpcurl"
 
   # Build, test, and manage your Stripe integration https://stripe.com/docs/stripe-cli
   brew "stripe/stripe-cli/stripe", trusted: true
