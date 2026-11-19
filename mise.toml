@@ -46,8 +46,8 @@ description = "Restore external agent skills from skills-lock.json"
 run = "bash scripts/install-skills.sh"
 
 [tasks.skills-update]
-description = "Update locked agent skills to their upstream releases"
-run = "bash scripts/update-skills.sh"
+description = "Update project skills from their tracked branches"
+run = "skills update --project --yes"
 
 [tasks.link]
 description = "Symlink dotfiles to home directory"

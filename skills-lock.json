@@ -3,11 +3,11 @@
   "skills": {
     "yomiyasu": {
       "source": "nanaism/yomiyasu",
-      "ref": "v3.2.0",
-      "commit": "3042154ee537c1b7093eefed00a97b40aae9446d",
+      "ref": "main",
+      "commit": "c9b9a6d1bb0795356c0e34dc50f501424069d837",
       "sourceType": "github",
       "skillPath": "skills/yomiyasu/SKILL.md",
-      "computedHash": "17141ed2f68ccaa4fa96040b4c9bd1eeb8a0331d4628464694a8c880af98a67a"
+      "computedHash": "5a67e92930fe085df44b0bf1da8b82564e471d6ccad0656b696d272fc7dd7d37"
     }
   }
 }
