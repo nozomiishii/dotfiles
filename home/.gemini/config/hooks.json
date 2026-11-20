@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 ~/.local/bin/antigravity-pre-tool-use.py",
+            "command": "PATH=\"$HOME/.local/share/mise/shims:$PATH\" bun \"$HOME/.local/bin/antigravity-pre-tool-use.ts\"",
             "timeout": 10
           }
         ]
