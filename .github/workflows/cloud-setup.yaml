@@ -5,10 +5,24 @@ on:
     branches:
       - main
     paths:
+      - ".github/workflows/cloud-setup.yaml"
       - "home/.agents/**"
       - "home/.claude/**"
       - "home/AGENTS.md"
+      - "mise.toml"
+      - "mise.lock"
       - "scripts/cloud/**"
+      - "scripts/skills.sh"
+  pull_request:
+    paths:
+      - ".github/workflows/cloud-setup.yaml"
+      - "home/.agents/**"
+      - "home/.claude/**"
+      - "home/AGENTS.md"
+      - "mise.toml"
+      - "mise.lock"
+      - "scripts/cloud/**"
+      - "scripts/skills.sh"
   workflow_dispatch:
 
 concurrency:
@@ -18,20 +32,24 @@ concurrency:
 permissions: {}
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-slim
     timeout-minutes: 5
     permissions:
       contents: read # required by actions/checkout to fetch repository code
-      pages: write # required by actions/deploy-pages to publish to GitHub Pages
-      id-token: write # required by actions/deploy-pages for OIDC-based deployment verification
-    environment:
-      name: github-pages
     steps:
       - name: Get code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+
+      - name: Setup mise
+        uses: jdx/mise-action@b44d12e7d0d8ee7461bb893e1b1993500433185b # v5.2.7
+        with:
+          install: false
+
+      - name: Install external skills
+        run: MISE_TASK_RUN_AUTO_INSTALL=0 mise run skills
 
       # cloud-setup tarball を作成して _site/ に配置
       - name: Build tarball
@@ -41,9 +59,22 @@ jobs:
             home/AGENTS.md \
             home/.claude/settings.json \
             home/.agents/
+          tar tzf _site/cloud-setup.tar.gz | grep -qx 'home/.agents/skills/yomiyasu/SKILL.md'
 
       - name: Upload pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
 
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    permissions:
+      pages: write # required by actions/deploy-pages to publish to GitHub Pages
+      id-token: write # required by actions/deploy-pages for OIDC-based deployment verification
+    environment:
+      name: github-pages
+    steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

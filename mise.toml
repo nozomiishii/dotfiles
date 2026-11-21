@@ -1,6 +1,7 @@
 [tools]
 node = "26.13.1"
 pnpm = "12.20.0"
+"github:nanaism/yomiyasu" = { version = "3.2.3", asset_pattern = "yomiyasu.zip" }
 
 [settings]
 lockfile = true
@@ -23,12 +24,17 @@ run = ["mise bootstrap packages apply --yes", "mise bootstrap packages upgrade -
 description = "Configure macOS settings"
 run = "bash ./scripts/darwin/macos.sh"
 
+[tasks.skills]
+description = "Install external agent skills into home/.agents/skills"
+run = "bash ./scripts/skills.sh"
+
 [tasks.toolchains]
 description = "Set up language toolchains"
 # mise.sh は install.sh 専用。理由は
 # docs/decisions/dotfiles のリンクは mise の task に一本化する.md
 run = [
   "mise install",
+  "mise run skills",
   "bash ./scripts/toolchains/claude-code.sh",
   "bash ./scripts/toolchains/pm.sh",
   "mise run packages",
