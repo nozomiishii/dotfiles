@@ -150,6 +150,9 @@ if OS.mac? && !ENV["CI"]
   # Extensible coding agent for the terminal https://x.ai/build
   cask "grok-build"
 
+  # Interactive terminal coding agent https://dev.meta.ai/
+  cask "muse-code"
+
   # Minimal GUI for AI code agents https://t3.codes/
   cask "t3-code"
 
