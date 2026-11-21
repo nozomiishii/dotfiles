@@ -17,6 +17,7 @@ lefthook-local.yaml
 **/.claude/settings.local.json
 **/.claude/worktrees/
 home/.agents/skills/synced/
+home/.agents/skills/yomiyasu/
 
 
 # Logs
