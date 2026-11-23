@@ -8,7 +8,7 @@ uv = "0.13.8"
 rust = { version = "1.100.0", components = ["rust-analyzer"] }
 ruby = "4.0.9"
 go = "1.27.4"
-"npm:typescript-language-server" = "6.0.3"
+"npm:typescript-language-server" = "6.1.0"
 "npm:@devcontainers/cli" = "0.90.0"
 "npm:@antfu/ni" = "30.6.0"
 # Brewfile のフォーマット用
