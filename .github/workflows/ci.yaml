@@ -62,14 +62,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup tools
-        uses: jdx/mise-action@b44d12e7d0d8ee7461bb893e1b1993500433185b # v5.2.7
-        with:
-          install: false
-
       # フォーマットに必要な node と pnpm だけに絞り、npm:skills の導入を省く
-      - name: Install format tools
-        run: mise install --locked node pnpm
+      - name: Setup tools
+        uses: jdx/mise-action@90f833d396d0cc3674b631d2d225e306476c303a # v5.2.10
+        with:
+          install_args: --locked node pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
