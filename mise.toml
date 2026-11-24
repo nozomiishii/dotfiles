@@ -1,12 +1,17 @@
 [tools]
 node = "26.13.1"
 pnpm = "12.20.0"
+"npm:skills" = "1.9.0"
 
 [settings]
 lockfile = true
 
 [dotfiles]
-"~" = { source = "home", mode = "symlink-each", exclude = [".DS_Store", ".agents/skills"] }
+"~" = { source = "home", mode = "symlink-each", exclude = [
+  ".DS_Store",
+  ".agents/skills",
+  "skills-lock.json",
+] }
 # Codex は個別の SKILL.md ではなく、skill ディレクトリの symlink のみをサポートする。
 # https://developers.openai.com/codex/skills#where-codex-loads-local-skills
 "~/.agents/skills" = { source = "home/.agents/skills", mode = "symlink" }
@@ -23,12 +28,34 @@ run = ["mise bootstrap packages apply --yes", "mise bootstrap packages upgrade -
 description = "Configure macOS settings"
 run = "bash ./scripts/darwin/macos.sh"
 
+[tasks.skills]
+description = "Install external skills pinned in home/skills-lock.json"
+# mise は task を sh で実行する。pipefail は dash に無いので付けない
+run = '''
+set -Ceu
+
+# worktree から呼ばれても本体の home/ を対象にする (link と同じ)
+common="$(git rev-parse --path-format=absolute --git-common-dir)"
+case "$common" in
+  */.git) ;;
+  *)
+    echo "Error: unexpected git common dir: ${common}" >&2
+    exit 1
+    ;;
+esac
+
+cd "${common%/.git}/home"
+# -a codex は .agents/skills/ へ展開する。Claude Code と Antigravity は symlink 経由で同じディレクトリを読む
+skills install --frozen-lockfile -a codex
+'''
+
 [tasks.toolchains]
 description = "Set up language toolchains"
 # mise.sh は install.sh 専用。理由は
 # docs/decisions/dotfiles のリンクは mise の task に一本化する.md
 run = [
   "mise install",
+  "mise run skills",
   "bash ./scripts/toolchains/claude-code.sh",
   "bash ./scripts/toolchains/pm.sh",
   "mise run packages",

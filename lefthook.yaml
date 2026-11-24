@@ -25,13 +25,16 @@ post-merge:
       # them. Deletions still trigger mise run link so the apply can clean up
       # the dangling symlink from its recorded state.
       files: git diff-tree -r --name-only --no-commit-id --diff-filter=AD ORIG_HEAD HEAD
-      run: mise run link
+      run: MISE_TASK_RUN_AUTO_INSTALL=0 mise run link
     - name: homebrew
       glob: "{Brewfile,home/.config/mise/config.toml}"
       interactive: true
       # homebrew → packages の直列。理由は
       # docs/decisions/brooklyn は Brewfile ではなく mise bootstrap.packages で管理する.md
-      run: mise run homebrew && mise run packages
+      run: MISE_TASK_RUN_AUTO_INSTALL=0 mise run homebrew && MISE_TASK_RUN_AUTO_INSTALL=0 mise run packages
+    - name: skills
+      glob: "{home/skills-lock.json,mise.toml,mise.lock}"
+      run: mise install --locked node npm:skills && MISE_TASK_RUN_AUTO_INSTALL=0 mise run skills
 
 pre-push:
   parallel: true

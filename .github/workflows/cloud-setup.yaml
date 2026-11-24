@@ -5,33 +5,54 @@ on:
     branches:
       - main
     paths:
+      - ".github/workflows/cloud-setup.yaml"
       - "home/.agents/**"
       - "home/.claude/**"
       - "home/AGENTS.md"
+      - "home/skills-lock.json"
+      - "mise.toml"
+      - "mise.lock"
+      - "scripts/cloud/**"
+  pull_request:
+    paths:
+      - ".github/workflows/cloud-setup.yaml"
+      - "home/.agents/**"
+      - "home/.claude/**"
+      - "home/AGENTS.md"
+      - "home/skills-lock.json"
+      - "mise.toml"
+      - "mise.lock"
       - "scripts/cloud/**"
   workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  # main の push で、前の run のデプロイを打ち切らないよう PR だけにする
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions: {}
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-slim
     timeout-minutes: 5
     permissions:
       contents: read # required by actions/checkout to fetch repository code
-      pages: write # required by actions/deploy-pages to publish to GitHub Pages
-      id-token: write # required by actions/deploy-pages for OIDC-based deployment verification
-    environment:
-      name: github-pages
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Get code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+
+      - name: Setup mise
+        uses: jdx/mise-action@b44d12e7d0d8ee7461bb893e1b1993500433185b # v5.2.7
+        with:
+          install_args: --locked node npm:skills
+
+      - name: Install external skills
+        run: MISE_TASK_RUN_AUTO_INSTALL=0 mise run skills
 
       # cloud-setup tarball を作成して _site/ に配置
       - name: Build tarball
@@ -41,9 +62,34 @@ jobs:
             home/AGENTS.md \
             home/.claude/settings.json \
             home/.agents/
+          tar_list="$(tar tzf _site/cloud-setup.tar.gz)"
+          node -e '
+            const fs = require("node:fs");
+            const lock = JSON.parse(fs.readFileSync("home/skills-lock.json", "utf8"));
+            const entries = new Set(process.argv[1].split("\n"));
+            for (const name of Object.keys(lock.skills)) {
+              const expected = `home/.agents/skills/${name}/SKILL.md`;
+              if (!entries.has(expected)) {
+                console.error(`Missing ${expected} in cloud-setup.tar.gz`);
+                process.exit(1);
+              }
+            }
+          ' "$tar_list"
 
       - name: Upload pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
 
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    permissions:
+      pages: write # required by actions/deploy-pages to publish to GitHub Pages
+      id-token: write # required by actions/deploy-pages for OIDC-based deployment verification
+    environment:
+      name: github-pages
+    steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
