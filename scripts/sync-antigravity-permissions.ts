@@ -11,7 +11,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { homedir } from "node:os";
-import { dirname, join } from "node:path";
+import { dirname, join, posix } from "node:path";
 import { fileURLToPath } from "node:url";
 
 export type ClaudeSettings = {
@@ -23,11 +23,20 @@ export type AntigravityGrants = {
   deny: string[];
 };
 
+export type MainOptions = {
+  source?: string;
+  target?: string;
+  homeDir?: string;
+};
+
 const DEFAULT_SOURCE = fileURLToPath(new URL("../home/.claude/settings.json", import.meta.url));
-const DEFAULT_TARGET = join(homedir(), ".gemini", "config", "config.json");
 
 function isPlainObject(v: unknown): v is Record<string, unknown> {
   return Boolean(v) && typeof v === "object" && !Array.isArray(v);
+}
+
+function toStringArray(v: unknown): string[] {
+  return Array.isArray(v) ? v.filter((item): item is string => typeof item === "string") : [];
 }
 
 function escapeRegex(s: string): string {
@@ -49,9 +58,39 @@ function toCommandRule(raw: string, action: "command" | "unsandboxed"): string |
   return `${action}(regex:${regexTokens.join(" ")})`;
 }
 
+function toFilePath(raw: string, homeDir: string): string | null {
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+
+  let resolved: string;
+  if (trimmed === "~" || trimmed.startsWith("~/")) {
+    if (!homeDir.startsWith("/")) return null;
+    const normalizedHome = homeDir.replace(/\/+$/, "") || "/";
+    const rest = trimmed.slice(1);
+    resolved = normalizedHome === "/" && rest ? rest : `${normalizedHome}${rest}`;
+  } else if (trimmed.startsWith("//")) {
+    if (/^\/\/+$/.test(trimmed)) return null;
+    resolved = trimmed.slice(1);
+  } else {
+    return null;
+  }
+
+  let path = resolved.replace(/\/+$/, "") || "/";
+  if (path.endsWith("/**")) {
+    path = path.slice(0, -3) || "/";
+  }
+  path = path.replace(/\/+$/, "") || "/";
+
+  if (/[*?[\]{}()]/.test(path)) return null;
+  if (path.split("/").includes("..")) return null;
+
+  return posix.normalize(path).replace(/\/+$/, "") || "/";
+}
+
 export function convertRule(
   entry: string,
   actions: ("command" | "unsandboxed")[] = ["command"],
+  homeDir = homedir(),
 ): string[] {
   const bash = /^Bash\((.+)\)$/.exec(entry);
   if (bash) {
@@ -64,18 +103,34 @@ export function convertRule(
     return domain ? [`read_url(${domain})`] : [];
   }
 
+  const edit = /^Edit\((.+)\)$/.exec(entry);
+  if (edit) {
+    const path = toFilePath(edit[1], homeDir);
+    return path ? [`write_file(${path})`] : [];
+  }
+
+  const read = /^Read\((.+)\)$/.exec(entry);
+  if (read) {
+    const path = toFilePath(read[1], homeDir);
+    return path ? [`read_file(${path})`] : [];
+  }
+
   return [];
 }
 
-export function convertClaudeSettings(settings: ClaudeSettings): AntigravityGrants {
+export function convertClaudeSettings(
+  settings: ClaudeSettings,
+  homeDir = homedir(),
+): AntigravityGrants {
   const allow = new Set<string>();
   const deny = new Set<string>();
+  const permissions = isPlainObject(settings.permissions) ? settings.permissions : {};
 
-  for (const entry of settings.permissions?.allow ?? []) {
-    for (const rule of convertRule(entry, ["command"])) allow.add(rule);
+  for (const entry of toStringArray(permissions.allow)) {
+    for (const rule of convertRule(entry, ["command"], homeDir)) allow.add(rule);
   }
-  for (const entry of settings.permissions?.deny ?? []) {
-    for (const rule of convertRule(entry, ["command", "unsandboxed"])) deny.add(rule);
+  for (const entry of toStringArray(permissions.deny)) {
+    for (const rule of convertRule(entry, ["command", "unsandboxed"], homeDir)) deny.add(rule);
   }
   for (const rule of deny) allow.delete(rule);
 
@@ -90,8 +145,8 @@ export function mergeConfig(
   const existing = isPlainObject(userSettings.globalPermissionGrants)
     ? userSettings.globalPermissionGrants
     : {};
-  const prevAllow = Array.isArray(existing.allow) ? (existing.allow as string[]) : [];
-  const prevDeny = Array.isArray(existing.deny) ? (existing.deny as string[]) : [];
+  const prevAllow = toStringArray(existing.allow);
+  const prevDeny = toStringArray(existing.deny);
   const denySet = new Set([...prevDeny, ...grants.deny]);
   const allowSet = new Set([...prevAllow, ...grants.allow].filter((r) => !denySet.has(r)));
 
@@ -132,40 +187,59 @@ export function writeAtomic(path: string, data: Record<string, unknown>): void {
   } catch (err) {
     try {
       unlinkSync(tmp);
-    } catch {
-      // ignore cleanup error
-    }
+    } catch {}
     throw err;
   }
 }
 
-export function main(argv = process.argv.slice(2)): void {
+export function main(argv = process.argv.slice(2), options: MainOptions = {}): number {
   if (argv.includes("--help") || argv.includes("-h")) {
     console.log("Usage: sync-antigravity-permissions.ts [--dry-run]");
-    return;
+    return 0;
   }
   const unknown = argv.filter((a) => a !== "--dry-run");
   if (unknown.length > 0) {
     console.error(`Unknown arguments: ${unknown.join(", ")}`);
-    process.exitCode = 1;
-    return;
+    return 1;
   }
 
-  const claude = JSON.parse(readFileSync(DEFAULT_SOURCE, "utf8")) as ClaudeSettings;
-  const grants = convertClaudeSettings(claude);
+  const homeDir = options.homeDir ?? homedir();
+  const source = options.source ?? DEFAULT_SOURCE;
+  const target = options.target ?? join(homeDir, ".gemini", "config", "config.json");
+
+  const parsedSource: unknown = JSON.parse(readFileSync(source, "utf8"));
+  if (!isPlainObject(parsedSource)) {
+    throw new Error(`Expected JSON object in ${source}`);
+  }
+  const claude = parsedSource as ClaudeSettings;
+  const grants = convertClaudeSettings(claude, homeDir);
+
+  const rawDeny = isPlainObject(claude.permissions) ? toStringArray(claude.permissions.deny) : [];
+  for (const entry of rawDeny) {
+    if (
+      /^(Edit|Read)\(.+\)$/.test(entry) &&
+      convertRule(entry, ["command", "unsandboxed"], homeDir).length === 0
+    ) {
+      console.error(`Warning: skipped unsupported deny rule: ${entry}`);
+    }
+  }
 
   if (argv.includes("--dry-run")) {
     console.log(JSON.stringify(grants, null, 2));
-    return;
+    return 0;
   }
 
-  const current = readJsonOrEmpty(DEFAULT_TARGET);
-  writeAtomic(DEFAULT_TARGET, mergeConfig(current, grants));
+  const current = readJsonOrEmpty(target);
+  writeAtomic(target, mergeConfig(current, grants));
   console.log(
-    `Synced ${grants.allow.length} allow / ${grants.deny.length} deny rules to ${DEFAULT_TARGET}`,
+    `Synced ${grants.allow.length} allow / ${grants.deny.length} deny rules to ${target}`,
   );
+  return 0;
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(process.argv[1])) {
-  main();
+if (
+  process.argv[1] &&
+  realpathSync(fileURLToPath(import.meta.url)) === realpathSync(process.argv[1])
+) {
+  process.exitCode = main();
 }
