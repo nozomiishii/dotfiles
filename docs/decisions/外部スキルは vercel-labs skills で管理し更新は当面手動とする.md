@@ -24,7 +24,7 @@ home/skills-lock.json (commit と computedHash を固定)
   │              └─ 既存 symlink 経由で Claude Code / Codex / Antigravity へ届く
   │
   └─ Cloud 環境 (cloud-setup.yaml)
-       └─ build ジョブで mise run skills を実行し、cloud-setup.tar.gz へ同梱
+       └─ deploy ジョブで mise run skills を実行し、cloud-setup.tar.gz へ同梱
 ```
 
 ## 検討した選択肢
