@@ -12,6 +12,7 @@
     "allow": [
       "Read",
       "Edit",
+      "Edit(~/Code/**)",
       "Bash(pnpm:*)",
       "Bash(jq:*)",
       "WebSearch",
