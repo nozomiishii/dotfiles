@@ -32,9 +32,21 @@ post-merge:
       # homebrew → packages の直列。理由は
       # docs/decisions/brooklyn は Brewfile ではなく mise bootstrap.packages で管理する.md
       run: MISE_TASK_RUN_AUTO_INSTALL=0 mise run homebrew && MISE_TASK_RUN_AUTO_INSTALL=0 mise run packages
-    - name: skills
-      glob: "{home/skills-lock.json,mise.toml,mise.lock}"
-      run: mise install --locked node npm:skills && MISE_TASK_RUN_AUTO_INSTALL=0 mise run skills
+    # recommended.yaml の update-node-modules と並列実行すると pnpm install が衝突するため、
+    # piped group で pnpm install → skills の順に直列化する
+    - name: update-node-modules
+      skip: true
+      run: "true"
+    - name: node-and-skills
+      group:
+        piped: true
+        jobs:
+          - name: install-dependencies
+            glob: "**/{package.json,pnpm-lock.yaml,pnpm-workspace.yaml}"
+            run: pnpm install --frozen-lockfile
+          - name: skills
+            glob: "home/skills-lock.json"
+            run: MISE_TASK_RUN_AUTO_INSTALL=0 mise run skills
 
 pre-push:
   parallel: true

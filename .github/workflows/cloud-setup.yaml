@@ -11,6 +11,9 @@ on:
       - "home/skills-lock.json"
       - "mise.toml"
       - "mise.lock"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
       - "scripts/cloud/**"
   workflow_dispatch:
 
@@ -40,11 +43,12 @@ jobs:
 
       - name: Setup mise
         uses: jdx/mise-action@90f833d396d0cc3674b631d2d225e306476c303a # v5.2.10
-        with:
-          install_args: --locked node npm:skills
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Install external skills
-        run: MISE_TASK_RUN_AUTO_INSTALL=0 mise run skills
+        run: mise run skills
 
       # cloud-setup tarball を作成して _site/ に配置
       - name: Build tarball

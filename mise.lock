@@ -32,10 +32,6 @@ url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-darwin-x64.tar.gz"
 checksum = "sha256:e2edda75bfb089654705cf65a13b58933bfd5f57148e8ebda916f58a2474f1f7"
 url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip"
 
-[[tools."npm:skills"]]
-version = "1.9.0"
-backend = "npm:skills"
-
 [[tools.pnpm]]
 version = "12.22.0"
 backend = "aqua:pnpm/pnpm"

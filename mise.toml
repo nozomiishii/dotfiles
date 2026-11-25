@@ -1,7 +1,6 @@
 [tools]
 node = "26.13.1"
 pnpm = "12.22.0"
-"npm:skills" = "1.9.0"
 
 [settings]
 lockfile = true
@@ -43,10 +42,16 @@ case "$common" in
     exit 1
     ;;
 esac
+repo_root="${common%/.git}"
+skills_bin="${repo_root}/node_modules/.bin/skills"
+if [ ! -x "$skills_bin" ]; then
+  echo "Error: ${skills_bin} not found. Run 'pnpm install --frozen-lockfile' first." >&2
+  exit 1
+fi
 
-cd "${common%/.git}/home"
+cd "${repo_root}/home"
 # -a codex は .agents/skills/ へ展開する。Claude Code と Antigravity は symlink 経由で同じディレクトリを読む
-skills install --frozen-lockfile -a codex
+"$skills_bin" install --frozen-lockfile -a codex
 '''
 
 [tasks.toolchains]
@@ -55,6 +60,7 @@ description = "Set up language toolchains"
 # docs/decisions/dotfiles のリンクは mise の task に一本化する.md
 run = [
   "mise install",
+  "pnpm install --frozen-lockfile",
   "mise run skills",
   "bash ./scripts/toolchains/claude-code.sh",
   "bash ./scripts/toolchains/pm.sh",

@@ -50,7 +50,7 @@ home/skills-lock.json (commit と computedHash を固定)
 
 ### 配布・管理ツール
 
-- 外部スキルの管理には `vercel-labs/skills`（`npm:skills`）を使う
+- 外部スキルの管理には `vercel-labs/skills` を使い、`package.json` の `devDependencies` で管理する
 - 宣言と版固定の正本は `home/skills-lock.json` とし、`~` へはリンクしない
 - 展開先の外部スキルディレクトリは `.gitignore` で追跡対象外とする
 - 復元処理は `mise.toml` の `[tasks.skills]` に集約し、`install.sh`・`lefthook` の `post-merge`・`cloud-setup.yaml` から共通で呼び出す
@@ -72,7 +72,7 @@ home/skills-lock.json (commit と computedHash を固定)
 ### 引き受けたコスト
 
 - 外部スキルの更新を手動で実行する手間が残る
-- `mise.toml` に管理対象のツールとして `npm:skills` が増える
+- `install.sh` と `cloud-setup.yaml` で `pnpm install --frozen-lockfile` を実行する手順が増える
 - 外部スキルを追加するたびに `.gitignore` へ展開先ディレクトリを 1 行足す必要がある
 
 ### 保留した論点

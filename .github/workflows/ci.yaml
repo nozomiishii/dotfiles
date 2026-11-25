@@ -50,6 +50,9 @@ jobs:
               - "scripts/**"
               - "home/.config/mise/config.toml"
               - "home/skills-lock.json"
+              - "package.json"
+              - "pnpm-lock.yaml"
+              - "pnpm-workspace.yaml"
 
   format:
     runs-on: ubuntu-slim
@@ -62,11 +65,8 @@ jobs:
         with:
           persist-credentials: false
 
-      # フォーマットに必要な node と pnpm だけに絞り、npm:skills の導入を省く
       - name: Setup tools
         uses: jdx/mise-action@90f833d396d0cc3674b631d2d225e306476c303a # v5.2.10
-        with:
-          install_args: --locked node pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
