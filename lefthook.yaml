@@ -34,7 +34,7 @@ post-merge:
       run: mise run homebrew && mise run packages
     - name: skills
       glob: "home/skills-lock.json"
-      run: mise run skills
+      run: pnpm skills
 
 pre-push:
   parallel: true

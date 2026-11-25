@@ -46,7 +46,7 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Install external skills
-        run: mise run skills
+        run: pnpm skills
 
       # cloud-setup tarball を作成して _site/ に配置
       - name: Build tarball

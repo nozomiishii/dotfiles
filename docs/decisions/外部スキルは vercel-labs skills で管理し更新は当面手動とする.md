@@ -19,12 +19,12 @@ date: 2026-11-23
 home/skills-lock.json (commit と computedHash を固定)
   │
   ├─ ローカル (install.sh / lefthook post-merge)
-  │    └─ mise run skills (skills install --frozen-lockfile -a codex)
+  │    └─ pnpm skills (skills install --frozen-lockfile -a codex)
   │         └─ home/.agents/skills/<name>/ (.gitignore)
   │              └─ 既存 symlink 経由で Claude Code / Codex / Antigravity へ届く
   │
   └─ Cloud 環境 (cloud-setup.yaml)
-       └─ deploy ジョブで mise run skills を実行し、cloud-setup.tar.gz へ同梱
+       └─ deploy ジョブで pnpm skills を実行し、cloud-setup.tar.gz へ同梱
 ```
 
 ## 検討した選択肢
@@ -53,7 +53,7 @@ home/skills-lock.json (commit と computedHash を固定)
 - 外部スキルの管理には `vercel-labs/skills` を使い、`package.json` の `devDependencies` で管理する
 - 宣言と版固定の正本は `home/skills-lock.json` とし、`~` へはリンクしない
 - 展開先の外部スキルディレクトリは `.gitignore` で追跡対象外とする
-- 復元処理は `mise.toml` の `[tasks.skills]` に集約し、`install.sh`・`lefthook` の `post-merge`・`cloud-setup.yaml` から共通で呼び出す
+- 復元処理は `package.json` の `skills` スクリプトに集約し、`install.sh`・`lefthook` の `post-merge`・`cloud-setup.yaml` から共通で呼び出す
 - `-a codex` を指定すると共通の `.agents/skills/` へ展開されるため、既存の symlink 構成を崩さず複数エージェントへ配布する
 
 ### 更新の運用

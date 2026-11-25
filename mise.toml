@@ -27,10 +27,6 @@ run = ["mise bootstrap packages apply --yes", "mise bootstrap packages upgrade -
 description = "Configure macOS settings"
 run = "bash ./scripts/darwin/macos.sh"
 
-[tasks.skills]
-description = "Install external skills pinned in home/skills-lock.json"
-run = "cd home && ../node_modules/.bin/skills install --frozen-lockfile -a codex"
-
 [tasks.toolchains]
 description = "Set up language toolchains"
 # mise.sh は install.sh 専用。理由は
@@ -38,7 +34,7 @@ description = "Set up language toolchains"
 run = [
   "mise install",
   "pnpm install --frozen-lockfile",
-  "mise run skills",
+  "pnpm skills",
   "bash ./scripts/toolchains/claude-code.sh",
   "bash ./scripts/toolchains/pm.sh",
   "mise run packages",
