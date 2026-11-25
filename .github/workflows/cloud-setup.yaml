@@ -10,10 +10,8 @@ on:
       - "home/AGENTS.md"
       - "home/skills-lock.json"
       - "mise.toml"
-      - "mise.lock"
       - "package.json"
       - "pnpm-lock.yaml"
-      - "pnpm-workspace.yaml"
       - "scripts/cloud/**"
   workflow_dispatch:
 

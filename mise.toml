@@ -29,30 +29,7 @@ run = "bash ./scripts/darwin/macos.sh"
 
 [tasks.skills]
 description = "Install external skills pinned in home/skills-lock.json"
-# mise は task を sh で実行する。pipefail は dash に無いので付けない
-run = '''
-set -Ceu
-
-# worktree から呼ばれても本体の home/ を対象にする (link と同じ)
-common="$(git rev-parse --path-format=absolute --git-common-dir)"
-case "$common" in
-  */.git) ;;
-  *)
-    echo "Error: unexpected git common dir: ${common}" >&2
-    exit 1
-    ;;
-esac
-repo_root="${common%/.git}"
-skills_bin="${repo_root}/node_modules/.bin/skills"
-if [ ! -x "$skills_bin" ]; then
-  echo "Error: ${skills_bin} not found. Run 'pnpm install --frozen-lockfile' first." >&2
-  exit 1
-fi
-
-cd "${repo_root}/home"
-# -a codex は .agents/skills/ へ展開する。Claude Code と Antigravity は symlink 経由で同じディレクトリを読む
-"$skills_bin" install --frozen-lockfile -a codex
-'''
+run = "cd home && ../node_modules/.bin/skills install --frozen-lockfile -a codex"
 
 [tasks.toolchains]
 description = "Set up language toolchains"

@@ -45,14 +45,12 @@ jobs:
             install:
               - "install.sh"
               - "mise.toml"
-              - "mise.lock"
               - "Brewfile"
               - "scripts/**"
               - "home/.config/mise/config.toml"
               - "home/skills-lock.json"
               - "package.json"
               - "pnpm-lock.yaml"
-              - "pnpm-workspace.yaml"
 
   format:
     runs-on: ubuntu-slim
