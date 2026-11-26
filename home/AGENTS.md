@@ -80,29 +80,11 @@
 
 - 自分と所属 Organization 以外の管理外のリポジトリへの書き込みは /oss スキルを使用する
 
-## コミットと PR
+## PR の運用
 
-- PR 本文は日本語で書く。
-- Grok Bot のエージェントが PR を出すときは、本文の先頭に、作ったエージェントのチャットを問い合わせの文章が入った状態で開くリンクを書く。文言はエージェント名にする。
-- リンクは `https://cursor.com/grok-bot/link/v1/prompt?id=<そのエージェントの id>&text=<URL エンコードした文章>` にする。文章は `<リポジトリ名> PR <番号>の件（<タイトル>）` にする。GitHub は `grokbot://` を外すので、このウェブ用を使う。
-- 番号は PR を出したあとに分かるので、出したらすぐに本文のリンクを番号つきで足すか直す。`id` はそのエージェント自身のものを使う。
-- 明示的な指定なしに Draft PR を作らない。
-- PR タイトルは repo の commitlint 設定に従う。
-- PR に依頼と無関係な変更を混ぜない。
-- merge手順が発生する場合、GitHub Stacked PRを使う。
-- PR を作ったら、conflictやCI失敗を監視してマージできる状態にする。
+- PR の運用（本文・タイトル・レビュー対応・マージ後）は [PR の運用](https://github.com/nozomiishii/dotfiles/blob/main/docs/PR%E3%81%AE%E9%81%8B%E7%94%A8.md) に従う
 
 ## Issue
 
 - タイトルは作業の概要を日本語で書く。`feat:` などの Conventional Commits 形式にはしない
 - 分類は Labels で付ける
-
-## PR のレビューコメントの対応
-
-- 修正指示: 修正・検証・push まで行い、thread に対応内容と commit hash を返信する。
-- 質問: ファイルを変更せず、チャットで 1 件ずつ解説してユーザーの返答を待つ。
-- 判断できない内容: ファイルを変更せず、チャットで 1 件ずつ確認する。
-
-## PRマージ後
-
-- local mainにremoteをpullして反映する。
