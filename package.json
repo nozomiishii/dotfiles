@@ -23,7 +23,7 @@
     "markdownlint:fix": "npx -y markdownlint-cli2-fix@latest '**/*.md' '#node_modules'",
     "oxfmt": "oxfmt",
     "postinstall": "postinstall",
-    "skills": "cd home && skills install --frozen-lockfile -a codex"
+    "skills": "cd home && skills install --frozen-lockfile -a universal"
   },
   "devDependencies": {
     "@nozomiishii/commitlint-config": "2.8.1",
