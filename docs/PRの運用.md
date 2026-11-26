@@ -19,6 +19,7 @@
 ## マージ後
 
 - local mainにremoteをpullして反映する。
+- マージされたリポジトリについて、Mac mini と、つながっているときの MacBook Pro のチェックアウトも `main` の最新まで早送りする。
 
 ## Grok Bot のエージェント
 
