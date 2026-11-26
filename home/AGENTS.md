@@ -62,7 +62,7 @@
   - アプリや環境で値を分ける必要が出たら section を使う。名前は `<app>-<env>`。アプリが 1 つの repo は `<env>` だけにする
   - ブラウザに配る値は 1Password に入れない
 - env ファイル (`.env*`) の値は必ずダブルクォーテーションで囲む。
-- ローカル用の 1Password テンプレートは `.env.local.tpl` に置き、`pnpm env:local` で `.env.local` を生成する。
+- ローカル用の 1Password テンプレートは `.env.local.tpl` に置き、`env:local` スクリプトを作成して `.env.local` を生成する。
 
 ## 静的解析・lint エラーの対応
 
