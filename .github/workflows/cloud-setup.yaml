@@ -8,6 +8,10 @@ on:
       - "home/.agents/**"
       - "home/.claude/**"
       - "home/AGENTS.md"
+      - "home/skills-lock.json"
+      - "mise.toml"
+      - "package.json"
+      - "pnpm-lock.yaml"
       - "scripts/cloud/**"
   workflow_dispatch:
 
@@ -27,11 +31,22 @@ jobs:
       id-token: write # required by actions/deploy-pages for OIDC-based deployment verification
     environment:
       name: github-pages
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Get code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+
+      - name: Setup mise
+        uses: jdx/mise-action@90f833d396d0cc3674b631d2d225e306476c303a # v5.2.10
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Install external skills
+        run: pnpm skills
 
       # cloud-setup tarball を作成して _site/ に配置
       - name: Build tarball

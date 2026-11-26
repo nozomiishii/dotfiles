@@ -32,6 +32,9 @@ post-merge:
       # homebrew → packages の直列。理由は
       # docs/decisions/brooklyn は Brewfile ではなく mise bootstrap.packages で管理する.md
       run: mise run homebrew && mise run packages
+    - name: skills
+      glob: "home/skills-lock.json"
+      run: pnpm skills
 
 pre-push:
   parallel: true

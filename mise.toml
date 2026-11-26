@@ -6,7 +6,11 @@ pnpm = "12.23.0"
 lockfile = true
 
 [dotfiles]
-"~" = { source = "home", mode = "symlink-each", exclude = [".DS_Store", ".agents/skills"] }
+"~" = { source = "home", mode = "symlink-each", exclude = [
+  ".DS_Store",
+  ".agents/skills",
+  "skills-lock.json",
+] }
 # Codex は個別の SKILL.md ではなく、skill ディレクトリの symlink のみをサポートする。
 # https://developers.openai.com/codex/skills#where-codex-loads-local-skills
 "~/.agents/skills" = { source = "home/.agents/skills", mode = "symlink" }
@@ -29,6 +33,8 @@ description = "Set up language toolchains"
 # docs/decisions/dotfiles のリンクは mise の task に一本化する.md
 run = [
   "mise install",
+  "pnpm install --frozen-lockfile",
+  "pnpm skills",
   "bash ./scripts/toolchains/claude-code.sh",
   "bash ./scripts/toolchains/pm.sh",
   "mise run packages",

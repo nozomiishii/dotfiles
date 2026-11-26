@@ -48,6 +48,9 @@ jobs:
               - "Brewfile"
               - "scripts/**"
               - "home/.config/mise/config.toml"
+              - "home/skills-lock.json"
+              - "package.json"
+              - "pnpm-lock.yaml"
 
   format:
     runs-on: ubuntu-slim
