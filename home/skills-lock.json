@@ -1,6 +1,55 @@
 {
   "version": 2,
   "skills": {
+    "defuddle": {
+      "source": "obsidianmd/obsidian-skills",
+      "commit": "9c9560a870fd490b0e1a847f2c8401a50e2d931d",
+      "sourceType": "github",
+      "skillPath": "plugins/obsidian/skills/defuddle/SKILL.md",
+      "computedHash": "d2a7c7818a403ebca2e9740c2eabed8ac31a9927a697791570843f0a4ca998bf"
+    },
+    "json-canvas": {
+      "source": "obsidianmd/obsidian-skills",
+      "commit": "9c9560a870fd490b0e1a847f2c8401a50e2d931d",
+      "sourceType": "github",
+      "skillPath": "plugins/obsidian/skills/json-canvas/SKILL.md",
+      "computedHash": "5d0499ad8ce7f68bcd501bea93a80c3a0406722f182a5b50cd9d1ec3c34c4ea5"
+    },
+    "knap": {
+      "source": "obsidianmd/obsidian-skills",
+      "commit": "9c9560a870fd490b0e1a847f2c8401a50e2d931d",
+      "sourceType": "github",
+      "skillPath": "plugins/obsidian/skills/knap/SKILL.md",
+      "computedHash": "a1c609fa7cdc2de45a04d989b49b16ba691308d611733e08388f5e22c01cf5ec"
+    },
+    "obsidian-bases": {
+      "source": "obsidianmd/obsidian-skills",
+      "commit": "9c9560a870fd490b0e1a847f2c8401a50e2d931d",
+      "sourceType": "github",
+      "skillPath": "plugins/obsidian/skills/obsidian-bases/SKILL.md",
+      "computedHash": "69a3105a2237f0d09a74ee197a64be3c3a07e401e4dcd7fd9ad499c574b58cf6"
+    },
+    "obsidian-cli": {
+      "source": "obsidianmd/obsidian-skills",
+      "commit": "9c9560a870fd490b0e1a847f2c8401a50e2d931d",
+      "sourceType": "github",
+      "skillPath": "plugins/obsidian/skills/obsidian-cli/SKILL.md",
+      "computedHash": "c50a6a32f35be2656fcae1b1ead19fd8ef228fcd89b852d4d8b9f9b93b975a1c"
+    },
+    "obsidian-headless": {
+      "source": "obsidianmd/obsidian-skills",
+      "commit": "9c9560a870fd490b0e1a847f2c8401a50e2d931d",
+      "sourceType": "github",
+      "skillPath": "plugins/obsidian/skills/obsidian-headless/SKILL.md",
+      "computedHash": "4cc2015ac915d7cf7114fd4c7b46e02475ced3cf711b84025432a33fc8bad24d"
+    },
+    "obsidian-markdown": {
+      "source": "obsidianmd/obsidian-skills",
+      "commit": "9c9560a870fd490b0e1a847f2c8401a50e2d931d",
+      "sourceType": "github",
+      "skillPath": "plugins/obsidian/skills/obsidian-markdown/SKILL.md",
+      "computedHash": "c5c46fd4ab6321d2ccc3f680ee5372efd1d070749e6ddb8e571e0b0c2ac1ae16"
+    },
     "yomiyasu": {
       "source": "nanaism/yomiyasu",
       "commit": "ddf365b5d5b36a7aa4ffab798dce1b694dbb1afd",
