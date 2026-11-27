@@ -16,6 +16,13 @@ lefthook-local.yaml
 # claude
 **/.claude/settings.local.json
 **/.claude/worktrees/
+home/.agents/skills/defuddle/
+home/.agents/skills/json-canvas/
+home/.agents/skills/knap/
+home/.agents/skills/obsidian-bases/
+home/.agents/skills/obsidian-cli/
+home/.agents/skills/obsidian-headless/
+home/.agents/skills/obsidian-markdown/
 home/.agents/skills/synced/
 home/.agents/skills/yomiyasu/
 

@@ -30,7 +30,7 @@
 ## 調査の進め方
 
 - Web 検索などの外部調査を始める前に、まず対象 repo のドキュメント（`docs/`・ADR・issue）を確認する。
-- 調査やリサーチでは、外部を調べる前に /find-note スキルで brain vault（Obsidian）を検索し、過去の調査結果や好みを土台にする。
+- 調査やリサーチでは、外部を調べる前に /obsidian-cli スキルで Obsidian（brain vault）を検索し、過去の調査結果や好みを土台にする。
 
 ## 禁止操作
 
